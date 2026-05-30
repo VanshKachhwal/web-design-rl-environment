@@ -5,9 +5,21 @@ They never inspect intermediate arrays or library calls.
 """
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from webdesign_rl.grade.metrics import color, structure
+from webdesign_rl.grade.metrics import color, content, structure
+
+# A real TrueType font at a large size so Tesseract reads the text reliably.
+_FONT = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 40)
+
+
+def _text_image(lines, size=(640, 360)):
+    """A white image with ``lines`` of large dark text (legible to OCR)."""
+    img = Image.new("RGB", size, (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    for i, line in enumerate(lines):
+        draw.text((20, 20 + i * 60), line, fill=(0, 0, 0), font=_FONT)
+    return img
 
 
 def _structured_reference():
@@ -143,3 +155,64 @@ def test_color_not_gameable_by_matching_mean_color():
     faithful = _palette_image([(0, 0, 0), (255, 255, 255)])
     gray = Image.new("RGB", (64, 64), (128, 128, 128))
     assert color(gray, reference) < color(faithful, reference) - 0.2
+
+
+# --- content (Tesseract OCR + word-multiset F1) -----------------------------
+
+
+def test_identical_text_scores_near_one():
+    img = _text_image(["Welcome Home", "Get Started Today"])
+    assert content(img, img) > 0.99
+
+
+def test_removing_words_lowers_score():
+    reference = _text_image(["Welcome Home", "Get Started Today"])
+    # Candidate keeps only the first line: half the reference words are missing,
+    # so recall (and therefore the F1) drops below a faithful copy.
+    candidate = _text_image(["Welcome Home"])
+    assert content(candidate, reference) < content(reference, reference)
+
+
+def test_injecting_words_lowers_score():
+    reference = _text_image(["Welcome Home"])
+    # Candidate has the reference text plus hallucinated extra words: precision
+    # drops (the extra words match nothing), pulling the F1 below a faithful copy.
+    candidate = _text_image(["Welcome Home", "Buy Now Cheap Deals"])
+    assert content(candidate, reference) < content(reference, reference)
+
+
+def test_empty_candidate_scores_zero():
+    reference = _text_image(["Welcome Home", "Get Started Today"])
+    # A blank candidate has no text: recall is 0, so the score floors at 0.
+    blank = Image.new("RGB", (640, 360), (255, 255, 255))
+    assert content(blank, reference) == 0.0
+
+
+def test_content_is_deterministic_across_runs():
+    reference = _text_image(["Welcome Home", "Get Started Today"])
+    candidate = _text_image(["Welcome Home", "Buy Now"])
+    assert content(candidate, reference) == content(candidate, reference)
+
+
+def test_order_does_not_change_score():
+    # Word-multiset F1 is order-robust: shuffling lines scores the same as the
+    # identical-text copy (the words present are unchanged).
+    reference = _text_image(["Welcome Home", "Get Started Today"])
+    reordered = _text_image(["Get Started Today", "Welcome Home"])
+    assert content(reordered, reference) == content(reference, reference)
+
+
+def test_committed_text_fixture_is_ocr_legible():
+    # Guard against a silently-empty fixture: OCR the committed text page and
+    # assert the exact words it was generated with actually come out. If this
+    # fails, the fixture is unreadable and every other content test is hollow.
+    from pathlib import Path
+
+    import pytesseract
+
+    from fixtures import _generate
+
+    path = Path(_generate.__file__).parent / "text" / "reference.png"
+    extracted = set(pytesseract.image_to_string(Image.open(path)).lower().split())
+    expected = {w for line in _generate.TEXT_LINES for w in line.lower().split()}
+    assert expected <= extracted, f"OCR missed words: {expected - extracted}"

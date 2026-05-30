@@ -2,9 +2,9 @@
 
 ``grade()`` is the standalone entry point. For each page in the ``page_map`` it
 loads the candidate and reference screenshots, computes the deterministic
-``structure`` (SSIM) and ``color`` (palette + CIEDE2000) terms, aggregates the
-per-page scores into the flat reward payload, and writes ``reward.json`` plus a
-per-page ``reward-details.json``.
+``structure`` (SSIM), ``color`` (palette + CIEDE2000) and ``content`` (OCR
+word-multiset F1) terms, aggregates the per-page scores into the flat reward
+payload, and writes ``reward.json`` plus a per-page ``reward-details.json``.
 
 This is the image-first slice (issue 01): inputs are pre-rendered PNG
 screenshots, so a page's candidate "file" is its candidate screenshot. Live HTML
@@ -67,6 +67,7 @@ def grade(candidate_dir, reference_dir, page_map, out_dir):
         dims = {
             "structure": metrics.structure(candidate_img, reference_img),
             "color": metrics.color(candidate_img, reference_img),
+            "content": metrics.content(candidate_img, reference_img),
         }
         page_scores[page] = dims
         details[page] = {"present": True, **dims}

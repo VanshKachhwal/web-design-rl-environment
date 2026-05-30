@@ -18,7 +18,7 @@ grader, which owns I/O.
 
 # Dimensions scored in this issue. Adding a later term means appending here and
 # producing it per page; the aggregation math is unchanged.
-DIMENSIONS = ("structure", "color")
+DIMENSIONS = ("structure", "color", "content")
 
 
 def aggregate(page_scores: dict[str, dict[str, float] | None]) -> dict[str, float]:

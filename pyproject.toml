@@ -16,7 +16,7 @@ dependencies = [
 [project.optional-dependencies]
 # Heavy/visual deps kept optional so the core package imports cheaply.
 render = ["playwright>=1.49"]                 # headless-browser rendering -> screenshots/video
-grade = ["scikit-image>=0.24", "imagehash>=4.3"]  # perceptual / structural similarity metrics
+grade = ["scikit-image>=0.24", "imagehash>=4.3", "pytesseract>=0.3"]  # perceptual / structural metrics + OCR (content term)
 modal = ["modal>=0.66"]                       # cloud fan-out for generation/rendering/eval
 dev = ["pytest>=9", "pytest-asyncio>=1"]
 

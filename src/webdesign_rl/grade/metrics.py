@@ -2,11 +2,15 @@
 
 Each metric takes a candidate and reference image and returns a float in [0, 1],
 where 1.0 means a perfect match. Issue 01 implemented ``structure`` (SSIM); issue
-02 adds ``color`` (palette + CIEDE2000). ``content`` and ``design_judge`` arrive
-in later issues.
+02 adds ``color`` (palette + CIEDE2000); issue 03 adds ``content`` (Tesseract OCR
+word-multiset F1). ``design_judge`` arrives in a later issue.
 """
 
+import re
+from collections import Counter
+
 import numpy as np
+import pytesseract
 from PIL import Image
 from scipy.cluster.vq import kmeans2
 from skimage.color import deltaE_ciede2000, rgb2lab
@@ -105,3 +109,59 @@ def color(candidate_img: Image.Image, reference_img: Image.Image) -> float:
 
     mean_delta = float(np.average(nearest, weights=cand_w))
     return max(0.0, 1.0 - mean_delta / 100.0)
+
+
+# Token = a run of word characters (letters/digits/underscore). Splitting on the
+# complement strips punctuation and whitespace, so "Get-Started!" and
+# "get started" tokenize to the same words.
+_WORD = re.compile(r"\w+")
+
+
+def _words(img: Image.Image) -> Counter:
+    """OCR ``img`` with Tesseract and return its normalized word multiset.
+
+    Normalization: lowercase, then extract maximal word-character runs — this
+    folds whitespace and drops punctuation, so the score is about *which words*
+    are present, not spacing or stray symbols. Returned as a ``Counter`` so the
+    F1 is over the word *multiset* (repeated words count).
+    """
+    text = pytesseract.image_to_string(img)
+    return Counter(_WORD.findall(text.lower()))
+
+
+def content(candidate_img: Image.Image, reference_img: Image.Image) -> float:
+    """Visible-text fidelity via OCR word-multiset F1, in [0, 1].
+
+    Both images are read with Tesseract OCR (no VLM involvement, so this stays an
+    independent anti-gaming anchor) and normalized to a word multiset. The score
+    is the F1 of the candidate words against the reference words:
+
+    - **precision** = matched words / candidate words — penalizes hallucinated
+      or extra text the reference does not contain.
+    - **recall** = matched words / reference words — penalizes missing text.
+    - **F1** = harmonic mean of the two; order-robust because it compares
+      multisets, not sequences.
+
+    The match count is the multiset intersection ``sum((cand & ref).values())``,
+    so a word repeated *n* times in the reference is only credited up to *n*
+    times in the candidate.
+
+    Edge cases: both empty (neither image has text) → 1.0 (a faithful blank
+    page); exactly one empty → 0.0 (all missing or all hallucinated).
+    """
+    cand = _words(candidate_img)
+    ref = _words(reference_img)
+
+    cand_total = sum(cand.values())
+    ref_total = sum(ref.values())
+    if cand_total == 0 and ref_total == 0:
+        return 1.0
+    if cand_total == 0 or ref_total == 0:
+        return 0.0
+
+    matched = sum((cand & ref).values())
+    precision = matched / cand_total
+    recall = matched / ref_total
+    if precision + recall == 0:
+        return 0.0
+    return 2 * precision * recall / (precision + recall)

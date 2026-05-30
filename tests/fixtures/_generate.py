@@ -16,14 +16,27 @@ Layout produced under tests/fixtures/::
     candidate_blurred/home.png      blurred home (lower structure)
     candidate_different/home.png    unrelated image (much lower structure)
     candidate_multipage/home.png    perfect home; about.png intentionally absent
+    text/reference.png              large dark text on white (legible to OCR)
+
+The ``text`` page is rendered with a real TrueType font at a large size so
+Tesseract OCR reads it reliably; the ``content`` OCR-legibility test reads it
+back and asserts the expected words come out (proving the fixture is not
+silently empty).
 """
 
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).parent
+
+# A real system TrueType font; large size keeps OCR reliable. Arial ships on
+# macOS at this path; document the choice so a different host can swap it.
+_FONT_PATH = "/System/Library/Fonts/Supplemental/Arial.ttf"
+# The exact words rendered into text/reference.png, in order. The legibility
+# test imports this so the fixture and its expectation can't drift apart.
+TEXT_LINES = ("Welcome Home", "Get Started Today")
 
 
 def reference_page() -> Image.Image:
@@ -41,6 +54,16 @@ def different_page() -> Image.Image:
     stripes = np.zeros((120, 96), dtype=np.uint8)
     stripes[:, ::3] = 255
     return Image.fromarray(stripes).convert("RGB")
+
+
+def text_page() -> Image.Image:
+    """Large dark text on a white background — legible to Tesseract OCR."""
+    font = ImageFont.truetype(_FONT_PATH, 40)
+    img = Image.new("RGB", (640, 360), (255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    for i, line in enumerate(TEXT_LINES):
+        draw.text((20, 20 + i * 60), line, fill=(0, 0, 0), font=font)
+    return img
 
 
 def build(root: Path = ROOT) -> None:
@@ -61,6 +84,9 @@ def build(root: Path = ROOT) -> None:
 
     # Multi-page candidate: home present and perfect, about.png intentionally absent.
     save(reference, "candidate_multipage", "home.png")
+
+    # A legible text page for the OCR-legibility test.
+    save(text_page(), "text", "reference.png")
 
 
 if __name__ == "__main__":

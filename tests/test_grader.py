@@ -24,14 +24,16 @@ def test_perfect_candidate_scores_all_dimensions_near_one(fixture_dirs, tmp_path
     reward = _load_reward(tmp_path)
     assert reward["structure"] > 0.99
     assert reward["color"] > 0.99
+    # A byte-identical candidate has identical OCR text, so content is ~1.0 too.
+    assert reward["content"] > 0.99
     assert reward["reward"] > 0.99
 
 
 def test_reward_json_has_expected_keys_and_ranges(fixture_dirs, tmp_path):
     grade(fixture_dirs["perfect"], fixture_dirs["reference"], HOME_ONLY, tmp_path)
     reward = _load_reward(tmp_path)
-    # Flat object: the scalar reward plus the structure and color dimensions.
-    assert set(reward.keys()) == {"reward", "structure", "color"}
+    # Flat object: the scalar reward plus the structure, color and content dims.
+    assert set(reward.keys()) == {"reward", "structure", "color", "content"}
     for value in reward.values():
         assert isinstance(value, float)
         assert 0.0 <= value <= 1.0
@@ -69,7 +71,9 @@ def test_reward_details_reports_per_page_and_missing(fixture_dirs, tmp_path):
     assert pages["home"]["present"] is True
     assert pages["home"]["structure"] > 0.99
     assert pages["home"]["color"] > 0.99
+    assert pages["home"]["content"] > 0.99
     assert pages["about"]["present"] is False
     # Every dimension is zeroed for a missing page, not just structure.
     assert pages["about"]["structure"] == 0.0
     assert pages["about"]["color"] == 0.0
+    assert pages["about"]["content"] == 0.0
