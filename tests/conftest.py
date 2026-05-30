@@ -31,3 +31,21 @@ def fixture_dirs():
         "different": FIXTURES / "candidate_different",
         "multipage": FIXTURES / "candidate_multipage",
     }
+
+
+@pytest.fixture(scope="session")
+def site_dirs():
+    """Directories for the live-render grader path (issue 05).
+
+    Candidates are directories of HTML/CSS the grader renders itself; the
+    reference is the committed PNG ``site_render_reference/home.png`` rendered
+    once from ``site_reference/`` by ``_generate.build_site_reference_png``.
+    """
+    if not (FIXTURES / "site_render_reference" / "home.png").exists():
+        _generate.build_site_reference_png()
+    return {
+        "reference": FIXTURES / "site_render_reference",
+        "perfect": FIXTURES / "site_perfect",
+        "wrongcolor": FIXTURES / "site_wrongcolor",
+        "missing": FIXTURES / "site_missing",
+    }

@@ -11,11 +11,13 @@ dependencies = [
     "pillow>=11",          # screenshot loading + image perturbations
     "numpy>=2",            # metric math
     "python-dotenv>=1",    # load ANTHROPIC_API_KEY from .env
+    "playwright>=1.49",    # live HTML->screenshot render in the grader (issue 05)
 ]
 
 [project.optional-dependencies]
-# Heavy/visual deps kept optional so the core package imports cheaply.
-render = ["playwright>=1.49"]                 # headless-browser rendering -> screenshots/video
+# As of issue 05 ``playwright`` is a CORE dependency (the grader renders the
+# candidate HTML itself), so it moved out of this extra. The Chromium browser
+# binary must still be installed once via ``playwright install chromium``.
 grade = ["scikit-image>=0.24", "imagehash>=4.3", "pytesseract>=0.3"]  # perceptual / structural metrics + OCR (content term)
 modal = ["modal>=0.66"]                       # cloud fan-out for generation/rendering/eval
 dev = ["pytest>=9", "pytest-asyncio>=1"]

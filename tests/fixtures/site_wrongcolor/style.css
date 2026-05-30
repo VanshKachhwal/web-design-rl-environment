@@ -1,0 +1,49 @@
+/* Degraded variant of the reference: SAME layout and text, but a wrong color
+   palette (greens/teals instead of the reference blue/orange). Drops the color
+   term while leaving structure and content comparatively intact. */
+@font-face {
+  font-family: "BundledSans";
+  src: local("Arial"), local("Helvetica"), local("DejaVu Sans");
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "BundledSans", Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  width: 1280px;
+}
+
+.header {
+  background: #2e7d32;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.header h1 { font-size: 48px; }
+
+.content {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.card {
+  flex: 1;
+  padding: 32px;
+  border: 4px solid #2e7d32;
+}
+
+.card.left { background: #e8f5e9; }
+.card.right { background: #e0f2f1; }
+
+.card h2 { font-size: 32px; color: #2e7d32; margin-bottom: 16px; }
+.card p { font-size: 20px; }
+
+.footer {
+  background: #004d40;
+  color: #ffffff;
+  padding: 32px;
+  font-size: 24px;
+}

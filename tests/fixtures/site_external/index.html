@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>External-Reference Site</title>
+<!-- References a non-routable external host (TEST-NET-1, 192.0.2.0/24, reserved
+     by RFC 5737 and guaranteed unroutable). If render AWAITED this it would
+     stall for the full connect timeout; offline render must ABORT it instead so
+     the page renders promptly. -->
+<link rel="stylesheet" href="http://192.0.2.1/never.css">
+<script src="http://192.0.2.1/never.js"></script>
+</head>
+<body>
+<h1>Offline OK</h1>
+</body>
+</html>

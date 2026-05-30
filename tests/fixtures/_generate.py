@@ -17,11 +17,26 @@ Layout produced under tests/fixtures/::
     candidate_different/home.png    unrelated image (much lower structure)
     candidate_multipage/home.png    perfect home; about.png intentionally absent
     text/reference.png              large dark text on white (legible to OCR)
+    site_render_reference/home.png  the live-render grader's reference screenshot,
+                                    rendered once from site_reference/ (issue 05)
 
 The ``text`` page is rendered with a real TrueType font at a large size so
 Tesseract OCR reads it reliably; the ``content`` OCR-legibility test reads it
 back and asserts the expected words come out (proving the fixture is not
 silently empty).
+
+The live-render grader path (issue 05) also uses committed *HTML* site fixtures
+that are not produced here (they are hand-authored static files committed under
+``tests/fixtures/``):
+
+    site_reference/    the hand-made reference site (HTML/CSS/logo.png)
+    site_perfect/      byte-copy of site_reference (the "perfect" candidate)
+    site_wrongcolor/   same layout/text, wrong palette (degraded candidate)
+    site_missing/      home present, about.html intentionally absent
+    site_external/     references an unroutable external host (offline test)
+
+Only the rendered ``site_render_reference/home.png`` is generated from them, by
+``build_site_reference_png`` below.
 """
 
 from pathlib import Path
@@ -87,6 +102,30 @@ def build(root: Path = ROOT) -> None:
 
     # A legible text page for the OCR-legibility test.
     save(text_page(), "text", "reference.png")
+
+    build_site_reference_png(root)
+
+
+def build_site_reference_png(root: Path = ROOT) -> None:
+    """Render the committed reference screenshot for the live-render grader path.
+
+    The grader (issue 05) renders the candidate *HTML* itself but compares it to
+    a committed reference *PNG* — "the screenshots shown to the agent". That PNG
+    is produced once, here, by rendering the hand-made ``site_reference/`` with
+    the same render module the grader uses, so reference and candidate are
+    apples-to-apples (same viewport, same offline determinism). Regenerate only
+    when the reference site intentionally changes.
+    """
+    # Imported here (not at module top) so the cheap PIL fixtures above don't
+    # pull in Playwright when only those are needed.
+    from webdesign_rl.render.browser import render_site
+
+    site = root / "site_reference"
+    page_map = {"home": {"expected_file": "index.html"}}
+    image = render_site(site, page_map, viewport=1280)["home"]
+    out = root / "site_render_reference"
+    out.mkdir(parents=True, exist_ok=True)
+    image.save(out / "home.png")
 
 
 if __name__ == "__main__":
