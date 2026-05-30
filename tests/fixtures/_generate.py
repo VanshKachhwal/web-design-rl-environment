@@ -128,6 +128,38 @@ def build_site_reference_png(root: Path = ROOT) -> None:
     image.save(out / "home.png")
 
 
+# The 5-page reference site (issue 06) and its committed rendered screenshots,
+# used by the multi-page aggregation check and the validation report.
+SITE5_PAGE_MAP = {
+    "home": {"screenshot": "home.png", "expected_file": "index.html"},
+    "about": {"screenshot": "about.png", "expected_file": "about.html"},
+    "services": {"screenshot": "services.png", "expected_file": "services.html"},
+    "pricing": {"screenshot": "pricing.png", "expected_file": "pricing.html"},
+    "contact": {"screenshot": "contact.png", "expected_file": "contact.html"},
+}
+
+
+def build_site5_reference_pngs(root: Path = ROOT) -> None:
+    """Render the committed reference screenshots for the 5-page site (issue 06).
+
+    The 5-page reference HTML/CSS is hand-authored under ``site5_reference/``;
+    this renders each page once with the grader's render module and saves the
+    PNGs under ``site5_render_reference/`` so the validation report and the
+    multi-page aggregation check compare against committed, apples-to-apples
+    reference images. Regenerate only when the 5-page reference intentionally
+    changes.
+    """
+    from webdesign_rl.render.browser import render_site
+
+    site = root / "site5_reference"
+    images = render_site(site, SITE5_PAGE_MAP, viewport=1280)
+    out = root / "site5_render_reference"
+    out.mkdir(parents=True, exist_ok=True)
+    for page, spec in SITE5_PAGE_MAP.items():
+        images[page].save(out / spec["screenshot"])
+
+
 if __name__ == "__main__":
     build()
+    build_site5_reference_pngs()
     print(f"Wrote fixtures under {ROOT}")

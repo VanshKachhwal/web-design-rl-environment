@@ -12,6 +12,8 @@ dependencies = [
     "numpy>=2",            # metric math
     "python-dotenv>=1",    # load ANTHROPIC_API_KEY from .env
     "playwright>=1.49",    # live HTML->screenshot render in the grader (issue 05)
+    "scipy>=1.13",         # CIEDE2000/k-means metrics + rank correlations (study, issue 06)
+    "matplotlib>=3.9",     # validation-report plots (issue 06; Agg backend)
 ]
 
 [project.optional-dependencies]

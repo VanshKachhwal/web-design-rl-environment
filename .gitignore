@@ -9,3 +9,6 @@ CLAUDE.md
 docs/
 CONTEXT.md
 .scratch/
+# Transient render scratch dir created by scripts/validate_grader.py (cleaned on
+# success); ignore so a mid-run state is never committed.
+reports/grader-validation/_work/

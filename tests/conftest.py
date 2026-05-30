@@ -33,6 +33,38 @@ def fixture_dirs():
     }
 
 
+PAGE5_MAP = {
+    "home": {"screenshot": "home.png", "expected_file": "index.html"},
+    "about": {"screenshot": "about.png", "expected_file": "about.html"},
+    "services": {"screenshot": "services.png", "expected_file": "services.html"},
+    "pricing": {"screenshot": "pricing.png", "expected_file": "pricing.html"},
+    "contact": {"screenshot": "contact.png", "expected_file": "contact.html"},
+}
+
+
+@pytest.fixture(scope="session")
+def site5(fixture5_reference_images):
+    """The committed 5-page reference site plus its rendered reference images.
+
+    ``dir`` is the hand-authored reference site; ``page_map`` is the 5-page map;
+    ``reference_images`` is ``{page: PIL.Image}`` rendered once from the site (so
+    the study's source-space variants compare apples-to-apples).
+    """
+    return {
+        "dir": FIXTURES / "site5_reference",
+        "page_map": PAGE5_MAP,
+        "reference_images": fixture5_reference_images,
+    }
+
+
+@pytest.fixture(scope="session")
+def fixture5_reference_images():
+    """Render the 5-page reference site once and cache the page images."""
+    from webdesign_rl.render.browser import render_site
+
+    return render_site(FIXTURES / "site5_reference", PAGE5_MAP)
+
+
 @pytest.fixture(scope="session")
 def site_dirs():
     """Directories for the live-render grader path (issue 05).

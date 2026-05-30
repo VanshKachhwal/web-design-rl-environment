@@ -1,0 +1,541 @@
+{
+  "judge": {
+    "used_real": true,
+    "note": "real Anthropic vision judge"
+  },
+  "severities": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "image_ladders": {
+    "color_drift": {
+      "axis": "color",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 0.9999675022351119,
+          "color": 0.994793473018793,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 0.9986902438134762
+        },
+        {
+          "structure": 0.9888026408152217,
+          "color": 0.9161444229295028,
+          "content": 1.0,
+          "design_judge": 0.9,
+          "reward": 0.9512367659361811
+        },
+        {
+          "structure": 0.9323061530854567,
+          "color": 0.8653462293066674,
+          "content": 1.0,
+          "design_judge": 0.8,
+          "reward": 0.8994130955980311
+        },
+        {
+          "structure": 0.8921624836755129,
+          "color": 0.8330938436197489,
+          "content": 1.0,
+          "design_judge": 0.75,
+          "reward": 0.8688140818238155
+        },
+        {
+          "structure": 0.8955313726230845,
+          "color": 0.8176311951863198,
+          "content": 1.0,
+          "design_judge": 0.75,
+          "reward": 0.8657906419523511
+        },
+        {
+          "structure": 0.8911511397591556,
+          "color": 0.8049796613651312,
+          "content": 1.0,
+          "design_judge": 0.725,
+          "reward": 0.8552827002810717
+        }
+      ]
+    },
+    "gaussian_blur": {
+      "axis": "structure",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 0.9507332613218491,
+          "color": 0.9800817286712834,
+          "content": 0.888888888888889,
+          "design_judge": 0.85,
+          "reward": 0.9174259697205054
+        },
+        {
+          "structure": 0.8870606474283036,
+          "color": 0.9732147875242134,
+          "content": 0.05555555555555555,
+          "design_judge": 0.75,
+          "reward": 0.6664577476270181
+        },
+        {
+          "structure": 0.8388369447349645,
+          "color": 0.970105117274643,
+          "content": 0.0,
+          "design_judge": 0.725,
+          "reward": 0.6334855155024018
+        },
+        {
+          "structure": 0.8078217854195215,
+          "color": 0.9685381548608053,
+          "content": 0.0,
+          "design_judge": 0.725,
+          "reward": 0.6253399850700817
+        },
+        {
+          "structure": 0.7887079318265581,
+          "color": 0.9648907266890012,
+          "content": 0.0,
+          "design_judge": 0.725,
+          "reward": 0.6196496646288898
+        }
+      ]
+    },
+    "spatial_shift": {
+      "axis": "structure",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 0.7404469671432011,
+          "color": 0.9880591711980239,
+          "content": 1.0,
+          "design_judge": 0.875,
+          "reward": 0.9008765345853063
+        },
+        {
+          "structure": 0.6787081481852222,
+          "color": 0.9996442088037025,
+          "content": 1.0,
+          "design_judge": 0.85,
+          "reward": 0.8820880892472311
+        },
+        {
+          "structure": 0.6488856592657587,
+          "color": 0.9859558262450234,
+          "content": 1.0,
+          "design_judge": 0.825,
+          "reward": 0.8649603713776955
+        },
+        {
+          "structure": 0.5938054132244696,
+          "color": 0.9997263445782482,
+          "content": 1.0,
+          "design_judge": 0.825,
+          "reward": 0.8546329394506794
+        },
+        {
+          "structure": 0.547597906216023,
+          "color": 0.999487997683016,
+          "content": 1.0,
+          "design_judge": 0.825,
+          "reward": 0.8430214759747597
+        }
+      ]
+    },
+    "region_occlusion": {
+      "axis": "structure",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 0.9905652024357863,
+          "color": 0.9805557617730898,
+          "content": 0.9130434782608696,
+          "design_judge": 0.8,
+          "reward": 0.9210411106174364
+        },
+        {
+          "structure": 0.967652791653488,
+          "color": 0.9755801242303852,
+          "content": 0.888888888888889,
+          "design_judge": 0.625,
+          "reward": 0.8642804511931905
+        },
+        {
+          "structure": 0.9227636482643187,
+          "color": 0.9468323621735784,
+          "content": 0.8181818181818181,
+          "design_judge": 0.6,
+          "reward": 0.8219444571549288
+        },
+        {
+          "structure": 0.8648403506553771,
+          "color": 0.9061613892221498,
+          "content": 0.5641025641025641,
+          "design_judge": 0.525,
+          "reward": 0.7150260759950228
+        },
+        {
+          "structure": 0.8047773819819776,
+          "color": 0.8541218963769553,
+          "content": 0.3125,
+          "design_judge": 0.475,
+          "reward": 0.6115998195897332
+        }
+      ]
+    },
+    "pixel_noise": {
+      "axis": "structure",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 0.5799983475701267,
+          "color": 0.9805666249174915,
+          "content": 1.0,
+          "design_judge": 0.875,
+          "reward": 0.8588912431219046
+        },
+        {
+          "structure": 0.3355530748845431,
+          "color": 0.9412645035936015,
+          "content": 0.2758620689655173,
+          "design_judge": 0.85,
+          "reward": 0.6006699118609155
+        },
+        {
+          "structure": 0.23404308628178241,
+          "color": 0.9044899316051468,
+          "content": 0.6666666666666665,
+          "design_judge": 0.775,
+          "reward": 0.645049921138399
+        },
+        {
+          "structure": 0.1829867037955498,
+          "color": 0.8623654852041037,
+          "content": 0.5641025641025641,
+          "design_judge": 0.775,
+          "reward": 0.5961136882755544
+        },
+        {
+          "structure": 0.15225644169075883,
+          "color": 0.8566735465292514,
+          "content": 0.2758620689655173,
+          "design_judge": 0.725,
+          "reward": 0.5024480142963819
+        }
+      ]
+    }
+  },
+  "source_ladders": {
+    "delete_text": {
+      "axis": "content",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 0.99898288404729,
+          "color": 0.9999846294949745,
+          "content": 1.0,
+          "design_judge": 0.9949999999999999,
+          "reward": 0.9984918783855662
+        },
+        {
+          "structure": 0.9977804485414563,
+          "color": 0.997567403602907,
+          "content": 0.9826086956521738,
+          "design_judge": 0.97,
+          "reward": 0.9869891369491344
+        },
+        {
+          "structure": 0.9960079971134477,
+          "color": 0.9971473362633251,
+          "content": 0.9560975609756097,
+          "design_judge": 0.95,
+          "reward": 0.9748132235880955
+        },
+        {
+          "structure": 0.9951191797848999,
+          "color": 0.9998839687393735,
+          "content": 0.9058823529411765,
+          "design_judge": 0.9349999999999999,
+          "reward": 0.9589713753663626
+        },
+        {
+          "structure": 0.9449378347951628,
+          "color": 0.9998643111537524,
+          "content": 0.8428571428571429,
+          "design_judge": 0.925,
+          "reward": 0.9281648222015144
+        },
+        {
+          "structure": 0.9362627451814894,
+          "color": 0.9998559648945111,
+          "content": 0.8,
+          "design_judge": 0.8949999999999999,
+          "reward": 0.9077796775190002
+        }
+      ]
+    },
+    "shift_palette": {
+      "axis": "color",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 0.9737063179716244,
+          "color": 0.9480728747459629,
+          "content": 1.0,
+          "design_judge": 0.825,
+          "reward": 0.9366947981793968
+        },
+        {
+          "structure": 0.9239608076558039,
+          "color": 0.8992516513554563,
+          "content": 1.0,
+          "design_judge": 0.72,
+          "reward": 0.885803114752815
+        },
+        {
+          "structure": 0.8585428122531198,
+          "color": 0.8407149966355074,
+          "content": 1.0,
+          "design_judge": 0.68,
+          "reward": 0.8448144522221568
+        },
+        {
+          "structure": 0.7725104590422032,
+          "color": 0.7854153837979423,
+          "content": 0.7146031746031746,
+          "design_judge": 0.675,
+          "reward": 0.73688225436083
+        },
+        {
+          "structure": 0.6705874841897745,
+          "color": 0.7316819567460807,
+          "content": 0.0,
+          "design_judge": 0.125,
+          "reward": 0.3818173602339638
+        }
+      ]
+    },
+    "remove_element": {
+      "axis": "structure",
+      "severities": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8,
+        1.0
+      ],
+      "rows": [
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 1.0,
+          "color": 1.0,
+          "content": 1.0,
+          "design_judge": 1.0,
+          "reward": 1.0
+        },
+        {
+          "structure": 0.9726569009472101,
+          "color": 0.9996779263890098,
+          "content": 0.9826086956521738,
+          "design_judge": 0.9400000000000001,
+          "reward": 0.9737358807470985
+        },
+        {
+          "structure": 0.9726569009472101,
+          "color": 0.9996779263890098,
+          "content": 0.9826086956521738,
+          "design_judge": 0.9400000000000001,
+          "reward": 0.9737358807470985
+        },
+        {
+          "structure": 0.94799006262211,
+          "color": 0.9998155746448074,
+          "content": 0.9222222222222222,
+          "design_judge": 0.9199999999999999,
+          "reward": 0.9475069648722849
+        },
+        {
+          "structure": 0.94799006262211,
+          "color": 0.9998155746448074,
+          "content": 0.9222222222222222,
+          "design_judge": 0.9199999999999999,
+          "reward": 0.9475069648722849
+        }
+      ]
+    }
+  },
+  "degenerates": {
+    "blank": {
+      "structure": 0.7022448156593264,
+      "color": 0.9999716391908967,
+      "content": 0.0,
+      "design_judge": 0.0,
+      "reward": 0.4255541137125558
+    },
+    "solid_gray": {
+      "structure": 0.6691805633245644,
+      "color": 0.7034619577642851,
+      "content": 0.0,
+      "design_judge": 0.0,
+      "reward": 0.3431606302722124
+    },
+    "lorem_ipsum": {
+      "structure": 0.6359238129007945,
+      "color": 0.9953975627735611,
+      "content": 0.0,
+      "design_judge": 0.1,
+      "reward": 0.4328303439185889
+    }
+  },
+  "overall_ladder": [
+    {
+      "structure": 0.99898288404729,
+      "color": 0.9999846294949745,
+      "content": 1.0,
+      "design_judge": 0.9949999999999999,
+      "reward": 0.9984918783855662
+    },
+    {
+      "structure": 0.9715556942791842,
+      "color": 0.9470094467791796,
+      "content": 0.9826086956521738,
+      "design_judge": 0.8,
+      "reward": 0.9252934591776345
+    },
+    {
+      "structure": 0.9014562073980628,
+      "color": 0.8994098026059001,
+      "content": 0.9435897435897436,
+      "design_judge": 0.6599999999999999,
+      "reward": 0.8511139383984266
+    },
+    {
+      "structure": 0.8405767917878618,
+      "color": 0.8407875288589244,
+      "content": 0.8666666666666666,
+      "design_judge": 0.6100000000000001,
+      "reward": 0.7895077468283633
+    },
+    {
+      "structure": 0.7539065489375332,
+      "color": 0.7860092400478582,
+      "content": 0.57998778998779,
+      "design_judge": 0.5700000000000001,
+      "reward": 0.6724758947432953
+    },
+    {
+      "structure": 0.6706073505998136,
+      "color": 0.731262054244868,
+      "content": 0.0,
+      "design_judge": 0.10500000000000001,
+      "reward": 0.3767173512111704
+    }
+  ],
+  "multipage": {
+    "oracle": {
+      "structure": 1.0,
+      "color": 1.0,
+      "content": 1.0,
+      "design_judge": 1.0,
+      "reward": 1.0
+    },
+    "degraded": {
+      "structure": 0.9362627451814894,
+      "color": 0.9998559648945111,
+      "content": 0.8,
+      "design_judge": 0.8949999999999999,
+      "reward": 0.9077796775190002
+    }
+  }
+}

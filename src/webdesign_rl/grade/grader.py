@@ -40,6 +40,32 @@ from .judge import judge_rubric
 _VIEWPORT = 1280
 
 
+def score_page(candidate_img, reference_img, judge_client) -> dict:
+    """Score one candidate screenshot against one reference screenshot.
+
+    The pure per-image core of grading: it computes the deterministic
+    ``structure`` (SSIM), ``color`` (palette + CIEDE2000) and ``content`` (OCR
+    F1) terms plus the ``design_judge`` term from the injected judge client, and
+    returns the per-page breakdown::
+
+        {"structure": float, "color": float, "content": float,
+         "design_judge": float, "design_judge_sub_scores": {field: float, ...}}
+
+    This is deliberately independent of the file-render/IO path: ``grade()``
+    obtains the candidate image by rendering HTML, while the validation study
+    feeds it an already-degraded image directly. Both share *this* logic so the
+    numbers are identical regardless of where the image came from.
+    """
+    rubric = judge_rubric(candidate_img, reference_img, judge_client)
+    return {
+        "structure": metrics.structure(candidate_img, reference_img),
+        "color": metrics.color(candidate_img, reference_img),
+        "content": metrics.content(candidate_img, reference_img),
+        "design_judge": rubric["design_judge"],
+        "design_judge_sub_scores": rubric["sub_scores"],
+    }
+
+
 def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
     """Grade a candidate HTML site against the reference, writing the reward files.
 
@@ -83,20 +109,15 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
             }
             continue
 
-        rubric = judge_rubric(candidate_img, reference_img, judge_client)
-        dims = {
-            "structure": metrics.structure(candidate_img, reference_img),
-            "color": metrics.color(candidate_img, reference_img),
-            "content": metrics.content(candidate_img, reference_img),
-            "design_judge": rubric["design_judge"],
-        }
-        page_scores[page] = dims
+        scored = score_page(candidate_img, reference_img, judge_client)
+        sub_scores = scored.pop("design_judge_sub_scores")
+        page_scores[page] = scored
         # Log the judge's per-criterion sub-scores alongside the dims so
         # reward-details.json shows exactly how the design_judge term was formed.
         details[page] = {
             "present": True,
-            **dims,
-            "design_judge_sub_scores": rubric["sub_scores"],
+            **scored,
+            "design_judge_sub_scores": sub_scores,
         }
 
     reward = aggregate(page_scores)

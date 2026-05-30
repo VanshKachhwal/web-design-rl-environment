@@ -1,0 +1,57 @@
+/* A locally-bundled @font-face served over HTTP (relative path). Falls back to
+   a system sans-serif so the fixture is legible even where the font file is the
+   default system font. */
+@font-face {
+  font-family: "BundledSans";
+  src: local("Arial"), local("Helvetica"), local("DejaVu Sans");
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "BundledSans", Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  width: 1280px;
+}
+
+.header {
+  background: #283593;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.header h1 { font-size: 48px; }
+
+.content {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.card {
+  flex: 1;
+  padding: 32px;
+  border: 4px solid #283593;
+}
+
+.card.left { background: #e8eaf6; }
+.card.right { background: #fff3e0; }
+
+.card h2 { font-size: 32px; color: #283593; margin-bottom: 16px; }
+.card p { font-size: 20px; }
+
+.footer {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 32px;
+  font-size: 24px;
+}
+
+.nav {
+  background: #e8eaf6;
+  padding: 16px 40px;
+  font-size: 18px;
+  color: #283593;
+}
+.nav a { color: #283593; margin-right: 24px; text-decoration: none; }
