@@ -21,18 +21,26 @@ grader, which owns I/O.
 DIMENSIONS = ("structure", "color", "content", "design_judge")
 
 
-def aggregate(page_scores: dict[str, dict[str, float] | None]) -> dict[str, float]:
+def aggregate(
+    page_scores: dict[str, dict[str, float] | None],
+    dimensions: tuple[str, ...] = DIMENSIONS,
+) -> dict[str, float]:
     """Combine ``{page: {dimension: score} | None}`` into the flat reward payload.
 
     A page mapped to ``None`` represents a required page whose candidate is
     missing; every dimension scores 0 for it. The returned payload has one float
     per dimension plus the scalar ``reward``, each in [0, 1].
+
+    ``dimensions`` selects which terms form the reward; it defaults to the full
+    four-term blend. The deterministic-only grading mode passes the three
+    deterministic dims (dropping ``design_judge``) so the reward is the mean of
+    just those terms — the math is otherwise identical.
     """
     pages = list(page_scores.values())
 
     # Per-dimension mean across pages (missing page => 0 for that dimension).
     dims: dict[str, float] = {}
-    for dim in DIMENSIONS:
+    for dim in dimensions:
         per_page = [0.0 if p is None else p.get(dim, 0.0) for p in pages]
         dims[dim] = sum(per_page) / len(per_page) if per_page else 0.0
 
@@ -42,7 +50,7 @@ def aggregate(page_scores: dict[str, dict[str, float] | None]) -> dict[str, floa
         if p is None:
             page_means.append(0.0)
         else:
-            terms = [p.get(dim, 0.0) for dim in DIMENSIONS]
+            terms = [p.get(dim, 0.0) for dim in dimensions]
             page_means.append(sum(terms) / len(terms) if terms else 0.0)
     reward = sum(page_means) / len(page_means) if page_means else 0.0
 

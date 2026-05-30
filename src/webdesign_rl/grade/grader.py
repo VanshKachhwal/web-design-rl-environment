@@ -51,19 +51,25 @@ def score_page(candidate_img, reference_img, judge_client) -> dict:
         {"structure": float, "color": float, "content": float,
          "design_judge": float, "design_judge_sub_scores": {field: float, ...}}
 
+    When ``judge_client`` is ``None`` the ``design_judge`` term is omitted
+    entirely (no VLM call) — the deterministic-only grading mode, which needs no
+    API key or network egress. The deterministic terms are unaffected.
+
     This is deliberately independent of the file-render/IO path: ``grade()``
     obtains the candidate image by rendering HTML, while the validation study
     feeds it an already-degraded image directly. Both share *this* logic so the
     numbers are identical regardless of where the image came from.
     """
-    rubric = judge_rubric(candidate_img, reference_img, judge_client)
-    return {
+    scored = {
         "structure": metrics.structure(candidate_img, reference_img),
         "color": metrics.color(candidate_img, reference_img),
         "content": metrics.content(candidate_img, reference_img),
-        "design_judge": rubric["design_judge"],
-        "design_judge_sub_scores": rubric["sub_scores"],
     }
+    if judge_client is not None:
+        rubric = judge_rubric(candidate_img, reference_img, judge_client)
+        scored["design_judge"] = rubric["design_judge"]
+        scored["design_judge_sub_scores"] = rubric["sub_scores"]
+    return scored
 
 
 def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
@@ -79,6 +85,9 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
             for the ``design_judge`` term. Inject a ``StubJudgeClient`` for
             deterministic/offline grading; an ``AnthropicJudgeClient`` for live
             VLM scoring. Required and explicit so no live API call is implicit.
+            Pass ``None`` for **deterministic-only** grading: the ``design_judge``
+            term is dropped and the reward is the mean of the three deterministic
+            terms — no VLM call, API key, or network egress.
 
     Returns:
         The flat reward payload (also written to ``reward.json``).
@@ -86,6 +95,14 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
     candidate_dir = Path(candidate_dir)
     reference_dir = Path(reference_dir)
     out_dir = Path(out_dir)
+
+    # Deterministic-only mode (judge_client=None) drops the design_judge dim, so
+    # the missing-page zeros and the aggregation span exactly the scored terms.
+    dimensions = (
+        DIMENSIONS
+        if judge_client is not None
+        else tuple(d for d in DIMENSIONS if d != "design_judge")
+    )
 
     # Render every candidate page in one browser session. A page whose HTML file
     # is absent is simply omitted from the result (handled as a missing page
@@ -100,27 +117,27 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
 
         if candidate_img is None:
             # A required page whose candidate HTML is missing scores 0 across
-            # every dimension and drags the mean. The zeros are derived from
-            # DIMENSIONS so a newly added term can't be forgotten here.
+            # every scored dimension and drags the mean. The zeros are derived
+            # from the active dimensions so a newly added term can't be forgotten.
             page_scores[page] = None
             details[page] = {
                 "present": False,
-                **{dim: 0.0 for dim in DIMENSIONS},
+                **{dim: 0.0 for dim in dimensions},
             }
             continue
 
         scored = score_page(candidate_img, reference_img, judge_client)
-        sub_scores = scored.pop("design_judge_sub_scores")
+        # The judge sub-scores are present only when a judge ran (omitted in
+        # deterministic-only mode); pop so they don't enter the aggregated dims.
+        sub_scores = scored.pop("design_judge_sub_scores", None)
         page_scores[page] = scored
         # Log the judge's per-criterion sub-scores alongside the dims so
         # reward-details.json shows exactly how the design_judge term was formed.
-        details[page] = {
-            "present": True,
-            **scored,
-            "design_judge_sub_scores": sub_scores,
-        }
+        details[page] = {"present": True, **scored}
+        if sub_scores is not None:
+            details[page]["design_judge_sub_scores"] = sub_scores
 
-    reward = aggregate(page_scores)
+    reward = aggregate(page_scores, dimensions)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "reward.json").write_text(json.dumps(reward, indent=2))
