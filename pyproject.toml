@@ -1,0 +1,35 @@
+[project]
+name = "webdesign-rl-environment"
+version = "0.1.0"
+description = "Scalable pipeline generating web-design-replication RL tasks (Harbor) with continuous design grading."
+requires-python = ">=3.12"
+
+# Dependencies are a starting set and will firm up as the grader/generator land.
+dependencies = [
+    "anthropic>=0.75.0",   # site generation + LLM-as-judge grading
+    "jinja2>=3.1",         # instruction.md / task scaffolding templates
+    "pillow>=11",          # screenshot loading + image perturbations
+    "numpy>=2",            # metric math
+    "python-dotenv>=1",    # load ANTHROPIC_API_KEY from .env
+]
+
+[project.optional-dependencies]
+# Heavy/visual deps kept optional so the core package imports cheaply.
+render = ["playwright>=1.49"]                 # headless-browser rendering -> screenshots/video
+grade = ["scikit-image>=0.24", "imagehash>=4.3"]  # perceptual / structural similarity metrics
+modal = ["modal>=0.66"]                       # cloud fan-out for generation/rendering/eval
+dev = ["pytest>=9", "pytest-asyncio>=1"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/webdesign_rl"]
+
+[tool.pytest.ini_options]
+# src/ layout: make the package importable without an editable install.
+# "tests" lets conftest import the committed-fixture generator.
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+asyncio_mode = "auto"
