@@ -12,8 +12,10 @@ Layout produced (see ``docs/harbor/links.md`` → Task Structure for the mechani
     ├── instruction.md        # screenshot -> output-filename table + viewport
     ├── task.toml             # separate [verifier.environment], pinned cpus/memory,
     │                         #   allow_internet + ANTHROPIC_API_KEY on the verifier
-    ├── environment/
-    │   └── Dockerfile        # the *agent* env (minimal; agent writes HTML here)
+    ├── environment/          # === the *agent* env build context ===
+    │   ├── Dockerfile        # minimal; agent writes HTML here, COPYs reference/ in
+    │   └── reference/        # rendered reference PNGs the agent replicates
+    │                         #   (one per page; COPYed to /app/reference/)
     ├── solution/
     │   └── solve.sh          # the oracle: writes the reference site into the
     │                         #   agent's publish dir so the grader scores ~1.0
@@ -45,6 +47,7 @@ import json
 import shutil
 from pathlib import Path
 
+from ..render.browser import render_site
 from . import oracle, templates
 
 # Repo root that holds ``pyproject.toml`` and ``src/webdesign_rl`` — derived from
@@ -116,6 +119,17 @@ def build_task(
         templates.task_toml(task_name=task_name, cpus=cpus, memory_mb=memory_mb)
     )
     (out / "environment" / "Dockerfile").write_text(templates.agent_dockerfile())
+
+    # Render one reference screenshot per page into the agent-env build context so
+    # the agent has something to replicate (the Dockerfile COPYs them into the
+    # container at templates.AGENT_REFERENCE_DIR; instruction.md points there).
+    # Host-rendered for now — making this font-consistent with grading is issue 09.
+    _render_agent_screenshots(
+        reference_site_dir,
+        page_map,
+        out / "environment" / templates.REFERENCE_DIRNAME,
+        viewport,
+    )
     (tests_dir / "Dockerfile").write_text(templates.verifier_dockerfile())
     (tests_dir / "test.sh").write_text(templates.test_sh())
 
@@ -123,6 +137,33 @@ def build_task(
     oracle.write_solution(out / "solution", reference_site_dir, page_map)
 
     return out
+
+
+def _render_agent_screenshots(
+    reference_site_dir: Path, page_map: dict, dest: Path, viewport: int
+) -> None:
+    """Render the reference site to one PNG per page under ``dest``.
+
+    These are the screenshots the *agent* replicates — distinct from grading,
+    which re-renders the reference HTML in-container. ``dest`` lives in the
+    agent-env build context, and each PNG is named by the page's ``screenshot``
+    field so ``instruction.md``'s table paths line up.
+    """
+    if dest.exists():
+        shutil.rmtree(dest)
+    dest.mkdir(parents=True)
+
+    images = render_site(reference_site_dir, page_map, viewport=viewport)
+    for page_name, spec in page_map.items():
+        image = images.get(page_name)
+        if image is None:
+            # render_site omits a page whose expected_file is absent; such a
+            # page_map is malformed for emit (the agent would have no reference).
+            raise ValueError(
+                f"reference site has no renderable page for '{page_name}' "
+                f"(expected_file={spec.get('expected_file')!r})"
+            )
+        image.save(dest / spec["screenshot"])
 
 
 def _copy_tree(src: Path, dest: Path) -> None:

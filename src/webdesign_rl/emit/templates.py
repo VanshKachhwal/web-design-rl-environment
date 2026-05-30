@@ -14,16 +14,26 @@ Chromium binary + Tesseract + a bundled font set), and pinned resources in
 # verifier entrypoint reference this single path.
 ARTIFACTS_DIR = "/logs/artifacts"
 
+# The reference screenshots the agent replicates. ``build_task`` renders one PNG
+# per page into ``environment/<REFERENCE_DIRNAME>/`` (the agent-env build
+# context); the agent Dockerfile COPYs that dir to ``AGENT_REFERENCE_DIR`` inside
+# the container, and ``instruction.md`` points the agent at those paths.
+REFERENCE_DIRNAME = "reference"
+AGENT_REFERENCE_DIR = f"/app/{REFERENCE_DIRNAME}"
+
 
 def instruction_md(page_map: dict, viewport: int) -> str:
     """The agent-facing instruction: screenshot -> output-file table + viewport.
 
     Screenshots-only: the agent is told to replicate each reference screenshot in
-    HTML/CSS and never sees the reference source. It writes its files into the
-    publish directory so the (hidden) grader can render and score them.
+    HTML/CSS and never sees the reference source. The screenshots themselves are
+    provided as PNG files under ``AGENT_REFERENCE_DIR`` (placed there by
+    ``build_task`` + the agent Dockerfile); the table points at those paths. The
+    agent writes its files into the publish directory so the (hidden) grader can
+    render and score them.
     """
     rows = "\n".join(
-        f"| `{spec['screenshot']}` | `{spec['expected_file']}` |"
+        f"| `{AGENT_REFERENCE_DIR}/{spec['screenshot']}` | `{spec['expected_file']}` |"
         for spec in page_map.values()
     )
     return f"""\
@@ -33,8 +43,10 @@ You are given reference **screenshots** of a {len(page_map)}-page website. Recre
 each page as faithfully as possible using **plain HTML and CSS**, matching the
 layout, colors, typography, and text content you see in each screenshot.
 
-You only have the screenshots — there is no reference source to copy. Your work is
-graded on how closely your *rendered* pages match the reference screenshots.
+You only have the screenshots — there is no reference source to copy. The reference
+screenshots are PNG files in **`{AGENT_REFERENCE_DIR}/`**; open them to see what to
+build. Your work is graded on how closely your *rendered* pages match these
+reference screenshots.
 
 ## Rendering
 
@@ -108,16 +120,23 @@ ANTHROPIC_API_KEY = "${{ANTHROPIC_API_KEY}}"
 def agent_dockerfile() -> str:
     """The agent environment image: minimal, with a writable workspace.
 
-    Plain Dockerfile (Modal-portable). The agent only needs a place to author
-    files; rendering/grading happens in the separate verifier image.
+    Plain Dockerfile (Modal-portable). The agent authors files here and gets the
+    reference screenshots to replicate baked in at ``AGENT_REFERENCE_DIR``;
+    rendering/grading happens in the separate verifier image. ``environment/`` is
+    the build context, so ``COPY {REFERENCE_DIRNAME}`` picks up the PNGs that
+    ``build_task`` rendered into ``environment/{REFERENCE_DIRNAME}/``.
     """
-    return """\
+    return f"""\
 FROM ubuntu:24.04
 
 # A working directory for the agent to author its HTML/CSS in. The agent
 # publishes its finished site to /logs/artifacts/ (see instruction.md).
 WORKDIR /app
 RUN mkdir -p /logs/artifacts
+
+# The reference screenshots to replicate (one PNG per page), rendered at emit
+# time into the agent-env build context. instruction.md points the agent here.
+COPY {REFERENCE_DIRNAME} {AGENT_REFERENCE_DIR}
 """
 
 

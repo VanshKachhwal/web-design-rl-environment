@@ -107,6 +107,32 @@ def test_instruction_lists_screenshot_to_output_filename(task_dir):
         assert spec["expected_file"] in text
 
 
+def test_agent_env_contains_reference_screenshots(task_dir):
+    # The whole point of issue 08: the agent must actually be given the reference
+    # screenshots. One PNG per page is rendered into the agent-env build context.
+    ref_dir = task_dir / "environment" / "reference"
+    for spec in PAGE_MAP.values():
+        png = ref_dir / spec["screenshot"]
+        assert png.is_file()
+        assert png.read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"  # real PNG, not empty
+
+
+def test_agent_dockerfile_copies_reference_screenshots(task_dir):
+    # The agent container must actually receive the screenshots: environment/ is
+    # the build context, so the Dockerfile COPYs reference/ into /app/reference.
+    df = (task_dir / "environment" / "Dockerfile").read_text()
+    assert "COPY reference /app/reference" in df
+
+
+def test_instruction_points_agent_at_screenshot_paths(task_dir):
+    # instruction.md must reference the in-container paths the agent can open, not
+    # just bare filenames.
+    text = (task_dir / "instruction.md").read_text()
+    assert "/app/reference" in text
+    for spec in PAGE_MAP.values():
+        assert f"/app/reference/{spec['screenshot']}" in text
+
+
 def test_instruction_states_render_viewport(task_dir):
     # The agent must know the fixed capture width to lay out its design.
     assert "1280px" in (task_dir / "instruction.md").read_text()
