@@ -37,6 +37,16 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from . import taxonomy
+from ..render.browser import render_site
+
+# Stage-5 render-validity bounds (design decision #7 substance height bound +
+# the "renders clean / deterministic / not blank / no catastrophic layout"
+# checks). The fixed desktop capture width.
+VIEWPORT = 1280
+_MIN_HEIGHT = 600
+_MAX_HEIGHT = 12000
+# A page is "blank" if almost none of its pixels differ from the background.
+_MIN_INK_FRACTION = 0.005
 
 VARIABLES_CSS = "variables.css"
 COMPONENTS_CSS = "components.css"
@@ -531,3 +541,115 @@ def _check_static_only(site_dir, spec):
                                       re.DOTALL | re.IGNORECASE):
             scan_css(path.name, style_block)
     return diagnostics
+
+
+# --- Stage 5: render validity (uses the live render module) ----------------
+
+
+def run_stage5_gate(site_dir, page_map, *, render=render_site) -> GateResult:
+    """Render every page and check it is a valid, well-posed picture.
+
+    Reuses the already-built render module (``render`` defaults to
+    :func:`webdesign_rl.render.browser.render_site`; injectable so tests can
+    drive the gate's logic with canned images instead of launching Chromium).
+
+    Each page must:
+
+    - **render clean** at 1280px (be present in the render output);
+    - render **deterministically** — render twice, identical pixels;
+    - be **not blank** — content actually fills the viewport;
+    - have **no catastrophic layout** — no horizontal overflow (rendered width
+      <= viewport) and no zero-height;
+    - clear the **substance height bound** — full-page height in [600, 12000] px.
+
+    Returns a :class:`GateResult` whose diagnostics append to the same
+    ``{check, page, message}`` shape as the stage-4 gate, keyed by the page's
+    ``expected_file`` so per-page repair and site-wide drop can group by page.
+    """
+    site_dir = Path(site_dir)
+    diagnostics = []
+
+    first = render(site_dir, page_map, viewport=VIEWPORT)
+    second = render(site_dir, page_map, viewport=VIEWPORT)
+
+    for page_name, entry in page_map.items():
+        html_name = entry.get("expected_file", f"{page_name}.html")
+        image = first.get(page_name)
+        if image is None:
+            diagnostics.append(_diag(
+                "render_clean", html_name,
+                f"{html_name}: did not render at {VIEWPORT}px (no screenshot "
+                "produced); the page must render clean",
+            ))
+            continue
+
+        width, height = image.size
+
+        # Catastrophic layout: horizontal overflow / zero-height.
+        if width > VIEWPORT:
+            diagnostics.append(_diag(
+                "catastrophic_layout", html_name,
+                f"{html_name}: rendered width {width}px exceeds the {VIEWPORT}px "
+                "viewport (horizontal overflow)",
+            ))
+        if height <= 0:
+            diagnostics.append(_diag(
+                "catastrophic_layout", html_name,
+                f"{html_name}: rendered with zero height; the page has no laid-out "
+                "content",
+            ))
+
+        # Substance height bound (deferred from stage 4).
+        if 0 < height < _MIN_HEIGHT:
+            diagnostics.append(_diag(
+                "substance_height", html_name,
+                f"{html_name}: rendered height {height}px is below the "
+                f"{_MIN_HEIGHT}px substance floor; the page is too short to be a "
+                "real replication challenge",
+            ))
+        elif height > _MAX_HEIGHT:
+            diagnostics.append(_diag(
+                "substance_height", html_name,
+                f"{html_name}: rendered height {height}px exceeds the "
+                f"{_MAX_HEIGHT}px ceiling; trim the page to a single legible "
+                "screen-length",
+            ))
+
+        # Not blank: content must fill the viewport, not near-empty whitespace.
+        if width and height and _ink_fraction(image) < _MIN_INK_FRACTION:
+            diagnostics.append(_diag(
+                "not_blank", html_name,
+                f"{html_name}: renders near-empty (almost all whitespace); the "
+                "page has no visible content to replicate",
+            ))
+
+        # Determinism: the second render must be pixel-identical.
+        other = second.get(page_name)
+        if other is None or other.tobytes() != image.tobytes():
+            diagnostics.append(_diag(
+                "deterministic", html_name,
+                f"{html_name}: renders non-deterministically (two renders differ); "
+                "a perfect replica is not achievable in the sealed env",
+            ))
+
+    return GateResult(passed=not diagnostics, diagnostics=diagnostics)
+
+
+def _ink_fraction(image):
+    """Fraction of pixels that differ from the page background.
+
+    The background is taken as the top-left corner pixel (the usual page
+    background); any pixel that differs from it counts as "ink".
+    """
+    rgb = image.convert("RGB")
+    width, height = rgb.size
+    total = width * height
+    if total == 0:
+        return 0.0
+    bg = rgb.getpixel((0, 0))
+    colors = rgb.getcolors(maxcolors=total)
+    if colors is None:
+        # Too many distinct colors -> clearly not blank.
+        return 1.0
+    ink = sum(count for count, color in colors if color != bg)
+    return ink / total
