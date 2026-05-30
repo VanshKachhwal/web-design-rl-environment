@@ -42,7 +42,8 @@ def generate_site(seed, client, out_dir) -> Path:
 
     Returns:
         The ``Path`` to the written site directory. It contains the two frozen
-        stylesheets, one HTML file per page, and ``page_map.json``.
+        stylesheets, one HTML file per page, ``page_map.json``, and
+        ``seed.json`` (the recorded seed tuple).
     """
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -60,6 +61,11 @@ def generate_site(seed, client, out_dir) -> Path:
         (out_dir / f"{page['slug']}.html").write_text(html)
 
     (out_dir / "page_map.json").write_text(json.dumps(spec.page_map, indent=2))
+
+    # Record the seed for auditability and curation: the whole sampled dict
+    # (axes + free modifiers + the recorded ``seed_tuple``) is what makes the
+    # batch auditable, re-runnable, and a cheap diversity signal for curation.
+    (out_dir / "seed.json").write_text(json.dumps(seed, indent=2))
     return out_dir
 
 

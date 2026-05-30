@@ -62,17 +62,28 @@ def _stage3_body(title):
     )
 
 
+_SEED = {
+    "archetype": "tea-shop",
+    "aesthetic": "warm-minimal",
+    "complexity": "low",
+    "audience": "local-community",
+    "brand_mood": "warm-and-welcoming",
+    "seed_tuple": [
+        "tea-shop",
+        "warm-minimal",
+        "low",
+        "local-community",
+        "warm-and-welcoming",
+    ],
+}
+
+
 def _stubbed_run(tmp_path) -> Path:
     # 1 stage-1 call + 1 stage-2 call + one stage-3 call per page (6) = 8 calls.
     responses = [json.dumps(_STAGE1), json.dumps(_STAGE2)]
     responses += [_stage3_body(p["title"]) for p in _STAGE1["pages"]]
     client = StubGenerationClient(responses=responses)
-    seed = {
-        "archetype": "tea-shop",
-        "aesthetic": "warm-minimal",
-        "complexity": "low",
-    }
-    return generate_site(seed, client=client, out_dir=tmp_path / "site")
+    return generate_site(_SEED, client=client, out_dir=tmp_path / "site")
 
 
 def test_generate_site_makes_no_live_api_call(tmp_path):
@@ -121,6 +132,13 @@ def test_chrome_is_byte_identical_across_pages(tmp_path):
         chrome_blocks.append((header, nav, footer))
     # Every page's chrome triple is identical to the first page's.
     assert all(block == chrome_blocks[0] for block in chrome_blocks)
+
+
+def test_generated_site_records_its_seed_tuple(tmp_path):
+    # Each site persists its seed tuple for auditability and curation.
+    site_dir = _stubbed_run(tmp_path)
+    seed_record = json.loads((site_dir / "seed.json").read_text())
+    assert seed_record["seed_tuple"] == _SEED["seed_tuple"]
 
 
 def test_pages_reference_only_the_frozen_stylesheets(tmp_path):
