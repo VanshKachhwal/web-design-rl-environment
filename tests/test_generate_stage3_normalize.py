@@ -17,6 +17,7 @@ import re
 
 from webdesign_rl.generate import stages
 from webdesign_rl.generate.client import StubGenerationClient
+from webdesign_rl.generate.quality_gate import _resolves
 from webdesign_rl.generate.stages import DesignSystem, Spec, normalize_stage3_body
 from webdesign_rl.generate.slug import derive_page_map
 
@@ -119,3 +120,104 @@ def test_run_stage3_returns_normalized_chrome_free_body():
     assert _count("nav", body) == 0
     assert _count("main", body) == 1
     assert "Welcome" in body
+
+
+# --- Sitemap-aware body-link normalization (issue 17) ----------------------
+
+
+def _hrefs(html):
+    return re.findall(r'<a\b[^>]*\bhref="([^"]*)"', html, re.IGNORECASE)
+
+
+def test_internal_unresolvable_links_rewritten_to_hash():
+    # The live failure: CTA buttons link to invented routes not in the sitemap.
+    valid = {"index.html", "tickets.html", "venue.html"}
+    raw = (
+        '<main class="page">'
+        '<a class="btn" href="/get-started">Get Started</a>'
+        '<a class="btn" href="/register">Register</a>'
+        "</main>"
+    )
+    out = normalize_stage3_body(raw, valid_pages=valid)
+    assert _hrefs(out) == ["#", "#"]
+
+
+def test_preserves_inert_and_real_page_links():
+    valid = {"index.html", "tickets.html", "venue.html"}
+    raw = (
+        '<main class="page">'
+        '<a href="https://example.com">External</a>'
+        '<a href="//cdn.example.com/x">Protocol-relative</a>'
+        '<a href="#section">Anchor</a>'
+        '<a href="mailto:a@b.com">Mail</a>'
+        '<a href="tel:+1">Call</a>'
+        '<a href="tickets.html">Tickets</a>'
+        '<a href="tickets.html#agenda">Agenda</a>'
+        "</main>"
+    )
+    out = normalize_stage3_body(raw, valid_pages=valid)
+    assert _hrefs(out) == [
+        "https://example.com",
+        "//cdn.example.com/x",
+        "#section",
+        "mailto:a@b.com",
+        "tel:+1",
+        "tickets.html",
+        "tickets.html#agenda",
+    ]
+
+
+def test_chrome_strip_and_link_rewrite_compose():
+    # A body with both nested chrome AND a bad link: chrome gone, link fixed,
+    # wrapped in exactly one <main>.
+    valid = {"index.html", "tickets.html"}
+    raw = (
+        '<header class="x"><nav><a href="/nav-route">Nav</a></nav></header>'
+        '<section class="hero"><a href="/get-started">Go</a></section>'
+        '<footer><a href="/footer-route">F</a></footer>'
+    )
+    out = normalize_stage3_body(raw, valid_pages=valid)
+    assert _count("header", out) == 0
+    assert _count("nav", out) == 0
+    assert _count("footer", out) == 0
+    assert _count("main", out) == 1
+    # Only the surviving (in-body) link remains, rewritten to inert.
+    assert _hrefs(out) == ["#"]
+
+
+def test_no_valid_pages_means_no_link_rewriting():
+    # Back-compat: omitting valid_pages preserves today's behavior (no rewrite).
+    raw = '<main class="page"><a href="/get-started">Go</a></main>'
+    assert _hrefs(normalize_stage3_body(raw)) == ["/get-started"]
+    assert _hrefs(normalize_stage3_body(raw, valid_pages=None)) == ["/get-started"]
+
+
+def test_run_stage3_yields_no_unresolvable_internal_links():
+    # End-to-end: a stage-3 body of invented-route CTAs has every internal link
+    # resolvable against the real sitemap filenames after run_stage3.
+    page_map = derive_page_map(["Home", "Tickets", "Venue"])
+    slugs = list(page_map)
+    spec = Spec(
+        brief="b",
+        pages=[
+            {"slug": slugs[0], "title": "Home", "sections": ["hero"]},
+            {"slug": slugs[1], "title": "Tickets", "sections": ["hero"]},
+            {"slug": slugs[2], "title": "Venue", "sections": ["hero"]},
+        ],
+        component_manifest=["hero"],
+        page_map=page_map,
+    )
+    site_files = {f"{s}.html" for s in slugs}
+    dirty = (
+        '<main class="page">'
+        '<section class="hero">'
+        '<a href="/get-started">Get Started</a>'
+        '<a href="/demo">Demo</a>'
+        f'<a href="{slugs[1]}.html">Tickets</a>'
+        "</section>"
+        "</main>"
+    )
+    client = StubGenerationClient(responses=[dirty])
+    body = stages.run_stage3(spec, _design(), spec.pages[0], client)
+    for href in _hrefs(body):
+        assert _resolves(href, site_files), href

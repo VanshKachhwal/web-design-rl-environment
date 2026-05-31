@@ -179,6 +179,34 @@ _VOID_TAGS = frozenset({
 })
 
 
+def _resolvable_href(href, valid_pages):
+    """The href to serialize, rewriting an internal *unresolvable* link to ``#``.
+
+    Mirrors :func:`quality_gate._resolves` exactly so a body link can never be a
+    hermeticity defect: ``#fragment``, ``mailto:``/``tel:``, and external
+    ``http(s)://`` / protocol-relative ``//`` links are inert/allowed and kept
+    verbatim. For any other href the query/fragment is stripped and the final
+    path segment (filename) must be one of the sitemap ``<slug>.html`` pages;
+    otherwise the href is rewritten to ``#``.
+    """
+    stripped = href.strip()
+    if (
+        not stripped
+        or stripped.startswith("#")
+        or stripped.startswith("mailto:")
+        or stripped.startswith("tel:")
+        or stripped.startswith("//")
+        or stripped.startswith("http://")
+        or stripped.startswith("https://")
+    ):
+        return href
+    path = stripped.split("#", 1)[0].split("?", 1)[0]
+    name = path.rsplit("/", 1)[-1]
+    if name in valid_pages:
+        return href
+    return "#"
+
+
 class _BodyNormalizer(HTMLParser):
     """Re-serialize stage-3 markup with every header/nav/footer subtree dropped.
 
@@ -187,12 +215,18 @@ class _BodyNormalizer(HTMLParser):
     live failure, where the model put a ``<header><nav>`` *inside* ``<main>`` —
     is removed. Everything else is reconstructed verbatim. A stdlib parser is
     used rather than regex because nested same-name tags defeat regex.
+
+    When ``valid_pages`` is supplied, any ``<a href>`` on a surviving (in-body)
+    link that is internal but does not resolve to one of those sitemap pages is
+    rewritten to ``#`` (issue 17), so a broken internal link is impossible by
+    construction — composing with the chrome strip in one pass.
     """
 
-    def __init__(self):
+    def __init__(self, valid_pages=None):
         super().__init__(convert_charrefs=False)
         self._out = []
         self._skip_depth = 0  # >0 while inside a stripped chrome subtree
+        self._valid_pages = valid_pages
 
     def _attrs_str(self, attrs):
         parts = []
@@ -203,6 +237,17 @@ class _BodyNormalizer(HTMLParser):
                 parts.append(f' {key}="{value}"')
         return "".join(parts)
 
+    def _rewrite_link_attrs(self, tag, attrs):
+        """If link rewriting is on, coerce an ``<a>``'s href to a resolvable one."""
+        if self._valid_pages is None or tag != "a":
+            return attrs
+        return [
+            (key, _resolvable_href(value, self._valid_pages))
+            if key == "href" and value is not None
+            else (key, value)
+            for key, value in attrs
+        ]
+
     def handle_starttag(self, tag, attrs):
         if self._skip_depth or tag in _STRIP_TAGS:
             # Open (or already inside) a stripped subtree. Void chrome tags have
@@ -210,11 +255,13 @@ class _BodyNormalizer(HTMLParser):
             if tag not in _VOID_TAGS:
                 self._skip_depth += 1
             return
+        attrs = self._rewrite_link_attrs(tag, attrs)
         self._out.append(f"<{tag}{self._attrs_str(attrs)}>")
 
     def handle_startendtag(self, tag, attrs):
         if self._skip_depth or tag in _STRIP_TAGS:
             return
+        attrs = self._rewrite_link_attrs(tag, attrs)
         self._out.append(f"<{tag}{self._attrs_str(attrs)}/>")
 
     def handle_endtag(self, tag):
@@ -246,7 +293,7 @@ class _BodyNormalizer(HTMLParser):
 _MAIN_BLOCK = re.compile(r"<main\b[^>]*>.*</main>", re.DOTALL | re.IGNORECASE)
 
 
-def normalize_stage3_body(raw: str) -> str:
+def normalize_stage3_body(raw: str, valid_pages=None) -> str:
     """Reduce stage-3 output to exactly one ``<main>`` of section content.
 
     Strips every ``<header>``/``<nav>``/``<footer>`` element at any nesting depth
@@ -255,8 +302,15 @@ def normalize_stage3_body(raw: str) -> str:
     content is kept as-is; otherwise the remaining content is wrapped in one.
     This makes duplicate / per-page-inconsistent chrome impossible by
     construction.
+
+    When ``valid_pages`` (the set of sitemap ``<slug>.html`` filenames) is given,
+    every surviving in-body ``<a href>`` that is internal but does not resolve to
+    one of those pages is also rewritten to ``#`` (issue 17), mirroring the gate's
+    hermeticity rule so a broken body link cannot occur. When it is ``None``
+    (default) links are left untouched, preserving the prior behavior for
+    unrelated callers.
     """
-    parser = _BodyNormalizer()
+    parser = _BodyNormalizer(valid_pages=valid_pages)
     parser.feed(raw)
     parser.close()
     stripped = parser.result().strip()
@@ -271,13 +325,24 @@ def run_stage3(spec: Spec, design: DesignSystem, page: dict, client) -> str:
     """One page's section list + frozen artifacts -> that page's body markup.
 
     The raw model output is **normalized** to section content only (chrome
-    stripped, wrapped in exactly one ``<main>``) before it is returned, so the
-    stage owns a clean output contract and the assembler can inject the frozen
-    chrome without risking duplicates.
+    stripped, wrapped in exactly one ``<main>``, every internal link constrained
+    to a real sitemap page) before it is returned, so the stage owns a clean
+    output contract and the assembler can inject the frozen chrome without risking
+    duplicates or broken internal links.
     """
     prompt = build_stage3_prompt(spec, design, page)
     raw = client.complete(prompt, temperature=STAGE3_TEMPERATURE)
-    return normalize_stage3_body(raw)
+    return normalize_stage3_body(raw, valid_pages=_valid_page_files(spec))
+
+
+def _valid_page_files(spec: Spec) -> set:
+    """The set of sitemap ``<slug>.html`` filenames a body link may point at.
+
+    Derived from ``spec.pages`` (the ordered sitemap), which carries the same
+    slugs as ``spec.page_map`` keys — the exact filenames the gate's hermeticity
+    check resolves internal links against.
+    """
+    return {f"{page['slug']}.html" for page in spec.pages}
 
 
 # --- Prompt builders -------------------------------------------------------
@@ -376,6 +441,15 @@ def build_stage3_prompt(spec: Spec, design: DesignSystem, page: dict) -> str:
         f"Sections for this page: {json.dumps(page['sections'])}\n"
         f"variables.css:\n{design.variables_css}\n"
         f"components.css:\n{design.components_css}\n"
+        "The site's pages are EXACTLY these (relative filename — title):\n"
+        f"{_sitemap_lines(spec)}\n"
+        "Every link in the body (CTA buttons, cards, inline links) MUST point at "
+        "one of those exact relative filenames (the home page is index.html) or "
+        "be inert (href=\"#\", a same-page #anchor, mailto:, or tel:). Route a CTA "
+        "to the RIGHT real page (e.g. a \"Register\" / \"Get tickets\" button links "
+        "to the relevant page in this list). Never invent a route like "
+        "\"/get-started\", \"/demo\", or \"/register\", and never use web-style "
+        "absolute paths like \"/\" or \"/features\".\n"
         f"{_WELL_POSEDNESS}\n"
         "Respond with ONLY the single <main>…</main> element holding this "
         "page's section content — no <html>, <head>, <header>, <nav>, "
