@@ -48,10 +48,20 @@ _GOOD_STAGE2 = {
         ".card{border-radius:var(--radius);background:var(--bg);}"
         ".contact-block{padding:var(--space);}"
     ),
-    "header_html": '<header class="site-header"><span>Cha Tea</span></header>',
-    "nav_html": '<nav class="site-nav"><a href="index.html">Home</a></nav>',
+    "header_html": '<header class="site-header"><span>Cha Tea</span>'
+    '<nav class="site-nav"><a href="index.html">Home</a></nav></header>',
     "footer_html": '<footer class="site-footer"><p>(c) Cha Tea</p></footer>',
 }
+
+
+def _stage2(fields):
+    """Render a stage-2 fields dict as the ===FILE <name>=== delimited format."""
+    return (
+        "===FILE variables.css===\n" + fields["variables_css"] + "\n"
+        "===FILE components.css===\n" + fields["components_css"] + "\n"
+        "===FILE header.html===\n" + fields["header_html"] + "\n"
+        "===FILE footer.html===\n" + fields["footer_html"] + "\n"
+    )
 
 # A rich body using >=3 distinct catalog components and >=50 words.
 _GOOD_BODY = (
@@ -98,7 +108,7 @@ def _fake_render(site_dir, page_map, viewport=VIEWPORT):
 
 
 def _all_good_responses():
-    responses = [json.dumps(_GOOD_STAGE1), json.dumps(_GOOD_STAGE2)]
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
     responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"]]
     return responses
 
@@ -119,7 +129,7 @@ def test_clean_site_passes_and_is_returned(tmp_path):
 
 def test_fixable_page_is_repaired_within_budget(tmp_path):
     # index starts with a bad (thin) body; the first nudge returns a good body.
-    responses = [json.dumps(_GOOD_STAGE1), json.dumps(_GOOD_STAGE2)]
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
     responses.append(_BAD_BODY)                       # index: stage-3, fails
     responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]  # rest good
     responses.append(_GOOD_BODY)                      # index: nudge #1, fixed
@@ -133,9 +143,55 @@ def test_fixable_page_is_repaired_within_budget(tmp_path):
     assert "Our Story" in (result / "index.html").read_text()
 
 
+def test_nudged_body_with_in_body_chrome_is_normalized(tmp_path):
+    # The nudge loop must normalize stage-3 output too: a repair that re-adds
+    # in-body chrome (the unrepairable live failure) is stripped, so the page
+    # keeps exactly the injected chrome and passes the chrome-identity gate.
+    import re
+
+    dirty_good = (
+        '<main class="page">'
+        '<header class="bogus"><nav><a href="#">X</a></nav></header>'
+        + _GOOD_BODY[len('<main class="page">'):]
+    )
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
+    responses.append(_BAD_BODY)                       # index: stage-3, fails
+    responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]  # rest good
+    responses.append(dirty_good)                      # index: nudge #1, dirty
+    client = StubGenerationClient(responses=responses)
+
+    result = generate_gated_site(
+        _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render
+    )
+    assert isinstance(result, Path), getattr(result, "reason", result)
+    text = (result / "index.html").read_text()
+    assert len(re.findall(r"<header\b", text)) == 1
+    assert len(re.findall(r"<nav\b", text)) == 1
+    main = re.search(r"<main.*?</main>", text, re.DOTALL).group(0)
+    assert "<header" not in main and "<nav" not in main
+
+
+def test_default_nudge_budget_is_five(tmp_path):
+    # A page that only comes good on the 4th nudge is still repaired under the
+    # default budget (5), proving the default rose from 2 to 5.
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
+    responses.append(_BAD_BODY)                       # index: initial, fails
+    responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]
+    responses += [_BAD_BODY, _BAD_BODY, _BAD_BODY]    # nudges 1-3: still bad
+    responses.append(_GOOD_BODY)                      # nudge 4: fixed
+    client = StubGenerationClient(responses=responses)
+
+    result = generate_gated_site(
+        _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render
+    )
+    assert isinstance(result, Path), getattr(result, "reason", result)
+    assert "Our Story" in (result / "index.html").read_text()
+
+
 def test_unfixable_page_exhausts_budget_and_drops_with_reason(tmp_path, caplog):
-    # index stays thin through the initial attempt + both nudges -> dropped.
-    responses = [json.dumps(_GOOD_STAGE1), json.dumps(_GOOD_STAGE2)]
+    # With an explicit budget of 2, index stays thin through the initial attempt
+    # + both nudges -> dropped (the exhaustion path is unchanged at the limit).
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
     responses.append(_BAD_BODY)                       # index: initial, fails
     responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]
     responses.append(_BAD_BODY)                       # nudge #1: still bad
@@ -145,7 +201,8 @@ def test_unfixable_page_exhausts_budget_and_drops_with_reason(tmp_path, caplog):
     import logging
     with caplog.at_level(logging.WARNING):
         result = generate_gated_site(
-            _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render
+            _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render,
+            max_nudges=2,
         )
     assert isinstance(result, Dropped)
     assert "index.html" in result.reason
@@ -154,7 +211,7 @@ def test_unfixable_page_exhausts_budget_and_drops_with_reason(tmp_path, caplog):
 
 
 def test_repair_never_rewrites_frozen_stylesheets(tmp_path):
-    responses = [json.dumps(_GOOD_STAGE1), json.dumps(_GOOD_STAGE2)]
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
     responses.append(_BAD_BODY)
     responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]
     responses.append(_GOOD_BODY)                      # nudge fixes index
@@ -177,6 +234,49 @@ def test_repair_never_rewrites_frozen_stylesheets(tmp_path):
     assert (out / "variables.css").read_text() == snapshots["vars"]
     assert (out / "components.css").read_text() == snapshots["comp"]
     assert snapshots["vars"] == _GOOD_STAGE2["variables_css"]
+
+
+# --- Progress logging (issue 11) -------------------------------------------
+
+def test_pipeline_emits_ordered_progress_logging(tmp_path, caplog):
+    import logging
+
+    client = StubGenerationClient(responses=_all_good_responses())
+    with caplog.at_level(logging.INFO,
+                         logger="webdesign_rl.generate.llm_site_generator"):
+        result = generate_gated_site(
+            _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render
+        )
+    assert isinstance(result, Path), getattr(result, "reason", result)
+    text = "\n".join(rec.message for rec in caplog.records)
+    # Each stage announces itself, with per-page progress and the gate.
+    assert "stage 1" in text.lower()
+    assert "stage 2" in text.lower()
+    assert "page 1/5" in text          # stage-3 per-page i/N: <title>
+    assert "Home" in text              # the page title is logged
+    assert "gate" in text.lower()
+    # No secret/API key material is ever logged.
+    assert "ANTHROPIC_API_KEY" not in text and "sk-" not in text
+
+
+def test_repair_nudges_are_logged_with_attempt_and_slug(tmp_path, caplog):
+    import logging
+
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
+    responses.append(_BAD_BODY)
+    responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]
+    responses.append(_GOOD_BODY)                      # nudge #1 fixes index
+    client = StubGenerationClient(responses=responses)
+
+    with caplog.at_level(logging.INFO,
+                         logger="webdesign_rl.generate.llm_site_generator"):
+        result = generate_gated_site(
+            _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render
+        )
+    assert isinstance(result, Path), getattr(result, "reason", result)
+    text = "\n".join(rec.message for rec in caplog.records)
+    assert "nudging index" in text
+    assert "1/5" in text  # attempt k/budget
 
 
 # --- Inline gates -----------------------------------------------------------
@@ -210,7 +310,7 @@ def test_stage1_reroll_recovers_when_a_later_attempt_is_good(tmp_path):
         "component_manifest": ["hero"],
     }
     responses = [json.dumps(short), json.dumps(_GOOD_STAGE1),
-                 json.dumps(_GOOD_STAGE2)]
+                 _stage2(_GOOD_STAGE2)]
     responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"]]
     client = StubGenerationClient(responses=responses)
 
@@ -225,8 +325,8 @@ def test_stage2_missing_component_rerolls_then_skips_seed(tmp_path):
     # components.css styles nothing for the manifest -> manifest gate fails.
     bad_stage2["components_css"] = ".unrelated{color:var(--ink);}"
     responses = [json.dumps(_GOOD_STAGE1),
-                 json.dumps(bad_stage2), json.dumps(bad_stage2),
-                 json.dumps(bad_stage2)]
+                 _stage2(bad_stage2), _stage2(bad_stage2),
+                 _stage2(bad_stage2)]
     client = StubGenerationClient(responses=responses)
 
     result = generate_gated_site(

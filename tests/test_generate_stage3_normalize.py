@@ -1,0 +1,121 @@
+"""Behavioral tests for stage-3 body normalization (chrome stripping).
+
+Stage 3 is asked for only the ``<main>…</main>`` section content, but the live
+model sometimes adds a full ``<header><nav>…</nav></header>`` and ``<footer>``
+*inside* the body (even nested inside ``<main>``), with placeholder ``#`` links —
+inconsistently per page. The orchestrator then injects the real chrome on top, so
+the page renders with duplicate, per-page-inconsistent chrome and the
+chrome-identity gate fails unrepairably.
+
+Normalization makes that impossible by construction: before assembly, every
+``<header>``/``<nav>``/``<footer>`` (at any nesting depth) is stripped and the
+remaining section content is wrapped in exactly one ``<main>``. These tests pin
+that behavior through the public :func:`normalize_stage3_body` helper.
+"""
+
+import re
+
+from webdesign_rl.generate import stages
+from webdesign_rl.generate.client import StubGenerationClient
+from webdesign_rl.generate.stages import DesignSystem, Spec, normalize_stage3_body
+from webdesign_rl.generate.slug import derive_page_map
+
+
+def _count(tag, html):
+    return len(re.findall(rf"<{tag}\b", html, re.IGNORECASE))
+
+
+def test_strips_chrome_nested_inside_main():
+    # The live failure: a bogus header/nav/footer nested *inside* <main>.
+    raw = (
+        '<main class="page">'
+        '<header class="x"><nav><a href="#">Home</a></nav></header>'
+        '<section class="hero"><h1>Welcome</h1><p>Real content here.</p></section>'
+        '<footer class="y"><p>(c) 2026</p></footer>'
+        "</main>"
+    )
+    out = normalize_stage3_body(raw)
+    assert _count("header", out) == 0
+    assert _count("nav", out) == 0
+    assert _count("footer", out) == 0
+    # The genuine section content survives.
+    assert "Welcome" in out and "Real content here." in out
+    # Exactly one <main> wrapper remains.
+    assert _count("main", out) == 1
+
+
+def test_strips_top_level_chrome_siblings_and_wraps_in_main():
+    # Stage 3 returned a full page wrapper: header + main + footer as siblings.
+    raw = (
+        '<header class="site-header"><nav><a href="#">Home</a></nav></header>'
+        '<main class="page"><section class="hero"><h1>Hi</h1></section></main>'
+        '<footer class="site-footer">(c)</footer>'
+    )
+    out = normalize_stage3_body(raw)
+    assert _count("header", out) == 0
+    assert _count("nav", out) == 0
+    assert _count("footer", out) == 0
+    # The existing <main> is kept (not double-wrapped).
+    assert _count("main", out) == 1
+    assert "Hi" in out
+
+
+def test_wraps_bare_section_content_with_no_main():
+    # No <main> at all — the remaining content must be wrapped in exactly one.
+    raw = '<section class="hero"><h1>Welcome</h1><p>Body copy.</p></section>'
+    out = normalize_stage3_body(raw)
+    assert _count("main", out) == 1
+    assert out.startswith("<main")
+    assert out.endswith("</main>")
+    assert "Welcome" in out and "Body copy." in out
+
+
+def test_already_clean_main_is_preserved():
+    # A correctly-formed stage-3 body passes through unchanged in substance.
+    raw = (
+        '<main class="page"><section class="hero"><h1>Title</h1>'
+        "<p>Paragraph with content.</p></section></main>"
+    )
+    out = normalize_stage3_body(raw)
+    assert _count("main", out) == 1
+    assert "Title" in out and "Paragraph with content." in out
+    # Idempotent.
+    assert normalize_stage3_body(out) == out
+
+
+def _design():
+    return DesignSystem(
+        variables_css=":root{}",
+        components_css=".hero{}",
+        header_html='<header class="site-header"><nav>'
+        '<a href="index.html">Home</a></nav></header>',
+        footer_html='<footer class="site-footer">(c)</footer>',
+    )
+
+
+def _spec():
+    page_map = derive_page_map(["Home"])
+    slug = list(page_map)[0]
+    return Spec(
+        brief="b",
+        pages=[{"slug": slug, "title": "Home", "sections": ["hero"]}],
+        component_manifest=["hero"],
+        page_map=page_map,
+    )
+
+
+def test_run_stage3_returns_normalized_chrome_free_body():
+    # The model wrongly returns in-body chrome; run_stage3 must strip it.
+    dirty = (
+        '<main class="page">'
+        '<header><nav><a href="#">Home</a></nav></header>'
+        '<section class="hero"><h1>Welcome</h1></section>'
+        "</main>"
+    )
+    client = StubGenerationClient(responses=[dirty])
+    spec = _spec()
+    body = stages.run_stage3(spec, _design(), spec.pages[0], client)
+    assert _count("header", body) == 0
+    assert _count("nav", body) == 0
+    assert _count("main", body) == 1
+    assert "Welcome" in body

@@ -6,10 +6,10 @@ observable contract of a generated site directory:
 
 - a multi-page (>=5) static HTML/CSS site,
 - the frozen design-system artifacts (``variables.css``, ``components.css``,
-  header/footer/nav partials),
+  the header — which contains the site nav — and footer partials),
 - one HTML file per sitemap page, named by its slug,
 - a ``page_map`` in the emit/grader shape,
-- chrome (header/footer/nav) injected byte-identically across pages,
+- chrome (header + footer) injected byte-identically across pages,
 - pages referencing only the frozen stylesheets (no other linked stylesheet).
 """
 
@@ -42,15 +42,20 @@ _STAGE1 = {
     ],
 }
 
-_STAGE2 = {
-    "variables_css": ":root{--brand:#8a5a44;--bg:#faf6f1;--space:16px;}",
-    "components_css": ".hero{background:var(--bg);padding:var(--space);}"
-    ".card{border-radius:8px;}",
-    "header_html": '<header class="site-header"><span>Cha Tea</span></header>',
-    "nav_html": '<nav class="site-nav"><a href="index.html">Home</a>'
-    '<a href="about-us.html">About</a></nav>',
-    "footer_html": '<footer class="site-footer"><p>(c) Cha Tea</p></footer>',
-}
+# Stage 2 returns the escape-free ===FILE <name>=== delimited format, four
+# blocks — the header owns the site nav (no separate nav block).
+_STAGE2 = (
+    "===FILE variables.css===\n"
+    ":root{--brand:#8a5a44;--bg:#faf6f1;--space:16px;}\n"
+    "===FILE components.css===\n"
+    ".hero{background:var(--bg);padding:var(--space);}.card{border-radius:8px;}\n"
+    "===FILE header.html===\n"
+    '<header class="site-header"><span>Cha Tea</span>'
+    '<nav class="site-nav"><a href="index.html">Home</a>'
+    '<a href="about-us.html">About</a></nav></header>\n'
+    "===FILE footer.html===\n"
+    '<footer class="site-footer"><p>(c) Cha Tea</p></footer>\n'
+)
 
 
 def _stage3_body(title):
@@ -80,7 +85,7 @@ _SEED = {
 
 def _stubbed_run(tmp_path) -> Path:
     # 1 stage-1 call + 1 stage-2 call + one stage-3 call per page (6) = 8 calls.
-    responses = [json.dumps(_STAGE1), json.dumps(_STAGE2)]
+    responses = [json.dumps(_STAGE1), _STAGE2]
     responses += [_stage3_body(p["title"]) for p in _STAGE1["pages"]]
     client = StubGenerationClient(responses=responses)
     return generate_site(_SEED, client=client, out_dir=tmp_path / "site")
@@ -126,12 +131,53 @@ def test_chrome_is_byte_identical_across_pages(tmp_path):
     chrome_blocks = []
     for html_file in site_dir.glob("*.html"):
         text = html_file.read_text()
+        # Exactly one header (containing exactly one nav) and one footer.
+        assert len(re.findall(r"<header\b", text)) == 1
+        assert len(re.findall(r"<nav\b", text)) == 1
+        assert len(re.findall(r"<footer\b", text)) == 1
         header = re.search(r"<header.*?</header>", text, re.DOTALL).group(0)
-        nav = re.search(r"<nav.*?</nav>", text, re.DOTALL).group(0)
         footer = re.search(r"<footer.*?</footer>", text, re.DOTALL).group(0)
-        chrome_blocks.append((header, nav, footer))
-    # Every page's chrome triple is identical to the first page's.
+        # The nav lives inside the header.
+        assert "<nav" in header
+        chrome_blocks.append((header, footer))
+    # Every page's chrome pair is identical to the first page's.
     assert all(block == chrome_blocks[0] for block in chrome_blocks)
+
+
+def test_in_body_chrome_is_stripped_before_assembly(tmp_path):
+    # Regression for the live failure (Bug A): stage 3 wrongly returns a full
+    # header/nav/footer *inside* <main>, with placeholder # links. The pipeline
+    # must strip it so the assembled page has exactly one header (one nav, the
+    # stage-2 one) and one footer, and zero chrome inside <main>.
+    dirty_body = (
+        '<main class="page">'
+        '<header class="bogus"><nav><a href="#">Home</a></nav></header>'
+        '<section class="hero"><h1>Home</h1>'
+        "<p>Plenty of real words on this page for substance and content.</p>"
+        "</section>"
+        '<footer class="bogus"><p>bogus</p></footer>'
+        "</main>"
+    )
+    responses = [json.dumps(_STAGE1), _STAGE2]
+    responses += [dirty_body for _ in _STAGE1["pages"]]
+    client = StubGenerationClient(responses=responses)
+    site_dir = generate_site(_SEED, client=client, out_dir=tmp_path / "site")
+
+    for html_file in site_dir.glob("*.html"):
+        text = html_file.read_text()
+        assert len(re.findall(r"<header\b", text)) == 1
+        assert len(re.findall(r"<nav\b", text)) == 1
+        assert len(re.findall(r"<footer\b", text)) == 1
+        # The surviving nav is the stage-2 one (index.html link), not the
+        # placeholder "#" stage-3 one.
+        nav = re.search(r"<nav.*?</nav>", text, re.DOTALL).group(0)
+        assert 'href="index.html"' in nav
+        assert 'href="#"' not in nav
+        # No chrome inside <main>.
+        main = re.search(r"<main.*?</main>", text, re.DOTALL).group(0)
+        assert "<header" not in main
+        assert "<nav" not in main
+        assert "<footer" not in main
 
 
 def test_generated_site_records_its_seed_tuple(tmp_path):

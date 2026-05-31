@@ -47,10 +47,13 @@ COMPONENTS_CSS = (
     ".btn:hover{ background: var(--ink); }\n"
 )
 
-HEADER_HTML = '<header class="site-header"><span>Cha Tea</span></header>'
+# The nav lives inside the header partial (issue 14); there is no separate nav.
 NAV_HTML = (
     '<nav class="site-nav"><a href="index.html">Home</a>'
     '<a href="about.html">About</a></nav>'
+)
+HEADER_HTML = (
+    f'<header class="site-header"><span>Cha Tea</span>{NAV_HTML}</header>'
 )
 FOOTER_HTML = '<footer class="site-footer"><p>(c) Cha Tea</p></footer>'
 
@@ -71,8 +74,10 @@ RICH_BODY = (
 )
 
 
-def _document(body, *, header=HEADER_HTML, nav=NAV_HTML, footer=FOOTER_HTML,
+def _document(body, *, header=HEADER_HTML, footer=FOOTER_HTML,
               head_extra="", title="Page"):
+    # The header partial owns the site nav, so a page is header + body + footer
+    # (no separate nav injection).
     return (
         "<!DOCTYPE html>\n"
         '<html lang="en">\n'
@@ -84,7 +89,7 @@ def _document(body, *, header=HEADER_HTML, nav=NAV_HTML, footer=FOOTER_HTML,
         f"{head_extra}"
         "</head>\n"
         "<body>\n"
-        f"{header}\n{nav}\n{body}\n{footer}\n"
+        f"{header}\n{body}\n{footer}\n"
         "</body>\n"
         "</html>\n"
     )
@@ -177,15 +182,29 @@ def test_good_fixture_passes_all_checks(tmp_path):
 
 # --- Token compliance -------------------------------------------------------
 
-def test_off_token_value_in_components_css_is_flagged(tmp_path):
-    # A raw hex literal in components.css that is not declared in variables.css.
-    bad_components = COMPONENTS_CSS + "\n.hero{ color: #333333; }\n"
-    site = build_site(tmp_path, components=bad_components)
+def test_structural_px_literals_in_components_css_pass(tmp_path):
+    # The frozen design system legitimately contains structural literals
+    # (border-radius, padding) and is shared byte-identically by every page, so
+    # it cannot cause cross-page drift -> it is EXEMPT from the literal check.
+    # Use literals that are NOT declared tokens (3px, 7px, #333333) to prove the
+    # exemption, not mere coincidence with a token value.
+    structural = COMPONENTS_CSS + (
+        "\n.badge{ border-radius: 3px; padding: 7px; border: 1px solid #333333; }\n"
+    )
+    site = build_site(tmp_path, components=structural)
     result = run_stage4_gate(site, _spec())
-    assert result.passed is False
-    assert _checks(result) == {"token_compliance"}
-    assert "#333333" in _messages(result)
-    assert "components.css" in _messages(result)
+    assert result.passed is True, _messages(result)
+
+
+def test_literals_in_variables_css_pass(tmp_path):
+    # variables.css is the single source of truth — its literals are the token
+    # definitions and are likewise exempt.
+    extra_tokens = VARIABLES_CSS.replace(
+        "}\n", "  --hairline: 1px;\n  --shadow-color: #00000022;\n}\n"
+    )
+    site = build_site(tmp_path, variables=extra_tokens)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
 
 
 def test_off_token_px_in_page_inline_style_is_flagged(tmp_path):
@@ -197,6 +216,20 @@ def test_off_token_px_in_page_inline_style_is_flagged(tmp_path):
     assert result.passed is False
     assert _checks(result) == {"token_compliance"}
     assert "13px" in _messages(result)
+    # The failure is keyed to the page (repairable per-page), not site-wide.
+    assert all(d["page"] == "index.html" for d in result.diagnostics)
+
+
+def test_off_token_color_in_page_style_block_is_flagged(tmp_path):
+    # A new color introduced in a page <style> block is real cross-page drift
+    # and must fail, scoped to that page so the per-page nudge can repair it.
+    head = "<style>.local{ color: #abcdef; }</style>\n"
+    site = build_site(tmp_path, head_extra_per_page={"index": head})
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"token_compliance"}
+    assert "#abcdef" in _messages(result)
+    assert all(d["page"] == "index.html" for d in result.diagnostics)
 
 
 # --- Manifest compliance ----------------------------------------------------
@@ -289,6 +322,33 @@ def test_broken_internal_link_is_flagged(tmp_path):
     assert result.passed is False
     assert _checks(result) == {"hermeticity"}
     assert "nonexistent.html" in _messages(result)
+
+
+def test_route_style_and_hallucinated_chrome_links_fail_hermeticity(tmp_path):
+    # Regression for the first live run: stage 2 authored web-style routes
+    # (href="/features", href="/") and links to pages it invented (/login) in
+    # the byte-identical chrome. None of those resolve to a bundled <slug>.html,
+    # so the hermeticity "internal refs must resolve" check must fail them.
+    bad_nav = (
+        '<nav class="site-nav">'
+        '<a href="/">Home</a>'
+        '<a href="/features">Features</a>'
+        '<a href="/login">Log in</a>'
+        "</nav>"
+    )
+    site = build_site(tmp_path, header_per_page=None)
+    # Rewrite every page's nav to the broken chrome (chrome stays identical, so
+    # only hermeticity — not chrome_identity — should fire).
+    for html in site.glob("*.html"):
+        html.write_text(
+            html.read_text().replace(NAV_HTML, bad_nav)
+        )
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"hermeticity"}
+    msg = _messages(result)
+    assert "/features" in msg and "/login" in msg
+    assert "does not resolve" in msg
 
 
 # --- Static-only ------------------------------------------------------------

@@ -16,11 +16,15 @@ The checks (each operates on the DOM/CSS text + the spec):
 - **substance** — each page uses >=3 distinct catalog components (excl. chrome)
   AND has >=50 words of real DOM text. (The rendered-height bound is deferred to
   the stage-5 render gate — see issue 04.)
-- **token_compliance** — no hex/rgb/raw-px value outside ``variables.css`` lives in
-  ``components.css`` or page CSS; everything must trace to a ``var(--…)`` token.
+- **token_compliance** — **per-page** styles (inline ``style=""`` + page ``<style>``)
+  may use no hex/rgb/raw-px literal outside the declared tokens; everything must
+  trace to a ``var(--…)`` token. The frozen design system (``variables.css`` /
+  ``components.css``) is shared identically by every page so it cannot drift and is
+  **exempt** — it is the source of truth and legitimately holds structural literals.
 - **manifest_compliance** — every section a page references is within
   :func:`taxonomy.legal_components` AND has a rule styled in ``components.css``.
-- **chrome_identity** — header/nav/footer byte-identical across pages.
+- **chrome_identity** — header + footer byte-identical across pages (the site
+  ``<nav>`` lives inside the header, so it is covered by the header compare).
 - **hermeticity** — no external resource loads (``<link>``/``<script>``/``<img
   src=http>``/``@import``/``@font-face url(http)``/css ``url(http)``) -> fail;
   internal refs must resolve; external ``<a href=http>`` is allowed (inert).
@@ -298,6 +302,17 @@ def _check_substance(site_dir, spec):
 
 
 def _check_token_compliance(site_dir, spec):
+    """Enforce token-compliance on **per-page** styles only (issue 13).
+
+    The check exists to catch cross-page *drift* — a single page introducing a
+    new color or size. The frozen design-system stylesheets (``variables.css``,
+    ``components.css``) are shared **byte-identically** by every page, so they
+    cannot drift across pages, and a real design system legitimately contains
+    structural literals (``border-radius: 16px``, ``padding: 8px``). They are
+    therefore **exempt** from the literal check; only stage-3 per-page styles
+    (inline ``style=""`` and page-level ``<style>`` blocks) are scanned, and any
+    failure is keyed to the page so the per-page nudge can repair it.
+    """
     diagnostics = []
     declared = ""
     if (site_dir / VARIABLES_CSS).exists():
@@ -315,9 +330,6 @@ def _check_token_compliance(site_dir, spec):
                 f"{label}: literal value {value} is not a token; use only "
                 "var(--…) declared in variables.css",
             ))
-
-    if (site_dir / COMPONENTS_CSS).exists():
-        scan(COMPONENTS_CSS, (site_dir / COMPONENTS_CSS).read_text())
 
     for slug, path, text in _page_files(site_dir, spec):
         # Page-level CSS lives in <style> blocks and inline style="" attrs.
@@ -365,12 +377,17 @@ def _styled_classes(components_css):
 
 
 def _extract_chrome(text):
-    """The header/nav/footer triple (first of each) for chrome-identity compare."""
+    """The header/footer pair (first of each) for chrome-identity compare.
+
+    The site ``<nav>`` lives *inside* the ``<header>`` partial (issue 14), so
+    comparing the whole header byte-for-byte already covers the nav — there is
+    no separate nav block to compare.
+    """
     def first(tag):
         match = re.search(rf"<{tag}\b.*?</{tag}>", text, re.DOTALL | re.IGNORECASE)
         return match.group(0) if match else None
 
-    return (first("header"), first("nav"), first("footer"))
+    return (first("header"), first("footer"))
 
 
 def _check_chrome_identity(site_dir, spec):
@@ -382,7 +399,7 @@ def _check_chrome_identity(site_dir, spec):
     base_chrome = _extract_chrome(base_text)
     for slug, path, text in pages[1:]:
         chrome = _extract_chrome(text)
-        for label, base_block, block in zip(("header", "nav", "footer"),
+        for label, base_block, block in zip(("header", "footer"),
                                              base_chrome, chrome):
             if block != base_block:
                 diagnostics.append(_diag(

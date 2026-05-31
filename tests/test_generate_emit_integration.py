@@ -41,24 +41,25 @@ _STAGE1 = {
     ],
 }
 
-_STAGE2 = {
-    "variables_css": ":root{--ink:#101010;--paper:#f4f1ea;--accent:#d6452b;"
-    "--space:24px;--radius:6px;}",
-    "components_css": (
-        "body{margin:0;color:var(--ink);background:var(--paper);}"
-        ".site-header{background:var(--ink);color:var(--paper);"
-        "padding:var(--space);}"
-        ".hero{padding:var(--space);background:var(--accent);color:var(--paper);}"
-        ".feature-grid{display:grid;gap:var(--space);padding:var(--space);}"
-        ".content-section{padding:var(--space);}"
-        ".card{border-radius:var(--radius);padding:var(--space);"
-        "background:var(--paper);}"
-        ".contact-block{padding:var(--space);}"
-    ),
-    "header_html": '<header class="site-header"><strong>FORM STUDIO</strong></header>',
-    "nav_html": '<nav class="site-nav"><a href="index.html">Home</a></nav>',
-    "footer_html": '<footer class="site-footer">FORM STUDIO 2026</footer>',
-}
+_STAGE2 = (
+    "===FILE variables.css===\n"
+    ":root{--ink:#101010;--paper:#f4f1ea;--accent:#d6452b;--space:24px;"
+    "--radius:6px;}\n"
+    "===FILE components.css===\n"
+    "body{margin:0;color:var(--ink);background:var(--paper);}"
+    ".site-header{background:var(--ink);color:var(--paper);padding:var(--space);}"
+    ".hero{padding:var(--space);background:var(--accent);color:var(--paper);}"
+    ".feature-grid{display:grid;gap:var(--space);padding:var(--space);}"
+    ".content-section{padding:var(--space);}"
+    ".card{border-radius:var(--radius);padding:var(--space);"
+    "background:var(--paper);}"
+    ".contact-block{padding:var(--space);}\n"
+    "===FILE header.html===\n"
+    '<header class="site-header"><strong>FORM STUDIO</strong>'
+    '<nav class="site-nav"><a href="index.html">Home</a></nav></header>\n'
+    "===FILE footer.html===\n"
+    '<footer class="site-footer">FORM STUDIO 2026</footer>\n'
+)
 
 
 def _body(title):
@@ -102,7 +103,7 @@ def _fake_render(site_dir, page_map, viewport=VIEWPORT):
 
 
 def _gated_site(out_dir):
-    responses = [json.dumps(_STAGE1), json.dumps(_STAGE2)]
+    responses = [json.dumps(_STAGE1), _STAGE2]
     responses += [_body(p["title"]) for p in _STAGE1["pages"]]
     client = StubGenerationClient(responses=responses)
     result = generate_gated_site(

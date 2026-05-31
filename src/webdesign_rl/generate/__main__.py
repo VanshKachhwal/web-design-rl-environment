@@ -35,6 +35,7 @@ content are faithful.
 
 import argparse
 import json
+import logging
 import sys
 from pathlib import Path
 
@@ -106,6 +107,14 @@ def main(argv=None) -> int:
         help="Optional: also package a runnable Harbor task into this directory.",
     )
     args = parser.parse_args(argv)
+
+    # Install a handler at the entrypoint so the pipeline's INFO progress logs are
+    # actually shown (library code only emits; it must not configure logging).
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s: %(message)s",
+        datefmt="%H:%M:%S",
+    )
 
     # Load .env so ANTHROPIC_API_KEY is available, matching the rest of the project.
     try:

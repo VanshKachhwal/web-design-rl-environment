@@ -53,7 +53,7 @@ COMPONENTS_CSS = "components.css"
 
 # Bounded-repair budgets (design decision #11).
 MAX_REROLLS = 2          # inline stage-1 / stage-2 re-rolls before skipping seed
-MAX_NUDGES = 2           # stage-3 nudges per page before dropping the site
+DEFAULT_MAX_NUDGES = 5   # default stage-3 nudges per page before dropping (issue 10)
 MIN_PAGES = 5            # the sitemap floor
 
 # Diagnostics on these "pages" are site-wide / shared-artifact failures that the
@@ -93,7 +93,8 @@ def generate_site(seed, client, out_dir) -> Path:
     return out_dir
 
 
-def generate_gated_site(seed, client, out_dir, *, render=render_site):
+def generate_gated_site(seed, client, out_dir, *, render=render_site,
+                        max_nudges=DEFAULT_MAX_NUDGES):
     """Run the gated, bounded-repair pipeline for one site.
 
     Args:
@@ -102,6 +103,8 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site):
         out_dir: directory to write the site into.
         render: the render callable (``render_site`` by default; injectable so
             tests drive stage 5 with canned images without launching Chromium).
+        max_nudges: per-page stage-3 nudge budget before the site is dropped
+            (default :data:`DEFAULT_MAX_NUDGES` = 5; tunable without a code edit).
 
     Returns:
         The ``Path`` to a gated site that passed stage 4 + 5, or a
@@ -114,28 +117,40 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site):
     # --- Stage 1 + inline gate (<=2 re-rolls, else skip the seed) ----------
     spec = None
     for attempt in range(MAX_REROLLS + 1):
+        logger.info("stage 1: generating brief + sitemap")
         spec = stages.run_stage1(seed, client)
         problem = _stage1_inline_problem(spec)
         if problem is None:
+            slugs = [page["slug"] for page in spec.pages]
+            logger.info("stage 1: %d pages %s", len(spec.pages), slugs)
             break
         if attempt == MAX_REROLLS:
             return _drop(seed, f"stage-1 inline gate failed after "
                                f"{MAX_REROLLS} re-rolls: {problem}")
+        logger.info("stage 1: re-rolling (attempt %d/%d): %s",
+                    attempt + 1, MAX_REROLLS, problem)
     # --- Stage 2 + inline manifest-compliance gate (<=2 re-rolls) ----------
     design = None
     for attempt in range(MAX_REROLLS + 1):
+        logger.info("stage 2: authoring frozen design system")
         design = stages.run_stage2(spec, client)
         problem = _stage2_inline_problem(spec, design)
         if problem is None:
+            logger.info("stage 2: %d manifest component(s) styled",
+                        len(spec.component_manifest))
             break
         if attempt == MAX_REROLLS:
             return _drop(seed, f"stage-2 inline manifest gate failed after "
                                f"{MAX_REROLLS} re-rolls: {problem}")
+        logger.info("stage 2: re-rolling (attempt %d/%d): %s",
+                    attempt + 1, MAX_REROLLS, problem)
 
     _write_shared(out_dir, design)
 
     # --- Stage 3 fan-out + assemble ----------------------------------------
-    for page in spec.pages:
+    total = len(spec.pages)
+    for i, page in enumerate(spec.pages, start=1):
+        logger.info("stage 3: page %d/%d: %s", i, total, page["title"])
         body = stages.run_stage3(spec, design, page, client)
         _write_page(out_dir, page, body, design)
     (out_dir / "page_map.json").write_text(json.dumps(spec.page_map, indent=2))
@@ -145,7 +160,8 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site):
     _apply_mechanical_fixes(out_dir, spec)
 
     # --- Full gate (stage 4 + 5) + stage-3 nudge loop ----------------------
-    return _gate_and_repair(seed, spec, design, out_dir, client, render)
+    return _gate_and_repair(seed, spec, design, out_dir, client, render,
+                            max_nudges)
 
 
 # --- Inline-gate predicates -------------------------------------------------
@@ -188,16 +204,21 @@ def _stage2_inline_problem(spec, design):
 # --- Gate + repair ----------------------------------------------------------
 
 
-def _gate_and_repair(seed, spec, design, out_dir, client, render):
-    """Run the full gate; nudge failing pages <=2x; else drop the site."""
+def _gate_and_repair(seed, spec, design, out_dir, client, render, max_nudges):
+    """Run the full gate; nudge failing pages <=max_nudges; else drop the site."""
     nudges_used = {page["slug"]: 0 for page in spec.pages}
     page_by_html = {f"{page['slug']}.html": page for page in spec.pages}
 
     while True:
+        logger.info("gate: running stage 4 + stage 5")
         result = _full_gate(out_dir, spec, render)
         if result.passed:
+            logger.info("gate: passed; keeping site")
             return out_dir
 
+        checks = sorted({d["check"] for d in result.diagnostics})
+        logger.info("gate: failed %d check(s) %s",
+                    len(result.diagnostics), checks)
         by_page = _group_by_page(result.diagnostics)
 
         # Site-wide / shared-artifact failures cannot be repaired by a
@@ -218,15 +239,17 @@ def _gate_and_repair(seed, spec, design, out_dir, client, render):
         for html_name, diagnostics in by_page.items():
             page = page_by_html[html_name]
             slug = page["slug"]
-            if nudges_used[slug] >= MAX_NUDGES:
+            if nudges_used[slug] >= max_nudges:
                 reason = diagnostics[0]["message"]
                 return _drop(
                     seed,
-                    f"page '{html_name}' still failing after {MAX_NUDGES} "
+                    f"page '{html_name}' still failing after {max_nudges} "
                     f"nudges; last diagnostic: {reason}",
                 )
             nudges_used[slug] += 1
             message = " ; ".join(d["message"] for d in diagnostics)
+            logger.info("repair: nudging %s (attempt %d/%d): %s",
+                        slug, nudges_used[slug], max_nudges, message)
             body = _nudge_page(spec, design, page, client, message)
             _write_page(out_dir, page, body, design)
             _apply_mechanical_fixes(out_dir, spec)
@@ -243,10 +266,13 @@ def _full_gate(out_dir, spec, render):
 def _nudge_page(spec, design, page, client, diagnostic_message):
     """Re-invoke stage 3 for one page with the exact diagnostic appended.
 
-    Composition-only: this re-runs :func:`stages.run_stage3` (which reads the
-    *frozen* stylesheets read-only and emits only the page body) with the
-    machine error appended to the prompt — it can never re-author the design
-    system.
+    Composition-only: this re-runs stage 3 (which reads the *frozen* stylesheets
+    read-only and emits only the page body) with the machine error appended to
+    the prompt — it can never re-author the design system. The model output is
+    normalized to chrome-free ``<main>`` content (:func:`stages.normalize_stage3_body`)
+    exactly like :func:`stages.run_stage3`, so a repair that re-adds in-body
+    chrome (the unrepairable live failure) is stripped instead of duplicating
+    the injected chrome.
     """
     prompt = stages.build_stage3_prompt(spec, design, page)
     prompt += (
@@ -256,7 +282,8 @@ def _nudge_page(spec, design, page, client, diagnostic_message):
         "design system (variables.css / components.css); compose only the "
         "existing component classes and declared var(--…) tokens."
     )
-    return client.complete(prompt, temperature=stages.STAGE3_TEMPERATURE).strip()
+    raw = client.complete(prompt, temperature=stages.STAGE3_TEMPERATURE)
+    return stages.normalize_stage3_body(raw)
 
 
 def _group_by_page(diagnostics):
@@ -309,9 +336,13 @@ def _write_page(out_dir, page, body, design):
 def _assemble_page(title: str, body: str, design: stages.DesignSystem) -> str:
     """Wrap stage-3 body markup into a full, hermetic, static HTML document.
 
-    Links only the two frozen stylesheets and injects the header/nav/footer
+    Links only the two frozen stylesheets and injects the header + footer
     partials byte-identically (the same strings for every page), so chrome
-    identity and stylesheet-only referencing hold by construction.
+    identity and stylesheet-only referencing hold by construction. The header
+    partial owns the site ``<nav>`` (issue 14), so a page is exactly
+    ``<header><nav>…</nav></header>`` + the normalized ``<main>`` body +
+    ``<footer>`` — no separate nav, and (because stage-3 bodies are normalized)
+    no chrome inside ``<main>``.
     """
     return (
         "<!DOCTYPE html>\n"
@@ -325,7 +356,6 @@ def _assemble_page(title: str, body: str, design: stages.DesignSystem) -> str:
         "</head>\n"
         "<body>\n"
         f"{design.header_html}\n"
-        f"{design.nav_html}\n"
         f"{body}\n"
         f"{design.footer_html}\n"
         "</body>\n"

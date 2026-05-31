@@ -13,12 +13,36 @@ single model — **Opus 4.6** — across all three stages, with the per-stage
 temperature passed in by the caller (1.0 / 0.7 / 0.6 for stages 1/2/3).
 """
 
+import logging
+import time
 from typing import Protocol, runtime_checkable
+
+logger = logging.getLogger(__name__)
 
 # Single generation model for all three stages (design decision #10). The
 # canonical model list spells out ``claude-opus-4-8``; the SDK's ``Model`` literal
 # also accepts ``claude-opus-4-6``, so this exact ID is valid to wire.
 GENERATION_MODEL = "claude-opus-4-6"
+
+# Transient HTTP statuses worth a backed-off retry: rate-limit (429), the
+# Anthropic "overloaded_error" (529), and any 5xx. Auth (401) / bad-request
+# (400) and other 4xx are NOT transient and must surface immediately.
+_TRANSIENT_STATUS = frozenset({408, 409, 429, 529})
+
+
+def _is_transient(exc) -> bool:
+    """Whether an exception from the Messages API is worth retrying.
+
+    Classified by HTTP ``status_code`` (so it works for both the SDK's typed
+    errors and any thin stand-in): 429 / 529 / 5xx are transient; 4xx like
+    400 (bad request) and 401 (auth) are not. A connection error with no status
+    is treated as transient.
+    """
+    status = getattr(exc, "status_code", None)
+    if status is None:
+        # A network/connection error (no HTTP status) — retry it.
+        return True
+    return status in _TRANSIENT_STATUS or status >= 500
 
 
 @runtime_checkable
@@ -62,7 +86,15 @@ class AnthropicGenerationClient:
     API key; the client is only ever used when explicitly injected.
     """
 
-    def __init__(self, client=None, model: str = GENERATION_MODEL, max_tokens: int = 16384):
+    def __init__(
+        self,
+        client=None,
+        model: str = GENERATION_MODEL,
+        max_tokens: int = 16384,
+        *,
+        max_retries: int = 4,
+        backoff_base: float = 1.0,
+    ):
         if client is None:
             import anthropic  # lazy: keep the module import-safe.
 
@@ -70,14 +102,50 @@ class AnthropicGenerationClient:
         self._client = client
         self._model = model
         self._max_tokens = max_tokens
+        self._max_retries = max_retries
+        self._backoff_base = backoff_base
+
+    def _create_with_retry(self, **kwargs):
+        """Call the Messages API, retrying transient errors with backoff.
+
+        Retries 429 / 529 / 5xx (and bare connection errors) up to
+        ``max_retries`` times with exponential backoff (``backoff_base * 2**k``
+        seconds). Non-transient errors (auth, bad request) surface immediately;
+        once the retry budget is exhausted the last transient error is raised.
+        """
+        attempt = 0
+        while True:
+            try:
+                return self._client.messages.create(**kwargs)
+            except Exception as exc:
+                if not _is_transient(exc) or attempt >= self._max_retries:
+                    raise
+                delay = self._backoff_base * (2 ** attempt)
+                logger.warning(
+                    "transient generation error (%s); retry %d/%d in %.1fs",
+                    exc, attempt + 1, self._max_retries, delay,
+                )
+                if delay:
+                    time.sleep(delay)
+                attempt += 1
 
     def complete(self, prompt, *, temperature):
-        message = self._client.messages.create(
+        message = self._create_with_retry(
             model=self._model,
             max_tokens=self._max_tokens,
             temperature=temperature,
             messages=[{"role": "user", "content": prompt}],
         )
+        # A response cut off at the token cap (``stop_reason == "max_tokens"``)
+        # is a partial output — returning it would hand a downstream parser a
+        # truncated artifact (an unterminated JSON string / a missing ===FILE===
+        # block). Surface it as a clear, actionable error instead.
+        if getattr(message, "stop_reason", None) == "max_tokens":
+            raise ValueError(
+                f"generation response was truncated at max_tokens "
+                f"({self._max_tokens}); the model hit the output cap before "
+                "finishing. Raise max_tokens or shrink the requested output."
+            )
         return "".join(
             block.text for block in message.content if block.type == "text"
         )

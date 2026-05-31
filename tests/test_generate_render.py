@@ -28,18 +28,20 @@ _STAGE1 = {
     "component_manifest": ["hero", "content-section", "feature-grid", "contact-block"],
 }
 
-_STAGE2 = {
-    "variables_css": ":root{--ink:#101010;--paper:#f4f1ea;--accent:#d6452b;}",
-    "components_css": (
-        "body{margin:0;font-family:Inter;color:var(--ink);background:var(--paper);}"
-        ".site-header{background:var(--ink);color:var(--paper);padding:24px;}"
-        ".hero{padding:80px 24px;background:var(--accent);color:var(--paper);}"
-        "main{padding:40px 24px;min-height:600px;}"
-    ),
-    "header_html": '<header class="site-header"><strong>FORM STUDIO</strong></header>',
-    "nav_html": '<nav class="site-nav"><a href="index.html">Home</a></nav>',
-    "footer_html": '<footer class="site-footer">FORM STUDIO 2026</footer>',
-}
+_STAGE2 = (
+    "===FILE variables.css===\n"
+    ":root{--ink:#101010;--paper:#f4f1ea;--accent:#d6452b;}\n"
+    "===FILE components.css===\n"
+    "body{margin:0;font-family:Inter;color:var(--ink);background:var(--paper);}"
+    ".site-header{background:var(--ink);color:var(--paper);padding:24px;}"
+    ".hero{padding:80px 24px;background:var(--accent);color:var(--paper);}"
+    "main{padding:40px 24px;min-height:600px;}\n"
+    "===FILE header.html===\n"
+    '<header class="site-header"><strong>FORM STUDIO</strong>'
+    '<nav class="site-nav"><a href="index.html">Home</a></nav></header>\n'
+    "===FILE footer.html===\n"
+    '<footer class="site-footer">FORM STUDIO 2026</footer>\n'
+)
 
 
 def _stage3_body(title):
@@ -52,7 +54,7 @@ def _stage3_body(title):
 
 
 def test_generated_site_renders_one_screenshot_per_page_at_1280(tmp_path):
-    responses = [json.dumps(_STAGE1), json.dumps(_STAGE2)]
+    responses = [json.dumps(_STAGE1), _STAGE2]
     responses += [_stage3_body(p["title"]) for p in _STAGE1["pages"]]
     client = StubGenerationClient(responses=responses)
 
