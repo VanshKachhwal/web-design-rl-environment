@@ -26,19 +26,41 @@ def test_stub_records_calls_with_temperature():
     assert stub.calls == [("the-prompt", 0.6)]
 
 
+class _StreamCtx:
+    """Stand-in for the SDK's streaming context manager.
+
+    The real client uses ``with messages.stream(...) as s: s.get_final_message()``
+    (streaming is required for the large ``max_tokens`` cap), so the fakes expose
+    a ``stream`` method returning this context manager rather than ``create``.
+    """
+
+    def __init__(self, msg):
+        self._msg = msg
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def get_final_message(self):
+        return self._msg
+
+
 def test_anthropic_client_is_import_safe_without_api_key():
     # Constructing with an injected fake client must not import/require the SDK
     # or a key — only an actual ``.complete`` call would touch the SDK.
+    class _Block:
+        type = "text"
+        text = "<html></html>"
+
+    class _Msg:
+        content = [_Block()]
+        stop_reason = "end_turn"
+
     class _FakeMessages:
-        def create(self, **kwargs):
-            class _Block:
-                type = "text"
-                text = "<html></html>"
-
-            class _Msg:
-                content = [_Block()]
-
-            return _Msg()
+        def stream(self, **kwargs):
+            return _StreamCtx(_Msg())
 
     class _FakeClient:
         messages = _FakeMessages()
@@ -69,9 +91,9 @@ def _fake_anthropic(stop_reason="end_turn", text="ok"):
         def __init__(self):
             self.kwargs = None
 
-        def create(self, **kwargs):
+        def stream(self, **kwargs):
             self.kwargs = kwargs
-            return _Msg()
+            return _StreamCtx(_Msg())
 
     class _Client:
         messages = _Messages()
@@ -117,7 +139,7 @@ class _NonTransient(Exception):
 
 
 def _flaky_anthropic(errors):
-    """A fake client whose messages.create raises the queued errors, then ok."""
+    """A fake client whose messages.stream raises the queued errors, then ok."""
     class _Block:
         type = "text"
         text = "ok"
@@ -131,11 +153,11 @@ def _flaky_anthropic(errors):
             self.queue = list(errors)
             self.attempts = 0
 
-        def create(self, **kwargs):
+        def stream(self, **kwargs):
             self.attempts += 1
             if self.queue:
                 raise self.queue.pop(0)
-            return _Msg()
+            return _StreamCtx(_Msg())
 
     class _Client:
         messages = _Messages()
@@ -173,6 +195,30 @@ def test_non_transient_error_is_not_retried():
     assert fake.messages.attempts == 1
 
 
+def test_status_less_client_side_error_is_not_retried():
+    # A synchronous client-side error with no HTTP status_code (e.g. the SDK's
+    # ValueError demanding streaming for a large max_tokens) is deterministic —
+    # retrying it would just burn the budget on the identical failure. It must
+    # surface immediately, unlike a real connection error (which has no status
+    # but IS retried).
+    import pytest
+
+    fake = _flaky_anthropic([ValueError("Streaming is required ...")])
+    client = AnthropicGenerationClient(client=fake, max_retries=3, backoff_base=0)
+    with pytest.raises(ValueError):
+        client.complete("hi", temperature=0.7)
+    assert fake.messages.attempts == 1
+
+
+def test_connection_error_with_no_status_is_retried():
+    # A genuine connection/timeout error carries no status_code but is transient;
+    # it must still be retried (the status-less path must not regress).
+    fake = _flaky_anthropic([ConnectionError("connection reset"), TimeoutError("slow")])
+    client = AnthropicGenerationClient(client=fake, max_retries=3, backoff_base=0)
+    assert client.complete("hi", temperature=0.7) == "ok"
+    assert fake.messages.attempts == 3
+
+
 def test_transient_errors_beyond_budget_surface_the_error():
     import pytest
 
@@ -185,9 +231,11 @@ def test_transient_errors_beyond_budget_surface_the_error():
 
 
 def test_default_max_tokens_is_a_model_safe_value():
-    # 16384 is the value the first live run confirmed claude-opus-4-6 accepts;
-    # the default must remain at/below that known-good ceiling.
+    # 32000 is claude-opus-4-6's output ceiling (no beta header needed); bumped
+    # from 16384 after a med-complexity stage-2 run overflowed the lower cap. The
+    # robust fix for output that still exceeds this is continuation (issue 15);
+    # the default must remain at/below the model's known-good ceiling.
     fake = _fake_anthropic()
     client = AnthropicGenerationClient(client=fake)
     client.complete("hi", temperature=0.7)
-    assert fake.messages.kwargs["max_tokens"] == 16384
+    assert fake.messages.kwargs["max_tokens"] == 32000

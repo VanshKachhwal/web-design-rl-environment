@@ -35,14 +35,26 @@ def _is_transient(exc) -> bool:
 
     Classified by HTTP ``status_code`` (so it works for both the SDK's typed
     errors and any thin stand-in): 429 / 529 / 5xx are transient; 4xx like
-    400 (bad request) and 401 (auth) are not. A connection error with no status
-    is treated as transient.
+    400 (bad request) and 401 (auth) are not.
+
+    With no HTTP status, retry **only** a genuine connection/timeout error.
+    A synchronous client-side error raised before any network round-trip — e.g.
+    the SDK's ``ValueError`` demanding streaming for a large ``max_tokens``, or
+    any request-validation failure — is deterministic: retrying it just burns
+    the budget on the same failure, so it must surface immediately.
     """
     status = getattr(exc, "status_code", None)
-    if status is None:
-        # A network/connection error (no HTTP status) — retry it.
-        return True
-    return status in _TRANSIENT_STATUS or status >= 500
+    if status is not None:
+        return status in _TRANSIENT_STATUS or status >= 500
+    try:
+        import anthropic  # lazy: only needed to classify a live SDK error.
+
+        # APITimeoutError subclasses APIConnectionError, so this covers timeouts.
+        if isinstance(exc, anthropic.APIConnectionError):
+            return True
+    except Exception:
+        pass
+    return isinstance(exc, (ConnectionError, TimeoutError))
 
 
 @runtime_checkable
@@ -90,7 +102,7 @@ class AnthropicGenerationClient:
         self,
         client=None,
         model: str = GENERATION_MODEL,
-        max_tokens: int = 16384,
+        max_tokens: int = 32000,
         *,
         max_retries: int = 4,
         backoff_base: float = 1.0,
@@ -116,7 +128,7 @@ class AnthropicGenerationClient:
         attempt = 0
         while True:
             try:
-                return self._client.messages.create(**kwargs)
+                return self._create_message(**kwargs)
             except Exception as exc:
                 if not _is_transient(exc) or attempt >= self._max_retries:
                     raise
@@ -128,6 +140,20 @@ class AnthropicGenerationClient:
                 if delay:
                     time.sleep(delay)
                 attempt += 1
+
+    def _create_message(self, **kwargs):
+        """Create one message via the **streaming** API; return the final Message.
+
+        Streaming — not a one-shot ``messages.create`` — because the SDK refuses
+        a *non*-streaming request whose ``max_tokens`` could take over 10 minutes
+        (any ``max_tokens`` above ~21k for this model, and the default cap is
+        32k). ``get_final_message`` blocks until the stream completes and returns
+        the accumulated :class:`Message` (with its ``stop_reason``), so the rest
+        of the client — retry classification and truncation detection — is
+        unchanged from the non-streaming path.
+        """
+        with self._client.messages.stream(**kwargs) as stream:
+            return stream.get_final_message()
 
     def complete(self, prompt, *, temperature):
         message = self._create_with_retry(
