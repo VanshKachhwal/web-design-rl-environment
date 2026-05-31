@@ -162,25 +162,119 @@ def _offending_values(css_without_comments):
 # --- Font-family scanning ---------------------------------------------------
 
 _FONT_FAMILY = re.compile(r"font-family\s*:\s*([^;}{]+)", re.IGNORECASE)
+# A custom-property declaration ``--name: value`` (value up to the ``;``/``}``).
+_CUSTOM_PROP = re.compile(r"(--[A-Za-z0-9_-]+)\s*:\s*([^;}{]+)")
+# A ``var(--name[, fallback])`` reference, capturing the token name and the rest
+# (the inline fallback) up to the matching ``)``.
+_VAR_REF = re.compile(r"var\(\s*(--[A-Za-z0-9_-]+)\s*(?:,\s*([^)]*))?\)",
+                      re.IGNORECASE)
 
 
-def _font_families(css):
-    """Every family named in a ``font-family`` declaration (comment-stripped).
+def _without_font_face(css):
+    """Comment-stripped CSS with ``@font-face`` blocks removed.
 
-    Yields each family token from every ``font-family`` stack, with surrounding
-    quotes and whitespace stripped. ``font-family: 'Inter', sans-serif`` yields
-    ``Inter`` then ``sans-serif``. ``@font-face`` blocks are skipped: their
-    ``font-family`` is a face *definition*, not a usage, and the block itself is
-    a hermeticity concern (handled by that check) — palette fonts install
-    OS-level by bare name, so a well-posed site needs no ``@font-face`` at all.
+    A face *definition* is not a usage, and the block itself is a hermeticity
+    concern (handled by that check) — palette fonts install OS-level by bare
+    name, so a well-posed site needs no ``@font-face`` at all.
     """
-    css = re.sub(r"@font-face\s*\{[^}]*\}", "", _strip_comments(css),
-                 flags=re.IGNORECASE)
-    for match in _FONT_FAMILY.findall(css):
-        for raw in match.split(","):
-            family = raw.strip().strip("'\"").strip()
+    return re.sub(r"@font-face\s*\{[^}]*\}", "", _strip_comments(css),
+                  flags=re.IGNORECASE)
+
+
+def _custom_properties(css):
+    """Map of ``--name -> raw value`` for every custom property in ``css``.
+
+    Used to resolve ``var()`` indirection in ``font-family`` declarations. The
+    value is the raw declaration text (un-split, un-resolved); resolution happens
+    lazily in :func:`_resolve_font_stack` so token cycles can terminate.
+    """
+    props = {}
+    for name, value in _CUSTOM_PROP.findall(_strip_comments(css)):
+        props[name] = value.strip()
+    return props
+
+
+def _split_top_level_commas(value):
+    """Split a ``font-family`` value on top-level commas only.
+
+    Commas inside ``var(...)`` belong to that var's own fallback list, not the
+    surrounding stack, so we never split inside parentheses. ``var(--x, a), serif``
+    yields ``["var(--x, a)", "serif"]``.
+    """
+    parts = []
+    depth = 0
+    current = []
+    for ch in value:
+        if ch == "(":
+            depth += 1
+            current.append(ch)
+        elif ch == ")":
+            depth = max(0, depth - 1)
+            current.append(ch)
+        elif ch == "," and depth == 0:
+            parts.append("".join(current))
+            current = []
+        else:
+            current.append(ch)
+    if current:
+        parts.append("".join(current))
+    return [p.strip() for p in parts if p.strip()]
+
+
+def _clean_family(token):
+    """Strip surrounding quotes/whitespace from a single family token."""
+    return token.strip().strip("'\"").strip()
+
+
+# Sentinel family names standing in for a ``var(--x)`` that does not resolve to a
+# real family, so the stack rule can distinguish them and emit a clearer message:
+# an undeclared token, or one caught in a definition cycle.
+_UNDECLARED = "\0undeclared"
+_CYCLIC = "\0cyclic"
+
+
+def _resolve_font_stack(value, props, _seen=None):
+    """Resolve a ``font-family`` value to its effective list of family names.
+
+    ``value`` is the raw declaration text (e.g. ``var(--font-body), serif`` or
+    ``"Inter", sans-serif``). ``props`` is the custom-property map from
+    :func:`_custom_properties`. Returns the flat list of family names that would
+    actually be tried, in order — ``var(--x)`` is expanded by resolving ``--x``
+    from ``props`` (recursively, with a visited-set so a token cycle terminates),
+    and the inline ``var(--x, <fallback>)`` portion is expanded too. A reference
+    to a token not in ``props`` contributes the :data:`_UNDECLARED` sentinel
+    (with its token name) so the caller can report it distinctly.
+    """
+    if _seen is None:
+        _seen = set()
+    families = []
+    for part in _split_top_level_commas(value):
+        match = _VAR_REF.match(part)
+        if match and match.group(0).strip() == part:
+            name, fallback = match.group(1), match.group(2)
+            if name in props and name not in _seen:
+                families += _resolve_font_stack(props[name], props,
+                                                _seen | {name})
+            elif name in _seen:
+                # Token cycle — terminate; flag it so the stack does not look
+                # like a (passing) empty/pure-generic resolution.
+                families.append(_CYCLIC + name)
+            else:
+                families.append(_UNDECLARED + name)
+            if fallback:
+                families += _resolve_font_stack(fallback, props, _seen)
+        else:
+            family = _clean_family(part)
             if family:
-                yield family
+                families.append(family)
+    return families
+
+
+def _font_family_stacks(css):
+    """Yield the raw value of each ``font-family`` declaration (``@font-face``
+    blocks skipped, comments stripped)."""
+    for match in _FONT_FAMILY.findall(_without_font_face(css)):
+        yield match.strip()
 
 
 # --- External-resource detection -------------------------------------------
@@ -598,21 +692,69 @@ def _check_font_palette(site_dir, spec):
     palette (and the DejaVu fallback / generic CSS keywords) would silently fall
     back to DejaVu in the offline render, so the typography the agent studies is
     not the design's intent — the same fidelity bug the bundled palette exists to
-    kill. Shared stylesheets and per-page styles are both scanned; a per-page
+    kill.
+
+    Each ``font-family`` declaration is validated **as a whole stack**, not per
+    family. ``var()`` indirection is resolved against the ``variables.css`` token
+    map (recursively; a token cycle terminates), and the inline
+    ``var(--x, <fallback>)`` portion is folded into the stack too. A resolved
+    stack **passes iff** it contains >=1 palette family (or the DejaVu fallback)
+    OR consists only of generic CSS keywords; non-palette *concrete* families
+    alongside a palette family are inert (uninstalled, so the browser skips them)
+    and tolerated. A stack whose only concrete family is off-palette — the
+    off-palette *primary* — still fails. An undeclared ``var(--x)`` is a distinct
+    failure. Shared stylesheets and per-page styles are both scanned; a per-page
     failure is keyed to the page so the stage-3 nudge can repair just that page.
     """
     diagnostics = []
-    allowed = fonts.allowed_families()
+    palette = set(fonts.PALETTE_FAMILIES) | {fonts.FALLBACK_FAMILY}
+    generics = set(fonts.GENERIC_FAMILIES)
+
+    # The token map is global to the site: variables.css declares the font
+    # tokens that the design-system / per-page styles reference via var().
+    props = {}
+    if (site_dir / VARIABLES_CSS).exists():
+        props.update(_custom_properties((site_dir / VARIABLES_CSS).read_text()))
 
     def scan(label, css):
-        for family in _font_families(css):
-            if family not in allowed:
+        # A page's <style> block may also declare its own custom properties.
+        local_props = dict(props)
+        local_props.update(_custom_properties(css))
+        for value in _font_family_stacks(css):
+            stack = _resolve_font_stack(value, local_props)
+            undeclared = [f[len(_UNDECLARED):] for f in stack
+                          if f.startswith(_UNDECLARED)]
+            if undeclared:
+                names = ", ".join(f"var({t})" for t in undeclared)
                 diagnostics.append(_diag(
                     "font_palette", label,
-                    f"{label}: font-family '{family}' is not in the font palette; "
-                    "use only a palette family (installed OS-level by bare name) "
-                    "or a generic keyword",
+                    f"{label}: font-family '{value}' references undeclared token "
+                    f"{names}; declare it in variables.css or name a palette "
+                    "family directly",
                 ))
+                continue
+            cyclic = [f[len(_CYCLIC):] for f in stack if f.startswith(_CYCLIC)]
+            if cyclic:
+                names = ", ".join(f"var({t})" for t in cyclic)
+                diagnostics.append(_diag(
+                    "font_palette", label,
+                    f"{label}: font-family '{value}' has a cyclic token "
+                    f"definition ({names}); it resolves to no real family, so "
+                    "give the token a concrete palette stack",
+                ))
+                continue
+            concrete = [f for f in stack if f not in generics]
+            if any(f in palette for f in concrete):
+                continue  # >=1 palette family renders; off-palette ones are inert
+            if not concrete:
+                continue  # pure-generic stack — always allowed
+            diagnostics.append(_diag(
+                "font_palette", label,
+                f"{label}: font-family '{value}' resolves to a stack with no "
+                f"palette family (off-palette primary {concrete!r}); the render "
+                "would fall back to DejaVu, so use a palette family (installed "
+                "OS-level by bare name) as the primary",
+            ))
 
     for shared in (VARIABLES_CSS, COMPONENTS_CSS):
         if (site_dir / shared).exists():

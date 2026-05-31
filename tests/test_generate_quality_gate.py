@@ -529,3 +529,122 @@ def test_off_palette_font_family_in_page_style_fails(tmp_path):
     assert _checks(result) == {"font_palette"}
     assert "Georgia" in _messages(result)
     assert any(d["page"] == f"{drift_slug}.html" for d in result.diagnostics)
+
+
+# --- Font palette: var() token resolution + effective-font semantics ---------
+
+def test_var_token_resolving_to_palette_stack_passes(tmp_path):
+    # variables.css defines font tokens (real palette stacks); components.css
+    # references them via var(). The check must resolve the indirection and pass.
+    variables = VARIABLES_CSS.rstrip()[:-2] + (
+        '  --font-body: "Work Sans", "Inter", Verdana, sans-serif;\n'
+        '  --font-heading: "Anton", "Space Grotesk", sans-serif;\n'
+        "}\n"
+    )
+    components = COMPONENTS_CSS + (
+        "\nbody{ font-family: var(--font-body); }\n"
+        "h1, h2{ font-family: var(--font-heading); }\n"
+    )
+    site = build_site(tmp_path, variables=variables, components=components)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+
+
+def test_undeclared_var_token_fails_with_distinct_message(tmp_path):
+    # A var() that names no token in variables.css is a real failure, with a
+    # message distinct from the generic "not in palette" one.
+    components = COMPONENTS_CSS + "\nbody{ font-family: var(--nope); }\n"
+    site = build_site(tmp_path, components=components)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"font_palette"}
+    msg = _messages(result)
+    assert "undeclared token" in msg
+    assert "var(--nope)" in msg
+
+
+def test_palette_family_with_websafe_fallbacks_passes(tmp_path):
+    # A stack with a palette family plus inert non-palette web-safe fallbacks
+    # passes: the fallbacks aren't installed, so the browser skips to the palette
+    # family that actually renders.
+    good = VARIABLES_CSS + (
+        '\nbody{ font-family: "Work Sans", Verdana, Georgia, sans-serif; }\n'
+    )
+    site = build_site(tmp_path, variables=good)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+
+
+def test_off_palette_primary_with_no_palette_family_fails(tmp_path):
+    # A stack whose only concrete family is off-palette, with no palette family,
+    # is the off-palette primary the check exists to catch.
+    bad = VARIABLES_CSS + '\nbody{ font-family: "Comic Sans MS", sans-serif; }\n'
+    site = build_site(tmp_path, variables=bad)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"font_palette"}
+    assert "Comic Sans MS" in _messages(result)
+
+
+def test_pure_generic_stack_passes(tmp_path):
+    good = VARIABLES_CSS + "\nbody{ font-family: sans-serif; }\n"
+    site = build_site(tmp_path, variables=good)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+
+
+def test_recursive_var_token_resolves_and_passes(tmp_path):
+    # --a -> var(--b) -> a real palette stack. The resolver must follow the chain.
+    variables = VARIABLES_CSS.rstrip()[:-2] + (
+        "  --a: var(--b);\n"
+        '  --b: "Inter", sans-serif;\n'
+        "}\n"
+    )
+    components = COMPONENTS_CSS + "\nbody{ font-family: var(--a); }\n"
+    site = build_site(tmp_path, variables=variables, components=components)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+
+
+def test_cyclic_var_token_terminates_and_fails(tmp_path):
+    # --a -> var(--b) -> var(--a): a cycle. The resolver must terminate (no hang)
+    # and fail cleanly (no palette family resolves out of the cycle).
+    variables = VARIABLES_CSS.rstrip()[:-2] + (
+        "  --a: var(--b);\n"
+        "  --b: var(--a);\n"
+        "}\n"
+    )
+    components = COMPONENTS_CSS + "\nbody{ font-family: var(--a); }\n"
+    site = build_site(tmp_path, variables=variables, components=components)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"font_palette"}
+
+
+def test_var_with_inline_palette_fallback_passes(tmp_path):
+    # var(--x, <fallback>) where --x resolves to a palette stack: the whole stack
+    # (resolved token + inline fallback) is validated; an inert web-safe inline
+    # fallback alongside a palette family passes.
+    variables = VARIABLES_CSS.rstrip()[:-2] + (
+        '  --font-body: "Work Sans", sans-serif;\n'
+        "}\n"
+    )
+    components = COMPONENTS_CSS + "\nbody{ font-family: var(--font-body, Georgia); }\n"
+    site = build_site(tmp_path, variables=variables, components=components)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+
+
+def test_top_level_comma_split_does_not_break_var_fallback(tmp_path):
+    # The stack must split on top-level commas only — the commas inside
+    # var(--x, a, b) belong to that var()'s own fallback list, not the stack.
+    variables = VARIABLES_CSS.rstrip()[:-2] + (
+        '  --font-body: "Inter", sans-serif;\n'
+        "}\n"
+    )
+    components = COMPONENTS_CSS + (
+        "\nbody{ font-family: var(--font-body, Verdana, Georgia), serif; }\n"
+    )
+    site = build_site(tmp_path, variables=variables, components=components)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
