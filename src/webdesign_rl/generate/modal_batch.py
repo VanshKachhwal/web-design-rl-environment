@@ -44,6 +44,16 @@ DEFAULT_BATCH_SIZE = 48
 # already retries/backs off transient 429/529). Tunable without a redeploy.
 DEFAULT_CONCURRENCY = 8
 
+# Per-container cloud resources (Modal sizes these, independent of the host).
+# Sized for the heaviest step — headless Chromium rendering full pages in the
+# stage-5 gate (and again at emit time). One browser + one full-page bitmap
+# (even a max-height 1280x12000 page is ~184 MB in PIL) fits comfortably in 4 GB;
+# 2 vCPU covers Chromium + the local HTTP server thread. The LLM calls dominate
+# wall-time but are network-bound. Bump if a future per-page parallel render or a
+# pathological page needs more.
+WORKER_CPU = 2.0
+WORKER_MEMORY_MB = 4096
+
 
 @dataclass(frozen=True)
 class SeedResult:
@@ -279,6 +289,8 @@ def _build_modal_app():
         volumes={VOLUME_MOUNT: volume},
         secrets=[secret],
         max_containers=DEFAULT_CONCURRENCY,
+        cpu=WORKER_CPU,
+        memory=WORKER_MEMORY_MB,
         timeout=60 * 30,
     )
     def _worker(indexed_seed):
