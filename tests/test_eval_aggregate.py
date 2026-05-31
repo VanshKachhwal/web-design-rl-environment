@@ -434,14 +434,15 @@ def _solid_png(path, color, size=(8, 6)):
 
 @pytest.fixture
 def synthetic_job_with_renders(synthetic_job):
-    """Extend the 2-trial job with persisted ``verifier/renders/`` + a task.
+    """Extend the 2-trial job with persisted candidate + reference renders + task.
 
     EP-01's grader writes each candidate page to
-    ``task__<id>/verifier/renders/<page>.png`` (page-map key), and the task bakes
-    the reference screenshots it compared against under
-    ``<task>/tests/reference_site/<screenshot>.png`` with a ``tests/page_map.json``
-    mapping page -> screenshot. ``jobs/opus47-004`` predates renders, so the
-    gallery is exercised against this fixture instead.
+    ``task__<id>/verifier/renders/<page>.png`` (page-map key); EP-07 writes the
+    sealed grade-time reference it scored against to
+    ``task__<id>/verifier/reference_renders/<page>.png`` (also page-map key). The
+    task carries a ``tests/page_map.json`` mapping page -> screenshot (still used
+    for the heatmap etc., but no longer for the reference lookup). ``jobs/opus47-004``
+    predates renders, so the gallery is exercised against this fixture instead.
     """
     job_dir = synthetic_job
     # Each present page gets a tiny candidate render, keyed by the page-map key.
@@ -450,12 +451,14 @@ def synthetic_job_with_renders(synthetic_job):
         "BBB": {"index": (30, 30, 200), "about": (200, 200, 30)},
     }
     for trial_id, pages in page_color.items():
-        renders = job_dir / f"task__{trial_id}" / "verifier" / "renders"
+        verifier = job_dir / f"task__{trial_id}" / "verifier"
         for page, color in pages.items():
-            _solid_png(renders / f"{page}.png", color)
+            _solid_png(verifier / "renders" / f"{page}.png", color)
+            # EP-07: the sealed reference render, page-keyed (deterministic across
+            # trials, persisted per-trial alongside the candidate).
+            _solid_png(verifier / "reference_renders" / f"{page}.png", (10, 10, 10))
 
-    # The task baked the reference screenshots (mapped via page_map by screenshot
-    # filename, which need NOT equal the page key).
+    # The task still carries a page_map (used elsewhere, e.g. the heatmap).
     task_path = Path(json.loads(
         (job_dir / "task__AAA" / "result.json").read_text()
     )["config"]["task"]["path"])
@@ -465,9 +468,6 @@ def synthetic_job_with_renders(synthetic_job):
     }
     (task_path / "tests").mkdir(parents=True, exist_ok=True)
     (task_path / "tests" / "page_map.json").write_text(json.dumps(page_map))
-    ref_site = task_path / "tests" / "reference_site"
-    _solid_png(ref_site / "index.png", (10, 10, 10))
-    _solid_png(ref_site / "about_ref.png", (240, 240, 240))
     return job_dir
 
 
@@ -510,6 +510,29 @@ def test_report_renders_visual_galleries_self_contained(
     assert not list(out.glob("*.png"))
 
 
+def test_reference_uri_resolves_to_persisted_reference_render(
+    synthetic_job_with_renders, tmp_path
+):
+    """EP-07: the reference comes from the job's grade-time reference_renders/.
+
+    Page-keyed and trial-scoped (deterministic across trials), exactly like the
+    candidate ``_render_uri`` — not from the task's ``tests/reference_site/``.
+    """
+    report = _load_report_module()
+    job_dir = synthetic_job_with_renders
+
+    uri = report._reference_uri(job_dir, "AAA", "index")
+    assert uri is not None
+    assert uri.startswith("data:image/png;base64,")
+    # It is the persisted reference render, not the (now absent) baked task copy.
+    expected = report._png_to_data_uri(
+        Path(job_dir) / "task__AAA" / "verifier" / "reference_renders" / "index.png"
+    )
+    assert uri == expected
+    # A page/trial with no persisted reference render degrades to None.
+    assert report._reference_uri(job_dir, "AAA", "nope") is None
+
+
 def test_report_without_renders_omits_galleries(synthetic_job, tmp_path):
     """A job that predates EP-01 (no renders) still produces a valid report.
 
@@ -526,3 +549,29 @@ def test_report_without_renders_omits_galleries(synthetic_job, tmp_path):
     assert html.count("data:image/png;base64,") == 3
     assert ">6." not in html
     assert ">7." not in html
+
+
+def test_report_pre_ep07_job_without_reference_renders_does_not_crash(
+    synthetic_job_with_renders, tmp_path
+):
+    """A pre-EP-07 job (candidate renders, but no reference_renders/) degrades.
+
+    The galleries still build off the candidate renders; the reference column is
+    simply blank (placeholder) rather than crashing the report.
+    """
+    report = _load_report_module()
+    job_dir = synthetic_job_with_renders
+    # Simulate a pre-EP-07 job: remove the reference renders, keep the candidates.
+    for ref_dir in job_dir.glob("task__*/verifier/reference_renders"):
+        for png in ref_dir.glob("*.png"):
+            png.unlink()
+        ref_dir.rmdir()
+    out = tmp_path / "report_out"
+
+    report.build_report(job_dir, out)
+
+    html = (out / "report.html").read_text()
+    # Galleries still render (candidate renders present), with no reference image.
+    assert ">6." in html
+    assert ">7." in html
+    assert "(no render)" in html  # the reference placeholder cell

@@ -244,13 +244,13 @@ def _score_table_html(scores):
 
 # --- visual-evidence galleries (items 6-7) ------------------------------------
 #
-# The galleries bind the grader's numbers to the screenshots behind them: the
-# candidate pixels come from the job's persisted ``verifier/renders/<page>.png``
-# (the exact renders the grader scored), the reference from the task's baked
-# ``tests/reference_site/<screenshot>.png`` (the exact images compared against),
-# mapped render-page -> reference via ``tests/page_map.json``. Which renders to
-# show is the unit-tested pure selection logic in ``aggregate_results``; loading
-# and embedding the PNGs is this untested shell.
+# The galleries bind the grader's numbers to the screenshots behind them: both
+# the candidate pixels (``verifier/renders/<page>.png``) and the reference pixels
+# (``verifier/reference_renders/<page>.png``, EP-07) come from the job's persisted
+# grade-time renders — the exact images the grader scored, sealed in-container with
+# bundled fonts — page-keyed so each pair loads uniformly. Which renders to show is
+# the unit-tested pure selection logic in ``aggregate_results``; loading and
+# embedding the PNGs is this untested shell.
 
 
 def _render_uri(job_dir, trial_id, page):
@@ -271,25 +271,28 @@ def _load_page_map(task_path):
         return {}
 
 
-def _reference_uri(task_path, page_map, page):
-    """Embed the reference the grader compared ``page`` against.
+def _reference_uri(job_dir, trial_id, page):
+    """Embed the sealed grade-time reference the grader scored ``page`` against.
 
-    Maps the render page key to its reference screenshot via ``page_map`` (the
-    filenames need not match) and reads it from ``tests/reference_site/``.
+    EP-07 persists it to ``task__<id>/verifier/reference_renders/<page>.png``,
+    page-keyed and trial-scoped exactly like the candidate ``_render_uri``. The
+    reference render is deterministic/identical across trials, so we read it from
+    the trial of the candidate it is paired with. ``None`` (placeholder) when the
+    job predates EP-07 and has no persisted reference render for the page.
     """
-    spec = page_map.get(page)
-    if not spec or "screenshot" not in spec:
-        return None
     return _png_to_data_uri(
-        Path(task_path) / "tests" / "reference_site" / spec["screenshot"]
+        Path(job_dir) / f"task__{trial_id}" / "verifier" / "reference_renders"
+        / f"{page}.png"
     )
 
 
 def _gallery_available(job_dir, task_path):
-    """True when the job has persisted renders + a task page_map to map them.
+    """True when the job has persisted candidate renders + a task page_map.
 
     Jobs that predate EP-01 have no ``verifier/renders/``; the galleries are then
-    skipped so the items 1-5 report still builds.
+    skipped so the items 1-5 report still builds. A pre-EP-07 job (candidate
+    renders but no ``reference_renders/``) still builds the galleries — the
+    reference column simply degrades to a placeholder via ``_reference_uri``.
     """
     if not task_path or not _load_page_map(task_path):
         return False
@@ -306,7 +309,7 @@ def _figure_cell(uri, caption, alt):
     return f"<figure>{body}<figcaption>{caption_html}</figcaption></figure>"
 
 
-def _per_metric_gallery_html(scores, job_dir, task_path, page_map):
+def _per_metric_gallery_html(scores, job_dir):
     """Item 6: a reference|best|worst triple per term, scored + range-annotated."""
     extrema = agg.per_metric_extrema(scores)
     rows = []
@@ -318,9 +321,11 @@ def _per_metric_gallery_html(scores, job_dir, task_path, page_map):
         lo, hi = ex["range"]
         rng = f"range {lo:.3f}&ndash;{hi:.3f}"
 
-        # The reference is the best render's page (the page it is paired against).
+        # The reference is the best render's page, paired with its trial (the
+        # sealed reference is deterministic across trials, so the best render's
+        # trial is the one it was scored against).
         ref_cell = _figure_cell(
-            _reference_uri(task_path, page_map, best["page"]),
+            _reference_uri(job_dir, best["trial_id"], best["page"]),
             f"reference &middot; {html.escape(best['page'])}",
             f"reference {best['page']}",
         )
@@ -345,7 +350,7 @@ def _per_metric_gallery_html(scores, job_dir, task_path, page_map):
     return "\n".join(rows)
 
 
-def _best_overall_gallery_html(scores, job_dir, task_path, page_map):
+def _best_overall_gallery_html(scores, job_dir):
     """Item 7: the best-overall trial's render beside the reference, every page."""
     trial_id = agg.best_overall_trial(scores)
     trial = next((t for t in scores["trials"] if t["trial_id"] == trial_id), None)
@@ -357,7 +362,7 @@ def _best_overall_gallery_html(scores, job_dir, task_path, page_map):
         if not pdata.get("present", True):
             continue
         ref_cell = _figure_cell(
-            _reference_uri(task_path, page_map, page),
+            _reference_uri(job_dir, trial_id, page),
             f"reference &middot; {html.escape(page)}",
             f"reference {page}",
         )
@@ -382,9 +387,8 @@ def _galleries_html(scores, job_dir, task_path):
     """Items 6-7 combined, or "" when the job has no renders to show."""
     if not _gallery_available(job_dir, task_path):
         return ""
-    page_map = _load_page_map(task_path)
-    metric = _per_metric_gallery_html(scores, job_dir, task_path, page_map)
-    overall = _best_overall_gallery_html(scores, job_dir, task_path, page_map)
+    metric = _per_metric_gallery_html(scores, job_dir)
+    overall = _best_overall_gallery_html(scores, job_dir)
     return f"""
 <h2>6. Per-metric best / worst (reference | best | worst)</h2>
 {metric}
@@ -402,8 +406,9 @@ def render_html(scores, job_dir=None, task_path=None):
 
     Items 1-5 (scores + plots) always render. Items 6-7 (the screenshot
     galleries) render only when ``job_dir`` has persisted ``verifier/renders/``
-    and ``task_path`` carries the baked reference screenshots; otherwise they are
-    omitted so a renders-less job still produces a report.
+    and ``task_path`` carries a ``page_map``; the reference column is sourced from
+    ``verifier/reference_renders/`` (EP-07) and degrades to a placeholder for a
+    pre-EP-07 job. A renders-less job omits the galleries entirely.
     """
     meta = scores["meta"]
     title = f"Model-eval report — {html.escape(str(meta.get('task_id')))}"

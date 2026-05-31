@@ -183,9 +183,44 @@ def test_grade_persists_rendered_candidate_pngs(site_dirs, tmp_path):
         assert img.size[0] > 0 and img.size[1] > 0
 
 
+def test_grade_persists_reference_renders_keyed_by_page(site_dirs, tmp_path):
+    # Symmetric to the candidate renders: the exact reference images the grader
+    # scored against are written into reference_renders/, keyed by PAGE NAME (not
+    # the screenshot filename), so a report loads reference + candidate uniformly.
+    grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        _perfect_judge(),
+    )
+    ref_render = tmp_path / "reference_renders" / "home.png"
+    assert ref_render.exists()
+    with Image.open(ref_render) as img:
+        assert img.size[0] > 0 and img.size[1] > 0
+
+
+def test_grade_persists_reference_render_for_absent_candidate_page(
+    site_dirs, tmp_path
+):
+    # about.html is absent from the candidate dir, but its reference render is
+    # still persisted (the report can show reference-vs-blank for the dropped
+    # page) — so the reference save happens before the missing-page continue.
+    grade(
+        site_dirs["missing"],
+        site_dirs["reference"],
+        HOME_AND_ABOUT,
+        tmp_path,
+        _perfect_judge(),
+    )
+    refs = tmp_path / "reference_renders"
+    assert (refs / "home.png").exists()
+    assert (refs / "about.png").exists()
+
+
 def test_grade_opt_out_writes_no_renders_but_still_grades(site_dirs, tmp_path):
     # save_renders=False suppresses the PNGs entirely while grading proceeds
-    # normally (reward.json is still written).
+    # normally (reward.json is still written) — for BOTH candidate and reference.
     grade(
         site_dirs["perfect"],
         site_dirs["reference"],
@@ -195,6 +230,7 @@ def test_grade_opt_out_writes_no_renders_but_still_grades(site_dirs, tmp_path):
         save_renders=False,
     )
     assert not (tmp_path / "renders").exists()
+    assert not (tmp_path / "reference_renders").exists()
     reward = _load_reward(tmp_path)
     assert reward["reward"] > 0.99
 

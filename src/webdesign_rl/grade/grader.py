@@ -96,12 +96,15 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client,
             term is dropped and the reward is the mean of the three deterministic
             terms — no VLM call, API key, or network egress.
         save_renders: persist the exact candidate screenshots that were scored
-            into ``out_dir/renders/<page>.png`` (on by default), so reports use
-            the same pixels — same sealed render + bundled fonts — that produced
-            each score, with no local re-render. A page whose candidate HTML is
-            absent is simply skipped (no PNG). Independent of whether the judge
-            ran, so deterministic-only grading persists the same renders. Pass
-            ``False`` to grade without writing any PNGs.
+            into ``out_dir/renders/<page>.png`` AND the exact reference images
+            they were scored against into ``out_dir/reference_renders/<page>.png``
+            (both on by default, both keyed by page), so reports use the same
+            pixels — same sealed render + bundled fonts — that produced each
+            score, with no local re-render. A page whose candidate HTML is absent
+            is skipped for the candidate PNG but still gets its reference PNG
+            persisted (so a report can show reference-vs-blank). Independent of
+            whether the judge ran, so deterministic-only grading persists the
+            same renders. Pass ``False`` to grade without writing any PNGs.
 
     Returns:
         The full flat reward payload (each dimension term plus the aggregate
@@ -137,10 +140,23 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client,
         for page, candidate_img in rendered.items():
             candidate_img.save(renders_dir / f"{page}.png")
 
+    # Persist the sealed reference renders too, symmetric to the candidate ones:
+    # the per-page loop below opens each reference into memory, so when
+    # ``--reference-site`` is used these are the exact in-container pixels each
+    # score was computed against. Keyed by page (matching the candidate
+    # ``<page>.png``) so a report loads both uniformly. Saved before the
+    # missing-candidate ``continue`` below, so a dropped page still gets its
+    # reference persisted (reference-vs-blank).
+    if save_renders:
+        reference_renders_dir = out_dir / "reference_renders"
+        reference_renders_dir.mkdir(parents=True, exist_ok=True)
+
     page_scores = {}
     details = {}
     for page, spec in page_map.items():
         reference_img = Image.open(reference_dir / spec["screenshot"])
+        if save_renders:
+            reference_img.save(reference_renders_dir / f"{page}.png")
         candidate_img = rendered.get(page)
 
         if candidate_img is None:
