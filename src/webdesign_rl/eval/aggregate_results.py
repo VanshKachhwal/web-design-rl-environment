@@ -253,6 +253,67 @@ def per_term_mean_std(scores):
     return out
 
 
+# --- pure selection logic for the visual-evidence galleries (EP-04) -----------
+#
+# These pick the *concrete* (trial, page) renders the report's screenshot
+# galleries show. They are pure over the normalized scores object (no images, no
+# HTML) so the choice of which evidence to surface is unit-tested; loading and
+# embedding the PNGs is the untested shell in ``scripts/report.py``.
+
+
+def _term_cells(scores, term):
+    """Every present (trial, page) cell for ``term`` as ``(trial_id, page, score)``.
+
+    Absent pages carry no real render and are skipped, so an extremum is always a
+    page that was actually rendered and scored.
+    """
+    for trial in scores["trials"]:
+        for page, pdata in trial["pages"].items():
+            if pdata.get("present", True):
+                yield trial["trial_id"], page, pdata[term]
+
+
+def per_metric_extrema(scores):
+    """For each term, the best- and worst-scoring (trial, page) render.
+
+    Extremes are taken at the trial x page level — a concrete screenshot, not a
+    whole-site average — so the gallery can show the exact render behind each
+    number. Returns, per term::
+
+        {term: {"best":  {"trial_id", "page", "score"},
+                "worst": {"trial_id", "page", "score"},
+                "range": [min_score, max_score]}}
+
+    ``range`` is the term's full spread across all present cells, so a
+    near-identical low-variance pair (best == worst) reads as "uniformly good,"
+    not "no signal." A term with no present cells is omitted.
+    """
+    out = {}
+    for term in TERMS:
+        cells = list(_term_cells(scores, term))
+        if not cells:
+            continue
+        best = max(cells, key=lambda c: c[2])
+        worst = min(cells, key=lambda c: c[2])
+        out[term] = {
+            "best": {"trial_id": best[0], "page": best[1], "score": best[2]},
+            "worst": {"trial_id": worst[0], "page": worst[1], "score": worst[2]},
+            "range": [worst[2], best[2]],
+        }
+    return out
+
+
+def best_overall_trial(scores):
+    """The ``trial_id`` of the highest-``reward`` trial (the ceiling visual).
+
+    Returns ``None`` when there are no trials.
+    """
+    trials = scores["trials"]
+    if not trials:
+        return None
+    return max(trials, key=lambda t: t["reward"])["trial_id"]
+
+
 def per_page_term_matrix(scores):
     """Mean-across-trials value for every (page, term) cell.
 

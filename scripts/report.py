@@ -31,6 +31,7 @@ import argparse
 import base64
 import html
 import io
+import json
 import sys
 from pathlib import Path
 
@@ -67,6 +68,17 @@ def _fig_to_data_uri(fig):
 
 def _img_tag(data_uri, alt):
     return f'<img src="{data_uri}" alt="{html.escape(alt)}" />'
+
+
+def _png_to_data_uri(path):
+    """Read a PNG file and base64-embed it as a ``data:`` URI (same scheme as
+    plots), keeping ``report.html`` a single self-contained file. ``None`` when
+    the file is absent so a missing render degrades to a placeholder."""
+    path = Path(path)
+    if not path.exists():
+        return None
+    encoded = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:image/png;base64,{encoded}"
 
 
 def plot_distributions(scores):
@@ -230,14 +242,180 @@ def _score_table_html(scores):
     )
 
 
-def render_html(scores):
-    """Assemble the full self-contained ``report.html`` string (items 1-5)."""
+# --- visual-evidence galleries (items 6-7) ------------------------------------
+#
+# The galleries bind the grader's numbers to the screenshots behind them: the
+# candidate pixels come from the job's persisted ``verifier/renders/<page>.png``
+# (the exact renders the grader scored), the reference from the task's baked
+# ``tests/reference_site/<screenshot>.png`` (the exact images compared against),
+# mapped render-page -> reference via ``tests/page_map.json``. Which renders to
+# show is the unit-tested pure selection logic in ``aggregate_results``; loading
+# and embedding the PNGs is this untested shell.
+
+
+def _render_uri(job_dir, trial_id, page):
+    """Embed a candidate render: ``task__<id>/verifier/renders/<page>.png``."""
+    return _png_to_data_uri(
+        Path(job_dir) / f"task__{trial_id}" / "verifier" / "renders" / f"{page}.png"
+    )
+
+
+def _load_page_map(task_path):
+    """The task's page -> screenshot map (``tests/page_map.json``), or ``{}``."""
+    pm = Path(task_path) / "tests" / "page_map.json"
+    if not pm.exists():
+        return {}
+    try:
+        return json.loads(pm.read_text())
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def _reference_uri(task_path, page_map, page):
+    """Embed the reference the grader compared ``page`` against.
+
+    Maps the render page key to its reference screenshot via ``page_map`` (the
+    filenames need not match) and reads it from ``tests/reference_site/``.
+    """
+    spec = page_map.get(page)
+    if not spec or "screenshot" not in spec:
+        return None
+    return _png_to_data_uri(
+        Path(task_path) / "tests" / "reference_site" / spec["screenshot"]
+    )
+
+
+def _gallery_available(job_dir, task_path):
+    """True when the job has persisted renders + a task page_map to map them.
+
+    Jobs that predate EP-01 have no ``verifier/renders/``; the galleries are then
+    skipped so the items 1-5 report still builds.
+    """
+    if not task_path or not _load_page_map(task_path):
+        return False
+    return any(Path(job_dir).glob("task__*/verifier/renders/*.png"))
+
+
+def _figure_cell(uri, caption, alt):
+    """One labelled image cell (figure) in a gallery row; placeholder if missing."""
+    caption_html = caption  # caller pre-escapes / formats the caption
+    if uri is None:
+        body = "<div class='missing'>(no render)</div>"
+    else:
+        body = _img_tag(uri, alt)
+    return f"<figure>{body}<figcaption>{caption_html}</figcaption></figure>"
+
+
+def _per_metric_gallery_html(scores, job_dir, task_path, page_map):
+    """Item 6: a reference|best|worst triple per term, scored + range-annotated."""
+    extrema = agg.per_metric_extrema(scores)
+    rows = []
+    for term in scores["terms"]:
+        ex = extrema.get(term)
+        if ex is None:
+            continue
+        best, worst = ex["best"], ex["worst"]
+        lo, hi = ex["range"]
+        rng = f"range {lo:.3f}&ndash;{hi:.3f}"
+
+        # The reference is the best render's page (the page it is paired against).
+        ref_cell = _figure_cell(
+            _reference_uri(task_path, page_map, best["page"]),
+            f"reference &middot; {html.escape(best['page'])}",
+            f"reference {best['page']}",
+        )
+        best_cell = _figure_cell(
+            _render_uri(job_dir, best["trial_id"], best["page"]),
+            f"best &middot; {html.escape(best['trial_id'])}/"
+            f"{html.escape(best['page'])} &middot; {best['score']:.3f}",
+            f"best {term}",
+        )
+        worst_cell = _figure_cell(
+            _render_uri(job_dir, worst["trial_id"], worst["page"]),
+            f"worst &middot; {html.escape(worst['trial_id'])}/"
+            f"{html.escape(worst['page'])} &middot; {worst['score']:.3f}",
+            f"worst {term}",
+        )
+        rows.append(
+            f"<div class='gallery-row'>"
+            f"<h3>{html.escape(term)} <span class='rng'>({rng})</span></h3>"
+            f"<div class='triple'>{ref_cell}{best_cell}{worst_cell}</div>"
+            f"</div>"
+        )
+    return "\n".join(rows)
+
+
+def _best_overall_gallery_html(scores, job_dir, task_path, page_map):
+    """Item 7: the best-overall trial's render beside the reference, every page."""
+    trial_id = agg.best_overall_trial(scores)
+    trial = next((t for t in scores["trials"] if t["trial_id"] == trial_id), None)
+    if trial is None:
+        return ""
+
+    rows = []
+    for page, pdata in trial["pages"].items():
+        if not pdata.get("present", True):
+            continue
+        ref_cell = _figure_cell(
+            _reference_uri(task_path, page_map, page),
+            f"reference &middot; {html.escape(page)}",
+            f"reference {page}",
+        )
+        cand_cell = _figure_cell(
+            _render_uri(job_dir, trial_id, page),
+            f"candidate &middot; {html.escape(page)}",
+            f"candidate {page}",
+        )
+        rows.append(
+            f"<div class='gallery-row'><h3>{html.escape(page)}</h3>"
+            f"<div class='pair'>{ref_cell}{cand_cell}</div></div>"
+        )
+
+    heading = (
+        f"Best-overall trial <code>{html.escape(str(trial_id))}</code> "
+        f"(reward {trial['reward']:.3f})"
+    )
+    return f"<p>{heading}</p>\n" + "\n".join(rows)
+
+
+def _galleries_html(scores, job_dir, task_path):
+    """Items 6-7 combined, or "" when the job has no renders to show."""
+    if not _gallery_available(job_dir, task_path):
+        return ""
+    page_map = _load_page_map(task_path)
+    metric = _per_metric_gallery_html(scores, job_dir, task_path, page_map)
+    overall = _best_overall_gallery_html(scores, job_dir, task_path, page_map)
+    return f"""
+<h2>6. Per-metric best / worst (reference | best | worst)</h2>
+{metric}
+
+<h2>7. Best-overall attempt vs reference (all pages)</h2>
+{overall}
+"""
+
+
+# --- HTML assembly (full report) ----------------------------------------------
+
+
+def render_html(scores, job_dir=None, task_path=None):
+    """Assemble the full self-contained ``report.html`` string.
+
+    Items 1-5 (scores + plots) always render. Items 6-7 (the screenshot
+    galleries) render only when ``job_dir`` has persisted ``verifier/renders/``
+    and ``task_path`` carries the baked reference screenshots; otherwise they are
+    omitted so a renders-less job still produces a report.
+    """
     meta = scores["meta"]
     title = f"Model-eval report — {html.escape(str(meta.get('task_id')))}"
 
     dist_uri = plot_distributions(scores)
     means_uri = plot_per_term_means(scores)
     heatmap_uri = plot_page_term_heatmap(scores)
+
+    galleries = (
+        _galleries_html(scores, job_dir, task_path)
+        if job_dir is not None else ""
+    )
 
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
@@ -258,6 +436,18 @@ def render_html(scores):
   table.scores th:first-child, table.scores td:first-child {{ text-align: left; }}
   table.scores tr.summary {{ background: #f4f4f8; font-size: 0.85rem; }}
   img {{ max-width: 100%; height: auto; }}
+  .gallery-row {{ margin: 1rem 0 1.5rem; }}
+  .gallery-row h3 {{ font-size: 1rem; margin: 0 0 0.4rem; }}
+  .gallery-row h3 .rng {{ font-weight: 400; color: #666; font-size: 0.85rem; }}
+  .triple, .pair {{ display: grid; gap: 0.8rem; }}
+  .triple {{ grid-template-columns: repeat(3, 1fr); }}
+  .pair {{ grid-template-columns: repeat(2, 1fr); }}
+  figure {{ margin: 0; }}
+  figure img {{ border: 1px solid #ddd; }}
+  figcaption {{ font-size: 0.8rem; color: #555; margin-top: 0.25rem;
+                font-variant-numeric: tabular-nums; }}
+  .missing {{ border: 1px dashed #ccc; color: #999; padding: 1.5rem;
+              text-align: center; font-size: 0.85rem; }}
 </style></head>
 <body>
 <h1>{title}</h1>
@@ -276,12 +466,24 @@ def render_html(scores):
 
 <h2>5. Per-page x per-term heatmap</h2>
 {_img_tag(heatmap_uri, "per-page per-term heatmap")}
-
+{galleries}
 </body></html>
 """
 
 
 # --- entry point --------------------------------------------------------------
+
+
+def _task_path(job_dir):
+    """The task dir from the job's first-trial ``config.task.path`` (or ``None``).
+
+    The grader's reference screenshots are baked under this task, and the same
+    config is what the harvester reads for seed provenance — so the galleries
+    point at the exact reference images the grader compared against.
+    """
+    config = agg._first_trial_config(Path(job_dir))
+    path = (config.get("task") or {}).get("path")
+    return Path(path) if path else None
 
 
 def build_report(job_dir, out_dir):
@@ -292,7 +494,8 @@ def build_report(job_dir, out_dir):
 
     scores = agg.harvest(job_dir)
     agg.write_scores(scores, out_dir)
-    (out_dir / "report.html").write_text(render_html(scores))
+    html_str = render_html(scores, job_dir=job_dir, task_path=_task_path(job_dir))
+    (out_dir / "report.html").write_text(html_str)
     return out_dir
 
 

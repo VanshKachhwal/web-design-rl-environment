@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from PIL import Image
 
 from webdesign_rl.eval import aggregate_results as agg
 
@@ -275,6 +276,74 @@ def test_per_page_term_matrix(synthetic_job):
     assert cell_idx == pytest.approx(0.55)
 
 
+# --- pure selection logic for the visual-evidence galleries (EP-04) -----------
+
+
+def test_per_metric_extrema_picks_best_and_worst_trial_page(synthetic_job):
+    """For each term, the (trial, page) cell with the highest/lowest score.
+
+    Extremes are at the trial x page level (a concrete screenshot), not a
+    whole-site average. In the fixture, content ranges from 0.3 (AAA/about) up
+    to 0.6 (BBB/index).
+    """
+    scores = agg.harvest(synthetic_job)
+    extrema = agg.per_metric_extrema(scores)
+
+    assert set(extrema) == {"structure", "color", "content", "design_judge"}
+
+    content = extrema["content"]
+    assert content["best"]["trial_id"] == "BBB"
+    assert content["best"]["page"] == "index"
+    assert content["best"]["score"] == pytest.approx(0.6)
+    assert content["worst"]["trial_id"] == "AAA"
+    assert content["worst"]["page"] == "about"
+    assert content["worst"]["score"] == pytest.approx(0.3)
+    # The term's score range is annotated so a reader can gauge the spread.
+    assert content["range"] == pytest.approx([0.3, 0.6])
+
+
+def test_per_metric_extrema_low_variance_term_reads_as_uniform(synthetic_job):
+    """A uniformly-scored term has best == worst and a zero-width range.
+
+    Color is 0.9 on every page in the fixture; the range annotation lets the
+    report show "uniformly good" rather than implying the pair carries signal.
+    """
+    scores = agg.harvest(synthetic_job)
+    color = agg.per_metric_extrema(scores)["color"]
+
+    assert color["best"]["score"] == pytest.approx(0.9)
+    assert color["worst"]["score"] == pytest.approx(0.9)
+    assert color["range"] == pytest.approx([0.9, 0.9])
+
+
+def test_per_metric_extrema_skips_absent_pages():
+    """An absent page carries no render, so it never wins an extremum."""
+    scores = {
+        "terms": list(agg.TERMS),
+        "trials": [{
+            "trial_id": "T", "reward": 0.5,
+            "structure": 0.5, "color": 0.5, "content": 0.5, "design_judge": 0.5,
+            "pages": {
+                # absent page has a 0.0 that must NOT become the "worst" render
+                "missing": {"present": False, "structure": 0.0, "color": 0.0,
+                            "content": 0.0, "design_judge": 0.0, "sub_scores": {}},
+                "index": {"present": True, "structure": 0.4, "color": 0.4,
+                          "content": 0.4, "design_judge": 0.4, "sub_scores": {}},
+            },
+        }],
+    }
+    struct = agg.per_metric_extrema(scores)["structure"]
+    assert struct["worst"]["page"] == "index"
+    assert struct["worst"]["score"] == pytest.approx(0.4)
+
+
+def test_best_overall_trial_is_highest_reward(synthetic_job):
+    """The best-overall trial is the single highest-aggregate-reward trial."""
+    scores = agg.harvest(synthetic_job)
+    # BBB has reward 0.755 vs AAA's 0.675.
+    assert agg.best_overall_trial(scores) == "BBB"
+
+
 # --- end-to-end: the report shell writes a self-contained report --------------
 
 
@@ -312,3 +381,108 @@ def test_build_report_writes_self_contained_html_and_sidecars(synthetic_job, tmp
     # Section headings for items 1-5 are all present.
     for n in range(1, 6):
         assert f">{n}." in html
+
+
+# --- visual-evidence galleries (items 6-7) over a with-renders fixture --------
+
+
+def _solid_png(path, color, size=(8, 6)):
+    """Write a tiny solid-color PNG so the gallery has real pixels to embed."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    Image.new("RGB", size, color).save(path)
+
+
+@pytest.fixture
+def synthetic_job_with_renders(synthetic_job):
+    """Extend the 2-trial job with persisted ``verifier/renders/`` + a task.
+
+    EP-01's grader writes each candidate page to
+    ``task__<id>/verifier/renders/<page>.png`` (page-map key), and the task bakes
+    the reference screenshots it compared against under
+    ``<task>/tests/reference_site/<screenshot>.png`` with a ``tests/page_map.json``
+    mapping page -> screenshot. ``jobs/opus47-004`` predates renders, so the
+    gallery is exercised against this fixture instead.
+    """
+    job_dir = synthetic_job
+    # Each present page gets a tiny candidate render, keyed by the page-map key.
+    page_color = {
+        "AAA": {"index": (200, 30, 30), "about": (30, 200, 30)},
+        "BBB": {"index": (30, 30, 200), "about": (200, 200, 30)},
+    }
+    for trial_id, pages in page_color.items():
+        renders = job_dir / f"task__{trial_id}" / "verifier" / "renders"
+        for page, color in pages.items():
+            _solid_png(renders / f"{page}.png", color)
+
+    # The task baked the reference screenshots (mapped via page_map by screenshot
+    # filename, which need NOT equal the page key).
+    task_path = Path(json.loads(
+        (job_dir / "task__AAA" / "result.json").read_text()
+    )["config"]["task"]["path"])
+    page_map = {
+        "index": {"screenshot": "index.png", "expected_file": "index.html"},
+        "about": {"screenshot": "about_ref.png", "expected_file": "about.html"},
+    }
+    (task_path / "tests").mkdir(parents=True, exist_ok=True)
+    (task_path / "tests" / "page_map.json").write_text(json.dumps(page_map))
+    ref_site = task_path / "tests" / "reference_site"
+    _solid_png(ref_site / "index.png", (10, 10, 10))
+    _solid_png(ref_site / "about_ref.png", (240, 240, 240))
+    return job_dir
+
+
+def test_report_renders_visual_galleries_self_contained(
+    synthetic_job_with_renders, tmp_path
+):
+    """Items 6-7: per-metric best/worst + best-overall galleries, all embedded.
+
+    Item 6 is a reference|best|worst triple per term (4 terms); item 7 pairs the
+    best-overall trial's render with the reference for every page. Every image is
+    base64-embedded so report.html stays a single self-contained file.
+    """
+    report = _load_report_module()
+    out = tmp_path / "report_out"
+
+    report.build_report(synthetic_job_with_renders, out)
+
+    html = (out / "report.html").read_text()
+
+    # Items 6 and 7 have section headings.
+    assert ">6." in html
+    assert ">7." in html
+
+    # Item 6: a reference|best|worst triple for EACH of the four terms.
+    for term in ("structure", "color", "content", "design_judge"):
+        assert term in html
+    assert html.count("reference") >= 4  # one labelled reference per term row
+    assert "best" in html and "worst" in html
+    # Scores are labelled and the term range is annotated (content spans 0.3-0.6).
+    assert "0.600" in html and "0.300" in html
+    assert "range" in html
+
+    # Item 7: the best-overall trial (BBB) named, paired per page with reference.
+    assert "BBB" in html
+    assert "best-overall" in html.lower()
+
+    # Self-contained: every gallery image is a base64 data URI; no sibling PNGs.
+    # 3 plots + item6 (4 terms x 3 imgs = 12) + item7 (2 pages x 2 imgs = 4) = 19.
+    assert html.count("data:image/png;base64,") == 19
+    assert not list(out.glob("*.png"))
+
+
+def test_report_without_renders_omits_galleries(synthetic_job, tmp_path):
+    """A job that predates EP-01 (no renders) still produces a valid report.
+
+    ``jobs/opus47-004`` has no ``verifier/renders/``; the galleries are simply
+    skipped rather than erroring, and the items 1-5 report is unaffected.
+    """
+    report = _load_report_module()
+    out = tmp_path / "report_out"
+
+    report.build_report(synthetic_job, out)
+
+    html = (out / "report.html").read_text()
+    # Only the three plot images; no gallery sections added.
+    assert html.count("data:image/png;base64,") == 3
+    assert ">6." not in html
+    assert ">7." not in html
