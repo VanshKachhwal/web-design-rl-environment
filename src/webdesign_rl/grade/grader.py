@@ -72,7 +72,8 @@ def score_page(candidate_img, reference_img, judge_client) -> dict:
     return scored
 
 
-def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
+def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client,
+          save_renders: bool = True):
     """Grade a candidate HTML site against the reference, writing the reward files.
 
     Args:
@@ -88,6 +89,13 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
             Pass ``None`` for **deterministic-only** grading: the ``design_judge``
             term is dropped and the reward is the mean of the three deterministic
             terms — no VLM call, API key, or network egress.
+        save_renders: persist the exact candidate screenshots that were scored
+            into ``out_dir/renders/<page>.png`` (on by default), so reports use
+            the same pixels — same sealed render + bundled fonts — that produced
+            each score, with no local re-render. A page whose candidate HTML is
+            absent is simply skipped (no PNG). Independent of whether the judge
+            ran, so deterministic-only grading persists the same renders. Pass
+            ``False`` to grade without writing any PNGs.
 
     Returns:
         The flat reward payload (also written to ``reward.json``).
@@ -108,6 +116,17 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client):
     # is absent is simply omitted from the result (handled as a missing page
     # below), so a missing required page still scores 0.
     rendered = render_site(candidate_dir, page_map, viewport=_VIEWPORT)
+
+    # Persist the *exact* candidate screenshots being scored as a grading
+    # byproduct, keyed by page so a report pairs each with its reference. A page
+    # whose HTML was absent isn't in ``rendered``, so it is simply skipped (no
+    # PNG). Independent of the judge, so deterministic-only grading saves the
+    # same renders.
+    if save_renders:
+        renders_dir = out_dir / "renders"
+        renders_dir.mkdir(parents=True, exist_ok=True)
+        for page, candidate_img in rendered.items():
+            candidate_img.save(renders_dir / f"{page}.png")
 
     page_scores = {}
     details = {}

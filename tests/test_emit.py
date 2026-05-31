@@ -260,6 +260,10 @@ def test_verifier_test_sh_runs_full_grader_with_judge(task_dir):
     assert "--reference-site /tests/reference_site" in sh
     assert "--no-judge" not in sh
     assert "/logs/verifier" in sh
+    # Render-persistence is on by default; the emitted entrypoint must NOT opt
+    # out, so a freshly-emitted task persists its graded renders to
+    # /logs/verifier/renders/ with no extra flag.
+    assert "--no-save-renders" not in sh
 
 
 def test_no_compose_file_emitted(task_dir):

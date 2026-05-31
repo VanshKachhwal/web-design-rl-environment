@@ -389,3 +389,11 @@ def test_module_imports_without_modal():
     assert hasattr(mb, "run_one_seed")
     assert hasattr(mb, "summarize_batch")
     assert hasattr(mb, "seed_id")
+
+
+# --- the generation-batch default concurrency matches the eval default -------
+
+def test_default_concurrency_is_ten():
+    # Decided policy (eval-pipeline design): concurrency = 10 at both ends of the
+    # pipeline — generation and eval — under the single shared Anthropic key.
+    assert modal_batch.DEFAULT_CONCURRENCY == 10

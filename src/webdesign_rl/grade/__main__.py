@@ -13,6 +13,11 @@ only parses arguments, loads the ``page_map`` JSON, and selects the judge:
 - ``--no-judge``: **deterministic-only** grading (``judge_client=None``), which
   drops the ``design_judge`` term and averages the three deterministic terms. No
   API key or egress required, so it is the robust primary oracle validation.
+
+By default it also persists the exact rendered candidate pages it graded into
+``<out>/renders/<page>.png`` (Harbor persists ``/logs/verifier``, so the graded
+screenshots land in the job automatically), so reports use the same pixels that
+produced each score; ``--no-save-renders`` opts out.
 """
 
 import argparse
@@ -63,6 +68,14 @@ def main(argv=None) -> int:
         help="Deterministic-only grading: drop the design_judge term (no VLM "
         "call, no API key, no network egress).",
     )
+    parser.add_argument(
+        "--no-save-renders",
+        dest="save_renders",
+        action="store_false",
+        help="Do not persist the graded candidate screenshots. By default the "
+        "exact rendered candidate pages are written to <out>/renders/<page>.png "
+        "so reports use the same pixels that produced the score.",
+    )
     args = parser.parse_args(argv)
 
     page_map = json.loads(Path(args.page_map).read_text())
@@ -86,6 +99,7 @@ def main(argv=None) -> int:
             page_map,
             args.out,
             judge_client,
+            save_renders=args.save_renders,
         )
     # Echo the reward to stdout so it lands in the verifier's captured logs.
     print(json.dumps(reward))

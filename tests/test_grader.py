@@ -10,6 +10,8 @@ API calls.
 
 import json
 
+from PIL import Image
+
 from webdesign_rl.grade.grader import grade
 from webdesign_rl.grade.judge import StubJudgeClient
 
@@ -160,3 +162,66 @@ def test_reward_details_records_judge_sub_scores(site_dirs, tmp_path):
         "typography": 1.0,
         "content_completeness": 0.4,
     }
+
+
+def test_grade_persists_rendered_candidate_pngs(site_dirs, tmp_path):
+    # The exact candidate screenshots the grader scored are written into a
+    # renders/ subdir of the output dir, keyed by the page identity, so a report
+    # can pair each render with its reference.
+    grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        _perfect_judge(),
+    )
+    render = tmp_path / "renders" / "home.png"
+    assert render.exists()
+    # It is a valid image (the rendered candidate page), not an empty file.
+    with Image.open(render) as img:
+        assert img.size[0] > 0 and img.size[1] > 0
+
+
+def test_grade_opt_out_writes_no_renders_but_still_grades(site_dirs, tmp_path):
+    # save_renders=False suppresses the PNGs entirely while grading proceeds
+    # normally (reward.json is still written).
+    grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        _perfect_judge(),
+        save_renders=False,
+    )
+    assert not (tmp_path / "renders").exists()
+    reward = _load_reward(tmp_path)
+    assert reward["reward"] > 0.99
+
+
+def test_grade_skips_render_for_absent_candidate_page(site_dirs, tmp_path):
+    # about.html is absent from the candidate dir (a missing/zero-scored page):
+    # persistence simply skips it (no PNG, no crash) while the present page's
+    # render is still written.
+    grade(
+        site_dirs["missing"],
+        site_dirs["reference"],
+        HOME_AND_ABOUT,
+        tmp_path,
+        _perfect_judge(),
+    )
+    renders = tmp_path / "renders"
+    assert (renders / "home.png").exists()
+    assert not (renders / "about.png").exists()
+
+
+def test_grade_persists_renders_in_deterministic_only_mode(site_dirs, tmp_path):
+    # Renders are independent of the judge: deterministic-only grading
+    # (judge_client=None) persists the same candidate PNGs.
+    grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        None,
+    )
+    assert (tmp_path / "renders" / "home.png").exists()

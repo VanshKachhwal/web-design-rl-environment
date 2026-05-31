@@ -41,8 +41,10 @@ DEFAULT_BATCH_SIZE = 48
 
 # Concurrency cap on the Modal fan-out: the ~48-seed batch shares one Anthropic
 # key, so cap in-flight containers to stay under the rate limit (the client
-# already retries/backs off transient 429/529). Tunable without a redeploy.
-DEFAULT_CONCURRENCY = 8
+# already retries/backs off transient 429/529). Tunable without a redeploy. Set
+# to 10 to match the eval-side default (one consistent number at both ends of
+# the pipeline under the single shared key).
+DEFAULT_CONCURRENCY = 10
 
 # Per-container cloud resources (Modal sizes these, independent of the host).
 # Sized for the heaviest step — headless Chromium rendering full pages in the

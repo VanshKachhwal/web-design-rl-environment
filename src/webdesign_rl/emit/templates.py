@@ -209,6 +209,13 @@ def test_sh() -> str:
     needs the verifier's ANTHROPIC_API_KEY + allow_internet (both wired in
     ``task.toml``); add ``--no-judge`` to fall back to deterministic-only grading
     (three terms, no key/egress) for an offline or zero-cost run.
+
+    Render-persistence is **on by default** (no ``--no-save-renders`` flag here),
+    so the grader writes the exact candidate screenshots it scored to
+    ``/logs/verifier/renders/<page>.png``. Harbor persists ``/logs/verifier``, so
+    every emitted task carries its graded renders into the job automatically — a
+    report uses the same in-container pixels (sealed render + bundled fonts) that
+    produced each score, with no re-render and no host-font mismatch.
     """
     return f"""\
 #!/bin/bash

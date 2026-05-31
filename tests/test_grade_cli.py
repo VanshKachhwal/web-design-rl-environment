@@ -107,3 +107,44 @@ def test_reference_site_is_rendered_in_process(tmp_path):
     assert reward["color"] > 0.999
     assert reward["content"] > 0.999
     assert reward["reward"] > 0.999
+
+
+def test_cli_persists_renders_by_default(site_dirs, tmp_path):
+    # With no extra flag, the CLI persists the graded candidate screenshots into
+    # <out>/renders/ — the default-on behavior the emitted test.sh relies on.
+    page_map = {"home": {"screenshot": "home.png", "expected_file": "index.html"}}
+    page_map_path = _write_page_map(tmp_path, page_map)
+    out_dir = tmp_path / "out"
+
+    main(
+        [
+            "--candidate", str(site_dirs["perfect"]),
+            "--reference", str(site_dirs["reference"]),
+            "--page-map", str(page_map_path),
+            "--out", str(out_dir),
+            "--no-judge",
+        ]
+    )
+
+    assert (out_dir / "renders" / "home.png").exists()
+
+
+def test_cli_no_save_renders_flag_suppresses_renders(site_dirs, tmp_path):
+    # The explicit opt-out writes no PNGs while grading proceeds normally.
+    page_map = {"home": {"screenshot": "home.png", "expected_file": "index.html"}}
+    page_map_path = _write_page_map(tmp_path, page_map)
+    out_dir = tmp_path / "out"
+
+    main(
+        [
+            "--candidate", str(site_dirs["perfect"]),
+            "--reference", str(site_dirs["reference"]),
+            "--page-map", str(page_map_path),
+            "--out", str(out_dir),
+            "--no-judge",
+            "--no-save-renders",
+        ]
+    )
+
+    assert not (out_dir / "renders").exists()
+    assert (out_dir / "reward.json").exists()
