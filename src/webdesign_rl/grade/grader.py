@@ -32,6 +32,7 @@ once with the same module so the comparison is apples-to-apples.
 """
 
 import json
+import logging
 from pathlib import Path
 
 from PIL import Image
@@ -40,6 +41,8 @@ from ..render.browser import render_site
 from . import metrics
 from .aggregate import DIMENSIONS, aggregate
 from .judge import judge_rubric
+
+logger = logging.getLogger(__name__)
 
 # Capture width for candidate rendering; matches the viewport the reference PNGs
 # were rendered at (design decision: 1280px desktop, full scroll height).
@@ -170,7 +173,14 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client,
             }
             continue
 
-        scored = score_page(candidate_img, reference_img, judge_client)
+        try:
+            scored = score_page(candidate_img, reference_img, judge_client)
+        except Exception as exc:
+            # design_judge is an integral quarter of the reward, so a judge
+            # failure must stay loud: log which page failed for diagnostics and
+            # re-raise so the trial errors (never a silently degraded reward).
+            logger.error("scoring failed on page %s: %s", page, exc)
+            raise
         # The judge sub-scores are present only when a judge ran (omitted in
         # deterministic-only mode); pop so they don't enter the aggregated dims.
         sub_scores = scored.pop("design_judge_sub_scores", None)

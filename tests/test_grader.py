@@ -9,11 +9,23 @@ API calls.
 """
 
 import json
+import logging
 
+import pytest
 from PIL import Image
 
 from webdesign_rl.grade.grader import grade
 from webdesign_rl.grade.judge import StubJudgeClient
+
+
+class RaisingJudgeClient:
+    """A judge client whose scoring blows up — for the fail-loud path."""
+
+    def __init__(self, exc):
+        self._exc = exc
+
+    def score(self, reference_img, candidate_img):
+        raise self._exc
 
 # page_map now maps a page to its reference screenshot PNG (in reference_dir) and
 # the required candidate HTML file (in candidate_dir) the grader will render.
@@ -318,3 +330,36 @@ def test_grade_return_value_keeps_full_four_term_breakdown(site_dirs, tmp_path):
         "content",
         "design_judge",
     }
+
+
+def test_judge_failure_propagates_and_writes_no_reward(site_dirs, tmp_path):
+    # design_judge is an integral quarter of the reward: an unexpected judge
+    # failure must NOT be swallowed into a degraded 3-term reward. grade() must
+    # re-raise (the trial errors loudly) and write no reward.json.
+    judge = RaisingJudgeClient(RuntimeError("judge exploded"))
+    with pytest.raises(RuntimeError, match="judge exploded"):
+        grade(
+            site_dirs["perfect"],
+            site_dirs["reference"],
+            HOME_ONLY,
+            tmp_path,
+            judge,
+        )
+    assert not (tmp_path / "reward.json").exists()
+    assert not (tmp_path / "reward-details.json").exists()
+
+
+def test_judge_failure_logs_page_name(site_dirs, tmp_path, caplog):
+    # The fail-loud catch adds page-context diagnostics: the failing page name
+    # is logged before the error re-raises, so the operator knows which page.
+    judge = RaisingJudgeClient(RuntimeError("judge exploded"))
+    with caplog.at_level(logging.ERROR):
+        with pytest.raises(RuntimeError):
+            grade(
+                site_dirs["perfect"],
+                site_dirs["reference"],
+                HOME_ONLY,
+                tmp_path,
+                judge,
+            )
+    assert "home" in caplog.text

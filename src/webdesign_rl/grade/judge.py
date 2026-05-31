@@ -124,9 +124,37 @@ _RUBRIC_PROMPT = (
 )
 
 
+# The Anthropic vision API hard-rejects (400) any image whose width or height
+# exceeds 8000px. Full-page renders are 1280px wide x variable height; tall
+# content pages blow past this, so the judge-bound copy is downscaled to fit.
+_MAX_EDGE = 8000
+
+
+def _downscaled_for_judge(img: Image.Image) -> Image.Image:
+    """Return a copy with neither edge above ``_MAX_EDGE``; never upscale.
+
+    Only resizes when the long edge exceeds the cap, preserving aspect ratio
+    (LANCZOS). Non-mutating: the caller's original image is untouched so the
+    full-resolution renders ``grade()`` persists stay full-res — only the bytes
+    sent to the judge shrink. (The API downscales to ~1568px internally anyway,
+    so capping at 8000 is behavior-preserving for the judge's view.)
+    """
+    longest = max(img.size)
+    if longest <= _MAX_EDGE:
+        return img
+    scale = _MAX_EDGE / longest
+    width, height = img.size
+    # Clamp so a round-up can't leave a dimension at 8001 and re-trip the 400.
+    new_size = (
+        min(_MAX_EDGE, round(width * scale)),
+        min(_MAX_EDGE, round(height * scale)),
+    )
+    return img.resize(new_size, Image.LANCZOS)
+
+
 def _encode_png(img: Image.Image) -> str:
     buffer = io.BytesIO()
-    img.convert("RGB").save(buffer, format="PNG")
+    _downscaled_for_judge(img).convert("RGB").save(buffer, format="PNG")
     return base64.standard_b64encode(buffer.getvalue()).decode("ascii")
 
 

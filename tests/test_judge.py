@@ -7,14 +7,53 @@ correct averaged [0, 1] score and that malformed responses are handled
 gracefully — never live model output.
 """
 
+import base64
+import io
+
 from PIL import Image
 
 from webdesign_rl.grade.judge import (
     JudgeClient,
     StubJudgeClient as ModuleStubJudgeClient,
+    _MAX_EDGE,
+    _encode_png,
     design_judge,
     judge_rubric,
 )
+
+
+def _decode_png(encoded: str) -> Image.Image:
+    """Round-trip the base64 PNG the judge would send back into a PIL image."""
+    return Image.open(io.BytesIO(base64.b64decode(encoded)))
+
+
+def test_encode_png_downscales_tall_image_under_max_edge():
+    # A real reference render can be 1280x11706 — taller than the API's 8000px
+    # cap, which 400s. The encoded bytes must come back within the cap.
+    tall = Image.new("RGB", (1280, 11706), (10, 20, 30))
+    decoded = _decode_png(_encode_png(tall))
+    assert decoded.width <= _MAX_EDGE
+    assert decoded.height <= _MAX_EDGE
+    # Aspect ratio is preserved within rounding tolerance.
+    src_ratio = 1280 / 11706
+    out_ratio = decoded.width / decoded.height
+    assert abs(src_ratio - out_ratio) < 0.01
+
+
+def test_encode_png_leaves_small_image_dimensions_unchanged():
+    # A page within the cap (1280x800) is encoded at its native size — never
+    # upscaled, never shrunk.
+    small = Image.new("RGB", (1280, 800), (200, 100, 50))
+    decoded = _decode_png(_encode_png(small))
+    assert decoded.size == (1280, 800)
+
+
+def test_encode_png_does_not_mutate_input_image():
+    # grade() persists the ORIGINAL full-res images; the downscale must only
+    # touch the encoded copy, never the passed-in object.
+    tall = Image.new("RGB", (1280, 11706), (10, 20, 30))
+    _encode_png(tall)
+    assert tall.size == (1280, 11706)
 
 
 class StubJudgeClient:
