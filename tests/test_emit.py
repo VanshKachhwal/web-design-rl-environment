@@ -249,14 +249,16 @@ def test_verifier_image_installs_the_font_palette_os_level(task_dir):
     assert "fonts-dejavu-core" in df
 
 
-def test_verifier_test_sh_runs_deterministic_grader(task_dir):
-    # test.sh invokes the grader CLI in deterministic-only mode against the agent's
-    # published artifacts and writes the reward into /logs/verifier.
+def test_verifier_test_sh_runs_full_grader_with_judge(task_dir):
+    # test.sh invokes the grader CLI in full 4-term mode (live design_judge term
+    # ON — no --no-judge) against the agent's published artifacts and writes the
+    # reward into /logs/verifier. The verifier env carries ANTHROPIC_API_KEY +
+    # allow_internet for the judge call.
     sh = (task_dir / "tests" / "test.sh").read_text()
     assert "python -m webdesign_rl.grade" in sh
     assert "--candidate /logs/artifacts" in sh
     assert "--reference-site /tests/reference_site" in sh
-    assert "--no-judge" in sh
+    assert "--no-judge" not in sh
     assert "/logs/verifier" in sh
 
 

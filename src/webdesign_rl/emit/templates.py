@@ -113,8 +113,8 @@ cpus = {cpus}
 memory_mb = {memory_mb}
 
 [verifier.env]
-# Needed only for the live design_judge term; the deterministic-only grading
-# mode (test.sh default) ignores it.
+# Used by the live design_judge term, which test.sh runs by default. (Drop
+# --no-judge back into test.sh for deterministic-only grading, which ignores it.)
 ANTHROPIC_API_KEY = "${{ANTHROPIC_API_KEY}}"
 """
 
@@ -204,10 +204,11 @@ def test_sh() -> str:
 
     Reads the agent's published HTML from ``/logs/artifacts/`` (auto-transferred
     from the agent env), renders the baked reference HTML in the *same* container,
-    and grades with the grader CLI in **deterministic-only mode** (``--no-judge``
-    — robust, no key/egress), writing ``/logs/verifier/reward.json``. Swap
-    ``--no-judge`` out (and keep the verifier's ANTHROPIC_API_KEY + allow_internet)
-    to enable the live judge.
+    and grades with the grader CLI in the **full 4-term mode** (including the live
+    ``design_judge`` term), writing ``/logs/verifier/reward.json``. The judge
+    needs the verifier's ANTHROPIC_API_KEY + allow_internet (both wired in
+    ``task.toml``); add ``--no-judge`` to fall back to deterministic-only grading
+    (three terms, no key/egress) for an offline or zero-cost run.
     """
     return f"""\
 #!/bin/bash
@@ -219,6 +220,5 @@ python -m webdesign_rl.grade \\
     --candidate {ARTIFACTS_DIR} \\
     --reference-site /tests/reference_site \\
     --page-map /tests/page_map.json \\
-    --out /logs/verifier \\
-    --no-judge
+    --out /logs/verifier
 """
