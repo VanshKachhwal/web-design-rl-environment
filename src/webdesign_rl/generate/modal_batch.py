@@ -59,11 +59,14 @@ WORKER_MEMORY_MB = 4096
 class SeedResult:
     """The structured outcome of running one seed through the gated pipeline.
 
-    ``status`` is ``"passed"`` (a gated survivor emitted as a Harbor task) or
-    ``"dropped"`` (declined by the gate). ``check`` names the fatal gate check on
-    a drop (``None`` on a pass); ``task_dir`` is the emitted task on a pass
-    (``None`` on a drop or when ``emit=False``); ``nudges_by_check`` is the
-    per-check nudge tally :func:`summarize_batch` aggregates.
+    ``status`` is ``"passed"`` (a gated survivor emitted as a Harbor task),
+    ``"dropped"`` (declined by the gate), or ``"errored"`` (an unexpected
+    exception isolated so it drops *this* seed without aborting the batch).
+    ``check`` names the fatal gate check on a drop, or the exception class name
+    on an error (``None`` on a pass); ``reason`` is the gate reason or
+    ``str(exc)``; ``task_dir`` is the emitted task on a pass (``None`` on a
+    drop/error or when ``emit=False``); ``nudges_by_check`` is the per-check
+    nudge tally :func:`summarize_batch` aggregates.
     """
 
     seed_id: str
@@ -79,15 +82,21 @@ class BatchReport:
     """Aggregate yield + per-check telemetry over a batch of :class:`SeedResult`.
 
     ``yield_fraction`` is the operationalized "stable recipe" number (survivors /
-    total). ``drops_by_check`` and ``nudges_by_check`` are the evidence to tune
-    the gate (e.g. whether to relax a specific check) by data rather than guess.
+    total). ``dropped`` counts gate drops and ``errored`` counts isolated
+    exceptions distinctly (``passed + dropped + errored == total``).
+    ``drops_by_check`` and ``nudges_by_check`` are the evidence to tune the gate
+    (e.g. whether to relax a specific check) by data rather than guess;
+    ``errors_by_type`` counts isolated failures by exception class — a recurring
+    type points at an infra/upstream bug rather than a gate-tuning question.
     """
 
     total: int
     passed: int
     dropped: int
+    errored: int
     yield_fraction: float
     drops_by_check: dict
+    errors_by_type: dict
     nudges_by_check: dict
 
 
@@ -152,65 +161,89 @@ def run_one_seed(seed, *, index: int, client, render, out_root,
     if max_nudges is not None:
         gate_kwargs["max_nudges"] = max_nudges
 
-    result = generate_gated_site(
-        expand_seed(seed), client, seed_dir / "site", **gate_kwargs
-    )
+    # A batch is an OVERGENERATE step: an individual seed failing is expected and
+    # must drop *that seed only* — never propagate out of the worker and abort
+    # the whole fan-out (cancelling every sibling container, discarding their
+    # partial work). So isolate any UNEXPECTED exception from the pipeline body
+    # (generation + the emit) as a recorded "errored" result. The seed's own
+    # artifact dir was already created above, so partial work persists on the
+    # volume. A gate ``Dropped`` is a NORMAL return value, not an exception, and
+    # keeps its ``"dropped"`` status below.
+    try:
+        result = generate_gated_site(
+            expand_seed(seed), client, seed_dir / "site", **gate_kwargs
+        )
 
-    nudges = dict(stats.get("nudges_by_check", {}))
+        nudges = dict(stats.get("nudges_by_check", {}))
 
-    if isinstance(result, Dropped):
-        logger.info("seed %s dropped on check=%s: %s",
-                    sid, result.check, result.reason)
+        if isinstance(result, Dropped):
+            logger.info("seed %s dropped on check=%s: %s",
+                        sid, result.check, result.reason)
+            return SeedResult(
+                seed_id=sid, status="dropped",
+                check=result.check, reason=result.reason,
+                nudges_by_check=nudges,
+            )
+
+        site_dir = result
+        page_map = json.loads((site_dir / "page_map.json").read_text())
+
+        task_dir = None
+        if emit:
+            task_dir = build_task(
+                site_dir, page_map, seed_dir / "task", render=render
+            )
+            logger.info("seed %s passed; emitted task at %s", sid, task_dir)
+        else:
+            logger.info("seed %s passed (emit skipped)", sid)
+
         return SeedResult(
-            seed_id=sid, status="dropped",
-            check=result.check, reason=result.reason,
-            nudges_by_check=nudges,
+            seed_id=sid, status="passed",
+            task_dir=task_dir, nudges_by_check=nudges,
         )
-
-    site_dir = result
-    page_map = json.loads((site_dir / "page_map.json").read_text())
-
-    task_dir = None
-    if emit:
-        task_dir = build_task(
-            site_dir, page_map, seed_dir / "task", render=render
+    except Exception as exc:  # noqa: BLE001 - deliberately isolate ALL failures.
+        logger.exception("seed %s errored: %s", sid, exc)
+        return SeedResult(
+            seed_id=sid, status="errored",
+            check=type(exc).__name__, reason=str(exc),
+            nudges_by_check=dict(stats.get("nudges_by_check", {})),
         )
-        logger.info("seed %s passed; emitted task at %s", sid, task_dir)
-    else:
-        logger.info("seed %s passed (emit skipped)", sid)
-
-    return SeedResult(
-        seed_id=sid, status="passed",
-        task_dir=task_dir, nudges_by_check=nudges,
-    )
 
 
 def summarize_batch(results) -> BatchReport:
     """Reduce a list of :class:`SeedResult` to a :class:`BatchReport`.
 
     Pure over its input: computes the gate yield (passed / total; ``0.0`` for an
-    empty batch) and the per-check telemetry — ``drops_by_check`` (drop-cause
-    counts keyed by the fatal check) and ``nudges_by_check`` (nudge counts summed
+    empty batch) and the per-check telemetry. ``dropped`` counts gate drops and
+    ``errored`` counts isolated exceptions distinctly (so
+    ``passed + dropped + errored == total``) — ``drops_by_check`` (drop-cause
+    counts keyed by the fatal check), ``errors_by_type`` (isolated-failure counts
+    keyed by exception class), and ``nudges_by_check`` (nudge counts summed
     across every result, keyed by check).
     """
     results = list(results)
     total = len(results)
     passed = sum(1 for r in results if r.status == "passed")
-    dropped = total - passed
+    dropped = sum(1 for r in results if r.status == "dropped")
+    errored = sum(1 for r in results if r.status == "errored")
 
     drops_by_check: dict = {}
+    errors_by_type: dict = {}
     nudges_by_check: dict = {}
     for r in results:
         if r.status == "dropped" and r.check is not None:
             drops_by_check[r.check] = drops_by_check.get(r.check, 0) + 1
+        if r.status == "errored" and r.check is not None:
+            errors_by_type[r.check] = errors_by_type.get(r.check, 0) + 1
         for check, count in (r.nudges_by_check or {}).items():
             nudges_by_check[check] = nudges_by_check.get(check, 0) + count
 
     yield_fraction = passed / total if total else 0.0
     return BatchReport(
-        total=total, passed=passed, dropped=dropped,
+        total=total, passed=passed, dropped=dropped, errored=errored,
         yield_fraction=yield_fraction,
-        drops_by_check=drops_by_check, nudges_by_check=nudges_by_check,
+        drops_by_check=drops_by_check, errors_by_type=errors_by_type,
+        nudges_by_check=nudges_by_check,
     )
 
 
@@ -218,8 +251,10 @@ def format_report(report: BatchReport) -> str:
     """A compact human/log-friendly rendering of a :class:`BatchReport`."""
     lines = [
         f"batch: {report.passed}/{report.total} passed "
-        f"(yield {report.yield_fraction:.1%}); {report.dropped} dropped",
+        f"(yield {report.yield_fraction:.1%}); "
+        f"{report.dropped} dropped, {report.errored} errored",
         f"  drops by check: {_fmt_counts(report.drops_by_check)}",
+        f"  errors by type: {_fmt_counts(report.errors_by_type)}",
         f"  nudges by check: {_fmt_counts(report.nudges_by_check)}",
     ]
     return "\n".join(lines)
@@ -346,9 +381,30 @@ def run_batch(count: int = DEFAULT_BATCH_SIZE):
 
     app, worker = _build_modal_app()
     seeds = sample_seeds(count)
+    indexed = list(enumerate(seeds))
 
+    # return_exceptions=True (supported in the installed Modal, 1.4.3): an
+    # *infra*-level failure (OOM / timeout / container crash) that the worker
+    # can't catch surfaces as a per-input value in the stream rather than
+    # raising on the first failed input and CANCELLING every other in-flight
+    # container. Application errors are already isolated inside the worker by
+    # run_one_seed (-> a SeedResult with status="errored"); this guards the
+    # remaining infra path so one bad seed can't sink the whole overgenerate.
     with app.run():
-        results = list(worker.map(list(enumerate(seeds))))
+        results = []
+        for indexed_seed, outcome in zip(
+            indexed, worker.map(indexed, return_exceptions=True)
+        ):
+            if isinstance(outcome, Exception):
+                index, seed = indexed_seed
+                sid = seed_id(seed, index)
+                logger.exception("seed %s failed at infra level: %s", sid, outcome)
+                results.append(SeedResult(
+                    seed_id=sid, status="errored",
+                    check=type(outcome).__name__, reason=str(outcome),
+                ))
+            else:
+                results.append(outcome)
 
     report = summarize_batch(results)
     logger.info("\n%s", format_report(report))

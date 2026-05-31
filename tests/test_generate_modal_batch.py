@@ -230,6 +230,62 @@ def test_rerun_is_addressable_and_preserves_other_seeds(tmp_path):
     assert (tmp_path / r1.seed_id / "task" / "task.toml").is_file()
 
 
+# --- run_one_seed: an unexpected exception isolates as "errored" -----------
+
+class _RaisingClient:
+    """A GenerationClient whose ``.complete`` always raises mid-pipeline."""
+
+    def __init__(self, exc):
+        self._exc = exc
+
+    def complete(self, prompt, *, temperature):
+        raise self._exc
+
+
+def test_run_one_seed_errors_isolate_as_errored_status(tmp_path):
+    client = _RaisingClient(RuntimeError("API overloaded"))
+    result = modal_batch.run_one_seed(
+        _SEED, index=0, client=client, render=_fake_render, out_root=tmp_path
+    )
+    # No exception propagated; the seed is recorded as errored.
+    assert result.status == "errored"
+    assert result.check == "RuntimeError"
+    assert "API overloaded" in result.reason
+
+
+def test_run_one_seed_error_in_emit_isolates_as_errored(tmp_path):
+    # A render that raises blows up at emit time (after the gate passed),
+    # exercising the try/except around the emit body too.
+    def _boom_render(site_dir, page_map, viewport=VIEWPORT):
+        raise ValueError("render crashed")
+
+    client = StubGenerationClient(responses=_passing_responses())
+    result = modal_batch.run_one_seed(
+        _SEED, index=0, client=client, render=_boom_render, out_root=tmp_path
+    )
+    assert result.status == "errored"
+    assert result.check == "ValueError"
+    assert "render crashed" in result.reason
+
+
+def test_errored_seed_leaves_sibling_artifacts_intact(tmp_path):
+    seeds = sample_seeds(2)
+    # Seed 1 passes and writes a full site/.
+    ok = StubGenerationClient(responses=_passing_responses())
+    r_ok = modal_batch.run_one_seed(
+        seeds[1], index=1, client=ok, render=_fake_render, out_root=tmp_path
+    )
+    assert (tmp_path / r_ok.seed_id / "site" / "index.html").is_file()
+
+    # Seed 0 errors out; its sibling's artifacts must survive.
+    boom = _RaisingClient(RuntimeError("blip"))
+    r_err = modal_batch.run_one_seed(
+        seeds[0], index=0, client=boom, render=_fake_render, out_root=tmp_path
+    )
+    assert r_err.status == "errored"
+    assert (tmp_path / r_ok.seed_id / "site" / "index.html").is_file()
+
+
 # --- summarize_batch: yield + per-check telemetry --------------------------
 
 def _result(seed_id, status, check=None, nudges_by_check=None):
@@ -286,6 +342,41 @@ def test_summarize_batch_empty_is_zero_yield():
     assert report.total == 0
     assert report.passed == 0
     assert report.yield_fraction == 0.0
+
+
+def test_summarize_batch_counts_errored_distinctly_from_dropped():
+    results = [
+        _result("a", "passed"),
+        _result("b", "passed"),
+        _result("c", "dropped", check="substance"),
+        _result("d", "errored", check="RuntimeError"),
+        _result("e", "errored", check="ValueError"),
+        _result("f", "errored", check="RuntimeError"),
+    ]
+    report = modal_batch.summarize_batch(results)
+    assert report.total == 6
+    assert report.passed == 2
+    # dropped counts ONLY gate drops now, not errors.
+    assert report.dropped == 1
+    assert report.errored == 3
+    assert report.passed + report.dropped + report.errored == report.total
+    # Yield is still passed / total, unaffected by the errored split.
+    assert report.yield_fraction == 2 / 6
+    assert report.errors_by_type == {"RuntimeError": 2, "ValueError": 1}
+    # An errored seed is NOT counted as a gate drop.
+    assert report.drops_by_check == {"substance": 1}
+
+
+def test_format_report_shows_errored_count_and_types():
+    results = [
+        _result("a", "passed"),
+        _result("b", "dropped", check="substance"),
+        _result("c", "errored", check="RuntimeError"),
+    ]
+    report = modal_batch.summarize_batch(results)
+    text = modal_batch.format_report(report)
+    assert "errored" in text.lower()
+    assert "RuntimeError" in text
 
 
 # --- import-safety: the module imports without `modal` installed -----------
