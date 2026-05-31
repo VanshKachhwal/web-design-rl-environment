@@ -320,6 +320,60 @@ def test_stage1_reroll_recovers_when_a_later_attempt_is_good(tmp_path):
     assert isinstance(result, Path), getattr(result, "reason", result)
 
 
+# --- Telemetry plumbing (issue 06): Dropped.check + stats collector --------
+
+def test_dropped_carries_the_fatal_check(tmp_path):
+    # A page that stays thin past its budget -> dropped on the substance check.
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
+    responses.append(_BAD_BODY)                       # index: initial, fails
+    responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]
+    responses.append(_BAD_BODY)                       # nudge #1: still bad
+    client = StubGenerationClient(responses=responses)
+
+    result = generate_gated_site(
+        _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render,
+        max_nudges=1,
+    )
+    assert isinstance(result, Dropped)
+    # The new, defaulted field names the failing gate check.
+    assert result.check is not None and result.check != ""
+
+
+def test_dropped_check_defaults_to_none_when_unset():
+    # The field is backward-compatible: constructing without it yields None.
+    assert Dropped(reason="x").check is None
+
+
+def test_stats_collector_records_nudges_by_check(tmp_path):
+    # index needs one nudge on substance; the collector attributes that nudge.
+    responses = [json.dumps(_GOOD_STAGE1), _stage2(_GOOD_STAGE2)]
+    responses.append(_BAD_BODY)
+    responses += [_GOOD_BODY for _ in _GOOD_STAGE1["pages"][1:]]
+    responses.append(_GOOD_BODY)                      # nudge #1 fixes index
+    client = StubGenerationClient(responses=responses)
+
+    stats = {}
+    result = generate_gated_site(
+        _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render,
+        stats=stats,
+    )
+    assert isinstance(result, Path), getattr(result, "reason", result)
+    # At least one nudge was attributed to a check (substance), and gate rounds
+    # were counted.
+    assert stats.get("nudges_by_check")
+    assert sum(stats["nudges_by_check"].values()) >= 1
+    assert stats.get("gate_rounds", 0) >= 1
+
+
+def test_stats_none_is_unchanged_behavior(tmp_path):
+    # No stats arg behaves exactly as before (the default path stays green).
+    client = StubGenerationClient(responses=_all_good_responses())
+    result = generate_gated_site(
+        _SEED, client=client, out_dir=tmp_path / "site", render=_fake_render
+    )
+    assert isinstance(result, Path)
+
+
 def test_stage2_missing_component_rerolls_then_skips_seed(tmp_path):
     bad_stage2 = dict(_GOOD_STAGE2)
     # components.css styles nothing for the manifest -> manifest gate fails.

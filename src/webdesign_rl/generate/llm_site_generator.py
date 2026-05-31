@@ -63,9 +63,16 @@ _SHARED_TARGETS = frozenset({VARIABLES_CSS, COMPONENTS_CSS, "page_map.json", Non
 
 @dataclass(frozen=True)
 class Dropped:
-    """A site the orchestrator declined to keep, with the machine reason why."""
+    """A site the orchestrator declined to keep, with the machine reason why.
+
+    ``check`` names the fatal gate/inline-gate check that forced the drop (e.g.
+    ``"substance"``, ``"chrome-identity"``, ``"stage-1-inline"``). It is a new,
+    defaulted field so existing call sites constructing ``Dropped(reason=...)``
+    stay valid; the Modal batch's per-check telemetry attributes drops by it.
+    """
 
     reason: str
+    check: str | None = None
 
 
 def generate_site(seed, client, out_dir) -> Path:
@@ -94,7 +101,7 @@ def generate_site(seed, client, out_dir) -> Path:
 
 
 def generate_gated_site(seed, client, out_dir, *, render=render_site,
-                        max_nudges=DEFAULT_MAX_NUDGES):
+                        max_nudges=DEFAULT_MAX_NUDGES, stats=None):
     """Run the gated, bounded-repair pipeline for one site.
 
     Args:
@@ -105,11 +112,17 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site,
             tests drive stage 5 with canned images without launching Chromium).
         max_nudges: per-page stage-3 nudge budget before the site is dropped
             (default :data:`DEFAULT_MAX_NUDGES` = 5; tunable without a code edit).
+        stats: an optional mutable dict the gate populates with per-check
+            telemetry — ``nudges_by_check`` (a ``{check: count}`` mapping) and
+            ``gate_rounds`` (the number of full-gate evaluations). Default
+            ``None`` means **no behavior change**: nothing is collected and the
+            pipeline runs exactly as before. The Modal batch passes a collector
+            so ``summarize_batch`` can attribute nudge-churn to a check.
 
     Returns:
         The ``Path`` to a gated site that passed stage 4 + 5, or a
         :class:`Dropped` carrying the machine reason the site was discarded /
-        the seed skipped.
+        the seed skipped (with the fatal ``check`` named).
     """
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -126,7 +139,8 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site,
             break
         if attempt == MAX_REROLLS:
             return _drop(seed, f"stage-1 inline gate failed after "
-                               f"{MAX_REROLLS} re-rolls: {problem}")
+                               f"{MAX_REROLLS} re-rolls: {problem}",
+                         check="stage-1-inline")
         logger.info("stage 1: re-rolling (attempt %d/%d): %s",
                     attempt + 1, MAX_REROLLS, problem)
     # --- Stage 2 + inline manifest-compliance gate (<=2 re-rolls) ----------
@@ -141,7 +155,8 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site,
             break
         if attempt == MAX_REROLLS:
             return _drop(seed, f"stage-2 inline manifest gate failed after "
-                               f"{MAX_REROLLS} re-rolls: {problem}")
+                               f"{MAX_REROLLS} re-rolls: {problem}",
+                         check="stage-2-inline")
         logger.info("stage 2: re-rolling (attempt %d/%d): %s",
                     attempt + 1, MAX_REROLLS, problem)
 
@@ -161,7 +176,7 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site,
 
     # --- Full gate (stage 4 + 5) + stage-3 nudge loop ----------------------
     return _gate_and_repair(seed, spec, design, out_dir, client, render,
-                            max_nudges)
+                            max_nudges, stats)
 
 
 # --- Inline-gate predicates -------------------------------------------------
@@ -204,13 +219,22 @@ def _stage2_inline_problem(spec, design):
 # --- Gate + repair ----------------------------------------------------------
 
 
-def _gate_and_repair(seed, spec, design, out_dir, client, render, max_nudges):
-    """Run the full gate; nudge failing pages <=max_nudges; else drop the site."""
+def _gate_and_repair(seed, spec, design, out_dir, client, render, max_nudges,
+                     stats=None):
+    """Run the full gate; nudge failing pages <=max_nudges; else drop the site.
+
+    When ``stats`` is a dict, it is populated with per-check telemetry — a
+    ``nudges_by_check`` ``{check: count}`` mapping (one increment per nudged
+    check) and a ``gate_rounds`` count of full-gate evaluations — so the batch
+    can attribute nudge-churn (and drops) to a check. ``stats is None`` collects
+    nothing (no behavior change).
+    """
     nudges_used = {page["slug"]: 0 for page in spec.pages}
     page_by_html = {f"{page['slug']}.html": page for page in spec.pages}
 
     while True:
         logger.info("gate: running stage 4 + stage 5")
+        _bump(stats, "gate_rounds")
         result = _full_gate(out_dir, spec, render)
         if result.passed:
             logger.info("gate: passed; keeping site")
@@ -225,28 +249,32 @@ def _gate_and_repair(seed, spec, design, out_dir, client, render, max_nudges):
         # composition-only page nudge -> drop immediately.
         shared = [t for t in by_page if t in _SHARED_TARGETS]
         if shared:
-            reason = _first_message(by_page, shared[0])
-            return _drop(seed, f"unrepairable site-wide failure: {reason}")
+            diag = by_page[shared[0]][0]
+            return _drop(seed, f"unrepairable site-wide failure: "
+                               f"{diag['message']}", check=diag["check"])
 
         # Any failing target that is not a known page is also unrepairable.
         unknown = [t for t in by_page if t not in page_by_html]
         if unknown:
-            reason = _first_message(by_page, unknown[0])
+            diag = by_page[unknown[0]][0]
             return _drop(seed, f"unrepairable failure on '{unknown[0]}': "
-                               f"{reason}")
+                               f"{diag['message']}", check=diag["check"])
 
         # Repair each failing page with its exact diagnostic, bounded.
         for html_name, diagnostics in by_page.items():
             page = page_by_html[html_name]
             slug = page["slug"]
             if nudges_used[slug] >= max_nudges:
-                reason = diagnostics[0]["message"]
+                diag = diagnostics[0]
                 return _drop(
                     seed,
                     f"page '{html_name}' still failing after {max_nudges} "
-                    f"nudges; last diagnostic: {reason}",
+                    f"nudges; last diagnostic: {diag['message']}",
+                    check=diag["check"],
                 )
             nudges_used[slug] += 1
+            for diag in diagnostics:
+                _bump_check(stats, diag["check"])
             message = " ; ".join(d["message"] for d in diagnostics)
             logger.info("repair: nudging %s (attempt %d/%d): %s",
                         slug, nudges_used[slug], max_nudges, message)
@@ -294,15 +322,28 @@ def _group_by_page(diagnostics):
     return grouped
 
 
-def _first_message(by_page, target):
-    return by_page[target][0]["message"]
+def _bump(stats, key):
+    """Increment ``stats[key]`` by one when collecting (``stats`` is a dict)."""
+    if stats is not None:
+        stats[key] = stats.get(key, 0) + 1
 
 
-def _drop(seed, reason):
-    """Log a drop with its reason and return the :class:`Dropped` sentinel."""
+def _bump_check(stats, check):
+    """Increment the per-check nudge counter under ``stats['nudges_by_check']``."""
+    if stats is not None:
+        by_check = stats.setdefault("nudges_by_check", {})
+        by_check[check] = by_check.get(check, 0) + 1
+
+
+def _drop(seed, reason, *, check=None):
+    """Log a drop with its reason and return the :class:`Dropped` sentinel.
+
+    ``check`` (the fatal gate/inline-gate check name) rides along on the
+    ``Dropped`` so the batch can attribute the drop cause by check.
+    """
     seed_id = seed.get("seed_tuple", seed)
     logger.warning("dropping site for seed %s: %s", seed_id, reason)
-    return Dropped(reason=reason)
+    return Dropped(reason=reason, check=check)
 
 
 # --- Mechanical fixes (no LLM call) -----------------------------------------
