@@ -64,6 +64,11 @@ RUN pip install --no-cache-dir "playwright>=1.49" \\
 
 COPY webdesign_rl_pkg /opt/webdesign_rl_pkg
 RUN pip install --no-cache-dir /opt/webdesign_rl_pkg[grade]
+
+# When a task is emitted from INSIDE this image (the Modal batch), task_builder
+# must re-stage the package, but the dev-repo pyproject path doesn't exist here.
+# Point it at the baked build context (which holds both pyproject + src).
+ENV WEBDESIGN_RL_PKG_ROOT=/opt/webdesign_rl_pkg
 """
 
 

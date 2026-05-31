@@ -182,6 +182,10 @@ RUN pip install --no-cache-dir "playwright>=1.49" \\
 COPY webdesign_rl_pkg /opt/webdesign_rl_pkg
 RUN pip install --no-cache-dir /opt/webdesign_rl_pkg[grade]
 
+# Where task_builder re-stages the package from when emitting inside an image
+# (parity with the render image; harmless here since the verifier never emits).
+ENV WEBDESIGN_RL_PKG_ROOT=/opt/webdesign_rl_pkg
+
 # Bake the grader inputs hidden from the agent: the reference HTML site (rendered
 # in-container at grade time with the same engine/fonts as the candidate, so the
 # ceiling is exact and host-independent) + page_map.

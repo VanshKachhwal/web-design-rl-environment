@@ -264,3 +264,35 @@ def test_no_compose_file_emitted(task_dir):
     # Cloud sandboxes only support a plain Dockerfile env, never docker-compose.
     assert not (task_dir / "environment" / "docker-compose.yaml").exists()
     assert not (task_dir / "tests" / "docker-compose.yaml").exists()
+
+
+def test_copy_package_honors_pkg_root_env(tmp_path, monkeypatch):
+    """Inside a sealed image the dev-repo pyproject path is absent; task_builder
+    must re-stage the package from WEBDESIGN_RL_PKG_ROOT (the baked build context)
+    instead of crashing. Mirrors the Modal-batch emit path."""
+    from webdesign_rl.emit import task_builder
+
+    # A fake "baked build context": <root>/pyproject.toml + <root>/src/webdesign_rl/...
+    root = tmp_path / "pkgroot"
+    (root / "src" / "webdesign_rl").mkdir(parents=True)
+    (root / "pyproject.toml").write_text("[project]\nname='x'\n")
+    (root / "src" / "webdesign_rl" / "__init__.py").write_text("# pkg\n")
+    monkeypatch.setenv("WEBDESIGN_RL_PKG_ROOT", str(root))
+
+    dest = tmp_path / "ctx"
+    task_builder._copy_package(dest)
+
+    assert (dest / "pyproject.toml").read_text() == "[project]\nname='x'\n"
+    assert (dest / "src" / "webdesign_rl" / "__init__.py").exists()
+
+
+def test_copy_package_defaults_to_repo_when_env_unset(tmp_path, monkeypatch):
+    """With no override, it falls back to the dev-repo layout (real pyproject)."""
+    from webdesign_rl.emit import task_builder
+
+    monkeypatch.delenv("WEBDESIGN_RL_PKG_ROOT", raising=False)
+    dest = tmp_path / "ctx"
+    task_builder._copy_package(dest)
+
+    assert (dest / "pyproject.toml").exists()
+    assert (dest / "src" / "webdesign_rl" / "__init__.py").exists()

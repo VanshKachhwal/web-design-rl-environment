@@ -44,6 +44,7 @@ under ``tests/`` and ``COPY``-ed into the image.
 """
 
 import json
+import os
 import shutil
 from pathlib import Path
 
@@ -189,6 +190,25 @@ def _copy_tree(src: Path, dest: Path) -> None:
     )
 
 
+def _package_sources():
+    """``(package_dir, pyproject)`` to stage into a task's build context.
+
+    Resolved at **call time** so it works in two layouts: the dev repo (the
+    module-relative defaults — pyproject at the repo root) and *inside a sealed
+    image* where the package is pip-installed and the dev-repo layout is absent.
+    ``WEBDESIGN_RL_PKG_ROOT`` (set in the render/verifier images to the baked
+    build-context dir, which holds both ``pyproject.toml`` and
+    ``src/webdesign_rl``) overrides the defaults, so emitting a task *inside* the
+    image — what the Modal batch does — can still re-stage the package instead of
+    crashing on a dev-repo path that doesn't exist there.
+    """
+    root = os.environ.get("WEBDESIGN_RL_PKG_ROOT")
+    if root:
+        root = Path(root)
+        return root / "src" / "webdesign_rl", root / "pyproject.toml"
+    return _PACKAGE_DIR, _PYPROJECT
+
+
 def _copy_package(dest: Path) -> None:
     """Copy our package source + pyproject into the verifier build context.
 
@@ -196,5 +216,6 @@ def _copy_package(dest: Path) -> None:
     so the grader code travels *with* the task rather than relying on a registry
     or the host. ``__pycache__`` is excluded to keep the context lean.
     """
-    _copy_tree(_PACKAGE_DIR, dest / "src" / "webdesign_rl")
-    shutil.copy2(_PYPROJECT, dest / "pyproject.toml")
+    package_dir, pyproject = _package_sources()
+    _copy_tree(package_dir, dest / "src" / "webdesign_rl")
+    shutil.copy2(pyproject, dest / "pyproject.toml")

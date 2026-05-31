@@ -304,8 +304,16 @@ def _build_modal_app():
         # with the DIRECT in-image Playwright renderer for BOTH the gate and
         # emit — NOT render_in_container, which would nest Docker in the
         # container. This is the whole point of running the batch in-image.
+        import logging as _logging
+
         from ..render.browser import render_site
         from .client import AnthropicGenerationClient
+
+        # Surface the pipeline's INFO logs (stage / gate / repair) in Modal's
+        # container logs — the worker must configure logging itself (no-op if
+        # already configured). Without this only the render HTTP server's direct
+        # stderr writes show up.
+        _logging.basicConfig(level=_logging.INFO)
 
         index, seed = indexed_seed
         result = run_one_seed(
