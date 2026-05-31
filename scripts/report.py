@@ -310,32 +310,27 @@ def _figure_cell(uri, caption, alt):
 
 
 def _per_metric_gallery_html(scores, job_dir):
-    """Item 6: a reference|best|worst triple per term, scored + range-annotated."""
+    """Item 6: the worst trial x page per term as a same-page reference|candidate
+    pair, so each metric's failure case can be diagnosed target-vs-attempt.
+
+    Unlike the old reference|best|worst triple, the reference and candidate here
+    are the SAME page (the worst page for that term), paired with the worst
+    render's trial — the sealed reference is deterministic across trials, so the
+    worst render's trial is the one it was scored against.
+    """
     extrema = agg.per_metric_extrema(scores)
     rows = []
     for term in scores["terms"]:
         ex = extrema.get(term)
         if ex is None:
             continue
-        best, worst = ex["best"], ex["worst"]
-        lo, hi = ex["range"]
-        rng = f"range {lo:.3f}&ndash;{hi:.3f}"
-
-        # The reference is the best render's page, paired with its trial (the
-        # sealed reference is deterministic across trials, so the best render's
-        # trial is the one it was scored against).
+        worst = ex["worst"]
         ref_cell = _figure_cell(
-            _reference_uri(job_dir, best["trial_id"], best["page"]),
-            f"reference &middot; {html.escape(best['page'])}",
-            f"reference {best['page']}",
+            _reference_uri(job_dir, worst["trial_id"], worst["page"]),
+            f"reference &middot; {html.escape(worst['page'])}",
+            f"reference {worst['page']}",
         )
-        best_cell = _figure_cell(
-            _render_uri(job_dir, best["trial_id"], best["page"]),
-            f"best &middot; {html.escape(best['trial_id'])}/"
-            f"{html.escape(best['page'])} &middot; {best['score']:.3f}",
-            f"best {term}",
-        )
-        worst_cell = _figure_cell(
+        cand_cell = _figure_cell(
             _render_uri(job_dir, worst["trial_id"], worst["page"]),
             f"worst &middot; {html.escape(worst['trial_id'])}/"
             f"{html.escape(worst['page'])} &middot; {worst['score']:.3f}",
@@ -343,8 +338,8 @@ def _per_metric_gallery_html(scores, job_dir):
         )
         rows.append(
             f"<div class='gallery-row'>"
-            f"<h3>{html.escape(term)} <span class='rng'>({rng})</span></h3>"
-            f"<div class='triple'>{ref_cell}{best_cell}{worst_cell}</div>"
+            f"<h3>{html.escape(term)}</h3>"
+            f"<div class='pair'>{ref_cell}{cand_cell}</div>"
             f"</div>"
         )
     return "\n".join(rows)
@@ -390,7 +385,7 @@ def _galleries_html(scores, job_dir, task_path):
     metric = _per_metric_gallery_html(scores, job_dir)
     overall = _best_overall_gallery_html(scores, job_dir)
     return f"""
-<h2>6. Per-metric best / worst (reference | best | worst)</h2>
+<h2>6. Worst per metric (reference vs candidate)</h2>
 {metric}
 
 <h2>7. Best-overall attempt vs reference (all pages)</h2>

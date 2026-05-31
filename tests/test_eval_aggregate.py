@@ -474,10 +474,11 @@ def synthetic_job_with_renders(synthetic_job):
 def test_report_renders_visual_galleries_self_contained(
     synthetic_job_with_renders, tmp_path
 ):
-    """Items 6-7: per-metric best/worst + best-overall galleries, all embedded.
+    """Items 6-7: worst-per-metric + best-overall galleries, all embedded.
 
-    Item 6 is a reference|best|worst triple per term (4 terms); item 7 pairs the
-    best-overall trial's render with the reference for every page. Every image is
+    Item 6 is a same-page reference|candidate pair per term (4 terms), showing
+    the worst-scoring trial x page on that term; item 7 pairs the best-overall
+    trial's render with the reference for every page. Every image is
     base64-embedded so report.html stays a single self-contained file.
     """
     report = _load_report_module()
@@ -491,23 +492,72 @@ def test_report_renders_visual_galleries_self_contained(
     assert ">6." in html
     assert ">7." in html
 
-    # Item 6: a reference|best|worst triple for EACH of the four terms.
+    # Item 6: a same-page reference|candidate pair for EACH of the four terms.
     for term in ("structure", "color", "content", "design_judge"):
         assert term in html
     assert html.count("reference") >= 4  # one labelled reference per term row
-    assert "best" in html and "worst" in html
-    # Scores are labelled and the term range is annotated (content spans 0.3-0.6).
-    assert "0.600" in html and "0.300" in html
-    assert "range" in html
+    assert "worst" in html
+    # The worst content cell (AAA/about, 0.300) is labelled; no per-metric best.
+    assert "0.300" in html
 
     # Item 7: the best-overall trial (BBB) named, paired per page with reference.
     assert "BBB" in html
     assert "best-overall" in html.lower()
 
     # Self-contained: every gallery image is a base64 data URI; no sibling PNGs.
-    # 3 plots + item6 (4 terms x 3 imgs = 12) + item7 (2 pages x 2 imgs = 4) = 19.
-    assert html.count("data:image/png;base64,") == 19
+    # 3 plots + item6 (4 terms x 2 imgs = 8) + item7 (2 pages x 2 imgs = 4) = 15.
+    assert html.count("data:image/png;base64,") == 15
     assert not list(out.glob("*.png"))
+
+
+def test_report_item6_worst_per_metric_is_same_page_pair(
+    synthetic_job_with_renders, tmp_path
+):
+    """Item 6: each term's row pairs the SAME worst page's reference + candidate.
+
+    The old triple (reference | best | worst) mixed pages: its reference came
+    from the best render's page, leaving the worst cell unpaired. Now item 6 is
+    a true same-page reference-vs-candidate diagnosis of the worst trial x page,
+    and the per-metric best cell is gone.
+    """
+    report = _load_report_module()
+    job_dir = synthetic_job_with_renders
+    scores = agg.harvest(job_dir)
+
+    item6 = report._per_metric_gallery_html(scores, job_dir)
+
+    # For content the worst trial x page is AAA/about; both cells resolve to it.
+    ref_uri = report._reference_uri(job_dir, "AAA", "about")
+    cand_uri = report._render_uri(job_dir, "AAA", "about")
+    assert ref_uri in item6 and cand_uri in item6
+    # The reference and candidate for the worst term are the SAME page (about),
+    # never paired against a different page's render (e.g. BBB/index, the best).
+    best_uri = report._render_uri(job_dir, "BBB", "index")
+    assert best_uri not in item6
+
+    # The worst-only structure: same-page pairs, never the old three-cell triple,
+    # and no per-metric "best" caption / range annotation.
+    assert "class='pair'" in item6
+    assert "triple" not in item6
+    assert "best" not in item6
+    assert "range" not in item6
+
+
+def test_report_item6_heading_reflects_worst_per_metric(
+    synthetic_job_with_renders, tmp_path
+):
+    """The item-6 section heading is worst-only (no 'best' in item 6)."""
+    report = _load_report_module()
+    out = tmp_path / "report_out"
+    report.build_report(synthetic_job_with_renders, out)
+    html = (out / "report.html").read_text()
+
+    # Isolate the item-6 heading (between the ">6." and ">7." markers).
+    start = html.index(">6.")
+    end = html.index(">7.")
+    item6_heading = html[start:end].splitlines()[0].lower()
+    assert "worst" in item6_heading
+    assert "best" not in item6_heading
 
 
 def test_reference_uri_resolves_to_persisted_reference_render(
