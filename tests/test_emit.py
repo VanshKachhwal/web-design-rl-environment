@@ -30,11 +30,25 @@ PAGE_MAP = {
 }
 
 
+def _fast_render(site_dir, page_map, viewport=1280):
+    """An in-process stand-in for the default in-container render.
+
+    These tests assert the *packaging structure* build_task produces, not font
+    fidelity, so they inject a fast renderer to avoid a Docker build. The
+    in-container default (the actual issue-05 behavior) is covered separately by
+    the injected-render unit test + the Docker-gated container render test.
+    """
+    from PIL import Image
+
+    return {name: Image.new("RGB", (viewport, 700), (90, 90, 90))
+            for name in page_map}
+
+
 @pytest.fixture(scope="module")
 def task_dir(tmp_path_factory):
     """Build the task once for the whole module (rendering is the slow part)."""
     out = tmp_path_factory.mktemp("task")
-    build_task(REFERENCE_SITE, PAGE_MAP, out)
+    build_task(REFERENCE_SITE, PAGE_MAP, out, render=_fast_render)
     return out
 
 
@@ -105,6 +119,34 @@ def test_instruction_lists_screenshot_to_output_filename(task_dir):
     for spec in PAGE_MAP.values():
         assert spec["screenshot"] in text
         assert spec["expected_file"] in text
+
+
+def test_agent_screenshots_use_the_injected_render(tmp_path):
+    # Issue 05: the agent reference PNGs must be rendered in the SAME sealed
+    # image/font environment as grading, not on the host. build_task therefore
+    # takes the renderer as a seam (default = the sealed in-container render);
+    # injecting a render proves the screenshots come from whatever environment
+    # the caller designates, and lets the fast suite avoid a Docker build.
+    from PIL import Image
+
+    calls = {}
+
+    def fake_render(site_dir, page_map, viewport=1280):
+        calls["site_dir"] = Path(site_dir)
+        calls["viewport"] = viewport
+        red = Image.new("RGB", (viewport, 700), (200, 10, 10))
+        return {name: red for name in page_map}
+
+    out = tmp_path / "task"
+    build_task(REFERENCE_SITE, PAGE_MAP, out, render=fake_render)
+
+    # The injected renderer was actually used (its red PNGs are on disk).
+    assert calls["site_dir"] == REFERENCE_SITE
+    ref_dir = out / "environment" / "reference"
+    for spec in PAGE_MAP.values():
+        png = ref_dir / spec["screenshot"]
+        assert png.is_file()
+        assert Image.open(png).getpixel((0, 0)) == (200, 10, 10)
 
 
 def test_agent_env_contains_reference_screenshots(task_dir):
@@ -185,6 +227,26 @@ def test_verifier_image_is_self_contained(task_dir):
     assert "chromium" in df
     assert "/tests/test.sh" in df              # the image provides its own test.sh
     assert "reference_site" in df              # the reference HTML is baked in
+
+
+def test_verifier_image_installs_the_font_palette_os_level(task_dir):
+    # Issue 05: the verifier/render image installs the curated palette OS-level so
+    # a site's `font-family: Inter` resolves by bare name (not DejaVu fallback).
+    # The .ttf files are fetched at build time from google/fonts pinned to a SHA,
+    # dropped into /usr/share/fonts, then fc-cache'd. DejaVu stays as fallback.
+    from webdesign_rl.generate import fonts
+
+    df = (task_dir / "tests" / "Dockerfile").read_text()
+    # Pinned to a specific commit SHA (reproducible), fetched at build time.
+    assert fonts.PINNED_FONTS_SHA in df
+    # Every palette family's pinned .ttf URL is fetched.
+    for url in fonts.install_urls():
+        assert url in df
+    # Installed where fontconfig sees them, then the cache is refreshed.
+    assert "/usr/share/fonts" in df
+    assert "fc-cache" in df
+    # DejaVu remains the deterministic fallback.
+    assert "fonts-dejavu-core" in df
 
 
 def test_verifier_test_sh_runs_deterministic_grader(task_dir):

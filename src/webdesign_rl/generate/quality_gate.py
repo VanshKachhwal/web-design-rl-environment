@@ -32,6 +32,11 @@ The checks (each operates on the DOM/CSS text + the spec):
   interaction-*reveal* rule (``:hover/:focus/:target/:checked`` toggling
   ``display``/``visibility``/``opacity``/``max-height`` of content); allow
   ``transition`` + cosmetic hover; disclosure components must render open.
+- **font_palette** — every ``font-family`` used must trace to the font-palette
+  manifest (``fonts.allowed_families``): a palette family installed OS-level by
+  bare name, the DejaVu fallback, or a generic keyword. An off-palette family
+  would silently fall back to DejaVu in the offline render, so the agent would
+  study typography the design never intended.
 """
 
 import json
@@ -40,7 +45,7 @@ from dataclasses import dataclass, field
 from html.parser import HTMLParser
 from pathlib import Path
 
-from . import taxonomy
+from . import fonts, taxonomy
 from ..render.browser import render_site
 
 # Stage-5 render-validity bounds (design decision #7 substance height bound +
@@ -154,6 +159,30 @@ def _offending_values(css_without_comments):
     return found
 
 
+# --- Font-family scanning ---------------------------------------------------
+
+_FONT_FAMILY = re.compile(r"font-family\s*:\s*([^;}{]+)", re.IGNORECASE)
+
+
+def _font_families(css):
+    """Every family named in a ``font-family`` declaration (comment-stripped).
+
+    Yields each family token from every ``font-family`` stack, with surrounding
+    quotes and whitespace stripped. ``font-family: 'Inter', sans-serif`` yields
+    ``Inter`` then ``sans-serif``. ``@font-face`` blocks are skipped: their
+    ``font-family`` is a face *definition*, not a usage, and the block itself is
+    a hermeticity concern (handled by that check) — palette fonts install
+    OS-level by bare name, so a well-posed site needs no ``@font-face`` at all.
+    """
+    css = re.sub(r"@font-face\s*\{[^}]*\}", "", _strip_comments(css),
+                 flags=re.IGNORECASE)
+    for match in _FONT_FAMILY.findall(css):
+        for raw in match.split(","):
+            family = raw.strip().strip("'\"").strip()
+            if family:
+                yield family
+
+
 # --- External-resource detection -------------------------------------------
 
 _EXTERNAL_URL = re.compile(r"https?://", re.IGNORECASE)
@@ -205,6 +234,7 @@ def run_stage4_gate(site_dir, spec) -> GateResult:
     diagnostics += _check_chrome_identity(site_dir, spec)
     diagnostics += _check_hermeticity(site_dir, spec)
     diagnostics += _check_static_only(site_dir, spec)
+    diagnostics += _check_font_palette(site_dir, spec)
 
     return GateResult(passed=not diagnostics, diagnostics=diagnostics)
 
@@ -557,6 +587,43 @@ def _check_static_only(site_dir, spec):
         for style_block in re.findall(r"<style[^>]*>(.*?)</style>", text,
                                       re.DOTALL | re.IGNORECASE):
             scan_css(path.name, style_block)
+    return diagnostics
+
+
+def _check_font_palette(site_dir, spec):
+    """Every ``font-family`` used must trace to the font-palette manifest.
+
+    The palette is installed OS-level in the verifier image and resolved by bare
+    family name (no ``@font-face`` from a site bundle). A family outside the
+    palette (and the DejaVu fallback / generic CSS keywords) would silently fall
+    back to DejaVu in the offline render, so the typography the agent studies is
+    not the design's intent — the same fidelity bug the bundled palette exists to
+    kill. Shared stylesheets and per-page styles are both scanned; a per-page
+    failure is keyed to the page so the stage-3 nudge can repair just that page.
+    """
+    diagnostics = []
+    allowed = fonts.allowed_families()
+
+    def scan(label, css):
+        for family in _font_families(css):
+            if family not in allowed:
+                diagnostics.append(_diag(
+                    "font_palette", label,
+                    f"{label}: font-family '{family}' is not in the font palette; "
+                    "use only a palette family (installed OS-level by bare name) "
+                    "or a generic keyword",
+                ))
+
+    for shared in (VARIABLES_CSS, COMPONENTS_CSS):
+        if (site_dir / shared).exists():
+            scan(shared, (site_dir / shared).read_text())
+
+    for slug, path, text in _page_files(site_dir, spec):
+        for style_block in re.findall(r"<style[^>]*>(.*?)</style>", text,
+                                      re.DOTALL | re.IGNORECASE):
+            scan(path.name, style_block)
+        for inline in re.findall(r'style\s*=\s*"([^"]*)"', text, re.IGNORECASE):
+            scan(path.name, inline)
     return diagnostics
 
 

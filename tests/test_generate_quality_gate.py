@@ -487,3 +487,45 @@ def test_differing_chrome_fails_chrome_identity(tmp_path):
     assert result.passed is False
     assert _checks(result) == {"chrome_identity"}
     assert "header" in _messages(result)
+
+
+# --- Font palette -----------------------------------------------------------
+
+def test_palette_font_family_passes(tmp_path):
+    # A site referencing palette families by bare name (which resolve OS-level in
+    # the verifier image) is well-posed -> passes the font-palette check.
+    good = VARIABLES_CSS + (
+        "\nbody{ font-family: 'Inter', sans-serif; }\n"
+        "h1, h2{ font-family: 'Playfair Display', serif; }\n"
+        "code{ font-family: 'JetBrains Mono', monospace; }\n"
+    )
+    site = build_site(tmp_path, variables=good)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+
+
+def test_off_palette_font_family_fails(tmp_path):
+    # A font outside the palette would silently fall back to DejaVu in the offline
+    # render, so the typography the agent studies is not the design's intent.
+    bad = VARIABLES_CSS + "\nbody{ font-family: 'Helvetica Neue', sans-serif; }\n"
+    site = build_site(tmp_path, variables=bad)
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"font_palette"}
+    assert "Helvetica Neue" in _messages(result)
+
+
+def test_off_palette_font_family_in_page_style_fails(tmp_path):
+    # The check covers per-page <style> blocks too, keyed to the page so the
+    # stage-3 nudge can repair just that page.
+    spec = _spec()
+    drift_slug = spec.pages[1]["slug"]
+    body = RICH_BODY.replace(
+        "<main", "<style>.lead{ font-family: Georgia; }</style><main"
+    )
+    site = build_site(tmp_path, bodies={drift_slug: body})
+    result = run_stage4_gate(site, spec)
+    assert result.passed is False
+    assert _checks(result) == {"font_palette"}
+    assert "Georgia" in _messages(result)
+    assert any(d["page"] == f"{drift_slug}.html" for d in result.diagnostics)

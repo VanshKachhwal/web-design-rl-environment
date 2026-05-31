@@ -28,9 +28,10 @@ project). The pipeline makes ~a dozen live model calls per site (stage 1 + stage
 stubbed pipeline tests; this CLI is the live, human-review path and is
 intentionally not unit-tested.
 
-Note: until the font-palette work (issue 05) lands, palette fonts fall back to
-DejaVu in the render — typography looks generic, but layout/color/structure/
-content are faithful.
+Note: the font palette (issue 05) is installed OS-level in the verifier/render
+image, so a site's ``font-family: Inter`` resolves by bare name. ``--emit`` renders
+the agent's reference screenshots **in-container** (the same sealed image + font
+palette as grading), which needs Docker available on the host.
 """
 
 import argparse

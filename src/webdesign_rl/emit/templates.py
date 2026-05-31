@@ -9,6 +9,8 @@ Chromium binary + Tesseract + a bundled font set), and pinned resources in
 ``task.toml``.
 """
 
+from ..generate import fonts
+
 # Where the agent publishes its produced site, and Harbor auto-transfers it to
 # the separate verifier at the identical path. Both the instruction and the
 # verifier entrypoint reference this single path.
@@ -145,23 +147,27 @@ def verifier_dockerfile() -> str:
 
     Bakes in *everything* the grader needs so the task runs identically locally
     (``--env docker``) and on cloud sandboxes (``--env modal``): Python, our
-    package, Playwright **and the Chromium binary**, Tesseract, a bundled font
-    set referenced for deterministic rendering, the grader code, the reference
-    screenshots, and ``page_map`` — plus ``/tests/test.sh``.
+    package, Playwright **and the Chromium binary**, Tesseract, the curated font
+    palette installed OS-level (+ DejaVu fallback) for deterministic *faithful*
+    rendering, the grader code, the reference screenshots, and ``page_map`` —
+    plus ``/tests/test.sh``.
     """
-    return """\
+    return f"""\
 FROM python:3.12-slim
 
-# System deps: Tesseract (content/OCR term) + a deterministic bundled font set
-# (DejaVu) so rendering does not depend on host fonts, plus the libraries
-# headless Chromium needs.
+# System deps: Tesseract (content/OCR term) + the DejaVu fallback font set
+# (every palette family degrades to it identically) + curl (build-time palette
+# fetch), plus the libraries headless Chromium needs.
 RUN apt-get update && apt-get install -y --no-install-recommends \\
         tesseract-ocr \\
         fonts-dejavu-core \\
         fontconfig \\
         ca-certificates \\
+        curl \\
     && rm -rf /var/lib/apt/lists/* \\
     && fc-cache -f
+
+{fonts.dockerfile_install_block()}
 
 # Our package + its dependencies (Playwright moved to core deps in issue 05).
 COPY webdesign_rl_pkg /opt/webdesign_rl_pkg

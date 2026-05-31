@@ -47,7 +47,7 @@ import json
 import shutil
 from pathlib import Path
 
-from ..render.browser import render_site
+from ..render.container import render_in_container
 from . import oracle, templates
 
 # Repo root that holds ``pyproject.toml`` and ``src/webdesign_rl`` — derived from
@@ -76,6 +76,7 @@ def build_task(
     viewport: int = VIEWPORT,
     cpus: int = DEFAULT_CPUS,
     memory_mb: int = DEFAULT_MEMORY_MB,
+    render=render_in_container,
 ):
     """Assemble a Harbor task directory from a reference site and ``page_map``.
 
@@ -89,6 +90,14 @@ def build_task(
         task_name: the ``[task].name`` (``org/name``) recorded in ``task.toml``.
         viewport: render/capture width in CSS px, stated in ``instruction.md``.
         cpus, memory_mb: pinned verifier-environment resources.
+        render: the renderer used to produce the **agent reference PNGs**.
+            Defaults to :func:`~webdesign_rl.render.container.render_in_container`,
+            which renders inside the *same sealed verifier image* (curated font
+            palette installed OS-level) that grades the candidate — so the
+            typography the agent studies is exactly the typography it is graded
+            against, eliminating the host/container font drift (issue 07/09) at
+            the root. Injectable so tests can drive packaging structure with a
+            fast in-process render and skip the Docker build.
 
     Returns:
         The ``Path`` to the created task directory.
@@ -123,12 +132,15 @@ def build_task(
     # Render one reference screenshot per page into the agent-env build context so
     # the agent has something to replicate (the Dockerfile COPYs them into the
     # container at templates.AGENT_REFERENCE_DIR; instruction.md points there).
-    # Host-rendered for now — making this font-consistent with grading is issue 09.
+    # Rendered IN-CONTAINER by default (the same sealed image + OS-level font
+    # palette as grading), so the agent studies the exact typography it is graded
+    # against — issue 05 resolving the issue-07/09 host/container drift at root.
     _render_agent_screenshots(
         reference_site_dir,
         page_map,
         out / "environment" / templates.REFERENCE_DIRNAME,
         viewport,
+        render,
     )
     (tests_dir / "Dockerfile").write_text(templates.verifier_dockerfile())
     (tests_dir / "test.sh").write_text(templates.test_sh())
@@ -140,20 +152,22 @@ def build_task(
 
 
 def _render_agent_screenshots(
-    reference_site_dir: Path, page_map: dict, dest: Path, viewport: int
+    reference_site_dir: Path, page_map: dict, dest: Path, viewport: int, render
 ) -> None:
     """Render the reference site to one PNG per page under ``dest``.
 
-    These are the screenshots the *agent* replicates — distinct from grading,
-    which re-renders the reference HTML in-container. ``dest`` lives in the
-    agent-env build context, and each PNG is named by the page's ``screenshot``
-    field so ``instruction.md``'s table paths line up.
+    These are the screenshots the *agent* replicates. They are produced by
+    ``render`` — by default the **in-container** renderer, i.e. the same sealed
+    image + OS-level font palette that grades the candidate, so there is no
+    host/container font drift between what the agent sees and what it is graded
+    against. ``dest`` lives in the agent-env build context, and each PNG is named
+    by the page's ``screenshot`` field so ``instruction.md``'s table paths align.
     """
     if dest.exists():
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
 
-    images = render_site(reference_site_dir, page_map, viewport=viewport)
+    images = render(reference_site_dir, page_map, viewport=viewport)
     for page_name, spec in page_map.items():
         image = images.get(page_name)
         if image is None:

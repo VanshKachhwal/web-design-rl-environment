@@ -24,7 +24,7 @@ import re
 from dataclasses import dataclass
 from html.parser import HTMLParser
 
-from . import slug as slug_mod
+from . import fonts, slug as slug_mod
 
 STAGE1_TEMPERATURE = 1.0
 STAGE2_TEMPERATURE = 0.7
@@ -310,6 +310,27 @@ def build_stage1_prompt(seed: dict) -> str:
     )
 
 
+def _font_palette_clause() -> str:
+    """The stage-2 typography constraint, derived from the fonts manifest.
+
+    Pins ``font-family`` to the curated palette (named explicitly so the model
+    uses the exact bare family names that resolve OS-level in the render image)
+    and marks the display faces as headings-only. Sourced from the one manifest
+    so the prompt, the image install, and the gate check never diverge.
+    """
+    text_families = ", ".join(
+        f for f in fonts.PALETTE_FAMILIES if f not in fonts.HEADINGS_ONLY
+    )
+    display_families = ", ".join(sorted(fonts.HEADINGS_ONLY))
+    return (
+        "Typography: choose font-family values ONLY from this palette, by bare "
+        f"family name (no @font-face, no web fonts). Text faces: {text_families}. "
+        f"Display faces (headings only, never body text): {display_families}. "
+        f"Always end each font-family stack with a generic fallback "
+        f"(e.g. sans-serif / serif / monospace)."
+    )
+
+
 def _sitemap_lines(spec: Spec) -> str:
     """The page set as ``<slug>.html — Title`` lines for the stage-2 prompt."""
     return "\n".join(
@@ -333,6 +354,7 @@ def build_stage2_prompt(spec: Spec) -> str:
         "filenames only — never web-style routes like \"/features\" or \"/\", and "
         "never link to a page not in this list (do NOT invent /login, /blog, "
         "/docs, /careers, etc.).\n"
+        f"{_font_palette_clause()}\n"
         f"{_WELL_POSEDNESS}\n"
         "The header.html block MUST contain the site <nav> inside the <header> "
         "(do NOT emit a separate nav block).\n"

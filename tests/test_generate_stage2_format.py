@@ -121,6 +121,20 @@ def test_stage2_prompt_requests_four_blocks_with_nav_inside_header():
     assert "nav" in prompt.lower()
 
 
+def test_stage2_prompt_constrains_fonts_to_the_palette():
+    from webdesign_rl.generate import fonts
+
+    prompt = build_stage2_prompt(_spec())
+    # Stage 2 is told to pick font-family ONLY from the palette, named explicitly
+    # so the model uses the exact bare family names that resolve OS-level.
+    for family in fonts.PALETTE_FAMILIES:
+        assert family in prompt
+    # And that the display faces are headings-only, not body copy.
+    for display in fonts.HEADINGS_ONLY:
+        assert display in prompt
+    assert "heading" in prompt.lower()
+
+
 def test_run_stage2_parses_delimited_response_into_design_system():
     raw = _delimited(
         ":root{--brand:#111;}",

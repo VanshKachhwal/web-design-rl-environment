@@ -26,7 +26,9 @@ from webdesign_rl.emit import build_task
 VIEWPORT = 1280
 
 # A small, hermetic, substantial 5-page site whose pages really render above the
-# 600px substance floor (the agent-screenshot render in build_task is real).
+# 600px substance floor (stage-5 uses the fake render; build_task's agent
+# screenshots use it too here, since the default in-container render needs Docker
+# and this test asserts packaging structure, not font fidelity).
 _STAGE1 = {
     "brief": "A small architecture studio, bold editorial aesthetic.",
     "pages": [
@@ -117,7 +119,7 @@ def test_gated_site_emits_a_runnable_harbor_task(tmp_path):
     site = _gated_site(tmp_path / "site")
     page_map = json.loads((site / "page_map.json").read_text())
 
-    task = build_task(site, page_map, tmp_path / "task")
+    task = build_task(site, page_map, tmp_path / "task", render=_fake_render)
 
     # Canonical Harbor skeleton (mirrors the emit-layer tests).
     assert (task / "instruction.md").is_file()
@@ -143,7 +145,7 @@ def test_oracle_reproduces_the_gated_reference_exactly(tmp_path):
     # output IS the reference site -> the grader's deterministic ceiling (~1.0).
     site = _gated_site(tmp_path / "site")
     page_map = json.loads((site / "page_map.json").read_text())
-    task = build_task(site, page_map, tmp_path / "task")
+    task = build_task(site, page_map, tmp_path / "task", render=_fake_render)
 
     oracle_site = task / "solution" / "site"
     # Every page + the frozen stylesheets are bundled byte-identically.
