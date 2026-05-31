@@ -285,6 +285,22 @@ def test_illegal_component_is_flagged(tmp_path):
     assert "legal component catalog" in _messages(result)
 
 
+def test_new_catalog_component_with_styled_rule_passes_manifest_compliance(tmp_path):
+    # Issue 23: widening the catalog auto-flows into manifest_compliance — no
+    # gate change. A site whose manifest references a NEW component (here the
+    # layout-pattern 'bento-grid'), with a matching components.css rule, passes
+    # the manifest-compliance check.
+    spec = _spec()
+    spec.pages[0]["sections"].append("bento-grid")
+    spec.component_manifest.append("bento-grid")
+    styled = COMPONENTS_CSS + (
+        "\n.bento-grid{ display: grid; gap: var(--space); padding: var(--space); }\n"
+    )
+    site = build_site(tmp_path, components=styled)
+    result = run_stage4_gate(site, spec)
+    assert "manifest_compliance" not in _checks(result), _messages(result)
+
+
 # --- Hermeticity ------------------------------------------------------------
 
 def test_external_font_link_is_flagged(tmp_path):

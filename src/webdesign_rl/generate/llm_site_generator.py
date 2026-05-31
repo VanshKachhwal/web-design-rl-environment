@@ -113,8 +113,10 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site,
         max_nudges: per-page stage-3 nudge budget before the site is dropped
             (default :data:`DEFAULT_MAX_NUDGES` = 5; tunable without a code edit).
         stats: an optional mutable dict the gate populates with per-check
-            telemetry — ``nudges_by_check`` (a ``{check: count}`` mapping) and
-            ``gate_rounds`` (the number of full-gate evaluations). Default
+            telemetry — ``nudges_by_check`` (a ``{check: count}`` mapping),
+            ``gate_rounds`` (the number of full-gate evaluations), and
+            ``components_used`` (the stage-1 declared component manifest, for
+            per-component usage telemetry). Default
             ``None`` means **no behavior change**: nothing is collected and the
             pipeline runs exactly as before. The Modal batch passes a collector
             so ``summarize_batch`` can attribute nudge-churn to a check.
@@ -152,6 +154,11 @@ def generate_gated_site(seed, client, out_dir, *, render=render_site,
         if problem is None:
             logger.info("stage 2: %d manifest component(s) styled",
                         len(spec.component_manifest))
+            # Record the declared component manifest for per-component usage
+            # telemetry (mirrors nudges_by_check): the Modal batch reads this
+            # off stats to tally which components a batch actually drew on.
+            if stats is not None:
+                stats["components_used"] = list(spec.component_manifest)
             break
         if attempt == MAX_REROLLS:
             return _drop(seed, f"stage-2 inline manifest gate failed after "

@@ -35,6 +35,29 @@ def test_component_catalog_includes_chrome_atoms_and_sections():
     assert {"hero", "feature-grid", "pricing-table", "cta-banner"} <= legal  # sections
 
 
+def test_component_catalog_includes_layout_pattern_and_archetype_sections():
+    # Issue 23: the catalog is widened with layout-pattern components (drive
+    # structural variety) and archetype-specific components (fix the SaaS-bias),
+    # all static/CSS-drawable. They flow into legal_components automatically.
+    legal = taxonomy.legal_components()
+    layout_patterns = {
+        "bento-grid", "timeline", "comparison-table", "sidebar-layout",
+        "masonry-grid", "split-screen", "step-process",
+    }
+    archetype_specific = {
+        "menu-card", "speaker-card", "job-listing", "metric-dashboard",
+        "code-snippet", "filter-bar", "newsletter-signup",
+        "map-embed-placeholder", "award-badge",
+    }
+    assert layout_patterns <= legal
+    assert archetype_specific <= legal
+    # The fixes to the proposed list: the typo is corrected, the screenshot-
+    # invisible sticky variant is dropped.
+    assert "job-listing" in legal
+    assert "job-ing" not in legal
+    assert "sticky-nav-section" not in legal
+
+
 def test_component_catalog_is_the_single_legal_vocabulary():
     # A manifest is legal iff it is a subset of the catalog; anything outside is
     # an improvised, unstyleable component.

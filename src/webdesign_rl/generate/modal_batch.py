@@ -68,7 +68,9 @@ class SeedResult:
     on an error (``None`` on a pass); ``reason`` is the gate reason or
     ``str(exc)``; ``task_dir`` is the emitted task on a pass (``None`` on a
     drop/error or when ``emit=False``); ``nudges_by_check`` is the per-check
-    nudge tally :func:`summarize_batch` aggregates.
+    nudge tally :func:`summarize_batch` aggregates; ``components_used`` is the
+    stage-1 declared component manifest (the section-type union) this seed
+    drew on, the per-component usage telemetry :func:`summarize_batch` tallies.
     """
 
     seed_id: str
@@ -77,6 +79,7 @@ class SeedResult:
     reason: str | None = None
     task_dir: Path | None = None
     nudges_by_check: dict = field(default_factory=dict)
+    components_used: list = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -90,6 +93,9 @@ class BatchReport:
     (e.g. whether to relax a specific check) by data rather than guess;
     ``errors_by_type`` counts isolated failures by exception class — a recurring
     type points at an infra/upstream bug rather than a gate-tuning question.
+    ``components_used`` tallies, per catalog component, how many seeds declared
+    it in their manifest — the evidence that widening the catalog actually
+    diversified the layout grammar (and which components see no uptake).
     """
 
     total: int
@@ -100,6 +106,7 @@ class BatchReport:
     drops_by_check: dict
     errors_by_type: dict
     nudges_by_check: dict
+    components_used: dict = field(default_factory=dict)
 
 
 def seed_id(seed, index: int) -> str:
@@ -128,7 +135,9 @@ def run_one_seed(seed, *, index: int, client, render, out_root,
     (the gated ``site/`` and, on a pass, the emitted Harbor ``task/``), and emits
     the survivor via :func:`~webdesign_rl.emit.task_builder.build_task`. On a drop
     it returns the fatal ``check`` + ``reason``; on a pass it returns the
-    ``task_dir`` and the per-check nudge tally.
+    ``task_dir`` and the per-check nudge tally. Either way it carries the
+    stage-1 declared component manifest (``components_used``) read off the
+    pipeline ``stats`` for the batch's per-component usage telemetry.
 
     Idempotent: the seed's own directory is cleared and rewritten, so a re-run
     rebuilds *this* seed without disturbing any other seed under ``out_root``.
@@ -177,6 +186,7 @@ def run_one_seed(seed, *, index: int, client, render, out_root,
         )
 
         nudges = dict(stats.get("nudges_by_check", {}))
+        components = list(stats.get("components_used", []))
 
         if isinstance(result, Dropped):
             logger.info("seed %s dropped on check=%s: %s",
@@ -184,7 +194,7 @@ def run_one_seed(seed, *, index: int, client, render, out_root,
             return SeedResult(
                 seed_id=sid, status="dropped",
                 check=result.check, reason=result.reason,
-                nudges_by_check=nudges,
+                nudges_by_check=nudges, components_used=components,
             )
 
         site_dir = result
@@ -202,6 +212,7 @@ def run_one_seed(seed, *, index: int, client, render, out_root,
         return SeedResult(
             seed_id=sid, status="passed",
             task_dir=task_dir, nudges_by_check=nudges,
+            components_used=components,
         )
     except Exception as exc:  # noqa: BLE001 - deliberately isolate ALL failures.
         logger.exception("seed %s errored: %s", sid, exc)
@@ -209,6 +220,7 @@ def run_one_seed(seed, *, index: int, client, render, out_root,
             seed_id=sid, status="errored",
             check=type(exc).__name__, reason=str(exc),
             nudges_by_check=dict(stats.get("nudges_by_check", {})),
+            components_used=list(stats.get("components_used", [])),
         )
 
 
@@ -232,6 +244,7 @@ def summarize_batch(results) -> BatchReport:
     drops_by_check: dict = {}
     errors_by_type: dict = {}
     nudges_by_check: dict = {}
+    components_used: dict = {}
     for r in results:
         if r.status == "dropped" and r.check is not None:
             drops_by_check[r.check] = drops_by_check.get(r.check, 0) + 1
@@ -239,13 +252,17 @@ def summarize_batch(results) -> BatchReport:
             errors_by_type[r.check] = errors_by_type.get(r.check, 0) + 1
         for check, count in (r.nudges_by_check or {}).items():
             nudges_by_check[check] = nudges_by_check.get(check, 0) + count
+        # Count each declared component ONCE per seed (a seed either used it or
+        # not), so the tally is "seeds using component X", not raw references.
+        for component in set(r.components_used or []):
+            components_used[component] = components_used.get(component, 0) + 1
 
     yield_fraction = passed / total if total else 0.0
     return BatchReport(
         total=total, passed=passed, dropped=dropped, errored=errored,
         yield_fraction=yield_fraction,
         drops_by_check=drops_by_check, errors_by_type=errors_by_type,
-        nudges_by_check=nudges_by_check,
+        nudges_by_check=nudges_by_check, components_used=components_used,
     )
 
 
@@ -258,6 +275,7 @@ def format_report(report: BatchReport) -> str:
         f"  drops by check: {_fmt_counts(report.drops_by_check)}",
         f"  errors by type: {_fmt_counts(report.errors_by_type)}",
         f"  nudges by check: {_fmt_counts(report.nudges_by_check)}",
+        f"  components used: {_fmt_counts(report.components_used)}",
     ]
     return "\n".join(lines)
 

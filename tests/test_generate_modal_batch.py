@@ -170,6 +170,18 @@ def test_run_one_seed_emit_false_skips_task(tmp_path):
     assert result.task_dir is None
 
 
+def test_run_one_seed_records_components_used_from_manifest(tmp_path):
+    # Issue 23: the per-seed component list is populated from the stage-1
+    # manifest threaded through the pipeline stats, so summarize_batch can tally
+    # which components actually got used across a batch.
+    client = StubGenerationClient(responses=_passing_responses())
+    result = modal_batch.run_one_seed(
+        _SEED, index=0, client=client, render=_fake_render, out_root=tmp_path
+    )
+    assert result.status == "passed"
+    assert set(result.components_used) == set(_STAGE1["component_manifest"])
+
+
 # --- run_one_seed: a dropping seed records the fatal check ------------------
 
 def test_run_one_seed_dropping_records_check_and_reason(tmp_path):
@@ -288,7 +300,8 @@ def test_errored_seed_leaves_sibling_artifacts_intact(tmp_path):
 
 # --- summarize_batch: yield + per-check telemetry --------------------------
 
-def _result(seed_id, status, check=None, nudges_by_check=None):
+def _result(seed_id, status, check=None, nudges_by_check=None,
+            components_used=None):
     return modal_batch.SeedResult(
         seed_id=seed_id,
         status=status,
@@ -296,6 +309,7 @@ def _result(seed_id, status, check=None, nudges_by_check=None):
         reason=None if status == "passed" else f"{check} failed",
         task_dir=None,
         nudges_by_check=nudges_by_check or {},
+        components_used=components_used or [],
     )
 
 
@@ -335,6 +349,31 @@ def test_summarize_batch_aggregates_nudges_by_check():
     assert report.nudges_by_check == {
         "substance": 3, "chrome": 3, "token-compliance": 5,
     }
+
+
+def test_summarize_batch_tallies_components_used(tmp_path=None):
+    # Issue 23: per-component usage telemetry — a count of how many seeds USED
+    # each declared component (one increment per seed, dedup within a seed),
+    # mirroring nudges_by_check. Proves whether the grammar diversified.
+    results = [
+        _result("a", "passed", components_used=["hero", "bento-grid"]),
+        _result("b", "passed", components_used=["hero", "timeline"]),
+        _result("c", "dropped", check="substance",
+                components_used=["hero", "hero", "bento-grid"]),
+    ]
+    report = modal_batch.summarize_batch(results)
+    assert report.components_used == {
+        "hero": 3, "bento-grid": 2, "timeline": 1,
+    }
+
+
+def test_format_report_shows_components_used():
+    results = [
+        _result("a", "passed", components_used=["hero", "bento-grid"]),
+    ]
+    report = modal_batch.summarize_batch(results)
+    text = modal_batch.format_report(report)
+    assert "bento-grid" in text
 
 
 def test_summarize_batch_empty_is_zero_yield():

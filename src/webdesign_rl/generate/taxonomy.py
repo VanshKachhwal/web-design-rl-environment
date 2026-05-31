@@ -16,9 +16,10 @@ Three things are exposed:
   <=10) and :func:`pages_for`, which couples the page count to the complexity
   axis (design decision #2: low -> 5-6 ... high -> up to 10) so a "complex" site
   is genuinely broader.
-- **The canonical component catalog** — :data:`COMPONENT_CATALOG` (the ~20 legal
-  component types) and :func:`legal_components`, the single bounded vocabulary a
-  site's manifest may draw from.
+- **The canonical component catalog** — :data:`COMPONENT_CATALOG` (the ~40 legal
+  component types, spanning chrome, atoms, layout-pattern sections, and
+  archetype-specific sections) and :func:`legal_components`, the single bounded
+  vocabulary a site's manifest may draw from.
 """
 
 # --- Stratified axes (design decision #1) ----------------------------------
@@ -57,7 +58,7 @@ COMPLEXITIES = ("low", "med", "high")
 
 # --- Canonical component catalog (design decision #4) ----------------------
 #
-# The bounded, ~20-type vocabulary a site's manifest may draw from. Stage 1's
+# The bounded, ~40-type vocabulary a site's manifest may draw from. Stage 1's
 # manifest selects a subset; stage 2 authors exactly that subset, styled for the
 # aesthetic; the gate's manifest-compliance check rejects anything outside it.
 # Split into three bands purely for readability — :func:`legal_components`
@@ -83,6 +84,30 @@ SECTION_COMPONENTS = (
     "contact-block",
     "blog-post-card",
     "product-card",
+    # Layout-pattern components (issue 23) — drive structural variety so the
+    # grammar isn't always hero->features->testimonial->cta->footer. All
+    # static / CSS-drawable.
+    "bento-grid",
+    "timeline",
+    "comparison-table",
+    "sidebar-layout",
+    "masonry-grid",
+    "split-screen",
+    "step-process",
+    # Archetype-specific components (issue 23) — fix the SaaS bias so non-SaaS
+    # archetypes get native sections instead of repurposing ill-fitting ones
+    # (e.g. a restaurant Menu using pricing-table). map-embed-placeholder /
+    # metric-dashboard / code-snippet are static, CSS/SVG-drawn placeholders
+    # only (no iframe, no charting lib, no JS).
+    "menu-card",
+    "speaker-card",
+    "job-listing",
+    "metric-dashboard",
+    "code-snippet",
+    "filter-bar",
+    "newsletter-signup",
+    "map-embed-placeholder",
+    "award-badge",
 )
 
 # The flat catalog tuple — the union of all three bands, in band order.

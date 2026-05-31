@@ -135,6 +135,19 @@ def test_stage2_prompt_constrains_fonts_to_the_palette():
     assert "heading" in prompt.lower()
 
 
+def test_stage2_prompt_names_new_components_as_static_placeholders():
+    # Issue 23: the widened catalog adds components (map-embed-placeholder,
+    # metric-dashboard, code-snippet) that could tempt an iframe / charting lib /
+    # JS. A single minimal clause names them as static / CSS-drawable
+    # placeholders so a live run keeps them well-posed.
+    prompt = build_stage2_prompt(_spec())
+    lowered = prompt.lower()
+    assert "placeholder" in lowered
+    assert "map-embed-placeholder" in prompt
+    assert "metric-dashboard" in prompt
+    assert "code-snippet" in prompt
+
+
 def test_run_stage2_parses_delimited_response_into_design_system():
     raw = _delimited(
         ":root{--brand:#111;}",
