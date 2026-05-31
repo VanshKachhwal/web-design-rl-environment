@@ -64,7 +64,17 @@ def _extract_json(text: str) -> dict:
     end = text.rfind("}")
     if start == -1 or end == -1 or end < start:
         raise ValueError("stage response contained no JSON object")
-    return json.loads(text[start : end + 1])
+    try:
+        return json.loads(text[start : end + 1])
+    except json.JSONDecodeError as exc:
+        # The most common cause is a response truncated mid-string (e.g. a large
+        # components.css blob exceeding max_tokens), which leaves an unterminated
+        # JSON string. Surface that explicitly instead of a bare decoder error.
+        raise ValueError(
+            f"stage response was not valid JSON ({exc}); the response is "
+            f"{len(text)} chars and likely truncated (raise the client's "
+            f"max_tokens or shrink the stage output). Tail: ...{text[-160:]!r}"
+        ) from exc
 
 
 def run_stage1(seed: dict, client) -> Spec:

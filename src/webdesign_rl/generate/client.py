@@ -62,7 +62,7 @@ class AnthropicGenerationClient:
     API key; the client is only ever used when explicitly injected.
     """
 
-    def __init__(self, client=None, model: str = GENERATION_MODEL, max_tokens: int = 8192):
+    def __init__(self, client=None, model: str = GENERATION_MODEL, max_tokens: int = 16384):
         if client is None:
             import anthropic  # lazy: keep the module import-safe.
 

@@ -1,21 +1,36 @@
 """Local single-site spike CLI (``python -m webdesign_rl.generate``).
 
-The issue-01 "generate one site locally and eyeball it" command: it runs the
-3-stage pipeline for a single seed through the live
-:class:`AnthropicGenerationClient` (Opus 4.6), writes the site to a directory,
-then renders one full-page 1280px screenshot per page with the *existing* render
-module so the result can be reviewed by eye.
+The build-order "generate one site locally and eyeball it" command. It runs the
+**full gated pipeline** for a single seed through the live
+:class:`AnthropicGenerationClient` (Opus 4.6) — stage 1->2->3 + inline gates +
+stage 4/5 quality gate + bounded composition-only repair — writes the gated site
+to a directory, renders one full-page 1280px screenshot per page with the
+*existing* render module so the result can be reviewed by eye, and optionally
+emits a runnable Harbor task.
+
+The seed is a real taxonomy point: pass explicit axes (validated against the
+taxonomy) or ``--seed-index N`` to use the Nth stratified-sample seed.
 
 Usage::
 
-    # one site from an explicit seed, written to ./out/site, screenshots to ./out/shots
-    python -m webdesign_rl.generate \\
-        --archetype "tea-shop" --aesthetic "warm-minimal" --complexity low \\
+    # the first stratified seed (saas-landing / swiss-editorial / low = 5 pages)
+    python -m webdesign_rl.generate --seed-index 0 \\
         --out ./out/site --screenshots ./out/shots
 
+    # an explicit seed, and also emit a runnable Harbor task
+    python -m webdesign_rl.generate \\
+        --archetype restaurant-hospitality --aesthetic warm-organic --complexity low \\
+        --out ./out/site --screenshots ./out/shots --emit ./out/task
+
 ``ANTHROPIC_API_KEY`` must be set (loaded from ``.env`` like the rest of the
-project). The deterministic logic is covered by the stubbed pipeline tests; this
-CLI is the live, human-review path and is intentionally not unit-tested.
+project). The pipeline makes ~a dozen live model calls per site (stage 1 + stage
+2 + one per page + any repair nudges). The deterministic logic is covered by the
+stubbed pipeline tests; this CLI is the live, human-review path and is
+intentionally not unit-tested.
+
+Note: until the font-palette work (issue 05) lands, palette fonts fall back to
+DejaVu in the render — typography looks generic, but layout/color/structure/
+content are faithful.
 """
 
 import argparse
@@ -23,32 +38,72 @@ import json
 import sys
 from pathlib import Path
 
+from . import taxonomy
+from .seeds import Seed, expand_seed, sample_seeds
+
+
+def _build_seed(args) -> Seed:
+    """Resolve CLI args into a real taxonomy :class:`Seed`."""
+    if args.seed_index is not None:
+        # The Nth stratified-sample seed (deterministic, spans the grid).
+        return sample_seeds(args.seed_index + 1)[args.seed_index]
+    return Seed(
+        archetype=args.archetype,
+        aesthetic=args.aesthetic,
+        complexity=args.complexity,
+        audience=args.audience or taxonomy.AUDIENCES[0],
+        brand_mood=args.brand_mood or taxonomy.BRAND_MOODS[0],
+    )
+
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m webdesign_rl.generate",
-        description="Generate one site end-to-end (Opus 4.6) and render it locally.",
+        description="Generate one site end-to-end through the gated pipeline "
+        "(Opus 4.6) and render it locally for review.",
     )
-    parser.add_argument("--archetype", default="tea-shop", help="Site archetype seed axis.")
-    parser.add_argument("--aesthetic", default="warm-minimal", help="Aesthetic seed axis.")
+    parser.add_argument(
+        "--seed-index",
+        type=int,
+        default=None,
+        help="Use the Nth stratified-sample seed (overrides the explicit axes). "
+        "Index 0 is the first spanning seed.",
+    )
+    parser.add_argument(
+        "--archetype",
+        default=taxonomy.ARCHETYPES[0],
+        choices=taxonomy.ARCHETYPES,
+        help="Site archetype (drives the sitemap).",
+    )
+    parser.add_argument(
+        "--aesthetic",
+        default=taxonomy.AESTHETICS[0],
+        choices=taxonomy.AESTHETICS,
+        help="Visual aesthetic (drives the design system).",
+    )
     parser.add_argument(
         "--complexity",
         default="med",
-        choices=["low", "med", "high"],
-        help="Layout-complexity seed axis (couples to page count later).",
+        choices=taxonomy.COMPLEXITIES,
+        help="Layout-complexity (couples to page count: low~5, med~7, high~10).",
     )
     parser.add_argument("--audience", default=None, help="Optional audience/region modifier.")
-    parser.add_argument("--brand-mood", default=None, dest="brand_mood", help="Optional brand-mood modifier.")
     parser.add_argument(
-        "--out",
-        required=True,
-        help="Directory to write the generated site (HTML/CSS + page_map.json).",
+        "--brand-mood", default=None, dest="brand_mood", help="Optional brand-mood modifier."
+    )
+    parser.add_argument(
+        "--out", required=True, help="Directory to write the gated site (HTML/CSS + page_map.json)."
     )
     parser.add_argument(
         "--screenshots",
         default=None,
-        help="Directory to render one full-page 1280px PNG per page into for "
-        "visual review (defaults to <out>/_screenshots).",
+        help="Directory to render one full-page 1280px PNG per page into for visual "
+        "review (defaults to <out>/_screenshots).",
+    )
+    parser.add_argument(
+        "--emit",
+        default=None,
+        help="Optional: also package a runnable Harbor task into this directory.",
     )
     args = parser.parse_args(argv)
 
@@ -62,37 +117,45 @@ def main(argv=None) -> int:
 
     from ..render.browser import render_site
     from .client import AnthropicGenerationClient
-    from .llm_site_generator import generate_site
+    from .llm_site_generator import Dropped, generate_gated_site
 
-    seed = {
-        "archetype": args.archetype,
-        "aesthetic": args.aesthetic,
-        "complexity": args.complexity,
-    }
-    if args.audience:
-        seed["audience"] = args.audience
-    if args.brand_mood:
-        seed["brand_mood"] = args.brand_mood
+    seed = _build_seed(args)
+    spec = expand_seed(seed)
+    print(
+        f"Generating: archetype={seed.archetype} aesthetic={seed.aesthetic} "
+        f"complexity={seed.complexity} ({spec['page_count']} pages) ...",
+        file=sys.stderr,
+    )
 
-    site_dir = generate_site(seed, client=AnthropicGenerationClient(), out_dir=args.out)
+    result = generate_gated_site(spec, client=AnthropicGenerationClient(), out_dir=args.out)
+    if isinstance(result, Dropped):
+        print(json.dumps({"status": "dropped", "reason": result.reason}, indent=2))
+        return 1
+
+    site_dir = result
     page_map = json.loads((site_dir / "page_map.json").read_text())
 
     shots_dir = Path(args.screenshots) if args.screenshots else site_dir / "_screenshots"
     shots_dir.mkdir(parents=True, exist_ok=True)
     images = render_site(site_dir, page_map, viewport=1280)
-    for page, spec in page_map.items():
-        images[page].save(shots_dir / spec["screenshot"])
+    for page, page_spec in page_map.items():
+        images[page].save(shots_dir / page_spec["screenshot"])
 
-    print(
-        json.dumps(
-            {
-                "site_dir": str(site_dir),
-                "screenshots_dir": str(shots_dir),
-                "pages": list(page_map),
-            },
-            indent=2,
-        )
-    )
+    out = {
+        "status": "ok",
+        "seed": list(seed),
+        "site_dir": str(site_dir),
+        "screenshots_dir": str(shots_dir),
+        "pages": list(page_map),
+    }
+
+    if args.emit:
+        from ..emit.task_builder import build_task
+
+        build_task(site_dir, page_map, args.emit)
+        out["task_dir"] = str(args.emit)
+
+    print(json.dumps(out, indent=2))
     return 0
 
 
