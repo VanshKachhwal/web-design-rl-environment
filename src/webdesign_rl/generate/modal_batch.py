@@ -302,11 +302,16 @@ SECRET_NAME = "anthropic-api-key"          # holds ANTHROPIC_API_KEY
 VOLUME_MOUNT = "/artifacts"                # out_root inside the container
 
 
-def _build_modal_app():
+def _build_modal_app(*, concurrency=DEFAULT_CONCURRENCY, volume_name=VOLUME_NAME):
     """Construct (lazily) the Modal ``App`` + sealed image + volume + worker.
 
     Returns ``(app, worker)``. ``modal`` is imported here, not at module top,
     so importing :mod:`modal_batch` never requires Modal.
+
+    ``concurrency`` caps the in-flight worker containers (``max_containers``) and
+    ``volume_name`` names the artifact ``Volume``; both default to the module
+    constants so existing call sites are unaffected. ``SECRET_NAME`` /
+    ``VOLUME_MOUNT`` stay constant.
 
     The sealed image is the **render image** (the verifier's Python + package +
     Chromium + OS-level font palette, built from the SAME font-install block as
@@ -334,7 +339,7 @@ def _build_modal_app():
         str(ctx / "Dockerfile"), context_dir=str(ctx)
     )
 
-    volume = modal.Volume.from_name(VOLUME_NAME, create_if_missing=True)
+    volume = modal.Volume.from_name(volume_name, create_if_missing=True)
     secret = modal.Secret.from_name(SECRET_NAME)
 
     # Concurrency cap so the ~48-seed fan-out doesn't trip Anthropic rate limits
@@ -348,7 +353,7 @@ def _build_modal_app():
         image=image,
         volumes={VOLUME_MOUNT: volume},
         secrets=[secret],
-        max_containers=DEFAULT_CONCURRENCY,
+        max_containers=concurrency,
         cpu=WORKER_CPU,
         memory=WORKER_MEMORY_MB,
         timeout=60 * 30,
@@ -383,15 +388,19 @@ def _build_modal_app():
     return app, _worker
 
 
-def run_batch(count: int = DEFAULT_BATCH_SIZE):
+def run_batch(count: int = DEFAULT_BATCH_SIZE, *,
+              concurrency: int = DEFAULT_CONCURRENCY, volume: str = VOLUME_NAME):
     """Local entrypoint: fan ``count`` seeds out on Modal, then report.
 
     Builds the stratified seed list, ``.map()``s the concurrency-capped worker
     over it (each running the full gated pipeline in the sealed image and writing
     survivors to the volume keyed by seed id), collects the ``SeedResult``s, and
-    logs the yield + per-check telemetry. The live invocation is the HITL step:
-    ``python -m webdesign_rl.generate.modal_batch`` (with Modal installed +
-    authed, the named ``Secret``/``Volume`` provisioned).
+    logs the yield + per-check telemetry. ``concurrency`` (the ``max_containers``
+    cap) and ``volume`` (the artifact ``Volume`` name) are threaded into
+    :func:`_build_modal_app`; both default to the module constants so the
+    zero-arg/``count``-only call sites keep working. The live invocation is the
+    HITL step: ``python -m webdesign_rl.generate.modal_batch`` (with Modal
+    installed + authed, the named ``Secret``/``Volume`` provisioned).
 
     ``app.run()`` is used so the whole entrypoint stays inside the lazily-built
     ``app`` — no module-level ``@app.local_entrypoint`` (which would need ``app``
@@ -399,7 +408,7 @@ def run_batch(count: int = DEFAULT_BATCH_SIZE):
     """
     from .seeds import sample_seeds
 
-    app, worker = _build_modal_app()
+    app, worker = _build_modal_app(concurrency=concurrency, volume_name=volume)
     seeds = sample_seeds(count)
     indexed = list(enumerate(seeds))
 

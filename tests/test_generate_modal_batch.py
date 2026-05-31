@@ -436,3 +436,62 @@ def test_default_concurrency_is_ten():
     # Decided policy (eval-pipeline design): concurrency = 10 at both ends of the
     # pipeline — generation and eval — under the single shared Anthropic key.
     assert modal_batch.DEFAULT_CONCURRENCY == 10
+
+
+# --- run_batch plumbs concurrency + volume into the (Modal) app builder ------
+
+class _StubAppRun:
+    """A no-op ``app.run()`` context manager so run_batch never touches Modal."""
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+class _StubApp:
+    def run(self):
+        return _StubAppRun()
+
+
+class _StubWorker:
+    def map(self, indexed, return_exceptions=False):
+        # Empty stream -> run_batch short-circuits to an empty batch, never
+        # fanning anything out on real Modal.
+        return iter(())
+
+
+def test_run_batch_plumbs_concurrency_and_volume(monkeypatch):
+    captured = {}
+
+    def fake_build(*, concurrency, volume_name):
+        captured["concurrency"] = concurrency
+        captured["volume_name"] = volume_name
+        return _StubApp(), _StubWorker()
+
+    monkeypatch.setattr(modal_batch, "_build_modal_app", fake_build)
+
+    report = modal_batch.run_batch(count=3, concurrency=7, volume="my-vol")
+
+    assert captured == {"concurrency": 7, "volume_name": "my-vol"}
+    # Empty stream -> an empty, well-formed report (no Modal touched).
+    assert report.total == 0
+
+
+def test_run_batch_defaults_plumb_the_constants(monkeypatch):
+    captured = {}
+
+    def fake_build(*, concurrency, volume_name):
+        captured["concurrency"] = concurrency
+        captured["volume_name"] = volume_name
+        return _StubApp(), _StubWorker()
+
+    monkeypatch.setattr(modal_batch, "_build_modal_app", fake_build)
+
+    modal_batch.run_batch(count=1)
+
+    assert captured == {
+        "concurrency": modal_batch.DEFAULT_CONCURRENCY,
+        "volume_name": modal_batch.VOLUME_NAME,
+    }
