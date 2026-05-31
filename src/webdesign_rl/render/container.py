@@ -53,9 +53,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \\
 
 {fonts.dockerfile_install_block()}
 
+# Browser-engine layer, placed BEFORE the package COPY. Chromium + its ~50 apt
+# system libs (--with-deps) are large and source-INDEPENDENT, so keeping them
+# ahead of `COPY webdesign_rl_pkg` means a source edit busts only the cheap pip
+# layer below — it never re-pays the multi-minute Chromium reinstall. playwright
+# is a core dep (>=1.49); installing it here leaves it satisfied by the package
+# install below, so the engine matches the Chromium downloaded here (no drift).
+RUN pip install --no-cache-dir "playwright>=1.49" \\
+    && playwright install --with-deps chromium
+
 COPY webdesign_rl_pkg /opt/webdesign_rl_pkg
 RUN pip install --no-cache-dir /opt/webdesign_rl_pkg[grade]
-RUN playwright install --with-deps chromium
 """
 
 

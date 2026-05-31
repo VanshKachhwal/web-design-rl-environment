@@ -169,13 +169,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \\
 
 {fonts.dockerfile_install_block()}
 
-# Our package + its dependencies (Playwright moved to core deps in issue 05).
+# Browser-engine layer FIRST, before the package + per-task COPYs. Chromium and
+# its OS deps (--with-deps) are large and source-INDEPENDENT, so placing them
+# ahead of the COPYs means a package or per-task change busts only the cheap
+# layers below rather than re-baking Chromium. playwright is a core dep
+# (>=1.49), so installing it here leaves it satisfied by the package install
+# below — the engine matches this baked Chromium (no version/binary drift).
+RUN pip install --no-cache-dir "playwright>=1.49" \\
+    && playwright install --with-deps chromium
+
+# Our package + its dependencies (Playwright is a core dep as of issue 05).
 COPY webdesign_rl_pkg /opt/webdesign_rl_pkg
 RUN pip install --no-cache-dir /opt/webdesign_rl_pkg[grade]
-
-# Bake the Chromium binary into the image (no download at grade time) and its
-# OS dependencies.
-RUN playwright install --with-deps chromium
 
 # Bake the grader inputs hidden from the agent: the reference HTML site (rendered
 # in-container at grade time with the same engine/fonts as the candidate, so the
