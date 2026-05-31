@@ -13,9 +13,10 @@ code*, not from the model's variance. This module turns the taxonomy into:
   and the chosen aesthetic into the prompt context.
 
 Determinism is structural: the ordering is a fixed function of the index (a
-coprime diagonal walk over the grid), so the same count always yields the
-identical list. No live/unseeded RNG (``random``/``Math.random``) is used —
-that would break the reproducibility the audit trail depends on.
+coprime walk over the flattened archetype×aesthetic product grid), so the same
+count always yields the identical list. No live/unseeded RNG
+(``random``/``Math.random``) is used — that would break the reproducibility the
+audit trail depends on.
 """
 
 from math import gcd
@@ -54,14 +55,39 @@ def _coprime_stride(length: int) -> int:
     return stride
 
 
+def _grid_stride(rows: int, cols: int) -> int:
+    """A stride for walking a ``rows x cols`` grid flattened row-major as ``j``.
+
+    The stride must be coprime to ``rows * cols`` so a single additive walk is a
+    permutation of the whole grid (every cell reached once, no repeat until the
+    grid is exhausted). On top of that, decoding ``j`` as ``(j // cols, j % cols)``
+    means the per-step *row* advance is ``stride // cols`` and the *column*
+    advance is ``stride % cols``; for a short prefix to spread across *both* axes
+    we want each of those advances coprime to its own axis length too. We search
+    for the smallest such stride; if none exists (degenerate axis lengths) we fall
+    back to any stride coprime to the product so full coverage still holds.
+    """
+    product = rows * cols
+    fallback = None
+    for stride in range(1, product):
+        if gcd(stride, product) != 1:
+            continue
+        if fallback is None:
+            fallback = stride
+        if gcd(stride // cols, rows) == 1 and gcd(stride % cols, cols) == 1:
+            return stride
+    return fallback if fallback is not None else 1
+
+
 def sample_seeds(count: int):
     """Return ``count`` seed tuples that deterministically span the grid.
 
-    The three stratified axes are advanced by *coprime strides* per pick, so
-    consecutive seeds differ in archetype, aesthetic, *and* complexity and a
-    prefix of any length is spread across the grid rather than clustered. The
-    free modifiers are likewise stepped deterministically. Same ``count`` ->
-    identical list.
+    Archetype and aesthetic are walked together as one flattened product space
+    stepped by a single stride coprime to its size, so *all* archetype×aesthetic
+    pairs are reachable and none repeats until the batch exceeds the grid (no
+    diagonal collapse). Complexity and the free modifiers are stepped
+    independently. A prefix of any length is spread across the grid rather than
+    clustered. Same ``count`` -> identical list.
     """
     archetypes = taxonomy.ARCHETYPES
     aesthetics = taxonomy.AESTHETICS
@@ -69,13 +95,21 @@ def sample_seeds(count: int):
     audiences = taxonomy.AUDIENCES
     brand_moods = taxonomy.BRAND_MOODS
 
-    arch_stride = _coprime_stride(len(archetypes))
-    aes_stride = _coprime_stride(len(aesthetics))
+    # Walk archetype x aesthetic as ONE flattened product space, not two locked
+    # diagonals. Stepping a single index by a stride coprime to the *product*
+    # size makes the additive walk a permutation of the whole grid, so all
+    # ``len(archetypes) * len(aesthetics)`` pairs are reachable and none repeats
+    # until the batch exceeds the grid. Decoding ``j`` as ``(j // L, j % L)`` (L =
+    # number of aesthetics) also spreads short prefixes across *both* axes.
+    aes_len = len(aesthetics)
+    grid_size = len(archetypes) * aes_len
+    grid_stride = _grid_stride(len(archetypes), aes_len)
 
     seeds_out = []
     for i in range(count):
-        archetype = archetypes[(i * arch_stride) % len(archetypes)]
-        aesthetic = aesthetics[(i * aes_stride) % len(aesthetics)]
+        j = (i * grid_stride) % grid_size
+        archetype = archetypes[j // aes_len]
+        aesthetic = aesthetics[j % aes_len]
         complexity = complexities[i % len(complexities)]
         audience = audiences[i % len(audiences)]
         brand_mood = brand_moods[i % len(brand_moods)]

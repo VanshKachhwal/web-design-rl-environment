@@ -51,6 +51,54 @@ def test_small_batch_still_spreads_archetypes():
     assert len(archetypes) >= 8
 
 
+def test_full_grid_is_reachable_at_grid_size():
+    # The archetype x aesthetic grid is walked as one flattened product space,
+    # so a batch the size of the grid covers *every* pair exactly once — no
+    # collapse onto a single diagonal (was 10/100).
+    grid_size = len(taxonomy.ARCHETYPES) * len(taxonomy.AESTHETICS)
+    batch = seeds.sample_seeds(grid_size)
+    pairs = {(s.archetype, s.aesthetic) for s in batch}
+    assert len(pairs) == grid_size
+
+
+def test_no_pair_repeats_within_a_sub_grid_batch():
+    # A batch no larger than the grid never repeats an (archetype, aesthetic)
+    # pair — the flattened walk is a permutation, so it doesn't revisit a cell
+    # until it has exhausted the grid.
+    batch = seeds.sample_seeds(20)
+    pairs = [(s.archetype, s.aesthetic) for s in batch]
+    assert len(set(pairs)) == len(pairs) == 20
+
+
+def test_short_prefix_spreads_both_axes():
+    # The first len(ARCHETYPES) seeds touch (nearly) every archetype, and the
+    # first len(AESTHETICS) seeds touch (nearly) every aesthetic — short
+    # prefixes spread across *both* axes, not just one.
+    n_arch = len(taxonomy.ARCHETYPES)
+    n_aes = len(taxonomy.AESTHETICS)
+    arch_prefix = seeds.sample_seeds(n_arch)
+    aes_prefix = seeds.sample_seeds(n_aes)
+    distinct_arch = {s.archetype for s in arch_prefix}
+    distinct_aes = {s.aesthetic for s in aes_prefix}
+    assert len(distinct_arch) >= n_arch - 1
+    assert len(distinct_aes) >= n_aes - 1
+
+
+def test_grid_walk_generalizes_to_a_different_length_axis(monkeypatch):
+    # The walk is derived from the taxonomy tuple lengths, not hard-coded to
+    # 10/100. Shrink one axis and the full product is still walked without
+    # repeating any pair within a grid-sized batch.
+    monkeypatch.setattr(
+        taxonomy, "AESTHETICS", ("a", "b", "c", "d", "e", "f", "g"),
+    )
+    grid_size = len(taxonomy.ARCHETYPES) * len(taxonomy.AESTHETICS)
+    batch = seeds.sample_seeds(grid_size)
+    pairs = [(s.archetype, s.aesthetic) for s in batch]
+    assert len(set(pairs)) == grid_size
+    # And the chosen aesthetics are drawn only from the patched (shorter) axis.
+    assert {s.aesthetic for s in batch} == set(taxonomy.AESTHETICS)
+
+
 def test_expand_seed_carries_the_axes_and_modifiers_into_prompt_context():
     seed = seeds.Seed(
         archetype="restaurant-hospitality",
