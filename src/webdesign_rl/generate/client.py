@@ -29,6 +29,11 @@ GENERATION_MODEL = "claude-opus-4-6"
 # (400) and other 4xx are NOT transient and must surface immediately.
 _TRANSIENT_STATUS = frozenset({408, 409, 429, 529})
 
+# Cap on the continuation-seam overlap scan (chars). Far larger than any
+# realistic re-emitted tail / re-opened ``===FILE===`` marker, but small enough
+# that trimming stays cheap against a ~100KB truncated chunk.
+_MAX_OVERLAP_SCAN = 4096
+
 
 def _is_transient(exc) -> bool:
     """Whether an exception from the Messages API is worth retrying.
@@ -105,6 +110,7 @@ class AnthropicGenerationClient:
         max_tokens: int = 32000,
         *,
         max_retries: int = 4,
+        max_continuations: int = 3,
         backoff_base: float = 1.0,
     ):
         if client is None:
@@ -115,6 +121,7 @@ class AnthropicGenerationClient:
         self._model = model
         self._max_tokens = max_tokens
         self._max_retries = max_retries
+        self._max_continuations = max_continuations
         self._backoff_base = backoff_base
 
     def _create_with_retry(self, **kwargs):
@@ -155,23 +162,70 @@ class AnthropicGenerationClient:
         with self._client.messages.stream(**kwargs) as stream:
             return stream.get_final_message()
 
-    def complete(self, prompt, *, temperature):
-        message = self._create_with_retry(
-            model=self._model,
-            max_tokens=self._max_tokens,
-            temperature=temperature,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        # A response cut off at the token cap (``stop_reason == "max_tokens"``)
-        # is a partial output — returning it would hand a downstream parser a
-        # truncated artifact (an unterminated JSON string / a missing ===FILE===
-        # block). Surface it as a clear, actionable error instead.
-        if getattr(message, "stop_reason", None) == "max_tokens":
-            raise ValueError(
-                f"generation response was truncated at max_tokens "
-                f"({self._max_tokens}); the model hit the output cap before "
-                "finishing. Raise max_tokens or shrink the requested output."
-            )
+    @staticmethod
+    def _message_text(message) -> str:
+        """Join the text blocks of a Message into one string."""
         return "".join(
             block.text for block in message.content if block.type == "text"
+        )
+
+    @staticmethod
+    def _trim_overlap(accumulated: str, continuation: str) -> str:
+        """Drop the prefix of ``continuation`` that repeats the tail of ``accumulated``.
+
+        A continuation may re-emit the trailing slice of the accumulated text (or
+        re-open a ``===FILE===`` marker it already wrote), so a raw concatenation
+        would duplicate content. Find the largest ``k`` where the last ``k`` chars
+        of ``accumulated`` equal the first ``k`` chars of ``continuation`` and drop
+        that overlap. The API strips trailing whitespace off the prefill assistant
+        message, so the seam may not land exactly at the raw cut — this longest-
+        overlap match tolerates that drift.
+        """
+        # Cap the search window: a re-emitted tail / re-opened marker is at most
+        # a few hundred chars, so bounding this keeps it cheap even when
+        # ``accumulated`` is a ~100KB truncated chunk with no overlap (an
+        # unbounded scan there is O(n^2) in slice copies).
+        max_k = min(len(accumulated), len(continuation), _MAX_OVERLAP_SCAN)
+        for k in range(max_k, 0, -1):
+            if accumulated[-k:] == continuation[:k]:
+                return continuation[k:]
+        return continuation
+
+    def complete(self, prompt, *, temperature):
+        messages = [{"role": "user", "content": prompt}]
+        accumulated = ""
+        # The initial call plus up to ``max_continuations`` continuations. A
+        # response cut off at the token cap (``stop_reason == "max_tokens"``) is a
+        # partial output, so rather than hand a downstream parser a truncated
+        # artifact we re-issue the request with the accumulated partial appended
+        # as a trailing ``assistant`` message (native prefill): the model
+        # continues the same token stream instead of starting a fresh reply.
+        for _ in range(self._max_continuations + 1):
+            message = self._create_with_retry(
+                model=self._model,
+                max_tokens=self._max_tokens,
+                temperature=temperature,
+                messages=messages,
+            )
+            chunk = self._message_text(message)
+            accumulated += self._trim_overlap(accumulated, chunk) if accumulated else chunk
+
+            if getattr(message, "stop_reason", None) != "max_tokens":
+                return accumulated
+
+            # Still truncated: prefill the accumulated text and continue.
+            messages = [
+                {"role": "user", "content": prompt},
+                {"role": "assistant", "content": accumulated},
+            ]
+
+        # The continuation budget is exhausted and the output is still truncated.
+        # Surface the clear, actionable error (orchestrator drops with logging)
+        # rather than return a partial artifact.
+        raise ValueError(
+            f"generation response was truncated at max_tokens "
+            f"({self._max_tokens}) and was still incomplete after "
+            f"{self._max_continuations} continuation(s); the model hit the "
+            "output cap before finishing. Raise max_tokens or shrink the "
+            "requested output."
         )

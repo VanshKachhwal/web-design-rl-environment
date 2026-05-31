@@ -239,3 +239,170 @@ def test_default_max_tokens_is_a_model_safe_value():
     client = AnthropicGenerationClient(client=fake)
     client.complete("hi", temperature=0.7)
     assert fake.messages.kwargs["max_tokens"] == 32000
+
+
+# --- issue 15: continuation-on-truncation -----------------------------------
+
+
+def _continuing_anthropic(segments):
+    """A fake client that simulates a truncated-then-continued exchange.
+
+    ``segments`` is a list of ``(text, stop_reason)`` pairs returned in order,
+    one per underlying ``stream`` call. The fake records the ``messages`` of every
+    call so a test can assert the assistant-prefill is sent on continuation. It
+    also strips trailing whitespace off the prefilled assistant content — exactly
+    as the live API does — so the seam guard is exercised under realistic input.
+    """
+    class _Block:
+        type = "text"
+
+        def __init__(self, t):
+            self.text = t
+
+    class _Msg:
+        def __init__(self, text, stop_reason):
+            self.content = [_Block(text)]
+            self.stop_reason = stop_reason
+
+    class _Messages:
+        def __init__(self):
+            self.queue = list(segments)
+            self.calls = []  # the ``messages`` arg of each stream() call
+
+        def stream(self, **kwargs):
+            msgs = kwargs["messages"]
+            # Mimic the API stripping trailing whitespace on a prefill assistant
+            # message, so the resumed token stream may not abut the raw cut.
+            if msgs and msgs[-1]["role"] == "assistant":
+                msgs[-1]["content"] = msgs[-1]["content"].rstrip()
+            self.calls.append(msgs)
+            text, stop_reason = self.queue.pop(0)
+            return _StreamCtx(_Msg(text, stop_reason))
+
+    class _Client:
+        messages = _Messages()
+
+    return _Client()
+
+
+def _good_design_system():
+    """A known-good four-block stage-2 response the parser accepts."""
+    from textwrap import dedent
+
+    return dedent(
+        """\
+        ===FILE variables.css===
+        :root { --brand: #0af; --ink: #111; --bg: #fff; }
+        ===FILE components.css===
+        .btn { color: var(--brand); padding: 8px 16px; border-radius: 6px; }
+        .card { background: var(--bg); box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        .nav { display: flex; gap: 24px; align-items: center; }
+        ===FILE header.html===
+        <header><nav class="nav"><a href="/">Home</a></nav></header>
+        ===FILE footer.html===
+        <footer><p>&copy; 2026 Example</p></footer>"""
+    )
+
+
+def test_truncated_then_continued_round_trips_through_parser():
+    from webdesign_rl.generate.stages import parse_design_system
+
+    full = _good_design_system()
+    # Cut mid-components.css, at an arbitrary index inside the CSS body.
+    cut = full.index("box-shadow") + 5
+    head, tail = full[:cut], full[cut:]
+
+    fake = _continuing_anthropic([(head, "max_tokens"), (tail, "end_turn")])
+    client = AnthropicGenerationClient(client=fake, backoff_base=0)
+    joined = client.complete("stage2 prompt", temperature=0.7)
+
+    # The joined text reconstructs the exact original (the seam is invisible).
+    ds = parse_design_system(joined)
+    expected = parse_design_system(full)
+    assert ds == expected
+    # Exactly two underlying calls: the initial + one continuation.
+    assert len(fake.messages.calls) == 2
+
+
+def test_continuation_sends_assistant_prefill_with_accumulated_text():
+    full = _good_design_system()
+    cut = full.index("box-shadow") + 5
+    head, tail = full[:cut], full[cut:]
+
+    fake = _continuing_anthropic([(head, "max_tokens"), (tail, "end_turn")])
+    client = AnthropicGenerationClient(client=fake, backoff_base=0)
+    client.complete("stage2 prompt", temperature=0.7)
+
+    first_call, second_call = fake.messages.calls
+    # First call is the plain user prompt, no assistant turn.
+    assert first_call[0]["role"] == "user"
+    assert all(m["role"] != "assistant" for m in first_call)
+    # The continuation appends the accumulated partial as a trailing assistant
+    # message (the user prompt stays first).
+    assert second_call[0]["role"] == "user"
+    assert second_call[-1]["role"] == "assistant"
+    assert second_call[-1]["content"] == head.rstrip()
+
+
+def test_continuation_overlap_is_trimmed_not_doubled():
+    from webdesign_rl.generate.stages import parse_design_system
+
+    full = _good_design_system()
+    cut = full.index("box-shadow") + 5
+    head, tail = full[:cut], full[cut:]
+    # The model repeats the tail of the accumulated text at the seam: prepend
+    # the last 20 chars of ``head`` to the continuation.
+    overlap = head[-20:]
+    dup_tail = overlap + tail
+
+    fake = _continuing_anthropic([(head, "max_tokens"), (dup_tail, "end_turn")])
+    client = AnthropicGenerationClient(client=fake, backoff_base=0)
+    joined = client.complete("stage2 prompt", temperature=0.7)
+
+    # The overlap is trimmed, so the joined text equals the original — no doubled
+    # marker / repeated CSS — and parses to the same design system.
+    assert parse_design_system(joined) == parse_design_system(full)
+
+
+def test_continuation_tolerates_whitespace_stripped_at_the_seam():
+    from webdesign_rl.generate.stages import parse_design_system
+
+    full = _good_design_system()
+    # Cut at a newline boundary so the accumulated text ends in whitespace the
+    # API strips off the prefill; the continuation resumes from the raw cut, so
+    # the seam guard must still rejoin them without dropping the newline.
+    cut = full.index("\n===FILE components.css===") + 1
+    head, tail = full[:cut], full[cut:]
+    assert head.endswith("\n")
+
+    fake = _continuing_anthropic([(head, "max_tokens"), (tail, "end_turn")])
+    client = AnthropicGenerationClient(client=fake, backoff_base=0)
+    joined = client.complete("stage2 prompt", temperature=0.7)
+    assert parse_design_system(joined) == parse_design_system(full)
+
+
+def test_continuation_loop_is_bounded_then_raises_max_tokens_error():
+    import pytest
+
+    # Every segment is truncated: after the continuation budget is exhausted the
+    # client raises the existing actionable max_tokens error (drop-with-logging),
+    # never returns a partial artifact.
+    budget = 2
+    segments = [("===FILE variables", "max_tokens")] * (budget + 5)
+    fake = _continuing_anthropic(segments)
+    client = AnthropicGenerationClient(
+        client=fake, backoff_base=0, max_continuations=budget
+    )
+    with pytest.raises(ValueError) as exc:
+        client.complete("hi", temperature=0.7)
+    msg = str(exc.value).lower()
+    assert "max_tokens" in msg or "truncat" in msg
+    # initial call + ``budget`` continuations = budget + 1 calls, then it gives up.
+    assert len(fake.messages.calls) == budget + 1
+
+
+def test_normal_single_shot_makes_no_extra_calls():
+    fake = _continuing_anthropic([("<html></html>", "end_turn")])
+    client = AnthropicGenerationClient(client=fake, backoff_base=0)
+    assert client.complete("hi", temperature=0.7) == "<html></html>"
+    assert len(fake.messages.calls) == 1
