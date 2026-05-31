@@ -43,11 +43,15 @@ def test_no_judge_cli_scores_oracle_candidate_near_one(site_dirs, tmp_path):
     )
 
     assert exit_code == 0
+    # On disk reward.json is the single canonical scalar; the per-term breakdown
+    # lives in reward-details.json under "reward".
     reward = json.loads((out_dir / "reward.json").read_text())
+    assert set(reward) == {"reward"}
+    assert reward["reward"] > 0.99
     # Deterministic-only: design_judge is dropped, the reward is the mean of the
     # three deterministic terms.
-    assert set(reward) == {"reward", "structure", "color", "content"}
-    assert reward["reward"] > 0.99
+    terms = json.loads((out_dir / "reward-details.json").read_text())["reward"]
+    assert set(terms) == {"reward", "structure", "color", "content"}
 
 
 def test_no_judge_cli_missing_page_drags_reward(site_dirs, tmp_path):
@@ -103,10 +107,13 @@ def test_reference_site_is_rendered_in_process(tmp_path):
 
     assert exit_code == 0
     reward = json.loads((out_dir / "reward.json").read_text())
-    assert reward["structure"] > 0.999
-    assert reward["color"] > 0.999
-    assert reward["content"] > 0.999
     assert reward["reward"] > 0.999
+    # The per-term breakdown lives in reward-details.json under "reward".
+    terms = json.loads((out_dir / "reward-details.json").read_text())["reward"]
+    assert terms["structure"] > 0.999
+    assert terms["color"] > 0.999
+    assert terms["content"] > 0.999
+    assert terms["reward"] > 0.999
 
 
 def test_cli_persists_renders_by_default(site_dirs, tmp_path):

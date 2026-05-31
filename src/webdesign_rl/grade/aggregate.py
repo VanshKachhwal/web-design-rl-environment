@@ -11,9 +11,12 @@ Contract:
 - A required page whose candidate is missing contributes 0 across every
   dimension, dragging the mean. Such pages are passed as ``None``.
 
-``reward.json`` is the flat payload returned here (``reward`` plus each dimension
-key). The richer per-page breakdown for ``reward-details.json`` is built by the
-grader, which owns I/O.
+The flat payload returned here (``reward`` plus each dimension key) is the grader's
+in-process reward dict. The grader, which owns I/O, slims the on-disk
+``reward.json`` to the single canonical scalar ``{"reward": <float>}`` (one
+unambiguous metric for Harbor) and keeps the full four-term breakdown in
+``reward-details.json`` (top-level ``"reward"`` key) plus the richer per-page
+breakdown.
 """
 
 # Dimensions scored in this issue. Adding a later term means appending here and

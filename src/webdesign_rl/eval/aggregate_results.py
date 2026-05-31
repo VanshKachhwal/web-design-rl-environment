@@ -8,8 +8,11 @@ Why the per-trial files are the source of truth: the job-level
 ``result.json`` records its metrics under a *dynamic* eval key
 (e.g. ``claude-code__claude-opus-4-7__adhoc``) and only carries the *mean* across
 trials — not the per-trial breakdown. So the per-trial ``verifier/reward.json``
-(the five flat terms) and ``verifier/reward-details.json`` (per-page terms + the
-judge sub-scores) are read directly, and the dynamic key is never parsed.
+(the single canonical ``reward`` scalar) and ``verifier/reward-details.json`` (the
+full four-term breakdown under ``"reward"`` plus per-page terms + judge sub-scores)
+are read directly, and the dynamic key is never parsed. Because reward-details.json
+has always embedded the full term dict, this reads old (flat five-key reward.json)
+and new (slim one-key) jobs uniformly with no back-compat branch.
 
 The normalized object shape::
 
@@ -136,9 +139,17 @@ def _harvest_meta(job_dir, result, n_trials):
 
 
 def _harvest_trial(trial_dir):
-    """Normalize one ``task__<id>/`` directory into a trial record."""
+    """Normalize one ``task__<id>/`` directory into a trial record.
+
+    The trial aggregate is read from ``reward.json`` (now the single canonical
+    ``{"reward": float}`` scalar). The four per-term breakdowns come from
+    ``reward-details.json["reward"]``, which has always embedded the full
+    five-key dict — so this reads uniformly across old (flat five-key
+    ``reward.json``) and new (slim one-key) jobs with no back-compat branch.
+    """
     reward = _read_json(trial_dir / "verifier" / "reward.json")
     details = _read_json(trial_dir / "verifier" / "reward-details.json")
+    terms = details["reward"]
 
     pages = {}
     for page, pdata in details.get("pages", {}).items():
@@ -151,7 +162,7 @@ def _harvest_trial(trial_dir):
     return {
         "trial_id": trial_dir.name.removeprefix("task__"),
         "reward": reward["reward"],
-        **{term: reward[term] for term in TERMS},
+        **{term: terms[term] for term in TERMS},
         "pages": pages,
     }
 

@@ -42,14 +42,15 @@ def _load_reward(out_dir):
 
 
 def test_perfect_candidate_scores_all_dimensions_near_one(site_dirs, tmp_path):
-    grade(
+    # The four per-term breakdowns are read off grade()'s return value (the
+    # in-process flat dict); on disk reward.json holds only the scalar aggregate.
+    reward = grade(
         site_dirs["perfect"],
         site_dirs["reference"],
         HOME_ONLY,
         tmp_path,
         _perfect_judge(),
     )
-    reward = _load_reward(tmp_path)
     # The perfect candidate is the same HTML the reference PNG was rendered from,
     # so the deterministic dims land at ~1.0.
     assert reward["structure"] > 0.99
@@ -59,15 +60,14 @@ def test_perfect_candidate_scores_all_dimensions_near_one(site_dirs, tmp_path):
     assert reward["reward"] > 0.99
 
 
-def test_reward_json_has_expected_keys_and_ranges(site_dirs, tmp_path):
-    grade(
+def test_reward_return_value_has_expected_keys_and_ranges(site_dirs, tmp_path):
+    reward = grade(
         site_dirs["perfect"],
         site_dirs["reference"],
         HOME_ONLY,
         tmp_path,
         _perfect_judge(),
     )
-    reward = _load_reward(tmp_path)
     assert set(reward.keys()) == {
         "reward",
         "structure",
@@ -85,8 +85,9 @@ def test_wrong_color_candidate_scores_lower(site_dirs, tmp_path):
     # so the overall reward) must drop below the perfect candidate's.
     def reward_for(name):
         out = tmp_path / name
-        grade(site_dirs[name], site_dirs["reference"], HOME_ONLY, out, _perfect_judge())
-        return _load_reward(out)
+        return grade(
+            site_dirs[name], site_dirs["reference"], HOME_ONLY, out, _perfect_judge()
+        )
 
     perfect = reward_for("perfect")
     wrongcolor = reward_for("wrongcolor")
@@ -103,22 +104,22 @@ def test_design_judge_term_flows_into_reward(site_dirs, tmp_path):
             "content_completeness": 4,
         }
     )
-    grade(site_dirs["perfect"], site_dirs["reference"], HOME_ONLY, tmp_path, judge)
-    reward = _load_reward(tmp_path)
+    reward = grade(
+        site_dirs["perfect"], site_dirs["reference"], HOME_ONLY, tmp_path, judge
+    )
     assert reward["design_judge"] == 0.7
 
 
 def test_missing_required_page_drags_reward_to_half(site_dirs, tmp_path):
     # home is perfect (~1.0 across all four dims); about.html is absent from the
     # candidate directory, so it renders to nothing and scores 0.
-    grade(
+    reward = grade(
         site_dirs["missing"],
         site_dirs["reference"],
         HOME_AND_ABOUT,
         tmp_path,
         _perfect_judge(),
     )
-    reward = _load_reward(tmp_path)
     assert 0.45 < reward["reward"] <= 0.5
 
 
@@ -225,3 +226,59 @@ def test_grade_persists_renders_in_deterministic_only_mode(site_dirs, tmp_path):
         None,
     )
     assert (tmp_path / "renders" / "home.png").exists()
+
+
+def test_reward_json_on_disk_is_single_canonical_scalar(site_dirs, tmp_path):
+    # On disk, reward.json carries exactly one unambiguous metric: the canonical
+    # aggregate `reward` (a float). The four per-term breakdowns live in
+    # reward-details.json, not here — so Harbor sees one, unambiguous metric.
+    grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        _perfect_judge(),
+    )
+    reward = _load_reward(tmp_path)
+    assert set(reward.keys()) == {"reward"}
+    assert isinstance(reward["reward"], float)
+
+
+def test_reward_details_on_disk_keeps_full_five_key_breakdown(site_dirs, tmp_path):
+    # reward-details.json is unchanged: top-level "reward" is the full five-key
+    # term dict (four terms + the aggregate), plus per-page terms under "pages".
+    grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        _perfect_judge(),
+    )
+    details = json.loads((tmp_path / "reward-details.json").read_text())
+    assert set(details["reward"].keys()) == {
+        "reward",
+        "structure",
+        "color",
+        "content",
+        "design_judge",
+    }
+    assert "pages" in details
+
+
+def test_grade_return_value_keeps_full_four_term_breakdown(site_dirs, tmp_path):
+    # The in-process return value is the full flat dict (callers/tests read the
+    # four terms off it); only the on-disk reward.json is slimmed.
+    reward = grade(
+        site_dirs["perfect"],
+        site_dirs["reference"],
+        HOME_ONLY,
+        tmp_path,
+        _perfect_judge(),
+    )
+    assert set(reward.keys()) == {
+        "reward",
+        "structure",
+        "color",
+        "content",
+        "design_judge",
+    }

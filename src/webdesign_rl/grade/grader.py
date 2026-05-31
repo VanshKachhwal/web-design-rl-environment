@@ -10,6 +10,12 @@ reference screenshot, computes the deterministic ``structure`` (SSIM), ``color``
 scores into the flat reward payload, and writes ``reward.json`` plus a per-page
 ``reward-details.json`` (which also records the judge's rubric sub-scores).
 
+On disk ``reward.json`` carries only the single canonical scalar
+``{"reward": <float>}`` so Harbor (and any reward-kit consumer) sees exactly one,
+unambiguous metric to optimize. The full four-term breakdown is not lost: it lives
+in ``reward-details.json`` (under its top-level ``"reward"`` key) and in
+``grade()``'s in-process return value.
+
 Since issue 05 the candidate is **source HTML**, not pre-made screenshots: the
 grader renders what the agent actually produced. The reference stays a directory
 of committed PNG screenshots — "the screenshots shown to the agent" — rendered
@@ -98,7 +104,10 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client,
             ``False`` to grade without writing any PNGs.
 
     Returns:
-        The flat reward payload (also written to ``reward.json``).
+        The full flat reward payload (each dimension term plus the aggregate
+        ``reward``). Only the on-disk ``reward.json`` is slimmed to the single
+        scalar ``{"reward": <float>}`` — this return value and
+        ``reward-details.json`` retain the complete four-term breakdown.
     """
     candidate_dir = Path(candidate_dir)
     reference_dir = Path(reference_dir)
@@ -159,7 +168,13 @@ def grade(candidate_dir, reference_dir, page_map, out_dir, judge_client,
     reward = aggregate(page_scores, dimensions)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "reward.json").write_text(json.dumps(reward, indent=2))
+    # On disk, reward.json carries only the single canonical scalar so Harbor (and
+    # any reward-kit consumer) sees exactly one, unambiguous metric to optimize.
+    # The full four-term breakdown lives in reward-details.json (under "reward")
+    # and in this function's in-process return value — no information is lost.
+    (out_dir / "reward.json").write_text(
+        json.dumps({"reward": reward["reward"]}, indent=2)
+    )
     (out_dir / "reward-details.json").write_text(
         json.dumps({"reward": reward, "pages": details}, indent=2)
     )

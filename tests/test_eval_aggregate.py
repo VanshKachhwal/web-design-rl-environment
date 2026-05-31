@@ -138,6 +138,46 @@ def test_harvest_reads_per_trial_reward_and_terms(synthetic_job):
     assert aaa["design_judge"] == pytest.approx(0.6)
 
 
+def test_harvest_reads_terms_from_details_with_slim_reward_json(tmp_path):
+    """A new-format job writes a SLIM one-key reward.json; terms come from details.
+
+    After EP-06 the grader writes ``reward.json`` = ``{"reward": float}`` only.
+    The four per-term breakdowns are sourced from ``reward-details.json["reward"]``
+    (which still carries the full five-key dict), so the harvested trial record is
+    identical to the old five-key-reward.json job — no back-compat branch.
+    """
+    job_dir = tmp_path / "job"
+    job_dir.mkdir()
+    (job_dir / "result.json").write_text(json.dumps({
+        "started_at": "2026-05-31T16:00:00.000000",
+        "finished_at": "2026-05-31T16:30:00.000000",
+        "n_total_trials": 1,
+        "stats": {},
+    }))
+
+    tdir = job_dir / "task__SLIM"
+    (tdir / "verifier").mkdir(parents=True)
+    full_terms = {"structure": 0.7, "color": 0.9, "content": 0.5,
+                  "design_judge": 0.6, "reward": 0.675}
+    # On disk reward.json is the slimmed single scalar (EP-06).
+    (tdir / "verifier" / "reward.json").write_text(json.dumps({"reward": 0.675}))
+    # reward-details.json still embeds the full five-key dict under "reward".
+    (tdir / "verifier" / "reward-details.json").write_text(json.dumps({
+        "reward": full_terms,
+        "pages": {"index": _page(content=0.5)},
+    }))
+    (tdir / "result.json").write_text(json.dumps({"config": {}}))
+
+    scores = agg.harvest(job_dir)
+    trial = scores["trials"][0]
+    assert trial["trial_id"] == "SLIM"
+    assert trial["reward"] == pytest.approx(0.675)
+    assert trial["structure"] == pytest.approx(0.7)
+    assert trial["color"] == pytest.approx(0.9)
+    assert trial["content"] == pytest.approx(0.5)
+    assert trial["design_judge"] == pytest.approx(0.6)
+
+
 def test_harvest_reads_per_page_terms_and_sub_scores(synthetic_job):
     scores = agg.harvest(synthetic_job)
     aaa = next(t for t in scores["trials"] if t["trial_id"] == "AAA")
