@@ -153,7 +153,7 @@ def verifier_dockerfile() -> str:
     plus ``/tests/test.sh``.
     """
     return f"""\
-FROM python:3.12-slim
+FROM python:3.14-slim
 
 # System deps: Tesseract (content/OCR term) + the DejaVu fallback font set
 # (every palette family degrades to it identically) + curl (build-time palette

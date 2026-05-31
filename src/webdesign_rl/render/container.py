@@ -41,7 +41,7 @@ RENDER_IMAGE_TAG = "webdesign-rl-render:latest"
 # template's font-palette install verbatim so there is zero drift between the
 # image that renders the agent screenshots and the image that grades.
 _RENDER_DOCKERFILE = f"""\
-FROM python:3.12-slim
+FROM python:3.14-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \\
         fonts-dejavu-core \\
