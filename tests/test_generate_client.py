@@ -195,6 +195,62 @@ def test_non_transient_error_is_not_retried():
     assert fake.messages.attempts == 1
 
 
+# --- issue 20: streaming overloaded_error on an HTTP-200 stream -------------
+
+
+class _StreamBodyError(Exception):
+    """A stand-in for the SDK's streaming ``APIStatusError``.
+
+    When an ``error`` SSE event arrives mid-stream the SDK raises a status error
+    whose ``status_code`` is the *stream's* HTTP status (200, since the stream
+    opened fine) — the real signal is only in the parsed ``body`` dict.
+    """
+
+    def __init__(self, status_code, body):
+        super().__init__(str(body))
+        self.status_code = status_code
+        self.body = body
+
+
+def _overloaded_body(error_type="overloaded_error"):
+    return {"type": "error", "error": {"type": error_type, "message": "Overloaded"}}
+
+
+def test_streaming_overloaded_body_on_200_is_transient():
+    from webdesign_rl.generate.client import _is_transient
+
+    exc = _StreamBodyError(200, _overloaded_body("overloaded_error"))
+    assert _is_transient(exc) is True
+
+
+def test_streaming_api_error_body_on_200_is_transient():
+    from webdesign_rl.generate.client import _is_transient
+
+    exc = _StreamBodyError(200, _overloaded_body("api_error"))
+    assert _is_transient(exc) is True
+
+
+def test_400_with_no_transient_body_is_not_transient():
+    from webdesign_rl.generate.client import _is_transient
+
+    # A genuine bad request: 4xx status and a client-error body type must stay
+    # non-transient even though it carries a body dict.
+    exc = _StreamBodyError(400, _overloaded_body("invalid_request_error"))
+    assert _is_transient(exc) is False
+    # And a 400 with no body at all is still not transient.
+    assert _is_transient(_NonTransient(400)) is False
+
+
+def test_streaming_overload_then_success_is_retried():
+    # The end-to-end path: the first stream() raises a status-200 +
+    # overloaded_error-body error (as the SDK does for an in-stream error event),
+    # then the next attempt succeeds. The client must ride it out and return text.
+    fake = _flaky_anthropic([_StreamBodyError(200, _overloaded_body("overloaded_error"))])
+    client = AnthropicGenerationClient(client=fake, max_retries=2, backoff_base=0)
+    assert client.complete("hi", temperature=0.7) == "ok"
+    assert fake.messages.attempts == 2
+
+
 def test_status_less_client_side_error_is_not_retried():
     # A synchronous client-side error with no HTTP status_code (e.g. the SDK's
     # ValueError demanding streaming for a large max_tokens) is deterministic —

@@ -29,6 +29,15 @@ GENERATION_MODEL = "claude-opus-4-6"
 # (400) and other 4xx are NOT transient and must surface immediately.
 _TRANSIENT_STATUS = frozenset({408, 409, 429, 529})
 
+# Server-side transient error *body* types. The streaming API can surface an
+# "overloaded" as an in-stream SSE ``error`` event on an HTTP-200 stream (the
+# stream opened, then errored), so the resulting ``APIStatusError`` carries
+# ``status_code == 200`` and the real signal lives only in its parsed ``body``
+# (``body["error"]["type"]``). These types mean the server is transiently
+# unavailable and are worth a backed-off retry; client-error types
+# (``invalid_request_error`` / ``authentication_error``) must stay non-transient.
+_TRANSIENT_ERROR_TYPES = frozenset({"overloaded_error", "api_error"})
+
 # Cap on the continuation-seam overlap scan (chars). Far larger than any
 # realistic re-emitted tail / re-opened ``===FILE===`` marker, but small enough
 # that trimming stays cheap against a ~100KB truncated chunk.
@@ -42,12 +51,29 @@ def _is_transient(exc) -> bool:
     errors and any thin stand-in): 429 / 529 / 5xx are transient; 4xx like
     400 (bad request) and 401 (auth) are not.
 
+    The streaming API needs an extra signal. When an ``error`` SSE event arrives
+    *mid-stream*, the SDK raises an ``APIStatusError`` whose ``status_code`` is
+    the stream's HTTP status — **200**, since the stream opened fine before the
+    error event — so the "overloaded" signal lives only in the parsed
+    ``body["error"]["type"]``, not the status. So when the exception carries a
+    body dict, a server-side transient body type (``overloaded_error`` /
+    ``api_error``, see ``_TRANSIENT_ERROR_TYPES``) is treated as transient even
+    on a 200; this promotes such an error before the status check rejects it.
+    A client-error body type (``invalid_request_error`` / ``authentication_error``)
+    carries no such promotion, so a genuine 4xx stays non-transient.
+
     With no HTTP status, retry **only** a genuine connection/timeout error.
     A synchronous client-side error raised before any network round-trip — e.g.
     the SDK's ``ValueError`` demanding streaming for a large ``max_tokens``, or
     any request-validation failure — is deterministic: retrying it just burns
     the budget on the same failure, so it must surface immediately.
     """
+    body = getattr(exc, "body", None)
+    if isinstance(body, dict):
+        error_type = (body.get("error") or {}).get("type")
+        if error_type in _TRANSIENT_ERROR_TYPES:
+            return True
+
     status = getattr(exc, "status_code", None)
     if status is not None:
         return status in _TRANSIENT_STATUS or status >= 500
