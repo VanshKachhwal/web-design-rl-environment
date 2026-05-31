@@ -462,3 +462,67 @@ def test_normal_single_shot_makes_no_extra_calls():
     client = AnthropicGenerationClient(client=fake, backoff_base=0)
     assert client.complete("hi", temperature=0.7) == "<html></html>"
     assert len(fake.messages.calls) == 1
+
+
+# --- issue 22: raw httpx transport errors (mid-stream "Connection reset") ----
+
+
+def test_httpx_read_error_mid_stream_is_transient():
+    # The crash that motivated this issue: a connection drop while iterating the
+    # stream bytes propagates raw as ``httpx.ReadError`` (the SDK only wraps
+    # httpx errors on the request-send path). It has no status_code and no body,
+    # so it must be classified transient via the httpx-transport branch.
+    import httpx
+
+    from webdesign_rl.generate.client import _is_transient
+
+    assert _is_transient(httpx.ReadError("[Errno 104] Connection reset by peer")) is True
+
+
+def test_httpx_connection_level_errors_are_all_transient():
+    # Every connection-level failure under ``TransportError`` is retryable: a
+    # refused connect, a network timeout, and a server-side disconnect.
+    import httpx
+
+    from webdesign_rl.generate.client import _is_transient
+
+    assert _is_transient(httpx.ConnectError("connection refused")) is True
+    assert _is_transient(httpx.ReadTimeout("read timed out")) is True
+    assert _is_transient(httpx.RemoteProtocolError("server disconnected")) is True
+
+
+def test_httpx_status_error_400_is_not_transient():
+    # An ``HTTPStatusError`` carries a real HTTP status (here 400) and is NOT a
+    # ``TransportError`` — it must stay non-transient and not be blanket-retried
+    # by the new httpx branch.
+    import httpx
+
+    from webdesign_rl.generate.client import _is_transient
+
+    request = httpx.Request("POST", "https://api.anthropic.com/v1/messages")
+    response = httpx.Response(400, request=request)
+    exc = httpx.HTTPStatusError("bad request", request=request, response=response)
+    assert _is_transient(exc) is False
+
+
+def test_streaming_required_value_error_stays_non_transient():
+    # The SDK raises a plain ``ValueError`` when a non-streaming request's
+    # max_tokens could exceed 10 minutes ("Streaming is required ..."). It is a
+    # deterministic client-side error with no status and is not an httpx
+    # transport error, so retrying would just burn budget — it must stay False.
+    from webdesign_rl.generate.client import _is_transient
+
+    assert _is_transient(ValueError("Streaming is required for ...")) is False
+
+
+def test_mid_stream_read_error_then_success_is_retried():
+    # End-to-end: the first stream() raises a raw httpx.ReadError (as a connection
+    # drop mid-iteration would), the next attempt succeeds. The client must ride
+    # it out with backoff and return the text — no live API call, no real sleep
+    # (backoff_base=0).
+    import httpx
+
+    fake = _flaky_anthropic([httpx.ReadError("[Errno 104] Connection reset by peer")])
+    client = AnthropicGenerationClient(client=fake, max_retries=2, backoff_base=0)
+    assert client.complete("hi", temperature=0.7) == "ok"
+    assert fake.messages.attempts == 2

@@ -85,6 +85,20 @@ def _is_transient(exc) -> bool:
             return True
     except Exception:
         pass
+    try:
+        import httpx  # lazy: only needed to classify a raw httpx error.
+
+        # A connection drop *mid-stream iteration* is not wrapped by the SDK and
+        # propagates raw (e.g. ``httpx.ReadError: Connection reset by peer``).
+        # ``TransportError`` is the base of every connection-level failure worth
+        # a retry — ConnectError / ReadError / WriteError, the network timeouts
+        # (Connect/Read/Write/Pool), and RemoteProtocolError (server hung up).
+        # It excludes ``HTTPStatusError`` (a real HTTP status, already handled
+        # above) and non-transport ``RequestError``s, which stay non-transient.
+        if isinstance(exc, httpx.TransportError):
+            return True
+    except Exception:
+        pass
     return isinstance(exc, (ConnectionError, TimeoutError))
 
 
