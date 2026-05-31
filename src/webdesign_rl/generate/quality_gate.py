@@ -17,10 +17,14 @@ The checks (each operates on the DOM/CSS text + the spec):
   AND has >=50 words of real DOM text. (The rendered-height bound is deferred to
   the stage-5 render gate — see issue 04.)
 - **token_compliance** — **per-page** styles (inline ``style=""`` + page ``<style>``)
-  may use no hex/rgb/raw-px literal outside the declared tokens; everything must
-  trace to a ``var(--…)`` token. The frozen design system (``variables.css`` /
-  ``components.css``) is shared identically by every page so it cannot drift and is
-  **exempt** — it is the source of truth and legitimately holds structural literals.
+  may use no off-token **color** (hex/rgb) outside the declared tokens; colors must
+  trace to a ``var(--…)`` token. **Color-only** (issue 18): raw-px is *not* enforced
+  — per-page CSS hygiene is invisible to the screenshot-based agent and the
+  pixel-based grader, and enforcing px thrashed nudges / dropped good sites; only
+  off-palette colors (palette coherence + the color term) still matter. The frozen
+  design system (``variables.css`` / ``components.css``) is shared identically by
+  every page so it cannot drift and is **exempt** — it is the source of truth and
+  legitimately holds its own literals.
 - **manifest_compliance** — every section a page references is within
   :func:`taxonomy.legal_components` AND has a rule styled in ``components.css``.
 - **chrome_identity** — header + footer byte-identical across pages (the site
@@ -137,8 +141,6 @@ def _parse_html(text):
 
 _HEX = re.compile(r"#[0-9a-fA-F]{3,8}\b")
 _RGB = re.compile(r"\brgba?\([^)]*\)")
-# A px length used as a property *value* (not inside a var() name or comment).
-_PX = re.compile(r"(?<![\w-])\d*\.?\d+px\b")
 
 
 def _strip_comments(css):
@@ -150,12 +152,16 @@ def _declared_token_block(variables_css):
     return _strip_comments(variables_css)
 
 
-def _offending_values(css_without_comments):
-    """Hex/rgb/raw-px literals appearing in a (comment-stripped) CSS string."""
+def _offending_colors(css_without_comments):
+    """Off-token **color** literals (hex/rgb) in a (comment-stripped) CSS string.
+
+    Token-compliance is color-only (issue 18): raw-px is deliberately NOT scanned
+    — it is invisible to the screenshot-based agent and the pixel-based grader, so
+    enforcing it only thrashed nudges and dropped otherwise-good sites.
+    """
     found = []
     found += _HEX.findall(css_without_comments)
     found += _RGB.findall(css_without_comments)
-    found += _PX.findall(css_without_comments)
     return found
 
 
@@ -426,32 +432,40 @@ def _check_substance(site_dir, spec):
 
 
 def _check_token_compliance(site_dir, spec):
-    """Enforce token-compliance on **per-page** styles only (issue 13).
+    """Enforce **color** token-compliance on per-page styles only (issues 13, 18).
 
-    The check exists to catch cross-page *drift* — a single page introducing a
-    new color or size. The frozen design-system stylesheets (``variables.css``,
-    ``components.css``) are shared **byte-identically** by every page, so they
-    cannot drift across pages, and a real design system legitimately contains
-    structural literals (``border-radius: 16px``, ``padding: 8px``). They are
-    therefore **exempt** from the literal check; only stage-3 per-page styles
-    (inline ``style=""`` and page-level ``<style>`` blocks) are scanned, and any
-    failure is keyed to the page so the per-page nudge can repair it.
+    The check exists to catch cross-page *color drift* — a single page
+    introducing an off-palette color. It is **color-only**: raw-px literals are
+    deliberately NOT scanned (issue 18). Per-page CSS hygiene is invisible
+    downstream — the agent replicates from *screenshots* and the grader scores
+    *rendered pixels*, neither of which sees the target CSS — and the model emits
+    px naturally (1px borders, 6px radii); enforcing px via LLM nudges thrashed
+    every page and trended toward dropping otherwise-good sites. Off-palette
+    colors still matter (palette coherence + the color grading term), so they are
+    kept.
+
+    The frozen design-system stylesheets (``variables.css``, ``components.css``)
+    are shared **byte-identically** by every page, so they cannot drift across
+    pages, and a real design system legitimately holds its own color/structural
+    literals. They are therefore **exempt**; only stage-3 per-page styles (inline
+    ``style=""`` and page-level ``<style>`` blocks) are scanned, and any failure
+    is keyed to the page so the per-page nudge can repair it.
     """
     diagnostics = []
     declared = ""
     if (site_dir / VARIABLES_CSS).exists():
         declared = _declared_token_block((site_dir / VARIABLES_CSS).read_text())
 
-    # The literal values that legitimately appear (they are the token defs).
-    allowed = set(_offending_values(declared))
+    # The color literals that legitimately appear (they are the token defs).
+    allowed = set(_offending_colors(declared))
 
     def scan(label, css):
-        for value in _offending_values(_strip_comments(css)):
+        for value in _offending_colors(_strip_comments(css)):
             if value in allowed:
                 continue
             diagnostics.append(_diag(
                 "token_compliance", label,
-                f"{label}: literal value {value} is not a token; use only "
+                f"{label}: color literal {value} is not a token; use only "
                 "var(--…) declared in variables.css",
             ))
 

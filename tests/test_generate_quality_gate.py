@@ -207,17 +207,19 @@ def test_literals_in_variables_css_pass(tmp_path):
     assert result.passed is True, _messages(result)
 
 
-def test_off_token_px_in_page_inline_style_is_flagged(tmp_path):
+def test_raw_px_in_page_inline_style_passes(tmp_path):
+    # token-compliance is COLOR-ONLY: a stray raw-px literal in a per-page style
+    # is invisible to the screenshot-based agent and the pixel-based grader, and
+    # the model emits px naturally — enforcing it thrashed nudges / dropped good
+    # sites (issue 18). So a per-page px literal must NOT trip the check.
     body = RICH_BODY.replace(
-        '<main class="page">', '<main class="page" style="margin: 13px;">'
+        '<main class="page">',
+        '<main class="page" style="margin: 13px; border-radius: 6px;">',
     )
     site = build_site(tmp_path, bodies={"index": body})
     result = run_stage4_gate(site, _spec())
-    assert result.passed is False
-    assert _checks(result) == {"token_compliance"}
-    assert "13px" in _messages(result)
-    # The failure is keyed to the page (repairable per-page), not site-wide.
-    assert all(d["page"] == "index.html" for d in result.diagnostics)
+    assert result.passed is True, _messages(result)
+    assert "token_compliance" not in _checks(result)
 
 
 def test_off_token_color_in_page_style_block_is_flagged(tmp_path):
@@ -230,6 +232,30 @@ def test_off_token_color_in_page_style_block_is_flagged(tmp_path):
     assert _checks(result) == {"token_compliance"}
     assert "#abcdef" in _messages(result)
     assert all(d["page"] == "index.html" for d in result.diagnostics)
+
+
+def test_off_token_color_in_page_inline_style_is_flagged(tmp_path):
+    # An off-token color in an inline style="" attr (not just a <style> block)
+    # is still real palette drift and must fail, keyed to the page.
+    body = RICH_BODY.replace(
+        '<main class="page">', '<main class="page" style="color: #abc123;">'
+    )
+    site = build_site(tmp_path, bodies={"index": body})
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is False
+    assert _checks(result) == {"token_compliance"}
+    assert "#abc123" in _messages(result)
+    assert all(d["page"] == "index.html" for d in result.diagnostics)
+
+
+def test_page_color_matching_declared_token_value_passes(tmp_path):
+    # A per-page color that exactly equals a declared variables.css token value
+    # (the allowed color whitelist) is not drift -> passes.
+    head = "<style>.local{ color: #8a5a44; }</style>\n"  # == --brand in VARIABLES_CSS
+    site = build_site(tmp_path, head_extra_per_page={"index": head})
+    result = run_stage4_gate(site, _spec())
+    assert result.passed is True, _messages(result)
+    assert "token_compliance" not in _checks(result)
 
 
 # --- Manifest compliance ----------------------------------------------------
