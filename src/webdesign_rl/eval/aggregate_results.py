@@ -167,6 +167,24 @@ def _harvest_trial(trial_dir):
     }
 
 
+def discover_jobs(jobs_dir):
+    """The job dirs directly under ``jobs_dir``, sorted deterministically (EP-10).
+
+    A *job* dir is a **direct child** of ``jobs_dir`` that carries a
+    ``result.json`` (the harvester's entry point). This scans only the immediate
+    children and **does not recurse**: each trial subdir ``task__<id>/`` carries
+    its own ``result.json`` one level deeper, but lives below a job dir rather
+    than as a child of ``jobs_dir``, so it is naturally excluded. Non-job subdirs
+    (no ``result.json``) and loose files are skipped. Pure: it only reads the
+    directory tree.
+    """
+    jobs_dir = Path(jobs_dir)
+    return sorted(
+        d for d in jobs_dir.iterdir()
+        if d.is_dir() and (d / "result.json").exists()
+    )
+
+
 def harvest(job_dir):
     """Turn a saved Harbor job dir into the normalized scores object."""
     job_dir = Path(job_dir)

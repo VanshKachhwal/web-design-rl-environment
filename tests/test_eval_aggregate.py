@@ -625,3 +625,44 @@ def test_report_pre_ep07_job_without_reference_renders_does_not_crash(
     assert ">6." in html
     assert ">7." in html
     assert "(no render)" in html  # the reference placeholder cell
+
+
+# --- job discovery for the report-all sweep (EP-10) ---------------------------
+
+
+def test_discover_jobs_returns_direct_children_with_result_json(tmp_path):
+    """``discover_jobs`` returns the direct-child job dirs, sorted, NOT recursing.
+
+    A JOB dir is a direct child of the passed jobs root that carries a
+    ``result.json``. Each trial subdir ``task__<id>/`` ALSO carries its own
+    ``result.json`` one level deeper — discovery must scan only the immediate
+    children, so those trial dirs are never returned. Non-job subdirs (no
+    ``result.json``) and loose files are skipped.
+    """
+    jobs_dir = tmp_path / "jobs"
+    jobs_dir.mkdir()
+
+    # Two valid job dirs, each with a result.json.
+    job_b = jobs_dir / "job-b"
+    job_b.mkdir()
+    (job_b / "result.json").write_text("{}")
+    job_a = jobs_dir / "job-a"
+    job_a.mkdir()
+    (job_a / "result.json").write_text("{}")
+
+    # A trial subdir one level DEEPER, with its own result.json (proves
+    # non-recursion: it must NOT be returned as a job).
+    trial = job_a / "task__abc"
+    trial.mkdir()
+    (trial / "result.json").write_text("{}")
+
+    # Noise: a subdir without a result.json, and a loose file at the jobs root.
+    (jobs_dir / "not-a-job").mkdir()
+    (jobs_dir / "loose-file.txt").write_text("ignore me")
+
+    found = agg.discover_jobs(jobs_dir)
+
+    # Exactly the two job dirs, sorted deterministically; no trial dir, no noise.
+    assert found == [job_a, job_b]
+    assert trial not in found
+    assert (jobs_dir / "not-a-job") not in found
