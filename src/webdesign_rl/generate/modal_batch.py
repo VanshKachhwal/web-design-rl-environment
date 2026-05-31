@@ -284,6 +284,11 @@ def _build_modal_app():
 
     # Concurrency cap so the ~48-seed fan-out doesn't trip Anthropic rate limits
     # on the single key (the client already retries/backs off).
+    # serialized=True is required because the worker is defined here (a nested
+    # scope), not at module global scope — a deliberate consequence of keeping
+    # the module import-safe without `modal` (the App can't exist at module top).
+    # Modal then cloudpickles the function instead of re-importing it by module
+    # path; its body imports the package (installed in the image) at call time.
     @app.function(
         image=image,
         volumes={VOLUME_MOUNT: volume},
@@ -292,6 +297,7 @@ def _build_modal_app():
         cpu=WORKER_CPU,
         memory=WORKER_MEMORY_MB,
         timeout=60 * 30,
+        serialized=True,
     )
     def _worker(indexed_seed):
         # CRITICAL: we are ALREADY inside the sealed render image, so render
