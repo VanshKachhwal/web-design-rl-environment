@@ -95,7 +95,7 @@ to reward in a *design* task?) is surfaced, not hidden.
 | **Patterns the model struggles with** | [`documentation/design/eval_pipeline.md`](documentation/design/eval_pipeline.md) (the `content` finding) |
 | Continuous (not pass/fail) grading | 4-term reward ∈ [0,1] — [`documentation/design/grader_design.md`](documentation/design/grader_design.md) |
 | Generated from scratch (no crawling); ≥5 pages; design-only | [`documentation/design/generator_design.md`](documentation/design/generator_design.md) (taxonomy, 5–10 pages, static-only gate) |
-| **Part 2 — animations** (attempted; rushed prototype, *not* in the final tasks) | [`task2/`](task2/) — filmstrip grader + two-pass generator + scaling pipeline |
+| **Part 2 — animations** (attempted; rushed prototype, *not* in the final tasks) | writeup → [`task2/`](task2/README.md) (filmstrip grader + two-pass generator + scaling pipeline) · **10 preliminary tasks + 10× Opus-4.7 reports** → [`task2/tasks/`](task2/tasks/) |
 | **Part 3 — multiple frameworks** (React/Solid/Tailwind) | *Not built* — designed-for in the architecture, deferred |
 
 The assignment we built against is preserved verbatim at

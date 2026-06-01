@@ -38,6 +38,18 @@ basis of a trustworthy reward.
 
 ---
 
+## The reference site
+
+`reference/aurora/index.html` — *Aurora*, a sleep & focus app landing page (dark
+indigo→teal, geometric sans), a single self-contained file with **23 CSS
+animations**: a hero fade/slide entrance, staggered feature-card reveals, and
+infinite loops (pulsing accents, gradient shifts). See
+`reference/aurora_filmstrip/contact.png` (the motion over time) and `settled.png`
+(the at-rest design). The single-task validity proof below is built on *Aurora*; the
+scaling pipeline (further down) generates many such sites instead.
+
+---
+
 ## The decisions
 
 *Core design decisions for the animation environment. The "reference site" and
@@ -120,6 +132,35 @@ the judge adds feel.**
 
 ---
 
+## Results — Claude Code + Opus 4.7, 10× per task
+
+The [scaling pipeline](#scaling-a-diverse-animated-dataset-modal) below produced a diverse
+animated dataset; the 10 curated tasks ([`task2/tasks/`](tasks/)), each evaluated 10×, score
+as follows (per-term means, sorted by reward):
+
+| task | type · aesthetic | animation | reward | static_design | motion | animation_judge | report |
+|---|---|---|---|---|---|---|---|
+| 007 | event-conference · retro-y2k | playful-bounce | **0.461** ⬇ | 0.70 | 0.20 | 0.51 | [report](tasks/007_event-conference_retro-y2k_playful-bounce/report.md) |
+| 008 | local-service · luxury-serif | elegant-reveal | **0.482** | 0.67 | 0.28 | 0.53 | [report](tasks/008_local-service_luxury-serif_elegant-reveal/report.md) |
+| 002 | ecommerce-store · neo-brutalist | playful-bounce | **0.497** | 0.68 | 0.31 | 0.50 | [report](tasks/002_ecommerce-store_neo-brutalist_playful-bounce/report.md) |
+| 001 | agency-portfolio · brutalist | snappy-slide | **0.524** | 0.67 | 0.30 | 0.56 | [report](tasks/001_agency-portfolio_brutalist_snappy-slide/report.md) |
+| 006 | personal-resume · warm-organic | snappy-slide | **0.527** | 0.72 | 0.28 | 0.54 | [report](tasks/006_personal-resume_warm-organic_snappy-slide/report.md) |
+| 003 | restaurant-hospitality · glassmorphism | elegant-reveal | **0.531** | 0.78 | 0.33 | 0.53 | [report](tasks/003_restaurant-hospitality_glassmorphism_elegant-reveal/report.md) |
+| 009 | docs-product · playful-rounded | kinetic-loop | **0.541** | 0.72 | 0.33 | 0.52 | [report](tasks/009_docs-product_playful-rounded_kinetic-loop/report.md) |
+| 000 | saas-landing · swiss-editorial | smooth-fade | **0.556** | 0.76 | 0.34 | 0.52 | [report](tasks/000_saas-landing_swiss-editorial_smooth-fade/report.md) |
+| 004 | editorial-blog · corporate-flat | kinetic-loop | **0.605** | 0.73 | 0.51 | 0.52 | [report](tasks/004_editorial-blog_corporate-flat_kinetic-loop/report.md) |
+| 005 | nonprofit-civic · dark-techy | smooth-fade | **0.615** ⬆ | 0.71 | 0.56 | 0.57 | [report](tasks/005_nonprofit-civic_dark-techy_smooth-fade/report.md) |
+
+All 10 are 5-page sites (Task 2 fixes the page count at 5 for now); reward =
+`mean(static_design, motion, animation_judge)` per page, averaged over pages. **`motion`
+is the weakest term on every task** (mean ≈ 0.34, vs static_design ≈ 0.71 and
+animation_judge ≈ 0.53) — candidates rebuild the static design and *do* animate, but rarely
+match the reference's exact motion timing/placement, which the strict `motion` term penalises
+(amplified by the fixed 6-frame filmstrip, below). Coverage table + per-task bundles:
+[`task2/tasks/`](tasks/).
+
+---
+
 ## The `motion` term, in detail
 
 `motion` (`motion.py`) is the deterministic backbone — no model call, no randomness.
@@ -179,10 +220,11 @@ animation length — are scoped but not built; this is the first thing Part 2 ne
 
 ---
 
-## What the model struggled with (early eval observations)
+## What the model struggled with (eval observations)
 
-Evals are still running, so these are **preliminary** (one well-analysed task plus
-the single-task proof), but two patterns are already clear and consistent with Part 1:
+Across the 10 evaluated tasks above (plus one deeply-analysed saas eval), two patterns are
+clear and consistent with Part 1 — the headline being **`motion` is the weakest term on
+every task**:
 
 - **Claude builds shorter pages.** On the 5-page saas eval, every candidate page was
   **~0.55–0.62× the reference's height** — the model reproduces the sections and look
@@ -193,17 +235,6 @@ the single-task proof), but two patterns are already clear and consistent with P
   the model defaults to conventional ~400–900ms staggered entrances rather than
   matching the reference's faster ones — which the strict `motion` term then penalises
   (amplified by the 6-frame limitation above).
-
----
-
-## The reference site
-
-`reference/aurora/index.html` — *Aurora*, a sleep & focus app landing page (dark
-indigo→teal, geometric sans), a single self-contained file with **23 CSS
-animations**: a hero fade/slide entrance, staggered feature-card reveals, and
-infinite loops (pulsing accents, gradient shifts). See
-`reference/aurora_filmstrip/contact.png` (the motion over time) and `settled.png`
-(the at-rest design).
 
 ---
 
