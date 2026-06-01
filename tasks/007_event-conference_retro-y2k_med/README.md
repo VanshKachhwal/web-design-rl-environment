@@ -16,8 +16,28 @@ Open [`report.md`](./report.md) for the full visual report (score table, distrib
 per-page × per-term heatmap, and reference-vs-candidate galleries). Raw numbers in
 [`scores.json`](./scores.json) / [`scores.csv`](./scores.csv).
 
-## Narrative — *to write*
+## Narrative
 
-- **The design.** What this site is and the aesthetic it expresses.
-- **Why higher reward = better replication** for this task (the grader's ranking vs. the eye).
-- **What the model struggled with** here (link the weakest term/page to the screenshots).
+**The design.** *WellnessCon 2025* — a health-and-wellness conference site. The aesthetic is
+retro-y2k: purple-to-magenta gradient backgrounds, hot-pink and acid-lime buttons, glowing/haloed
+headline text, beveled button shapes, hard saturated colour-blocking, and circular avatar photos.
+Seven pages. This is deliberately the hardest aesthetic in the set — it asks for *intentional*
+early-2000s excess.
+
+**Why higher reward = better replication.** This task has the lowest `design_judge` (0.639) and
+the lowest `content` (0.60) of the whole set, and the widest reward spread (0.703 → 0.836) — which
+is itself informative: the grader is *discriminating* strongly here. `color` stays high (0.941)
+because the model gets the bright palette, but the spread is driven by whether an attempt actually
+*feels* y2k. The best trial (`ktrPUUd`, 0.836; [`report.md`](./report.md) §7) keeps the gradients,
+colour-blocking and beveled buttons; lower trials sand the era off into clean modern SaaS. Reward
+tracks "how y2k did it stay".
+
+**What the model struggled with.** The speakers page is the worst page for both weak terms. For
+`design_judge` (worst 0.500, [candidate vs reference](./images/worst_design_judge_cand.png)) the
+retro warmth is stripped: solid hot-pink avatars flatten, the beige description cards turn plain
+white, the glow/bevel depth disappears, and the page reads like a tasteful contemporary template —
+the model's prior pulls it toward "clean" when the brief demands "loud". For `content` (worst
+**0.363**, [candidate vs reference](./images/worst_content_cand.png)) the speaker bios are thinned
+to short generic filler. The honest read: the model can match *layout and palette* of an
+unfashionable style, but resists reproducing the deliberate maximalism — and the judge correctly
+withholds reward for that.

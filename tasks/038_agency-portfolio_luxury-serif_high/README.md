@@ -16,8 +16,28 @@ Open [`report.md`](./report.md) for the full visual report (score table, distrib
 per-page × per-term heatmap, and reference-vs-candidate galleries). Raw numbers in
 [`scores.json`](./scores.json) / [`scores.csv`](./scores.csv).
 
-## Narrative — *to write*
+## Narrative
 
-- **The design.** What this site is and the aesthetic it expresses.
-- **Why higher reward = better replication** for this task (the grader's ranking vs. the eye).
-- **What the model struggled with** here (link the weakest term/page to the screenshots).
+**The design.** *VANDAL Studio* — a creative agency portfolio with a rebellious streak. The
+aesthetic is luxury-serif with an edgy twist: a pure-black canvas, a crimson-red accent (italic
+red serif words breaking the headlines), cream body text, ultra-large high-contrast serif display
+type, generous whitespace, geometric red accent shapes, and clean grid portfolio layouts. Ten
+pages (index, work, case-studies, services, process, about, team, journal, careers, contact).
+
+**Why higher reward = better replication.** `color` is at the ceiling (0.981) — black, cream and
+one red are easy to match — so the reward (0.725 → 0.751) is driven down by `content` (0.537, the
+second-lowest in the set) and shaped by `design_judge` (0.733). The best-index attempt is ~90%
+faithful ([best-index candidate vs reference](./images/best_index_cand.png)): the serif display,
+the italic-red keyword, the red buttons and the dark sectioning all survive, though the whitespace
+is slightly pinched. What separates the trials is how much of the agency's *writing* and
+*editorial restraint* each one keeps.
+
+**What the model struggled with.** The team page is the worst content page (one trial scores
+**0.333**, [candidate vs reference](./images/worst_content_cand.png)): the section headings and
+the team members' names are kept, but the individual bios are invented or paraphrased into
+boilerplate — the same screenshots-only ceiling that bites every text-heavy page in the set. For
+`design_judge`, the contact page ([candidate vs reference](./images/worst_design_judge_cand.png))
+trades the luxury-serif restraint for a fussy, form-heavy layout: the form bloats, the generous
+whitespace and asymmetric hierarchy collapse, and the editorial grace is lost. A reviewer sees the
+structure and palette are right while the copy is fabricated and the restraint is gone — and the
+term breakdown localises both failures precisely.
