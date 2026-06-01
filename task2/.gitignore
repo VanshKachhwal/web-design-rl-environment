@@ -1,0 +1,11 @@
+# Derived / regenerable Task-2 artifacts — rebuild via the CLIs in README.md.
+# (Kept out of git: large rendered PNGs + a baked duplicate of Task 1's package.)
+
+# perturbation-ladder / grade outputs
+out/
+
+# rendered filmstrip frames + contact sheets
+reference/*_filmstrip/
+
+# emitted Harbor task (regenerate: python -m webdesign_rl_anim.emit_anim)
+task/

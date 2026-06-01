@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurora — Sleep & Focus App</title>
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0a0e1a;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2332;
+  --indigo: #6366f1;
+  --teal: #14b8a6;
+  --indigo-light: #818cf8;
+  --teal-light: #2dd4bf;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --gradient-accent: linear-gradient(135deg, #6366f1, #14b8a6);
+  --gradient-bg: linear-gradient(180deg, #0a0e1a 0%, #0f172a 50%, #0a0e1a 100%);
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-stack);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+  padding: 0 2rem;
+  animation: navSlideDown 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes navSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.nav-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(99, 102, 241, 0.3); transform: scale(1); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(20, 184, 166, 0.2); transform: scale(1.05); }
+}
+
+.nav-logo-icon::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.9;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-cta {
+  background: var(--gradient-accent);
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== HERO ===== */
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 2rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+}
+
+.hero-text {
+  animation: heroFadeUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--indigo-light);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  animation: badgeDot 2s ease-in-out infinite;
+}
+
+@keyframes badgeDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 .gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  animation: heroButtonsFade 0.7s ease-out 0.6s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes heroButtonsFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient-accent);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Visual */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heroVisualFade 0.9s ease-out 0.4s forwards;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+@keyframes heroVisualFade {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.phone-mockup {
+  width: 280px;
+  height: 560px;
+  background: linear-gradient(180deg, #1a1f3a 0%, #0f1629 100%);
+  border-radius: 36px;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(99, 102, 241, 0.1);
+}
+
+.phone-notch {
+  width: 120px;
+  height: 28px;
+  background: #0a0e1a;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.phone-screen {
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.phone-time {
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  margin-top: 30px;
+  color: var(--text-primary);
+}
+
+.phone-label {
+  font-size: 0.75rem;
+  color: var(--teal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 4px;
+}
+
+.phone-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid rgba(99, 102, 241, 0.3);
+  margin: 30px auto 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-ring::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--teal);
+  animation: phoneRingSpin 4s linear infinite;
+}
+
+@keyframes phoneRingSpin {
+  to { transform: rotate(360deg); }
+}
+
+.phone-ring-inner {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.phone-ring-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  position: absolute;
+  bottom: 30px;
+}
+
+.phone-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 40px;
+  height: 50px;
+}
+
+.phone-bar {
+  width: 16px;
+  border-radius: 4px 4px 0 0;
+  background: var(--gradient-accent);
+  opacity: 0.7;
+}
+
+.phone-bar:nth-child(1) { height: 20px; animation: barPulse 2s ease-in-out 0s infinite; }
+.phone-bar:nth-child(2) { height: 35px; animation: barPulse 2s ease-in-out 0.2s infinite; }
+.phone-bar:nth-child(3) { height: 50px; animation: barPulse 2s ease-in-out 0.4s infinite; }
+.phone-bar:nth-child(4) { height: 30px; animation: barPulse 2s ease-in-out 0.6s infinite; }
+.phone-bar:nth-child(5) { height: 42px; animation: barPulse 2s ease-in-out 0.8s infinite; }
+.phone-bar:nth-child(6) { height: 25px; animation: barPulse 2s ease-in-out 1.0s infinite; }
+.phone-bar:nth-child(7) { height: 38px; animation: barPulse 2s ease-in-out 1.2s infinite; }
+
+@keyframes barPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Floating orbs around phone */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.4;
+}
+
+.orb-1 {
+  width: 200px;
+  height: 200px;
+  background: var(--indigo);
+  top: -40px;
+  right: -60px;
+  animation: orbFloat1 6s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 160px;
+  height: 160px;
+  background: var(--teal);
+  bottom: -20px;
+  left: -40px;
+  animation: orbFloat2 7s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(15px, -20px); }
+  66% { transform: translate(-10px, 10px); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-15px, 15px); }
+  66% { transform: translate(10px, -10px); }
+}
+
+/* ===== FEATURES ===== */
+.features {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 2rem 6rem;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-fill-mode: forwards;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-out;
+  animation-name: cardReveal;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.6s; }
+.feature-card:nth-child(2) { animation-delay: 0.8s; }
+.feature-card:nth-child(3) { animation-delay: 1.0s; }
+.feature-card:nth-child(4) { animation-delay: 1.2s; }
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.feature-icon-sleep {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--indigo-light);
+}
+
+.feature-icon-sleep::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid var(--indigo-light);
+  border-right-color: transparent;
+}
+
+.feature-icon-focus {
+  background: rgba(20, 184, 166, 0.15);
+  color: var(--teal-light);
+}
+
+.feature-icon-focus::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid var(--teal-light);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.feature-icon-sounds {
+  background: rgba(129, 140, 248, 0.15);
+  color: var(--indigo-light);
+}
+
+.feature-icon-sounds::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--indigo-light);
+  border-radius: 0 50% 50% 0;
+  border-left: none;
+}
+
+.feature-icon-insights {
+  background: rgba(45, 212, 191, 0.15);
+  color: var(--teal-light);
+}
+
+.feature-icon-insights::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, var(--teal-light) 50%, transparent 50%);
+  border-radius: 2px;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ===== STATS ===== */
+.stats {
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, rgba(20, 184, 166, 0.05) 100%);
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+  border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+  padding: 4rem 2rem;
+}
+
+.stats-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: statReveal 0.5s ease-out forwards;
+}
+
+.stat-item:nth-child(1) { animation-delay: 1.0s; }
+.stat-item:nth-child(2) { animation-delay: 1.15s; }
+.stat-item:nth-child(3) { animation-delay: 1.3s; }
+.stat-item:nth-child(4) { animation-delay: 1.45s; }
+
+@keyframes statReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-number {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* ===== TESTIMONIAL / CTA ===== */
+.cta-band {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(20, 184, 166, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: ctaReveal 0.7s ease-out 1.5s forwards;
+}
+
+@keyframes ctaReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(99, 102, 241, 0.05), transparent, rgba(20, 184, 166, 0.05), transparent);
+  animation: ctaRotate 12s linear infinite;
+}
+
+@keyframes ctaRotate {
+  to { transform: rotate(360deg); }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-quote {
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--text-primary);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.testimonial-quote::before {
+  content: '\201C';
+  font-size: 3rem;
+  color: var(--indigo);
+  line-height: 0;
+  vertical-align: -0.5em;
+  margin-right: 4px;
+}
+
+.testimonial-author {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.testimonial-author strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.cta-sub {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.footer-logo-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.9;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-secondary);
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ===== CONTINUOUS GRADIENT SHIFT ON HERO HEADING ===== */
+.gradient-text {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== Divider line with glow ===== */
+.glow-divider {
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+  margin: 0 auto 3rem;
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(99, 102, 241, 0.3); opacity: 0.7; }
+  50% { box-shadow: 0 0 24px rgba(99, 102, 241, 0.6), 0 0 48px rgba(20, 184, 166, 0.2); opacity: 1; }
+}
+
+/* Background grid pattern */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      Aurora
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#stats">Science</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#" class="nav-cta">Get Started Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">Now available on iOS &amp; Android</div>
+    <h1>Sleep better.<br>Focus <span class="gradient-text">deeper.</span></h1>
+    <p class="hero-sub">Aurora uses adaptive soundscapes and clinically-informed breathing techniques to help you fall asleep 40% faster and maintain razor-sharp focus throughout your day.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Download Free</a>
+      <a href="#features" class="btn-secondary">See How It Works</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="phone-mockup">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-time">11:24</div>
+        <div class="phone-label">Sleep Session Active</div>
+        <div class="phone-ring">
+          <div class="phone-ring-inner">92</div>
+          <div class="phone-ring-sub">Sleep Score</div>
+        </div>
+        <div class="phone-bars">
+          <div class="phone-bar"></div>
+          <div class="phone-bar"></div>
+          <div class="phone-bar"></div>
+          <div class="phone-bar"></div>
+          <div class="phone-bar"></div>
+          <div class="phone-bar"></div>
+          <div class="phone-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-label">Core Features</div>
+  <h2 class="section-title">Everything you need to rest &amp; perform</h2>
+  <p class="section-sub">Built with neuroscience research and refined by 2 million+ users who trust Aurora every night and every workday.</p>
+  <div class="glow-divider"></div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon feature-icon-sleep"></div>
+      <h3>Smart Sleep Cycles</h3>
+      <p>Aurora tracks your micro-movements and breathing to wake you during your lightest sleep phase — so mornings feel effortless, not jarring.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon feature-icon-focus"></div>
+      <h3>Deep Focus Mode</h3>
+      <p>Activate a 25-, 50-, or 90-minute focus session with binaural beats tuned to your task. Proven to boost sustained attention by 34%.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon feature-icon-sounds"></div>
+      <h3>Adaptive Soundscapes</h3>
+      <p>Over 200 layered environments — from Nordic rain to Tokyo café — that subtly shift in response to your heart rate and sleep stage.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon feature-icon-insights"></div>
+      <h3>Weekly Insights</h3>
+      <p>Get a personalized sleep and focus report every Monday with actionable tips, trend analysis, and comparisons to your best weeks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">2.4M+</div>
+      <div class="stat-label">Active users worldwide</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">40%</div>
+      <div class="stat-label">Faster time to fall asleep</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4.8★</div>
+      <div class="stat-label">Average app store rating</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">92%</div>
+      <div class="stat-label">Users report better focus</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL + CTA -->
+<section class="cta-band" id="testimonials">
+  <div class="cta-card">
+    <div class="cta-content">
+      <p class="testimonial-quote">Aurora completely changed my relationship with sleep. I used to dread bedtime — now I actually look forward to it. My focus at work the next day is night and day.</p>
+      <p class="testimonial-author"><strong>Dr. Sarah Chen</strong> &mdash; Neuroscientist &amp; early Aurora adopter</p>
+      <h3 class="cta-title">Start sleeping better tonight</h3>
+      <p class="cta-sub">Join 2.4 million people who wake up refreshed. Free for 14 days, no credit card required.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary">Start Free Trial</a>
+        <a href="#" class="btn-secondary">View Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-logo">
+      <div class="footer-logo-dot"></div>
+      Aurora
+    </a>
+    <ul class="footer-links">
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2024 Aurora Sleep Inc.</span>
+  </div>
+</footer>
+
+</body>
+</html>

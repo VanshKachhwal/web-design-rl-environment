@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Filmstrip determinism probe</title>
+<style>
+  /* CSS-only, timeline-seekable animations. No requestAnimationFrame, no JS. */
+  * { margin: 0; box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: #0f1226; color: #f4f5ff; }
+
+  /* 1) Entrance: fade + slide up (finite, 800ms) */
+  .hero {
+    padding: 80px 60px 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: rise 800ms ease-out forwards;
+  }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 2) Continuous loop: gradient bar pulse (infinite, 1600ms) */
+  .bar {
+    height: 14px; margin: 24px 60px;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #6d5dfc, #46e0c8);
+    animation: pulse 1600ms ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scaleX(0.6); opacity: 0.6; }
+    50%      { transform: scaleX(1.0); opacity: 1.0; }
+  }
+
+  /* 3) Staggered reveal: 4 cards, each delayed (finite, 600ms + stagger) */
+  .cards { display: flex; gap: 20px; padding: 20px 60px 80px; }
+  .card {
+    flex: 1; height: 160px; border-radius: 14px;
+    background: #1b1f3b; border: 1px solid #2c3266;
+    opacity: 0; transform: translateY(30px) scale(0.96);
+    animation: pop 600ms cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .card:nth-child(1) { animation-delay: 200ms; }
+  .card:nth-child(2) { animation-delay: 400ms; }
+  .card:nth-child(3) { animation-delay: 600ms; }
+  .card:nth-child(4) { animation-delay: 800ms; }
+  @keyframes pop {
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <h1 style="font-size:44px;letter-spacing:-1px;">Motion that settles</h1>
+    <p style="margin-top:12px;color:#aab0e6;">A probe page for deterministic filmstrip capture.</p>
+  </div>
+  <div class="bar"></div>
+  <div class="cards">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+</body>
+</html>
