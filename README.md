@@ -28,6 +28,31 @@ check the reward respects that ordering. It does — **monotonically, on every a
 → **Full study with all four curves: [`reports/grader-validation/`](reports/grader-validation/)**
 (renders inline on GitHub; every number is auditable in its `scores.json`).
 
+## Results — Claude Code + Opus 4.7, 10× per task
+
+Under that validated reward, across all 11 final tasks (per-term means, sorted by reward):
+
+| task | type | pages | reward | structure | color | content | design_judge | report |
+|---|---|---|---|---|---|---|---|---|
+| 011 | ecommerce-store · brutalist | 10 | **0.660** ⬇ | 0.48 | 0.96 | 0.53 | 0.68 | [report](tasks/011_ecommerce-store_brutalist_high/report.md) |
+| 007 | event-conference · retro-y2k | 7 | **0.727** | 0.76 | 0.94 | 0.60 | 0.64 | [report](tasks/007_event-conference_retro-y2k_med/report.md) |
+| 035 | local-service · dark-techy | 10 | **0.739** | 0.74 | 0.98 | 0.54 | 0.69 | [report](tasks/035_local-service_dark-techy_high/report.md) |
+| 038 | agency-portfolio · luxury-serif | 10 | **0.743** | 0.71 | 0.98 | 0.54 | 0.73 | [report](tasks/038_agency-portfolio_luxury-serif_high/report.md) |
+| 012 | restaurant-hospitality · neo-brutalist | 5 | **0.775** | 0.72 | 0.96 | 0.69 | 0.71 | [report](tasks/012_restaurant-hospitality_neo-brutalist_low/report.md) |
+| 023 | nonprofit-civic · glassmorphism | 10 | **0.781** | 0.82 | 0.98 | 0.66 | 0.68 | [report](tasks/023_nonprofit-civic_glassmorphism_high/report.md) |
+| 004 | editorial-blog · corporate-flat | 7 | **0.787** | 0.79 | 0.97 | 0.67 | 0.73 | [report](tasks/004_editorial-blog_corporate-flat_med/report.md) |
+| 036 | docs-product · warm-organic | 5 | **0.792** | 0.77 | 0.96 | 0.69 | 0.74 | [report](tasks/036_docs-product_warm-organic_low/report.md) |
+| 019 | saas-landing · playful-rounded | 7 | **0.793** | 0.79 | 0.98 | 0.69 | 0.69 | [report](tasks/019_saas-landing_playful-rounded_med/report.md) |
+| 015 | personal-resume · dark-techy | 5 | **0.798** | 0.77 | 0.96 | 0.71 | 0.74 | [report](tasks/015_personal-resume_dark-techy_low/report.md) |
+| 000 | saas-landing · swiss-editorial | 5 | **0.827** ⬆ | 0.78 | 0.99 | 0.77 | 0.77 | [report](tasks/000_saas-landing_swiss-editorial_low/report.md) |
+
+The grader produces a real spread (**0.66 → 0.83**), and the *same shape every time*:
+`color` is near-ceiling (mean **0.97**) while **`content` is the lowest term on every
+single task** (mean **0.65**). That consistent gap is the headline learning — Opus
+reproduces layout and palette well but **paraphrases body copy** rather than transcribing
+it. Per-task distributions, per-page heatmaps, and reference-vs-candidate galleries are in
+each [`tasks/<id>/report.md`](tasks/).
+
 ## What the brief asked, and where it lives
 
 | Brief deliverable / requirement | Where in this repo |
