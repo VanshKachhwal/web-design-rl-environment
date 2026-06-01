@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home — DEVSTACK</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-dot anim-loop-pulse"></span>
+      DEVSTACK
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">Featured</a>
+      <a href="about.html">About</a>
+      <a href="cart.html" class="nav-cart">Cart <span class="cart-count">3</span></a>
+    </div>
+  </nav>
+</header>
+<main>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container flex items-center justify-between" style="position: relative; min-height: 380px;">
+      <div class="hero-content">
+        <div class="anim-slide-left anim-delay-1">
+          <span class="badge badge-pink" style="margin-bottom: 16px;">🔥 Now in Public Beta</span>
+        </div>
+        <h1 class="anim-rise anim-delay-2">Dev Tools<br>That <span class="highlight">Slap.</span></h1>
+        <p class="anim-rise anim-delay-3">The neo-brutalist marketplace for CLI tools, VS Code extensions, terminal themes, and dev utilities built by indie hackers, for indie hackers.</p>
+        <div class="hero-actions anim-rise anim-delay-4">
+          <a href="shop-all-tools.html" class="btn btn-lg">Browse All Tools</a>
+          <a href="about-devstack.html" class="btn btn-lg btn-outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-deco anim-pop anim-delay-5">
+        <div class="hero-deco-inner">
+          <span style="color: var(--accent-2);">~/devstack $</span>
+          <span>npx install @bolt/cli</span>
+          <span style="color: var(--accent-4);">✓ Installed 3 tools</span>
+          <span style="color: var(--accent-1);">✓ Terminal theme applied</span>
+          <span>Ready to ship. <span class="cursor anim-cursor-blink"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE BANNER -->
+  <div class="marquee-wrap anim-marquee">
+    <div class="marquee-track">
+      <span>CLI TOOLS</span><span class="sep">✦</span>
+      <span>VS CODE EXTENSIONS</span><span class="sep">✦</span>
+      <span>TERMINAL THEMES</span><span class="sep">✦</span>
+      <span>DEV UTILITIES</span><span class="sep">✦</span>
+      <span>DOTFILE KITS</span><span class="sep">✦</span>
+      <span>GIT HOOKS</span><span class="sep">✦</span>
+      <span>SHELL SCRIPTS</span><span class="sep">✦</span>
+      <span>CLI TOOLS</span><span class="sep">✦</span>
+      <span>VS CODE EXTENSIONS</span><span class="sep">✦</span>
+      <span>TERMINAL THEMES</span><span class="sep">✦</span>
+      <span>DEV UTILITIES</span><span class="sep">✦</span>
+      <span>DOTFILE KITS</span><span class="sep">✦</span>
+      <span>GIT HOOKS</span><span class="sep">✦</span>
+      <span>SHELL SCRIPTS</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- STATS ROW -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="stats-row anim-stagger-pop">
+        <div class="stat-item">
+          <span class="stat-num text-accent2">2,847</span>
+          <span class="stat-label">Tools Listed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num text-accent3">14K+</span>
+          <span class="stat-label">Active Devs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" style="color: var(--accent-1); text-shadow: 1px 1px 0 var(--ink);">$380K</span>
+          <span class="stat-label">Paid to Creators</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FEATURED TOOLS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head anim-rise anim-delay-1">
+        <div>
+          <h2>Featured Tools <span class="deco-star anim-loop-wiggle" style="display: inline-block;">⚡</span></h2>
+          <p class="text-muted">Hand-picked by the DEVSTACK crew every week.</p>
+        </div>
+        <a href="shop-all-tools.html" class="btn btn-sm btn-outline">View All →</a>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+
+        <!-- Card 1 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli">
+              <span>~/project $</span>
+              <span style="color: var(--accent-1); opacity: 1;">bolt deploy --prod</span>
+              <span style="color: var(--accent-4);">⠋ Building containers...</span>
+              <span style="color: var(--accent-1); opacity: 1;">✓ Deployed in 4.2s <span class="cursor anim-cursor-blink"></span></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag-green card-tag">CLI Tool</span>
+            <span class="card-tag card-tag-pink">Popular</span>
+          </div>
+          <h3>Bolt Deploy</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Zero-config deployment CLI. Push to any cloud in one command. Supports Docker, bare metal, and serverless.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>29</span>
+            <span class="badge">★ 4.9</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-theme">
+              <span style="background: #1e1e2e;"></span>
+              <span style="background: var(--accent-1);"></span>
+              <span style="background: var(--accent-2);"></span>
+              <span style="background: #313244;"></span>
+              <span style="background: var(--accent-3);"></span>
+              <span style="background: var(--accent-4);"></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag">Theme Pack</span>
+          </div>
+          <h3>Neon Brutalist</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">6 terminal + VS Code themes inspired by neo-brutalist design. Acid greens, hot pinks, and high contrast for late-night coding.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>12</span>
+            <span class="badge badge-pink">★ 4.8</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-ext">{&nbsp;}</div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag card-tag-indigo">Extension</span>
+            <span class="card-tag-green card-tag">New</span>
+          </div>
+          <h3>SnapFormat</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">VS Code extension that auto-formats 40+ languages on save. Opinionated defaults, zero config files needed.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>8</span>
+            <span class="badge">★ 4.7</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CATEGORIES SECTION -->
+  <section class="section" style="background: var(--bg-alt); border-top: var(--border-w) solid var(--border); border-bottom: var(--border-w) solid var(--border);">
+    <div class="container">
+      <div class="section-head anim-rise">
+        <div>
+          <h2>Shop by Category</h2>
+          <p class="text-muted">Find exactly the tool you need.</p>
+        </div>
+      </div>
+
+      <div class="grid-4 anim-stagger">
+
+        <a href="shop-all-tools.html" class="feature-block hover-bounce" style="text-decoration: none;">
+          <div class="feature-icon" style="background: var(--accent-1);">
+            &gt;_
+          </div>
+          <h3>CLI Tools</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">Command-line utilities that supercharge your terminal workflow.</p>
+          <span class="text-sm" style="font-weight: 800; margin-top: 12px; display: block;">847 tools →</span>
+        </a>
+
+        <a href="shop-all-tools.html" class="feature-block hover-bounce" style="text-decoration: none;">
+          <div class="feature-icon" style="background: var(--accent-3); color: #fff;">
+            { }
+          </div>
+          <h3>VS Code Extensions</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">Premium extensions for productivity, debugging, and aesthetics.</p>
+          <span class="text-sm" style="font-weight: 800; margin-top: 12px; display: block;">623 extensions →</span>
+        </a>
+
+        <a href="shop-all-tools.html" class="feature-block hover-bounce" style="text-decoration: none;">
+          <div class="feature-icon" style="background: var(--accent-2);">
+            ◐
+          </div>
+          <h3>Terminal Themes</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">Color schemes and prompt configs for iTerm, Alacritty, Warp, and more.</p>
+          <span class="text-sm" style="font-weight: 800; margin-top: 12px; display: block;">512 themes →</span>
+        </a>
+
+        <a href="shop-all-tools.html" class="feature-block hover-bounce" style="text-decoration: none;">
+          <div class="feature-icon" style="background: var(--accent-4);">
+            ⚙
+          </div>
+          <h3>Dev Utilities</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">Git hooks, shell scripts, dotfile kits, and automation bundles.</p>
+          <span class="text-sm" style="font-weight: 800; margin-top: 12px; display: block;">865 utilities →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head anim-rise">
+        <div>
+          <h2>Just Dropped <span class="deco-star anim-loop-bounce" style="display: inline-block; color: var(--accent-2);">●</span></h2>
+          <p class="text-muted">Fresh tools from this week's indie dev drops.</p>
+        </div>
+        <a href="shop-all-tools.html" class="btn btn-sm btn-dark">See New Arrivals →</a>
+      </div>
+
+      <div class="grid-4 anim-stagger">
+
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img" style="aspect-ratio: 1/1;">
+            <div class="pv-cli" style="font-size: 0.7rem;">
+              <span style="color: var(--accent-2);">$ gitpunch status</span>
+              <span style="color: var(--accent-1); opacity: 1;">3 PRs ready to merge</span>
+              <span style="color: var(--accent-4);">1 conflict detected</span>
+            </div>
+          </div>
+          <span class="card-tag-green card-tag" style="margin-bottom: 8px;">CLI Tool</span>
+          <h4>GitPunch</h4>
+          <p class="text-xs text-muted" style="margin: 6px 0;">PR management from your terminal.</p>
+          <span class="card-price" style="font-size: 1.2rem;"><span class="currency">$</span>19</span>
+        </a>
+
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img" style="aspect-ratio: 1/1;">
+            <div class="pv-ext" style="background: var(--accent-2); font-size: 2.2rem;">◈</div>
+          </div>
+          <span class="card-tag card-tag-indigo" style="margin-bottom: 8px;">Extension</span>
+          <h4>TypeLens</h4>
+          <p class="text-xs text-muted" style="margin: 6px 0;">Inline type annotations for JS/TS.</p>
+          <span class="card-price" style="font-size: 1.2rem;"><span class="currency">$</span>6</span>
+        </a>
+
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img" style="aspect-ratio: 1/1;">
+            <div class="pv-theme">
+              <span style="background: #0d1117;"></span>
+              <span style="background: #58a6ff;"></span>
+              <span style="background: #f78166;"></span>
+              <span style="background: #3fb950;"></span>
+              <span style="background: #d2a8ff;"></span>
+              <span style="background: #ffa657;"></span>
+            </div>
+          </div>
+          <span class="card-tag" style="margin-bottom: 8px;">Theme Pack</span>
+          <h4>Midnight Oil</h4>
+          <p class="text-xs text-muted" style="margin: 6px 0;">Dark theme for 3am coding sessions.</p>
+          <span class="card-price" style="font-size: 1.2rem;"><span class="currency">$</span>9</span>
+        </a>
+
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img" style="aspect-ratio: 1/1;">
+            <div class="pv-cli" style="font-size: 0.7rem;">
+              <span style="color: var(--accent-4);">$ envguard check</span>
+              <span style="color: var(--accent-1); opacity: 1;">✓ 12 vars loaded</span>
+              <span style="color: var(--accent-2);">⚠ 1 missing: API_KEY</span>
+            </div>
+          </div>
+          <span class="card-tag-green card-tag" style="margin-bottom: 8px;">Utility</span>
+          <h4>EnvGuard</h4>
+          <p class="text-xs text-muted" style="margin: 6px 0;">Validate .env files before deploy.</p>
+          <span class="card-price" style="font-size: 1.2rem;"><span class="currency">$</span>14</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="background: var(--ink); color: var(--bg);">
+    <div class="container">
+      <div class="section-head anim-rise" style="margin-bottom: 48px;">
+        <div>
+          <h2 style="color: var(--accent-1);">How DEVSTACK Works</h2>
+          <p style="color: rgba(240,236,227,0.6);">Three steps. No gatekeepers. No app store fees.</p>
+        </div>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+
+        <div class="feature-block" style="background: var(--ink); border-color: var(--accent-1); box-shadow: 4px 4px 0 var(--accent-1);">
+          <div class="feature-icon" style="background: var(--accent-1); color: var(--ink); border-color: var(--accent-1);">01</div>
+          <h3 style="color: var(--bg);">Browse & Discover</h3>
+          <p class="text-sm" style="color: rgba(240,236,227,0.7); margin-top: 8px;">Search by category, language, or vibe. Every tool has live demos, reviews, and install commands.</p>
+        </div>
+
+        <div class="feature-block" style="background: var(--ink); border-color: var(--accent-2); box-shadow: 4px 4px 0 var(--accent-2);">
+          <div class="feature-icon" style="background: var(--accent-2); color: var(--ink); border-color: var(--accent-2);">02</div>
+          <h3 style="color: var(--bg);">Buy Instantly</h3>
+          <p class="text-sm" style="color: rgba(240,236,227,0.7); margin-top: 8px;">One-click checkout. Get your license key, download link, or install command immediately. No subscriptions.</p>
+        </div>
+
+        <div class="feature-block" style="background: var(--ink); border-color: var(--accent-4); box-shadow: 4px 4px 0 var(--accent-4);">
+          <div class="feature-icon" style="background: var(--accent-4); color: var(--ink); border-color: var(--accent-4);">03</div>
+          <h3 style="color: var(--bg);">Ship Faster</h3>
+          <p class="text-sm" style="color: rgba(240,236,227,0.7); margin-top: 8px;">Install via npm, brew, or direct download. Every tool is battle-tested by the community before it's listed.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECOND MARQUEE -->
+  <div class="marquee-wrap anim-marquee-fast" style="background: var(--accent-2); color: var(--ink);">
+    <div class="marquee-track" style="color: var(--ink);">
+      <span>BUILT BY DEVS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>FOR DEVS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>NO GATEKEEPERS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>SHIP FASTER</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>INDIE TOOLS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>ZERO BLOAT</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>BUILT BY DEVS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>FOR DEVS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>NO GATEKEEPERS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>SHIP FASTER</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>INDIE TOOLS</span><span class="sep" style="color: var(--bg);">★</span>
+      <span>ZERO BLOAT</span><span class="sep" style="color: var(--bg);">★</span>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head anim-rise">
+        <div>
+          <h2>What Devs Are Saying <span class="deco-star anim-loop-pulse" style="display: inline-block;">💬</span></h2>
+          <p class="text-muted">Real reviews from real code nerds.</p>
+        </div>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+
+        <div class="testimonial">
+          <p class="text-sm">"Bolt Deploy saved me 6 hours a week. I used to write custom deploy scripts for every project — now it's one command and done. Absolute game changer."</p>
+          <div class="testimonial-author">
+            — Sarah Chen <span class="text-muted text-xs">· Full-Stack Dev @ Indie Labs</span>
+          </div>
+        </div>
+
+        <div class="testimonial" style="background: var(--accent-1);">
+          <p class="text-sm">"The Neon Brutalist theme pack is the only reason I don't hate staring at my terminal at 2am. My coworkers keep asking what setup I'm running."</p>
+          <div class="testimonial-author">
+            — Marcus Rivera <span class="text-muted text-xs">· DevOps Engineer</span>
+          </div>
+        </div>
+
+        <div class="testimonial" style="background: var(--accent-2);">
+          <p class="text-sm">"I've sold 400+ copies of my git hook pack on DEVSTACK. The platform takes a fair cut and the community actually gives real feedback. Love it."</p>
+          <div class="testimonial-author">
+            — Priya Patel <span class="text-xs">· Tool Creator & OSS Maintainer</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FOR CREATORS CTA -->
+  <section class="section" style="background: var(--accent-4); border-top: var(--border-w) solid var(--border); border-bottom: var(--border-w) solid var(--border);">
+    <div class="container">
+      <div class="flex gap-lg items-center" style="flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 280px;" class="anim-slide-left anim-delay-1">
+          <span class="badge" style="margin-bottom: 16px;">For Creators</span>
+          <h2>Sell Your Dev Tools on DEVSTACK</h2>
+          <p style="margin: 16px 0;" class="text-muted">Built a sick CLI tool? A VS Code extension that slaps? List it on DEVSTACK and start earning. We handle payments, licensing, and distribution — you focus on building.</p>
+          <div class="flex gap-sm" style="margin-top: 24px; flex-wrap: wrap;">
+            <span class="pill active">90% Revenue Share</span>
+            <span class="pill active">Instant Payouts</span>
+            <span class="pill active">Built-in Analytics</span>
+          </div>
+          <div style="margin-top: 28px;">
+            <a href="about-devstack.html" class="btn btn-pink btn-lg">Start Selling →</a>
+          </div>
+        </div>
+        <div style="flex: 1; min-width: 280px;" class="anim-slide-right anim-delay-3">
+          <div class="card" style="background: var(--ink); color: var(--bg); box-shadow: var(--shadow-lg);">
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 2; color: var(--accent-1);">
+              <span style="color: var(--accent-2);">~/my-tool $</span> devstack publish<br>
+              <span style="color: var(--accent-4);">✓</span> Package validated<br>
+              <span style="color: var(--accent-4);">✓</span> Screenshots generated<br>
+              <span style="color: var(--accent-4);">✓</span> Listing created<br>
+              <span style="color: var(--accent-1);">✓ Published! Live at devstack.io/tools/my-tool</span><br>
+              <span style="color: var(--ink-mid);">First sale in 47 minutes 🎉</span><span class="cursor anim-cursor-blink"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <div class="anim-pop anim-delay-1" style="max-width: 600px; margin: 0 auto;">
+        <h2>Stay in the Loop <span class="deco-star anim-loop-wiggle" style="display: inline-block;">📬</span></h2>
+        <p class="text-muted" style="margin: 16px auto;">Get weekly drops of the best new dev tools, creator spotlights, and exclusive discount codes. No spam, ever — we pinky promise.</p>
+        <div class="flex gap-sm justify-center" style="margin-top: 28px; flex-wrap: wrap;">
+          <input type="email" class="input" placeholder="your@email.dev" style="max-width: 320px;">
+          <button class="btn btn-pink">Subscribe</button>
+        </div>
+        <p class="text-xs text-muted" style="margin-top: 12px;">Join 8,200+ devs already subscribed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM FILTER PILLS -->
+  <section class="section-sm" style="background: var(--bg-alt); border-top: var(--border-w) solid var(--border);">
+    <div class="container text-center">
+      <p class="text-sm text-muted" style="margin-bottom: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">Popular Searches</p>
+      <div class="flex gap-sm justify-center flex-wrap anim-stagger-pop">
+        <a href="shop-all-tools.html" class="pill hover-bounce">React Tools</a>
+        <a href="shop-all-tools.html" class="pill hover-bounce">Git Utilities</a>
+        <a href="shop-all-tools.html" class="pill hover-bounce">Dark Themes</a>
+        <a href="shop-all-tools.html" class="pill hover-bounce">Node.js CLI</a>
+        <a href="shop-all-tools.html" class="pill hover-bounce">Rust Tools</a>
+        <a href="shop-all-tools.html" class="pill hover-bounce">AI Assistants</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo anim-loop-wiggle" style="display:inline-block; margin-bottom:16px;">DEVSTACK</div>
+        <p style="font-size:0.85rem; opacity:0.7; max-width:240px;">The neo-brutalist marketplace for developer tools that don't suck. Built by devs, for devs.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All Tools</a>
+        <a href="shop.html">CLI Tools</a>
+        <a href="shop.html">Extensions</a>
+        <a href="shop.html">Themes</a>
+        <a href="product.html">Featured</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Our Story</a>
+        <a href="about.html">Careers</a>
+        <a href="about.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="cart.html">Your Cart</a>
+        <a href="about.html">FAQ</a>
+        <a href="about.html">Docs</a>
+        <a href="about.html">Status</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 DEVSTACK. All rights reserved.</span>
+      <span>Made with raw CSS &amp; zero JS</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

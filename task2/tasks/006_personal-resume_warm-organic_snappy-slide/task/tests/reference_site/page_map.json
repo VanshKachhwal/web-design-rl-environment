@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "about-the-story": {
+    "expected_file": "about-the-story.html",
+    "screenshot": "about-the-story.png"
+  },
+  "work-selected-projects": {
+    "expected_file": "work-selected-projects.html",
+    "screenshot": "work-selected-projects.png"
+  },
+  "experience-resume": {
+    "expected_file": "experience-resume.html",
+    "screenshot": "experience-resume.png"
+  },
+  "contact-let-s-talk": {
+    "expected_file": "contact-let-s-talk.html",
+    "screenshot": "contact-let-s-talk.png"
+  }
+}

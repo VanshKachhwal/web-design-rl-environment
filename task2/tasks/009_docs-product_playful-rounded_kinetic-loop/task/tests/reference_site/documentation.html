@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Documentation</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-dot anim-loop-pulse"></div>
+        CloudNest
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Docs</a></li>
+        <li><a href="api-reference.html">API</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="enterprise.html">Enterprise</a></li>
+      </ul>
+      <a href="enterprise.html" class="btn btn-primary btn-sm">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- ══════════════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════════════ -->
+  <section class="section" style="position: relative; overflow: hidden; padding-top: 100px; padding-bottom: 100px;">
+    <!-- Decorative orbs -->
+    <div class="orb orb-blue anim-loop-drift" style="width: 320px; height: 320px; top: -80px; right: -60px;"></div>
+    <div class="orb orb-green anim-loop-pulse" style="width: 240px; height: 240px; bottom: -40px; left: -80px;"></div>
+    <div class="orb orb-warm anim-loop-drift" style="width: 180px; height: 180px; top: 40%; left: 55%; animation-delay: 2s;"></div>
+
+    <div class="container text-center flex-col gap-24" style="align-items: center; position: relative; z-index: 1;">
+      <div class="badge anim-rise anim-loop-badge-pulse" style="align-self: center;">
+        <span class="badge-dot anim-loop-dot"></span>
+        Documentation Hub
+      </div>
+      <h1 class="anim-rise anim-delay-1">Everything you need to<br>master CloudNest</h1>
+      <p class="anim-rise anim-delay-2" style="max-width: 58ch; margin: 0 auto;">
+        From quick-start tutorials to advanced configuration guides — our documentation covers every workflow, integration, and API endpoint your enterprise team needs.
+      </p>
+      <div class="anim-rise anim-delay-3" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="#getting-started" class="btn btn-primary">Get Started</a>
+        <a href="api-reference.html" class="btn btn-secondary">API Reference →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       QUICK-START CARDS
+       ══════════════════════════════════════════════════ -->
+  <section class="section-sm" id="getting-started">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <h2>Quick Start Guides</h2>
+        <p style="margin: 12px auto 0;">Get up and running with CloudNest in minutes, not hours.</p>
+      </div>
+      <div class="grid-3 anim-stagger">
+        <div class="card">
+          <div class="card-icon blue">📄</div>
+          <h3>Create Your First Space</h3>
+          <p style="margin-top: 8px;">Set up a documentation space, invite collaborators, and publish your first page in under five minutes.</p>
+          <a href="#" style="display: inline-block; margin-top: 16px; font-weight: 600;">Read guide →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon green">🔗</div>
+          <h3>Connect Your Repository</h3>
+          <p style="margin-top: 8px;">Sync documentation directly from GitHub, GitLab, or Bitbucket with automatic version tracking and branch previews.</p>
+          <a href="integrations.html" style="display: inline-block; margin-top: 16px; font-weight: 600;">Read guide →</a>
+        </div>
+        <div class="card">
+          <div class="card-icon warm">👥</div>
+          <h3>Invite Your Team</h3>
+          <p style="margin-top: 8px;">Configure SSO, assign roles, and set granular permissions so every team member sees exactly what they need.</p>
+          <a href="enterprise.html" style="display: inline-block; margin-top: 16px; font-weight: 600;">Read guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       DOCS LAYOUT — SIDEBAR + CONTENT
+       ══════════════════════════════════════════════════ -->
+  <section class="section" id="docs">
+    <div class="container">
+      <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar anim-slide-right">
+          <ul class="sidebar-nav">
+            <li class="section-title">Getting Started</li>
+            <li><a href="#" class="active">Installation</a></li>
+            <li><a href="#">Configuration</a></li>
+            <li><a href="#">Authentication</a></li>
+            <li class="section-title">Core Concepts</li>
+            <li><a href="#">Spaces &amp; Pages</a></li>
+            <li><a href="#">Versioning</a></li>
+            <li><a href="#">Permissions</a></li>
+            <li><a href="#">Search &amp; Discovery</a></li>
+            <li class="section-title">Advanced</li>
+            <li><a href="#">Custom Domains</a></li>
+            <li><a href="#">Webhooks</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Localization</a></li>
+            <li class="section-title">Resources</li>
+            <li><a href="api-reference.html">API Reference</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main content area -->
+        <div class="flex-col gap-48 anim-slide-left anim-delay-2">
+          <!-- Installation Section -->
+          <article class="flex-col gap-16" id="installation">
+            <div class="flex-col gap-8">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <span class="tag green">Beginner</span>
+                <span class="tag">5 min read</span>
+              </div>
+              <h2>Installation</h2>
+              <p>Install the CloudNest CLI to manage your documentation spaces from the terminal. The CLI supports macOS, Linux, and Windows.</p>
+            </div>
+
+            <h4>Step 1 — Install via npm</h4>
+            <div class="code-block anim-scale anim-delay-3">
+              <span class="cm"># Install the CloudNest CLI globally</span><br>
+              <span class="fn">npm</span> install -g <span class="str">@cloudnest/cli</span><br><br>
+              <span class="cm"># Verify the installation</span><br>
+              <span class="fn">cloudnest</span> --version<br>
+              <span class="str">v3.8.2</span>
+            </div>
+
+            <h4>Step 2 — Authenticate</h4>
+            <p>Log in with your CloudNest account. This stores a secure token locally for future commands.</p>
+            <div class="code-block">
+              <span class="fn">cloudnest</span> login<br>
+              <span class="cm"># Opens your browser for SSO authentication</span><br>
+              <span class="str">✓ Authenticated as anna@acme-corp.eu</span>
+            </div>
+
+            <h4>Step 3 — Initialize a space</h4>
+            <p>Create a new documentation space linked to your project repository.</p>
+            <div class="code-block">
+              <span class="fn">cloudnest</span> init my-project-docs<br>
+              <span class="cm"># Select a template:</span><br>
+              <span class="str">  ❯ Blank Space</span><br>
+              <span class="str">    API Documentation</span><br>
+              <span class="str">    Knowledge Base</span><br>
+              <span class="str">    Product Guide</span><br><br>
+              <span class="str">✓ Space "my-project-docs" created</span><br>
+              <span class="str">✓ Config written to cloudnest.config.json</span>
+            </div>
+          </article>
+
+          <!-- Configuration Section -->
+          <article class="flex-col gap-16" id="configuration">
+            <h2>Configuration</h2>
+            <p>CloudNest uses a simple JSON configuration file at the root of your project. Here are the most common options:</p>
+
+            <div class="table-wrap anim-rise anim-delay-2">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Property</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">space</code></td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>Unique identifier for your documentation space</td>
+                  </tr>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">source</code></td>
+                    <td>string</td>
+                    <td><code style="font-family: var(--font-mono);">./docs</code></td>
+                    <td>Path to your documentation source files</td>
+                  </tr>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">theme</code></td>
+                    <td>string</td>
+                    <td><code style="font-family: var(--font-mono);">default</code></td>
+                    <td>Visual theme — choose default, minimal, or enterprise</td>
+                  </tr>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">locales</code></td>
+                    <td>array</td>
+                    <td><code style="font-family: var(--font-mono);">["en"]</code></td>
+                    <td>Supported languages for multi-locale documentation</td>
+                  </tr>
+                  <tr>
+                    <td><code style="font-family: var(--font-mono); background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">versioning</code></td>
+                    <td>boolean</td>
+                    <td><code style="font-family: var(--font-mono);">true</code></td>
+                    <td>Enable automatic version snapshots on each deploy</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="code-block">
+              <span class="cm">// cloudnest.config.json</span><br>
+              {<br>
+              &nbsp;&nbsp;<span class="str">"space"</span>: <span class="str">"my-project-docs"</span>,<br>
+              &nbsp;&nbsp;<span class="str">"source"</span>: <span class="str">"./docs"</span>,<br>
+              &nbsp;&nbsp;<span class="str">"theme"</span>: <span class="str">"enterprise"</span>,<br>
+              &nbsp;&nbsp;<span class="str">"locales"</span>: [<span class="str">"en"</span>, <span class="str">"de"</span>, <span class="str">"fr"</span>],<br>
+              &nbsp;&nbsp;<span class="str">"versioning"</span>: <span class="kw">true</span>,<br>
+              &nbsp;&nbsp;<span class="str">"search"</span>: { <span class="str">"enabled"</span>: <span class="kw">true</span>, <span class="str">"indexDepth"</span>: <span class="kw">3</span> }<br>
+              }
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       CORE CONCEPTS — FEATURE CARDS
+       ══════════════════════════════════════════════════ -->
+  <section class="section" style="background: linear-gradient(180deg, var(--c-bg) 0%, rgba(59,125,221,.04) 50%, var(--c-bg) 100%);">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <h2>Core Concepts</h2>
+        <p style="margin: 12px auto 0;">Understand the building blocks that make CloudNest powerful and flexible.</p>
+      </div>
+
+      <div class="grid-2 anim-stagger">
+        <div class="card">
+          <div class="card-icon blue">📂</div>
+          <h3>Spaces &amp; Pages</h3>
+          <p style="margin-top: 8px;">Spaces are top-level containers for related documentation. Each space holds pages organized in a customizable tree structure with drag-and-drop reordering, nested sub-pages, and automatic breadcrumb navigation.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tag">Unlimited nesting</span>
+            <span class="tag green">Drag &amp; drop</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon purple">🔀</div>
+          <h3>Versioning</h3>
+          <p style="margin-top: 8px;">Every deploy creates an immutable version snapshot. Readers can switch between versions via a dropdown, and you can diff any two versions side-by-side. Supports semantic versioning and branch-based previews.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tag">Semantic versions</span>
+            <span class="tag warm">Branch previews</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon green">🔒</div>
+          <h3>Permissions &amp; Roles</h3>
+          <p style="margin-top: 8px;">Define who can view, edit, or admin each space. CloudNest supports SAML SSO, SCIM provisioning, and custom role definitions. Set page-level visibility for internal-only or public documentation.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tag green">SSO / SAML</span>
+            <span class="tag">SCIM</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon warm">🔍</div>
+          <h3>Search &amp; Discovery</h3>
+          <p style="margin-top: 8px;">Full-text search across all spaces with typo tolerance, faceted filtering, and instant results. Search indexes update within seconds of publishing. Supports code-block search and multi-language stemming.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tag warm">Instant results</span>
+            <span class="tag">Multi-language</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       POPULAR TOPICS — GRID
+       ══════════════════════════════════════════════════ -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 40px;">
+        <h2>Popular Topics</h2>
+        <p style="margin: 12px auto 0;">Jump straight to the guides our users read most.</p>
+      </div>
+
+      <div class="grid-4 anim-stagger">
+        <a href="#" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🌐</div>
+          <h4>Custom Domains</h4>
+          <small>Set up branded URLs</small>
+        </a>
+        <a href="#" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🪝</div>
+          <h4>Webhooks</h4>
+          <small>Automate on publish</small>
+        </a>
+        <a href="integrations.html" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🧩</div>
+          <h4>Integrations</h4>
+          <small>Slack, Jira, and more</small>
+        </a>
+        <a href="#" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">📊</div>
+          <h4>Analytics</h4>
+          <small>Track page engagement</small>
+        </a>
+        <a href="#" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🌍</div>
+          <h4>Localization</h4>
+          <small>Multi-language docs</small>
+        </a>
+        <a href="#" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🎨</div>
+          <h4>Theming</h4>
+          <small>Brand your portal</small>
+        </a>
+        <a href="api-reference.html" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">⚡</div>
+          <h4>REST API</h4>
+          <small>Programmatic access</small>
+        </a>
+        <a href="enterprise.html" class="card" style="text-decoration: none; text-align: center; padding: 24px;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🏢</div>
+          <h4>Enterprise SSO</h4>
+          <small>SAML &amp; OIDC setup</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       FEATURE CHECKLIST
+       ══════════════════════════════════════════════════ -->
+  <section class="section" style="position: relative; overflow: hidden;">
+    <div class="orb orb-green anim-loop-pulse" style="width: 280px; height: 280px; top: 20%; right: -100px;"></div>
+
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div class="anim-slide-right flex-col gap-16">
+          <span class="tag green">What's Included</span>
+          <h2>Built for Enterprise Documentation</h2>
+          <p>CloudNest handles the complexity so your team can focus on writing great documentation.</p>
+
+          <div class="flex-col" style="margin-top: 8px;">
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>Unlimited spaces and pages</h4>
+                <small>No artificial limits on content volume</small>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>Real-time collaborative editing</h4>
+                <small>Multiple authors can edit simultaneously</small>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>Automatic API documentation</h4>
+                <small>Import OpenAPI specs and generate interactive docs</small>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>GDPR-compliant EU hosting</h4>
+                <small>Data residency in Frankfurt, Amsterdam, or Dublin</small>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4>99.99% uptime SLA</h4>
+                <small>Enterprise-grade reliability with 24/7 monitoring</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative floating card stack -->
+        <div class="flex-center anim-slide-left anim-delay-3" style="position: relative; min-height: 380px;">
+          <div class="card anim-loop-float" style="position: absolute; width: 280px; top: 0; left: 10%; z-index: 3; animation-delay: 0s;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div style="width: 36px; height: 36px; border-radius: var(--radius-s); background: linear-gradient(135deg, var(--c-primary), var(--c-primary-l));"></div>
+              <div>
+                <h4 style="font-size: .9rem;">Deploy Preview</h4>
+                <small>Branch: feature/auth</small>
+              </div>
+            </div>
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); animation: badge-pulse 2s ease-in-out infinite;"></div>
+              <small style="color: var(--c-accent); font-weight: 600;">Live — 12 pages updated</small>
+            </div>
+          </div>
+
+          <div class="card" style="position: absolute; width: 260px; top: 80px; left: 30%; z-index: 2; opacity: .7; transform: rotate(2deg);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div style="width: 36px; height: 36px; border-radius: var(--radius-s); background: linear-gradient(135deg, var(--c-accent), var(--c-accent-l));"></div>
+              <div>
+                <h4 style="font-size: .9rem;">Version v3.7.0</h4>
+                <small>Published 2 days ago</small>
+              </div>
+            </div>
+            <small>48 pages · 3 contributors</small>
+          </div>
+
+          <div class="card" style="position: absolute; width: 240px; top: 160px; left: 15%; z-index: 1; opacity: .5; transform: rotate(-1deg);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 36px; height: 36px; border-radius: var(--radius-s); background: linear-gradient(135deg, var(--c-warm), #F7C96E);"></div>
+              <div>
+                <h4 style="font-size: .9rem;">Search Analytics</h4>
+                <small>1,247 queries this week</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       STATS BAR
+       ══════════════════════════════════════════════════ -->
+  <section class="section-sm" style="background: linear-gradient(135deg, var(--c-primary), var(--c-primary-d)); background-size: 200% 200%; animation: gradient-shift 6s ease infinite;">
+    <div class="container">
+      <div class="grid-4 anim-stagger" style="text-align: center;">
+        <div class="stat">
+          <div class="stat-value" style="color: #fff;">2,400+</div>
+          <div class="stat-label" style="color: rgba(255,255,255,.7);">Documentation Spaces</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #fff;">180K</div>
+          <div class="stat-label" style="color: rgba(255,255,255,.7);">Pages Published</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #fff;">99.99%</div>
+          <div class="stat-label" style="color: rgba(255,255,255,.7);">Uptime SLA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" style="color: #fff;">14ms</div>
+          <div class="stat-label" style="color: rgba(255,255,255,.7);">Avg Search Latency</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       TESTIMONIALS
+       ══════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <h2>Trusted by Documentation Teams</h2>
+        <p style="margin: 12px auto 0;">See how enterprise teams use CloudNest to streamline their documentation workflows.</p>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="testimonial">
+          <p class="testimonial-quote">CloudNest cut our documentation publish cycle from hours to minutes. The versioning system alone saved our team 15 hours per sprint.</p>
+          <div class="testimonial-author">Katrin Bauer</div>
+          <div class="testimonial-role">Head of Developer Experience, FinTech AG</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">The search is incredibly fast. Our support tickets dropped 40% after migrating to CloudNest because customers can actually find answers.</p>
+          <div class="testimonial-author">Marco Visconti</div>
+          <div class="testimonial-role">VP of Engineering, DataFlow Systems</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">We manage docs in four languages across twelve product lines. CloudNest's localization and permissions make it feel effortless.</p>
+          <div class="testimonial-author">Sophie Lindgren</div>
+          <div class="testimonial-role">Documentation Lead, NordHealth</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       CTA SECTION
+       ══════════════════════════════════════════════════ -->
+  <section class="section" style="position: relative; overflow: hidden;">
+    <div class="orb orb-blue anim-loop-drift" style="width: 300px; height: 300px; top: -60px; left: -80px;"></div>
+    <div class="orb orb-warm anim-loop-pulse" style="width: 200px; height: 200px; bottom: -40px; right: -40px;"></div>
+
+    <div class="container text-center flex-col gap-24 anim-scale" style="align-items: center; position: relative; z-index: 1;">
+      <div class="badge">
+        <span class="badge-dot anim-loop-dot"></span>
+        Ready to start?
+      </div>
+      <h2>Explore the full documentation</h2>
+      <p style="margin: 0 auto;">Dive deeper into guides, tutorials, and references. Can't find what you need? Our support team responds within the hour.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="api-reference.html" class="btn btn-primary">API Reference</a>
+        <a href="integrations.html" class="btn btn-secondary">Browse Integrations</a>
+        <a href="enterprise.html" class="btn btn-accent">Enterprise Plans</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-dot anim-loop-pulse"></div>
+          CloudNest
+        </a>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.5);max-width:280px;">Enterprise-grade documentation platform trusted by teams across Europe. Built for clarity, designed for scale.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">GDPR Ready</span>
+          <span class="footer-badge">SOC 2</span>
+          <span class="footer-badge">ISO 27001</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Getting Started</a></li>
+          <li><a href="api-reference.html">API Guides</a></li>
+          <li><a href="integrations.html">Marketplace</a></li>
+          <li><a href="index.html">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="enterprise.html">Contact Sales</a></li>
+          <li><a href="index.html">Careers</a></li>
+          <li><a href="index.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 CloudNest B.V. — Amsterdam, Netherlands</span>
+      <span>Made with care for European enterprises</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

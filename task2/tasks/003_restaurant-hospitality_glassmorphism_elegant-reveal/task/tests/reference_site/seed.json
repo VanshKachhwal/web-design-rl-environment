@@ -1,0 +1,17 @@
+{
+  "archetype": "restaurant-hospitality",
+  "aesthetic": "glassmorphism",
+  "audience": "local-community",
+  "brand_mood": "premium-and-understated",
+  "animation_style": "elegant-reveal",
+  "animation_style_hint": "refined staggered reveals, subtle blur-to-sharp and rise; premium feel",
+  "page_count": 5,
+  "seed_tuple": [
+    "restaurant-hospitality",
+    "glassmorphism",
+    "low",
+    "local-community",
+    "premium-and-understated",
+    "elegant-reveal"
+  ]
+}

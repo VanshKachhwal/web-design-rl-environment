@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "shop-all-tools": {
+    "expected_file": "shop-all-tools.html",
+    "screenshot": "shop-all-tools.png"
+  },
+  "product-detail": {
+    "expected_file": "product-detail.html",
+    "screenshot": "product-detail.png"
+  },
+  "cart-checkout": {
+    "expected_file": "cart-checkout.html",
+    "screenshot": "cart-checkout.png"
+  },
+  "about-devstack": {
+    "expected_file": "about-devstack.html",
+    "screenshot": "about-devstack.png"
+  }
+}

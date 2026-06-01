@@ -1,0 +1,17 @@
+{
+  "archetype": "saas-landing",
+  "aesthetic": "swiss-editorial",
+  "audience": "north-american-consumers",
+  "brand_mood": "confident-and-bold",
+  "animation_style": "smooth-fade",
+  "animation_style_hint": "gentle fades and soft slide-ups; calm, eased, unhurried motion",
+  "page_count": 5,
+  "seed_tuple": [
+    "saas-landing",
+    "swiss-editorial",
+    "low",
+    "north-american-consumers",
+    "confident-and-bold",
+    "smooth-fade"
+  ]
+}

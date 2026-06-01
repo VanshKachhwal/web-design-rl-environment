@@ -1,0 +1,17 @@
+{
+  "archetype": "event-conference",
+  "aesthetic": "retro-y2k",
+  "audience": "health-and-wellness-seekers",
+  "brand_mood": "nostalgic-and-charming",
+  "animation_style": "playful-bounce",
+  "animation_style_hint": "springy overshoot/bounce and scale-pops; fun and lively",
+  "page_count": 5,
+  "seed_tuple": [
+    "event-conference",
+    "retro-y2k",
+    "med",
+    "health-and-wellness-seekers",
+    "nostalgic-and-charming",
+    "playful-bounce"
+  ]
+}

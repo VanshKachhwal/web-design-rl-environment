@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Shop All Tools</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-dot anim-loop-pulse"></span>
+      DEVSTACK
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">Featured</a>
+      <a href="about.html">About</a>
+      <a href="cart.html" class="nav-cart">Cart <span class="cart-count">3</span></a>
+    </div>
+  </nav>
+</header>
+<main>
+  <!-- HERO / PAGE HEADER -->
+  <section class="hero" style="padding: 60px 0 40px;">
+    <div class="container">
+      <div class="hero-content">
+        <div class="flex items-center gap-sm" style="margin-bottom: 16px;">
+          <span class="badge anim-pop">🛒 MARKETPLACE</span>
+          <span class="badge badge-pink anim-pop anim-delay-2">420+ TOOLS</span>
+        </div>
+        <h1 class="anim-rise">Shop All<br><span class="highlight">Dev Tools</span></h1>
+        <p class="anim-rise anim-delay-2" style="font-size: 1.15rem;">Browse our full catalog of CLI tools, VS Code extensions, terminal themes, and dev utilities — built by indie developers, for indie developers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE BANNER -->
+  <div class="marquee-wrap anim-marquee">
+    <div class="marquee-track">
+      <span>CLI TOOLS</span><span class="sep">★</span>
+      <span>VS CODE EXTENSIONS</span><span class="sep">★</span>
+      <span>TERMINAL THEMES</span><span class="sep">★</span>
+      <span>DEV UTILITIES</span><span class="sep">★</span>
+      <span>LINTERS</span><span class="sep">★</span>
+      <span>FORMATTERS</span><span class="sep">★</span>
+      <span>GIT HELPERS</span><span class="sep">★</span>
+      <span>API TESTERS</span><span class="sep">★</span>
+      <span>CLI TOOLS</span><span class="sep">★</span>
+      <span>VS CODE EXTENSIONS</span><span class="sep">★</span>
+      <span>TERMINAL THEMES</span><span class="sep">★</span>
+      <span>DEV UTILITIES</span><span class="sep">★</span>
+      <span>LINTERS</span><span class="sep">★</span>
+      <span>FORMATTERS</span><span class="sep">★</span>
+      <span>GIT HELPERS</span><span class="sep">★</span>
+      <span>API TESTERS</span><span class="sep">★</span>
+    </div>
+  </div>
+
+  <!-- FILTER / SEARCH BAR -->
+  <section class="section-sm" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="anim-rise anim-delay-2" style="border: var(--border-w) solid var(--border); background: var(--surface); box-shadow: var(--shadow); padding: 24px;">
+        <div class="flex flex-wrap items-center gap" style="justify-content: space-between;">
+          <div class="flex flex-wrap gap-sm items-center">
+            <span style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.04em;">Filter:</span>
+            <span class="pill active">All</span>
+            <span class="pill">CLI Tools</span>
+            <span class="pill">Extensions</span>
+            <span class="pill">Themes</span>
+            <span class="pill">Utilities</span>
+            <span class="pill">Git</span>
+          </div>
+          <div style="min-width: 220px;">
+            <input class="input" type="text" placeholder="Search tools..." style="font-size: 0.9rem; padding: 10px 14px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS COUNT + SORT -->
+  <section style="padding: 24px 0 0;">
+    <div class="container">
+      <div class="flex items-center justify-between flex-wrap gap-sm anim-fade anim-delay-3">
+        <p class="text-sm text-muted" style="font-weight: 700;">Showing <strong style="color: var(--ink);">12</strong> of 420 tools</p>
+        <div class="flex items-center gap-sm">
+          <label class="text-xs" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;">Sort by:</label>
+          <select class="input" style="width: auto; padding: 8px 14px; font-size: 0.85rem; box-shadow: var(--shadow-sm);">
+            <option>Most Popular</option>
+            <option>Newest First</option>
+            <option>Price: Low → High</option>
+            <option>Price: High → Low</option>
+            <option>Top Rated</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="grid-3 anim-stagger">
+
+        <!-- Card 1 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli">
+              <span>$ npm i -g gitpunch</span>
+              <span>Installing... ████████░░ 78%</span>
+              <span>✓ gitpunch@3.2.1 installed<span class="cursor anim-cursor-blink"></span></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag-green card-tag">CLI Tool</span>
+            <span class="card-tag card-tag-pink">Popular</span>
+          </div>
+          <h3>GitPunch</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Interactive git commit message builder with conventional commits, emoji support, and branch-aware templates.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>14</span>
+            <span class="badge">⭐ 4.9</span>
+            <span class="text-xs text-muted">2.4k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-ext">&lt;/&gt;</div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag card-tag-indigo">Extension</span>
+          </div>
+          <h3>BracketBoss</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">VS Code extension that highlights, auto-closes, and color-codes nested brackets with 12 theme presets.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>8</span>
+            <span class="badge">⭐ 4.7</span>
+            <span class="text-xs text-muted">5.1k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-theme">
+              <span style="background: var(--accent-1);"></span>
+              <span style="background: var(--ink);"></span>
+              <span style="background: var(--accent-2);"></span>
+              <span style="background: var(--accent-3);"></span>
+              <span style="background: var(--accent-4);"></span>
+              <span style="background: #1A1A1A;"></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag">Theme</span>
+            <span class="card-tag card-tag-green">New</span>
+          </div>
+          <h3>NeonBrutal</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Terminal theme pack with 8 neo-brutalist color schemes for iTerm2, Alacritty, Hyper, and Windows Terminal.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>6</span>
+            <span class="badge">⭐ 4.8</span>
+            <span class="text-xs text-muted">1.8k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli">
+              <span>$ portsniff scan --range 3000-9000</span>
+              <span>Scanning... ██████████ Done</span>
+              <span>PORT 3000 → React Dev Server</span>
+              <span>PORT 5432 → PostgreSQL<span class="cursor anim-cursor-blink"></span></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag-green card-tag">CLI Tool</span>
+          </div>
+          <h3>PortSniff</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Instantly scan, identify, and kill processes on local ports. Never google "kill port 3000" again.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>9</span>
+            <span class="badge">⭐ 4.6</span>
+            <span class="text-xs text-muted">3.3k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-ext" style="background: var(--accent-2); color: var(--ink); font-size: 2.5rem;">ENV</div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag card-tag-indigo">Extension</span>
+            <span class="card-tag card-tag-pink">Hot</span>
+          </div>
+          <h3>EnvGuard</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">VS Code extension that validates .env files, warns about missing variables, and prevents accidental secret commits.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>12</span>
+            <span class="badge">⭐ 4.9</span>
+            <span class="text-xs text-muted">4.7k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-theme">
+              <span style="background: #0D1117;"></span>
+              <span style="background: #58A6FF;"></span>
+              <span style="background: #F78166;"></span>
+              <span style="background: #3FB950;"></span>
+              <span style="background: #D2A8FF;"></span>
+              <span style="background: #FFA657;"></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag">Theme</span>
+          </div>
+          <h3>MidnightHacker</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Dark terminal theme inspired by 90s hacker movies. Green-on-black with CRT scan line effects for Hyper and iTerm2.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>5</span>
+            <span class="badge">⭐ 4.5</span>
+            <span class="text-xs text-muted">980 sales</span>
+          </div>
+        </a>
+
+        <!-- Card 7 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli">
+              <span>$ apimock serve --port 4000</span>
+              <span>✓ 12 endpoints loaded</span>
+              <span>✓ Mock server running on :4000<span class="cursor anim-cursor-blink"></span></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag-green card-tag">CLI Tool</span>
+            <span class="card-tag">Utility</span>
+          </div>
+          <h3>APIMock</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Spin up fake REST and GraphQL APIs in seconds from a YAML config. Perfect for frontend prototyping.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>18</span>
+            <span class="badge">⭐ 4.8</span>
+            <span class="text-xs text-muted">1.6k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 8 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-ext" style="background: var(--accent-4); color: var(--ink); font-size: 2.5rem;">📐</div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag card-tag-indigo">Extension</span>
+          </div>
+          <h3>PixelSnap</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Measure pixel distances, extract colors, and overlay grid guides directly inside VS Code. No more switching apps.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>11</span>
+            <span class="badge">⭐ 4.4</span>
+            <span class="text-xs text-muted">890 sales</span>
+          </div>
+        </a>
+
+        <!-- Card 9 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli">
+              <span>$ logpretty --file app.log</span>
+              <span style="color: var(--accent-1);">INFO  [12:04:01] Server started</span>
+              <span style="color: var(--accent-4);">WARN  [12:04:03] Slow query 240ms</span>
+              <span style="color: #FF4040;">ERROR [12:04:05] Connection lost<span class="cursor anim-cursor-blink"></span></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag-green card-tag">CLI Tool</span>
+            <span class="card-tag card-tag-green">New</span>
+          </div>
+          <h3>LogPretty</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Colorize, filter, and format any log file in your terminal. Supports JSON logs, syslog, and custom patterns.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>7</span>
+            <span class="badge">⭐ 4.7</span>
+            <span class="text-xs text-muted">1.2k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 10 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-ext" style="background: var(--ink); color: var(--accent-1); font-family: var(--font-mono); font-size: 2rem; font-weight: 900;">DB⚡</div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag">Utility</span>
+            <span class="card-tag card-tag-pink">Popular</span>
+          </div>
+          <h3>SchemaDrift</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Visual database migration diff tool. Compare schemas, generate migration scripts, and track drift across environments.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>24</span>
+            <span class="badge">⭐ 4.9</span>
+            <span class="text-xs text-muted">2.1k sales</span>
+          </div>
+        </a>
+
+        <!-- Card 11 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-theme">
+              <span style="background: var(--accent-2);"></span>
+              <span style="background: #FFB3D9;"></span>
+              <span style="background: var(--accent-4);"></span>
+              <span style="background: #B8FF9F;"></span>
+              <span style="background: #A8D8FF;"></span>
+              <span style="background: #E8B4FF;"></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag">Theme</span>
+          </div>
+          <h3>CandyCrush IDE</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Pastel VS Code theme pack with 6 candy-inspired palettes. Soft on the eyes, loud on personality.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>4</span>
+            <span class="badge">⭐ 4.3</span>
+            <span class="text-xs text-muted">670 sales</span>
+          </div>
+        </a>
+
+        <!-- Card 12 -->
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli">
+              <span>$ depcheck --strict</span>
+              <span>Analyzing package.json...</span>
+              <span style="color: #FF4040;">✗ 4 unused dependencies</span>
+              <span style="color: var(--accent-4);">⚠ 2 outdated packages<span class="cursor anim-cursor-blink"></span></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 10px;">
+            <span class="card-tag-green card-tag">CLI Tool</span>
+            <span class="card-tag card-tag-indigo">Essential</span>
+          </div>
+          <h3>DepCheck Pro</h3>
+          <p class="text-sm text-muted" style="margin: 8px 0;">Audit npm dependencies for unused packages, security vulnerabilities, and license compliance in one command.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>16</span>
+            <span class="badge">⭐ 4.8</span>
+            <span class="text-xs text-muted">3.8k sales</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGINATION -->
+  <section style="padding: 0 0 48px;">
+    <div class="container">
+      <div class="flex justify-center items-center gap-sm anim-fade anim-delay-5">
+        <span class="pill" style="opacity: 0.4; cursor: default;">← Prev</span>
+        <span class="pill active">1</span>
+        <span class="pill">2</span>
+        <span class="pill">3</span>
+        <span class="pill">4</span>
+        <span class="pill" style="letter-spacing: 0.1em;">...</span>
+        <span class="pill">35</span>
+        <span class="pill">Next →</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FEATURED CATEGORIES -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-head anim-rise anim-delay-3">
+        <div>
+          <h2>Browse by Category</h2>
+          <p class="text-muted">Find the perfect tool for your workflow</p>
+        </div>
+      </div>
+      <div class="grid-4 anim-stagger-pop">
+        <div class="feature-block hover-bounce" style="text-align: center;">
+          <div class="feature-icon anim-loop-wiggle" style="background: var(--accent-1); margin: 0 auto 16px;">>&lowbar;</div>
+          <h4>CLI Tools</h4>
+          <p class="text-sm text-muted" style="margin: 8px auto 12px;">148 tools</p>
+          <a href="#" class="btn btn-sm btn-outline">Browse</a>
+        </div>
+        <div class="feature-block hover-bounce" style="text-align: center;">
+          <div class="feature-icon" style="background: var(--accent-3); color: #fff; margin: 0 auto 16px;">{&nbsp;}</div>
+          <h4>VS Code Extensions</h4>
+          <p class="text-sm text-muted" style="margin: 8px auto 12px;">112 extensions</p>
+          <a href="#" class="btn btn-sm btn-outline">Browse</a>
+        </div>
+        <div class="feature-block hover-bounce" style="text-align: center;">
+          <div class="feature-icon" style="background: var(--accent-4); margin: 0 auto 16px;">🎨</div>
+          <h4>Terminal Themes</h4>
+          <p class="text-sm text-muted" style="margin: 8px auto 12px;">89 themes</p>
+          <a href="#" class="btn btn-sm btn-outline">Browse</a>
+        </div>
+        <div class="feature-block hover-bounce" style="text-align: center;">
+          <div class="feature-icon" style="background: var(--accent-2); margin: 0 auto 16px;">⚙</div>
+          <h4>Dev Utilities</h4>
+          <p class="text-sm text-muted" style="margin: 8px auto 12px;">71 utilities</p>
+          <a href="#" class="btn btn-sm btn-outline">Browse</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- NEWSLETTER / CTA -->
+  <section class="section" style="background: var(--ink); color: var(--bg);">
+    <div class="container text-center">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <span class="deco-star anim-loop-bounce" style="font-size: 2rem; display: inline-block; margin-bottom: 16px;">⚡</span>
+        <h2 class="anim-rise" style="color: var(--accent-1); margin-bottom: 16px;">Never Miss a New Tool</h2>
+        <p class="anim-rise anim-delay-2" style="color: var(--bg); opacity: 0.8; margin: 0 auto 24px; max-width: 480px;">Get weekly drops of the freshest dev tools, exclusive discounts, and behind-the-scenes looks at what indie devs are building.</p>
+        <div class="flex justify-center gap-sm flex-wrap anim-rise anim-delay-3">
+          <input class="input" type="email" placeholder="you@dev.email" style="max-width: 320px; background: var(--bg); color: var(--ink);">
+          <button class="btn btn-pink">Subscribe</button>
+        </div>
+        <p class="text-xs anim-fade anim-delay-5" style="margin-top: 12px; opacity: 0.5; color: var(--bg);">No spam. Unsubscribe anytime. We pinky-promise.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo anim-loop-wiggle" style="display:inline-block; margin-bottom:16px;">DEVSTACK</div>
+        <p style="font-size:0.85rem; opacity:0.7; max-width:240px;">The neo-brutalist marketplace for developer tools that don't suck. Built by devs, for devs.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All Tools</a>
+        <a href="shop.html">CLI Tools</a>
+        <a href="shop.html">Extensions</a>
+        <a href="shop.html">Themes</a>
+        <a href="product.html">Featured</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Our Story</a>
+        <a href="about.html">Careers</a>
+        <a href="about.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="cart.html">Your Cart</a>
+        <a href="about.html">FAQ</a>
+        <a href="about.html">Docs</a>
+        <a href="about.html">Status</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 DEVSTACK. All rights reserved.</span>
+      <span>Made with raw CSS &amp; zero JS</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

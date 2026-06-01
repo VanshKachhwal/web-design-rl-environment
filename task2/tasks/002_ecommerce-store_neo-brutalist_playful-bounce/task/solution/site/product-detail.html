@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Product Detail</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-dot anim-loop-pulse"></span>
+      DEVSTACK
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">Featured</a>
+      <a href="about.html">About</a>
+      <a href="cart.html" class="nav-cart">Cart <span class="cart-count">3</span></a>
+    </div>
+  </nav>
+</header>
+<main>
+
+  <!-- BREADCRUMB -->
+  <div class="container" style="padding-top: 24px;">
+    <div class="flex items-center gap-sm anim-fade text-sm text-mono" style="flex-wrap: wrap;">
+      <a href="index.html" style="text-decoration: underline;">Home</a>
+      <span style="color: var(--accent-2); font-weight: 900;">/</span>
+      <a href="shop-all-tools.html" style="text-decoration: underline;">Shop All Tools</a>
+      <span style="color: var(--accent-2); font-weight: 900;">/</span>
+      <span style="font-weight: 700;">GitPulse CLI</span>
+    </div>
+  </div>
+
+  <!-- PRODUCT HERO SECTION -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="grid-2" style="gap: 40px; align-items: start;">
+
+        <!-- Product Image -->
+        <div class="anim-slide-left">
+          <div class="card-img" style="aspect-ratio: 1/1; border-width: var(--border-w);">
+            <div class="pv-cli" style="font-size: 0.85rem; line-height: 2;">
+              <span style="color: var(--accent-2);">~/projects/webapp</span><br>
+              <span style="opacity: 0.5;">$</span> gitpulse status<br>
+              <span style="color: var(--accent-4);">⚡ 3 branches ahead</span><br>
+              <span style="color: var(--accent-1);">✓ main is clean</span><br>
+              <span style="color: var(--accent-2);">⚠ 2 stale branches (>30d)</span><br>
+              <span style="opacity: 0.5;">$</span> gitpulse clean --dry-run<br>
+              <span style="color: var(--accent-1);">→ Would remove: feat/old-auth, fix/legacy-api</span><br>
+              <span style="opacity: 0.5;">$</span> <span class="cursor anim-cursor-blink"></span>
+            </div>
+          </div>
+          <!-- Thumbnail strip -->
+          <div class="flex gap-sm" style="margin-top: 12px;">
+            <div style="flex:1; border: var(--border-w) solid var(--border); background: var(--ink); padding: 12px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">
+              <span class="text-mono text-sm" style="color: var(--accent-1);">$ status</span>
+            </div>
+            <div style="flex:1; border: var(--border-w) solid var(--border); background: var(--ink); padding: 12px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">
+              <span class="text-mono text-sm" style="color: var(--accent-2);">$ clean</span>
+            </div>
+            <div style="flex:1; border: var(--border-w) solid var(--border); background: var(--ink); padding: 12px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm);">
+              <span class="text-mono text-sm" style="color: var(--accent-4);">$ report</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="anim-slide-right">
+          <div class="flex gap-sm items-center" style="margin-bottom: 16px; flex-wrap: wrap;">
+            <span class="card-tag card-tag-green">CLI Tool</span>
+            <span class="card-tag card-tag-pink">Popular</span>
+            <span class="badge" style="background: var(--accent-4);">v2.4.1</span>
+          </div>
+
+          <h1 style="margin-bottom: 12px;">GitPulse CLI</h1>
+
+          <p class="text-lg" style="margin-bottom: 20px; color: var(--ink-mid);">
+            A blazing-fast Git health monitor for your terminal. Track branch staleness, visualize commit velocity, auto-clean merged branches, and get daily repo health reports — all without leaving your shell.
+          </p>
+
+          <!-- Rating -->
+          <div class="flex items-center gap-sm" style="margin-bottom: 20px;">
+            <div style="color: var(--accent-4); font-size: 1.3rem; letter-spacing: 2px;">★★★★★</div>
+            <span class="text-mono text-sm" style="font-weight: 700;">4.9</span>
+            <span class="text-sm text-muted">(237 reviews)</span>
+          </div>
+
+          <!-- Price -->
+          <div class="flex items-center gap" style="margin-bottom: 28px; flex-wrap: wrap;">
+            <span class="card-price"><span class="currency">$</span>24</span>
+            <span class="card-price strikethrough text-muted" style="font-size: 1.1rem;"><span class="currency">$</span>39</span>
+            <span class="highlight text-sm" style="font-weight: 800;">SAVE 38%</span>
+          </div>
+
+          <!-- License selector -->
+          <div style="margin-bottom: 20px;">
+            <label class="text-sm" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; display: block; margin-bottom: 8px;">License Type</label>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="pill active">Personal — $24</span>
+              <span class="pill">Team (5) — $79</span>
+              <span class="pill">Enterprise — $199</span>
+            </div>
+          </div>
+
+          <!-- Platform -->
+          <div style="margin-bottom: 24px;">
+            <label class="text-sm" style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; display: block; margin-bottom: 8px;">Platform</label>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="pill active">macOS</span>
+              <span class="pill">Linux</span>
+              <span class="pill">Windows</span>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex gap-sm" style="flex-wrap: wrap; margin-bottom: 24px;">
+            <a href="cart-checkout.html" class="btn btn-pink btn-lg hover-bounce">
+              🛒 Add to Cart
+            </a>
+            <a href="#" class="btn btn-outline btn-lg hover-bounce">
+              ♥ Wishlist
+            </a>
+          </div>
+
+          <!-- Quick details -->
+          <div style="border: var(--border-w) solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); padding: 20px;">
+            <div class="flex flex-wrap gap" style="font-size: 0.85rem;">
+              <div style="flex: 1; min-width: 120px;">
+                <strong style="display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--ink-mid);">Author</strong>
+                <span class="text-mono" style="font-weight: 700;">@terracli</span>
+              </div>
+              <div style="flex: 1; min-width: 120px;">
+                <strong style="display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--ink-mid);">Last Updated</strong>
+                <span class="text-mono" style="font-weight: 700;">Dec 2024</span>
+              </div>
+              <div style="flex: 1; min-width: 120px;">
+                <strong style="display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--ink-mid);">Downloads</strong>
+                <span class="text-mono" style="font-weight: 700;">18,400+</span>
+              </div>
+              <div style="flex: 1; min-width: 120px;">
+                <strong style="display: block; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--ink-mid);">License</strong>
+                <span class="text-mono" style="font-weight: 700;">Perpetual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap anim-marquee">
+    <div class="marquee-track">
+      <span>BRANCH HEALTH</span><span class="sep">◆</span>
+      <span>COMMIT VELOCITY</span><span class="sep">◆</span>
+      <span>AUTO-CLEAN</span><span class="sep">◆</span>
+      <span>DAILY REPORTS</span><span class="sep">◆</span>
+      <span>STALE DETECTION</span><span class="sep">◆</span>
+      <span>ZERO CONFIG</span><span class="sep">◆</span>
+      <span>BRANCH HEALTH</span><span class="sep">◆</span>
+      <span>COMMIT VELOCITY</span><span class="sep">◆</span>
+      <span>AUTO-CLEAN</span><span class="sep">◆</span>
+      <span>DAILY REPORTS</span><span class="sep">◆</span>
+      <span>STALE DETECTION</span><span class="sep">◆</span>
+      <span>ZERO CONFIG</span><span class="sep">◆</span>
+    </div>
+  </div>
+
+  <!-- FEATURES / WHAT'S INCLUDED -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head anim-rise">
+        <div>
+          <h2>What's <span class="highlight">Included</span></h2>
+          <p class="text-muted" style="margin-top: 8px;">Everything you need to keep your Git repos healthy and tidy.</p>
+        </div>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="feature-block">
+          <div class="feature-icon" style="background: var(--accent-1);">⚡</div>
+          <h3>Branch Health Monitor</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">
+            Instantly see which branches are stale, ahead, behind, or conflicting. Color-coded output makes triage a breeze.
+          </p>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-icon" style="background: var(--accent-2);">📊</div>
+          <h3>Commit Velocity Graph</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">
+            ASCII-rendered sparklines show your commit frequency over the last 30 days. Spot slowdowns before they become blockers.
+          </p>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-icon" style="background: var(--accent-4);">🧹</div>
+          <h3>Auto-Clean Engine</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">
+            Safely remove merged and stale branches with a single command. Dry-run mode previews changes before any deletion.
+          </p>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-icon" style="background: var(--accent-3); color: #fff;">📬</div>
+          <h3>Daily Health Reports</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">
+            Schedule automated repo health summaries that pipe to stdout, a log file, or your team's Slack webhook.
+          </p>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-icon" style="background: var(--accent-1);">🔌</div>
+          <h3>CI/CD Integration</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">
+            Drop GitPulse into GitHub Actions, GitLab CI, or any pipeline. JSON output mode makes parsing trivial.
+          </p>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-icon" style="background: var(--accent-4);">⚙️</div>
+          <h3>Zero-Config Setup</h3>
+          <p class="text-sm text-muted" style="margin-top: 8px;">
+            Install via npm, brew, or cargo. Works out of the box with sensible defaults. Optional .gitpulse.yml for power users.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- INSTALLATION / QUICK START -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap: 40px; align-items: start;">
+
+        <div class="anim-slide-left anim-delay-1">
+          <h2 style="margin-bottom: 20px;">Quick <span class="highlight">Start</span></h2>
+          <p style="margin-bottom: 24px; color: var(--ink-mid);">
+            Get GitPulse running in under 60 seconds. Three install methods, zero dependencies, instant results.
+          </p>
+
+          <div class="flex flex-col gap-sm">
+            <div style="border: var(--border-w) solid var(--border); background: var(--ink); padding: 16px; box-shadow: var(--shadow-sm);">
+              <span class="text-mono text-sm" style="color: var(--ink-mid);"># via npm</span><br>
+              <span class="text-mono" style="color: var(--accent-1); font-weight: 700;">npm install -g gitpulse-cli</span>
+            </div>
+            <div style="border: var(--border-w) solid var(--border); background: var(--ink); padding: 16px; box-shadow: var(--shadow-sm);">
+              <span class="text-mono text-sm" style="color: var(--ink-mid);"># via homebrew</span><br>
+              <span class="text-mono" style="color: var(--accent-2); font-weight: 700;">brew install terracli/tap/gitpulse</span>
+            </div>
+            <div style="border: var(--border-w) solid var(--border); background: var(--ink); padding: 16px; box-shadow: var(--shadow-sm);">
+              <span class="text-mono text-sm" style="color: var(--ink-mid);"># via cargo</span><br>
+              <span class="text-mono" style="color: var(--accent-4); font-weight: 700;">cargo install gitpulse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="anim-slide-right anim-delay-2">
+          <div style="border: var(--border-w) solid var(--border); background: var(--ink); box-shadow: var(--shadow-lg); padding: 24px; color: var(--accent-1); font-family: var(--font-mono); font-size: 0.8rem; line-height: 2;">
+            <span style="color: var(--accent-2);">~/my-project</span> <span style="opacity: 0.5;">$</span> gitpulse status<br>
+            <br>
+            <span style="color: var(--accent-4);">╔══════════════════════════════╗</span><br>
+            <span style="color: var(--accent-4);">║</span> <span style="color: #fff; font-weight: 700;">GITPULSE HEALTH REPORT</span> &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: var(--accent-4);">║</span><br>
+            <span style="color: var(--accent-4);">╚══════════════════════════════╝</span><br>
+            <br>
+            <span style="color: var(--accent-1);">✓</span> main &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: var(--accent-1);">clean</span><br>
+            <span style="color: var(--accent-4);">⚡</span> feat/auth &nbsp;&nbsp;&nbsp; <span style="color: var(--accent-4);">+12 ahead</span><br>
+            <span style="color: var(--accent-2);">⚠</span> fix/legacy &nbsp;&nbsp; <span style="color: var(--accent-2);">stale (47d)</span><br>
+            <span style="color: var(--accent-1);">✓</span> dev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: var(--accent-1);">synced</span><br>
+            <br>
+            <span style="opacity: 0.5;">velocity (30d):</span><br>
+            <span style="color: var(--accent-1);">▁▂▃▅▇█▇▅▆▇█▇▅▃▂▃▅▆▇█▇▅▆▇█▇▅▃▂</span><br>
+            <br>
+            <span style="opacity: 0.5;">$</span> <span class="cursor anim-cursor-blink" style="display: inline-block; width: 8px; height: 14px; background: var(--accent-1); vertical-align: middle;"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- STATS ROW -->
+  <section class="section-sm" style="background: var(--accent-1); border-top: var(--border-w) solid var(--border); border-bottom: var(--border-w) solid var(--border);">
+    <div class="container">
+      <div class="stats-row anim-stagger-pop">
+        <div class="stat-item">
+          <span class="stat-num">18.4K</span>
+          <span class="stat-label">Downloads</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" style="color: var(--accent-2);">4.9★</span>
+          <span class="stat-label">Avg Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">237</span>
+          <span class="stat-label">Reviews</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" style="color: var(--accent-3);">14ms</span>
+          <span class="stat-label">Avg Exec Time</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head anim-rise anim-delay-1">
+        <div>
+          <h2>Dev <span class="highlight">Reviews</span></h2>
+          <p class="text-muted" style="margin-top: 8px;">What the community is saying about GitPulse CLI.</p>
+        </div>
+        <span class="deco-star anim-loop-wiggle" style="font-size: 2.5rem;">★</span>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="testimonial">
+          <p style="font-size: 0.95rem; font-weight: 600;">
+            "GitPulse replaced three separate scripts I was maintaining. The auto-clean dry-run mode alone is worth the price. My repos have never been this tidy."
+          </p>
+          <div class="testimonial-author">
+            — Sarah K. <span class="text-muted text-sm">· Full-Stack Dev</span>
+          </div>
+          <div style="margin-top: 8px; color: var(--accent-4);">★★★★★</div>
+        </div>
+
+        <div class="testimonial" style="background: var(--accent-2);">
+          <p style="font-size: 0.95rem; font-weight: 600;">
+            "The commit velocity sparklines are genius. I showed my team lead and now the whole org uses it in our CI pipeline. JSON output mode is chef's kiss."
+          </p>
+          <div class="testimonial-author">
+            — Marcus T. <span class="text-muted text-sm">· DevOps Engineer</span>
+          </div>
+          <div style="margin-top: 8px; color: var(--accent-4);">★★★★★</div>
+        </div>
+
+        <div class="testimonial">
+          <p style="font-size: 0.95rem; font-weight: 600;">
+            "Zero config, instant results. I installed via brew and had a health report in 10 seconds. This is how dev tools should work. Absolute banger."
+          </p>
+          <div class="testimonial-author">
+            — Priya M. <span class="text-muted text-sm">· Indie Hacker</span>
+          </div>
+          <div style="margin-top: 8px; color: var(--accent-4);">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CHANGELOG / VERSION HISTORY -->
+  <section class="section-sm">
+    <div class="container">
+      <h2 class="anim-rise" style="margin-bottom: 32px;">Changelog</h2>
+
+      <div class="anim-stagger" style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="border: var(--border-w) solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); padding: 20px;">
+          <div class="flex items-center gap-sm" style="flex-wrap: wrap; margin-bottom: 8px;">
+            <span class="badge" style="background: var(--accent-1);">v2.4.1</span>
+            <span class="text-sm text-muted text-mono">Dec 2024</span>
+            <span class="badge badge-pink">Latest</span>
+          </div>
+          <p class="text-sm">Added Windows ARM64 support, fixed branch sorting edge case, improved JSON output schema for CI integrations.</p>
+        </div>
+
+        <div style="border: var(--border-w) solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); padding: 20px;">
+          <div class="flex items-center gap-sm" style="flex-wrap: wrap; margin-bottom: 8px;">
+            <span class="badge">v2.3.0</span>
+            <span class="text-sm text-muted text-mono">Oct 2024</span>
+          </div>
+          <p class="text-sm">Introduced commit velocity sparklines, Slack webhook integration, and configurable staleness thresholds via .gitpulse.yml.</p>
+        </div>
+
+        <div style="border: var(--border-w) solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); padding: 20px;">
+          <div class="flex items-center gap-sm" style="flex-wrap: wrap; margin-bottom: 8px;">
+            <span class="badge">v2.0.0</span>
+            <span class="text-sm text-muted text-mono">Jul 2024</span>
+          </div>
+          <p class="text-sm">Major rewrite in Rust for 10x performance. Added auto-clean engine with dry-run mode, daily scheduled reports, and multi-repo support.</p>
+        </div>
+
+        <div style="border: var(--border-w) solid var(--border); background: var(--surface); box-shadow: var(--shadow-sm); padding: 20px;">
+          <div class="flex items-center gap-sm" style="flex-wrap: wrap; margin-bottom: 8px;">
+            <span class="badge">v1.0.0</span>
+            <span class="text-sm text-muted text-mono">Jan 2024</span>
+          </div>
+          <p class="text-sm">Initial release. Basic branch health monitoring, stale branch detection, and terminal-native output formatting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- RELATED TOOLS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head anim-rise anim-delay-1">
+        <div>
+          <h2>You Might Also <span class="highlight">Dig</span></h2>
+          <p class="text-muted" style="margin-top: 8px;">More tools from the DEVSTACK catalog.</p>
+        </div>
+        <a href="shop-all-tools.html" class="btn btn-sm btn-outline hover-bounce">Browse All →</a>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-ext" style="background: var(--accent-3);">{&nbsp;}</div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 8px;">
+            <span class="card-tag card-tag-indigo">VS Code Ext</span>
+          </div>
+          <h3>BracketBeast</h3>
+          <p class="text-sm text-muted" style="margin-top: 6px;">Rainbow bracket matching on steroids with scope highlighting and jump-to-pair shortcuts.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>12</span>
+            <span class="text-sm text-muted">★ 4.8 (189)</span>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-theme">
+              <span style="background: #1A1A1A;"></span>
+              <span style="background: var(--accent-1);"></span>
+              <span style="background: var(--accent-2);"></span>
+              <span style="background: var(--accent-3);"></span>
+              <span style="background: var(--accent-4);"></span>
+              <span style="background: #1A1A1A;"></span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 8px;">
+            <span class="card-tag card-tag-green">Theme</span>
+          </div>
+          <h3>NeonVoid Terminal</h3>
+          <p class="text-sm text-muted" style="margin-top: 6px;">A retro-futuristic terminal theme with 12 color variants. Supports iTerm2, Alacritty, Hyper, and Windows Terminal.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>8</span>
+            <span class="text-sm text-muted">★ 4.7 (312)</span>
+          </div>
+        </a>
+
+        <a href="product-detail.html" class="card hover-lift" style="text-decoration: none;">
+          <div class="card-img">
+            <div class="pv-cli" style="font-size: 0.75rem; line-height: 1.9;">
+              <span style="opacity: 0.5;">$</span> <span style="color: var(--accent-4);">envguard</span> check<br>
+              <span style="color: var(--accent-1);">✓ .env loaded (14 vars)</span><br>
+              <span style="color: var(--accent-2);">⚠ API_KEY is empty</span><br>
+              <span style="color: var(--accent-1);">✓ No secrets in git</span>
+            </div>
+          </div>
+          <div class="flex gap-sm" style="margin-bottom: 8px;">
+            <span class="card-tag">CLI Tool</span>
+          </div>
+          <h3>EnvGuard</h3>
+          <p class="text-sm text-muted" style="margin-top: 6px;">Validate, lint, and protect your .env files. Catches missing vars, leaked secrets, and schema mismatches.</p>
+          <div class="card-meta">
+            <span class="card-price"><span class="currency">$</span>18</span>
+            <span class="text-sm text-muted">★ 4.9 (97)</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="section-sm" style="background: var(--ink); border-top: var(--border-w) solid var(--border);">
+    <div class="container text-center">
+      <div class="anim-rise anim-delay-1">
+        <h2 style="color: var(--accent-1); margin-bottom: 16px;">Ready to Clean Up Your Repos?</h2>
+        <p style="color: var(--bg); opacity: 0.8; margin: 0 auto 28px; max-width: 500px;">
+          Grab GitPulse CLI and start shipping with confidence. One-time purchase, lifetime updates, no subscriptions.
+        </p>
+        <div class="flex justify-center gap-sm" style="flex-wrap: wrap;">
+          <a href="cart-checkout.html" class="btn btn-pink btn-lg hover-bounce anim-loop-pulse" style="animation-duration: 3s;">
+            🛒 Add to Cart — $24
+          </a>
+          <a href="shop-all-tools.html" class="btn btn-lg hover-bounce" style="background: var(--accent-1);">
+            Browse More Tools
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo anim-loop-wiggle" style="display:inline-block; margin-bottom:16px;">DEVSTACK</div>
+        <p style="font-size:0.85rem; opacity:0.7; max-width:240px;">The neo-brutalist marketplace for developer tools that don't suck. Built by devs, for devs.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All Tools</a>
+        <a href="shop.html">CLI Tools</a>
+        <a href="shop.html">Extensions</a>
+        <a href="shop.html">Themes</a>
+        <a href="product.html">Featured</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Our Story</a>
+        <a href="about.html">Careers</a>
+        <a href="about.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="cart.html">Your Cart</a>
+        <a href="about.html">FAQ</a>
+        <a href="about.html">Docs</a>
+        <a href="about.html">Status</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 DEVSTACK. All rights reserved.</span>
+      <span>Made with raw CSS &amp; zero JS</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

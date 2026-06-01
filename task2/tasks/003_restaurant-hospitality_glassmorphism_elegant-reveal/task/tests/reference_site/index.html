@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,23,20,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,84,0.1);">
+  <div style="max-width:1140px;margin:0 auto;padding:0.9rem 1.75rem;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:0.6rem;">
+      <span class="ember-dot anim-loop-ember"></span>
+      <span style="font-family:Georgia,'Times New Roman',Times,serif;font-size:1.35rem;color:#f0e8dc;letter-spacing:0.02em;">Ember <span style="color:#d4a054;">&amp;</span> Vine</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:2rem;">
+      <a href="index.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Home</a>
+      <a href="menu.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Menu</a>
+      <a href="story.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Our Story</a>
+      <a href="events.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Events</a>
+      <a href="contact.html" class="btn" style="padding:0.6em 1.6em;font-size:0.72rem;">Reserve</a>
+    </nav>
+  </div>
+</header>
+<div style="height:68px;"></div>
+<main class="page-wrapper">
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="section section--hero">
+    <div class="container container--narrow">
+
+      <div class="hero-accent anim-fade anim-delay-1">
+        <span class="hero-accent__line"></span>
+        <span class="ember-dot anim-loop-ember"></span>
+        <span class="hero-accent__line"></span>
+      </div>
+
+      <h4 class="anim-rise anim-delay-2">Seasonal Kitchen &amp; Wine Bar</h4>
+      <div class="spacer-sm"></div>
+
+      <h1 class="anim-rise anim-delay-3">Ember &amp; Vine</h1>
+
+      <hr class="divider anim-divider-reveal anim-delay-4">
+
+      <p class="subtitle subtitle--center anim-rise anim-delay-4">
+        A neighborhood bistro celebrating locally-sourced ingredients, handcrafted wines, and the warmth of gathering around a shared table.
+      </p>
+
+      <div class="spacer-md"></div>
+
+      <div class="anim-rise anim-delay-5" style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;">
+        <a href="reservations-contact.html" class="btn btn--filled anim-loop-pulse">Reserve a Table</a>
+        <a href="menu.html" class="btn">View the Menu</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== HERO IMAGE PLACEHOLDER ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="img-placeholder img-placeholder--wide anim-scale anim-delay-5"></div>
+    </div>
+  </section>
+
+  <!-- ===== WELCOME / INTRO ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;">
+
+        <div class="anim-slide-left anim-delay-2">
+          <h4>Welcome</h4>
+          <div class="spacer-sm"></div>
+          <h2>Where Fire Meets the Vine</h2>
+          <hr class="divider divider--left anim-divider-reveal anim-delay-3">
+          <p>
+            Nestled on the corner of Elm and Fourth, Ember &amp; Vine has been a gathering place for our community since 2017. Chef Margaux Soleil and her team craft menus that shift with the seasons — drawing from farms within thirty miles and vineyards that share our passion for honest, expressive flavors.
+          </p>
+          <div class="spacer-sm"></div>
+          <p>
+            Whether you're here for a weeknight glass of natural wine at the bar or a slow Saturday supper with family, every visit is designed to feel like coming home.
+          </p>
+          <div class="spacer-md"></div>
+          <a href="our-story.html" class="btn">Our Story</a>
+        </div>
+
+        <div class="anim-slide-right anim-delay-3">
+          <div class="img-placeholder"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES / PILLARS ===== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="text-center anim-rise anim-delay-1">
+        <h4>What Defines Us</h4>
+        <div class="spacer-sm"></div>
+        <h2>Three Pillars of Our Table</h2>
+        <hr class="divider anim-divider-reveal anim-delay-2">
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <div class="grid-3 anim-stagger">
+
+        <div class="glass-card feature-block anim-rise">
+          <div class="feature-block__icon">🔥</div>
+          <h3 class="feature-block__title">Live-Fire Cooking</h3>
+          <p style="margin:0 auto;">Every dish passes through our open hearth — wood-roasted, ember-kissed, and finished with care over oak and cherry wood.</p>
+        </div>
+
+        <div class="glass-card feature-block anim-rise">
+          <div class="feature-block__icon">🌿</div>
+          <h3 class="feature-block__title">Seasonal &amp; Local</h3>
+          <p style="margin:0 auto;">Our menu changes monthly, guided by what's ripening at Hollow Creek Farm, Stone Gate Dairy, and the gardens we tend ourselves.</p>
+        </div>
+
+        <div class="glass-card feature-block anim-rise">
+          <div class="feature-block__icon">🍷</div>
+          <h3 class="feature-block__title">Curated Wines</h3>
+          <p style="margin:0 auto;">Over 120 labels — small-production, organic, and biodynamic — selected by sommelier David Ashworth to pair with every course.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== MENU HIGHLIGHTS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:var(--space-lg);">
+
+        <div class="anim-slide-left anim-delay-1">
+          <div class="img-placeholder img-placeholder--square"></div>
+        </div>
+
+        <div class="anim-slide-right anim-delay-2">
+          <h4>From the Kitchen</h4>
+          <div class="spacer-sm"></div>
+          <h2>Tonight's Highlights</h2>
+          <hr class="divider divider--left anim-divider-reveal anim-delay-3">
+          <div class="spacer-sm"></div>
+
+          <div class="anim-stagger">
+            <div class="menu-item anim-rise">
+              <div>
+                <span class="menu-item__name">Ember-Roasted Beet Salad</span>
+                <p class="menu-item__desc">Whipped chèvre, candied walnuts, aged sherry vinaigrette</p>
+              </div>
+              <span class="menu-item__price">$16</span>
+            </div>
+            <div class="menu-item anim-rise">
+              <div>
+                <span class="menu-item__name">Wood-Grilled Branzino</span>
+                <p class="menu-item__desc">Saffron fennel broth, charred lemon, olive oil croutons</p>
+              </div>
+              <span class="menu-item__price">$34</span>
+            </div>
+            <div class="menu-item anim-rise">
+              <div>
+                <span class="menu-item__name">Braised Short Rib</span>
+                <p class="menu-item__desc">Creamy polenta, gremolata, roasted root vegetables</p>
+              </div>
+              <span class="menu-item__price">$38</span>
+            </div>
+            <div class="menu-item anim-rise">
+              <div>
+                <span class="menu-item__name">Smoked Vanilla Crème Brûlée</span>
+                <p class="menu-item__desc">Cherry wood smoke, torched sugar, seasonal berries</p>
+              </div>
+              <span class="menu-item__price">$14</span>
+            </div>
+          </div>
+
+          <div class="spacer-md"></div>
+          <a href="menu.html" class="btn anim-rise anim-delay-6">See Full Menu</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-panel anim-scale anim-delay-2">
+        <div class="testimonial">
+          <span class="ember-dot anim-loop-ember" style="margin-bottom:var(--space-sm);"></span>
+          <p class="testimonial__quote">
+            "Ember &amp; Vine is the kind of place you dream about finding in your neighborhood — soulful food, an extraordinary wine list, and a warmth that makes strangers feel like old friends."
+          </p>
+          <span class="testimonial__author">— Caroline Marsh, City Palate Magazine</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS PREVIEW ===== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="text-center anim-rise anim-delay-1">
+        <h4>Gather With Us</h4>
+        <div class="spacer-sm"></div>
+        <h2>Upcoming Events</h2>
+        <hr class="divider anim-divider-reveal anim-delay-2">
+        <div class="spacer-sm"></div>
+        <p class="subtitle subtitle--center">From winemaker dinners to seasonal celebrations, there's always a reason to pull up a chair.</p>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <div class="grid-3 anim-stagger">
+
+        <div class="glass-card anim-rise">
+          <div class="event-card">
+            <div class="event-card__date">
+              <span class="event-card__day">14</span>
+              <span class="event-card__month">June</span>
+            </div>
+            <div>
+              <h3>Summer Solstice Supper</h3>
+              <div class="spacer-sm"></div>
+              <p>A five-course al fresco dinner on our garden patio, paired with rosés from the Rhône Valley.</p>
+              <div class="spacer-sm"></div>
+              <span class="tag">Limited Seats</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card anim-rise">
+          <div class="event-card">
+            <div class="event-card__date">
+              <span class="event-card__day">28</span>
+              <span class="event-card__month">June</span>
+            </div>
+            <div>
+              <h3>Natural Wine &amp; Cheese Night</h3>
+              <div class="spacer-sm"></div>
+              <p>An evening of low-intervention wines alongside artisan cheeses from Stone Gate Dairy and local producers.</p>
+              <div class="spacer-sm"></div>
+              <span class="tag">Open to All</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card anim-rise">
+          <div class="event-card">
+            <div class="event-card__date">
+              <span class="event-card__day">12</span>
+              <span class="event-card__month">July</span>
+            </div>
+            <div>
+              <h3>Winemaker's Table: Domaine Lafleur</h3>
+              <div class="spacer-sm"></div>
+              <p>Meet vintner Isabelle Lafleur and taste six exclusive pours alongside Chef Margaux's custom tasting menu.</p>
+              <div class="spacer-sm"></div>
+              <span class="tag">Reservation Required</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="spacer-md"></div>
+      <div class="text-center anim-rise anim-delay-5">
+        <a href="events-private-dining.html" class="btn">All Events &amp; Private Dining</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== VISIT US / INFO ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:var(--space-lg);">
+
+        <div class="anim-slide-left anim-delay-2">
+          <h4>Visit Us</h4>
+          <div class="spacer-sm"></div>
+          <h2>Find Your Way to the Table</h2>
+          <hr class="divider divider--left anim-divider-reveal anim-delay-3">
+          <div class="spacer-md"></div>
+
+          <div class="info-row">
+            <div class="info-row__icon">📍</div>
+            <div>
+              <h3 style="font-size:1rem;">Location</h3>
+              <p>247 Elm Street &amp; Fourth Avenue<br>Maplewood, NY 10540</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-row__icon">🕖</div>
+            <div>
+              <h3 style="font-size:1rem;">Hours</h3>
+              <p>Tuesday – Thursday: 5:00 pm – 10:00 pm<br>Friday – Saturday: 5:00 pm – 11:00 pm<br>Sunday Brunch: 10:30 am – 2:30 pm<br>Monday: Closed</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <div class="info-row__icon">📞</div>
+            <div>
+              <h3 style="font-size:1rem;">Contact</h3>
+              <p><a href="tel:+19145550174">(914) 555-0174</a><br><a href="mailto:hello@emberandvine.com">hello@emberandvine.com</a></p>
+            </div>
+          </div>
+
+          <div class="spacer-sm"></div>
+          <a href="reservations-contact.html" class="btn btn--filled anim-loop-pulse">Make a Reservation</a>
+        </div>
+
+        <div class="anim-slide-right anim-delay-3">
+          <div class="map-placeholder">
+            Map — 247 Elm St, Maplewood
+          </div>
+          <div class="spacer-md"></div>
+          <div class="glass-card">
+            <h4>Private Dining</h4>
+            <div class="spacer-sm"></div>
+            <p>Our Vine Room seats up to 24 guests for intimate celebrations, corporate gatherings, and winemaker dinners. Custom menus available.</p>
+            <div class="spacer-sm"></div>
+            <a href="events-private-dining.html">Learn more →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLOSING CTA ===== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-panel glass-card--lg text-center anim-scale anim-delay-1">
+        <div class="hero-accent">
+          <span class="hero-accent__line"></span>
+          <span class="ember-dot anim-loop-ember"></span>
+          <span class="hero-accent__line"></span>
+        </div>
+        <h2>Your Table Awaits</h2>
+        <hr class="divider anim-divider-reveal anim-delay-3">
+        <p class="subtitle subtitle--center" style="margin-top:var(--space-sm);">
+          Join us for an evening of seasonal flavors, thoughtful wines, and the kind of hospitality that turns a meal into a memory.
+        </p>
+        <div class="spacer-md"></div>
+        <div style="display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;">
+          <a href="reservations-contact.html" class="btn btn--filled">Reserve Tonight</a>
+          <a href="menu.html" class="btn">Explore the Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+</main>
+<footer style="position:relative;z-index:1;border-top:1px solid rgba(212,160,84,0.1);background:rgba(26,23,20,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin-top:auto;">
+  <div style="max-width:1140px;margin:0 auto;padding:3rem 1.75rem 2rem;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem;">
+      <!-- Brand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+          <span class="ember-dot anim-loop-ember"></span>
+          <span style="font-family:Georgia,'Times New Roman',Times,serif;font-size:1.2rem;color:#f0e8dc;">Ember <span style="color:#d4a054;">&amp;</span> Vine</span>
+        </div>
+        <p style="font-size:0.85rem;color:rgba(245,239,230,0.5);max-width:30ch;line-height:1.6;">Seasonal cuisine and curated wines in the heart of the neighborhood. A place to gather, savor, and belong.</p>
+      </div>
+      <!-- Navigate -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Navigate</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="index.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Home</a>
+          <a href="menu.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Menu</a>
+          <a href="story.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Our Story</a>
+          <a href="events.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Events</a>
+          <a href="contact.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Reservations</a>
+        </div>
+      </div>
+      <!-- Hours -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Hours</h4>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:rgba(245,239,230,0.55);">
+          <span>Tue – Thu: 5 – 10 pm</span>
+          <span>Fri – Sat: 5 – 11 pm</span>
+          <span>Sun: 4 – 9 pm</span>
+          <span>Mon: Closed</span>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Contact</h4>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:rgba(245,239,230,0.55);">
+          <span>142 Elm Street</span>
+          <span>Maplewood, NJ 07040</span>
+          <span style="margin-top:0.3rem;">(973) 555-0184</span>
+          <span>hello@emberandvine.com</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(212,160,84,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:0.75rem;color:rgba(245,239,230,0.3);">&copy; 2024 Ember &amp; Vine. All rights reserved.</span>
+      <span style="font-size:0.75rem;color:rgba(245,239,230,0.3);">Crafted with care for our community.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

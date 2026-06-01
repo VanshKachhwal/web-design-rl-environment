@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "task_id": "anim-006_personal-resume_warm-organic_snappy-slide",
+    "seed_tuple": [
+      "personal-resume",
+      "warm-organic",
+      "low",
+      "creative-professionals",
+      "rebellious-and-edgy",
+      "snappy-slide"
+    ],
+    "archetype": "personal-resume",
+    "aesthetic": "warm-organic",
+    "complexity": "low",
+    "animation_style": "snappy-slide",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 21.288222000000005,
+    "total_input_tokens": 17938929,
+    "total_output_tokens": 356323,
+    "started_at": "2026-06-01T16:44:38.197076",
+    "finished_at": "2026-06-01T17:00:18.624744",
+    "wall_clock_sec": 940.427668,
+    "date": "2026-06-01",
+    "commit": "88c4d89565f60dfbcdeef1eeb94d8ed65001b8a0",
+    "timestamps_ms": [
+      0,
+      200,
+      500,
+      900,
+      1400,
+      2000
+    ]
+  },
+  "terms": [
+    "static_design",
+    "motion",
+    "animation_judge"
+  ],
+  "timestamps_ms": [
+    0,
+    200,
+    500,
+    900,
+    1400,
+    2000
+  ],
+  "trials": [
+    {
+      "trial_id": "5Dd4eUj",
+      "reward": 0.6012127623302174,
+      "static_design": 0.7378761956797092,
+      "motion": 0.49076209131094267,
+      "animation_judge": 0.575,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5627118712603222,
+          "static_terms": {
+            "structure": 0.7713234086649752,
+            "color": 0.9760532441039447,
+            "content": 0.556473829201102,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 69,
+          "static_design": 0.7697126204925054,
+          "motion": 0.368422993288461,
+          "animation_judge": 0.55
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.585582489015842,
+          "static_terms": {
+            "structure": 0.684675692939772,
+            "color": 0.9800099436670372,
+            "content": 0.4203389830508475,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 61,
+          "static_design": 0.7150061549144142,
+          "motion": 0.49174131213311156,
+          "animation_judge": 0.55
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.611929027061196,
+          "static_terms": {
+            "structure": 0.683598724004262,
+            "color": 0.9768041894645753,
+            "content": 0.4114713216957606,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 59,
+          "static_design": 0.6929685587911495,
+          "motion": 0.5928185223924385,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.6625052956498324,
+          "static_terms": {
+            "structure": 0.6709961680901383,
+            "color": 0.9785220994421263,
+            "content": 0.3507853403141361,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 59,
+          "static_design": 0.6750759019616002,
+          "motion": 0.6624399849878971,
+          "animation_judge": 0.6499999999999999
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.5833351286638941,
+          "static_terms": {
+            "structure": 0.8081682034949599,
+            "color": 0.9810906788014836,
+            "content": 0.782212086659065,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 49,
+          "static_design": 0.8366177422388772,
+          "motion": 0.33838764375280533,
+          "animation_judge": 0.575
+        }
+      }
+    },
+    {
+      "trial_id": "CRkLupf",
+      "reward": 0.5291360971243256,
+      "static_design": 0.7237969031359056,
+      "motion": 0.31861138823707125,
+      "animation_judge": 0.5450000000000002,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5114194823279098,
+          "static_terms": {
+            "structure": 0.7496502273098097,
+            "color": 0.9761220338521115,
+            "content": 0.5532503457814661,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 61,
+          "static_design": 0.7447556517358468,
+          "motion": 0.23950279524788246,
+          "animation_judge": 0.55
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.512057663661334,
+          "static_terms": {
+            "structure": 0.634696171372008,
+            "color": 0.9770876839929334,
+            "content": 0.4157894736842106,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 63,
+          "static_design": 0.675643332262288,
+          "motion": 0.3355296587217139,
+          "animation_judge": 0.525
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.6467505929119287,
+          "static_terms": {
+            "structure": 0.7900485778541184,
+            "color": 0.9731986985972104,
+            "content": 0.4382716049382716,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 54,
+          "static_design": 0.7191297203474001,
+          "motion": 0.6711220583883859,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.4728480957401903,
+          "static_terms": {
+            "structure": 0.7167542800025394,
+            "color": 0.9731434986205604,
+            "content": 0.35393258426966295,
+            "design_judge": 0.6499999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 63,
+          "static_design": 0.6734575907231907,
+          "motion": 0.19508669649738028,
+          "animation_judge": 0.55
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.5026046509802653,
+          "static_terms": {
+            "structure": 0.805854684412586,
+            "color": 0.9730483392372977,
+            "content": 0.6700898587933248,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 41,
+          "static_design": 0.8059982206108022,
+          "motion": 0.1518157323299937,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "YyuSGjQ",
+      "reward": 0.5825038639094342,
+      "static_design": 0.7318207507866955,
+      "motion": 0.470690840941607,
+      "animation_judge": 0.5450000000000002,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6624437756424192,
+          "static_terms": {
+            "structure": 0.8163253668532218,
+            "color": 0.9827269891326222,
+            "content": 0.5726495726495726,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 66,
+          "static_design": 0.7866754821588542,
+          "motion": 0.6506558447684032,
+          "animation_judge": 0.55
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.48459385069444855,
+          "static_terms": {
+            "structure": 0.5669128927696016,
+            "color": 0.9850893602424377,
+            "content": 0.36548223350253806,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 54,
+          "static_design": 0.6606211216286443,
+          "motion": 0.26816043045470145,
+          "animation_judge": 0.525
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.5848124166701717,
+          "static_terms": {
+            "structure": 0.7399643044266833,
+            "color": 0.9810987094058764,
+            "content": 0.46322378716744916,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 52,
+          "static_design": 0.7398217002500023,
+          "motion": 0.464615549760513,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.5734072800587008,
+          "static_terms": {
+            "structure": 0.6887114452621813,
+            "color": 0.9838661331459102,
+            "content": 0.37909654561558903,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 66,
+          "static_design": 0.6879185310059202,
+          "motion": 0.48230330917018227,
+          "animation_judge": 0.55
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.6072619964814306,
+          "static_terms": {
+            "structure": 0.7764107483788423,
+            "color": 0.9801412545045474,
+            "content": 0.6047156726768378,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 32,
+          "static_design": 0.7840669188900569,
+          "motion": 0.48771907055423513,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "bmPM7t9",
+      "reward": 0.5311628790388728,
+      "static_design": 0.689446205869494,
+      "motion": 0.3790424312471245,
+      "animation_judge": 0.525,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.43288313259730965,
+          "static_terms": {
+            "structure": 0.7151824105648672,
+            "color": 0.9817054866505566,
+            "content": 0.5365853658536586,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 43,
+          "static_design": 0.7521183157672706,
+          "motion": 0.09653108202465817,
+          "animation_judge": 0.45
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.4912114734705231,
+          "static_terms": {
+            "structure": 0.6165768247680938,
+            "color": 0.9880968239577197,
+            "content": 0.33707865168539325,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 34,
+          "static_design": 0.6604380751028017,
+          "motion": 0.3381963453087676,
+          "animation_judge": 0.475
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.4891708320982626,
+          "static_terms": {
+            "structure": 0.7780113506512684,
+            "color": 0.9751195870994919,
+            "content": 0.38801261829653,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 30,
+          "static_design": 0.7040358890118226,
+          "motion": 0.21347660728296533,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.6121494606640278,
+          "static_terms": {
+            "structure": 0.6946430726141595,
+            "color": 0.9821188636016589,
+            "content": 0.2433862433862434,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 42,
+          "static_design": 0.6362870449005155,
+          "motion": 0.6251613370915677,
+          "animation_judge": 0.575
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.6303994963642412,
+          "static_terms": {
+            "structure": 0.8098285525170326,
+            "color": 0.9829413942348261,
+            "content": 0.2346368715083799,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 21,
+          "static_design": 0.6943517045650597,
+          "motion": 0.621846784527664,
+          "animation_judge": 0.575
+        }
+      }
+    },
+    {
+      "trial_id": "c2Pky5S",
+      "reward": 0.5239991734855881,
+      "static_design": 0.7136462783324646,
+      "motion": 0.3333512421242997,
+      "animation_judge": 0.525,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.451404696942008,
+          "static_terms": {
+            "structure": 0.7259049430651865,
+            "color": 0.9790399811032459,
+            "content": 0.5574803149606299,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 54,
+          "static_design": 0.7531063097822656,
+          "motion": 0.15110778104375858,
+          "animation_judge": 0.45
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.4970254071044935,
+          "static_terms": {
+            "structure": 0.6101392500857733,
+            "color": 0.9799356338374007,
+            "content": 0.33226837060702874,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 55,
+          "static_design": 0.6680858136325507,
+          "motion": 0.29799040768092977,
+          "animation_judge": 0.525
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.5489095155917615,
+          "static_terms": {
+            "structure": 0.745581736782324,
+            "color": 0.9747900322168989,
+            "content": 0.4027210884353742,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 57,
+          "static_design": 0.7057732143586493,
+          "motion": 0.3909553324166352,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.5747660284114774,
+          "static_terms": {
+            "structure": 0.6524044409498461,
+            "color": 0.9808837764057944,
+            "content": 0.3187022900763358,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 69,
+          "static_design": 0.656747626857994,
+          "motion": 0.5175504583764379,
+          "animation_judge": 0.55
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.5478902193782001,
+          "static_terms": {
+            "structure": 0.7966707198972014,
+            "color": 0.9790466663871722,
+            "content": 0.5373563218390806,
+            "design_judge": 0.825
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 41,
+          "static_design": 0.7845184270308635,
+          "motion": 0.30915223110373685,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "dDUAFGb",
+      "reward": 0.5176586003540142,
+      "static_design": 0.7124537769035227,
+      "motion": 0.2655220241585199,
+      "animation_judge": 0.575,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.46507762017313725,
+          "static_terms": {
+            "structure": 0.7246996471656185,
+            "color": 0.9786174102054915,
+            "content": 0.5472222222222222,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 53,
+          "static_design": 0.743884819898333,
+          "motion": 0.1013480406210787,
+          "animation_judge": 0.55
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.42555025969734633,
+          "static_terms": {
+            "structure": 0.683912832936133,
+            "color": 0.983070024115479,
+            "content": 0.37476099426386233,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 43,
+          "static_design": 0.6916859628288685,
+          "motion": 0.03496481626317027,
+          "animation_judge": 0.55
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.5433571863090819,
+          "static_terms": {
+            "structure": 0.7106741547214726,
+            "color": 0.976978197804604,
+            "content": 0.4464831804281346,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 38,
+          "static_design": 0.7085338832385528,
+          "motion": 0.371537675688693,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.5922248052866282,
+          "static_terms": {
+            "structure": 0.6460607975824307,
+            "color": 0.9829152086663169,
+            "content": 0.3538732394366197,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 40,
+          "static_design": 0.6707123114213418,
+          "motion": 0.45596210443854285,
+          "animation_judge": 0.6499999999999999
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.5620831303038774,
+          "static_terms": {
+            "structure": 0.7715907230438975,
+            "color": 0.9798737969737739,
+            "content": 0.4633431085043988,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 26,
+          "static_design": 0.7474519071305176,
+          "motion": 0.36379748378111454,
+          "animation_judge": 0.575
+        }
+      }
+    },
+    {
+      "trial_id": "fXvHAF3",
+      "reward": 0.5382324896678587,
+      "static_design": 0.746290526287871,
+      "motion": 0.31340694271570513,
+      "animation_judge": 0.555,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.49092033181775035,
+          "static_terms": {
+            "structure": 0.7512120040845921,
+            "color": 0.9820073504356516,
+            "content": 0.574568288854003,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 56,
+          "static_design": 0.7644469108435616,
+          "motion": 0.15831408460968927,
+          "animation_judge": 0.55
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.5605543820536543,
+          "static_terms": {
+            "structure": 0.7096684089934345,
+            "color": 0.9810085352337623,
+            "content": 0.430401366353544,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 48,
+          "static_design": 0.7052695776451852,
+          "motion": 0.4263935685157776,
+          "animation_judge": 0.55
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.4706030946999746,
+          "static_terms": {
+            "structure": 0.7133037729205544,
+            "color": 0.9748158259750704,
+            "content": 0.44857142857142857,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 43,
+          "static_design": 0.7091727568667633,
+          "motion": 0.15263652723316026,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.605699412781854,
+          "static_terms": {
+            "structure": 0.7161688997746888,
+            "color": 0.9835884862256696,
+            "content": 0.37661220980223553,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 42,
+          "static_design": 0.7065923989506485,
+          "motion": 0.5605058393949135,
+          "animation_judge": 0.55
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.5633852269860603,
+          "static_terms": {
+            "structure": 0.8000310832679356,
+            "color": 0.9775679490637313,
+            "content": 0.8312849162011172,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 26,
+          "static_design": 0.8459709871331961,
+          "motion": 0.26918469382498506,
+          "animation_judge": 0.575
+        }
+      }
+    },
+    {
+      "trial_id": "qpLyBcb",
+      "reward": 0.45934343463895405,
+      "static_design": 0.7276792750080509,
+      "motion": 0.15035102890881136,
+      "animation_judge": 0.5,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.45032932257138536,
+          "static_terms": {
+            "structure": 0.7706769813586798,
+            "color": 0.9776478978011557,
+            "content": 0.5757997218358832,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 33,
+          "static_design": 0.7810311502489297,
+          "motion": 0.044956817465226485,
+          "animation_judge": 0.525
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.4388776221420702,
+          "static_terms": {
+            "structure": 0.6032877898146806,
+            "color": 0.9813952101169646,
+            "content": 0.42710120068610635,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 28,
+          "static_design": 0.6716960501544379,
+          "motion": 0.11993681627177273,
+          "animation_judge": 0.525
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.4904521205225581,
+          "static_terms": {
+            "structure": 0.7207990307345367,
+            "color": 0.9781492345178499,
+            "content": 0.4434907010014306,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 27,
+          "static_design": 0.7043597415634543,
+          "motion": 0.3169966200042201,
+          "animation_judge": 0.45
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.4880668180335807,
+          "static_terms": {
+            "structure": 0.6470385180033885,
+            "color": 0.9793172935258201,
+            "content": 0.39249146757679176,
+            "design_judge": 0.6749999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 32,
+          "static_design": 0.6734618197765001,
+          "motion": 0.24073863432424186,
+          "animation_judge": 0.55
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.428991289925176,
+          "static_terms": {
+            "structure": 0.8017925907423527,
+            "color": 0.9770978624453768,
+            "content": 0.7025,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 20,
+          "static_design": 0.8078476132969323,
+          "motion": 0.029126256478595552,
+          "animation_judge": 0.45
+        }
+      }
+    },
+    {
+      "trial_id": "tBFSpwR",
+      "reward": 0.39951691191585537,
+      "static_design": 0.720762228703949,
+      "motion": 0.007788507043617296,
+      "animation_judge": 0.47000000000000003,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.4059230546434147,
+          "static_terms": {
+            "structure": 0.7474066824348644,
+            "color": 0.9775298246504082,
+            "content": 0.5652841781874041,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 36,
+          "static_design": 0.7663051713181692,
+          "motion": 0.0014639926120749826,
+          "animation_judge": 0.45
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.37470401258557257,
+          "static_terms": {
+            "structure": 0.6291294945430332,
+            "color": 0.9807840974556126,
+            "content": 0.40478380864765406,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 26,
+          "static_design": 0.672424350161575,
+          "motion": 0.0016876875951426674,
+          "animation_judge": 0.45
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.433836958652481,
+          "static_terms": {
+            "structure": 0.7757847361545778,
+            "color": 0.9767907879607945,
+            "content": 0.44343891402714936,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 25,
+          "static_design": 0.7240036095356304,
+          "motion": 0.02750726642181264,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.37108742285275426,
+          "static_terms": {
+            "structure": 0.6717162720769847,
+            "color": 0.9793058577738454,
+            "content": 0.34124890061565527,
+            "design_judge": 0.6499999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 26,
+          "static_design": 0.6605677576166213,
+          "motion": 0.0026945109416413315,
+          "animation_judge": 0.45
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.4120331108450545,
+          "static_terms": {
+            "structure": 0.7985934275242466,
+            "color": 0.9814084858814962,
+            "content": 0.5670391061452513,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 14,
+          "static_design": 0.7805102548877485,
+          "motion": 0.005589077647414855,
+          "animation_judge": 0.45
+        }
+      }
+    },
+    {
+      "trial_id": "tp7kD3p",
+      "reward": 0.4593908013145006,
+      "static_design": 0.7148989289590624,
+      "motion": 0.11827347498443921,
+      "animation_judge": 0.5450000000000002,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.47181719471765904,
+          "static_terms": {
+            "structure": 0.7856276758575687,
+            "color": 0.9829755952573374,
+            "content": 0.5407279029462738,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 46,
+          "static_design": 0.7460827935152949,
+          "motion": 0.11936879063768223,
+          "animation_judge": 0.55
+        },
+        "about-the-story": {
+          "present": true,
+          "reward": 0.4023271838917759,
+          "static_terms": {
+            "structure": 0.5690027430460886,
+            "color": 0.9827063093590446,
+            "content": 0.20551378446115287,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 44,
+          "static_design": 0.6080557092165715,
+          "motion": 0.07392584245875623,
+          "animation_judge": 0.525
+        },
+        "work-selected-projects": {
+          "present": true,
+          "reward": 0.5127381369276622,
+          "static_terms": {
+            "structure": 0.7674132831209339,
+            "color": 0.9805682219862267,
+            "content": 0.44377811094452774,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 43,
+          "n_animations_cand": 43,
+          "static_design": 0.7229399040129221,
+          "motion": 0.2652745067700645,
+          "animation_judge": 0.55
+        },
+        "experience-resume": {
+          "present": true,
+          "reward": 0.4300377683739711,
+          "static_terms": {
+            "structure": 0.659514143553192,
+            "color": 0.9842952928149977,
+            "content": 0.3241758241758242,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 71,
+          "n_animations_cand": 46,
+          "static_design": 0.6669963151360034,
+          "motion": 0.07311698998590979,
+          "animation_judge": 0.55
+        },
+        "contact-let-s-talk": {
+          "present": true,
+          "reward": 0.4800337226614344,
+          "static_terms": {
+            "structure": 0.7966877634416577,
+            "color": 0.9835937694131994,
+            "content": 0.7663981588032222,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 33,
+          "n_animations_cand": 31,
+          "static_design": 0.8304199229145198,
+          "motion": 0.05968124506978338,
+          "animation_judge": 0.55
+        }
+      }
+    }
+  ]
+}

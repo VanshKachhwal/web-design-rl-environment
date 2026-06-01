@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "work": {
+    "expected_file": "work.html",
+    "screenshot": "work.png"
+  },
+  "services": {
+    "expected_file": "services.html",
+    "screenshot": "services.png"
+  },
+  "about": {
+    "expected_file": "about.html",
+    "screenshot": "about.png"
+  },
+  "contact": {
+    "expected_file": "contact.html",
+    "screenshot": "contact.png"
+  }
+}

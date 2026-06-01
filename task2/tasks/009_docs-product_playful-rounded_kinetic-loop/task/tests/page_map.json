@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "documentation": {
+    "expected_file": "documentation.html",
+    "screenshot": "documentation.png"
+  },
+  "api-reference": {
+    "expected_file": "api-reference.html",
+    "screenshot": "api-reference.png"
+  },
+  "integrations": {
+    "expected_file": "integrations.html",
+    "screenshot": "integrations.png"
+  },
+  "enterprise": {
+    "expected_file": "enterprise.html",
+    "screenshot": "enterprise.png"
+  }
+}

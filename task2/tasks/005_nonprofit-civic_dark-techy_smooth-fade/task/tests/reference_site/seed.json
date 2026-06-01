@@ -1,0 +1,17 @@
+{
+  "archetype": "nonprofit-civic",
+  "aesthetic": "dark-techy",
+  "audience": "small-business-owners",
+  "brand_mood": "technical-and-precise",
+  "animation_style": "smooth-fade",
+  "animation_style_hint": "gentle fades and soft slide-ups; calm, eased, unhurried motion",
+  "page_count": 5,
+  "seed_tuple": [
+    "nonprofit-civic",
+    "dark-techy",
+    "high",
+    "small-business-owners",
+    "technical-and-precise",
+    "smooth-fade"
+  ]
+}

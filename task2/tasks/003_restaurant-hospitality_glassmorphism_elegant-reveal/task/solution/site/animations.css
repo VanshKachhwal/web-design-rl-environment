@@ -1,0 +1,200 @@
+/* ===== ANIMATIONS — Ember & Vine ===== */
+
+/* ------------------------------------------------
+   @KEYFRAMES
+   ------------------------------------------------ */
+
+/* Rise: translate up + fade + blur-to-sharp */
+@keyframes anim-rise-kf {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Fade in only */
+@keyframes anim-fade-kf {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Scale reveal — grow from slightly smaller */
+@keyframes anim-scale-kf {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Slide from left */
+@keyframes anim-slide-left-kf {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* Slide from right */
+@keyframes anim-slide-right-kf {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* Continuous pulse glow */
+@keyframes anim-pulse-glow-kf {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(212, 160, 84, 0.25), 0 0 30px rgba(212, 160, 84, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 160, 84, 0.45), 0 0 50px rgba(212, 160, 84, 0.2);
+  }
+}
+
+/* Continuous ember flicker (opacity + scale) */
+@keyframes anim-ember-kf {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  66% {
+    opacity: 0.85;
+    transform: scale(0.95);
+  }
+}
+
+/* Continuous gentle float */
+@keyframes anim-float-kf {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Divider expand */
+@keyframes anim-divider-kf {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------
+   REUSABLE ENTRANCE CLASSES (finite, fill forwards)
+   ------------------------------------------------ */
+
+/* Base hidden state for all entrance animations */
+.anim-rise,
+.anim-fade,
+.anim-scale,
+.anim-slide-left,
+.anim-slide-right,
+.anim-divider-reveal {
+  opacity: 0;
+}
+
+.anim-rise {
+  animation: anim-rise-kf 0.85s var(--ease-out-smooth, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+.anim-fade {
+  animation: anim-fade-kf 0.8s var(--ease-out-smooth, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+.anim-scale {
+  animation: anim-scale-kf 0.9s var(--ease-out-smooth, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+.anim-slide-left {
+  animation: anim-slide-left-kf 0.85s var(--ease-out-smooth, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+.anim-slide-right {
+  animation: anim-slide-right-kf 0.85s var(--ease-out-smooth, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+.anim-divider-reveal {
+  animation: anim-divider-kf 0.7s var(--ease-out-smooth, cubic-bezier(0.22, 1, 0.36, 1)) forwards;
+}
+
+/* ------------------------------------------------
+   STAGGER DELAYS  (delay-1 through delay-8)
+   ------------------------------------------------ */
+
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.22s; }
+.anim-delay-3 { animation-delay: 0.36s; }
+.anim-delay-4 { animation-delay: 0.50s; }
+.anim-delay-5 { animation-delay: 0.66s; }
+.anim-delay-6 { animation-delay: 0.82s; }
+.anim-delay-7 { animation-delay: 1.0s; }
+.anim-delay-8 { animation-delay: 1.2s; }
+
+/* Auto-stagger: children of .anim-stagger get incremental delays */
+.anim-stagger > *:nth-child(1) { animation-delay: 0.08s; }
+.anim-stagger > *:nth-child(2) { animation-delay: 0.20s; }
+.anim-stagger > *:nth-child(3) { animation-delay: 0.34s; }
+.anim-stagger > *:nth-child(4) { animation-delay: 0.48s; }
+.anim-stagger > *:nth-child(5) { animation-delay: 0.62s; }
+.anim-stagger > *:nth-child(6) { animation-delay: 0.76s; }
+.anim-stagger > *:nth-child(7) { animation-delay: 0.90s; }
+.anim-stagger > *:nth-child(8) { animation-delay: 1.06s; }
+.anim-stagger > *:nth-child(9) { animation-delay: 1.20s; }
+.anim-stagger > *:nth-child(10) { animation-delay: 1.34s; }
+
+/* ------------------------------------------------
+   INFINITE / LOOP CLASSES
+   ------------------------------------------------ */
+
+.anim-loop-pulse {
+  animation: anim-pulse-glow-kf 3s ease-in-out infinite;
+}
+
+.anim-loop-ember {
+  animation: anim-ember-kf 2.5s ease-in-out infinite;
+}
+
+.anim-loop-float {
+  animation: anim-float-kf 4s ease-in-out infinite;
+}

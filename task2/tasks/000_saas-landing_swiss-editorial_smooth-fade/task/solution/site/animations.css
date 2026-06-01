@@ -1,0 +1,248 @@
+/* ========================================
+   CLEARPATH — Animation System
+   CSS-only: @keyframes + transitions
+   ======================================== */
+
+/* --- Keyframes --- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 99, 255, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bar-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--bar-width, 70%);
+  }
+}
+
+/* --- Entrance Animation Classes --- */
+
+.anim-rise {
+  opacity: 0;
+  transform: translateY(32px);
+  animation: rise 700ms var(--ease-out) forwards;
+}
+
+.anim-fade {
+  opacity: 0;
+  animation: fade-in 700ms var(--ease-smooth) forwards;
+}
+
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slide-left 700ms var(--ease-out) forwards;
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slide-right 700ms var(--ease-out) forwards;
+}
+
+.anim-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  animation: scale-in 700ms var(--ease-out) forwards;
+}
+
+/* --- Stagger Delay Classes --- */
+
+.anim-delay-1 { animation-delay: 100ms; }
+.anim-delay-2 { animation-delay: 250ms; }
+.anim-delay-3 { animation-delay: 400ms; }
+.anim-delay-4 { animation-delay: 550ms; }
+.anim-delay-5 { animation-delay: 700ms; }
+.anim-delay-6 { animation-delay: 850ms; }
+.anim-delay-7 { animation-delay: 1000ms; }
+.anim-delay-8 { animation-delay: 1150ms; }
+
+/* --- Stagger Children Mechanism --- */
+/* Apply .anim-stagger to a parent; direct children get auto-stagger */
+
+.anim-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: rise 600ms var(--ease-out) forwards;
+}
+
+.anim-stagger > *:nth-child(1) { animation-delay: 100ms; }
+.anim-stagger > *:nth-child(2) { animation-delay: 220ms; }
+.anim-stagger > *:nth-child(3) { animation-delay: 340ms; }
+.anim-stagger > *:nth-child(4) { animation-delay: 460ms; }
+.anim-stagger > *:nth-child(5) { animation-delay: 580ms; }
+.anim-stagger > *:nth-child(6) { animation-delay: 700ms; }
+.anim-stagger > *:nth-child(7) { animation-delay: 820ms; }
+.anim-stagger > *:nth-child(8) { animation-delay: 940ms; }
+.anim-stagger > *:nth-child(9) { animation-delay: 1060ms; }
+.anim-stagger > *:nth-child(10) { animation-delay: 1180ms; }
+.anim-stagger > *:nth-child(11) { animation-delay: 1300ms; }
+.anim-stagger > *:nth-child(12) { animation-delay: 1420ms; }
+
+/* --- Infinite / Loop Classes --- */
+
+.anim-loop-pulse {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.anim-loop-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.anim-loop-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.anim-loop-shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(37, 99, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+.anim-loop-dot {
+  animation: dot-pulse 1.6s ease-in-out infinite;
+}
+
+.anim-loop-rotate {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.anim-bar-fill {
+  width: 0%;
+  animation: bar-fill 1200ms var(--ease-out) forwards;
+}
+
+/* --- Hover Transition Helpers --- */
+
+.anim-hover-lift {
+  transition: transform var(--duration-base) var(--ease-smooth),
+              box-shadow var(--duration-base) var(--ease-smooth);
+}
+
+.anim-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Duration Variants --- */
+
+.anim-slow {
+  animation-duration: 1000ms;
+}
+
+.anim-fast {
+  animation-duration: 400ms;
+}

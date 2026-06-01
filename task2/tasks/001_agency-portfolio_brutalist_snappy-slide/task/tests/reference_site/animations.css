@@ -1,0 +1,164 @@
+/* ══════════════════════════════════════════
+   KERN Animation System — animations.css
+   CSS-only @keyframes + utility classes
+   ══════════════════════════════════════════ */
+
+/* ─── KEYFRAMES ─── */
+
+/* Slide up from below with fade */
+@keyframes kern-rise {
+  0%   { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide in from left */
+@keyframes kern-slide-left {
+  0%   { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide in from right */
+@keyframes kern-slide-right {
+  0%   { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Scale up from slightly smaller */
+@keyframes kern-scale-in {
+  0%   { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Clip reveal from left */
+@keyframes kern-clip-reveal {
+  0%   { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0% 0 0); }
+}
+
+/* Fade in */
+@keyframes kern-fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Infinite pulse */
+@keyframes kern-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+/* Infinite gentle float */
+@keyframes kern-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+/* Infinite marquee scroll */
+@keyframes kern-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Infinite rotate */
+@keyframes kern-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Infinite accent bar width pulse */
+@keyframes kern-bar-pulse {
+  0%, 100% { width: 60px; }
+  50%      { width: 100px; }
+}
+
+
+/* ─── ENTRANCE CLASSES ─── */
+/* All start invisible, animate to visible, hold with forwards */
+
+.anim-rise {
+  opacity: 0;
+  animation: kern-rise 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-slide-left {
+  opacity: 0;
+  animation: kern-slide-left 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-slide-right {
+  opacity: 0;
+  animation: kern-slide-right 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-scale-in {
+  opacity: 0;
+  animation: kern-scale-in 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-clip-reveal {
+  animation: kern-clip-reveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.anim-fade {
+  opacity: 0;
+  animation: kern-fade 0.6s ease forwards;
+}
+
+
+/* ─── STAGGER DELAYS ─── */
+/* Use on children: .anim-delay-1 through .anim-delay-8 */
+
+.anim-delay-1 { animation-delay: 0.08s; }
+.anim-delay-2 { animation-delay: 0.18s; }
+.anim-delay-3 { animation-delay: 0.30s; }
+.anim-delay-4 { animation-delay: 0.42s; }
+.anim-delay-5 { animation-delay: 0.55s; }
+.anim-delay-6 { animation-delay: 0.68s; }
+.anim-delay-7 { animation-delay: 0.82s; }
+.anim-delay-8 { animation-delay: 0.96s; }
+
+/* Auto-stagger: apply .anim-stagger to parent,
+   children get incremental delays automatically */
+.anim-stagger > *:nth-child(1)  { animation-delay: 0.06s; }
+.anim-stagger > *:nth-child(2)  { animation-delay: 0.15s; }
+.anim-stagger > *:nth-child(3)  { animation-delay: 0.26s; }
+.anim-stagger > *:nth-child(4)  { animation-delay: 0.38s; }
+.anim-stagger > *:nth-child(5)  { animation-delay: 0.50s; }
+.anim-stagger > *:nth-child(6)  { animation-delay: 0.63s; }
+.anim-stagger > *:nth-child(7)  { animation-delay: 0.76s; }
+.anim-stagger > *:nth-child(8)  { animation-delay: 0.90s; }
+.anim-stagger > *:nth-child(9)  { animation-delay: 1.04s; }
+.anim-stagger > *:nth-child(10) { animation-delay: 1.18s; }
+
+
+/* ─── INFINITE / LOOP CLASSES ─── */
+
+.anim-loop-pulse {
+  animation: kern-pulse 2.5s ease-in-out infinite;
+}
+
+.anim-loop-float {
+  animation: kern-float 3s ease-in-out infinite;
+}
+
+.anim-loop-marquee {
+  animation: kern-marquee 20s linear infinite;
+}
+
+.anim-loop-marquee-fast {
+  animation: kern-marquee 12s linear infinite;
+}
+
+.anim-loop-spin {
+  animation: kern-spin 8s linear infinite;
+}
+
+.anim-loop-bar {
+  animation: kern-bar-pulse 3s ease-in-out infinite;
+}
+
+
+/* ─── HEADER ENTRANCE ─── */
+.site-header {
+  animation: kern-slide-left 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}

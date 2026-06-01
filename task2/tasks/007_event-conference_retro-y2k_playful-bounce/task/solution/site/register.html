@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Register</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-icon anim-loop-pulse"></span>
+        <span class="text-gradient anim-loop-gradient">VITALITY 2000</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="schedule.html" class="nav__link">Schedule</a>
+        <a href="speakers.html" class="nav__link">Speakers</a>
+        <a href="workshops.html" class="nav__link">Workshops</a>
+        <a href="register.html" class="nav__link nav__link--cta">Register</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="y2k-grid"></div>
+    <div class="orb orb--pink anim-loop-orb" style="width:280px;height:280px;top:-60px;right:-80px;"></div>
+    <div class="orb orb--lavender anim-loop-orb-slow anim-loop-delay-2" style="width:200px;height:200px;bottom:-40px;left:-60px;"></div>
+    <div class="orb orb--lime anim-loop-orb anim-loop-delay-3" style="width:150px;height:150px;top:30%;right:20%;"></div>
+    <div class="container">
+      <p class="label page-header__label anim-rise anim-delay-1">✦ Secure Your Spot</p>
+      <h1 class="page-header__title anim-bounce-in anim-delay-2"><span class="text-gradient anim-loop-gradient">Register Now</span></h1>
+      <p class="subtitle page-header__desc anim-rise anim-delay-3">Join 2,000+ wellness pioneers at Vitality 2000. Choose your pass, complete your details, and step into the future of holistic health — June 14–16, 2025.</p>
+    </div>
+  </section>
+
+  <!-- Info Bar -->
+  <section class="section--compact">
+    <div class="container">
+      <div class="info-bar anim-rise anim-delay-4">
+        <div class="stat">
+          <div class="stat__number text-pink">73%</div>
+          <div class="stat__label">Tickets Sold</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number text-lime">540</div>
+          <div class="stat__label">Spots Remaining</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number text-cyan">3</div>
+          <div class="stat__label">Days of Wellness</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number text-lavender">48+</div>
+          <div class="stat__label">Sessions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkle Divider -->
+  <div class="sparkle-row anim-fade anim-delay-3">
+    <span class="star anim-loop-twinkle"></span>
+    <span class="star anim-loop-twinkle-slow anim-loop-delay-1"></span>
+    <span class="star anim-loop-twinkle anim-loop-delay-2"></span>
+    <span class="star anim-loop-twinkle-slow anim-loop-delay-3"></span>
+    <span class="star anim-loop-twinkle anim-loop-delay-4"></span>
+  </div>
+
+  <!-- Pricing Tiers -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:var(--space-xl);">
+        <p class="label anim-rise anim-delay-1">✦ Choose Your Experience</p>
+        <h2 class="anim-rise anim-delay-2" style="margin-top:var(--space-sm);">Pass <span class="text-pink">Tiers</span></h2>
+        <p class="subtitle anim-rise anim-delay-3" style="margin:var(--space-md) auto 0;">Early-bird pricing ends May 15, 2025. All passes include access to the expo floor, welcome kit, and community lounge.</p>
+      </div>
+
+      <div class="grid grid-3 anim-stagger-pop">
+        <!-- Essential Pass -->
+        <div class="card pricing-card">
+          <span class="badge badge--lime">Essential</span>
+          <div class="pricing-card__price text-lavender">$299</div>
+          <p class="text-muted" style="font-size:0.9rem;">Perfect for curious newcomers</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">All keynote sessions access</li>
+            <li class="pricing-card__feature">Expo floor &amp; vendor village</li>
+            <li class="pricing-card__feature">Welcome wellness kit</li>
+            <li class="pricing-card__feature">Community lounge access</li>
+            <li class="pricing-card__feature">Digital session recordings</li>
+          </ul>
+          <a href="#register-form" class="btn btn--secondary" style="width:100%;">Select Essential</a>
+        </div>
+
+        <!-- Vitality Pass (Featured) -->
+        <div class="card pricing-card pricing-card--featured">
+          <span class="badge badge--pink">Vitality</span>
+          <div class="pricing-card__price text-pink">$549</div>
+          <p class="text-muted" style="font-size:0.9rem;">The complete conference experience</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">Everything in Essential</li>
+            <li class="pricing-card__feature">All 24 hands-on workshops</li>
+            <li class="pricing-card__feature">Priority seating at panels</li>
+            <li class="pricing-card__feature">Exclusive speaker meet &amp; greet</li>
+            <li class="pricing-card__feature">Wellness goodie bag ($150 value)</li>
+            <li class="pricing-card__feature">Networking dinner — Day 2</li>
+          </ul>
+          <a href="#register-form" class="btn btn--primary" style="width:100%;">Select Vitality</a>
+        </div>
+
+        <!-- Transcend Pass -->
+        <div class="card pricing-card">
+          <span class="badge" style="border-color:rgba(0,229,255,0.3);color:var(--color-cyan);background:rgba(0,229,255,0.08);">Transcend</span>
+          <div class="pricing-card__price text-cyan">$899</div>
+          <p class="text-muted" style="font-size:0.9rem;">For the ultimate wellness immersion</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature">Everything in Vitality</li>
+            <li class="pricing-card__feature">VIP lounge with organic catering</li>
+            <li class="pricing-card__feature">1-on-1 coaching session (30 min)</li>
+            <li class="pricing-card__feature">Front-row reserved seating</li>
+            <li class="pricing-card__feature">Post-conference masterclass</li>
+            <li class="pricing-card__feature">Lifetime community membership</li>
+            <li class="pricing-card__feature">Complimentary hotel shuttle</li>
+          </ul>
+          <a href="#register-form" class="btn btn--lime" style="width:100%;">Select Transcend</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- What's Included Section -->
+  <section class="section--compact" style="position:relative;">
+    <div class="orb orb--cyan anim-loop-orb-slow" style="width:180px;height:180px;top:10%;left:-60px;"></div>
+    <div class="container">
+      <div class="text-center" style="margin-bottom:var(--space-xl);">
+        <p class="label anim-rise anim-delay-1">✦ Every Pass Includes</p>
+        <h2 class="anim-rise anim-delay-2" style="margin-top:var(--space-sm);">What You <span class="text-lime">Get</span></h2>
+      </div>
+
+      <div class="grid grid-4 anim-stagger">
+        <div class="card" style="text-align:center;">
+          <div class="card__icon" style="margin:0 auto var(--space-md);background:rgba(255,110,180,0.12);">
+            <span style="font-size:1.5rem;">🧘</span>
+          </div>
+          <h4>Morning Rituals</h4>
+          <p class="text-muted" style="font-size:0.85rem;margin-top:var(--space-sm);">Daily guided breathwork and movement sessions to start each day centered.</p>
+        </div>
+
+        <div class="card" style="text-align:center;">
+          <div class="card__icon" style="margin:0 auto var(--space-md);background:rgba(168,255,4,0.12);">
+            <span style="font-size:1.5rem;">🥗</span>
+          </div>
+          <h4>Nourish Lounge</h4>
+          <p class="text-muted" style="font-size:0.85rem;margin-top:var(--space-sm);">Plant-based snacks, adaptogen drinks, and hydration stations all three days.</p>
+        </div>
+
+        <div class="card" style="text-align:center;">
+          <div class="card__icon" style="margin:0 auto var(--space-md);background:rgba(0,229,255,0.12);">
+            <span style="font-size:1.5rem;">📱</span>
+          </div>
+          <h4>Event App</h4>
+          <p class="text-muted" style="font-size:0.85rem;margin-top:var(--space-sm);">Personal schedule builder, live Q&amp;A, networking chat, and session reminders.</p>
+        </div>
+
+        <div class="card" style="text-align:center;">
+          <div class="card__icon" style="margin:0 auto var(--space-md);background:rgba(200,162,255,0.12);">
+            <span style="font-size:1.5rem;">🎁</span>
+          </div>
+          <h4>Welcome Kit</h4>
+          <p class="text-muted" style="font-size:0.85rem;margin-top:var(--space-sm);">Branded tote, journal, essential oil sampler, and exclusive Y2K wellness pin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Registration Form -->
+  <section class="section" id="register-form" style="position:relative;">
+    <div class="orb orb--pink anim-loop-orb anim-loop-delay-1" style="width:220px;height:220px;bottom:10%;right:-80px;"></div>
+    <div class="orb orb--lavender anim-loop-orb-slow anim-loop-delay-3" style="width:160px;height:160px;top:5%;left:10%;"></div>
+    <div class="container container--narrow">
+      <div class="text-center" style="margin-bottom:var(--space-xl);">
+        <p class="label anim-rise anim-delay-1">✦ Complete Your Registration</p>
+        <h2 class="anim-rise anim-delay-2" style="margin-top:var(--space-sm);">Your <span class="text-gradient anim-loop-gradient">Details</span></h2>
+        <p class="subtitle anim-rise anim-delay-3" style="margin:var(--space-md) auto 0;">Fill out the form below to reserve your pass. You'll receive a confirmation email with your digital ticket within 24 hours.</p>
+      </div>
+
+      <div class="card anim-rise anim-delay-4" style="padding:var(--space-2xl);">
+        <form action="#" method="post">
+          <!-- Personal Info -->
+          <h3 style="margin-bottom:var(--space-lg);">
+            <span class="text-pink">01</span> Personal Information
+          </h3>
+
+          <div class="grid grid-2" style="gap:var(--space-md);">
+            <div class="form-group">
+              <label class="form-label" for="first-name">First Name *</label>
+              <input type="text" id="first-name" class="form-input" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="last-name">Last Name *</label>
+              <input type="text" id="last-name" class="form-input" placeholder="Enter your last name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address *</label>
+            <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input type="tel" id="phone" class="form-input" placeholder="+1 (555) 000-0000">
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Pass Selection -->
+          <h3 style="margin-bottom:var(--space-lg);">
+            <span class="text-lime">02</span> Pass Selection
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="pass-type">Choose Your Pass *</label>
+            <select id="pass-type" class="form-select" required>
+              <option value="" disabled selected>Select a pass tier...</option>
+              <option value="essential">Essential Pass — $299</option>
+              <option value="vitality">Vitality Pass — $549 (Most Popular)</option>
+              <option value="transcend">Transcend Pass — $899</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="attendees">Number of Attendees *</label>
+            <select id="attendees" class="form-select" required>
+              <option value="" disabled selected>How many passes?</option>
+              <option value="1">1 Attendee</option>
+              <option value="2">2 Attendees (5% group discount)</option>
+              <option value="3">3 Attendees (8% group discount)</option>
+              <option value="4">4 Attendees (10% group discount)</option>
+              <option value="5">5+ Attendees (12% group discount)</option>
+            </select>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Preferences -->
+          <h3 style="margin-bottom:var(--space-lg);">
+            <span class="text-cyan">03</span> Preferences &amp; Dietary
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="dietary">Dietary Requirements</label>
+            <select id="dietary" class="form-select">
+              <option value="" disabled selected>Select if applicable...</option>
+              <option value="none">No restrictions</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="gluten-free">Gluten-Free</option>
+              <option value="keto">Keto</option>
+              <option value="other">Other (specify below)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="interests">Which topics interest you most?</label>
+            <select id="interests" class="form-select">
+              <option value="" disabled selected>Select your primary interest...</option>
+              <option value="mindfulness">Mindfulness &amp; Meditation</option>
+              <option value="nutrition">Nutrition &amp; Gut Health</option>
+              <option value="movement">Movement &amp; Somatic Practices</option>
+              <option value="biohacking">Biohacking &amp; Longevity</option>
+              <option value="mental-health">Mental Health &amp; Resilience</option>
+              <option value="sleep">Sleep Optimization</option>
+              <option value="digital-wellness">Digital Wellness &amp; Tech Balance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="special-requests">Special Requests or Accessibility Needs</label>
+            <textarea id="special-requests" class="form-textarea" placeholder="Let us know if you need wheelchair access, ASL interpretation, a quiet room, or anything else to make your experience comfortable..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="referral">How did you hear about Vitality 2000?</label>
+            <select id="referral" class="form-select">
+              <option value="" disabled selected>Select one...</option>
+              <option value="social-media">Social Media</option>
+              <option value="friend">Friend or Colleague</option>
+              <option value="podcast">Podcast</option>
+              <option value="newsletter">Newsletter</option>
+              <option value="search">Search Engine</option>
+              <option value="previous-attendee">Previous Attendee</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Submit -->
+          <div class="text-center">
+            <p class="text-muted" style="font-size:0.85rem;margin-bottom:var(--space-lg);">By registering, you agree to our Code of Conduct and Privacy Policy. Cancellations are accepted up to 30 days before the event for a full refund.</p>
+            <button type="submit" class="btn btn--primary btn--lg anim-loop-pulse" style="animation-duration:3s;">
+              ✦ Complete Registration
+            </button>
+            <p class="text-muted" style="font-size:0.8rem;margin-top:var(--space-md);">You'll receive a confirmation at the email provided</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ Section -->
+  <section class="section--compact" style="position:relative;">
+    <div class="orb orb--lime anim-loop-orb-slow anim-loop-delay-4" style="width:140px;height:140px;top:20%;right:5%;"></div>
+    <div class="container container--narrow">
+      <div class="text-center" style="margin-bottom:var(--space-xl);">
+        <p class="label anim-rise anim-delay-1">✦ Questions?</p>
+        <h2 class="anim-rise anim-delay-2" style="margin-top:var(--space-sm);">Registration <span class="text-lavender">FAQ</span></h2>
+      </div>
+
+      <div class="flex flex-col gap-md anim-stagger">
+        <div class="card" style="padding:var(--space-lg);">
+          <h4 class="text-pink" style="margin-bottom:var(--space-sm);">Can I upgrade my pass after purchasing?</h4>
+          <p class="text-muted" style="font-size:0.9rem;">Absolutely! You can upgrade at any time before the event. You'll only pay the difference between your current pass and the new tier. Email us at <a href="mailto:hello@vitality2000.com" class="text-lavender">hello@vitality2000.com</a>.</p>
+        </div>
+
+        <div class="card" style="padding:var(--space-lg);">
+          <h4 class="text-pink" style="margin-bottom:var(--space-sm);">What is the cancellation &amp; refund policy?</h4>
+          <p class="text-muted" style="font-size:0.9rem;">Full refunds are available up to 30 days before the event (May 15, 2025). Between 15–30 days, you'll receive a 50% refund. Within 14 days, passes are non-refundable but fully transferable to another attendee.</p>
+        </div>
+
+        <div class="card" style="padding:var(--space-lg);">
+          <h4 class="text-pink" style="margin-bottom:var(--space-sm);">Is there a group or team discount?</h4>
+          <p class="text-muted" style="font-size:0.9rem;">Yes! Groups of 2 get 5% off, 3 get 8%, 4 get 10%, and 5+ get 12% off. Select the number of attendees in the form above and the discount applies automatically at checkout.</p>
+        </div>
+
+        <div class="card" style="padding:var(--space-lg);">
+          <h4 class="text-pink" style="margin-bottom:var(--space-sm);">Will sessions be recorded?</h4>
+          <p class="text-muted" style="font-size:0.9rem;">All keynotes and main-stage panels are recorded and available to every pass holder for 90 days post-event. Workshop recordings are exclusive to Vitality and Transcend pass holders.</p>
+        </div>
+
+        <div class="card" style="padding:var(--space-lg);">
+          <h4 class="text-pink" style="margin-bottom:var(--space-sm);">What COVID / health safety measures are in place?</h4>
+          <p class="text-muted" style="font-size:0.9rem;">We provide hand-sanitizing stations throughout the venue, enhanced ventilation, and optional masks at registration. If you feel unwell, we offer a full transfer to next year's event at no cost.</p>
+        </div>
+
+        <div class="card" style="padding:var(--space-lg);">
+          <h4 class="text-pink" style="margin-bottom:var(--space-sm);">Where is the venue &amp; is parking available?</h4>
+          <p class="text-muted" style="font-size:0.9rem;">Vitality 2000 takes place at the Crystal Pavilion Convention Center, downtown. On-site parking is $15/day, and Transcend pass holders receive complimentary shuttle service from partner hotels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkle Divider -->
+  <div class="sparkle-row anim-fade anim-delay-2" style="margin:var(--space-xl) 0;">
+    <span class="star anim-loop-twinkle anim-loop-delay-2"></span>
+    <span class="star anim-loop-twinkle-slow"></span>
+    <span class="star anim-loop-twinkle anim-loop-delay-4"></span>
+    <span class="star anim-loop-twinkle-slow anim-loop-delay-1"></span>
+    <span class="star anim-loop-twinkle anim-loop-delay-3"></span>
+  </div>
+
+  <!-- CTA / Contact Section -->
+  <section class="section--compact" style="position:relative;">
+    <div class="orb orb--pink anim-loop-orb anim-loop-delay-2" style="width:200px;height:200px;top:-40px;left:15%;"></div>
+    <div class="container container--narrow text-center">
+      <div class="card anim-rise anim-delay-3" style="padding:var(--space-2xl);border-color:rgba(255,110,180,0.2);background:linear-gradient(180deg,rgba(255,110,180,0.06) 0%,rgba(200,162,255,0.03) 100%);">
+        <p class="label" style="margin-bottom:var(--space-md);">✦ Need Help?</p>
+        <h2>Still Have <span class="text-gradient anim-loop-gradient">Questions?</span></h2>
+        <p class="subtitle" style="margin:var(--space-md) auto var(--space-lg);">Our team is here to help you plan the perfect Vitality 2000 experience. Reach out anytime — we typically respond within 4 hours.</p>
+        <div class="flex justify-center gap-md flex-wrap">
+          <a href="mailto:hello@vitality2000.com" class="btn btn--primary">✦ Email Us</a>
+          <a href="schedule.html" class="btn btn--secondary">View Schedule</a>
+        </div>
+        <div class="flex justify-center gap-lg flex-wrap" style="margin-top:var(--space-xl);">
+          <div>
+            <p class="text-muted" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;">Phone</p>
+            <p><a href="tel:+18005552000" class="text-lavender" style="font-weight:600;">1-800-555-2000</a></p>
+          </div>
+          <div>
+            <p class="text-muted" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;">Email</p>
+            <p><a href="mailto:hello@vitality2000.com" class="text-lavender" style="font-weight:600;">hello@vitality2000.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating decorative stars -->
+  <div style="position:fixed;top:20%;left:3%;pointer-events:none;z-index:0;">
+    <span class="star anim-loop-twinkle text-lavender" style="font-size:1.4rem;opacity:0.3;"></span>
+  </div>
+  <div style="position:fixed;bottom:15%;right:4%;pointer-events:none;z-index:0;">
+    <span class="star anim-loop-twinkle-slow anim-loop-delay-2 text-pink" style="font-size:1rem;opacity:0.25;"></span>
+  </div>
+  <div style="position:fixed;top:60%;left:8%;pointer-events:none;z-index:0;">
+    <span class="star anim-loop-twinkle anim-loop-delay-3 text-lime" style="font-size:0.9rem;opacity:0.2;"></span>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__brand-name">
+          <span class="nav__logo-icon anim-loop-pulse" style="width:24px;height:24px;"></span>
+          <span class="text-gradient anim-loop-gradient">VITALITY 2000</span>
+        </div>
+        <p class="footer__brand-desc">A retro-futuristic wellness experience. Three days of healing, connection, and good vibes — wrapped in Y2K nostalgia. ✦</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigate</div>
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="speakers.html" class="footer__link">Speakers</a>
+        <a href="workshops.html" class="footer__link">Workshops</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Attend</div>
+        <a href="register.html" class="footer__link">Register Now</a>
+        <a href="register.html" class="footer__link">Pricing</a>
+        <a href="schedule.html" class="footer__link">Full Schedule</a>
+        <a href="workshops.html" class="footer__link">Workshop List</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Connect</div>
+        <span class="footer__link">hello@vitality2000.vibe</span>
+        <span class="footer__link">Los Angeles, CA</span>
+        <span class="footer__link">March 21–23, 2025</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 VITALITY 2000. All rights reserved.</span>
+      <div class="sparkle-row anim-loop-twinkle-slow">
+        ✦ &nbsp; ✧ &nbsp; ✦ &nbsp; ✧ &nbsp; ✦
+      </div>
+      <span>Made with ♡ and good energy</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

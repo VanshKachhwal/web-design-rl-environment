@@ -1,0 +1,17 @@
+{
+  "archetype": "personal-resume",
+  "aesthetic": "warm-organic",
+  "audience": "creative-professionals",
+  "brand_mood": "rebellious-and-edgy",
+  "animation_style": "snappy-slide",
+  "animation_style_hint": "quick, confident slide-ins with crisp easing; energetic but tight",
+  "page_count": 5,
+  "seed_tuple": [
+    "personal-resume",
+    "warm-organic",
+    "low",
+    "creative-professionals",
+    "rebellious-and-edgy",
+    "snappy-slide"
+  ]
+}

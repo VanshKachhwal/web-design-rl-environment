@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "menu": {
+    "expected_file": "menu.html",
+    "screenshot": "menu.png"
+  },
+  "our-story": {
+    "expected_file": "our-story.html",
+    "screenshot": "our-story.png"
+  },
+  "events-private-dining": {
+    "expected_file": "events-private-dining.html",
+    "screenshot": "events-private-dining.png"
+  },
+  "reservations-contact": {
+    "expected_file": "reservations-contact.html",
+    "screenshot": "reservations-contact.png"
+  }
+}

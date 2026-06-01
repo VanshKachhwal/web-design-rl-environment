@@ -9,8 +9,9 @@ replicate these animations."*
 > more duplication, lighter test coverage, fewer iterations, and at least one known
 > metric limitation analysed but not yet fixed (the 6-frame filmstrip, below). What
 > follows is the reasoning we *did* get to — owned, with the gaps called out plainly.
-> Part 2 is **not** part of the final [`tasks/`](../tasks/) deliverable; preliminary
-> animation tasks + reports will land under `task2/tasks/`.
+> Part 2 is **not** part of the final [`tasks/`](../tasks/) deliverable; the preliminary
+> animation tasks + reports live under [`task2/tasks/`](tasks/) — 10 tasks (000–009),
+> each with its 10× Opus-4.7 report + animated-GIF galleries.
 
 It has two halves, both end-to-end and runnable:
 

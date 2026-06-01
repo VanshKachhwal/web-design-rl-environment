@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home — EduPulse</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<nav class="site-nav">
+  <div class="container flex-between" style="height:100%">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-dot anim-loop-pulse"></span>
+      EduPulse
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+
+  <!-- ══ HERO SECTION ══ -->
+  <section class="hero" style="min-height: 580px;">
+    <div class="hero-bg anim-loop-gradient" style="background: linear-gradient(135deg, var(--c-warm-50), var(--c-cream), var(--c-teal-light), var(--c-warm-100)); background-size: 200% 200%;"></div>
+
+    <!-- Decorative floating shapes -->
+    <div class="deco-circle anim-loop-float" style="width: 180px; height: 180px; background: rgba(245,158,66,.1); top: 40px; right: 8%; animation-delay: 0s;"></div>
+    <div class="deco-circle anim-loop-drift" style="width: 90px; height: 90px; background: rgba(232,115,90,.12); bottom: 60px; right: 15%;"></div>
+    <div class="deco-ring anim-loop-sway" style="width: 120px; height: 120px; border-color: rgba(58,143,133,.15); top: 100px; right: 25%;"></div>
+    <div class="deco-circle anim-loop-pulse" style="width: 14px; height: 14px; background: var(--c-coral); top: 80px; left: 10%;"></div>
+    <div class="deco-circle anim-loop-pulse" style="width: 10px; height: 10px; background: var(--c-amber); bottom: 100px; left: 20%; animation-delay: 1.2s;"></div>
+    <div class="deco-circle anim-loop-float" style="width: 60px; height: 60px; background: rgba(245,158,66,.08); bottom: 40px; left: 5%; animation-delay: 2s;"></div>
+
+    <div class="container">
+      <div class="hero-content" style="max-width: 620px;">
+        <div class="anim-rise anim-delay-1">
+          <span class="tag tag-coral" style="margin-bottom: 16px;">Welcome to EduPulse</span>
+        </div>
+        <h1 class="anim-rise anim-delay-2">Where Learning Meets Inspiration</h1>
+        <p class="anim-rise anim-delay-3">Curated articles on study strategies, teaching innovation, and academic life — written by educators and students who care about making education better for everyone.</p>
+        <div class="anim-rise anim-delay-4" style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="articles-browse-all.html" class="btn btn-primary">Browse Articles →</a>
+          <a href="about-our-mission.html" class="btn btn-outline">Our Mission</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STATS BAR ══ -->
+  <section class="section-sm" style="background: var(--c-white); border-bottom: 1px solid var(--c-gray-100);">
+    <div class="container">
+      <div class="grid-4 anim-stagger" style="text-align: center;">
+        <div class="stat">
+          <div class="stat-number">2,400+</div>
+          <div class="stat-label">Published Articles</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">180</div>
+          <div class="stat-label">Contributing Authors</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">45K</div>
+          <div class="stat-label">Monthly Readers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Topic Categories</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FEATURED ARTICLE ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="featured-strip anim-rise anim-delay-1" style="position: relative; overflow: hidden;">
+        <!-- Decorative accent dot -->
+        <div class="deco-circle anim-loop-pulse" style="width: 12px; height: 12px; background: var(--c-coral); top: 24px; right: 32px;"></div>
+        <div class="deco-ring anim-loop-spin" style="width: 80px; height: 80px; border-color: rgba(245,158,66,.15); bottom: -20px; right: -10px;"></div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div class="anim-slide-left anim-delay-2">
+            <span class="tag tag-amber" style="margin-bottom: 12px;">Featured Article</span>
+            <h2 style="margin-bottom: 12px;">The Science of Spaced Repetition: Why Cramming Fails and What Works Instead</h2>
+            <p class="text-sm text-gray" style="margin-bottom: 16px;">Decades of cognitive research confirm that distributing your study sessions over time dramatically improves long-term retention. Here's how to build a spaced repetition system that actually fits a student's schedule.</p>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+              <div class="avatar" style="background: var(--c-teal); font-size: var(--fs-xs);">DR</div>
+              <div>
+                <div style="font-weight: 600; font-size: var(--fs-sm); color: var(--c-deep);">Dr. Rachel Nguyen</div>
+                <div class="text-xs text-gray">Cognitive Science · 8 min read</div>
+              </div>
+            </div>
+            <a href="articles-browse-all.html" class="btn btn-primary">Read Full Article →</a>
+          </div>
+          <div class="anim-slide-right anim-delay-3" style="position: relative;">
+            <div style="background: linear-gradient(135deg, var(--c-amber), var(--c-coral)); border-radius: var(--r-md); height: 280px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+              <div class="deco-circle anim-loop-float" style="width: 100px; height: 100px; background: rgba(255,255,255,.15); top: 20px; left: 20px;"></div>
+              <div class="deco-ring anim-loop-sway" style="width: 60px; height: 60px; border-color: rgba(255,255,255,.25); bottom: 30px; right: 30px;"></div>
+              <div style="text-align: center; color: var(--c-white); z-index: 1; position: relative;">
+                <div style="font-size: 3.5rem; margin-bottom: 8px;">🧠</div>
+                <div style="font-family: var(--ff-serif); font-size: var(--fs-lg); font-weight: 700;">Spaced Repetition</div>
+                <div style="font-size: var(--fs-xs); opacity: .85;">Memory &amp; Learning Science</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LATEST ARTICLES ══ -->
+  <section class="section" style="background: var(--c-cream); position: relative; overflow: hidden;">
+    <!-- Background decorative elements -->
+    <div class="deco-circle anim-loop-drift" style="width: 200px; height: 200px; background: rgba(245,158,66,.06); top: -60px; left: -40px;"></div>
+    <div class="deco-circle anim-loop-float" style="width: 140px; height: 140px; background: rgba(58,143,133,.05); bottom: -30px; right: -30px; animation-delay: 1.5s;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <span class="tag tag-teal" style="margin-bottom: 12px;">Latest from the Blog</span>
+        <h2>Fresh Perspectives on Education</h2>
+        <p style="color: var(--c-gray-600); margin: 12px auto 0; max-width: 520px;">Our most recent articles exploring study techniques, classroom innovation, and the evolving landscape of academic life.</p>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-thumb" style="background: linear-gradient(135deg, var(--c-warm-100), var(--c-amber)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2.5rem;">📝</span>
+          </div>
+          <div class="card-body">
+            <span class="tag tag-amber" style="margin-bottom: 8px;">Study Tips</span>
+            <h3>Active Recall: The Study Method Top Students Swear By</h3>
+            <p style="margin-top: 8px;">Forget passive re-reading. Active recall forces your brain to retrieve information, strengthening neural pathways every time you practice.</p>
+            <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="text-xs text-gray">May 12, 2025</span>
+              <a href="articles-browse-all.html" class="btn-ghost text-sm">Read →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-thumb" style="background: linear-gradient(135deg, var(--c-teal-light), var(--c-teal)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2.5rem;">🎓</span>
+          </div>
+          <div class="card-body">
+            <span class="tag tag-teal" style="margin-bottom: 8px;">Teaching</span>
+            <h3>Project-Based Learning: Moving Beyond the Lecture Hall</h3>
+            <p style="margin-top: 8px;">How educators across disciplines are redesigning courses around real-world projects that build critical thinking and collaboration skills.</p>
+            <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="text-xs text-gray">May 8, 2025</span>
+              <a href="articles-browse-all.html" class="btn-ghost text-sm">Read →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-thumb" style="background: linear-gradient(135deg, #FDEAE6, var(--c-coral)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2.5rem;">⚡</span>
+          </div>
+          <div class="card-body">
+            <span class="tag tag-coral" style="margin-bottom: 8px;">Productivity</span>
+            <h3>The Pomodoro Technique Isn't Enough: Building a Complete Focus System</h3>
+            <p style="margin-top: 8px;">Timers are a start, but true deep work requires environment design, energy management, and intentional rest cycles.</p>
+            <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span class="text-xs text-gray">May 3, 2025</span>
+              <a href="articles-browse-all.html" class="btn-ghost text-sm">Read →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center anim-rise anim-delay-5" style="margin-top: 40px;">
+        <a href="articles-browse-all.html" class="btn btn-outline">View All Articles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TOPIC CATEGORIES ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <h2>Explore by Topic</h2>
+        <p style="color: var(--c-gray-600); margin: 12px auto 0;">Dive into the subjects that matter most to your academic journey.</p>
+      </div>
+
+      <div class="grid-4 anim-stagger">
+        <div class="resource-card" style="text-align: center;">
+          <div class="icon-circle" style="background: var(--c-warm-100); color: var(--c-amber); margin: 0 auto; font-size: var(--fs-xl);">📖</div>
+          <h3 style="margin-top: 16px;">Study Strategies</h3>
+          <p>Evidence-based methods for better retention, focus, and exam performance.</p>
+          <a href="articles-browse-all.html" class="btn-ghost text-sm" style="margin-top: 12px; display: inline-block;">Explore →</a>
+        </div>
+
+        <div class="resource-card" style="text-align: center;">
+          <div class="icon-circle" style="background: var(--c-teal-light); color: var(--c-teal); margin: 0 auto; font-size: var(--fs-xl);">🏫</div>
+          <h3 style="margin-top: 16px;">Teaching Innovation</h3>
+          <p>New approaches to curriculum design, classroom engagement, and assessment.</p>
+          <a href="resources-for-educators.html" class="btn-ghost text-sm" style="margin-top: 12px; display: inline-block;">Explore →</a>
+        </div>
+
+        <div class="resource-card" style="text-align: center;">
+          <div class="icon-circle" style="background: #FDEAE6; color: var(--c-coral); margin: 0 auto; font-size: var(--fs-xl);">🌱</div>
+          <h3 style="margin-top: 16px;">Student Wellness</h3>
+          <p>Managing stress, building resilience, and maintaining balance during demanding semesters.</p>
+          <a href="articles-browse-all.html" class="btn-ghost text-sm" style="margin-top: 12px; display: inline-block;">Explore →</a>
+        </div>
+
+        <div class="resource-card" style="text-align: center;">
+          <div class="icon-circle" style="background: var(--c-warm-50); color: var(--c-rust); margin: 0 auto; font-size: var(--fs-xl);">💼</div>
+          <h3 style="margin-top: 16px;">Career Readiness</h3>
+          <p>Bridging the gap between academic learning and professional success after graduation.</p>
+          <a href="articles-browse-all.html" class="btn-ghost text-sm" style="margin-top: 12px; display: inline-block;">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EDITOR'S PICKS ══ -->
+  <section class="section" style="background: var(--c-warm-50); position: relative; overflow: hidden;">
+    <div class="deco-ring anim-loop-spin" style="width: 160px; height: 160px; border-color: rgba(232,115,90,.08); top: -40px; right: 10%;"></div>
+    <div class="deco-circle anim-loop-pulse" style="width: 10px; height: 10px; background: var(--c-amber); top: 60px; left: 6%;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="anim-rise" style="margin-bottom: 40px;">
+        <span class="tag tag-coral" style="margin-bottom: 12px;">Editor's Picks</span>
+        <h2>Must-Read Articles This Month</h2>
+      </div>
+
+      <div class="anim-stagger">
+        <div class="article-row">
+          <div class="article-row-thumb" style="background: linear-gradient(135deg, var(--c-warm-100), var(--c-amber)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">🔬</span>
+          </div>
+          <div class="article-row-body">
+            <span class="tag tag-teal">Research</span>
+            <h3>How Interleaving Practice Outperforms Blocked Study in Every Subject</h3>
+            <p class="text-sm text-gray">Mixing different problem types during practice sessions leads to deeper understanding and better transfer of knowledge to new situations.</p>
+            <div class="article-row-meta">
+              <span>Prof. James Whitfield</span>
+              <span>April 28, 2025</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-row">
+          <div class="article-row-thumb" style="background: linear-gradient(135deg, var(--c-teal-light), var(--c-teal)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">🤝</span>
+          </div>
+          <div class="article-row-body">
+            <span class="tag tag-amber">Collaboration</span>
+            <h3>Peer Teaching: Why Explaining Concepts to Others Is the Ultimate Learning Tool</h3>
+            <p class="text-sm text-gray">The protégé effect shows that students who teach material to peers achieve significantly higher comprehension than those who study alone.</p>
+            <div class="article-row-meta">
+              <span>Maria Santos</span>
+              <span>April 22, 2025</span>
+              <span>5 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-row">
+          <div class="article-row-thumb" style="background: linear-gradient(135deg, #FDEAE6, var(--c-coral)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">🧘</span>
+          </div>
+          <div class="article-row-body">
+            <span class="tag tag-coral">Wellness</span>
+            <h3>Burnout Is Not a Badge of Honor: Redefining Academic Success</h3>
+            <p class="text-sm text-gray">Universities are beginning to recognize that sustainable achievement requires rest, boundaries, and mental health support — not just grit.</p>
+            <div class="article-row-meta">
+              <span>Dr. Aisha Patel</span>
+              <span>April 15, 2025</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center anim-rise anim-delay-5" style="margin-top: 32px;">
+        <a href="articles-browse-all.html" class="btn btn-primary">Browse All Articles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <h2>What Our Readers Say</h2>
+        <p style="color: var(--c-gray-600); margin: 12px auto 0;">Students and educators share how EduPulse has shaped their approach to learning and teaching.</p>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="testimonial">
+          <p>"EduPulse's article on spaced repetition completely changed how I prepare for exams. I went from cramming the night before to studying less overall but retaining so much more."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="avatar" style="background: var(--c-coral);">SK</div>
+            <div>
+              <div class="testimonial-author">Sarah Kim</div>
+              <div class="text-xs text-gray">Biology Major, Year 3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>"As a new professor, the teaching resources here gave me practical frameworks I could implement immediately. My student engagement scores improved within one semester."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="avatar" style="background: var(--c-teal);">MT</div>
+            <div>
+              <div class="testimonial-author">Dr. Marcus Torres</div>
+              <div class="text-xs text-gray">Assistant Professor, History</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <p>"I recommend EduPulse to every first-year student in my advising group. The study strategy articles are grounded in real research, not just productivity hype."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="avatar" style="background: var(--c-amber);">LW</div>
+            <div>
+              <div class="testimonial-author">Lisa Whitmore</div>
+              <div class="text-xs text-gray">Academic Advisor, State University</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOR EDUCATORS CTA ══ -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-banner anim-rise anim-delay-1" style="position: relative;">
+        <!-- Decorative elements inside CTA -->
+        <div class="deco-circle anim-loop-float" style="width: 120px; height: 120px; background: rgba(255,255,255,.1); top: -30px; right: 40px;"></div>
+        <div class="deco-circle anim-loop-drift" style="width: 80px; height: 80px; background: rgba(255,255,255,.08); bottom: -20px; right: 180px;"></div>
+        <div class="deco-ring anim-loop-sway" style="width: 60px; height: 60px; border-color: rgba(255,255,255,.2); top: 20px; right: 260px;"></div>
+
+        <div style="position: relative; z-index: 1; max-width: 560px;">
+          <h2>Resources Built for Educators</h2>
+          <p>Downloadable lesson templates, classroom activity guides, and research summaries — all free and designed to save you time while improving outcomes.</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="resources-for-educators.html" class="btn">Explore Resources →</a>
+            <a href="contact-get-in-touch.html" class="btn" style="background: transparent; border: 2px solid var(--c-white); color: var(--c-white);">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ══ -->
+  <section class="section" style="background: var(--c-white);">
+    <div class="container">
+      <div class="text-center anim-rise" style="margin-bottom: 48px;">
+        <h2>How EduPulse Works</h2>
+        <p style="color: var(--c-gray-600); margin: 12px auto 0;">We bring together expert voices, rigorous research, and practical advice in one accessible platform.</p>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div style="text-align: center; padding: 24px;">
+          <div class="icon-circle anim-rise-then-pulse" style="background: var(--c-warm-100); color: var(--c-amber); margin: 0 auto 20px; font-size: 1.75rem;">✍️</div>
+          <h4>Expert Authors Write</h4>
+          <p class="text-sm text-gray" style="margin: 8px auto 0;">Educators, researchers, and experienced students contribute articles grounded in evidence and classroom experience.</p>
+        </div>
+
+        <div style="text-align: center; padding: 24px;">
+          <div class="icon-circle anim-rise-then-pulse" style="background: var(--c-teal-light); color: var(--c-teal); margin: 0 auto 20px; font-size: 1.75rem; animation-delay: 0.3s;">🔍</div>
+          <h4>Editors Curate &amp; Verify</h4>
+          <p class="text-sm text-gray" style="margin: 8px auto 0;">Every piece is reviewed for accuracy, clarity, and practical value before it reaches our readers.</p>
+        </div>
+
+        <div style="text-align: center; padding: 24px;">
+          <div class="icon-circle anim-rise-then-pulse" style="background: #FDEAE6; color: var(--c-coral); margin: 0 auto 20px; font-size: 1.75rem; animation-delay: 0.6s;">🚀</div>
+          <h4>You Apply &amp; Grow</h4>
+          <p class="text-sm text-gray" style="margin: 8px auto 0;">Actionable takeaways in every article mean you can start improving your learning or teaching today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NEWSLETTER ══ -->
+  <section class="section-sm" style="position: relative; overflow: hidden;">
+    <div class="deco-circle anim-loop-pulse" style="width: 8px; height: 8px; background: var(--c-coral); top: 30px; right: 15%;"></div>
+    <div class="deco-circle anim-loop-pulse" style="width: 6px; height: 6px; background: var(--c-amber); bottom: 25px; left: 12%; animation-delay: 1.4s;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="newsletter-bar anim-rise anim-delay-1" style="position: relative; overflow: hidden;">
+        <div class="deco-circle anim-loop-glow" style="width: 40px; height: 40px; background: rgba(245,158,66,.1); border-radius: var(--r-full); top: -10px; right: -10px;"></div>
+        <div style="flex-shrink: 0;">
+          <h3 style="margin-bottom: 4px;">Stay in the Loop</h3>
+          <p class="text-sm text-gray">Get weekly insights on learning science, teaching tips, and campus life delivered to your inbox.</p>
+        </div>
+        <form style="display: flex; gap: 12px; flex: 1; min-width: 0;" onsubmit="return false;">
+          <input type="email" class="form-input" placeholder="your.email@university.edu" aria-label="Email address" style="flex: 1; min-width: 0;">
+          <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TRENDING TOPICS ══ -->
+  <section class="section" style="background: var(--c-cream); position: relative; overflow: hidden;">
+    <div class="deco-ring anim-loop-spin" style="width: 200px; height: 200px; border-color: rgba(245,158,66,.06); bottom: -60px; left: -60px;"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="flex-between anim-rise" style="margin-bottom: 36px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h2>Trending This Week</h2>
+          <p class="text-sm text-gray" style="margin-top: 4px;">The articles our community is reading and sharing right now.</p>
+        </div>
+        <a href="articles-browse-all.html" class="btn btn-ghost">See All Trending →</a>
+      </div>
+
+      <div class="grid-2 anim-stagger">
+        <div class="card" style="display: flex; flex-direction: row; overflow: hidden;">
+          <div style="width: 140px; min-height: 140px; flex-shrink: 0; background: linear-gradient(135deg, var(--c-warm-100), var(--c-amber)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">📊</span>
+          </div>
+          <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="tag tag-amber" style="margin-bottom: 6px; align-self: flex-start;">Data</span>
+            <h4 style="font-size: var(--fs-base); margin-bottom: 6px;">Grade Inflation: What the Numbers Actually Show Across 50 Universities</h4>
+            <span class="text-xs text-gray">4 min read · 1.2K shares</span>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: row; overflow: hidden;">
+          <div style="width: 140px; min-height: 140px; flex-shrink: 0; background: linear-gradient(135deg, var(--c-teal-light), var(--c-teal)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">💡</span>
+          </div>
+          <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="tag tag-teal" style="margin-bottom: 6px; align-self: flex-start;">Innovation</span>
+            <h4 style="font-size: var(--fs-base); margin-bottom: 6px;">Flipped Classrooms in 2025: What We've Learned After a Decade of Experimentation</h4>
+            <span class="text-xs text-gray">6 min read · 980 shares</span>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: row; overflow: hidden;">
+          <div style="width: 140px; min-height: 140px; flex-shrink: 0; background: linear-gradient(135deg, #FDEAE6, var(--c-coral)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">🧩</span>
+          </div>
+          <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="tag tag-coral" style="margin-bottom: 6px; align-self: flex-start;">Skills</span>
+            <h4 style="font-size: var(--fs-base); margin-bottom: 6px;">Critical Thinking Isn't Innate: Five Exercises to Sharpen Your Analytical Mind</h4>
+            <span class="text-xs text-gray">5 min read · 870 shares</span>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: row; overflow: hidden;">
+          <div style="width: 140px; min-height: 140px; flex-shrink: 0; background: linear-gradient(135deg, var(--c-warm-50), var(--c-rust)); display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 2rem;">🌍</span>
+          </div>
+          <div class="card-body" style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="tag tag-amber" style="margin-bottom: 6px; align-self: flex-start;">Global</span>
+            <h4 style="font-size: var(--fs-base); margin-bottom: 6px;">What American Educators Can Learn from Finland's Approach to Student Autonomy</h4>
+            <span class="text-xs text-gray">7 min read · 750 shares</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT TEASER ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items: center; gap: 48px;">
+        <div class="anim-slide-left anim-delay-1">
+          <span class="tag tag-teal" style="margin-bottom: 12px;">About EduPulse</span>
+          <h2 style="margin-bottom: 16px;">Built by Educators, for Everyone Who Learns</h2>
+          <p style="margin-bottom: 16px; color: var(--c-gray-600);">EduPulse started in 2021 as a small newsletter between three college professors who wanted to share evidence-based teaching practices. Today, we're a growing editorial platform with contributors from over 40 universities worldwide.</p>
+          <p style="margin-bottom: 24px; color: var(--c-gray-600);">Our mission is simple: make the science of learning accessible, practical, and free for every student and educator.</p>
+          <a href="about-our-mission.html" class="btn btn-outline">Learn More About Us →</a>
+        </div>
+        <div class="anim-slide-right anim-delay-2" style="position: relative;">
+          <div style="background: linear-gradient(135deg, var(--c-teal-light), var(--c-cream)); border-radius: var(--r-lg); padding: 40px; position: relative; overflow: hidden;">
+            <div class="deco-circle anim-loop-float" style="width: 70px; height: 70px; background: rgba(58,143,133,.1); top: -15px; right: -15px;"></div>
+            <div class="deco-circle anim-loop-pulse" style="width: 8px; height: 8px; background: var(--c-coral); bottom: 30px; left: 30px;"></div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="avatar" style="background: var(--c-coral); width: 56px; height: 56px; font-size: var(--fs-lg);">🎯</div>
+                <div>
+                  <h4 style="font-size: var(--fs-base);">Evidence-First Approach</h4>
+                  <p class="text-sm text-gray">Every article cites peer-reviewed research</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="avatar" style="background: var(--c-teal); width: 56px; height: 56px; font-size: var(--fs-lg);">🌐</div>
+                <div>
+                  <h4 style="font-size: var(--fs-base);">Global Perspectives</h4>
+                  <p class="text-sm text-gray">Contributors from 40+ universities</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="avatar" style="background: var(--c-amber); width: 56px; height: 56px; font-size: var(--fs-lg);">♻️</div>
+                <div>
+                  <h4 style="font-size: var(--fs-base);">Always Free</h4>
+                  <p class="text-sm text-gray">No paywalls, no premium tiers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="color:var(--c-warm-100);font-size:var(--fs-lg);">
+          <span class="nav-logo-dot anim-loop-pulse"></span>
+          EduPulse
+        </a>
+        <p>Empowering students and educators with thoughtful perspectives on learning, teaching, and the future of education.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">Our Mission</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Topics</h4>
+        <ul class="footer-links">
+          <li><a href="articles.html">Study Tips</a></li>
+          <li><a href="articles.html">Teaching Methods</a></li>
+          <li><a href="articles.html">EdTech</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 EduPulse. Made with care for the learning community.
+    </div>
+  </div>
+</footer>
+</body>
+</html>

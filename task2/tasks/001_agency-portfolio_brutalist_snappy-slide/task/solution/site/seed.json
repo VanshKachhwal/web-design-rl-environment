@@ -1,0 +1,17 @@
+{
+  "archetype": "agency-portfolio",
+  "aesthetic": "brutalist",
+  "audience": "european-enterprises",
+  "brand_mood": "calm-and-trustworthy",
+  "animation_style": "snappy-slide",
+  "animation_style_hint": "quick, confident slide-ins with crisp easing; energetic but tight",
+  "page_count": 5,
+  "seed_tuple": [
+    "agency-portfolio",
+    "brutalist",
+    "med",
+    "european-enterprises",
+    "calm-and-trustworthy",
+    "snappy-slide"
+  ]
+}

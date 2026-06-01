@@ -1,0 +1,17 @@
+{
+  "archetype": "editorial-blog",
+  "aesthetic": "corporate-flat",
+  "audience": "students-and-educators",
+  "brand_mood": "warm-and-welcoming",
+  "animation_style": "kinetic-loop",
+  "animation_style_hint": "prominent continuous loops (pulses, drifting gradients, float) over a clean entrance",
+  "page_count": 5,
+  "seed_tuple": [
+    "editorial-blog",
+    "corporate-flat",
+    "med",
+    "students-and-educators",
+    "warm-and-welcoming",
+    "kinetic-loop"
+  ]
+}

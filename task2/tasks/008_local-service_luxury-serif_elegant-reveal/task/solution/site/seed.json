@@ -1,0 +1,17 @@
+{
+  "archetype": "local-service",
+  "aesthetic": "luxury-serif",
+  "audience": "north-american-consumers",
+  "brand_mood": "confident-and-bold",
+  "animation_style": "elegant-reveal",
+  "animation_style_hint": "refined staggered reveals, subtle blur-to-sharp and rise; premium feel",
+  "page_count": 5,
+  "seed_tuple": [
+    "local-service",
+    "luxury-serif",
+    "high",
+    "north-american-consumers",
+    "confident-and-bold",
+    "elegant-reveal"
+  ]
+}

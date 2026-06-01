@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "task_id": "anim-008_local-service_luxury-serif_elegant-reveal",
+    "seed_tuple": [
+      "local-service",
+      "luxury-serif",
+      "high",
+      "north-american-consumers",
+      "confident-and-bold",
+      "elegant-reveal"
+    ],
+    "archetype": "local-service",
+    "aesthetic": "luxury-serif",
+    "complexity": "high",
+    "animation_style": "elegant-reveal",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 22.762006500000002,
+    "total_input_tokens": 19874766,
+    "total_output_tokens": 377752,
+    "started_at": "2026-06-01T17:04:46.993031",
+    "finished_at": "2026-06-01T17:25:13.231599",
+    "wall_clock_sec": 1226.238568,
+    "date": "2026-06-01",
+    "commit": "88c4d89565f60dfbcdeef1eeb94d8ed65001b8a0",
+    "timestamps_ms": [
+      0,
+      200,
+      500,
+      900,
+      1400,
+      2000
+    ]
+  },
+  "terms": [
+    "static_design",
+    "motion",
+    "animation_judge"
+  ],
+  "timestamps_ms": [
+    0,
+    200,
+    500,
+    900,
+    1400,
+    2000
+  ],
+  "trials": [
+    {
+      "trial_id": "8AgNqJQ",
+      "reward": 0.4703065058528133,
+      "static_design": 0.6743894461414348,
+      "motion": 0.18653007141700503,
+      "animation_judge": 0.55,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.4751615501940157,
+          "static_terms": {
+            "structure": 0.6156150797038495,
+            "color": 0.9572770188079598,
+            "content": 0.4683794466403163,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 55,
+          "static_design": 0.6915678862880315,
+          "motion": 0.18391676429401568,
+          "animation_judge": 0.55
+        },
+        "services": {
+          "present": true,
+          "reward": 0.40846382393394304,
+          "static_terms": {
+            "structure": 0.6591582626523312,
+            "color": 0.9652522493160607,
+            "content": 0.3771224307417337,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 67,
+          "static_design": 0.6628832356775314,
+          "motion": 0.012508236124297661,
+          "animation_judge": 0.55
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.42876583036461785,
+          "static_terms": {
+            "structure": 0.6059207284078855,
+            "color": 0.9670519567760857,
+            "content": 0.34624697336561744,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 70,
+          "static_design": 0.6610549146373972,
+          "motion": 0.07524257645645628,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.6225716923416825,
+          "static_terms": {
+            "structure": 0.6400992349514978,
+            "color": 0.9720381503881903,
+            "content": 0.38958707360861755,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 56,
+          "static_design": 0.6754311147370764,
+          "motion": 0.6422839622879711,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.4165696324298074,
+          "static_terms": {
+            "structure": 0.6608157160092649,
+            "color": 0.9731760577699652,
+            "content": 0.4150485436893204,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 45,
+          "static_design": 0.6810100793671376,
+          "motion": 0.01869881792228441,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "D5M8Auq",
+      "reward": 0.5359263380162618,
+      "static_design": 0.6786040718822475,
+      "motion": 0.3991749421665376,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5266629332493424,
+          "static_terms": {
+            "structure": 0.6125367113868329,
+            "color": 0.960780265655478,
+            "content": 0.4463818657367045,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 72,
+          "static_design": 0.6924247106947539,
+          "motion": 0.33756408905327334,
+          "animation_judge": 0.55
+        },
+        "services": {
+          "present": true,
+          "reward": 0.4990620303425048,
+          "static_terms": {
+            "structure": 0.6173063419100354,
+            "color": 0.9667389028006081,
+            "content": 0.3967906637490883,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 78,
+          "static_design": 0.663958977114933,
+          "motion": 0.2832271139125812,
+          "animation_judge": 0.55
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.5118849198552429,
+          "static_terms": {
+            "structure": 0.5294303397915905,
+            "color": 0.9705747394710719,
+            "content": 0.36397058823529416,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 83,
+          "static_design": 0.6409939168744891,
+          "motion": 0.3446608426912394,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.5522079931577238,
+          "static_terms": {
+            "structure": 0.6272700848119118,
+            "color": 0.9713476468136839,
+            "content": 0.4440842787682333,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 74,
+          "static_design": 0.6731755025984573,
+          "motion": 0.43344847687471416,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.5898138134764946,
+          "static_terms": {
+            "structure": 0.7074375777308084,
+            "color": 0.9675191500818539,
+            "content": 0.4649122807017544,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 57,
+          "static_design": 0.7224672521286042,
+          "motion": 0.5969741883008799,
+          "animation_judge": 0.45
+        }
+      }
+    },
+    {
+      "trial_id": "Dqbfsaj",
+      "reward": 0.47021928839326377,
+      "static_design": 0.6792273895941935,
+      "motion": 0.1614304755855978,
+      "animation_judge": 0.57,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.49942699987409717,
+          "static_terms": {
+            "structure": 0.6538633463616448,
+            "color": 0.9670375831996151,
+            "content": 0.4416135881104034,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 61,
+          "static_design": 0.6968786294179158,
+          "motion": 0.15140237020437575,
+          "animation_judge": 0.6499999999999999
+        },
+        "services": {
+          "present": true,
+          "reward": 0.483255707184617,
+          "static_terms": {
+            "structure": 0.6763406021192258,
+            "color": 0.9746482330972024,
+            "content": 0.4096185737976783,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 70,
+          "static_design": 0.6839018522535266,
+          "motion": 0.11586526930032444,
+          "animation_judge": 0.6499999999999999
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.4867861691047232,
+          "static_terms": {
+            "structure": 0.5965347243271557,
+            "color": 0.9742994855465288,
+            "content": 0.35705368289637957,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 65,
+          "static_design": 0.650721973192516,
+          "motion": 0.2596365341216536,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.426247139728905,
+          "static_terms": {
+            "structure": 0.6693315856540597,
+            "color": 0.9721838013820775,
+            "content": 0.4315270935960591,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 60,
+          "static_design": 0.6682606201580491,
+          "motion": 0.16048079902866597,
+          "animation_judge": 0.45
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.4553804260739764,
+          "static_terms": {
+            "structure": 0.6706367796798605,
+            "color": 0.9809942856965117,
+            "content": 0.4588644264194669,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 50,
+          "static_design": 0.6963738729489598,
+          "motion": 0.11976740527296928,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "HhKF2Dc",
+      "reward": 0.4766304298230519,
+      "static_design": 0.6740520348699869,
+      "motion": 0.21083925459916886,
+      "animation_judge": 0.5450000000000002,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5068848409778063,
+          "static_terms": {
+            "structure": 0.6373068288973328,
+            "color": 0.9672016270055108,
+            "content": 0.4703517587939699,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 48,
+          "static_design": 0.7124650536742034,
+          "motion": 0.2581894692592153,
+          "animation_judge": 0.55
+        },
+        "services": {
+          "present": true,
+          "reward": 0.41471436156739055,
+          "static_terms": {
+            "structure": 0.6178299040195551,
+            "color": 0.9832270143831207,
+            "content": 0.3525954946131244,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 54,
+          "static_design": 0.65091310325395,
+          "motion": 0.06822998144822157,
+          "animation_judge": 0.525
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.5117925467294022,
+          "static_terms": {
+            "structure": 0.6102657590143369,
+            "color": 0.9822390367470609,
+            "content": 0.33906071019473083,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 55,
+          "static_design": 0.6516413764890322,
+          "motion": 0.3337362636991745,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.43217392185185094,
+          "static_terms": {
+            "structure": 0.624733066379877,
+            "color": 0.9833695200975103,
+            "content": 0.41050583657587547,
+            "design_judge": 0.6499999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 52,
+          "static_design": 0.6671521057633156,
+          "motion": 0.07936965979223706,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.5175864779888096,
+          "static_terms": {
+            "structure": 0.6876619947299827,
+            "color": 0.9818999381555419,
+            "content": 0.4077922077922077,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 36,
+          "static_design": 0.688088535169433,
+          "motion": 0.3146708987969958,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "MdvNhrY",
+      "reward": 0.48825036779098696,
+      "static_design": 0.6724912038208313,
+      "motion": 0.2422598995521295,
+      "animation_judge": 0.55,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.4672052909329587,
+          "static_terms": {
+            "structure": 0.6407992131500306,
+            "color": 0.9742041641500816,
+            "content": 0.41828571428571426,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 48,
+          "static_design": 0.6770722728964567,
+          "motion": 0.17454359990241936,
+          "animation_judge": 0.55
+        },
+        "services": {
+          "present": true,
+          "reward": 0.4297714924471554,
+          "static_terms": {
+            "structure": 0.6421933512356637,
+            "color": 0.9677218053173751,
+            "content": 0.3461538461538462,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 49,
+          "static_design": 0.6577672506767213,
+          "motion": 0.08154722666474488,
+          "animation_judge": 0.55
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.48102157036362003,
+          "static_terms": {
+            "structure": 0.5446219558078924,
+            "color": 0.9686185402775758,
+            "content": 0.35337423312883437,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 48,
+          "static_design": 0.6479036823035756,
+          "motion": 0.2451610287872845,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.6105312078602061,
+          "static_terms": {
+            "structure": 0.6360699890743092,
+            "color": 0.9748011923623229,
+            "content": 0.4248496993987976,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 42,
+          "static_design": 0.6901802202088574,
+          "motion": 0.5914134033717608,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.4527222773509944,
+          "static_terms": {
+            "structure": 0.6374945648686631,
+            "color": 0.9761913627610737,
+            "content": 0.4444444444444445,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 34,
+          "static_design": 0.6895325930185453,
+          "motion": 0.11863423903443784,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "TQLJSmM",
+      "reward": 0.5403485180790151,
+      "static_design": 0.6633762217783709,
+      "motion": 0.38766933245867435,
+      "animation_judge": 0.57,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5367446614084573,
+          "static_terms": {
+            "structure": 0.6067004286151307,
+            "color": 0.9500405024364542,
+            "content": 0.4207492795389049,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 50,
+          "static_design": 0.6693725526476224,
+          "motion": 0.29086143157774946,
+          "animation_judge": 0.6499999999999999
+        },
+        "services": {
+          "present": true,
+          "reward": 0.5133721512595214,
+          "static_terms": {
+            "structure": 0.6481736064608782,
+            "color": 0.9540935134220743,
+            "content": 0.3737024221453287,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 68,
+          "static_design": 0.6627423855070703,
+          "motion": 0.32737406827149373,
+          "animation_judge": 0.55
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.5224385502127573,
+          "static_terms": {
+            "structure": 0.5940718418076375,
+            "color": 0.9619901371117826,
+            "content": 0.34972677595628415,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 61,
+          "static_design": 0.651447188718926,
+          "motion": 0.36586846191934597,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.60548613684401,
+          "static_terms": {
+            "structure": 0.5703383727170028,
+            "color": 0.9586210503646296,
+            "content": 0.38434782608695656,
+            "design_judge": 0.6499999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 53,
+          "static_design": 0.6408268122921472,
+          "motion": 0.6256315982398828,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.5237010906703291,
+          "static_terms": {
+            "structure": 0.6625032055910816,
+            "color": 0.9630210288688248,
+            "content": 0.4444444444444444,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 36,
+          "static_design": 0.6924921697260877,
+          "motion": 0.32861110228489976,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "UJEQjzT",
+      "reward": 0.3464948339479075,
+      "static_design": 0.6623779968288831,
+      "motion": 0.02210650501483921,
+      "animation_judge": 0.355,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.3858610439806212,
+          "static_terms": {
+            "structure": 0.6168399931922505,
+            "color": 0.9537024804397365,
+            "content": 0.43312101910828027,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 29,
+          "static_design": 0.6759158731850667,
+          "motion": 0.03166725875679697,
+          "animation_judge": 0.45
+        },
+        "services": {
+          "present": true,
+          "reward": 0.3269235473275336,
+          "static_terms": {
+            "structure": 0.5893028873421045,
+            "color": 0.959895815972192,
+            "content": 0.37043054427294886,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.3,
+            "timing": 0.3,
+            "easing_feel": 0.3,
+            "motion_type": 0.4
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 33,
+          "static_design": 0.6549073118968113,
+          "motion": 0.0008633300857894814,
+          "animation_judge": 0.325
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.34636114648902017,
+          "static_terms": {
+            "structure": 0.5706224122590827,
+            "color": 0.9646453970743416,
+            "content": 0.3148831488314884,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.3,
+            "timing": 0.3,
+            "easing_feel": 0.3,
+            "motion_type": 0.4
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 32,
+          "static_design": 0.6437877395412281,
+          "motion": 0.07029569992583229,
+          "animation_judge": 0.325
+        },
+        "about": {
+          "present": true,
+          "reward": 0.3183137040400535,
+          "static_terms": {
+            "structure": 0.6774061040403607,
+            "color": 0.9623055441306625,
+            "content": 0.4050632911392406,
+            "design_judge": 0.6499999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.3,
+            "timing": 0.2,
+            "easing_feel": 0.3,
+            "motion_type": 0.3
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 30,
+          "static_design": 0.6736937348275659,
+          "motion": 0.006247377292594574,
+          "animation_judge": 0.275
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.35501472790230887,
+          "static_terms": {
+            "structure": 0.6940835083600289,
+            "color": 0.960733414671784,
+            "content": 0.39952437574316285,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.4,
+            "timing": 0.3,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 27,
+          "static_design": 0.6635853246937439,
+          "motion": 0.0014588590131827586,
+          "animation_judge": 0.4
+        }
+      }
+    },
+    {
+      "trial_id": "X4wUjCA",
+      "reward": 0.5732570123759158,
+      "static_design": 0.685100245510623,
+      "motion": 0.4646707916171241,
+      "animation_judge": 0.57,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.567939831224588,
+          "static_terms": {
+            "structure": 0.6761267219227182,
+            "color": 0.9600905023011338,
+            "content": 0.416256157635468,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 58,
+          "static_design": 0.71311834546483,
+          "motion": 0.34070114820893416,
+          "animation_judge": 0.6499999999999999
+        },
+        "services": {
+          "present": true,
+          "reward": 0.6021793607054414,
+          "static_terms": {
+            "structure": 0.6621858655895694,
+            "color": 0.9688209138452198,
+            "content": 0.3697068403908794,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 62,
+          "static_design": 0.6626784049564172,
+          "motion": 0.5938596771599068,
+          "animation_judge": 0.55
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.5866146706108105,
+          "static_terms": {
+            "structure": 0.6335328009262032,
+            "color": 0.9713073998929355,
+            "content": 0.3603192702394527,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 62,
+          "static_design": 0.6725398677646478,
+          "motion": 0.5373041440677836,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.602561016720343,
+          "static_terms": {
+            "structure": 0.6360154261349483,
+            "color": 0.9689610306852848,
+            "content": 0.39417475728155343,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 54,
+          "static_design": 0.6685378035254467,
+          "motion": 0.5891452466355822,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.5069901826183957,
+          "static_terms": {
+            "structure": 0.6921499571173543,
+            "color": 0.9775613478823925,
+            "content": 0.4897959183673469,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 41,
+          "static_design": 0.7086268058417734,
+          "motion": 0.2623437420134137,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "bzYKvpn",
+      "reward": 0.5757033394753261,
+      "static_design": 0.6681188909573034,
+      "motion": 0.5039911274686748,
+      "animation_judge": 0.555,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5839837711084807,
+          "static_terms": {
+            "structure": 0.6078781975900326,
+            "color": 0.9681160198480363,
+            "content": 0.3881278538812785,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 48,
+          "static_design": 0.6597805178298368,
+          "motion": 0.5421707954956053,
+          "animation_judge": 0.55
+        },
+        "services": {
+          "present": true,
+          "reward": 0.5849299385800523,
+          "static_terms": {
+            "structure": 0.7155004777454359,
+            "color": 0.9679550098461702,
+            "content": 0.3499043977055449,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 52,
+          "static_design": 0.6708399713242877,
+          "motion": 0.5339498444158692,
+          "animation_judge": 0.55
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.5758836576456022,
+          "static_terms": {
+            "structure": 0.5824457205096976,
+            "color": 0.9730935830297253,
+            "content": 0.28165007112375534,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 47,
+          "static_design": 0.6280473436657945,
+          "motion": 0.5496036292710123,
+          "animation_judge": 0.55
+        },
+        "about": {
+          "present": true,
+          "reward": 0.6607687970086186,
+          "static_terms": {
+            "structure": 0.7203163564369434,
+            "color": 0.9767382701899043,
+            "content": 0.3973384030418251,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 47,
+          "static_design": 0.6923482574171682,
+          "motion": 0.7399581336086872,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.4729505330338766,
+          "static_terms": {
+            "structure": 0.6661143797037226,
+            "color": 0.9737138410100413,
+            "content": 0.4184852374839538,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 37,
+          "static_design": 0.6895783645494294,
+          "motion": 0.1542732345522002,
+          "animation_judge": 0.575
+        }
+      }
+    },
+    {
+      "trial_id": "ggrgoTy",
+      "reward": 0.4542663696537157,
+      "static_design": 0.6744317585143629,
+      "motion": 0.18336735044678418,
+      "animation_judge": 0.5050000000000001,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.45131681454971107,
+          "static_terms": {
+            "structure": 0.6031044247483113,
+            "color": 0.9446478246880555,
+            "content": 0.42105263157894746,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 64,
+          "n_animations_cand": 43,
+          "static_design": 0.6672012202538286,
+          "motion": 0.13674922339530463,
+          "animation_judge": 0.55
+        },
+        "services": {
+          "present": true,
+          "reward": 0.42717242745746736,
+          "static_terms": {
+            "structure": 0.6650462875250702,
+            "color": 0.953448649449338,
+            "content": 0.38512396694214873,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.4,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 70,
+          "n_animations_cand": 51,
+          "static_design": 0.6884047259791393,
+          "motion": 0.06811255639326282,
+          "animation_judge": 0.525
+        },
+        "portfolio": {
+          "present": true,
+          "reward": 0.4013963448166298,
+          "static_terms": {
+            "structure": 0.529439567989019,
+            "color": 0.9545534271126832,
+            "content": 0.3425559947299078,
+            "design_judge": 0.6749999999999999
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 87,
+          "n_animations_cand": 50,
+          "static_design": 0.6253872474579025,
+          "motion": 0.12880178699198677,
+          "animation_judge": 0.45
+        },
+        "about": {
+          "present": true,
+          "reward": 0.5164607128314755,
+          "static_terms": {
+            "structure": 0.6553027782047145,
+            "color": 0.9579556903057863,
+            "content": 0.4142581888246628,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 63,
+          "n_animations_cand": 43,
+          "static_design": 0.6818791643337909,
+          "motion": 0.3175029741606357,
+          "animation_judge": 0.55
+        },
+        "contact": {
+          "present": true,
+          "reward": 0.47498554861329473,
+          "static_terms": {
+            "structure": 0.6999664998242995,
+            "color": 0.9578579234120337,
+            "content": 0.47932131495228,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 46,
+          "n_animations_cand": 35,
+          "static_design": 0.7092864345471532,
+          "motion": 0.2656702112927309,
+          "animation_judge": 0.45
+        }
+      }
+    }
+  ]
+}

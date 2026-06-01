@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>API Reference</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-dot anim-loop-pulse"></div>
+        CloudNest
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Docs</a></li>
+        <li><a href="api-reference.html">API</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="enterprise.html">Enterprise</a></li>
+      </ul>
+      <a href="enterprise.html" class="btn btn-primary btn-sm">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- ── Hero Section ── -->
+  <section class="section" style="position: relative; overflow: hidden; padding-top: 100px; padding-bottom: 100px;">
+    <!-- Decorative Orbs -->
+    <div class="orb orb-blue anim-loop-drift" style="width: 300px; height: 300px; top: -80px; right: -60px;"></div>
+    <div class="orb orb-green anim-loop-pulse" style="width: 220px; height: 220px; bottom: -40px; left: -80px;"></div>
+    <div class="orb orb-warm anim-loop-drift" style="width: 160px; height: 160px; top: 40%; right: 20%; animation-delay: 2s;"></div>
+
+    <div class="container text-center flex-col gap-24" style="align-items: center; position: relative; z-index: 1;">
+      <div class="badge anim-rise anim-loop-badge-pulse" style="align-self: center;">
+        <span class="badge-dot anim-loop-dot"></span>
+        v3.2 — Latest Release
+      </div>
+      <h1 class="anim-rise anim-delay-1">API Reference</h1>
+      <p class="anim-rise anim-delay-2" style="max-width: 58ch; margin: 0 auto;">
+        Complete documentation for the CloudNest REST API. Authenticate, manage documents, collaborate in real time, and automate your enterprise workflows with clear, versioned endpoints.
+      </p>
+      <div class="anim-rise anim-delay-3" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="#authentication" class="btn btn-primary">Get Started</a>
+        <a href="#endpoints" class="btn btn-secondary">Browse Endpoints</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Base URL & Quick Info ── -->
+  <section class="section-sm" style="position: relative;">
+    <div class="container">
+      <div class="card anim-scale" style="padding: 28px 32px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+          <div class="flex-col gap-8">
+            <h4>Base URL</h4>
+            <div class="code-block" style="padding: 12px 20px; display: inline-block;">
+              <span class="str">https://api.cloudnest.eu/v3</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 32px; flex-wrap: wrap;">
+            <div class="stat">
+              <div class="stat-value">42</div>
+              <div class="stat-label">Endpoints</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">99.9%</div>
+              <div class="stat-label">Uptime SLA</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">&lt;45ms</div>
+              <div class="stat-label">Avg Latency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Docs Layout: Sidebar + Content ── -->
+  <section class="section" id="endpoints">
+    <div class="container">
+      <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <ul class="sidebar-nav anim-stagger">
+            <li class="section-title">Getting Started</li>
+            <li><a href="#authentication" class="active">Authentication</a></li>
+            <li><a href="#rate-limits">Rate Limits</a></li>
+            <li><a href="#errors">Error Handling</a></li>
+            <li class="section-title">Core Resources</li>
+            <li><a href="#documents">Documents</a></li>
+            <li><a href="#workspaces">Workspaces</a></li>
+            <li><a href="#users">Users &amp; Teams</a></li>
+            <li class="section-title">Advanced</li>
+            <li><a href="#webhooks">Webhooks</a></li>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#versioning">Versioning</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-col gap-48">
+
+          <!-- Authentication -->
+          <div id="authentication" class="flex-col gap-24 anim-rise">
+            <div class="flex-col gap-12">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <h2>Authentication</h2>
+                <span class="tag green">Required</span>
+              </div>
+              <p>
+                CloudNest uses Bearer tokens for API authentication. Generate an API key from your team's dashboard under <strong>Settings → API Keys</strong>. All requests must include the token in the Authorization header.
+              </p>
+            </div>
+            <div class="code-block anim-scale anim-delay-2">
+              <span class="cm"># Include your API key in every request</span><br>
+              <span class="kw">curl</span> -X GET <span class="str">"https://api.cloudnest.eu/v3/documents"</span> \<br>
+              &nbsp;&nbsp;-H <span class="str">"Authorization: Bearer YOUR_API_KEY"</span> \<br>
+              &nbsp;&nbsp;-H <span class="str">"Content-Type: application/json"</span>
+            </div>
+            <div class="card" style="padding: 20px 28px; border-left: 4px solid var(--c-warm);">
+              <div style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="font-size: 1.3rem;">⚠</span>
+                <div>
+                  <h4>Keep your keys secure</h4>
+                  <p style="font-size: .92rem; margin-top: 4px;">Never expose API keys in client-side code or public repositories. Use environment variables and rotate keys every 90 days for enterprise compliance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rate Limits -->
+          <div id="rate-limits" class="flex-col gap-24 anim-rise anim-delay-1">
+            <h2>Rate Limits</h2>
+            <p>
+              Rate limits are applied per API key. Response headers include your current usage. Enterprise plans receive dedicated throughput pools.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Plan</th>
+                    <th>Requests / min</th>
+                    <th>Burst Limit</th>
+                    <th>Header</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="tag">Free</span></td>
+                    <td>60</td>
+                    <td>10</td>
+                    <td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">X-RateLimit-Remaining</code></td>
+                  </tr>
+                  <tr>
+                    <td><span class="tag green">Team</span></td>
+                    <td>600</td>
+                    <td>50</td>
+                    <td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">X-RateLimit-Remaining</code></td>
+                  </tr>
+                  <tr>
+                    <td><span class="tag warm">Enterprise</span></td>
+                    <td>6,000</td>
+                    <td>200</td>
+                    <td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">X-RateLimit-Remaining</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Error Handling -->
+          <div id="errors" class="flex-col gap-24 anim-rise anim-delay-2">
+            <h2>Error Handling</h2>
+            <p>
+              The API returns standard HTTP status codes. Error responses include a machine-readable code and a human-friendly message.
+            </p>
+            <div class="code-block">
+              <span class="cm">// Example error response</span><br>
+              &#123;<br>
+              &nbsp;&nbsp;<span class="str">"error"</span>: &#123;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"code"</span>: <span class="str">"document_not_found"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"message"</span>: <span class="str">"No document with ID 'abc-123' exists."</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"status"</span>: <span class="fn">404</span><br>
+              &nbsp;&nbsp;&#125;<br>
+              &#125;
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Meaning</th>
+                    <th>Common Cause</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>400</strong></td><td>Bad Request</td><td>Malformed JSON or missing required field</td></tr>
+                  <tr><td><strong>401</strong></td><td>Unauthorized</td><td>Missing or invalid API key</td></tr>
+                  <tr><td><strong>403</strong></td><td>Forbidden</td><td>Insufficient permissions for this resource</td></tr>
+                  <tr><td><strong>404</strong></td><td>Not Found</td><td>Resource does not exist</td></tr>
+                  <tr><td><strong>429</strong></td><td>Too Many Requests</td><td>Rate limit exceeded</td></tr>
+                  <tr><td><strong>500</strong></td><td>Server Error</td><td>Internal issue — contact support</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Documents Endpoint -->
+          <div id="documents" class="flex-col gap-24 anim-rise anim-delay-3">
+            <div class="flex-col gap-12">
+              <h2>Documents</h2>
+              <p>Create, retrieve, update, and delete documents within your workspaces. Documents support Markdown content, metadata tags, and full version history.</p>
+            </div>
+
+            <!-- Endpoint Cards -->
+            <div class="flex-col gap-16 anim-stagger">
+              <!-- GET List -->
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="tag green" style="font-family: var(--font-mono); font-weight: 700;">GET</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/documents</code>
+                  <small>List all documents</small>
+                </div>
+                <p style="font-size: .92rem;">Returns a paginated list of documents in the authenticated workspace. Supports filtering by tag, status, and date range.</p>
+                <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+                  <span class="badge" style="font-size: .75rem;">?page=1</span>
+                  <span class="badge" style="font-size: .75rem;">?limit=25</span>
+                  <span class="badge" style="font-size: .75rem;">?tag=onboarding</span>
+                  <span class="badge" style="font-size: .75rem;">?status=published</span>
+                </div>
+              </div>
+
+              <!-- GET Single -->
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="tag green" style="font-family: var(--font-mono); font-weight: 700;">GET</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/documents/:id</code>
+                  <small>Retrieve a document</small>
+                </div>
+                <p style="font-size: .92rem;">Fetch a single document by its unique identifier. Includes content body, metadata, collaborator list, and version history.</p>
+              </div>
+
+              <!-- POST Create -->
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="tag" style="font-family: var(--font-mono); font-weight: 700; background: rgba(59,125,221,.12); color: var(--c-primary);">POST</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/documents</code>
+                  <small>Create a document</small>
+                </div>
+                <p style="font-size: .92rem;">Create a new document with Markdown content, optional tags, and workspace assignment. Returns the created resource with a generated ID.</p>
+              </div>
+
+              <!-- PUT Update -->
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="tag warm" style="font-family: var(--font-mono); font-weight: 700;">PUT</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/documents/:id</code>
+                  <small>Update a document</small>
+                </div>
+                <p style="font-size: .92rem;">Replace the content and metadata of an existing document. A new version is automatically created in the document's history.</p>
+              </div>
+
+              <!-- DELETE -->
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="tag" style="font-family: var(--font-mono); font-weight: 700; background: rgba(220,50,50,.1); color: #C0392B;">DELETE</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/documents/:id</code>
+                  <small>Delete a document</small>
+                </div>
+                <p style="font-size: .92rem;">Soft-deletes a document. It can be restored within 30 days from the workspace trash. After 30 days, the document is permanently removed.</p>
+              </div>
+            </div>
+
+            <!-- Request / Response Example -->
+            <div class="grid-2" style="margin-top: 8px;">
+              <div class="flex-col gap-12 anim-slide-right anim-delay-3">
+                <h4>Request Body</h4>
+                <div class="code-block">
+                  <span class="kw">POST</span> /documents<br><br>
+                  &#123;<br>
+                  &nbsp;&nbsp;<span class="str">"title"</span>: <span class="str">"Onboarding Guide"</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"content"</span>: <span class="str">"# Welcome\n\nThis guide..."</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"workspace_id"</span>: <span class="str">"ws_8f3k2"</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"tags"</span>: [<span class="str">"onboarding"</span>, <span class="str">"hr"</span>],<br>
+                  &nbsp;&nbsp;<span class="str">"status"</span>: <span class="str">"draft"</span><br>
+                  &#125;
+                </div>
+              </div>
+              <div class="flex-col gap-12 anim-slide-left anim-delay-4">
+                <h4>Response <span class="tag green" style="margin-left: 8px;">201 Created</span></h4>
+                <div class="code-block">
+                  &#123;<br>
+                  &nbsp;&nbsp;<span class="str">"id"</span>: <span class="str">"doc_q9x7m"</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"title"</span>: <span class="str">"Onboarding Guide"</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"version"</span>: <span class="fn">1</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"created_at"</span>: <span class="str">"2024-11-15T09:32:00Z"</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"created_by"</span>: <span class="str">"usr_a1b2c"</span>,<br>
+                  &nbsp;&nbsp;<span class="str">"status"</span>: <span class="str">"draft"</span><br>
+                  &#125;
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workspaces Endpoint -->
+          <div id="workspaces" class="flex-col gap-24 anim-rise">
+            <h2>Workspaces</h2>
+            <p>Workspaces are organizational containers for documents. Each workspace has its own set of collaborators, permissions, and branding settings.</p>
+            <div class="flex-col gap-16 anim-stagger">
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag green" style="font-family: var(--font-mono); font-weight: 700;">GET</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/workspaces</code>
+                  <small>List workspaces for the authenticated team</small>
+                </div>
+              </div>
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag" style="font-family: var(--font-mono); font-weight: 700; background: rgba(59,125,221,.12); color: var(--c-primary);">POST</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/workspaces</code>
+                  <small>Create a new workspace</small>
+                </div>
+              </div>
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag warm" style="font-family: var(--font-mono); font-weight: 700;">PUT</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/workspaces/:id</code>
+                  <small>Update workspace settings and branding</small>
+                </div>
+              </div>
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag green" style="font-family: var(--font-mono); font-weight: 700;">GET</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/workspaces/:id/members</code>
+                  <small>List workspace members and their roles</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Users & Teams -->
+          <div id="users" class="flex-col gap-24 anim-rise">
+            <h2>Users &amp; Teams</h2>
+            <p>Manage team members, roles, and permissions. Invite new collaborators, assign granular access levels, and audit activity logs.</p>
+            <div class="flex-col gap-16 anim-stagger">
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag green" style="font-family: var(--font-mono); font-weight: 700;">GET</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/team/members</code>
+                  <small>List all team members</small>
+                </div>
+              </div>
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag" style="font-family: var(--font-mono); font-weight: 700; background: rgba(59,125,221,.12); color: var(--c-primary);">POST</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/team/invitations</code>
+                  <small>Invite a new member by email</small>
+                </div>
+              </div>
+              <div class="card" style="padding: 24px 28px;">
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                  <span class="tag warm" style="font-family: var(--font-mono); font-weight: 700;">PATCH</span>
+                  <code style="font-family: var(--font-mono); font-size: .95rem; color: var(--c-text);">/team/members/:id/role</code>
+                  <small>Update a member's role (admin, editor, viewer)</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Webhooks -->
+          <div id="webhooks" class="flex-col gap-24 anim-rise">
+            <h2>Webhooks</h2>
+            <p>Subscribe to real-time events from your CloudNest workspace. Webhooks deliver JSON payloads to your endpoint within seconds of an event occurring.</p>
+
+            <div class="grid-3 anim-stagger">
+              <div class="card" style="padding: 24px;">
+                <div class="card-icon green">⚡</div>
+                <h4>document.created</h4>
+                <p style="font-size: .88rem; margin-top: 8px;">Fires when a new document is created in any workspace.</p>
+              </div>
+              <div class="card" style="padding: 24px;">
+                <div class="card-icon blue">✏</div>
+                <h4>document.updated</h4>
+                <p style="font-size: .88rem; margin-top: 8px;">Fires when document content or metadata is modified.</p>
+              </div>
+              <div class="card" style="padding: 24px;">
+                <div class="card-icon warm">🗑</div>
+                <h4>document.deleted</h4>
+                <p style="font-size: .88rem; margin-top: 8px;">Fires when a document is moved to trash or permanently deleted.</p>
+              </div>
+              <div class="card" style="padding: 24px;">
+                <div class="card-icon purple">👤</div>
+                <h4>member.invited</h4>
+                <p style="font-size: .88rem; margin-top: 8px;">Fires when a new team member invitation is sent.</p>
+              </div>
+              <div class="card" style="padding: 24px;">
+                <div class="card-icon blue">📦</div>
+                <h4>workspace.updated</h4>
+                <p style="font-size: .88rem; margin-top: 8px;">Fires when workspace settings or branding are changed.</p>
+              </div>
+              <div class="card" style="padding: 24px;">
+                <div class="card-icon green">🔍</div>
+                <h4>document.published</h4>
+                <p style="font-size: .88rem; margin-top: 8px;">Fires when a draft document status changes to published.</p>
+              </div>
+            </div>
+
+            <div class="code-block anim-scale anim-delay-2">
+              <span class="cm">// Webhook payload example</span><br>
+              &#123;<br>
+              &nbsp;&nbsp;<span class="str">"event"</span>: <span class="str">"document.published"</span>,<br>
+              &nbsp;&nbsp;<span class="str">"timestamp"</span>: <span class="str">"2024-11-15T14:22:08Z"</span>,<br>
+              &nbsp;&nbsp;<span class="str">"data"</span>: &#123;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"document_id"</span>: <span class="str">"doc_q9x7m"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"workspace_id"</span>: <span class="str">"ws_8f3k2"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"published_by"</span>: <span class="str">"usr_a1b2c"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"version"</span>: <span class="fn">3</span><br>
+              &nbsp;&nbsp;&#125;<br>
+              &#125;
+            </div>
+          </div>
+
+          <!-- Search -->
+          <div id="search" class="flex-col gap-24 anim-rise">
+            <h2>Search</h2>
+            <p>Full-text search across all documents in your team. Supports filters, highlights, and relevance scoring powered by CloudNest's European-hosted search infrastructure.</p>
+
+            <div class="code-block anim-scale">
+              <span class="kw">GET</span> /search?<span class="fn">q</span>=<span class="str">onboarding setup</span>&amp;<span class="fn">workspace</span>=<span class="str">ws_8f3k2</span>&amp;<span class="fn">limit</span>=<span class="fn">10</span><br><br>
+              <span class="cm">// Response</span><br>
+              &#123;<br>
+              &nbsp;&nbsp;<span class="str">"total"</span>: <span class="fn">23</span>,<br>
+              &nbsp;&nbsp;<span class="str">"results"</span>: [<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&#123;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"id"</span>: <span class="str">"doc_q9x7m"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"title"</span>: <span class="str">"Onboarding Guide"</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"score"</span>: <span class="fn">0.94</span>,<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"highlight"</span>: <span class="str">"...complete &lt;em&gt;onboarding setup&lt;/em&gt; for new..."</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+              &nbsp;&nbsp;]<br>
+              &#125;
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">q</code></td><td>string</td><td>Search query (required, 1–256 characters)</td></tr>
+                  <tr><td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">workspace</code></td><td>string</td><td>Filter results to a specific workspace ID</td></tr>
+                  <tr><td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">tag</code></td><td>string</td><td>Filter by document tag</td></tr>
+                  <tr><td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">limit</code></td><td>integer</td><td>Results per page (default: 20, max: 100)</td></tr>
+                  <tr><td><code style="font-family: var(--font-mono); font-size: .85rem; background: var(--c-code-bg); padding: 2px 8px; border-radius: 4px;">offset</code></td><td>integer</td><td>Pagination offset</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Versioning -->
+          <div id="versioning" class="flex-col gap-24 anim-rise">
+            <h2>Versioning</h2>
+            <p>Every API version is maintained for at least 18 months after a successor is released. Include the version in the URL path to pin your integration.</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Version</th>
+                    <th>Status</th>
+                    <th>Released</th>
+                    <th>Sunset Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>v3</strong></td>
+                    <td><span class="badge anim-loop-badge-pulse" style="padding: 4px 10px;"><span class="badge-dot"></span> Current</span></td>
+                    <td>Sep 2024</td>
+                    <td>—</td>
+                  </tr>
+                  <tr>
+                    <td><strong>v2</strong></td>
+                    <td><span class="tag warm">Deprecated</span></td>
+                    <td>Jan 2023</td>
+                    <td>Mar 2026</td>
+                  </tr>
+                  <tr>
+                    <td><strong>v1</strong></td>
+                    <td><span class="tag" style="background: rgba(220,50,50,.1); color: #C0392B;">Retired</span></td>
+                    <td>Jun 2021</td>
+                    <td>Jul 2024</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SDK Quick Start Cards ── -->
+  <section class="section" style="position: relative; overflow: hidden;">
+    <div class="orb orb-green anim-loop-pulse" style="width: 260px; height: 260px; top: -60px; left: 50%; margin-left: -130px;"></div>
+    <div class="container flex-col gap-48" style="position: relative; z-index: 1;">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items: center;">
+        <h2>Official SDKs</h2>
+        <p style="margin: 0 auto;">Get started faster with our maintained client libraries. Each SDK wraps the full API surface with typed models and built-in retry logic.</p>
+      </div>
+      <div class="grid-4 anim-stagger">
+        <div class="card text-center" style="padding: 28px 20px;">
+          <div class="card-icon blue" style="margin: 0 auto 16px;">
+            <span style="font-size: 1.2rem; font-weight: 800; font-family: var(--font-mono);">JS</span>
+          </div>
+          <h4>Node.js</h4>
+          <p style="font-size: .85rem; margin-top: 8px;">npm install @cloudnest/sdk</p>
+        </div>
+        <div class="card text-center" style="padding: 28px 20px;">
+          <div class="card-icon green" style="margin: 0 auto 16px;">
+            <span style="font-size: 1.2rem; font-weight: 800; font-family: var(--font-mono);">Py</span>
+          </div>
+          <h4>Python</h4>
+          <p style="font-size: .85rem; margin-top: 8px;">pip install cloudnest</p>
+        </div>
+        <div class="card text-center" style="padding: 28px 20px;">
+          <div class="card-icon warm" style="margin: 0 auto 16px;">
+            <span style="font-size: 1.2rem; font-weight: 800; font-family: var(--font-mono);">Go</span>
+          </div>
+          <h4>Go</h4>
+          <p style="font-size: .85rem; margin-top: 8px;">go get cloudnest.eu/sdk</p>
+        </div>
+        <div class="card text-center" style="padding: 28px 20px;">
+          <div class="card-icon purple" style="margin: 0 auto 16px;">
+            <span style="font-size: 1.2rem; font-weight: 800; font-family: var(--font-mono);">C#</span>
+          </div>
+          <h4>.NET</h4>
+          <p style="font-size: .85rem; margin-top: 8px;">dotnet add CloudNest.SDK</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Section ── -->
+  <section class="section" style="position: relative; overflow: hidden;">
+    <div class="orb orb-blue anim-loop-drift" style="width: 340px; height: 340px; bottom: -100px; right: -80px;"></div>
+    <div class="container">
+      <div class="card anim-scale text-center flex-col gap-24" style="align-items: center; padding: 56px 40px; background: linear-gradient(135deg, var(--c-primary), var(--c-primary-d)); border: none; color: #fff;">
+        <h2 style="color: #fff;">Ready to build?</h2>
+        <p style="color: rgba(255,255,255,.85); max-width: 52ch; margin: 0 auto;">
+          Generate your first API key in under a minute. Our free tier includes 60 requests per minute — enough to prototype, test, and ship your integration.
+        </p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+          <a href="enterprise.html" class="btn btn-accent">Start Free</a>
+          <a href="integrations.html" class="btn" style="background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.3);">View Integrations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Related Pages ── -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="grid-3 anim-stagger">
+        <a href="documentation.html" class="card flex-col gap-12" style="text-decoration: none;">
+          <div class="card-icon blue">📖</div>
+          <h4>Documentation</h4>
+          <p style="font-size: .88rem;">Guides, tutorials, and best practices for every CloudNest feature.</p>
+        </a>
+        <a href="integrations.html" class="card flex-col gap-12" style="text-decoration: none;">
+          <div class="card-icon green">🔗</div>
+          <h4>Integrations</h4>
+          <p style="font-size: .88rem;">Connect CloudNest with Slack, GitHub, Jira, and 30+ other tools.</p>
+        </a>
+        <a href="enterprise.html" class="card flex-col gap-12" style="text-decoration: none;">
+          <div class="card-icon warm">🏢</div>
+          <h4>Enterprise</h4>
+          <p style="font-size: .88rem;">SSO, audit logs, dedicated support, and custom SLAs for large teams.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-dot anim-loop-pulse"></div>
+          CloudNest
+        </a>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.5);max-width:280px;">Enterprise-grade documentation platform trusted by teams across Europe. Built for clarity, designed for scale.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">GDPR Ready</span>
+          <span class="footer-badge">SOC 2</span>
+          <span class="footer-badge">ISO 27001</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Getting Started</a></li>
+          <li><a href="api-reference.html">API Guides</a></li>
+          <li><a href="integrations.html">Marketplace</a></li>
+          <li><a href="index.html">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="enterprise.html">Contact Sales</a></li>
+          <li><a href="index.html">Careers</a></li>
+          <li><a href="index.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 CloudNest B.V. — Amsterdam, Netherlands</span>
+      <span>Made with care for European enterprises</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

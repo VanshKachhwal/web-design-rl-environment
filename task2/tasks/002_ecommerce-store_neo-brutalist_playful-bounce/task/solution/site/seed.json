@@ -1,0 +1,17 @@
+{
+  "archetype": "ecommerce-store",
+  "aesthetic": "neo-brutalist",
+  "audience": "global-developers",
+  "brand_mood": "playful-and-energetic",
+  "animation_style": "playful-bounce",
+  "animation_style_hint": "springy overshoot/bounce and scale-pops; fun and lively",
+  "page_count": 5,
+  "seed_tuple": [
+    "ecommerce-store",
+    "neo-brutalist",
+    "high",
+    "global-developers",
+    "playful-and-energetic",
+    "playful-bounce"
+  ]
+}

@@ -1,0 +1,291 @@
+/* ══════════════════════════════════════════
+   STERLING & ASSOCIATES — Animation System
+   ══════════════════════════════════════════ */
+
+/* — Keyframes — */
+
+@keyframes anim-rise-kf {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes anim-fade-kf {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes anim-slide-left-kf {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes anim-slide-right-kf {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes anim-scale-in-kf {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes anim-line-expand-kf {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* — Infinite / Loop Keyframes — */
+
+@keyframes pulse-glow-kf {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float-kf {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer-kf {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes rotate-slow-kf {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes breathe-border-kf {
+  0%, 100% {
+    border-color: rgba(201, 168, 76, 0.2);
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0);
+  }
+  50% {
+    border-color: rgba(201, 168, 76, 0.5);
+    box-shadow: 0 0 20px 0 rgba(201, 168, 76, 0.08);
+  }
+}
+
+/* ═══════════════════════════════════════
+   REUSABLE ENTRANCE ANIMATION CLASSES
+   ═══════════════════════════════════════ */
+
+/* Base: elements start invisible */
+.anim-rise,
+.anim-fade,
+.anim-slide-left,
+.anim-slide-right,
+.anim-scale-in {
+  opacity: 0;
+}
+
+/* Rise (blur-to-sharp + translate up) */
+.anim-rise {
+  animation: anim-rise-kf 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Fade (blur-to-sharp, no translate) */
+.anim-fade {
+  animation: anim-fade-kf 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Slide from left */
+.anim-slide-left {
+  animation: anim-slide-left-kf 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Slide from right */
+.anim-slide-right {
+  animation: anim-slide-right-kf 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Scale in */
+.anim-scale-in {
+  animation: anim-scale-in-kf 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Line expand (for dividers) */
+.anim-line-expand {
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: anim-line-expand-kf 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-line-expand--center {
+  transform-origin: center center;
+}
+
+/* ═══════════════════════════════════════
+   STAGGER DELAY CLASSES
+   ═══════════════════════════════════════ */
+
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.25s; }
+.anim-delay-3 { animation-delay: 0.4s; }
+.anim-delay-4 { animation-delay: 0.55s; }
+.anim-delay-5 { animation-delay: 0.7s; }
+.anim-delay-6 { animation-delay: 0.85s; }
+.anim-delay-7 { animation-delay: 1.0s; }
+.anim-delay-8 { animation-delay: 1.15s; }
+.anim-delay-9 { animation-delay: 1.3s; }
+.anim-delay-10 { animation-delay: 1.5s; }
+
+/* Auto-stagger children: apply .anim-stagger to parent */
+.anim-stagger > * {
+  opacity: 0;
+  animation: anim-rise-kf 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.anim-stagger > *:nth-child(2) { animation-delay: 0.25s; }
+.anim-stagger > *:nth-child(3) { animation-delay: 0.4s; }
+.anim-stagger > *:nth-child(4) { animation-delay: 0.55s; }
+.anim-stagger > *:nth-child(5) { animation-delay: 0.7s; }
+.anim-stagger > *:nth-child(6) { animation-delay: 0.85s; }
+.anim-stagger > *:nth-child(7) { animation-delay: 1.0s; }
+.anim-stagger > *:nth-child(8) { animation-delay: 1.15s; }
+.anim-stagger > *:nth-child(9) { animation-delay: 1.3s; }
+.anim-stagger > *:nth-child(10) { animation-delay: 1.5s; }
+
+/* Stagger variant: fade only */
+.anim-stagger-fade > * {
+  opacity: 0;
+  animation: anim-fade-kf 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.anim-stagger-fade > *:nth-child(1) { animation-delay: 0.15s; }
+.anim-stagger-fade > *:nth-child(2) { animation-delay: 0.3s; }
+.anim-stagger-fade > *:nth-child(3) { animation-delay: 0.45s; }
+.anim-stagger-fade > *:nth-child(4) { animation-delay: 0.6s; }
+.anim-stagger-fade > *:nth-child(5) { animation-delay: 0.75s; }
+.anim-stagger-fade > *:nth-child(6) { animation-delay: 0.9s; }
+
+/* ═══════════════════════════════════════
+   INFINITE / LOOP ANIMATION CLASSES
+   ═══════════════════════════════════════ */
+
+.anim-loop-pulse {
+  animation: pulse-glow-kf 3s ease-in-out infinite;
+}
+
+.anim-loop-float {
+  animation: float-kf 4s ease-in-out infinite;
+}
+
+.anim-loop-shimmer {
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-gold) 0%,
+    var(--color-gold-pale) 50%,
+    var(--color-gold) 100%
+  );
+  animation: shimmer-kf 3s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.anim-loop-rotate {
+  animation: rotate-slow-kf 20s linear infinite;
+}
+
+.anim-loop-breathe {
+  animation: breathe-border-kf 4s ease-in-out infinite;
+}
+
+/* — Decorative animated element — */
+.anim-deco-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  pointer-events: none;
+  animation: rotate-slow-kf 30s linear infinite;
+}
+
+.anim-deco-ring--lg {
+  width: 500px;
+  height: 500px;
+}
+
+.anim-deco-ring--md {
+  width: 300px;
+  height: 300px;
+}
+
+.anim-deco-ring--sm {
+  width: 160px;
+  height: 160px;
+  border-width: 2px;
+  border-color: rgba(201, 168, 76, 0.1);
+}
+
+/* — Reduce motion preference — */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

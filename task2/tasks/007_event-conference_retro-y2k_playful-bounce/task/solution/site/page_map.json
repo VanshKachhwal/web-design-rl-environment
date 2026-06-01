@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "schedule": {
+    "expected_file": "schedule.html",
+    "screenshot": "schedule.png"
+  },
+  "speakers": {
+    "expected_file": "speakers.html",
+    "screenshot": "speakers.png"
+  },
+  "workshops": {
+    "expected_file": "workshops.html",
+    "screenshot": "workshops.png"
+  },
+  "register": {
+    "expected_file": "register.html",
+    "screenshot": "register.png"
+  }
+}

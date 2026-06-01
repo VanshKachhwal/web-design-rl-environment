@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Contact</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="nav" role="banner">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Clearpath Home">
+      <span class="nav__logo-mark"></span>
+      Clearpath
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="features.html" class="nav__link">Features</a></li>
+        <li><a href="pricing.html" class="nav__link">Pricing</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+        <li><a href="contact.html" class="btn btn--primary btn--sm">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container container--narrow">
+      <span class="t-overline anim-rise anim-delay-1" style="display:inline-block;">Contact Us</span>
+      <h1 class="t-h1 mt-md anim-rise anim-delay-2">Let's start a conversation</h1>
+      <p class="t-body-lg mt-md anim-rise anim-delay-3">Whether you're exploring Clearpath for your team or need help with an existing account, we're here. Direct answers, no runaround.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info Grid -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="feature-row">
+
+        <!-- Contact Form -->
+        <div class="anim-rise anim-delay-3">
+          <h2 class="t-h3 mb-lg">Send us a message</h2>
+          <form action="#" method="post">
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label" for="first-name">First name</label>
+                <input class="form-input" type="text" id="first-name" name="first-name" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="last-name">Last name</label>
+                <input class="form-input" type="text" id="last-name" name="last-name" placeholder="Doe" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Work email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="jane@company.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="company">Company</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="Acme Inc.">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <select class="form-input" id="subject" name="subject">
+                <option value="" disabled selected>Select a topic</option>
+                <option value="demo">Request a demo</option>
+                <option value="sales">Sales inquiry</option>
+                <option value="support">Technical support</option>
+                <option value="billing">Billing question</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell us what you need help with…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg anim-loop-glow" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info Sidebar -->
+        <div class="anim-rise anim-delay-4">
+          <div class="card anim-hover-lift mb-lg">
+            <div class="card__icon">
+              <div class="card__icon-shape--circle" style="width:20px;height:20px;background:var(--c-accent);border-radius:50%;"></div>
+            </div>
+            <h3 class="t-h4 mb-sm">Sales</h3>
+            <p class="t-body mb-md">Ready to see how Clearpath fits your workflow? Our sales team responds within two hours on business days.</p>
+            <a href="mailto:sales@clearpath.app" class="btn btn--ghost">sales@clearpath.app</a>
+          </div>
+
+          <div class="card anim-hover-lift mb-lg">
+            <div class="card__icon">
+              <div class="card__icon-shape" style="width:20px;height:20px;background:var(--c-accent);border-radius:3px;"></div>
+            </div>
+            <h3 class="t-h4 mb-sm">Support</h3>
+            <p class="t-body mb-md">Existing customer? Our support engineers are available Monday through Friday, 8 AM–8 PM EST.</p>
+            <a href="mailto:support@clearpath.app" class="btn btn--ghost">support@clearpath.app</a>
+          </div>
+
+          <div class="card anim-hover-lift mb-lg">
+            <div class="card__icon">
+              <div class="card__icon-shape--diamond" style="width:16px;height:16px;background:var(--c-accent);border-radius:3px;transform:rotate(45deg);"></div>
+            </div>
+            <h3 class="t-h4 mb-sm">Phone</h3>
+            <p class="t-body mb-md">Prefer to talk? Call us directly during business hours for immediate assistance.</p>
+            <a href="tel:+18005550199" class="btn btn--ghost">+1 (800) 555-0199</a>
+          </div>
+
+          <div class="card card--dark anim-hover-lift">
+            <h3 class="t-h4 mb-sm" style="color:var(--c-white);">Headquarters</h3>
+            <p class="t-body" style="color:var(--c-grey-400);">
+              Clearpath HQ<br>
+              140 West 28th Street, 10th Floor<br>
+              New York, NY 10001<br>
+              United States
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="container"><hr class="divider"></div>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="t-center mb-xl">
+        <span class="t-overline anim-fade">Common Questions</span>
+        <h2 class="t-h2 mt-sm anim-rise anim-delay-2">Before you reach out</h2>
+        <p class="t-body-lg mt-md anim-rise anim-delay-3" style="max-width:600px;margin-left:auto;margin-right:auto;">Quick answers to the questions we hear most. If yours isn't here, use the form above.</p>
+      </div>
+
+      <div class="grid grid-2 anim-stagger">
+
+        <div class="card anim-hover-lift">
+          <h3 class="t-h4 mb-sm">How quickly will I hear back?</h3>
+          <p class="t-body">Sales inquiries receive a response within two hours during business days. Support tickets are triaged within 30 minutes for Pro and Enterprise plans.</p>
+        </div>
+
+        <div class="card anim-hover-lift">
+          <h3 class="t-h4 mb-sm">Can I schedule a live demo?</h3>
+          <p class="t-body">Absolutely. Select "Request a demo" in the subject dropdown and include your preferred time. We'll send a calendar invite within one business day.</p>
+        </div>
+
+        <div class="card anim-hover-lift">
+          <h3 class="t-h4 mb-sm">Do you offer onboarding help?</h3>
+          <p class="t-body">Every Pro plan includes a dedicated onboarding session. Enterprise customers get a full implementation partner assigned to their account.</p>
+        </div>
+
+        <div class="card anim-hover-lift">
+          <h3 class="t-h4 mb-sm">What about data security?</h3>
+          <p class="t-body">Clearpath is SOC 2 Type II certified with end-to-end encryption. We never sell your data. Full details live on our security page.</p>
+        </div>
+
+        <div class="card anim-hover-lift">
+          <h3 class="t-h4 mb-sm">Is there a free trial?</h3>
+          <p class="t-body">Yes — 14 days, no credit card required. Start from the <a href="pricing.html" style="color:var(--c-accent);font-weight:600;">pricing page</a> and you'll be inside Clearpath in under two minutes.</p>
+        </div>
+
+        <div class="card anim-hover-lift">
+          <h3 class="t-h4 mb-sm">Can I switch plans later?</h3>
+          <p class="t-body">Upgrade or downgrade anytime from your account settings. Changes take effect at the start of your next billing cycle — no penalties, no hidden fees.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Time Stats -->
+  <section class="section--sm section--grey">
+    <div class="container">
+      <div class="grid grid-3 anim-stagger t-center">
+        <div class="stat">
+          <div class="stat__number anim-loop-pulse">&lt; 2h</div>
+          <div class="stat__label">Average sales response</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">98%</div>
+          <div class="stat__label">Customer satisfaction score</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">24/5</div>
+          <div class="stat__label">Live support availability</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="testimonial anim-scale anim-delay-2">
+        <p class="testimonial__quote">We emailed Clearpath on a Friday afternoon expecting to wait until Monday. Their team responded in 40 minutes with a working solution. That kind of support changes how you feel about a tool.</p>
+        <p class="testimonial__author">Rachel Torres</p>
+        <p class="testimonial__role">Head of Operations, Vantage Media</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="cta-banner anim-rise anim-delay-2">
+        <span class="badge badge--dark mb-md" style="display:inline-flex;">
+          <span class="badge__dot anim-loop-dot"></span>
+          No commitment required
+        </span>
+        <h2 class="t-h2 t-white mb-md">Not ready to talk? Try it free.</h2>
+        <p class="t-body-lg mb-lg" style="color:var(--c-grey-400);max-width:520px;margin-left:auto;margin-right:auto;">Start a 14-day trial — no credit card, no sales call. See why 2,400+ teams manage projects with Clearpath.</p>
+        <div class="flex justify-center gap-md" style="flex-wrap:wrap;">
+          <a href="pricing.html" class="btn btn--white btn--lg anim-loop-glow">Start Free Trial</a>
+          <a href="features.html" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.2);color:var(--c-white);">Explore Features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="grid grid-4 anim-stagger">
+        <a href="index.html" class="card anim-hover-lift t-center" style="text-decoration:none;">
+          <div class="card__icon" style="margin-left:auto;margin-right:auto;">
+            <div class="card__icon-shape--circle" style="width:20px;height:20px;background:var(--c-accent);border-radius:50%;"></div>
+          </div>
+          <h4 class="t-h4">Home</h4>
+          <p class="t-caption mt-sm">Back to the overview</p>
+        </a>
+        <a href="features.html" class="card anim-hover-lift t-center" style="text-decoration:none;">
+          <div class="card__icon" style="margin-left:auto;margin-right:auto;">
+            <div class="card__icon-shape" style="width:20px;height:20px;background:var(--c-accent);border-radius:3px;"></div>
+          </div>
+          <h4 class="t-h4">Features</h4>
+          <p class="t-caption mt-sm">See what Clearpath does</p>
+        </a>
+        <a href="pricing.html" class="card anim-hover-lift t-center" style="text-decoration:none;">
+          <div class="card__icon" style="margin-left:auto;margin-right:auto;">
+            <div class="card__icon-shape--diamond" style="width:16px;height:16px;background:var(--c-accent);border-radius:3px;transform:rotate(45deg);"></div>
+          </div>
+          <h4 class="t-h4">Pricing</h4>
+          <p class="t-caption mt-sm">Plans for every team size</p>
+        </a>
+        <a href="about.html" class="card anim-hover-lift t-center" style="text-decoration:none;">
+          <div class="card__icon" style="margin-left:auto;margin-right:auto;">
+            <div class="card__icon-shape--triangle" style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:18px solid var(--c-accent);background:transparent;"></div>
+          </div>
+          <h4 class="t-h4">About</h4>
+          <p class="t-caption mt-sm">Our story and mission</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">
+          <span class="footer__logo-mark"></span>
+          Clearpath
+        </div>
+        <p class="footer__brand-desc">Project management that cuts through complexity. Built for teams who ship.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Product</h4>
+        <ul class="footer__links">
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="features.html">Integrations</a></li>
+          <li><a href="pricing.html">Enterprise</a></li>
+          <li><a href="contact.html">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html">Get in Touch</a></li>
+          <li><a href="about.html">Careers</a></li>
+          <li><a href="about.html">Press</a></li>
+          <li><a href="contact.html">Partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 Clearpath. All rights reserved.</span>
+      <span>Designed in San Francisco</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

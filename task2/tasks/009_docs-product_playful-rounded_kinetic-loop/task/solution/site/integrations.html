@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Integrations</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-dot anim-loop-pulse"></div>
+        CloudNest
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Docs</a></li>
+        <li><a href="api-reference.html">API</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="enterprise.html">Enterprise</a></li>
+      </ul>
+      <a href="enterprise.html" class="btn btn-primary btn-sm">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- ═══ Hero Section ═══ -->
+  <section class="section" style="position: relative; overflow: hidden; padding-top: 100px; padding-bottom: 100px;">
+    <!-- Decorative orbs -->
+    <div class="orb orb-blue anim-loop-drift" style="width: 320px; height: 320px; top: -60px; right: -80px;"></div>
+    <div class="orb orb-green anim-loop-pulse" style="width: 240px; height: 240px; bottom: -40px; left: -60px;"></div>
+    <div class="orb orb-warm anim-loop-drift" style="width: 180px; height: 180px; top: 40%; left: 55%; animation-delay: 2s;"></div>
+
+    <div class="container text-center flex-col gap-24" style="align-items: center; position: relative; z-index: 1;">
+      <div class="badge anim-rise anim-loop-badge-pulse" style="align-self: center;">
+        <span class="badge-dot anim-loop-dot"></span>
+        60+ Native Integrations
+      </div>
+      <h1 class="anim-rise anim-delay-1">Connect CloudNest to<br>Your Entire Workflow</h1>
+      <p class="anim-rise anim-delay-2" style="max-width: 58ch; margin: 0 auto;">
+        Seamlessly link your documentation platform with the tools your enterprise teams already use — from version control and CI/CD to messaging and project management.
+      </p>
+      <div class="anim-rise anim-delay-3" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="api-reference.html" class="btn btn-primary">Explore the API</a>
+        <a href="#integration-grid" class="btn btn-secondary">Browse Integrations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Integration Categories ═══ -->
+  <section id="integration-grid" class="section" style="padding-top: 40px;">
+    <div class="container">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items: center; margin-bottom: 48px;">
+        <h2>Integration Categories</h2>
+        <p style="margin: 0 auto;">Every integration is built for enterprise-grade reliability with OAuth 2.0, SAML, and fine-grained permission controls.</p>
+      </div>
+
+      <!-- Category badges row -->
+      <div class="anim-rise anim-delay-2" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 48px;">
+        <span class="tag">Version Control</span>
+        <span class="tag green">Communication</span>
+        <span class="tag warm">CI/CD</span>
+        <span class="tag">Project Management</span>
+        <span class="tag green">Identity & SSO</span>
+        <span class="tag warm">Analytics</span>
+      </div>
+
+      <!-- Version Control -->
+      <h3 class="anim-rise" style="margin-bottom: 20px;">
+        <span style="display: inline-flex; align-items: center; gap: 10px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-primary); display: inline-block;"></span>
+          Version Control
+        </span>
+      </h3>
+      <div class="grid-3 anim-stagger" style="margin-bottom: 56px;">
+        <div class="card">
+          <div class="card-icon blue">
+            <span style="font-size: 1.3rem; font-weight: 800;">GH</span>
+          </div>
+          <h4>GitHub</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Sync documentation directly from your repositories. Auto-publish on push, track changes via pull requests, and embed code snippets live.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px;">
+            <span class="tag green">Popular</span>
+            <span class="tag">Bi-directional</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon blue">
+            <span style="font-size: 1.3rem; font-weight: 800;">GL</span>
+          </div>
+          <h4>GitLab</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Full CI/CD pipeline integration with GitLab. Trigger doc builds on merge, validate links, and deploy to staging environments automatically.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px;">
+            <span class="tag">Self-hosted</span>
+            <span class="tag">Webhooks</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">
+            <span style="font-size: 1.3rem; font-weight: 800;">BB</span>
+          </div>
+          <h4>Bitbucket</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Connect Bitbucket Cloud or Server. Map branches to doc versions and automate release notes from commit messages.</p>
+          <div style="margin-top: 16px; display: flex; gap: 8px;">
+            <span class="tag">Cloud & Server</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Communication -->
+      <h3 class="anim-rise" style="margin-bottom: 20px;">
+        <span style="display: inline-flex; align-items: center; gap: 10px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); display: inline-block;"></span>
+          Communication
+        </span>
+      </h3>
+      <div class="grid-3 anim-stagger" style="margin-bottom: 56px;">
+        <div class="card">
+          <div class="card-icon green">
+            <span style="font-size: 1.3rem; font-weight: 800;">SL</span>
+          </div>
+          <h4>Slack</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Get real-time notifications when docs are updated. Search and share documentation pages directly within Slack channels and threads.</p>
+          <div style="margin-top: 16px;">
+            <span class="tag green">Popular</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">
+            <span style="font-size: 1.3rem; font-weight: 800;">MS</span>
+          </div>
+          <h4>Microsoft Teams</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Embed CloudNest tabs in Teams channels. Review and approve documentation changes without leaving your collaboration hub.</p>
+          <div style="margin-top: 16px;">
+            <span class="tag">Tabs & Bots</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon warm">
+            <span style="font-size: 1.3rem; font-weight: 800;">DC</span>
+          </div>
+          <h4>Discord</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Perfect for developer communities. Bot commands let users search docs, and webhook alerts notify channels of new content and updates.</p>
+          <div style="margin-top: 16px;">
+            <span class="tag warm">Community</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CI/CD & DevOps -->
+      <h3 class="anim-rise" style="margin-bottom: 20px;">
+        <span style="display: inline-flex; align-items: center; gap: 10px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-warm); display: inline-block;"></span>
+          CI/CD &amp; DevOps
+        </span>
+      </h3>
+      <div class="grid-4 anim-stagger" style="margin-bottom: 56px;">
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon warm" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">JK</span>
+          </div>
+          <h4>Jenkins</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">Trigger doc builds as pipeline stages. Validate broken links and publish on successful CI runs.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon blue" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">GA</span>
+          </div>
+          <h4>GitHub Actions</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">Pre-built workflow actions for doc linting, preview deployments, and production publishing.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon green" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">CI</span>
+          </div>
+          <h4>CircleCI</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">Orb-based integration for automated documentation testing and deployment in CircleCI pipelines.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon purple" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">AZ</span>
+          </div>
+          <h4>Azure DevOps</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">Native extension for Azure Pipelines with release gate support for documentation quality checks.</p>
+        </div>
+      </div>
+
+      <!-- Project Management -->
+      <h3 class="anim-rise" style="margin-bottom: 20px;">
+        <span style="display: inline-flex; align-items: center; gap: 10px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-primary-l); display: inline-block;"></span>
+          Project Management
+        </span>
+      </h3>
+      <div class="grid-3 anim-stagger" style="margin-bottom: 56px;">
+        <div class="card">
+          <div class="card-icon blue">
+            <span style="font-size: 1.3rem; font-weight: 800;">JR</span>
+          </div>
+          <h4>Jira</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Link documentation pages to Jira tickets. Automatically create doc tasks when features move to "Ready for Docs" status.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">
+            <span style="font-size: 1.3rem; font-weight: 800;">LN</span>
+          </div>
+          <h4>Linear</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Bi-directional sync between Linear issues and CloudNest pages. Track documentation debt alongside engineering work.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon warm">
+            <span style="font-size: 1.3rem; font-weight: 800;">AS</span>
+          </div>
+          <h4>Asana</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Embed live doc previews in Asana tasks. Assign documentation reviews and track progress within your existing workflows.</p>
+        </div>
+      </div>
+
+      <!-- Identity & SSO -->
+      <h3 class="anim-rise" style="margin-bottom: 20px;">
+        <span style="display: inline-flex; align-items: center; gap: 10px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); display: inline-block;"></span>
+          Identity &amp; SSO
+        </span>
+      </h3>
+      <div class="grid-4 anim-stagger" style="margin-bottom: 16px;">
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon green" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">OK</span>
+          </div>
+          <h4>Okta</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">SAML 2.0 and SCIM provisioning for seamless user lifecycle management.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon blue" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">AD</span>
+          </div>
+          <h4>Azure AD</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">Enterprise SSO with conditional access policies and group-based permissions mapping.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon purple" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">1P</span>
+          </div>
+          <h4>OneLogin</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">One-click SSO setup with real-time directory sync and MFA enforcement.</p>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="card-icon warm" style="width: 44px; height: 44px; font-size: 1.1rem;">
+            <span style="font-weight: 800;">A0</span>
+          </div>
+          <h4>Auth0</h4>
+          <p style="font-size: .9rem; margin-top: 6px;">Flexible identity provider with custom rules, social logins, and passwordless options.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ How It Works ═══ -->
+  <section class="section" style="background: linear-gradient(135deg, rgba(59,125,221,.04), rgba(52,199,139,.04)); position: relative; overflow: hidden;">
+    <div class="orb orb-blue anim-loop-pulse" style="width: 200px; height: 200px; top: 20px; left: -60px;"></div>
+    <div class="container">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items: center; margin-bottom: 56px;">
+        <h2>How Integrations Work</h2>
+        <p style="margin: 0 auto;">Three simple steps to connect any tool in your stack. Most integrations go live in under five minutes.</p>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="card text-center" style="position: relative;">
+          <div class="flex-center" style="margin-bottom: 20px;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--c-primary), var(--c-primary-l)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800;">1</div>
+          </div>
+          <h4>Authenticate</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Connect via OAuth 2.0 or paste an API token. CloudNest never stores raw credentials — everything is encrypted at rest with AES-256.</p>
+        </div>
+        <div class="card text-center" style="position: relative;">
+          <div class="flex-center" style="margin-bottom: 20px;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--c-accent), var(--c-accent-l)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800;">2</div>
+          </div>
+          <h4>Configure</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Choose which projects, channels, or repositories to sync. Set granular permissions and map your team's roles to CloudNest access levels.</p>
+        </div>
+        <div class="card text-center" style="position: relative;">
+          <div class="flex-center" style="margin-bottom: 20px;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--c-warm), #F7C96E); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800;">3</div>
+          </div>
+          <h4>Automate</h4>
+          <p style="font-size: .95rem; margin-top: 8px;">Define triggers and workflows. Publish docs on merge, notify teams on updates, or sync content bidirectionally — all running in the background.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Code Example ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
+        <div class="flex-col gap-24 anim-slide-right">
+          <div class="badge">
+            <span class="badge-dot anim-loop-dot"></span>
+            Webhook API
+          </div>
+          <h2>Build Custom Integrations</h2>
+          <p>Use the CloudNest Webhook API to connect any tool in your stack. Receive real-time events for document changes, review approvals, and publication triggers.</p>
+          <div class="flex-col gap-16">
+            <div class="feature-row" style="padding: 12px 0;">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4 style="font-size: .95rem;">Real-time event delivery</h4>
+                <small>Sub-second webhook delivery with automatic retries and exponential backoff</small>
+              </div>
+            </div>
+            <div class="feature-row" style="padding: 12px 0;">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4 style="font-size: .95rem;">HMAC signature verification</h4>
+                <small>Every payload is signed with SHA-256 so you can verify authenticity</small>
+              </div>
+            </div>
+            <div class="feature-row" style="padding: 12px 0; border-bottom: none;">
+              <div class="feature-check">✓</div>
+              <div>
+                <h4 style="font-size: .95rem;">Event filtering</h4>
+                <small>Subscribe only to the events you need — doc.published, review.approved, and 30+ more</small>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a href="api-reference.html" class="btn btn-primary btn-sm">View API Reference →</a>
+          </div>
+        </div>
+        <div class="anim-slide-left anim-delay-2">
+          <div class="code-block">
+            <span class="cm">// Register a webhook for doc events</span><br>
+            <span class="kw">POST</span> /api/v2/webhooks<br><br>
+            {<br>
+            &nbsp;&nbsp;<span class="str">"url"</span>: <span class="str">"https://your-app.eu/hooks/cloudnest"</span>,<br>
+            &nbsp;&nbsp;<span class="str">"events"</span>: [<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"doc.published"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"doc.updated"</span>,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"review.approved"</span><br>
+            &nbsp;&nbsp;],<br>
+            &nbsp;&nbsp;<span class="str">"secret"</span>: <span class="str">"whsec_k7G3m…"</span><br>
+            }<br><br>
+            <span class="cm">// Response</span><br>
+            {<br>
+            &nbsp;&nbsp;<span class="str">"id"</span>: <span class="str">"wh_9xKp2bN"</span>,<br>
+            &nbsp;&nbsp;<span class="str">"status"</span>: <span class="fn">"active"</span>,<br>
+            &nbsp;&nbsp;<span class="str">"created"</span>: <span class="str">"2024-11-15T09:30:00Z"</span><br>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Comparison Table ═══ -->
+  <section class="section-sm" style="background: var(--c-surface); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border);">
+    <div class="container">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items: center; margin-bottom: 40px;">
+        <h2>Integration Capabilities by Plan</h2>
+        <p style="margin: 0 auto;">Every plan includes core integrations. Enterprise unlocks unlimited custom connectors and priority support.</p>
+      </div>
+
+      <div class="table-wrap anim-scale anim-delay-2">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Team</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Native integrations</td>
+              <td>5</td>
+              <td>25</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Webhook endpoints</td>
+              <td>2</td>
+              <td>20</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>SSO / SAML</td>
+              <td>—</td>
+              <td><span class="tag green" style="font-size: .72rem;">Included</span></td>
+              <td><span class="tag green" style="font-size: .72rem;">Included</span></td>
+            </tr>
+            <tr>
+              <td>SCIM provisioning</td>
+              <td>—</td>
+              <td>—</td>
+              <td><span class="tag green" style="font-size: .72rem;">Included</span></td>
+            </tr>
+            <tr>
+              <td>Custom OAuth apps</td>
+              <td>—</td>
+              <td>3</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Event log retention</td>
+              <td>7 days</td>
+              <td>90 days</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Priority integration support</td>
+              <td>—</td>
+              <td>—</td>
+              <td><span class="tag green" style="font-size: .72rem;">Dedicated</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Stats ═══ -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="grid-4 anim-stagger text-center">
+        <div class="stat">
+          <div class="stat-value">60+</div>
+          <div class="stat-label">Native Integrations</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">99.97%</div>
+          <div class="stat-label">Webhook Uptime SLA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">&lt;200ms</div>
+          <div class="stat-label">Avg. Event Delivery</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">12K+</div>
+          <div class="stat-label">Teams Connected</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Testimonials ═══ -->
+  <section class="section" style="position: relative; overflow: hidden;">
+    <div class="orb orb-green anim-loop-drift" style="width: 260px; height: 260px; top: -40px; right: 10%;"></div>
+    <div class="container">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items: center; margin-bottom: 48px;">
+        <h2>Trusted by Enterprise Teams Across Europe</h2>
+        <p style="margin: 0 auto;">Hear how teams use CloudNest integrations to streamline their documentation workflows.</p>
+      </div>
+
+      <div class="grid-2 anim-stagger">
+        <div class="testimonial">
+          <p class="testimonial-quote">The GitHub integration changed everything for us. Our docs now deploy alongside our code — same PR, same review process, same confidence. We cut our documentation lag from two weeks to same-day.</p>
+          <div class="testimonial-author">Katrin Müller</div>
+          <div class="testimonial-role">Head of Developer Experience, Finova GmbH — Berlin</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">Setting up Okta SSO with CloudNest took fifteen minutes. SCIM provisioning means new hires get the right doc access on day one, and leavers lose it instantly. Our compliance team is thrilled.</p>
+          <div class="testimonial-author">Luca Bernardi</div>
+          <div class="testimonial-role">IT Security Lead, MediTrack — Milan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Build Your Own ═══ -->
+  <section class="section" style="position: relative; overflow: hidden; background: linear-gradient(135deg, var(--c-primary), var(--c-primary-d)); color: #fff;">
+    <!-- Floating decorative element -->
+    <div class="anim-rise-then-float" style="position: absolute; top: 40px; right: 8%; width: 80px; height: 80px; border-radius: var(--radius-l); background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);"></div>
+    <div class="anim-rise-then-float" style="position: absolute; bottom: 30px; left: 5%; width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,.08); animation-delay: 1s;"></div>
+
+    <div class="container text-center flex-col gap-24" style="align-items: center; position: relative; z-index: 1;">
+      <h2 class="anim-rise" style="color: #fff;">Don't See Your Tool?</h2>
+      <p class="anim-rise anim-delay-1" style="color: rgba(255,255,255,.8); max-width: 52ch; margin: 0 auto;">
+        Our REST API and webhook system let you build custom integrations with any platform. Full OpenAPI 3.0 spec, SDKs for Python, Node.js, Go, and Java, plus a sandbox environment for testing.
+      </p>
+      <div class="anim-rise anim-delay-2" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="api-reference.html" class="btn btn-accent">Read the API Docs</a>
+        <a href="enterprise.html" class="btn" style="background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.25);">Talk to Enterprise Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Integration Partners ═══ -->
+  <section class="section-sm">
+    <div class="container text-center">
+      <small class="anim-fade" style="display: block; margin-bottom: 24px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Certified Integration Partners</small>
+      <div class="anim-stagger" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+        <div style="width: 120px; height: 56px; border-radius: var(--radius-m); background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--c-text-soft); font-size: .85rem;">Atlassian</div>
+        <div style="width: 120px; height: 56px; border-radius: var(--radius-m); background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--c-text-soft); font-size: .85rem;">Microsoft</div>
+        <div style="width: 120px; height: 56px; border-radius: var(--radius-m); background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--c-text-soft); font-size: .85rem;">Slack</div>
+        <div style="width: 120px; height: 56px; border-radius: var(--radius-m); background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--c-text-soft); font-size: .85rem;">GitHub</div>
+        <div style="width: 120px; height: 56px; border-radius: var(--radius-m); background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--c-text-soft); font-size: .85rem;">Okta</div>
+        <div style="width: 120px; height: 56px; border-radius: var(--radius-m); background: var(--c-surface); border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--c-text-soft); font-size: .85rem;">HashiCorp</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Getting Started CTA ═══ -->
+  <section class="section" style="position: relative; overflow: hidden;">
+    <div class="orb orb-warm anim-loop-pulse" style="width: 200px; height: 200px; bottom: -40px; right: 10%;"></div>
+    <div class="container text-center flex-col gap-24 anim-rise" style="align-items: center; position: relative; z-index: 1;">
+      <h2>Start Connecting in Minutes</h2>
+      <p style="margin: 0 auto; max-width: 50ch;">Create a free CloudNest account, pick your integrations, and watch your documentation workflow come alive.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="index.html" class="btn btn-primary">Get Started Free</a>
+        <a href="documentation.html" class="btn btn-secondary">Read the Docs</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-dot anim-loop-pulse"></div>
+          CloudNest
+        </a>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.5);max-width:280px;">Enterprise-grade documentation platform trusted by teams across Europe. Built for clarity, designed for scale.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">GDPR Ready</span>
+          <span class="footer-badge">SOC 2</span>
+          <span class="footer-badge">ISO 27001</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Getting Started</a></li>
+          <li><a href="api-reference.html">API Guides</a></li>
+          <li><a href="integrations.html">Marketplace</a></li>
+          <li><a href="index.html">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="enterprise.html">Contact Sales</a></li>
+          <li><a href="index.html">Careers</a></li>
+          <li><a href="index.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 CloudNest B.V. — Amsterdam, Netherlands</span>
+      <span>Made with care for European enterprises</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Contact</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-logo">KERN</a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="page-content">
+
+  <!-- Hero Section -->
+  <section class="section section--dark">
+    <div class="wrap">
+      <div class="grid grid--12">
+        <div class="col-span-8">
+          <span class="t-label anim-fade anim-delay-1">Contact</span>
+          <h1 class="t-display mb-m anim-slide-left anim-delay-2" style="margin-top: var(--sp-s);">Let's build<br>something<br>precise.</h1>
+          <p class="t-body-lg anim-rise anim-delay-3" style="max-width: 540px;">Every system starts with a conversation. Tell us about your ambition, your timeline, and the problem that keeps you up at night — we'll tell you exactly how we'd solve it.</p>
+        </div>
+        <div class="col-span-4 flex flex-col" style="justify-content: flex-end;">
+          <div class="anim-rise anim-delay-4">
+            <p class="t-label mb-xs">Response time</p>
+            <p class="stat__number" style="color: var(--c-white);">24h</p>
+            <p class="t-label mt-s" style="color: #777570;">Average reply for qualified inquiries</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accent Divider Bar with Loop -->
+  <div class="marquee-bar" style="background: var(--c-dark); border-color: #333;">
+    <div class="marquee-bar__inner anim-loop-marquee">
+      <span class="marquee-bar__item" style="color: #555;">Strategy</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Design Systems</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Engineering</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Platforms</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Brand</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Infrastructure</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Strategy</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Design Systems</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Engineering</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Platforms</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Brand</span>
+      <span class="marquee-bar__dot"></span>
+      <span class="marquee-bar__item" style="color: #555;">Infrastructure</span>
+      <span class="marquee-bar__dot"></span>
+    </div>
+  </div>
+
+  <!-- Inquiry Form + Contact Details -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid--12" style="row-gap: var(--sp-l);">
+
+        <!-- Form Column -->
+        <div class="col-span-7 anim-rise anim-delay-2">
+          <div class="deco-line anim-loop-bar mb-m"></div>
+          <h2 class="t-h2 mb-s">Start a project inquiry</h2>
+          <p class="t-body mb-l">Fill out the form below with as much detail as you can. The more we know upfront, the more useful our first conversation will be.</p>
+
+          <form action="#" method="post">
+            <div class="grid grid--2 mb-m anim-stagger">
+              <div class="form-group anim-rise">
+                <label class="form-label" for="first-name">First Name</label>
+                <input class="form-input" type="text" id="first-name" name="first-name" placeholder="Anna" required>
+              </div>
+              <div class="form-group anim-rise">
+                <label class="form-label" for="last-name">Last Name</label>
+                <input class="form-input" type="text" id="last-name" name="last-name" placeholder="Müller" required>
+              </div>
+            </div>
+
+            <div class="grid grid--2 mb-m anim-stagger">
+              <div class="form-group anim-rise">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="anna@company.de" required>
+              </div>
+              <div class="form-group anim-rise">
+                <label class="form-label" for="company">Company</label>
+                <input class="form-input" type="text" id="company" name="company" placeholder="Your organisation">
+              </div>
+            </div>
+
+            <div class="form-group mb-m anim-rise anim-delay-3">
+              <label class="form-label" for="service">What do you need?</label>
+              <select class="form-input" id="service" name="service">
+                <option value="" disabled selected>Select a service area</option>
+                <option value="strategy">Digital Strategy</option>
+                <option value="design-systems">Design Systems</option>
+                <option value="platform">Platform Engineering</option>
+                <option value="brand">Brand &amp; Identity</option>
+                <option value="full">Full Engagement</option>
+                <option value="other">Something Else</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-m anim-rise anim-delay-4">
+              <label class="form-label" for="budget">Estimated Budget</label>
+              <select class="form-input" id="budget" name="budget">
+                <option value="" disabled selected>Select a range</option>
+                <option value="50-100">€50k – €100k</option>
+                <option value="100-250">€100k – €250k</option>
+                <option value="250-500">€250k – €500k</option>
+                <option value="500+">€500k+</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-m anim-rise anim-delay-5">
+              <label class="form-label" for="message">Project Details</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your goals, timeline, and the challenge you're facing. Be as specific as you like."></textarea>
+            </div>
+
+            <div class="anim-rise anim-delay-6">
+              <button type="submit" class="btn btn--filled">Send Inquiry →</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar Contact Details -->
+        <div class="col-span-4" style="grid-column-start: 9;">
+          <div class="anim-stagger">
+
+            <div class="anim-slide-right mb-l" style="padding: var(--sp-m); background: var(--c-surface); border: 1px solid var(--c-border);">
+              <span class="t-label mb-s" style="display: block;">Prefer to talk?</span>
+              <h3 class="t-h3 mb-s">Schedule a call</h3>
+              <p class="t-body mb-m">We hold open consultation slots every Tuesday and Thursday, 10:00–12:00 CET. No pitch — just a direct conversation about your project.</p>
+              <a href="mailto:hello@kern.studio" class="btn btn--accent">Email Us →</a>
+            </div>
+
+            <div class="anim-slide-right" style="padding-bottom: var(--sp-m); border-bottom: 1px solid var(--c-border); margin-bottom: var(--sp-m);">
+              <span class="t-label mb-xs" style="display: block;">Email</span>
+              <a href="mailto:hello@kern.studio" class="t-h3" style="text-transform: none;">hello@kern.studio</a>
+            </div>
+
+            <div class="anim-slide-right" style="padding-bottom: var(--sp-m); border-bottom: 1px solid var(--c-border); margin-bottom: var(--sp-m);">
+              <span class="t-label mb-xs" style="display: block;">Phone</span>
+              <a href="tel:+493012345678" class="t-h3" style="text-transform: none;">+49 30 1234 5678</a>
+            </div>
+
+            <div class="anim-slide-right" style="padding-bottom: var(--sp-m); border-bottom: 1px solid var(--c-border); margin-bottom: var(--sp-m);">
+              <span class="t-label mb-xs" style="display: block;">Studio</span>
+              <p class="t-body">KERN Studio<br>Torstraße 140<br>10119 Berlin, Germany</p>
+            </div>
+
+            <div class="anim-slide-right">
+              <span class="t-label mb-s" style="display: block;">Follow</span>
+              <div class="flex flex-wrap gap-s">
+                <a href="#" class="tag">LinkedIn</a>
+                <a href="#" class="tag">Instagram</a>
+                <a href="#" class="tag">Dribbble</a>
+                <a href="#" class="tag">GitHub</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FAQ / What to Expect -->
+  <section class="section section--surface">
+    <div class="wrap">
+      <div class="flex justify-between items-center mb-l" style="flex-wrap: wrap; gap: var(--sp-s);">
+        <h2 class="t-h2 anim-slide-left">What to expect</h2>
+        <span class="t-label anim-fade anim-delay-2">Our process after you reach out</span>
+      </div>
+
+      <div class="grid grid--4 anim-stagger">
+
+        <div class="card anim-rise">
+          <span class="card__tag">Step 01</span>
+          <h3 class="card__title">We reply within 24 hours</h3>
+          <p class="card__desc">Every inquiry is read by a principal. You'll receive a direct response — not an auto-reply — confirming we've reviewed your brief.</p>
+        </div>
+
+        <div class="card anim-rise">
+          <span class="card__tag">Step 02</span>
+          <h3 class="card__title">Discovery call (30 min)</h3>
+          <p class="card__desc">A focused video call to understand your goals, constraints, and timeline. We'll ask sharp questions and share initial thinking on approach.</p>
+        </div>
+
+        <div class="card anim-rise">
+          <span class="card__tag">Step 03</span>
+          <h3 class="card__title">Strategic proposal</h3>
+          <p class="card__desc">Within one week, you receive a tailored proposal: scope, phasing, team composition, timeline, and a fixed-price investment for each phase.</p>
+        </div>
+
+        <div class="card anim-rise">
+          <span class="card__tag">Step 04</span>
+          <h3 class="card__title">Kickoff &amp; build</h3>
+          <p class="card__desc">Once aligned, we mobilise within two weeks. You get a dedicated Slack channel, weekly syncs, and full transparency into every decision.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Office Map Placeholder + Quick Stats -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid--12">
+
+        <div class="col-span-7 anim-scale-in">
+          <div class="img-placeholder" style="aspect-ratio: 16/9; position: relative;">
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 1;">
+              <div style="text-align: center;">
+                <span class="t-label" style="display: block; margin-bottom: var(--sp-xs);">Berlin-Mitte</span>
+                <span class="t-h2">52.5296° N, 13.4034° E</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-4 flex flex-col gap-l" style="grid-column-start: 9; justify-content: center;">
+          <div class="anim-stagger">
+            <div class="stat anim-rise mb-l">
+              <span class="stat__number t-accent">86</span>
+              <p class="stat__label">Enterprise clients served</p>
+            </div>
+            <div class="stat anim-rise mb-l">
+              <span class="stat__number t-accent">14</span>
+              <p class="stat__label">Countries across Europe</p>
+            </div>
+            <div class="stat anim-rise">
+              <span class="stat__number t-accent">7yr</span>
+              <p class="stat__label">Average client relationship</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section--dark">
+    <div class="wrap text-center">
+      <span class="t-label anim-fade anim-delay-1" style="display: block; margin-bottom: var(--sp-s);">Not ready for a full inquiry?</span>
+      <h2 class="t-h1 mb-m anim-rise anim-delay-2">Explore our work first.</h2>
+      <p class="t-body-lg mb-l anim-rise anim-delay-3" style="max-width: 560px; margin-left: auto; margin-right: auto;">See how we've helped enterprises like Siemens, Zalando, and Deutsche Bahn build digital systems that scale.</p>
+      <div class="flex gap-m anim-rise anim-delay-4" style="justify-content: center; flex-wrap: wrap;">
+        <a href="work.html" class="btn btn--light">View Case Studies →</a>
+        <a href="services.html" class="btn btn--light" style="border-color: #555; color: #999;">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="site-logo mb-m">KERN</p>
+        <p class="t-body" style="color:#AAA8A3; max-width:320px;">Digital systems agency based in Berlin. We build platforms, identities, and strategies for Europe's most ambitious enterprises.</p>
+      </div>
+      <div>
+        <p class="t-label mb-s" style="color:#777570;">Sitemap</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+          <li><a href="index.html" class="t-mono">Home</a></li>
+          <li><a href="work.html" class="t-mono">Work</a></li>
+          <li><a href="services.html" class="t-mono">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="t-label mb-s" style="color:#777570;">Company</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+          <li><a href="about.html" class="t-mono">About</a></li>
+          <li><a href="contact.html" class="t-mono">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="t-label mb-s" style="color:#777570;">Connect</p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.5rem;">
+          <li><span class="t-mono" style="color:#AAA8A3;">LinkedIn</span></li>
+          <li><span class="t-mono" style="color:#AAA8A3;">Dribbble</span></li>
+          <li><span class="t-mono" style="color:#AAA8A3;">hello@kern.studio</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="t-label">&copy; 2024 KERN Studio GmbH</span>
+      <span class="t-label">Berlin, DE</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

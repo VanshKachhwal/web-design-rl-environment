@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Menu</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,23,20,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,84,0.1);">
+  <div style="max-width:1140px;margin:0 auto;padding:0.9rem 1.75rem;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:0.6rem;">
+      <span class="ember-dot anim-loop-ember"></span>
+      <span style="font-family:Georgia,'Times New Roman',Times,serif;font-size:1.35rem;color:#f0e8dc;letter-spacing:0.02em;">Ember <span style="color:#d4a054;">&amp;</span> Vine</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:2rem;">
+      <a href="index.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Home</a>
+      <a href="menu.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Menu</a>
+      <a href="story.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Our Story</a>
+      <a href="events.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Events</a>
+      <a href="contact.html" class="btn" style="padding:0.6em 1.6em;font-size:0.72rem;">Reserve</a>
+    </nav>
+  </div>
+</header>
+<div style="height:68px;"></div>
+<main class="page-wrapper">
+
+  <!-- Hero Section -->
+  <section class="section section--hero">
+    <div class="container container--narrow">
+      <div class="hero-accent anim-fade anim-delay-1">
+        <span class="hero-accent__line"></span>
+        <span class="ember-dot anim-loop-ember"></span>
+        <span class="hero-accent__line"></span>
+      </div>
+      <h4 class="anim-rise anim-delay-1">Seasonal &amp; Locally Sourced</h4>
+      <div class="spacer-sm"></div>
+      <h1 class="anim-rise anim-delay-2">Our Menu</h1>
+      <hr class="divider anim-divider-reveal anim-delay-3">
+      <p class="subtitle subtitle--center anim-rise anim-delay-3">
+        A celebration of the season's finest ingredients, prepared with care and served with warmth. Our menu evolves with the harvest — ask your server about tonight's specials.
+      </p>
+    </div>
+  </section>
+
+  <!-- Small Plates & Starters -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-panel anim-scale anim-delay-3">
+        <div class="text-center">
+          <h4>To Begin</h4>
+          <div class="spacer-sm"></div>
+          <h2>Small Plates &amp; Starters</h2>
+          <hr class="divider anim-divider-reveal anim-delay-4">
+        </div>
+        <div class="spacer-md"></div>
+        <div class="anim-stagger">
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Roasted Beet Carpaccio</div>
+              <div class="menu-item__desc">Whipped chèvre, candied walnuts, aged balsamic, micro arugula</div>
+            </div>
+            <span class="menu-item__price">$16</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Ember-Charred Sourdough</div>
+              <div class="menu-item__desc">House-cultured butter, smoked sea salt, local honey drizzle</div>
+            </div>
+            <span class="menu-item__price">$12</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Burrata &amp; Heirloom Tomato</div>
+              <div class="menu-item__desc">Stone fruit mostarda, basil oil, flaky salt, grilled crostini</div>
+            </div>
+            <span class="menu-item__price">$19</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Crispy Duck Confit Croquettes</div>
+              <div class="menu-item__desc">Dijon aioli, cornichon relish, frisée salad</div>
+            </div>
+            <span class="menu-item__price">$18</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Wild Mushroom Soup</div>
+              <div class="menu-item__desc">Truffle crème fraîche, chive oil, toasted brioche croutons</div>
+            </div>
+            <span class="menu-item__price">$14</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Tuna Tartare</div>
+              <div class="menu-item__desc">Sesame, avocado mousse, citrus ponzu, wonton crisps</div>
+            </div>
+            <span class="menu-item__price">$21</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entrées -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-panel anim-scale anim-delay-2">
+        <div class="text-center">
+          <h4>The Heart of the Table</h4>
+          <div class="spacer-sm"></div>
+          <h2>Entrées</h2>
+          <hr class="divider anim-divider-reveal anim-delay-3">
+        </div>
+        <div class="spacer-md"></div>
+        <div class="anim-stagger">
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Pan-Seared Salmon</div>
+              <div class="menu-item__desc">Fennel purée, roasted fingerlings, dill beurre blanc, crispy capers</div>
+            </div>
+            <span class="menu-item__price">$34</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Grilled Ribeye 12oz</div>
+              <div class="menu-item__desc">Bone marrow compound butter, charred broccolini, red wine jus</div>
+            </div>
+            <span class="menu-item__price">$48</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Braised Short Rib</div>
+              <div class="menu-item__desc">Creamy polenta, gremolata, roasted root vegetables, pan drippings</div>
+            </div>
+            <span class="menu-item__price">$38</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Herb-Crusted Rack of Lamb</div>
+              <div class="menu-item__desc">Pistachio crust, pomegranate reduction, whipped sweet potato</div>
+            </div>
+            <span class="menu-item__price">$44</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Roasted Half Chicken</div>
+              <div class="menu-item__desc">Lemon-thyme brine, garlic confit, haricots verts, natural jus</div>
+            </div>
+            <span class="menu-item__price">$32</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Seared Diver Scallops</div>
+              <div class="menu-item__desc">Cauliflower purée, brown butter, pancetta crumble, microgreens</div>
+            </div>
+            <span class="menu-item__price">$39</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Wild Mushroom Risotto</div>
+              <div class="menu-item__desc">Porcini, chanterelle, aged parmesan, truffle oil, fresh herbs</div>
+            </div>
+            <span class="menu-item__price">$28</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- From the Vine — Wine Selections -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center anim-rise anim-delay-1">
+        <h4>From the Vine</h4>
+        <div class="spacer-sm"></div>
+        <h2>Wine Selections</h2>
+        <hr class="divider anim-divider-reveal anim-delay-2">
+        <div class="spacer-sm"></div>
+        <p class="subtitle subtitle--center anim-rise anim-delay-2">
+          Our sommelier curates a rotating list of wines from small-batch vineyards. These are a few current favorites — ask about our full cellar list.
+        </p>
+      </div>
+      <div class="spacer-lg"></div>
+      <div class="grid-3 anim-stagger">
+        <div class="glass-card anim-rise">
+          <h4>Whites</h4>
+          <div class="spacer-sm"></div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Sancerre, Loire Valley</div>
+              <div class="menu-item__desc">Crisp, mineral, citrus blossom</div>
+            </div>
+            <span class="menu-item__price">$17</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Viognier, Willamette</div>
+              <div class="menu-item__desc">Stone fruit, honeysuckle, round finish</div>
+            </div>
+            <span class="menu-item__price">$15</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Albariño, Rías Baixas</div>
+              <div class="menu-item__desc">Bright acidity, green apple, saline</div>
+            </div>
+            <span class="menu-item__price">$14</span>
+          </div>
+        </div>
+        <div class="glass-card anim-rise">
+          <h4>Reds</h4>
+          <div class="spacer-sm"></div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Pinot Noir, Sonoma Coast</div>
+              <div class="menu-item__desc">Dark cherry, earth, silky tannins</div>
+            </div>
+            <span class="menu-item__price">$19</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Barolo, Piedmont</div>
+              <div class="menu-item__desc">Rose petal, tar, structured elegance</div>
+            </div>
+            <span class="menu-item__price">$24</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Malbec, Mendoza</div>
+              <div class="menu-item__desc">Plum, dark chocolate, velvet body</div>
+            </div>
+            <span class="menu-item__price">$16</span>
+          </div>
+        </div>
+        <div class="glass-card anim-rise">
+          <h4>Sparkling &amp; Rosé</h4>
+          <div class="spacer-sm"></div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Crémant de Bourgogne</div>
+              <div class="menu-item__desc">Toasty, fine bubbles, pear notes</div>
+            </div>
+            <span class="menu-item__price">$16</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Rosé, Côtes de Provence</div>
+              <div class="menu-item__desc">Pale salmon, strawberry, dry finish</div>
+            </div>
+            <span class="menu-item__price">$15</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Prosecco, Valdobbiadene</div>
+              <div class="menu-item__desc">Bright, floral, green apple, festive</div>
+            </div>
+            <span class="menu-item__price">$13</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desserts -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-panel anim-scale anim-delay-1">
+        <div class="text-center">
+          <h4>A Sweet Finish</h4>
+          <div class="spacer-sm"></div>
+          <h2>Desserts</h2>
+          <hr class="divider anim-divider-reveal anim-delay-2">
+        </div>
+        <div class="spacer-md"></div>
+        <div class="anim-stagger">
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Crème Brûlée</div>
+              <div class="menu-item__desc">Madagascar vanilla bean, caramelized sugar, fresh berries</div>
+            </div>
+            <span class="menu-item__price">$13</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Warm Chocolate Fondant</div>
+              <div class="menu-item__desc">Molten center, salted caramel, vanilla bean gelato</div>
+            </div>
+            <span class="menu-item__price">$15</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Seasonal Fruit Galette</div>
+              <div class="menu-item__desc">Flaky pastry, almond frangipane, whipped mascarpone</div>
+            </div>
+            <span class="menu-item__price">$14</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Affogato</div>
+              <div class="menu-item__desc">House-made vanilla gelato, double espresso, amaretti crumble</div>
+            </div>
+            <span class="menu-item__price">$11</span>
+          </div>
+          <div class="menu-item anim-rise">
+            <div>
+              <div class="menu-item__name">Artisan Cheese Board</div>
+              <div class="menu-item__desc">Three local cheeses, fig compote, honeycomb, toasted nuts</div>
+            </div>
+            <span class="menu-item__price">$22</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cocktails & After-Dinner -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="text-center anim-rise anim-delay-1">
+        <h4>The Bar</h4>
+        <div class="spacer-sm"></div>
+        <h2>Signature Cocktails</h2>
+        <hr class="divider anim-divider-reveal anim-delay-2">
+      </div>
+      <div class="spacer-lg"></div>
+      <div class="grid-2 anim-stagger">
+        <div class="glass-card anim-slide-left">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">The Ember Old Fashioned</div>
+              <div class="menu-item__desc">Smoked bourbon, demerara, aromatic bitters, charred orange</div>
+            </div>
+            <span class="menu-item__price">$16</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Vine &amp; Thorn</div>
+              <div class="menu-item__desc">Gin, blackberry shrub, rosemary, sparkling water, lime</div>
+            </div>
+            <span class="menu-item__price">$15</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Harvest Moon</div>
+              <div class="menu-item__desc">Apple brandy, cinnamon syrup, lemon, egg white foam</div>
+            </div>
+            <span class="menu-item__price">$15</span>
+          </div>
+        </div>
+        <div class="glass-card anim-slide-right">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Golden Hour Spritz</div>
+              <div class="menu-item__desc">Aperol, prosecco, elderflower, soda, grapefruit twist</div>
+            </div>
+            <span class="menu-item__price">$14</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">Midnight Fig</div>
+              <div class="menu-item__desc">Rye whiskey, fig syrup, walnut bitters, expressed lemon</div>
+            </div>
+            <span class="menu-item__price">$16</span>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item__name">The Garden Path</div>
+              <div class="menu-item__desc">Vodka, cucumber, basil, St-Germain, tonic, mint sprig</div>
+            </div>
+            <span class="menu-item__price">$14</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef's Note / Dietary Info -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-card glass-card--lg anim-scale anim-delay-2 text-center">
+        <span class="ember-dot anim-loop-pulse" style="margin: 0 auto var(--space-sm); display: block; width: 10px; height: 10px;"></span>
+        <h3>A Note from Our Kitchen</h3>
+        <hr class="divider anim-divider-reveal anim-delay-3">
+        <p class="mx-auto" style="max-width: 55ch;">
+          Our menu changes with the seasons to honor what the land offers. We work closely with local farms, foragers, and artisan producers within 50 miles of our kitchen. Please inform your server of any allergies or dietary needs — we are happy to accommodate vegetarian, vegan, and gluten-free requests.
+        </p>
+        <div class="spacer-md"></div>
+        <div style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap;">
+          <span class="tag anim-fade anim-delay-4">Vegetarian Options</span>
+          <span class="tag anim-fade anim-delay-5">Gluten-Free Available</span>
+          <span class="tag anim-fade anim-delay-6">Locally Sourced</span>
+          <span class="tag anim-fade anim-delay-7">Seasonal Rotation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container container--narrow text-center">
+      <div class="anim-rise anim-delay-1">
+        <h3>Ready to Join Us?</h3>
+        <div class="spacer-sm"></div>
+        <p class="subtitle subtitle--center">
+          Reserve your table and experience the warmth of Ember &amp; Vine. Walk-ins are welcome, but reservations ensure your place by the fire.
+        </p>
+        <div class="spacer-md"></div>
+        <div style="display: flex; justify-content: center; gap: var(--space-sm); flex-wrap: wrap;">
+          <a href="reservations-contact.html" class="btn btn--filled anim-fade anim-delay-3">Reserve a Table</a>
+          <a href="events-private-dining.html" class="btn anim-fade anim-delay-4">Private Dining</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+</main>
+<footer style="position:relative;z-index:1;border-top:1px solid rgba(212,160,84,0.1);background:rgba(26,23,20,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin-top:auto;">
+  <div style="max-width:1140px;margin:0 auto;padding:3rem 1.75rem 2rem;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem;">
+      <!-- Brand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+          <span class="ember-dot anim-loop-ember"></span>
+          <span style="font-family:Georgia,'Times New Roman',Times,serif;font-size:1.2rem;color:#f0e8dc;">Ember <span style="color:#d4a054;">&amp;</span> Vine</span>
+        </div>
+        <p style="font-size:0.85rem;color:rgba(245,239,230,0.5);max-width:30ch;line-height:1.6;">Seasonal cuisine and curated wines in the heart of the neighborhood. A place to gather, savor, and belong.</p>
+      </div>
+      <!-- Navigate -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Navigate</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="index.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Home</a>
+          <a href="menu.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Menu</a>
+          <a href="story.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Our Story</a>
+          <a href="events.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Events</a>
+          <a href="contact.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Reservations</a>
+        </div>
+      </div>
+      <!-- Hours -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Hours</h4>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:rgba(245,239,230,0.55);">
+          <span>Tue – Thu: 5 – 10 pm</span>
+          <span>Fri – Sat: 5 – 11 pm</span>
+          <span>Sun: 4 – 9 pm</span>
+          <span>Mon: Closed</span>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Contact</h4>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:rgba(245,239,230,0.55);">
+          <span>142 Elm Street</span>
+          <span>Maplewood, NJ 07040</span>
+          <span style="margin-top:0.3rem;">(973) 555-0184</span>
+          <span>hello@emberandvine.com</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(212,160,84,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:0.75rem;color:rgba(245,239,230,0.3);">&copy; 2024 Ember &amp; Vine. All rights reserved.</span>
+      <span style="font-size:0.75rem;color:rgba(245,239,230,0.3);">Crafted with care for our community.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

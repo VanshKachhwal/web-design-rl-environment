@@ -135,10 +135,12 @@ changes:
 
 A perturbation ladder proves *higher reward = better animation*, the same shape as Part 1.
 Because the research is unfinished, **these tasks are kept out of the final
-[`tasks/`](tasks/) set**; preliminary animation tasks + reports will land under
-`task2/tasks/`. The known headline limitation (a fixed 6-frame filmstrip, strict about
-small timing offsets) and the early findings (Claude builds **shorter** pages and
-**slower** entrances) are analysed honestly in the Part-2 docs.
+[`tasks/`](tasks/) set**; the preliminary animation tasks + reports live under
+[`task2/tasks/`](task2/tasks/) — 10 tasks (000–009), each with the 10× Opus-4.7 eval as
+a report with **animated-GIF** reference-vs-candidate galleries. The known headline
+limitation (a fixed 6-frame filmstrip, strict about small timing offsets) and the early
+findings (Claude builds **shorter** pages and **slower** entrances) are analysed honestly
+in the Part-2 docs.
 
 → **Everything Part 2: [`task2/README.md`](task2/README.md)** — design, the `motion`
 metric in detail, the scaling pipeline, the throughput trade, and limitations.

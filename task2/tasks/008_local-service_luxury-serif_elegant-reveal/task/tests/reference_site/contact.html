@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Contact</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"></span>
+      Sterling &amp; Associates
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero__bg-pattern"></div>
+    <div class="anim-deco-ring anim-deco-ring--lg anim-loop-rotate" style="top: -120px; right: -180px;"></div>
+    <div class="anim-deco-ring anim-deco-ring--md anim-loop-rotate" style="bottom: -80px; left: -100px;"></div>
+    <div class="container page-hero__content text-center">
+      <h4 class="anim-fade anim-delay-1">Get in Touch</h4>
+      <h1 class="anim-rise anim-delay-2">Begin Your Transformation</h1>
+      <div class="divider divider--center anim-line-expand anim-line-expand--center anim-delay-3"></div>
+      <p class="anim-rise anim-delay-4" style="margin: var(--space-sm) auto 0;">Every exceptional renovation begins with a conversation. Reach out to discuss your vision, and we'll craft a plan worthy of your home's legacy.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info Section -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-row">
+        <!-- Contact Form -->
+        <div class="feature-row__text anim-slide-left anim-delay-2">
+          <h2>Schedule a Consultation</h2>
+          <div class="divider anim-line-expand anim-delay-3"></div>
+          <p class="mb-md">Share the details of your project below. A senior design consultant will respond within one business day to arrange a private consultation at your residence or our studio.</p>
+
+          <form action="#" method="post">
+            <div class="grid grid--2">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Elizabeth" required>
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Harrington" required>
+              </div>
+            </div>
+
+            <div class="grid grid--2">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="elizabeth@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(212) 555-0190">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="project-type">Project Type</label>
+              <select id="project-type" name="project-type">
+                <option value="">Select your project scope</option>
+                <option value="full-renovation">Full Residential Renovation</option>
+                <option value="estate-restoration">Historic Estate Restoration</option>
+                <option value="kitchen-bath">Kitchen &amp; Bath Redesign</option>
+                <option value="addition">Addition &amp; Expansion</option>
+                <option value="interior-refresh">Interior Refresh</option>
+                <option value="other">Other / Multiple</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Estimated Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select a range</option>
+                <option value="250-500">$250,000 – $500,000</option>
+                <option value="500-1m">$500,000 – $1,000,000</option>
+                <option value="1m-2m">$1,000,000 – $2,000,000</option>
+                <option value="2m-5m">$2,000,000 – $5,000,000</option>
+                <option value="5m+">$5,000,000+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Vision</label>
+              <textarea id="message" name="message" placeholder="Describe your home, the spaces you'd like to transform, and any inspirations or requirements that matter most to you…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary mt-md">Request Consultation</button>
+          </form>
+        </div>
+
+        <!-- Contact Info Sidebar -->
+        <div class="anim-slide-right anim-delay-3">
+          <div style="padding: var(--space-md); background: var(--color-white); border: 1px solid rgba(0,0,0,0.06);">
+            <h3 class="mb-sm">Contact Information</h3>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Main Office</h4>
+                <p>742 Madison Avenue, Suite 1200<br>New York, NY 10065</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Telephone</h4>
+                <p><a href="tel:+12125550190">(212) 555-0190</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:inquiries@sterlingassociates.com">inquiries@sterlingassociates.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Office Hours</h4>
+                <p>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday: By Appointment<br>Sunday: Closed</p>
+              </div>
+            </div>
+
+            <div class="divider mb-md" style="width: 100%;"></div>
+
+            <h3 class="mb-sm">Regional Studios</h3>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Greenwich</h4>
+                <p>18 Putnam Avenue<br>Greenwich, CT 06830<br><a href="tel:+12035550147">(203) 555-0147</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Palm Beach</h4>
+                <p>340 Royal Palm Way, Suite 200<br>Palm Beach, FL 33480<br><a href="tel:+15615550263">(561) 555-0263</a></p>
+              </div>
+            </div>
+
+            <div class="contact-info-item mb-0">
+              <div class="contact-info-item__icon"></div>
+              <div>
+                <h4>Toronto</h4>
+                <p>55 Avenue Road, Suite 400<br>Toronto, ON M5R 3L2<br><a href="tel:+14165550318">(416) 555-0318</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Expect / Process Section -->
+  <section class="section section--dark">
+    <div class="anim-deco-ring anim-deco-ring--sm anim-loop-rotate" style="position: absolute; top: 60px; right: 10%;"></div>
+    <div class="container container--narrow">
+      <div class="text-center mb-lg">
+        <h4 class="anim-fade anim-delay-1">Your Journey</h4>
+        <h2 class="anim-rise anim-delay-2">What Happens After You Reach Out</h2>
+        <div class="divider divider--center anim-line-expand anim-line-expand--center anim-delay-3"></div>
+        <p class="anim-rise anim-delay-4">From first contact to final walkthrough, our process is designed to honor your time, protect your investment, and deliver results that endure for generations.</p>
+      </div>
+
+      <div class="anim-stagger">
+        <div class="process-step">
+          <div class="process-step__number">01</div>
+          <div>
+            <h3>Personal Response</h3>
+            <p>Within 24 hours, a senior consultant reviews your inquiry and contacts you directly — never a call center, never an assistant. We listen before we propose.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">02</div>
+          <div>
+            <h3>On-Site Discovery</h3>
+            <p>We visit your property to understand the architecture, the light, the materials, and — most importantly — how you live. This complimentary assessment typically lasts 60 to 90 minutes.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">03</div>
+          <div>
+            <h3>Design Concept &amp; Proposal</h3>
+            <p>Our team presents a tailored design direction with material palettes, spatial plans, and a transparent investment outline — so you can move forward with complete confidence.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">04</div>
+          <div>
+            <h3>Craftsmanship Begins</h3>
+            <p>Once approved, our master artisans and trusted trade partners bring the vision to life with weekly progress updates, rigorous quality inspections, and unwavering attention to detail.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-lg">
+        <h4 class="anim-fade anim-delay-1">Common Questions</h4>
+        <h2 class="anim-rise anim-delay-2">Before You Contact Us</h2>
+        <div class="divider divider--center anim-line-expand anim-line-expand--center anim-delay-3"></div>
+      </div>
+
+      <div class="container--narrow" style="max-width: var(--max-narrow); margin: 0 auto;">
+        <div class="anim-stagger">
+          <div class="card mb-md">
+            <h3>What is your minimum project size?</h3>
+            <p>We typically engage on projects with a construction budget of $250,000 or more. This ensures we can dedicate the level of design leadership and artisan oversight that defines our work.</p>
+          </div>
+
+          <div class="card mb-md">
+            <h3>Do you work outside the New York metropolitan area?</h3>
+            <p>Absolutely. With studios in Greenwich, Palm Beach, and Toronto, we serve clients across North America. For estates beyond our regional offices, we maintain a dedicated travel team for projects of exceptional scope.</p>
+          </div>
+
+          <div class="card mb-md">
+            <h3>How long does a typical renovation take?</h3>
+            <p>Timelines vary with complexity. A kitchen and bath redesign may require 4 to 6 months, while a full estate restoration can span 12 to 24 months. We provide a detailed schedule before any work begins.</p>
+          </div>
+
+          <div class="card mb-md">
+            <h3>Can you work with our existing architect or designer?</h3>
+            <p>We welcome collaboration. Many of our most celebrated projects have involved partnerships with independent architects, landscape designers, and interior decorators. Seamless coordination is one of our core strengths.</p>
+          </div>
+
+          <div class="card">
+            <h3>Is the initial consultation complimentary?</h3>
+            <p>Yes. The on-site discovery visit and preliminary conversation carry no obligation. We believe the relationship must feel right for both parties before any commitment is made.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="section section--charcoal">
+    <div class="container container--narrow">
+      <div class="text-center mb-lg">
+        <h4 class="anim-fade anim-delay-1">Client Reflections</h4>
+        <h2 class="anim-rise anim-delay-2">Words from Those We've Served</h2>
+        <div class="divider divider--center anim-line-expand anim-line-expand--center anim-delay-3"></div>
+      </div>
+
+      <div class="anim-stagger-fade">
+        <div class="testimonial mb-md">
+          <p class="testimonial__quote">From the moment we reached out, Sterling treated our home with the reverence it deserved. Their team understood that we weren't simply renovating — we were preserving a family legacy. The result exceeded every expectation.</p>
+          <p class="testimonial__author">Catherine &amp; William Ashford</p>
+          <p class="testimonial__role">Full Estate Restoration — Greenwich, Connecticut</p>
+        </div>
+
+        <div class="testimonial">
+          <p class="testimonial__quote">The consultation process alone was worth the call. They arrived prepared, asked the right questions, and presented a vision we hadn't dared to imagine. Three years later, we still pause in the doorway just to admire the foyer.</p>
+          <p class="testimonial__author">Dr. James Ellerton</p>
+          <p class="testimonial__role">Residential Renovation — Upper East Side, New York</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map / Locations Visual Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-lg">
+        <h4 class="anim-fade anim-delay-1">Our Presence</h4>
+        <h2 class="anim-rise anim-delay-2">Four Studios, One Standard</h2>
+        <div class="divider divider--center anim-line-expand anim-line-expand--center anim-delay-3"></div>
+        <p class="anim-rise anim-delay-4">Each Sterling studio reflects the character of its region while upholding the same uncompromising commitment to craft.</p>
+      </div>
+
+      <div class="grid grid--4 anim-stagger">
+        <div class="card text-center">
+          <div class="card__icon" style="margin-left: auto; margin-right: auto;"></div>
+          <h3>New York</h3>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.9rem;">742 Madison Avenue<br>Suite 1200</p>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.85rem; color: var(--color-gold); margin-top: var(--space-xs);">Flagship Studio</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="card__icon" style="margin-left: auto; margin-right: auto;"></div>
+          <h3>Greenwich</h3>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.9rem;">18 Putnam Avenue<br>Ground Floor</p>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.85rem; color: var(--color-gold); margin-top: var(--space-xs);">Estate Specialist</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="card__icon" style="margin-left: auto; margin-right: auto;"></div>
+          <h3>Palm Beach</h3>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.9rem;">340 Royal Palm Way<br>Suite 200</p>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.85rem; color: var(--color-gold); margin-top: var(--space-xs);">Coastal &amp; Tropical</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="card__icon" style="margin-left: auto; margin-right: auto;"></div>
+          <h3>Toronto</h3>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.9rem;">55 Avenue Road<br>Suite 400</p>
+          <p style="margin-left: auto; margin-right: auto; font-size: 0.85rem; color: var(--color-gold); margin-top: var(--space-xs);">Canadian Operations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="anim-deco-ring anim-deco-ring--lg anim-loop-rotate" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+    <div class="anim-deco-ring anim-deco-ring--md anim-loop-rotate" style="top: 50%; left: 50%; transform: translate(-50%, -50%); animation-direction: reverse;"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <h4 class="anim-fade anim-delay-1">Ready to Begin?</h4>
+      <h2 class="anim-rise anim-delay-2">Your Home Deserves Sterling</h2>
+      <p class="anim-rise anim-delay-3">Call us directly at <a href="tel:+12125550190" style="color: var(--color-gold);">(212) 555-0190</a> or complete the form above. We look forward to earning your trust.</p>
+      <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+        <a href="tel:+12125550190" class="btn btn--primary anim-scale-in anim-delay-4">Call Now</a>
+        <a href="portfolio.html" class="btn btn--outline anim-scale-in anim-delay-5">View Our Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"></span>
+          Sterling &amp; Associates
+        </a>
+        <p>Luxury residential renovation and estate restoration for discerning homeowners across North America. Craftsmanship without compromise since 1987.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Full Renovations</a></li>
+          <li><a href="services.html">Estate Restoration</a></li>
+          <li><a href="services.html">Kitchen &amp; Bath</a></li>
+          <li><a href="services.html">Custom Millwork</a></li>
+          <li><a href="services.html">Landscape Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">212-555-0187</a></li>
+          <li><a href="contact.html">hello@sterlingassoc.com</a></li>
+          <li><a href="contact.html">480 Park Avenue, Suite 12</a></li>
+          <li><a href="contact.html">New York, NY 10022</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Sterling &amp; Associates. All rights reserved.</p>
+      <div class="footer-bottom__links">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

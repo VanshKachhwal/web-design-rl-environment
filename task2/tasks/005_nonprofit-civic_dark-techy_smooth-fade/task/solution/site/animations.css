@@ -1,0 +1,232 @@
+/* ============================================
+   CivicCore Animation System — animations.css
+   ============================================ */
+
+/* --- Keyframes --- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 229, 200, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 200, 0.18);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(400%);
+  }
+}
+
+@keyframes barGrow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--bar-width, 70%);
+  }
+}
+
+@keyframes dotBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes borderTrace {
+  0% {
+    border-color: var(--border-subtle);
+  }
+  50% {
+    border-color: rgba(0, 229, 200, 0.3);
+  }
+  100% {
+    border-color: var(--border-subtle);
+  }
+}
+
+/* --- Entrance Animation Classes --- */
+
+.anim-rise {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-fade {
+  opacity: 0;
+  animation: fadeIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(32px);
+  animation: slideLeft 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(-32px);
+  animation: slideRight 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  animation: scaleIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* --- Delay Utilities (for manual stagger) --- */
+
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.22s; }
+.anim-delay-3 { animation-delay: 0.34s; }
+.anim-delay-4 { animation-delay: 0.46s; }
+.anim-delay-5 { animation-delay: 0.58s; }
+.anim-delay-6 { animation-delay: 0.7s; }
+.anim-delay-7 { animation-delay: 0.82s; }
+.anim-delay-8 { animation-delay: 0.94s; }
+
+/* --- Stagger Container: auto-delays children --- */
+
+.anim-stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: rise 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-stagger > *:nth-child(1) { animation-delay: 0.06s; }
+.anim-stagger > *:nth-child(2) { animation-delay: 0.17s; }
+.anim-stagger > *:nth-child(3) { animation-delay: 0.28s; }
+.anim-stagger > *:nth-child(4) { animation-delay: 0.39s; }
+.anim-stagger > *:nth-child(5) { animation-delay: 0.50s; }
+.anim-stagger > *:nth-child(6) { animation-delay: 0.61s; }
+.anim-stagger > *:nth-child(7) { animation-delay: 0.72s; }
+.anim-stagger > *:nth-child(8) { animation-delay: 0.83s; }
+.anim-stagger > *:nth-child(9) { animation-delay: 0.94s; }
+.anim-stagger > *:nth-child(10) { animation-delay: 1.05s; }
+
+/* Stagger with fade only (no slide) */
+.anim-stagger-fade > * {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.anim-stagger-fade > *:nth-child(1) { animation-delay: 0.08s; }
+.anim-stagger-fade > *:nth-child(2) { animation-delay: 0.20s; }
+.anim-stagger-fade > *:nth-child(3) { animation-delay: 0.32s; }
+.anim-stagger-fade > *:nth-child(4) { animation-delay: 0.44s; }
+.anim-stagger-fade > *:nth-child(5) { animation-delay: 0.56s; }
+.anim-stagger-fade > *:nth-child(6) { animation-delay: 0.68s; }
+
+/* --- Infinite / Loop Animation Classes --- */
+
+.anim-loop-pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.anim-loop-glow {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.anim-loop-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.anim-loop-dot {
+  animation: dotBlink 1.8s ease-in-out infinite;
+}
+
+.anim-loop-border {
+  animation: borderTrace 3.5s ease-in-out infinite;
+}
+
+.anim-loop-scan {
+  animation: scanline 3s linear infinite;
+}
+
+/* --- Bar grow (for data viz) --- */
+.anim-bar-grow {
+  width: 0%;
+  animation: barGrow 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}

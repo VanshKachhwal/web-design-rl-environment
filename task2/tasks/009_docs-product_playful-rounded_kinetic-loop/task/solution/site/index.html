@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-dot anim-loop-pulse"></div>
+        CloudNest
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentation.html">Docs</a></li>
+        <li><a href="api-reference.html">API</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="enterprise.html">Enterprise</a></li>
+      </ul>
+      <a href="enterprise.html" class="btn btn-primary btn-sm">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- ═══ HERO ═══ -->
+  <section class="section" style="position:relative;overflow:hidden;padding-top:100px;padding-bottom:100px;">
+    <!-- Decorative orbs -->
+    <div class="orb orb-blue anim-loop-drift" style="width:340px;height:340px;top:-60px;right:-80px;"></div>
+    <div class="orb orb-green anim-loop-pulse" style="width:260px;height:260px;bottom:-40px;left:-60px;"></div>
+    <div class="orb orb-warm anim-loop-drift" style="width:180px;height:180px;top:40%;left:55%;animation-delay:2s;"></div>
+
+    <div class="container text-center flex-col gap-24" style="position:relative;z-index:1;align-items:center;">
+      <div class="badge anim-rise anim-loop-badge-pulse" style="align-self:center;">
+        <span class="badge-dot anim-loop-dot"></span>
+        Now available in 12 EU regions
+      </div>
+
+      <h1 class="anim-rise anim-delay-1">Documentation that<br>your whole team <span style="color:var(--c-primary);">actually uses</span></h1>
+
+      <p class="anim-rise anim-delay-2" style="max-width:58ch;margin:0 auto;font-size:1.15rem;">
+        CloudNest is the enterprise documentation platform built for European teams. Write, review, publish, and collaborate — with GDPR compliance baked in from day one.
+      </p>
+
+      <div class="anim-rise anim-delay-3" style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="#get-started" class="btn btn-primary">Start for free</a>
+        <a href="documentation.html" class="btn btn-secondary">Read the docs</a>
+      </div>
+
+      <!-- Hero code preview -->
+      <div class="code-block anim-scale anim-delay-4" style="max-width:560px;width:100%;text-align:left;margin-top:16px;">
+        <span class="cm"># Install CloudNest CLI</span><br>
+        <span class="kw">npx</span> @cloudnest/cli init my-docs<br>
+        <span class="kw">cd</span> my-docs<br>
+        <span class="fn">cloudnest</span> <span class="str">deploy</span> <span class="cm">--region eu-west</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TRUSTED BY (Stats) ═══ -->
+  <section class="section-sm" style="background:var(--c-surface);border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);">
+    <div class="container">
+      <div class="grid-4 anim-stagger text-center">
+        <div class="stat">
+          <div class="stat-value">4,200+</div>
+          <div class="stat-label">Enterprise teams</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">18M</div>
+          <div class="stat-label">Documents hosted</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">99.99%</div>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">12</div>
+          <div class="stat-label">EU data regions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ═══ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="orb orb-blue anim-loop-pulse" style="width:200px;height:200px;top:10%;right:5%;"></div>
+    <div class="container flex-col gap-48" style="position:relative;z-index:1;">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items:center;">
+        <span class="tag green">Core Features</span>
+        <h2>Everything your docs workflow needs</h2>
+        <p style="margin:0 auto;">From first draft to published page, CloudNest handles the entire documentation lifecycle with tools your team will love.</p>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="card">
+          <div class="card-icon blue">✎</div>
+          <h3>Collaborative Editor</h3>
+          <p>Real-time co-editing with inline comments, suggestions, and version history. No more emailing Word files back and forth.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">⚡</div>
+          <h3>Instant Publishing</h3>
+          <p>Push changes live in under two seconds. Our edge network across 12 EU regions ensures blazing-fast page loads for every reader.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon warm">🔒</div>
+          <h3>GDPR by Design</h3>
+          <p>Data never leaves the EU. Full audit trails, data processing agreements, and privacy controls are built into every plan.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon purple">⌥</div>
+          <h3>API-First Architecture</h3>
+          <p>Every feature is accessible via our REST and GraphQL APIs. Automate publishing, manage content, and integrate with your stack.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon blue">🔍</div>
+          <h3>Semantic Search</h3>
+          <p>AI-powered search understands intent, not just keywords. Your readers find answers in seconds, not minutes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">📊</div>
+          <h3>Analytics Dashboard</h3>
+          <p>See which pages get read, where readers drop off, and what's missing. Data-driven docs that improve over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="section" style="background:var(--c-surface);border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);position:relative;overflow:hidden;">
+    <div class="orb orb-green anim-loop-drift" style="width:280px;height:280px;bottom:-80px;right:-60px;"></div>
+    <div class="container flex-col gap-48" style="position:relative;z-index:1;">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items:center;">
+        <span class="tag">How It Works</span>
+        <h2>From zero to published in three steps</h2>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="flex-col gap-16 text-center" style="align-items:center;">
+          <div class="card-icon blue anim-loop-float" style="width:72px;height:72px;font-size:1.8rem;border-radius:var(--radius-xl);">1</div>
+          <h3>Connect your repo</h3>
+          <p style="margin:0 auto;">Link a GitHub, GitLab, or Bitbucket repository. CloudNest watches for changes and syncs automatically.</p>
+        </div>
+        <div class="flex-col gap-16 text-center" style="align-items:center;">
+          <div class="card-icon green anim-loop-float" style="width:72px;height:72px;font-size:1.8rem;border-radius:var(--radius-xl);animation-delay:.4s;">2</div>
+          <h3>Write &amp; review</h3>
+          <p style="margin:0 auto;">Use Markdown, MDX, or our visual editor. Invite reviewers, leave comments, and approve changes before they go live.</p>
+        </div>
+        <div class="flex-col gap-16 text-center" style="align-items:center;">
+          <div class="card-icon warm anim-loop-float" style="width:72px;height:72px;font-size:1.8rem;border-radius:var(--radius-xl);animation-delay:.8s;">3</div>
+          <h3>Publish globally</h3>
+          <p style="margin:0 auto;">One click deploys to our EU edge network. Custom domains, versioning, and access controls are ready out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTEGRATIONS PREVIEW ═══ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="orb orb-warm anim-loop-pulse" style="width:220px;height:220px;top:20%;left:-40px;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="grid-2" style="align-items:center;">
+        <div class="flex-col gap-24 anim-slide-right">
+          <span class="tag warm">Integrations</span>
+          <h2>Fits right into your existing stack</h2>
+          <p>CloudNest connects with the tools your engineering and product teams already use — no migration headaches.</p>
+          <div class="flex-col gap-8">
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div><h4>GitHub &amp; GitLab</h4><small>Bi-directional sync with pull request previews</small></div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div><h4>Slack &amp; Teams</h4><small>Notifications, search, and publishing from chat</small></div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-check">✓</div>
+              <div><h4>Jira &amp; Linear</h4><small>Link docs to tickets and track coverage gaps</small></div>
+            </div>
+            <div class="feature-row" style="border-bottom:none;">
+              <div class="feature-check">✓</div>
+              <div><h4>SSO &amp; SCIM</h4><small>Okta, Azure AD, and Google Workspace supported</small></div>
+            </div>
+          </div>
+          <a href="integrations.html" class="btn btn-secondary btn-sm" style="align-self:flex-start;">View all integrations</a>
+        </div>
+
+        <div class="anim-scale anim-delay-2" style="display:flex;flex-direction:column;gap:16px;">
+          <div class="code-block">
+            <span class="cm">// cloudnest.config.js</span><br>
+            <span class="kw">export default</span> {<br>
+            &nbsp;&nbsp;source: <span class="str">"./docs"</span>,<br>
+            &nbsp;&nbsp;integrations: [<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">github</span>({ repo: <span class="str">"acme/docs"</span> }),<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">slack</span>({ channel: <span class="str">"#docs-updates"</span> }),<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">analytics</span>({ privacy: <span class="str">"strict"</span> })<br>
+            &nbsp;&nbsp;],<br>
+            &nbsp;&nbsp;region: <span class="str">"eu-central-1"</span><br>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="section" style="background:var(--c-surface);border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border);">
+    <div class="container flex-col gap-48">
+      <div class="text-center flex-col gap-12 anim-rise" style="align-items:center;">
+        <span class="tag green">Trusted by Teams</span>
+        <h2>What our customers say</h2>
+      </div>
+
+      <div class="grid-3 anim-stagger">
+        <div class="testimonial">
+          <p class="testimonial-quote">CloudNest cut our documentation publishing time by 80%. Our engineering team finally writes docs because the workflow feels like writing code.</p>
+          <div class="testimonial-author">Katrin Meier</div>
+          <div class="testimonial-role">VP Engineering, Luminar GmbH</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">The GDPR compliance was a dealbreaker for us. CloudNest is the only platform that gave our legal team complete peace of mind from day one.</p>
+          <div class="testimonial-author">Pierre Dubois</div>
+          <div class="testimonial-role">CTO, Finova S.A.</div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-quote">We migrated 6,000 pages in a weekend. The API is incredibly well-designed and the search is the best I've seen in any docs platform.</p>
+          <div class="testimonial-author">Elsa Lindström</div>
+          <div class="testimonial-role">Lead Technical Writer, Nordcloud AB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENTERPRISE CTA ═══ -->
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="orb orb-blue anim-loop-drift" style="width:300px;height:300px;top:-60px;left:50%;margin-left:-150px;"></div>
+    <div class="orb orb-green anim-loop-pulse" style="width:160px;height:160px;bottom:10%;right:10%;"></div>
+
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="card anim-scale" style="padding:56px 48px;text-align:center;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-d));border:none;color:#fff;display:flex;flex-direction:column;align-items:center;gap:20px;">
+        <span class="badge" style="background:rgba(255,255,255,.18);color:#fff;">
+          <span class="badge-dot anim-loop-dot" style="background:#fff;"></span>
+          Enterprise Ready
+        </span>
+        <h2 style="color:#fff;">Ready to transform your documentation?</h2>
+        <p style="color:rgba(255,255,255,.8);max-width:52ch;margin:0 auto;">Join 4,200+ teams across Europe who trust CloudNest for their mission-critical documentation. Custom SLAs, dedicated support, and on-premise options available.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
+          <a href="enterprise.html" class="btn" style="background:#fff;color:var(--c-primary);box-shadow:var(--shadow-m);">Talk to sales</a>
+          <a href="api-reference.html" class="btn" style="background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4);">Explore the API</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPLORE PAGES ═══ -->
+  <section class="section-sm">
+    <div class="container flex-col gap-32">
+      <div class="text-center anim-rise">
+        <h3>Explore CloudNest</h3>
+      </div>
+      <div class="grid-4 anim-stagger">
+        <a href="documentation.html" class="card text-center flex-col gap-8" style="align-items:center;text-decoration:none;">
+          <div class="card-icon blue" style="margin-bottom:8px;">📖</div>
+          <h4>Documentation</h4>
+          <small>Guides, tutorials, and getting started</small>
+        </a>
+        <a href="api-reference.html" class="card text-center flex-col gap-8" style="align-items:center;text-decoration:none;">
+          <div class="card-icon purple" style="margin-bottom:8px;">⚙</div>
+          <h4>API Reference</h4>
+          <small>REST &amp; GraphQL endpoints</small>
+        </a>
+        <a href="integrations.html" class="card text-center flex-col gap-8" style="align-items:center;text-decoration:none;">
+          <div class="card-icon warm" style="margin-bottom:8px;">🔗</div>
+          <h4>Integrations</h4>
+          <small>Connect your favourite tools</small>
+        </a>
+        <a href="enterprise.html" class="card text-center flex-col gap-8" style="align-items:center;text-decoration:none;">
+          <div class="card-icon green" style="margin-bottom:8px;">🏢</div>
+          <h4>Enterprise</h4>
+          <small>Custom plans, SLAs, and support</small>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-dot anim-loop-pulse"></div>
+          CloudNest
+        </a>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.5);max-width:280px;">Enterprise-grade documentation platform trusted by teams across Europe. Built for clarity, designed for scale.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">GDPR Ready</span>
+          <span class="footer-badge">SOC 2</span>
+          <span class="footer-badge">ISO 27001</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Documentation</a></li>
+          <li><a href="api-reference.html">API Reference</a></li>
+          <li><a href="integrations.html">Integrations</a></li>
+          <li><a href="enterprise.html">Enterprise</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links">
+          <li><a href="documentation.html">Getting Started</a></li>
+          <li><a href="api-reference.html">API Guides</a></li>
+          <li><a href="integrations.html">Marketplace</a></li>
+          <li><a href="index.html">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="enterprise.html">Contact Sales</a></li>
+          <li><a href="index.html">Careers</a></li>
+          <li><a href="index.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 CloudNest B.V. — Amsterdam, Netherlands</span>
+      <span>Made with care for European enterprises</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

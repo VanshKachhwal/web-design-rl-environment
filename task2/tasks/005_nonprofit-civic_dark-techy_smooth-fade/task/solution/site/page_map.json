@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "platform-features": {
+    "expected_file": "platform-features.html",
+    "screenshot": "platform-features.png"
+  },
+  "data-insights": {
+    "expected_file": "data-insights.html",
+    "screenshot": "data-insights.png"
+  },
+  "community-partners": {
+    "expected_file": "community-partners.html",
+    "screenshot": "community-partners.png"
+  },
+  "get-started": {
+    "expected_file": "get-started.html",
+    "screenshot": "get-started.png"
+  }
+}

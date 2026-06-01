@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "task_id": "anim-003_restaurant-hospitality_glassmorphism_elegant-reveal",
+    "seed_tuple": [
+      "restaurant-hospitality",
+      "glassmorphism",
+      "low",
+      "local-community",
+      "premium-and-understated",
+      "elegant-reveal"
+    ],
+    "archetype": "restaurant-hospitality",
+    "aesthetic": "glassmorphism",
+    "complexity": "low",
+    "animation_style": "elegant-reveal",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 21.7272895,
+    "total_input_tokens": 18040463,
+    "total_output_tokens": 369503,
+    "started_at": "2026-06-01T16:09:28.187508",
+    "finished_at": "2026-06-01T16:29:50.837309",
+    "wall_clock_sec": 1222.649801,
+    "date": "2026-06-01",
+    "commit": "88c4d89565f60dfbcdeef1eeb94d8ed65001b8a0",
+    "timestamps_ms": [
+      0,
+      200,
+      500,
+      900,
+      1400,
+      2000
+    ]
+  },
+  "terms": [
+    "static_design",
+    "motion",
+    "animation_judge"
+  ],
+  "timestamps_ms": [
+    0,
+    200,
+    500,
+    900,
+    1400,
+    2000
+  ],
+  "trials": [
+    {
+      "trial_id": "29a3duf",
+      "reward": 0.4981044341791649,
+      "static_design": 0.7561332116391328,
+      "motion": 0.24818009089836185,
+      "animation_judge": 0.49000000000000005,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.46921333237614776,
+          "static_terms": {
+            "structure": 0.7548116811858295,
+            "color": 0.9693656293534885,
+            "content": 0.5931283905967449,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 12,
+          "static_design": 0.7480764252840157,
+          "motion": 0.20956357184442753,
+          "animation_judge": 0.45
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.4689841591798565,
+          "static_terms": {
+            "structure": 0.7880821955511158,
+            "color": 0.9618206468321142,
+            "content": 0.4366471734892788,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 11,
+          "static_design": 0.7341375039681272,
+          "motion": 0.22281497357144217,
+          "animation_judge": 0.45
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.4933969335447334,
+          "static_terms": {
+            "structure": 0.7512087835752426,
+            "color": 0.9651571498709026,
+            "content": 0.47771428571428576,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 12,
+          "static_design": 0.7235200547901077,
+          "motion": 0.20667074584409245,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.4707571700636643,
+          "static_terms": {
+            "structure": 0.6994222005318563,
+            "color": 0.9638848806075198,
+            "content": 0.48695652173913045,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 12,
+          "static_design": 0.7313159007196266,
+          "motion": 0.2309556094713662,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.5881705757314225,
+          "static_terms": {
+            "structure": 0.753052675560008,
+            "color": 0.9637159871974047,
+            "content": 0.8576960309777347,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 10,
+          "static_design": 0.8436161734337868,
+          "motion": 0.37089555376048083,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "FMq6pSQ",
+      "reward": 0.5210914528283989,
+      "static_design": 0.775093368088002,
+      "motion": 0.2581809903971946,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.503221238281443,
+          "static_terms": {
+            "structure": 0.8344050276991748,
+            "color": 0.9672337552633296,
+            "content": 0.5719733079122974,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 18,
+          "static_design": 0.7746530227187004,
+          "motion": 0.18501069212562893,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.5424720806976114,
+          "static_terms": {
+            "structure": 0.8317179984371557,
+            "color": 0.9622634749399499,
+            "content": 0.6591143151390318,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 14,
+          "static_design": 0.8132739471290343,
+          "motion": 0.2641422949637999,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.4980025559763564,
+          "static_terms": {
+            "structure": 0.7977788863625757,
+            "color": 0.9626590769697704,
+            "content": 0.49655963302752293,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 22,
+          "static_design": 0.7454993990899672,
+          "motion": 0.19850826883910197,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.4441884485949506,
+          "static_terms": {
+            "structure": 0.7692098885549042,
+            "color": 0.9623070301591604,
+            "content": 0.4757869249394673,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 31,
+          "static_design": 0.720575960913383,
+          "motion": 0.16198938487146874,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.6175729405916329,
+          "static_terms": {
+            "structure": 0.8238963945211113,
+            "color": 0.961358892381087,
+            "content": 0.7256027554535017,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 19,
+          "static_design": 0.821464510588925,
+          "motion": 0.48125431118597356,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "We79bs3",
+      "reward": 0.5732205739752209,
+      "static_design": 0.7887639531804881,
+      "motion": 0.40089776874517435,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5358880141865913,
+          "static_terms": {
+            "structure": 0.840069680267753,
+            "color": 0.978083591789666,
+            "content": 0.577338129496403,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 11,
+          "static_design": 0.7801228503884554,
+          "motion": 0.2775411921713184,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.5950661564176898,
+          "static_terms": {
+            "structure": 0.8529789720112255,
+            "color": 0.9756827728429431,
+            "content": 0.48744186046511634,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 10,
+          "static_design": 0.7665259013298212,
+          "motion": 0.46867256792324813,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.5118902777904369,
+          "static_terms": {
+            "structure": 0.8149921257268358,
+            "color": 0.9766233093907913,
+            "content": 0.5144475920679886,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 12,
+          "static_design": 0.7640157567964039,
+          "motion": 0.22165507657490693,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.5588733375391537,
+          "static_terms": {
+            "structure": 0.7878158468178021,
+            "color": 0.9734887785847924,
+            "content": 0.5133446905167518,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 11,
+          "static_design": 0.7561623289798366,
+          "motion": 0.47045768363762436,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.6643850839422323,
+          "static_terms": {
+            "structure": 0.8348915408906414,
+            "color": 0.9739616614775843,
+            "content": 0.8991185112634671,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 11,
+          "static_design": 0.8769929284079232,
+          "motion": 0.5661623234187736,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "ajgbZ2N",
+      "reward": 0.6577426382609272,
+      "static_design": 0.7744698575932943,
+      "motion": 0.6487580571894871,
+      "animation_judge": 0.55,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6737127267563768,
+          "static_terms": {
+            "structure": 0.8126712595359337,
+            "color": 0.9838095214503243,
+            "content": 0.5938104448742747,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 32,
+          "static_design": 0.7788228064651331,
+          "motion": 0.6923153738039973,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.7041967400254611,
+          "static_terms": {
+            "structure": 0.8383478412618971,
+            "color": 0.981101763674931,
+            "content": 0.40800000000000003,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 18,
+          "static_design": 0.731862401234207,
+          "motion": 0.8307278188421762,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.6319358448191771,
+          "static_terms": {
+            "structure": 0.7937382705626689,
+            "color": 0.9830903491857442,
+            "content": 0.5122927387078331,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 27,
+          "static_design": 0.7535303396140616,
+          "motion": 0.5922771948434697,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.6304760526355686,
+          "static_terms": {
+            "structure": 0.7472366509945613,
+            "color": 0.9801865753636491,
+            "content": 0.473622508792497,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 34,
+          "static_design": 0.7377614337876768,
+          "motion": 0.703666724119029,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.6483918270680519,
+          "static_terms": {
+            "structure": 0.799905433609114,
+            "color": 0.9798614027683646,
+            "content": 0.9017223910840932,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 22,
+          "static_design": 0.870372306865393,
+          "motion": 0.4248031743387627,
+          "animation_judge": 0.6499999999999999
+        }
+      }
+    },
+    {
+      "trial_id": "ayxcgGQ",
+      "reward": 0.47918931045514873,
+      "static_design": 0.7497573183860793,
+      "motion": 0.11781061297936701,
+      "animation_judge": 0.5700000000000001,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.48081795988884957,
+          "static_terms": {
+            "structure": 0.6866296178562634,
+            "color": 0.9696371866140145,
+            "content": 0.6134615384615384,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 28,
+          "static_design": 0.7611820857329541,
+          "motion": 0.1312717939335946,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.5060868923697425,
+          "static_terms": {
+            "structure": 0.7088216602400051,
+            "color": 0.9747861464709762,
+            "content": 0.47863247863247865,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 19,
+          "static_design": 0.734310071335865,
+          "motion": 0.23395060577336232,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.4487469938832092,
+          "static_terms": {
+            "structure": 0.6615447081897887,
+            "color": 0.970042990893709,
+            "content": 0.5205479452054794,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 35,
+          "static_design": 0.7192839110722443,
+          "motion": 0.07695707057738338,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.43311766010789104,
+          "static_terms": {
+            "structure": 0.6193292181585616,
+            "color": 0.9709579408057674,
+            "content": 0.5121537591859808,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 45,
+          "static_design": 0.7131102295375774,
+          "motion": 0.036242750786095644,
+          "animation_judge": 0.55
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.5271770460260515,
+          "static_terms": {
+            "structure": 0.6673933083135871,
+            "color": 0.9725204939439354,
+            "content": 0.843687374749499,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.7,
+            "timing": 0.6,
+            "easing_feel": 0.6,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 24,
+          "static_design": 0.8209002942517554,
+          "motion": 0.11063084382639918,
+          "animation_judge": 0.6499999999999999
+        }
+      }
+    },
+    {
+      "trial_id": "ccpgMSR",
+      "reward": 0.541799171533622,
+      "static_design": 0.7907859585036027,
+      "motion": 0.3246115560972634,
+      "animation_judge": 0.51,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6068862661946735,
+          "static_terms": {
+            "structure": 0.8310329421960737,
+            "color": 0.9703654478985921,
+            "content": 0.5566820276497696,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 34,
+          "static_design": 0.7707701044361088,
+          "motion": 0.4998886941479114,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.4672836034522963,
+          "static_terms": {
+            "structure": 0.8341355829752428,
+            "color": 0.9684962270165456,
+            "content": 0.7717690192483959,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 40,
+          "static_design": 0.8311002073100461,
+          "motion": 0.12075060304684278,
+          "animation_judge": 0.45
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.5662488295024166,
+          "static_terms": {
+            "structure": 0.8025657577741818,
+            "color": 0.9697950256522359,
+            "content": 0.5232690124858116,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 33,
+          "static_design": 0.7614074489780573,
+          "motion": 0.38733903952919246,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.48904772964948506,
+          "static_terms": {
+            "structure": 0.7714717550394048,
+            "color": 0.9673677949297488,
+            "content": 0.5014819205690575,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 39,
+          "static_design": 0.7350803676345528,
+          "motion": 0.28206282131390253,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.5795294288692386,
+          "static_terms": {
+            "structure": 0.8067773885361865,
+            "color": 0.966877427304785,
+            "content": 0.8736318407960199,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 27,
+          "static_design": 0.8555716641592479,
+          "motion": 0.33301662244846786,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "d2eCLXM",
+      "reward": 0.646294085685243,
+      "static_design": 0.7775642033702805,
+      "motion": 0.6313180536854486,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6479768509055326,
+          "static_terms": {
+            "structure": 0.8406278524105645,
+            "color": 0.9638072911729266,
+            "content": 0.5966228893058161,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 35,
+          "static_design": 0.7690145082223268,
+          "motion": 0.6249160444942709,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.6731846652278494,
+          "static_terms": {
+            "structure": 0.843969864849783,
+            "color": 0.9604922177279405,
+            "content": 0.543233082706767,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 23,
+          "static_design": 0.7806737913211226,
+          "motion": 0.6888802043624258,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.6666964600242,
+          "static_terms": {
+            "structure": 0.799181479286334,
+            "color": 0.9605364414862103,
+            "content": 0.4937833037300177,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 35,
+          "static_design": 0.7383753061256405,
+          "motion": 0.7117140739469594,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.6133454699896732,
+          "static_terms": {
+            "structure": 0.763019015718552,
+            "color": 0.9579141179018352,
+            "content": 0.5158264947245017,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 42,
+          "static_design": 0.7341899070862222,
+          "motion": 0.6558465028827974,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.6302669822789602,
+          "static_terms": {
+            "structure": 0.8172062944692501,
+            "color": 0.9609728128242039,
+            "content": 0.9090909090909092,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 27,
+          "static_design": 0.8655675040960908,
+          "motion": 0.4752334427407897,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "kWg3KFu",
+      "reward": 0.49191857226421315,
+      "static_design": 0.781347954343833,
+      "motion": 0.14440776244880643,
+      "animation_judge": 0.55,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5079471931756845,
+          "static_terms": {
+            "structure": 0.837758018069864,
+            "color": 0.9706871747118438,
+            "content": 0.5816425120772947,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 27,
+          "static_design": 0.7725219262147507,
+          "motion": 0.20131965331230267,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.5303072728898809,
+          "static_terms": {
+            "structure": 0.8555498608712897,
+            "color": 0.9686945515623911,
+            "content": 0.5361620057859209,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 20,
+          "static_design": 0.7651016045549004,
+          "motion": 0.2758202141147422,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.46575470226753196,
+          "static_terms": {
+            "structure": 0.7996651886565149,
+            "color": 0.9704204846763222,
+            "content": 0.5216907675194661,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 27,
+          "static_design": 0.7604441102130758,
+          "motion": 0.08681999658952015,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.44574793878667424,
+          "static_terms": {
+            "structure": 0.7767707678090204,
+            "color": 0.9671174542208337,
+            "content": 0.5026117237376669,
+            "design_judge": 0.75
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 37,
+          "static_design": 0.7491249864418803,
+          "motion": 0.038118829918142215,
+          "animation_judge": 0.55
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.5098357542012942,
+          "static_terms": {
+            "structure": 0.811905504662287,
+            "color": 0.969584386974993,
+            "content": 0.8816986855409504,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 25,
+          "static_design": 0.8595471442945576,
+          "motion": 0.11996011830932493,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "rHAL8Sa",
+      "reward": 0.565317922344805,
+      "static_design": 0.783159301807866,
+      "motion": 0.3827944652265489,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5413170387953844,
+          "static_terms": {
+            "structure": 0.8099608807895211,
+            "color": 0.9726098905988192,
+            "content": 0.5990610328638497,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 26,
+          "static_design": 0.7641579510630475,
+          "motion": 0.3097931653231057,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.5688193239027278,
+          "static_terms": {
+            "structure": 0.8367252295145498,
+            "color": 0.9694599385437049,
+            "content": 0.5551537070524413,
+            "design_judge": 0.775
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 16,
+          "static_design": 0.784084718777674,
+          "motion": 0.3723732529305095,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.5762149548609315,
+          "static_terms": {
+            "structure": 0.7853430055303946,
+            "color": 0.9696147910861365,
+            "content": 0.5304212168486739,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 24,
+          "static_design": 0.7525947533663012,
+          "motion": 0.42605011121649355,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.5162188293866609,
+          "static_terms": {
+            "structure": 0.7780312639277979,
+            "color": 0.9673501914422787,
+            "content": 0.5115511551155116,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 30,
+          "static_design": 0.7392331526213971,
+          "motion": 0.35942333553858546,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.6240194647783204,
+          "static_terms": {
+            "structure": 0.8219138005432788,
+            "color": 0.9671010434114747,
+            "content": 0.888888888888889,
+            "design_judge": 0.825
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 23,
+          "static_design": 0.8757259332109106,
+          "motion": 0.44633246112405056,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "rLxRfMY",
+      "reward": 0.5027731909457851,
+      "static_design": 0.7857164929826944,
+      "motion": 0.1876030798546607,
+      "animation_judge": 0.5349999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.49478500812773296,
+          "static_terms": {
+            "structure": 0.8164279925325685,
+            "color": 0.9628276902501107,
+            "content": 0.6234509056244043,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 42,
+          "n_animations_cand": 28,
+          "static_design": 0.7756766471017709,
+          "motion": 0.15867837728142792,
+          "animation_judge": 0.55
+        },
+        "menu": {
+          "present": true,
+          "reward": 0.5379018782543433,
+          "static_terms": {
+            "structure": 0.8134032237192759,
+            "color": 0.9535500272859643,
+            "content": 0.8021201413427561,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 52,
+          "n_animations_cand": 19,
+          "static_design": 0.8235183480869991,
+          "motion": 0.2401872866760308,
+          "animation_judge": 0.55
+        },
+        "our-story": {
+          "present": true,
+          "reward": 0.4782529648399374,
+          "static_terms": {
+            "structure": 0.773303519075262,
+            "color": 0.9577482325319028,
+            "content": 0.48792270531400966,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 55,
+          "n_animations_cand": 24,
+          "static_design": 0.7359936142302936,
+          "motion": 0.14876528028951855,
+          "animation_judge": 0.55
+        },
+        "events-private-dining": {
+          "present": true,
+          "reward": 0.42322821308461095,
+          "static_terms": {
+            "structure": 0.758193185602565,
+            "color": 0.95540900305259,
+            "content": 0.5,
+            "design_judge": 0.725
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 54,
+          "n_animations_cand": 33,
+          "static_design": 0.7346505471637887,
+          "motion": 0.08503409209004396,
+          "animation_judge": 0.45
+        },
+        "reservations-contact": {
+          "present": true,
+          "reward": 0.5796978904223008,
+          "static_terms": {
+            "structure": 0.7791675325493537,
+            "color": 0.9560978137234681,
+            "content": 0.8997078870496593,
+            "design_judge": 0.8
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.7
+          },
+          "n_animations_ref": 32,
+          "n_animations_cand": 21,
+          "static_design": 0.8587433083306203,
+          "motion": 0.3053503629362823,
+          "animation_judge": 0.575
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+schema_version = "1.2"
+
+[task]
+name = "webdesign-rl-anim/replicate-animated-site"
+description = "Replicate a multi-page animated web design from a reference filmstrip."
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+allow_internet = false
+cpus = 2
+memory_mb = 4096
+
+[verifier]
+timeout_sec = 1800.0
+environment_mode = "separate"
+
+[verifier.environment]
+allow_internet = true
+cpus = 2
+memory_mb = 4096
+
+[verifier.env]
+# Used by the live design_judge + animation_judge terms (full mode). Add
+# --no-judge in test.sh for deterministic-only grading (no key/egress).
+ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}"

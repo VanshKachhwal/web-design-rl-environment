@@ -1,0 +1,22 @@
+{
+  "index": {
+    "expected_file": "index.html",
+    "screenshot": "index.png"
+  },
+  "articles-browse-all": {
+    "expected_file": "articles-browse-all.html",
+    "screenshot": "articles-browse-all.png"
+  },
+  "about-our-mission": {
+    "expected_file": "about-our-mission.html",
+    "screenshot": "about-our-mission.png"
+  },
+  "resources-for-educators": {
+    "expected_file": "resources-for-educators.html",
+    "screenshot": "resources-for-educators.png"
+  },
+  "contact-get-in-touch": {
+    "expected_file": "contact-get-in-touch.html",
+    "screenshot": "contact-get-in-touch.png"
+  }
+}

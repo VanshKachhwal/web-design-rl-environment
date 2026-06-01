@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Reservations & Contact</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="animations.css">
+</head>
+<body>
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,23,20,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,84,0.1);">
+  <div style="max-width:1140px;margin:0 auto;padding:0.9rem 1.75rem;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:0.6rem;">
+      <span class="ember-dot anim-loop-ember"></span>
+      <span style="font-family:Georgia,'Times New Roman',Times,serif;font-size:1.35rem;color:#f0e8dc;letter-spacing:0.02em;">Ember <span style="color:#d4a054;">&amp;</span> Vine</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:2rem;">
+      <a href="index.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Home</a>
+      <a href="menu.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Menu</a>
+      <a href="story.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Our Story</a>
+      <a href="events.html" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,239,230,0.7);text-decoration:none;transition:color 0.3s;">Events</a>
+      <a href="contact.html" class="btn" style="padding:0.6em 1.6em;font-size:0.72rem;">Reserve</a>
+    </nav>
+  </div>
+</header>
+<div style="height:68px;"></div>
+<main>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="section section--hero">
+    <div class="container container--narrow">
+
+      <div class="hero-accent anim-fade anim-delay-1">
+        <span class="hero-accent__line"></span>
+        <span class="ember-dot anim-loop-ember"></span>
+        <span class="hero-accent__line"></span>
+      </div>
+
+      <h4 class="anim-rise anim-delay-1">Reservations &amp; Contact</h4>
+      <div class="spacer-sm"></div>
+      <h1 class="anim-rise anim-delay-2">Your Table Awaits</h1>
+      <hr class="divider anim-divider-reveal anim-delay-3">
+      <p class="subtitle subtitle--center anim-rise anim-delay-3">
+        Reserve your evening at Ember &amp; Vine, or reach out with any questions — we'd love to hear from you.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== RESERVATION FORM + INFO GRID ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2 anim-stagger">
+
+        <!-- Left: Reservation Form -->
+        <div class="glass-card glass-card--lg anim-slide-left">
+          <h3>Make a Reservation</h3>
+          <p style="margin-bottom:var(--space-md);">Book directly for parties of 1–6. For groups of 7 or more, please call us or visit our <a href="events-private-dining.html">private dining page</a>.</p>
+
+          <form action="#" method="post">
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="res-name">Full Name</label>
+                <input class="form-input" type="text" id="res-name" name="name" placeholder="Jane Doe" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-email">Email</label>
+                <input class="form-input" type="email" id="res-email" name="email" placeholder="jane@email.com" required>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="res-phone">Phone</label>
+                <input class="form-input" type="tel" id="res-phone" name="phone" placeholder="(555) 123-4567">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-guests">Number of Guests</label>
+                <select class="form-select" id="res-guests" name="guests" required>
+                  <option value="">Select…</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="form-group">
+                <label class="form-label" for="res-date">Preferred Date</label>
+                <input class="form-input" type="date" id="res-date" name="date" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="res-time">Preferred Time</label>
+                <select class="form-select" id="res-time" name="time" required>
+                  <option value="">Select…</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                  <option value="21:30">9:30 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-occasion">Occasion</label>
+              <select class="form-select" id="res-occasion" name="occasion">
+                <option value="">None / General Dining</option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="date-night">Date Night</option>
+                <option value="business">Business Dinner</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-notes">Special Requests</label>
+              <textarea class="form-textarea" id="res-notes" name="notes" placeholder="Dietary needs, seating preferences, accessibility requirements…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--filled anim-loop-pulse">Reserve My Table</button>
+
+          </form>
+        </div>
+
+        <!-- Right: Contact Info & Details -->
+        <div class="anim-slide-right" style="display:flex;flex-direction:column;gap:var(--space-md);">
+
+          <!-- Hours Card -->
+          <div class="glass-card glass-card--lg">
+            <h3>Hours of Service</h3>
+            <hr class="divider divider--left" style="margin-top:var(--space-sm);margin-bottom:var(--space-md);">
+
+            <div class="info-row">
+              <div class="info-row__icon">
+                <!-- Clock icon (CSS-drawn) -->
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:block;">
+                  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/>
+                  <line x1="8" y1="3.5" x2="8" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="8" y1="8" x2="11" y2="10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.4em;">Dinner Service</h4>
+                <p style="font-size:0.9rem;">Tuesday – Thursday: 5:00 PM – 10:00 PM</p>
+                <p style="font-size:0.9rem;">Friday – Saturday: 5:00 PM – 11:00 PM</p>
+                <p style="font-size:0.9rem;">Sunday: 4:30 PM – 9:00 PM</p>
+                <p style="font-size:0.9rem;" class="text-muted">Monday: Closed</p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-row__icon">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:block;">
+                  <rect x="2" y="5" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M2 6.5L8 10.5L14 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.4em;">Wine Bar &amp; Lounge</h4>
+                <p style="font-size:0.9rem;">Tuesday – Saturday: 4:00 PM – Late</p>
+                <p style="font-size:0.9rem;">Sunday: 4:00 PM – 9:00 PM</p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-row__icon">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:block;">
+                  <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.2"/>
+                  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2.5"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.4em;">Weekend Brunch</h4>
+                <p style="font-size:0.9rem;">Saturday – Sunday: 10:30 AM – 2:30 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Details Card -->
+          <div class="glass-card glass-card--lg">
+            <h3>Get in Touch</h3>
+            <hr class="divider divider--left" style="margin-top:var(--space-sm);margin-bottom:var(--space-md);">
+
+            <div class="info-row">
+              <div class="info-row__icon">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:block;">
+                  <path d="M8 1C5.2 1 3 3.7 3 5.5C3 9.5 8 15 8 15C8 15 13 9.5 13 5.5C13 3.7 10.8 1 8 1Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="5.5" r="1.8" stroke="currentColor" stroke-width="1.2"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.4em;">Address</h4>
+                <p style="font-size:0.9rem;">247 Hearthstone Lane<br>Maplewood, OR 97205</p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-row__icon">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:block;">
+                  <path d="M3 2.5H6L7.5 6L5.8 7.2C6.6 8.9 7.9 10.4 9.5 11.2L10.8 9.5L14 11V13.5C14 14 13.5 14.5 13 14.5C7 14.2 1.8 9 1.5 3C1.5 2.5 2 2.5 2.5 2.5H3Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.4em;">Phone</h4>
+                <p style="font-size:0.9rem;"><a href="tel:+15039247463">(503) 924-7463</a></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-row__icon">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:block;">
+                  <rect x="1.5" y="3.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.4em;">Email</h4>
+                <p style="font-size:0.9rem;"><a href="mailto:hello@emberandvine.com">hello@emberandvine.com</a></p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Reservation Policy Tag -->
+          <div class="glass-card text-center" style="padding:var(--space-sm) var(--space-md);">
+            <span class="tag anim-loop-pulse">Walk-ins welcome · Reservations recommended</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP SECTION ===== -->
+  <section class="section">
+    <div class="container anim-scale anim-delay-4">
+      <div class="map-placeholder" style="height:340px;">
+        <div style="text-align:center;">
+          <svg width="36" height="36" viewbox="0 0 36 36" fill="none" style="display:block;margin:0 auto var(--space-xs);">
+            <path d="M18 3C12.5 3 8 8.2 8 12C8 20 18 33 18 33C18 33 28 20 28 12C28 8.2 23.5 3 18 3Z" stroke="currentColor" stroke-width="1.5" fill="none" style="color:var(--color-amber);"/>
+            <circle cx="18" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none" style="color:var(--color-amber);"/>
+          </svg>
+          <span>247 Hearthstone Lane · Maplewood, OR 97205</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUICK INFO FEATURES ===== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="text-center anim-rise anim-delay-3">
+        <h2>Before You Visit</h2>
+        <hr class="divider anim-divider-reveal anim-delay-4">
+      </div>
+
+      <div class="spacer-md"></div>
+
+      <div class="grid-3 anim-stagger">
+
+        <div class="glass-card feature-block anim-rise">
+          <div class="feature-block__icon">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" style="display:block;">
+              <rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="7" y1="6" x2="13" y2="6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="7" y1="9" x2="13" y2="9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="7" y1="12" x2="11" y2="12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="feature-block__title">Cancellation Policy</div>
+          <p style="font-size:0.88rem;margin:0 auto;">We kindly ask for 24-hour notice for cancellations or changes. Late cancellations may incur a $25 per-person fee for parties of four or more.</p>
+        </div>
+
+        <div class="glass-card feature-block anim-rise">
+          <div class="feature-block__icon">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" style="display:block;">
+              <path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="feature-block__title">Dietary Accommodations</div>
+          <p style="font-size:0.88rem;margin:0 auto;">Our kitchen happily accommodates vegetarian, vegan, gluten-free, and most allergy needs. Please note any requirements when booking or speak with your server.</p>
+        </div>
+
+        <div class="glass-card feature-block anim-rise">
+          <div class="feature-block__icon">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" style="display:block;">
+              <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 10L9.5 12.5L13.5 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="feature-block__title">Accessibility</div>
+          <p style="font-size:0.88rem;margin:0 auto;">Ember &amp; Vine is fully wheelchair accessible with step-free entry, accessible restrooms, and accommodating seating. Service animals are always welcome.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARKING & DRESS CODE ===== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-panel anim-scale anim-delay-3">
+        <div class="grid-2">
+
+          <div class="anim-slide-left anim-delay-4">
+            <h4>Parking</h4>
+            <div class="spacer-sm"></div>
+            <p style="font-size:0.92rem;">Complimentary valet parking is available Friday and Saturday evenings. A public lot sits directly behind the restaurant on Vine Street, and metered street parking is free after 7:00 PM. Bicycle racks are located at our front entrance.</p>
+          </div>
+
+          <div class="anim-slide-right anim-delay-5">
+            <h4>Dress Code</h4>
+            <div class="spacer-sm"></div>
+            <p style="font-size:0.92rem;">We embrace smart-casual attire — think well-fitted jeans with a blazer, a comfortable dress, or your favorite pair of boots. We want you to feel at home while savoring something special. No shorts or flip-flops, please.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GENERAL INQUIRY FORM ===== -->
+  <section class="section">
+    <div class="container container--narrow">
+
+      <div class="text-center anim-rise anim-delay-2">
+        <h2>Send Us a Message</h2>
+        <hr class="divider anim-divider-reveal anim-delay-3">
+        <p class="subtitle subtitle--center anim-rise anim-delay-3">
+          Questions about our menu, private events, gift cards, or anything else? Drop us a line and we'll respond within one business day.
+        </p>
+      </div>
+
+      <div class="spacer-lg"></div>
+
+      <div class="glass-card glass-card--lg anim-scale anim-delay-4">
+        <form action="#" method="post">
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your Name</label>
+              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Alex Rivera" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Your Email</label>
+              <input class="form-input" type="email" id="contact-email" name="email" placeholder="alex@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Subject</label>
+            <select class="form-select" id="contact-subject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="events">Private Events &amp; Buyouts</option>
+              <option value="gift-cards">Gift Cards</option>
+              <option value="press">Press &amp; Media</option>
+              <option value="careers">Careers</option>
+              <option value="feedback">Feedback</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell us how we can help…" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn--filled">Send Message</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="glass-card anim-fade anim-delay-5">
+        <div class="testimonial">
+          <div class="ember-dot anim-loop-ember mx-auto" style="margin-bottom:var(--space-sm);"></div>
+          <p class="testimonial__quote">"From the moment we walked in, the warmth of Ember &amp; Vine wrapped around us. The staff remembered our anniversary, the wine pairing was impeccable, and every course told a story. This is our place."</p>
+          <p class="testimonial__author">— Sarah &amp; David M., Maplewood</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUICK LINKS ===== -->
+  <section class="section">
+    <div class="container">
+
+      <div class="text-center anim-rise anim-delay-3">
+        <h3>Explore More</h3>
+        <hr class="divider anim-divider-reveal anim-delay-4">
+      </div>
+
+      <div class="spacer-md"></div>
+
+      <div class="grid-3 anim-stagger" style="text-align:center;">
+        <a href="menu.html" class="glass-card anim-rise" style="display:block;text-decoration:none;">
+          <h4>Seasonal Menu</h4>
+          <div class="spacer-sm"></div>
+          <p style="font-size:0.88rem;margin:0 auto;">Discover our latest dishes crafted from the freshest local ingredients.</p>
+        </a>
+        <a href="events-private-dining.html" class="glass-card anim-rise" style="display:block;text-decoration:none;">
+          <h4>Private Dining</h4>
+          <div class="spacer-sm"></div>
+          <p style="font-size:0.88rem;margin:0 auto;">Host your next celebration in our intimate private dining room for up to 24 guests.</p>
+        </a>
+        <a href="our-story.html" class="glass-card anim-rise" style="display:block;text-decoration:none;">
+          <h4>Our Story</h4>
+          <div class="spacer-sm"></div>
+          <p style="font-size:0.88rem;margin:0 auto;">Learn about the family, farmers, and philosophy behind every plate.</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<footer style="position:relative;z-index:1;border-top:1px solid rgba(212,160,84,0.1);background:rgba(26,23,20,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin-top:auto;">
+  <div style="max-width:1140px;margin:0 auto;padding:3rem 1.75rem 2rem;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem;">
+      <!-- Brand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+          <span class="ember-dot anim-loop-ember"></span>
+          <span style="font-family:Georgia,'Times New Roman',Times,serif;font-size:1.2rem;color:#f0e8dc;">Ember <span style="color:#d4a054;">&amp;</span> Vine</span>
+        </div>
+        <p style="font-size:0.85rem;color:rgba(245,239,230,0.5);max-width:30ch;line-height:1.6;">Seasonal cuisine and curated wines in the heart of the neighborhood. A place to gather, savor, and belong.</p>
+      </div>
+      <!-- Navigate -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Navigate</h4>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <a href="index.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Home</a>
+          <a href="menu.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Menu</a>
+          <a href="story.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Our Story</a>
+          <a href="events.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Events</a>
+          <a href="contact.html" style="font-size:0.85rem;color:rgba(245,239,230,0.55);text-decoration:none;">Reservations</a>
+        </div>
+      </div>
+      <!-- Hours -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Hours</h4>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:rgba(245,239,230,0.55);">
+          <span>Tue – Thu: 5 – 10 pm</span>
+          <span>Fri – Sat: 5 – 11 pm</span>
+          <span>Sun: 4 – 9 pm</span>
+          <span>Mon: Closed</span>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#d4a054;margin-bottom:1rem;">Contact</h4>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;color:rgba(245,239,230,0.55);">
+          <span>142 Elm Street</span>
+          <span>Maplewood, NJ 07040</span>
+          <span style="margin-top:0.3rem;">(973) 555-0184</span>
+          <span>hello@emberandvine.com</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(212,160,84,0.1);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:0.75rem;color:rgba(245,239,230,0.3);">&copy; 2024 Ember &amp; Vine. All rights reserved.</span>
+      <span style="font-size:0.75rem;color:rgba(245,239,230,0.3);">Crafted with care for our community.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

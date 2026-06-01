@@ -1,0 +1,233 @@
+/* ============================================
+   RAZE — Animation System
+   CSS-only: @keyframes + transitions
+   ============================================ */
+
+/* --- Keyframes --- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes clip-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* --- Infinite loops --- */
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.75;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.05) rotate(3deg);
+    opacity: 0.25;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Entrance utility classes --- */
+
+.anim-rise {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: rise 0.6s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(60px);
+  animation: slide-left 0.6s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slide-right 0.6s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+
+.anim-fade {
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards;
+}
+
+.anim-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  animation: scale-in 0.5s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+
+.anim-clip {
+  clip-path: inset(0 100% 0 0);
+  animation: clip-reveal 0.7s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+
+.anim-draw {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: draw-line 0.6s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+
+/* --- Stagger delays --- */
+
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.2s; }
+.anim-delay-3 { animation-delay: 0.35s; }
+.anim-delay-4 { animation-delay: 0.5s; }
+.anim-delay-5 { animation-delay: 0.65s; }
+.anim-delay-6 { animation-delay: 0.8s; }
+.anim-delay-7 { animation-delay: 0.95s; }
+.anim-delay-8 { animation-delay: 1.1s; }
+
+/* Stagger children: apply .anim-stagger to parent, children auto-stagger */
+.anim-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: rise 0.55s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+.anim-stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.anim-stagger > *:nth-child(2) { animation-delay: 0.15s; }
+.anim-stagger > *:nth-child(3) { animation-delay: 0.25s; }
+.anim-stagger > *:nth-child(4) { animation-delay: 0.35s; }
+.anim-stagger > *:nth-child(5) { animation-delay: 0.45s; }
+.anim-stagger > *:nth-child(6) { animation-delay: 0.55s; }
+.anim-stagger > *:nth-child(7) { animation-delay: 0.65s; }
+.anim-stagger > *:nth-child(8) { animation-delay: 0.75s; }
+.anim-stagger > *:nth-child(9) { animation-delay: 0.85s; }
+.anim-stagger > *:nth-child(10) { animation-delay: 0.95s; }
+
+/* Stagger with slide-left for grids */
+.anim-stagger-slide > * {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slide-left 0.55s var(--ease-snappy, cubic-bezier(0.22, 0.9, 0.36, 1)) forwards;
+}
+.anim-stagger-slide > *:nth-child(1) { animation-delay: 0.1s; }
+.anim-stagger-slide > *:nth-child(2) { animation-delay: 0.22s; }
+.anim-stagger-slide > *:nth-child(3) { animation-delay: 0.34s; }
+.anim-stagger-slide > *:nth-child(4) { animation-delay: 0.46s; }
+.anim-stagger-slide > *:nth-child(5) { animation-delay: 0.58s; }
+.anim-stagger-slide > *:nth-child(6) { animation-delay: 0.70s; }
+
+/* --- Infinite / loop classes --- */
+
+.anim-loop-pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.anim-loop-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.anim-loop-spin {
+  animation: spin-slow 20s linear infinite;
+}
+
+.anim-loop-breathe {
+  animation: breathe 5s ease-in-out infinite;
+}
+
+.anim-loop-marquee {
+  animation: marquee 18s linear infinite;
+}

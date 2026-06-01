@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "task_id": "anim-004_editorial-blog_corporate-flat_kinetic-loop",
+    "seed_tuple": [
+      "editorial-blog",
+      "corporate-flat",
+      "med",
+      "students-and-educators",
+      "warm-and-welcoming",
+      "kinetic-loop"
+    ],
+    "archetype": "editorial-blog",
+    "aesthetic": "corporate-flat",
+    "complexity": "med",
+    "animation_style": "kinetic-loop",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 22.58690525,
+    "total_input_tokens": 18361342,
+    "total_output_tokens": 394083,
+    "started_at": "2026-06-01T16:26:27.023276",
+    "finished_at": "2026-06-01T16:44:36.759984",
+    "wall_clock_sec": 1089.736708,
+    "date": "2026-06-01",
+    "commit": "88c4d89565f60dfbcdeef1eeb94d8ed65001b8a0",
+    "timestamps_ms": [
+      0,
+      200,
+      500,
+      900,
+      1400,
+      2000
+    ]
+  },
+  "terms": [
+    "static_design",
+    "motion",
+    "animation_judge"
+  ],
+  "timestamps_ms": [
+    0,
+    200,
+    500,
+    900,
+    1400,
+    2000
+  ],
+  "trials": [
+    {
+      "trial_id": "KpeRPeh",
+      "reward": 0.6068820493371562,
+      "static_design": 0.7235805559108772,
+      "motion": 0.5670655921005914,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6213196845948211,
+          "static_terms": {
+            "structure": 0.7907572673092328,
+            "color": 0.9697321505414132,
+            "content": 0.4413145539906103,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 43,
+          "static_design": 0.719200992960314,
+          "motion": 0.5947580608241494,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.6128822103402652,
+          "static_terms": {
+            "structure": 0.7791048897975852,
+            "color": 0.9699650624498892,
+            "content": 0.4674735249621785,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 40,
+          "static_design": 0.7291358693024133,
+          "motion": 0.6595107617183824,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.5719752461481652,
+          "static_terms": {
+            "structure": 0.804694186105876,
+            "color": 0.9766454389149727,
+            "content": 0.4601307189542484,
+            "design_judge": 0.575
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 40,
+          "static_design": 0.7041175859937743,
+          "motion": 0.4618081524507215,
+          "animation_judge": 0.55
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.6335358936432168,
+          "static_terms": {
+            "structure": 0.7941315065298296,
+            "color": 0.9790782234144267,
+            "content": 0.39517518667432505,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 48,
+          "static_design": 0.7045962291546454,
+          "motion": 0.6460114517750051,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.5946972119593125,
+          "static_terms": {
+            "structure": 0.817619021988992,
+            "color": 0.9809930064934674,
+            "content": 0.5447963800904977,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 33,
+          "static_design": 0.7608521021432393,
+          "motion": 0.4732395337346983,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "LXPFoEr",
+      "reward": 0.6035386565196593,
+      "static_design": 0.7048228971860722,
+      "motion": 0.575793072372906,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.5954577366841797,
+          "static_terms": {
+            "structure": 0.7985005969750815,
+            "color": 0.9837683878934091,
+            "content": 0.35808466342817485,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 50,
+          "static_design": 0.6975884120741663,
+          "motion": 0.5387847979783726,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.5636804446534106,
+          "static_terms": {
+            "structure": 0.8004416315216648,
+            "color": 0.9740891832737327,
+            "content": 0.4313725490196078,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 44,
+          "static_design": 0.7014758409537514,
+          "motion": 0.5395654930064804,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.6827061297873874,
+          "static_terms": {
+            "structure": 0.8070649145388042,
+            "color": 0.9767696825734126,
+            "content": 0.40435458786936235,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 51,
+          "static_design": 0.6970472962453947,
+          "motion": 0.8010710931167674,
+          "animation_judge": 0.55
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.5814117354177264,
+          "static_terms": {
+            "structure": 0.8024934156745903,
+            "color": 0.9732081619070742,
+            "content": 0.3804143126177024,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 50,
+          "static_design": 0.6890289725498417,
+          "motion": 0.5052062337033374,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.5944372360555927,
+          "static_terms": {
+            "structure": 0.818059651234324,
+            "color": 0.9816231874430211,
+            "content": 0.5562130177514794,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 38,
+          "static_design": 0.7389739641072062,
+          "motion": 0.49433774405957204,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "QBXoSec",
+      "reward": 0.5544910987290539,
+      "static_design": 0.724006959318553,
+      "motion": 0.4294663368686087,
+      "animation_judge": 0.51,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6159231766527822,
+          "static_terms": {
+            "structure": 0.79101436025456,
+            "color": 0.9787596983653141,
+            "content": 0.45892351274787535,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 47,
+          "static_design": 0.7071743928419374,
+          "motion": 0.5905951371164092,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.5570201480042238,
+          "static_terms": {
+            "structure": 0.7828570488717459,
+            "color": 0.9747012836144111,
+            "content": 0.48042977743668464,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 39,
+          "static_design": 0.7344970274807104,
+          "motion": 0.4865634165319611,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.4792584900751636,
+          "static_terms": {
+            "structure": 0.8054062796512765,
+            "color": 0.9781651408347013,
+            "content": 0.47334754797441364,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 55,
+          "static_design": 0.7142297421150978,
+          "motion": 0.27354572811039285,
+          "animation_judge": 0.45
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.5963199641997032,
+          "static_terms": {
+            "structure": 0.8027808191026686,
+            "color": 0.9791167768500059,
+            "content": 0.4232673267326732,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 48,
+          "static_design": 0.7075412306713369,
+          "motion": 0.5314186619277728,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.5239337147133968,
+          "static_terms": {
+            "structure": 0.8221820730896857,
+            "color": 0.9791875408450453,
+            "content": 0.625,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 33,
+          "static_design": 0.7565924034836827,
+          "motion": 0.2652087406565075,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "QpYtEGG",
+      "reward": 0.436514547097702,
+      "static_design": 0.728165307805002,
+      "motion": 0.12137833348810392,
+      "animation_judge": 0.45999999999999996,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.4688353660214884,
+          "static_terms": {
+            "structure": 0.7951299049881193,
+            "color": 0.9842865066877463,
+            "content": 0.4688995215311005,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 35,
+          "static_design": 0.7183289833017416,
+          "motion": 0.13817711476272357,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.4336473081058983,
+          "static_terms": {
+            "structure": 0.7903803199622073,
+            "color": 0.9798010385881919,
+            "content": 0.46869983948635635,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 30,
+          "static_design": 0.7222202995091889,
+          "motion": 0.12872162480850607,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.37009151689317155,
+          "static_terms": {
+            "structure": 0.796672715564211,
+            "color": 0.9742971095782498,
+            "content": 0.4877344877344877,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.3,
+            "timing": 0.3,
+            "easing_feel": 0.3,
+            "motion_type": 0.3
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 32,
+          "static_design": 0.7209260782192372,
+          "motion": 0.08934847246027751,
+          "animation_judge": 0.3
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.4117420760214389,
+          "static_terms": {
+            "structure": 0.8042249595373107,
+            "color": 0.9722706718168646,
+            "content": 0.41848523748395383,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 36,
+          "static_design": 0.6987452172095323,
+          "motion": 0.08648101085478449,
+          "animation_judge": 0.45
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.4982564684465127,
+          "static_terms": {
+            "structure": 0.8223114710396465,
+            "color": 0.9909380601749885,
+            "content": 0.6091743119266055,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 27,
+          "static_design": 0.7806059607853102,
+          "motion": 0.1641634445542279,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "TVZB85m",
+      "reward": 0.6651639600176802,
+      "static_design": 0.7290073047723704,
+      "motion": 0.7164845752806701,
+      "animation_judge": 0.55,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6385674302969173,
+          "static_terms": {
+            "structure": 0.8112165893381093,
+            "color": 0.9671705691020481,
+            "content": 0.43633655994043186,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 40,
+          "static_design": 0.7036809295951473,
+          "motion": 0.6620213612956046,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.6624753379631633,
+          "static_terms": {
+            "structure": 0.7909421746799173,
+            "color": 0.9722822491104912,
+            "content": 0.5634218289085545,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 39,
+          "static_design": 0.7566615631747408,
+          "motion": 0.6807644507147489,
+          "animation_judge": 0.55
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.6922834680538149,
+          "static_terms": {
+            "structure": 0.8081554063836608,
+            "color": 0.9809137421059009,
+            "content": 0.49290515309932775,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 44,
+          "static_design": 0.7204935753972224,
+          "motion": 0.8063568287642222,
+          "animation_judge": 0.55
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.6147825581081986,
+          "static_terms": {
+            "structure": 0.8120828654206985,
+            "color": 0.975475092190432,
+            "content": 0.3978638184245661,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 48,
+          "static_design": 0.6963554440089241,
+          "motion": 0.5979922303156717,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.7177110056663066,
+          "static_terms": {
+            "structure": 0.825046573502661,
+            "color": 0.9703012476615556,
+            "content": 0.5760322255790533,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 40,
+          "static_design": 0.7678450116858174,
+          "motion": 0.8352880053131028,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "XAZthW3",
+      "reward": 0.6426031720575645,
+      "static_design": 0.7474894064708594,
+      "motion": 0.6803201097018338,
+      "animation_judge": 0.5,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.57529685741918,
+          "static_terms": {
+            "structure": 0.799405475786455,
+            "color": 0.97482570318477,
+            "content": 0.47503373819163297,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.4,
+            "timing": 0.3,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 29,
+          "static_design": 0.7248162292907145,
+          "motion": 0.6010743429668256,
+          "animation_judge": 0.4
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.6263878655152525,
+          "static_terms": {
+            "structure": 0.7940116886821128,
+            "color": 0.9802366414977891,
+            "content": 0.5479632063074901,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 37,
+          "static_design": 0.749302884121848,
+          "motion": 0.6798607124239094,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.7092000696855253,
+          "static_terms": {
+            "structure": 0.8094511557589021,
+            "color": 0.9735887128002937,
+            "content": 0.6485804416403785,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 39,
+          "static_design": 0.7829050775498936,
+          "motion": 0.7946951315066821,
+          "animation_judge": 0.55
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.5931974358213711,
+          "static_terms": {
+            "structure": 0.8062213772766628,
+            "color": 0.981077028896522,
+            "content": 0.40483383685800606,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 36,
+          "static_design": 0.7042830607577977,
+          "motion": 0.5253092467063155,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.7089336318464933,
+          "static_terms": {
+            "structure": 0.8322479004291815,
+            "color": 0.9732868318630888,
+            "content": 0.5990243902439024,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 28,
+          "static_design": 0.7761397806340432,
+          "motion": 0.8006611149054365,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "aWmYpj6",
+      "reward": 0.4540295944139251,
+      "static_design": 0.7258625947997872,
+      "motion": 0.12622618844198796,
+      "animation_judge": 0.51,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.469087708605571,
+          "static_terms": {
+            "structure": 0.8006794101396103,
+            "color": 0.9795822919935859,
+            "content": 0.43403028118240816,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 50,
+          "static_design": 0.7035729958289011,
+          "motion": 0.15369012998781187,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.4445565163594892,
+          "static_terms": {
+            "structure": 0.7928010426938065,
+            "color": 0.9849011261635033,
+            "content": 0.45042016806722684,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 54,
+          "static_design": 0.7195305842311341,
+          "motion": 0.16413896484733345,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.41671801662471647,
+          "static_terms": {
+            "structure": 0.8014722722511012,
+            "color": 0.9856216549114185,
+            "content": 0.48885472713297456,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 46,
+          "static_design": 0.7189871635738736,
+          "motion": 0.08116688630027596,
+          "animation_judge": 0.45
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.4654613541117234,
+          "static_terms": {
+            "structure": 0.8121257784364988,
+            "color": 0.9807514485304004,
+            "content": 0.4274711168164313,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 56,
+          "static_design": 0.7050870859458326,
+          "motion": 0.14129697638933758,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.47432437636812547,
+          "static_terms": {
+            "structure": 0.829404707098336,
+            "color": 0.9833219170900727,
+            "content": 0.6158139534883721,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 45,
+          "static_design": 0.7821351444191952,
+          "motion": 0.09083798468518102,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "sXm6aFS",
+      "reward": 0.6465429744690703,
+      "static_design": 0.7225584633214682,
+      "motion": 0.6870704600857426,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6373213705109352,
+          "static_terms": {
+            "structure": 0.8100526317371575,
+            "color": 0.9805098076911143,
+            "content": 0.4053452115812918,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 44,
+          "static_design": 0.6989769127523908,
+          "motion": 0.6629871987804147,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.5197043806014521,
+          "static_terms": {
+            "structure": 0.7828275563418716,
+            "color": 0.9746033399086972,
+            "content": 0.4653696498054475,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 41,
+          "static_design": 0.730700136514004,
+          "motion": 0.37841300529035216,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.7163499763063358,
+          "static_terms": {
+            "structure": 0.8007633947084659,
+            "color": 0.9831122273940373,
+            "content": 0.4742974640164496,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 49,
+          "static_design": 0.7145432715297382,
+          "motion": 0.884506657389269,
+          "animation_judge": 0.55
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.6271355253849753,
+          "static_terms": {
+            "structure": 0.8048913464188377,
+            "color": 0.9821787625750721,
+            "content": 0.4038834951456311,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 52,
+          "static_design": 0.7164884010348852,
+          "motion": 0.6149181751200407,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.7322036195416531,
+          "static_terms": {
+            "structure": 0.8223962989080477,
+            "color": 0.984474665563098,
+            "content": 0.5014634146341462,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 44,
+          "static_design": 0.7520835947763229,
+          "motion": 0.8945272638486366,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "vU2HHps",
+      "reward": 0.5952411114822997,
+      "static_design": 0.7249972711426764,
+      "motion": 0.5307260633042228,
+      "animation_judge": 0.53,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.6203965434721082,
+          "static_terms": {
+            "structure": 0.7947773226599535,
+            "color": 0.9649182600515613,
+            "content": 0.46680642907057995,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 38,
+          "static_design": 0.7128755029455237,
+          "motion": 0.5983141274708006,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.6102276756370126,
+          "static_terms": {
+            "structure": 0.7938439778847447,
+            "color": 0.9742995358014911,
+            "content": 0.5072353389185073,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 35,
+          "static_design": 0.7250947131511858,
+          "motion": 0.655588313759852,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.5537326606398124,
+          "static_terms": {
+            "structure": 0.8032387114954308,
+            "color": 0.9669064473208614,
+            "content": 0.46548042704626336,
+            "design_judge": 0.65
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 36,
+          "static_design": 0.7214063964656389,
+          "motion": 0.3897915854537983,
+          "animation_judge": 0.55
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.6125468557931135,
+          "static_terms": {
+            "structure": 0.803010705226419,
+            "color": 0.9725487720399583,
+            "content": 0.42446941323345816,
+            "design_judge": 0.6
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 43,
+          "static_design": 0.7000072226249588,
+          "motion": 0.5876333447543817,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.5793018218694522,
+          "static_terms": {
+            "structure": 0.8127757078576351,
+            "color": 0.964168662885355,
+            "content": 0.5854657113613101,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 33,
+          "static_design": 0.765602520526075,
+          "motion": 0.4223029450822817,
+          "animation_judge": 0.55
+        }
+      }
+    },
+    {
+      "trial_id": "xBEvQ9A",
+      "reward": 0.6446981554606197,
+      "static_design": 0.7408433085544943,
+      "motion": 0.6832511578273648,
+      "animation_judge": 0.51,
+      "pages": {
+        "index": {
+          "present": true,
+          "reward": 0.70091372691085,
+          "static_terms": {
+            "structure": 0.808082413420193,
+            "color": 0.9788080223956914,
+            "content": 0.48153409090909094,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 75,
+          "n_animations_cand": 45,
+          "static_design": 0.7421061316812438,
+          "motion": 0.8106350490513057,
+          "animation_judge": 0.55
+        },
+        "articles-browse-all": {
+          "present": true,
+          "reward": 0.5986147684557185,
+          "static_terms": {
+            "structure": 0.7826619679737721,
+            "color": 0.9710767437254535,
+            "content": 0.47761194029850745,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 50,
+          "n_animations_cand": 37,
+          "static_design": 0.7328376629994332,
+          "motion": 0.6130066423677221,
+          "animation_judge": 0.45
+        },
+        "about-our-mission": {
+          "present": true,
+          "reward": 0.6442994192808679,
+          "static_terms": {
+            "structure": 0.8129205145644984,
+            "color": 0.9811808171729568,
+            "content": 0.5110952040085899,
+            "design_judge": 0.675
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.5,
+            "timing": 0.4,
+            "easing_feel": 0.4,
+            "motion_type": 0.5
+          },
+          "n_animations_ref": 58,
+          "n_animations_cand": 48,
+          "static_design": 0.7450491339365113,
+          "motion": 0.7378491239060923,
+          "animation_judge": 0.45
+        },
+        "resources-for-educators": {
+          "present": true,
+          "reward": 0.6061750530591913,
+          "static_terms": {
+            "structure": 0.7938839182694731,
+            "color": 0.973030052246279,
+            "content": 0.4633110976349302,
+            "design_judge": 0.625
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 57,
+          "n_animations_cand": 47,
+          "static_design": 0.7138062670376706,
+          "motion": 0.5547188921399034,
+          "animation_judge": 0.55
+        },
+        "contact-get-in-touch": {
+          "present": true,
+          "reward": 0.673487809596471,
+          "static_terms": {
+            "structure": 0.8102555556870001,
+            "color": 0.9769151637506212,
+            "content": 0.5944986690328306,
+            "design_judge": 0.7
+          },
+          "anim_sub_scores": {
+            "motion_presence": 0.6,
+            "timing": 0.5,
+            "easing_feel": 0.5,
+            "motion_type": 0.6
+          },
+          "n_animations_ref": 53,
+          "n_animations_cand": 38,
+          "static_design": 0.770417347117613,
+          "motion": 0.7000460816718002,
+          "animation_judge": 0.55
+        }
+      }
+    }
+  ]
+}

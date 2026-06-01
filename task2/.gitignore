@@ -7,5 +7,7 @@ out/
 # rendered filmstrip frames + contact sheets
 reference/*_filmstrip/
 
-# emitted Harbor task (regenerate: python -m webdesign_rl_anim.emit_anim)
-task/
+# single-task emit output at task2/task/ (regenerate: python -m webdesign_rl_anim.emit_anim).
+# Anchored with a leading slash so it ONLY ignores task2/task/, NOT the committed
+# per-task bundles under task2/tasks/<id>/task/.
+/task/

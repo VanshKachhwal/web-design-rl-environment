@@ -1,0 +1,17 @@
+{
+  "archetype": "docs-product",
+  "aesthetic": "playful-rounded",
+  "audience": "european-enterprises",
+  "brand_mood": "calm-and-trustworthy",
+  "animation_style": "kinetic-loop",
+  "animation_style_hint": "prominent continuous loops (pulses, drifting gradients, float) over a clean entrance",
+  "page_count": 5,
+  "seed_tuple": [
+    "docs-product",
+    "playful-rounded",
+    "low",
+    "european-enterprises",
+    "calm-and-trustworthy",
+    "kinetic-loop"
+  ]
+}
