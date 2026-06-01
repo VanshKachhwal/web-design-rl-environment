@@ -372,6 +372,65 @@ def per_page_term_matrix(scores):
     return {"pages": pages, "terms": list(terms), "values": values}
 
 
+# --- pure selection logic for the GIF galleries (report §6/§7) -----------------
+#
+# These pick the concrete (trial, page) cells the report's animated galleries
+# show. Pure over the normalized scores object (no images) so the choice of which
+# evidence to surface is unit-tested; building the GIFs from the saved filmstrip
+# frames is the untested shell in ``report_anim``.
+
+
+def _term_cells(scores, term):
+    """Every present (trial, page) cell for ``term`` as ``(trial_id, page, score)``."""
+    for trial in scores["trials"]:
+        for page, pdata in trial["pages"].items():
+            if pdata.get("present", True):
+                yield trial["trial_id"], page, pdata[term]
+
+
+def per_metric_extrema(scores):
+    """For each term, the best- and worst-scoring (trial, page) cell.
+
+    Returns, per term, ``{"best": {trial_id,page,score}, "worst": {...},
+    "range": [min, max]}`` — taken at the trial×page level so the gallery can show
+    the exact filmstrip behind each number. A term with no present cell is omitted.
+    """
+    out = {}
+    for term in scores["terms"]:
+        cells = list(_term_cells(scores, term))
+        if not cells:
+            continue
+        best = max(cells, key=lambda c: c[2])
+        worst = min(cells, key=lambda c: c[2])
+        out[term] = {
+            "best": {"trial_id": best[0], "page": best[1], "score": best[2]},
+            "worst": {"trial_id": worst[0], "page": worst[1], "score": worst[2]},
+            "range": [worst[2], best[2]],
+        }
+    return out
+
+
+def best_overall_trial(scores):
+    """The ``trial_id`` of the highest-``reward`` trial (the ceiling visual)."""
+    trials = scores["trials"]
+    if not trials:
+        return None
+    return max(trials, key=lambda t: t["reward"])["trial_id"]
+
+
+def gallery_available(job_dir):
+    """True when ≥1 trial has persisted filmstrip frames (``verifier/renders/``).
+
+    A job graded with ``--no-save-renders`` (or one predating render persistence)
+    has no frames to build GIFs from, so the galleries are skipped and the report
+    degrades to the five data sections.
+    """
+    for tdir in _trial_dirs(Path(job_dir)):
+        if any((tdir / "verifier" / "renders").glob("*_t*.png")):
+            return True
+    return False
+
+
 def discover_jobs(jobs_dir):
     """The job dirs directly under ``jobs_dir`` carrying a ``result.json``, sorted.
 

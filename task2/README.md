@@ -305,11 +305,10 @@ PYTHONPATH=task2 .venv/bin/python -m webdesign_rl_anim.report_all_anim jobs/ \
 # or a single job:  python -m webdesign_rl_anim.report_anim jobs/anim-<id>
 ```
 
-**The report** (`report_anim` / `report_all_anim`) mirrors Task 1's but keeps only
-the **five data sections** — no embedded screenshot/filmstrip galleries (for
-animations those would be 6 frames × ref/cand × every page × every trial). Each
-job writes `scores.json` + `scores.csv` (the harvest contract) plus a
-self-contained `report.html` (or GitHub-renderable `report.md` + PNGs):
+**The report** (`report_anim` / `report_all_anim`) mirrors Task 1's. Each job writes
+`scores.json` + `scores.csv` (the harvest contract) plus a self-contained
+`report.html` (sections 1–5) **or** a GitHub-renderable `report.md` (sections 1–5 +
+the GIF galleries 6–7). The five **data sections**:
 
 1. **Provenance** — task id, seed tuple, animation style, model, executor, trials,
    cost/tokens, wall-clock, filmstrip timestamps, date, commit.
@@ -318,6 +317,22 @@ self-contained `report.html` (or GitHub-renderable `report.md` + PNGs):
 3. **Reward + per-term distributions** (box + strip).
 4. **Per-term mean bars** (± std) — the animation skill shape.
 5. **Per-page × per-term heatmap** (mean across trials).
+
+And, in **markdown mode only**, two **animated GIF galleries** built from the saved
+filmstrip frames (GitHub renders GIFs inline; base64-in-HTML would bloat the file,
+so `report.html` stays sections 1–5):
+
+6. **Worst per metric** — for each term, the worst-scoring (trial, page) as a
+   reference \| candidate GIF pair.
+7. **Best-overall attempt vs reference** — the highest-reward trial's reference \|
+   candidate GIF for every page.
+
+Each GIF plays the 6 filmstrip frames at their real inter-frame timing, then holds
+the at-rest frame; GIFs are content-addressed by `(trial, page, ref/cand)` and built
+once, so a cell shared by both galleries isn't duplicated. Defaults: 480px wide,
+128-colour (~0.5 MB each); tune with `--gif-width` / `--gif-colors`. `report_all_anim`
+writes to the (git-ignored) `task2/reports/` by default — generate for every job, then
+commit only the curated few under `task2/tasks/`.
 
 Terms are the animation page-reward terms **`static_design` / `motion` /
 `animation_judge`** (`reward = mean` of the three, per page, averaged over pages);

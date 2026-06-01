@@ -25,7 +25,7 @@ import traceback
 from pathlib import Path
 
 from .aggregate_results_anim import discover_jobs, is_anim_job
-from .report_anim import build_report
+from .report_anim import GIF_COLORS, GIF_WIDTH, build_report
 
 
 def main(argv=None):
@@ -45,8 +45,13 @@ def main(argv=None):
     )
     parser.add_argument(
         "--format", choices=["html", "markdown"], default="html",
-        help="report format for every job: 'html' (default) or 'markdown'.",
+        help="report format for every job: 'html' (default, sections 1-5) or "
+        "'markdown' (adds the items 6-7 GIF galleries).",
     )
+    parser.add_argument("--gif-width", type=int, default=GIF_WIDTH,
+                        help=f"GIF gallery width in px (default {GIF_WIDTH}).")
+    parser.add_argument("--gif-colors", type=int, default=GIF_COLORS,
+                        help=f"GIF palette size (default {GIF_COLORS}).")
     args = parser.parse_args(argv)
 
     out_root = Path(args.out_root)
@@ -65,7 +70,8 @@ def main(argv=None):
     for job_dir in jobs:
         out_dir = out_root / job_dir.name
         try:
-            build_report(job_dir, out_dir, fmt=args.format)
+            build_report(job_dir, out_dir, fmt=args.format,
+                         gif_width=args.gif_width, gif_colors=args.gif_colors)
             print(f"ok   {job_dir.name} -> {out_dir}")
             ok += 1
         except Exception:  # noqa: BLE001 — isolate one job's failure; keep sweeping.

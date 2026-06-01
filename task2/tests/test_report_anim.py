@@ -18,6 +18,7 @@ import csv
 import json
 
 import pytest
+from PIL import Image
 
 from webdesign_rl_anim import aggregate_results_anim as agg
 from webdesign_rl_anim import report_anim
@@ -384,3 +385,103 @@ def test_build_report_markdown_writes_report_md_and_plot_pngs(synthetic_job, tmp
     for png in ("distributions.png", "per_term_means.png", "heatmap.png"):
         assert (out / png).exists()
     assert (out / "scores.json").exists()
+
+
+# --- GIF galleries (items 6-7, markdown mode) ---------------------------------
+
+
+def _tiny_png(path, color, size=(40, 30)):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    Image.new("RGB", size, color).save(path)
+
+
+def _write_renders(job_dir, trial_dirname, page, timestamps):
+    """Persist tiny per-frame + settled renders like the grader's save_renders."""
+    rd = job_dir / trial_dirname / "verifier" / "renders"
+    for i, t in enumerate(timestamps):
+        _tiny_png(rd / f"{page}_ref_t{t:05d}.png", (10 + 8 * i, 0, 0))
+        _tiny_png(rd / f"{page}_cand_t{t:05d}.png", (0, 10 + 8 * i, 0))
+    _tiny_png(rd / f"{page}_ref_settled.png", (200, 0, 0))
+    _tiny_png(rd / f"{page}_cand_settled.png", (0, 200, 0))
+
+
+@pytest.fixture
+def synthetic_job_with_renders(synthetic_job):
+    """The 2-trial job + persisted filmstrip frames for each (trial, page)."""
+    for tdir in ("task__AAA", "task__BBB"):
+        for page in ("index", "about"):
+            _write_renders(synthetic_job, tdir, page, (0, 200, 500))
+    return synthetic_job
+
+
+def test_per_metric_extrema_picks_worst_and_best_cell(synthetic_job):
+    """Per term, the lowest/highest-scoring (trial, page) cell."""
+    ex = agg.per_metric_extrema(agg.harvest(synthetic_job))
+    # motion cells: AAA/index 0.2, AAA/about 0.4, BBB/index 0.3, BBB/about 0.5.
+    m = ex["motion"]
+    assert m["worst"]["trial_id"] == "AAA" and m["worst"]["page"] == "index"
+    assert m["worst"]["score"] == pytest.approx(0.2)
+    assert m["best"]["trial_id"] == "BBB" and m["best"]["page"] == "about"
+    assert m["best"]["score"] == pytest.approx(0.5)
+
+
+def test_best_overall_trial_is_highest_reward(synthetic_job):
+    # BBB reward 0.6333 > AAA 0.525.
+    assert agg.best_overall_trial(agg.harvest(synthetic_job)) == "BBB"
+
+
+def test_gallery_available_reflects_persisted_frames(synthetic_job,
+                                                      synthetic_job_with_renders):
+    assert agg.gallery_available(synthetic_job_with_renders) is True
+
+
+def test_gallery_available_false_without_renders(tmp_path):
+    # A fresh synthetic_job (no renders written) has no frames to build GIFs from.
+    job = tmp_path / "job"
+    (job / "task__X" / "verifier").mkdir(parents=True)
+    (job / "task__X" / "verifier" / "reward.json").write_text('{"reward": 0.5}')
+    (job / "task__X" / "verifier" / "reward-details.json").write_text(json.dumps(
+        {"reward": 0.5, "timestamps_ms": [0, 200], "pages": {}}))
+    assert agg.gallery_available(job) is False
+
+
+def test_markdown_galleries_emit_gif_files(synthetic_job_with_renders, tmp_path):
+    out = tmp_path / "rep"
+    report_anim.build_report(synthetic_job_with_renders, out, fmt="markdown",
+                             gif_width=48, gif_colors=16)
+    md = (out / "report.md").read_text()
+
+    assert "## 6. Worst per metric (reference vs candidate)" in md
+    assert "## 7. Best-overall attempt vs reference (all pages)" in md
+    # GIFs are content-addressed by (trial, page, who). Best-overall is BBB; every
+    # present page gets a ref + cand GIF.
+    assert (out / "images" / "BBB_index_ref.gif").exists()
+    assert (out / "images" / "BBB_index_cand.gif").exists()
+    assert (out / "images" / "BBB_about_cand.gif").exists()
+    # Worst motion cell is AAA/index, so its GIFs carry the AAA trial id.
+    assert (out / "images" / "AAA_index_ref.gif").exists()
+    # The files are real, non-empty animated GIFs referenced from the markdown.
+    g = out / "images" / "BBB_index_ref.gif"
+    assert g.stat().st_size > 0
+    assert Image.open(g).format == "GIF"
+    assert "images/BBB_index_ref.gif" in md
+
+
+def test_markdown_galleries_dedupe_shared_cells(synthetic_job_with_renders, tmp_path):
+    """A (trial, page, who) referenced by both §6 and §7 is built only once."""
+    out = tmp_path / "rep_dedupe"
+    report_anim.build_report(synthetic_job_with_renders, out, fmt="markdown",
+                             gif_width=48, gif_colors=16)
+    gifs = {p.name for p in (out / "images").glob("*.gif")}
+    # The motion worst cell (AAA/index) and the static_design/animation_judge
+    # worst cells (also AAA/index in this fixture) collapse to one pair of files.
+    assert "AAA_index_ref.gif" in gifs and "AAA_index_cand.gif" in gifs
+    # No legacy per-term duplicate names.
+    assert not any(n.startswith("worst_") or n.startswith("best_") for n in gifs)
+
+
+def test_markdown_without_renders_omits_galleries(synthetic_job, tmp_path):
+    out = tmp_path / "rep_nogal"
+    report_anim.build_report(synthetic_job, out, fmt="markdown")
+    md = (out / "report.md").read_text()
+    assert "## 6." not in md and "## 7." not in md
