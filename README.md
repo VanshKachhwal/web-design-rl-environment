@@ -185,3 +185,31 @@ documentation/      index.md (start here) · design/ · runbooks/ · research/ �
 templates/          Harbor task scaffolding (task.toml, instruction, test.sh, Dockerfile)
 tests/              behavioral test suite (337 passing)
 ```
+
+## How the 11 final tasks were produced
+
+The exact end-to-end run behind this submission — over-generate, gate, curate, evaluate,
+report, then a manual final selection:
+
+```bash
+# 1. Over-generate a batch on Modal (the quality gate drops the failures)
+python scripts/generate.py --count 50 --concurrency 10 --volume webdesign-rl-batch-50
+
+# 2. Pull the batch down locally
+python scripts/pull_artifacts.py --volume webdesign-rl-batch-50 --out out/batch-50
+
+# 3. Curate: keep the gated survivors (each has a task/), dedup
+python scripts/curate.py --batch out/batch-50 --out out/passed-batch-50
+
+# 4. Evaluate every survivor: Claude Code + Opus 4.7 x10, a couple in parallel
+python scripts/evaluate_all.py --batch out/passed-batch-50 --parallel 2 --yes
+
+# 5. Build a GitHub-renderable report for every job
+python scripts/report_all.py jobs/ --format markdown
+
+# 6. Eyeball trajectories interactively (the per-task report.md is the real results view)
+harbor view jobs/
+
+# 7. MANUAL: select the final 11 for distribution + complexity + visual quality,
+#    then copy each into tasks/ (035 sourced from the clean opus47-035 run)
+```
