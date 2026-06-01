@@ -146,9 +146,14 @@ Two registers on purpose: `design/` is the polished rationale; `thinking_trail.m
 ## Scope & honesty
 
 - **Part 1 is the focus and is done well** — per the brief's own advice to finish a
-  high-taste Part 1 before moving on. **Part 2 (animations)** and **Part 3 (multiple
-  frameworks: React/Solid/Tailwind)** are *designed-for* in the architecture but not
-  built.
+  high-taste Part 1 before moving on. **Part 2 (animations)** was then attempted in the
+  remaining time as a **rushed prototype** — a deterministic filmstrip grader, a new
+  `motion` term, a two-pass generator, and a Modal scaling pipeline, with a perturbation
+  ladder proving its reward tracks animation quality — but the research is incomplete
+  (a known fixed-6-frame limitation, rougher code), so it is kept *out* of the final
+  tasks and lives under [`task2/`](../task2/README.md) with its limitations called out
+  honestly. **Part 3 (multiple frameworks: React/Solid/Tailwind)** is designed-for in
+  the architecture but not built.
 - **Curation of the final ≥10 tasks was manual** (auditable by seed tuple), not an
   algorithmic coverage metric — a deliberate deferral, not an oversight.
 - Known limitation by construction: a screenshot is a lossy encoding of long-form copy,

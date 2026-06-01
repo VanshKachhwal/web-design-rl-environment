@@ -59,6 +59,13 @@ inverts several section backgrounds dark↔light). MS-SSIM is deliberately stric
 pixel alignment, so a faithful-but-not-identical rebuild sits well below the same-code
 oracle's ≈1.0 — structure's practical ceiling is lower than color's by design.
 
+A related, **qualitative contributor is typography (fonts).** The agent is told to use
+system fonts but not *which*, so its typeface and weight choices diverge from the
+reference — shifting text glyphs out of alignment (so it surfaces in `structure` via
+MS-SSIM) and softening the overall look (so the `design_judge` notices it too). We
+*observe* this rather than score it as a separate term; it is part of the structure/look
+gap, not a distinct metric.
+
 Per-task distributions, per-page heatmaps, and reference-vs-candidate galleries are in
 each [`tasks/<id>/report.md`](tasks/).
 
@@ -74,6 +81,8 @@ each [`tasks/<id>/report.md`](tasks/).
 | **Patterns the model struggles with** | [`documentation/design/eval_pipeline.md`](documentation/design/eval_pipeline.md) (the `content` finding) |
 | Continuous (not pass/fail) grading | 4-term reward ∈ [0,1] — [`documentation/design/grader_design.md`](documentation/design/grader_design.md) |
 | Generated from scratch (no crawling); ≥5 pages; design-only | [`documentation/design/generator_design.md`](documentation/design/generator_design.md) (taxonomy, 5–10 pages, static-only gate) |
+| **Part 2 — animations** (attempted; rushed prototype, *not* in the final tasks) | [`task2/`](task2/) — filmstrip grader + two-pass generator + scaling pipeline |
+| **Part 3 — multiple frameworks** (React/Solid/Tailwind) | *Not built* — designed-for in the architecture, deferred |
 
 The assignment we built against is preserved verbatim at
 [`documentation/project-brief.md`](documentation/project-brief.md).
@@ -86,6 +95,35 @@ pages**, and the **full observed score range 0.66 → 0.827** (both extremes inc
 Each bundle has a runnable Harbor `task/`, the 10× Opus-4.7 eval as a GitHub-rendered
 `report.md` (+ plots and reference-vs-candidate galleries), `scores.json/csv`, and a
 per-task README. See [`tasks/README.md`](tasks/README.md) for the coverage table.
+
+> **These 11 are Part 1 (static) only.** Part 2 (animations) was attempted but is a
+> rushed prototype, so it is deliberately kept out of the final tasks — see below.
+
+## Part 2 — Animations (a time-boxed attempt)
+
+Part 2 of the brief — replicate *animations* — was attempted in the time left after
+Part 1. It is **a working prototype, not a finished part**: the research is incomplete
+and the code is rougher. It reuses the same recipe shape — **generate → gate → curate →
+grade with Claude Code + Opus 4.7 → report** — with the fundamental **static → animated**
+changes:
+
+- a deterministic **filmstrip** render — frames seeked along the CSS timeline, so they
+  are byte-reproducible across machines (the agent gets timed frames, *not* video);
+- a new reward, `mean(static_design, motion, animation_judge)`, where **`motion`** is a
+  deterministic spatio-temporal signature and `static_design` reuses Part 1's grader on
+  the at-rest frame;
+- a **two-pass** LLM generator and a deliberately **lean gate** (**95% yield, 19/20**, vs
+  Part 1's stricter multi-check gate).
+
+A perturbation ladder proves *higher reward = better animation*, the same shape as Part 1.
+Because the research is unfinished, **these tasks are kept out of the final
+[`tasks/`](tasks/) set**; preliminary animation tasks + reports will land under
+`task2/tasks/`. The known headline limitation (a fixed 6-frame filmstrip, strict about
+small timing offsets) and the early findings (Claude builds **shorter** pages and
+**slower** entrances) are analysed honestly in the Part-2 docs.
+
+→ **Everything Part 2: [`task2/README.md`](task2/README.md)** — design, the `motion`
+metric in detail, the scaling pipeline, the throughput trade, and limitations.
 
 ## Quickstart
 
@@ -179,11 +217,12 @@ dead-ends. So beyond the polished design docs:
 ```
 src/webdesign_rl/   the pipeline: generate/ · grade/ · render/ · emit/ · eval/
 scripts/            thin CLIs: generate · pull_artifacts · curate · evaluate(_all) · report(_all) · validate_grader
-tasks/              the 11 final tasks (runnable task/ + GitHub-rendered report.md)
+tasks/              the 11 final tasks (runnable task/ + GitHub-rendered report.md) — Part 1
 reports/grader-validation/   the "higher reward = better" proof (curves + scores)
 documentation/      index.md (start here) · design/ · runbooks/ · research/ · thinking_trail.md · prds/
 templates/          Harbor task scaffolding (task.toml, instruction, test.sh, Dockerfile)
 tests/              behavioral test suite (337 passing)
+task2/              Part 2 (animations) — a time-boxed prototype: filmstrip grader + scaling pipeline (see task2/README.md)
 ```
 
 ## How the 11 final tasks were produced

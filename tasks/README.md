@@ -11,6 +11,10 @@ pipeline's output (per the project brief). Each folder is a self-contained bundl
 - `scores.json` / `scores.csv` — the normalized per-trial score contract.
 - `README.md` — per-task narrative.
 
+> These eleven are **Part 1 (static replication)** only. **Part 2 (animations)** was
+> attempted as a separate, time-boxed prototype and is deliberately *not* included here
+> (its research is incomplete) — see [`../task2/`](../task2/README.md).
+
 ## The 11 tasks
 
 | id | archetype | aesthetic | cx | pages | median reward | min–max |
