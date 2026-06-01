@@ -189,14 +189,16 @@ tests/              behavioral test suite (337 passing)
 ## How the 11 final tasks were produced
 
 The exact end-to-end run behind this submission — over-generate, gate, curate, evaluate,
-report, then a manual final selection:
+report, then a manual final selection. Generation ran on the Modal app `webdesign-rl-batch`,
+persisting artifacts to the Modal volume
+[`webdesign-rl-artifacts`](https://modal.com/storage/proximal/main/volumes/webdesign-rl-artifacts):
 
 ```bash
 # 1. Over-generate a batch on Modal (the quality gate drops the failures)
-python scripts/generate.py --count 50 --concurrency 10 --volume webdesign-rl-batch-50
+python scripts/generate.py --count 50 --concurrency 10 --volume webdesign-rl-artifacts
 
 # 2. Pull the batch down locally
-python scripts/pull_artifacts.py --volume webdesign-rl-batch-50 --out out/batch-50
+python scripts/pull_artifacts.py --volume webdesign-rl-artifacts --out out/batch-50
 
 # 3. Curate: keep the gated survivors (each has a task/), dedup
 python scripts/curate.py --batch out/batch-50 --out out/passed-batch-50
