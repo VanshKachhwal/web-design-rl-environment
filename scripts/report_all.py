@@ -45,6 +45,11 @@ def main(argv=None):  # pragma: no cover
         help="root for per-job report dirs (default: reports/model-eval); each "
         "job writes to <out-root>/<job-name>/.",
     )
+    parser.add_argument(
+        "--format", choices=["html", "markdown"], default="html",
+        help="report format for every job: self-contained 'html' (default) or "
+        "GitHub-renderable 'markdown' (report.md + PNG files).",
+    )
     args = parser.parse_args(argv)
 
     # Sibling-import build_report from report.py. scripts/ is not a package and
@@ -64,7 +69,7 @@ def main(argv=None):  # pragma: no cover
     for job_dir in jobs:
         out_dir = out_root / job_dir.name
         try:
-            build_report(job_dir, out_dir)
+            build_report(job_dir, out_dir, fmt=args.format)
             print(f"ok   {job_dir.name} -> {out_dir}")
             ok += 1
         except Exception:  # noqa: BLE001 — isolate one job's failure; keep sweeping.

@@ -37,6 +37,7 @@ from pathlib import Path
 
 import matplotlib
 import numpy as np
+from PIL import Image
 
 matplotlib.use("Agg")  # headless: no display, deterministic PNG output.
 import matplotlib.pyplot as plt  # noqa: E402
@@ -66,6 +67,34 @@ def _fig_to_data_uri(fig):
     return f"data:image/png;base64,{encoded}"
 
 
+def _fig_to_file(fig, path, dpi=110):
+    """Render a matplotlib figure to a PNG *file* (markdown mode) and close it."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, format="png", dpi=dpi, bbox_inches="tight")
+    plt.close(fig)
+
+
+def _downscale_png(src, dst, max_width=600):
+    """Copy a render to ``dst`` as a width-capped PNG (markdown galleries ship the
+    images as files, not base64 — so they stay small and GitHub-renderable).
+
+    Returns True when written, False when ``src`` is absent (caller emits a
+    placeholder). Never upscales; preserves aspect ratio.
+    """
+    src = Path(src)
+    if not src.exists():
+        return False
+    img = Image.open(src)
+    if img.width > max_width:
+        height = round(img.height * max_width / img.width)
+        img = img.resize((max_width, height), Image.LANCZOS)
+    dst = Path(dst)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    img.convert("RGB").save(dst, format="PNG", optimize=True)
+    return True
+
+
 def _img_tag(data_uri, alt):
     return f'<img src="{data_uri}" alt="{html.escape(alt)}" />'
 
@@ -81,7 +110,7 @@ def _png_to_data_uri(path):
     return f"data:image/png;base64,{encoded}"
 
 
-def plot_distributions(scores):
+def _fig_distributions(scores):
     """Item 3: reward distribution (strip) + per-term box plots."""
     rewards = agg.reward_series(scores)
     dists = agg.per_term_distributions(scores)
@@ -116,10 +145,10 @@ def plot_distributions(scores):
     ax_t.grid(True, axis="y", alpha=0.3)
 
     fig.tight_layout()
-    return _fig_to_data_uri(fig)
+    return fig
 
 
-def plot_per_term_means(scores):
+def _fig_per_term_means(scores):
     """Item 4: per-term mean bars with +/- std error bars."""
     ms = agg.per_term_mean_std(scores)
     terms = scores["terms"]
@@ -137,10 +166,10 @@ def plot_per_term_means(scores):
     ax.set_title("Per-term mean (skill shape)")
     ax.grid(True, axis="y", alpha=0.3)
     fig.tight_layout()
-    return _fig_to_data_uri(fig)
+    return fig
 
 
-def plot_page_term_heatmap(scores):
+def _fig_page_term_heatmap(scores):
     """Item 5: per-page x per-term heatmap (mean across trials)."""
     matrix = agg.per_page_term_matrix(scores)
     pages = matrix["pages"]
@@ -163,7 +192,21 @@ def plot_page_term_heatmap(scores):
     ax.set_title("Per-page x per-term (mean across trials)")
     fig.colorbar(im, ax=ax, shrink=0.8, label="score")
     fig.tight_layout()
-    return _fig_to_data_uri(fig)
+    return fig
+
+
+# Thin wrappers: HTML path embeds the figure as a base64 data URI; markdown path
+# saves the same figure to a file via _fig_to_file.
+def plot_distributions(scores):
+    return _fig_to_data_uri(_fig_distributions(scores))
+
+
+def plot_per_term_means(scores):
+    return _fig_to_data_uri(_fig_per_term_means(scores))
+
+
+def plot_page_term_heatmap(scores):
+    return _fig_to_data_uri(_fig_page_term_heatmap(scores))
 
 
 # --- HTML assembly (items 1-2) ------------------------------------------------
@@ -471,6 +514,162 @@ def render_html(scores, job_dir=None, task_path=None):
 """
 
 
+# --- Markdown assembly (GitHub-native: report.md + PNG files, not base64) ------
+#
+# Same data + selection logic as the HTML path, emitted as a `report.md` plus
+# sibling PNG files so it renders inline on github.com when opened (mirrors the
+# `reports/grader-validation/` pattern). Gallery renders are width-capped PNG
+# files, not base64, so the report stays small and the repo stays light.
+
+
+def _provenance_md(meta):
+    seed = meta.get("seed_tuple")
+    seed_str = " / ".join(seed) if seed else "—"
+    wall = meta.get("wall_clock_sec")
+    wall_str = f"{wall / 60:.1f} min" if wall is not None else "—"
+    cost = meta.get("total_cost_usd")
+    cost_str = f"${cost:.2f}" if cost is not None else "—"
+    rows = [
+        ("Task", meta.get("task_id")),
+        ("Seed tuple", seed_str),
+        ("Archetype / Aesthetic / Complexity",
+         f"{meta.get('archetype')} / {meta.get('aesthetic')} / "
+         f"{meta.get('complexity')}"),
+        ("Model", meta.get("model")),
+        ("Agent", meta.get("agent")),
+        ("Executor", meta.get("executor")),
+        ("Trials", meta.get("n_trials")),
+        ("Cost", cost_str),
+        ("Wall-clock", wall_str),
+        ("Date", meta.get("date")),
+        ("Repo commit", meta.get("commit")),
+    ]
+    lines = ["| field | value |", "|---|---|"]
+    for k, v in rows:
+        lines.append(f"| {k} | {v if v is not None else '—'} |")
+    return "\n".join(lines)
+
+
+def _score_table_md(scores):
+    terms = scores["terms"]
+    cols = ["reward", *terms]
+    rows = ["| trial | " + " | ".join(cols) + " |", "|" + "---|" * (len(cols) + 1)]
+    for t in scores["trials"]:
+        rows.append("| " + t["trial_id"] + " | "
+                    + " | ".join(f"{t[c]:.3f}" for c in cols) + " |")
+    summ = {c: agg.summary_stats([t[c] for t in scores["trials"]]) for c in cols}
+    rows.append("| **summary** | " + " | ".join(
+        f"med {summ[c]['median']:.3f} · {summ[c]['mean']:.3f}±{summ[c]['std']:.3f}"
+        for c in cols) + " |")
+    return "\n".join(rows)
+
+
+def _md_img(written, rel, alt):
+    return f"![{alt}]({rel})" if written else "_(no render)_"
+
+
+def _galleries_md(scores, job_dir, task_path, out_dir):
+    """Items 6-7 as markdown tables of width-capped PNG files, or "" when the job
+    has no renders to show (same availability gate as the HTML galleries)."""
+    if not _gallery_available(job_dir, task_path):
+        return ""
+    job_dir = Path(job_dir)
+    out_dir = Path(out_dir)
+    parts = []
+
+    extrema = agg.per_metric_extrema(scores)
+    block = ["## 6. Worst per metric (reference vs candidate)", ""]
+    for term in scores["terms"]:
+        ex = extrema.get(term)
+        if ex is None:
+            continue
+        w = ex["worst"]
+        base = job_dir / f"task__{w['trial_id']}" / "verifier"
+        ref_rel = f"images/worst_{term}_ref.png"
+        cand_rel = f"images/worst_{term}_cand.png"
+        hr = _downscale_png(base / "reference_renders" / f"{w['page']}.png",
+                            out_dir / ref_rel)
+        hc = _downscale_png(base / "renders" / f"{w['page']}.png",
+                            out_dir / cand_rel)
+        block += [
+            f"**{term}** — worst page `{w['page']}` "
+            f"(trial `{w['trial_id']}`, score {w['score']:.3f})", "",
+            "| reference | candidate |", "|---|---|",
+            f"| {_md_img(hr, ref_rel, 'reference')} | "
+            f"{_md_img(hc, cand_rel, 'candidate')} |", "",
+        ]
+    parts.append("\n".join(block))
+
+    tid = agg.best_overall_trial(scores)
+    trial = next((t for t in scores["trials"] if t["trial_id"] == tid), None)
+    if trial is not None:
+        block = ["## 7. Best-overall attempt vs reference (all pages)", "",
+                 f"Best-overall trial `{tid}` (reward {trial['reward']:.3f}).", "",
+                 "| page | reference | candidate |", "|---|---|---|"]
+        for page, pdata in trial["pages"].items():
+            if not pdata.get("present", True):
+                continue
+            base = job_dir / f"task__{tid}" / "verifier"
+            ref_rel = f"images/best_{page}_ref.png"
+            cand_rel = f"images/best_{page}_cand.png"
+            hr = _downscale_png(base / "reference_renders" / f"{page}.png",
+                                out_dir / ref_rel)
+            hc = _downscale_png(base / "renders" / f"{page}.png",
+                                out_dir / cand_rel)
+            block.append(
+                f"| {page} | {_md_img(hr, ref_rel, 'reference ' + page)} | "
+                f"{_md_img(hc, cand_rel, 'candidate ' + page)} |")
+        parts.append("\n".join(block))
+
+    return "\n\n".join(parts)
+
+
+def render_markdown(scores, out_dir, job_dir=None, task_path=None):
+    """Write ``report.md`` + sibling PNGs into ``out_dir`` (GitHub-native report).
+
+    Same items as :func:`render_html` — provenance, score table, the three plots
+    (saved as PNG files), and the items 6-7 galleries (width-capped PNG files
+    under ``images/``). Renders inline on github.com when opened.
+    """
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    meta = scores["meta"]
+
+    _fig_to_file(_fig_distributions(scores), out_dir / "distributions.png")
+    _fig_to_file(_fig_per_term_means(scores), out_dir / "per_term_means.png")
+    _fig_to_file(_fig_page_term_heatmap(scores), out_dir / "heatmap.png")
+
+    galleries = (_galleries_md(scores, job_dir, task_path, out_dir)
+                 if job_dir is not None else "")
+
+    md = f"""# Model-eval report — {meta.get('task_id')}
+
+## 1. Provenance
+
+{_provenance_md(meta)}
+
+## 2. Per-trial scores
+
+{_score_table_md(scores)}
+
+## 3. Reward + per-term distributions
+
+![reward and per-term distributions](distributions.png)
+
+## 4. Per-term means
+
+![per-term mean bars](per_term_means.png)
+
+## 5. Per-page × per-term heatmap
+
+![per-page per-term heatmap](heatmap.png)
+
+{galleries}
+"""
+    (out_dir / "report.md").write_text(md)
+    return out_dir
+
+
 # --- entry point --------------------------------------------------------------
 
 
@@ -486,16 +685,25 @@ def _task_path(job_dir):
     return Path(path) if path else None
 
 
-def build_report(job_dir, out_dir):
-    """Harvest the job and write scores.json + scores.csv + report.html."""
+def build_report(job_dir, out_dir, fmt="html"):
+    """Harvest the job and write scores.json + scores.csv + the report.
+
+    ``fmt`` selects the report format: ``"html"`` (default) writes a
+    self-contained ``report.html``; ``"markdown"`` writes a GitHub-renderable
+    ``report.md`` + sibling PNG files. Both read only the normalized harvest.
+    """
     job_dir = Path(job_dir)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     scores = agg.harvest(job_dir)
     agg.write_scores(scores, out_dir)
-    html_str = render_html(scores, job_dir=job_dir, task_path=_task_path(job_dir))
-    (out_dir / "report.html").write_text(html_str)
+    task_path = _task_path(job_dir)
+    if fmt == "markdown":
+        render_markdown(scores, out_dir, job_dir=job_dir, task_path=task_path)
+    else:
+        html_str = render_html(scores, job_dir=job_dir, task_path=task_path)
+        (out_dir / "report.html").write_text(html_str)
     return out_dir
 
 
@@ -510,10 +718,15 @@ def main(argv=None):
         "--out", default=None,
         help="output dir (default: reports/model-eval/<job-name>/)",
     )
+    parser.add_argument(
+        "--format", choices=["html", "markdown"], default="html",
+        help="report format: self-contained 'html' (default) or GitHub-renderable "
+        "'markdown' (report.md + PNG files).",
+    )
     args = parser.parse_args(argv)
 
     out_dir = Path(args.out) if args.out else _default_out(args.job_dir)
-    build_report(args.job_dir, out_dir)
+    build_report(args.job_dir, out_dir, fmt=args.format)
     print(f"Report written to {out_dir}")
 
 
