@@ -268,7 +268,8 @@ agent env online → `harbor run -a claude-code -m claude-opus-4-7`. The reward 
 in `jobs/<name>/.../verifier/reward.json` with the full breakdown in
 `reward-details.json` and the graded frames in `renders/`. Build the evidence
 dashboard for any saved job with `python -m webdesign_rl_anim.report_anim
-jobs/<name>` (see the report's five sections under *Scaling* below).
+jobs/<name>` (the same per-task report shown for the Results tasks above, and
+`report_all_anim jobs/` sweeps every job at once).
 
 ---
 
@@ -336,48 +337,3 @@ PYTHONPATH=task2 .venv/bin/python -m webdesign_rl_anim.report_all_anim jobs/ \
   --out-root task2/reports --format markdown
 # or a single job:  python -m webdesign_rl_anim.report_anim jobs/anim-<id>
 ```
-
-**The report** (`report_anim` / `report_all_anim`) mirrors Task 1's. Each job writes
-`scores.json` + `scores.csv` (the harvest contract) plus a self-contained
-`report.html` (sections 1–5) **or** a GitHub-renderable `report.md` (sections 1–5 +
-the GIF galleries 6–7). The five **data sections**:
-
-1. **Provenance** — task id, seed tuple, animation style, model, executor, trials,
-   cost/tokens, wall-clock, filmstrip timestamps, date, commit.
-2. **Per-trial scores** — `reward` + the three animation terms, with a
-   median / mean ± std / min-max summary row.
-3. **Reward + per-term distributions** (box + strip).
-4. **Per-term mean bars** (± std) — the animation skill shape.
-5. **Per-page × per-term heatmap** (mean across trials).
-
-And, in **markdown mode only**, two **animated GIF galleries** built from the saved
-filmstrip frames (GitHub renders GIFs inline; base64-in-HTML would bloat the file,
-so `report.html` stays sections 1–5):
-
-6. **Worst per metric** — for each term, the worst-scoring (trial, page) as a
-   reference \| candidate GIF pair.
-7. **Best-overall attempt vs reference** — the highest-reward trial's reference \|
-   candidate GIF for every page.
-
-Each GIF plays the 6 filmstrip frames at their real inter-frame timing, then holds
-the at-rest frame; GIFs are content-addressed by `(trial, page, ref/cand)` and built
-once, so a cell shared by both galleries isn't duplicated. Defaults: 480px wide,
-128-colour (~0.5 MB each); tune with `--gif-width` / `--gif-colors`. `report_all_anim`
-writes to the (git-ignored) `task2/reports/` by default — generate for every job, then
-commit only the curated few under `task2/tasks/`.
-
-Terms are the animation page-reward terms **`static_design` / `motion` /
-`animation_judge`** (`reward = mean` of the three, per page, averaged over pages);
-the four static sub-terms stay nested under each page in `scores.json` for
-drill-down.
-
-Modal config knobs: `--count` (over-generate size), `--concurrency` (`max_containers`),
-`--volume` (artifact volume). Grading: `--executor docker|modal`, `--attempts/-k`,
-`--concurrency/-n`. The generation Modal app is `webdesign-rl-anim-batch` (its own
-app/volume, distinct from Task 1's so they never collide); the sealed image is Task
-1's render image **plus** this package on PYTHONPATH, so generation, the gate's
-filmstrip render, and emit all run in the exact grade-time image.
-
-> Isolation holds at scale too: the only Task-1 touch is **read-only imports**
-> (`sample_seeds`, `normalize_stage3_body`, the render image Dockerfile, `_copy_package`,
-> `build_harbor_argv`). Verified: `git diff src/ scripts/ tests/` is empty.
