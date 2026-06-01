@@ -60,9 +60,7 @@ each [`tasks/<id>/report.md`](tasks/).
 The grader produces a real spread (**0.66 → 0.83**), and the *same shape every time*:
 
 - **`content` is the bottleneck.** `color` is near-ceiling (mean **0.97**) while
-  **`content` is the lowest term on every single task** (mean **0.65**). That consistent
-  gap is the headline learning — Opus reproduces palette and page *architecture* well but
-  **paraphrases body copy** rather than transcribing it.
+  **`content` is the lowest term on every single task** (mean **0.65**).
 - **`structure` is the next limiter** (mean ~0.74). The model reproduces the page
   architecture faithfully — sections, order, components — but loses points on **vertical
   rhythm and section-level treatment** (clearest in `011`, which compresses the layout and
