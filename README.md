@@ -46,28 +46,29 @@ Under that validated reward, across all 11 final tasks (per-term means, sorted b
 | 015 | personal-resume · dark-techy | 5 | **0.798** | 0.77 | 0.96 | 0.71 | 0.74 | [report](tasks/015_personal-resume_dark-techy_low/report.md) |
 | 000 | saas-landing · swiss-editorial | 5 | **0.827** ⬆ | 0.78 | 0.99 | 0.77 | 0.77 | [report](tasks/000_saas-landing_swiss-editorial_low/report.md) |
 
-The grader produces a real spread (**0.66 → 0.83**), and the *same shape every time*:
-`color` is near-ceiling (mean **0.97**) while **`content` is the lowest term on every
-single task** (mean **0.65**). That consistent gap is the headline learning — Opus
-reproduces palette and page *architecture* well but **paraphrases body copy** rather than
-transcribing it.
-
-**`structure` is the next limiter** (mean ~0.74). The model reproduces the page
-architecture faithfully — sections, order, components — but loses points on **vertical
-rhythm and section-level treatment** (clearest in `011`, which compresses the layout and
-inverts several section backgrounds dark↔light). MS-SSIM is deliberately strict about
-pixel alignment, so a faithful-but-not-identical rebuild sits well below the same-code
-oracle's ≈1.0 — structure's practical ceiling is lower than color's by design.
-
-A related, **qualitative contributor is typography (fonts).** The agent is told to use
-system fonts but not *which*, so its typeface and weight choices diverge from the
-reference — shifting text glyphs out of alignment (so it surfaces in `structure` via
-MS-SSIM) and softening the overall look (so the `design_judge` notices it too). We
-*observe* this rather than score it as a separate term; it is part of the structure/look
-gap, not a distinct metric.
-
 Per-task distributions, per-page heatmaps, and reference-vs-candidate galleries are in
 each [`tasks/<id>/report.md`](tasks/).
+
+## Key Learnings
+
+The grader produces a real spread (**0.66 → 0.83**), and the *same shape every time*:
+
+- **`content` is the bottleneck.** `color` is near-ceiling (mean **0.97**) while
+  **`content` is the lowest term on every single task** (mean **0.65**). That consistent
+  gap is the headline learning — Opus reproduces palette and page *architecture* well but
+  **paraphrases body copy** rather than transcribing it.
+- **`structure` is the next limiter** (mean ~0.74). The model reproduces the page
+  architecture faithfully — sections, order, components — but loses points on **vertical
+  rhythm and section-level treatment** (clearest in `011`, which compresses the layout and
+  inverts several section backgrounds dark↔light). MS-SSIM is deliberately strict about
+  pixel alignment, so a faithful-but-not-identical rebuild sits well below the same-code
+  oracle's ≈1.0 — structure's practical ceiling is lower than color's by design.
+- **Typography (fonts) is a related, qualitative contributor.** The agent is told to use
+  system fonts but not *which*, so its typeface and weight choices diverge from the
+  reference — shifting text glyphs out of alignment (so it surfaces in `structure` via
+  MS-SSIM) and softening the overall look (so the `design_judge` notices it too). We
+  *observe* this rather than score it as a separate term; it is part of the structure/look
+  gap, not a distinct metric.
 
 ## What the brief asked, and where it lives
 

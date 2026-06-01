@@ -37,6 +37,10 @@ basis of a trustworthy reward.
 
 ## The decisions
 
+*Core design decisions for the animation environment. The "reference site" and
+"scope" rows describe the single-task validity proof; the scaling pipeline (further
+down) generates many multi-page sites instead.*
+
 | Decision | Choice | Why |
 |---|---|---|
 | Reference site | **single focused generation** | one API call → one rich, human-looking animated landing page (true to the recipe ethos, fast) |
