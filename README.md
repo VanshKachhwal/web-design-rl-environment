@@ -22,10 +22,12 @@ check the reward respects that ordering. It does — **monotonically, on every a
 
 - **Spearman ρ = −1.000**, pairwise-ordering accuracy **1.00** — reward falls
   monotonically as damage rises (`0.998 → 0.925 → 0.851 → 0.790 → 0.672 → 0.377`).
-- **Oracle (reference vs itself) = 0.996** vs **Opus 4.7 ≈ 0.76** — a large, healthy
-  gap, so the grader genuinely discriminates quality rather than saturating.
-- Each of the four terms responds to *its own* perturbation axis; degenerate outputs
-  (blank / gray / lorem) are floored by the blend.
+  *(the chart above)*
+- And across the full study (curves linked below): **oracle (reference vs itself) =
+  0.996** vs **Opus 4.7 ≈ 0.76** — a large, healthy gap, so the grader genuinely
+  discriminates quality rather than saturating; each of the four terms responds to
+  *its own* perturbation axis; and degenerate outputs (blank / gray / lorem) are
+  floored by the blend.
 
 → **Full study with all four curves: [`reports/grader-validation/`](reports/grader-validation/)**
 (renders inline on GitHub; every number is auditable in its `scores.json`).
