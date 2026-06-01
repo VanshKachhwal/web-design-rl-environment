@@ -20,13 +20,15 @@ import shutil
 import sys
 from pathlib import Path
 
+from webdesign_rl.emit.task_builder import _copy_package  # WEBDESIGN_RL_PKG_ROOT-aware
+
 from .filmstrip import contact_sheet
 from .render_anim import DEFAULT_TIMESTAMPS_MS, render_filmstrip
 
-_REPO_ROOT = Path(__file__).resolve().parents[2]
-_T1_PKG = _REPO_ROOT / "src" / "webdesign_rl"
-_T1_PYPROJECT = _REPO_ROOT / "pyproject.toml"
-_T2_PKG = _REPO_ROOT / "task2" / "webdesign_rl_anim"
+# The Task-2 package = the directory THIS file lives in. Robust in both the dev
+# repo and inside the sealed Modal image (where it is at /opt/webdesign_rl_anim_pkg/
+# webdesign_rl_anim), unlike a _REPO_ROOT-relative guess.
+_T2_PKG = Path(__file__).resolve().parent
 
 VIEWPORT = 1280
 REFERENCE_DIRNAME = "reference"
@@ -53,42 +55,51 @@ def build_anim_task(
     for d in (tests, env, sol):
         d.mkdir(parents=True, exist_ok=True)
 
-    page_map = {"index": {"expected_file": "index.html", "screenshot": "index.png"}}
+    # The page set is the site's own page_map (multipage). Falls back to a lone
+    # index page if a site has no page_map.json (e.g. the hand-made Aurora demo).
+    pm_path = reference_site_dir / "page_map.json"
+    if pm_path.exists():
+        page_map = json.loads(pm_path.read_text())
+    else:
+        page_map = {"index": {"expected_file": "index.html", "screenshot": "index.png"}}
     timestamps = list(timestamps_ms)
 
     # --- verifier build context: reference site (hidden), page_map, both packages
     _copy_tree(reference_site_dir, tests / "reference_site")
     (tests / "page_map.json").write_text(json.dumps(page_map, indent=2))
-    _copy_tree(_T1_PKG, tests / "webdesign_rl_pkg" / "src" / "webdesign_rl")
-    shutil.copy2(_T1_PYPROJECT, tests / "webdesign_rl_pkg" / "pyproject.toml")
+    # Task 1 package: reuse its own packager, which resolves WEBDESIGN_RL_PKG_ROOT
+    # (set in the render/verifier images) and falls back to the dev repo — so this
+    # works both locally and when emitting from inside the sealed Modal image.
+    _copy_package(tests / "webdesign_rl_pkg")
     _copy_tree(_T2_PKG, tests / "webdesign_rl_anim_pkg" / "webdesign_rl_anim")
     (tests / "Dockerfile").write_text(_verifier_dockerfile())
     (tests / "test.sh").write_text(_test_sh())
 
-    # --- agent build context: the filmstrip the agent must reproduce
-    _render_agent_filmstrip(reference_site_dir, env / REFERENCE_DIRNAME,
-                            timestamps, viewport)
-    (out / "instruction.md").write_text(_instruction_md(timestamps, viewport))
+    # --- agent build context: a filmstrip PER PAGE the agent must reproduce
+    _render_agent_filmstrips(reference_site_dir, page_map,
+                             env / REFERENCE_DIRNAME, timestamps, viewport)
+    (out / "instruction.md").write_text(_instruction_md(page_map, timestamps, viewport))
     (out / "task.toml").write_text(_task_toml(task_name, cpus, memory_mb))
     (env / "Dockerfile").write_text(_agent_dockerfile())
 
-    # --- oracle solution: the reference page itself scores ~1.0
-    (sol / "site").mkdir(parents=True, exist_ok=True)
-    shutil.copy2(reference_site_dir / "index.html", sol / "site" / "index.html")
+    # --- oracle solution: the reference site itself scores ~1.0
+    _copy_tree(reference_site_dir, sol / "site")
     (sol / "solve.sh").write_text(_solve_sh())
     return out
 
 
-def _render_agent_filmstrip(reference_site_dir, dest, timestamps, viewport):
-    """Render the reference filmstrip frames + contact sheet into the agent context."""
+def _render_agent_filmstrips(reference_site_dir, page_map, dest, timestamps, viewport):
+    """Render a filmstrip (frames + contact sheet + settled) per page into the agent context."""
     if dest.exists():
         shutil.rmtree(dest)
     dest.mkdir(parents=True)
-    r = render_filmstrip(reference_site_dir, "index.html", timestamps, viewport=viewport)
-    for t, frame in zip(r["timestamps_ms"], r["frames"]):
-        frame.save(dest / f"index_t{t:05d}.png")
-    contact_sheet(r["frames"], r["timestamps_ms"]).save(dest / "index_filmstrip.png")
-    r["settled"].save(dest / "index_settled.png")
+    for page, spec in page_map.items():
+        r = render_filmstrip(reference_site_dir, spec["expected_file"],
+                             timestamps, viewport=viewport)
+        for t, frame in zip(r["timestamps_ms"], r["frames"]):
+            frame.save(dest / f"{page}_t{t:05d}.png")
+        contact_sheet(r["frames"], r["timestamps_ms"]).save(dest / f"{page}_filmstrip.png")
+        r["settled"].save(dest / f"{page}_settled.png")
 
 
 def _copy_tree(src, dest):
@@ -100,38 +111,46 @@ def _copy_tree(src, dest):
 
 # ----------------------------------------------------------------------------- templates
 
-def _instruction_md(timestamps, viewport) -> str:
-    frame_rows = "\n".join(
-        f"| `{AGENT_REFERENCE_DIR}/index_t{t:05d}.png` | {t} ms |"
-        for t in timestamps
-    )
+def _instruction_md(page_map, timestamps, viewport) -> str:
+    times = ", ".join(f"{t} ms" for t in timestamps)
+    sections = []
+    rows = []
+    for page, spec in page_map.items():
+        out_file = spec["expected_file"]
+        sections.append(
+            f"### `{out_file}`\n\n"
+            f"- Filmstrip frames: `{AGENT_REFERENCE_DIR}/{page}_t<ms>.png` "
+            f"(at {times})\n"
+            f"- Contact sheet (all frames stacked): `{AGENT_REFERENCE_DIR}/{page}_filmstrip.png`\n"
+            f"- Final at-rest frame: `{AGENT_REFERENCE_DIR}/{page}_settled.png`"
+        )
+        rows.append(f"| `{page}_filmstrip.png` | `{out_file}` |")
+    pages_md = "\n\n".join(sections)
+    table = "\n".join(rows)
     return f"""\
 # Replicate the animated web design
 
-You are given a reference **animated** landing page as a *filmstrip*: full-page
-screenshots captured at increasing times after the page loads, plus a single
-stacked **contact sheet** (`{AGENT_REFERENCE_DIR}/index_filmstrip.png`) and the
-final at-rest frame (`{AGENT_REFERENCE_DIR}/index_settled.png`). Recreate the page
-as a single **`index.html`** using **plain HTML and CSS only**, matching both the
-**static design** (layout, colors, typography, text) *and* the **animation** (what
-moves, when, the easing/feel, and the kind of motion).
+You are given a reference **animated** {len(page_map)}-page website as *filmstrips*:
+for each page, full-page screenshots captured at increasing times after load
+({times}), plus a single stacked **contact sheet** and the final at-rest frame.
+Recreate every page using **plain HTML and CSS only**, matching both the **static
+design** (layout, colors, typography, text) *and* the **animation** (what moves,
+when, the easing/feel, and the kind of motion). Reuse one shared stylesheet across
+pages for consistency.
 
-## The filmstrip (absolute times on the page timeline)
+## Reference (one filmstrip per page)
 
-| Reference frame | Captured at |
-| --- | --- |
-{frame_rows}
+{pages_md}
 
-Study how elements enter, stagger, and loop across these frames. Your page is
-captured at the **same absolute times** and graded on how closely each frame — and
-the motion between them — matches.
+Your pages are captured at the **same absolute times** and graded on how closely
+each frame — and the motion between them — matches.
 
 ## Animation rules (important)
 
 - Use **CSS only**: `@keyframes` animations and CSS transitions. **No JavaScript**,
   no `<script>`, no `requestAnimationFrame` — the grader seeks the CSS timeline and
   will not see JS-driven motion.
-- Give finite entrance/stagger animations `animation-fill-mode: forwards` so the
+- Give finite entrance/stagger animations `animation-fill-mode: forwards` so each
   page holds its final state at rest (the settled frame is graded for static design).
 - Match the **timing**: entrance + stagger should play within the same window you
   see in the filmstrip; reproduce any continuous (infinite) loops you observe.
@@ -139,13 +158,20 @@ the motion between them — matches.
 ## Rendering
 
 Rendered headlessly at a fixed **viewport width of {viewport}px** (full scroll
-height), **offline** — inline all CSS, use system fonts and CSS-drawn shapes/
-gradients, no CDNs or web fonts.
+height), **offline** — use local/inline CSS, system fonts, CSS-drawn shapes/
+gradients; no CDNs or web fonts.
 
-## Where to write your file
+## Pages to produce
 
-Write your **`index.html`** (with all CSS inline) into **`{ARTIFACTS_DIR}/`** (create
-it if needed). Only files under `{ARTIFACTS_DIR}/` are collected and graded.
+| Reference contact sheet | Output file |
+| --- | --- |
+{table}
+
+## Where to write your files
+
+Write all your HTML/CSS files into **`{ARTIFACTS_DIR}/`** (create it if needed),
+keeping relative asset paths working from there. Only files under `{ARTIFACTS_DIR}/`
+are collected and graded.
 """
 
 
@@ -250,7 +276,7 @@ def _solve_sh() -> str:
 #!/bin/bash
 set -euo pipefail
 mkdir -p {ARTIFACTS_DIR}
-cp /solution/site/index.html {ARTIFACTS_DIR}/index.html
+cp -r /solution/site/. {ARTIFACTS_DIR}/
 """
 
 

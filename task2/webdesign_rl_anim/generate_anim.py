@@ -114,9 +114,9 @@ def main(argv=None) -> int:
                         help="Creative brief for the page theme/aesthetic.")
     args = parser.parse_args(argv)
 
-    from webdesign_rl.generate.client import AnthropicGenerationClient
+    from .gen_client import ContinuingGenerationClient
 
-    path = generate(AnthropicGenerationClient(), args.brief, args.out)
+    path = generate(ContinuingGenerationClient(), args.brief, args.out)
     print(f"wrote {path}")
     return 0
 
