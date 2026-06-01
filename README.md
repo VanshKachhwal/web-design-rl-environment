@@ -10,6 +10,8 @@ This repo is built around one conviction the brief makes explicit — *the model
 the grading logic, so a noisy reward poisons training.* So the grader came first, and
 its validity is **proven, not asserted**. Start there:
 
+---
+
 ## The reward is a faithful signal — here's the proof
 
 We manufacture variants of a reference site whose quality ordering is *known a priori*
@@ -27,6 +29,8 @@ check the reward respects that ordering. It does — **monotonically, on every a
 
 → **Full study with all four curves: [`reports/grader-validation/`](reports/grader-validation/)**
 (renders inline on GitHub; every number is auditable in its `scores.json`).
+
+---
 
 ## Results — Claude Code + Opus 4.7, 10× per task
 
@@ -49,6 +53,8 @@ Under that validated reward, across all 11 final tasks (per-term means, sorted b
 Per-task distributions, per-page heatmaps, and reference-vs-candidate galleries are in
 each [`tasks/<id>/report.md`](tasks/).
 
+---
+
 ## Key Learnings
 
 The grader produces a real spread (**0.66 → 0.83**), and the *same shape every time*:
@@ -70,6 +76,8 @@ The grader produces a real spread (**0.66 → 0.83**), and the *same shape every
   *observe* this rather than score it as a separate term; it is part of the structure/look
   gap, not a distinct metric.
 
+---
+
 ## What the brief asked, and where it lives
 
 | Brief deliverable / requirement | Where in this repo |
@@ -88,6 +96,8 @@ The grader produces a real spread (**0.66 → 0.83**), and the *same shape every
 The assignment we built against is preserved verbatim at
 [`documentation/project-brief.md`](documentation/project-brief.md).
 
+---
+
 ## The final tasks
 
 [`tasks/`](tasks/) holds **11 self-contained bundles** chosen to span the output
@@ -99,6 +109,8 @@ per-task README. See [`tasks/README.md`](tasks/README.md) for the coverage table
 
 > **These 11 are Part 1 (static) only.** Part 2 (animations) was attempted but is a
 > rushed prototype, so it is deliberately kept out of the final tasks — see below.
+
+---
 
 ## Part 2 — Animations (a time-boxed attempt)
 
@@ -125,6 +137,8 @@ small timing offsets) and the early findings (Claude builds **shorter** pages an
 
 → **Everything Part 2: [`task2/README.md`](task2/README.md)** — design, the `motion`
 metric in detail, the scaling pipeline, the throughput trade, and limitations.
+
+---
 
 ## Quickstart
 
@@ -172,6 +186,8 @@ runs inside the Harbor verifier). Operational detail in the runbooks:
 > anthropic-api-key ANTHROPIC_API_KEY=…` — the cloud worker reads the key from a Modal
 > Secret, not your shell. `pull` needs only the Modal token.
 
+---
+
 ## How it works
 
 - **Grader** — four equal-weighted terms, `reward = mean`, averaged over pages:
@@ -195,6 +211,8 @@ OCR term *and* the VLM judge. This is exactly the "what the model struggles with
 finding the brief asks for; the design-taste tension (is verbatim text the right thing
 to reward in a *design* task?) is surfaced, not hidden.
 
+---
+
 ## The research and the reasoning trail
 
 Research taste is visible decisions plus the evidence that settled them — including the
@@ -213,6 +231,8 @@ dead-ends. So beyond the polished design docs:
 - **[`documentation/prds/`](documentation/prds/)** — the development arc as PRDs +
   issues, in build order (grader-mvp, site-generator, eval-pipeline).
 
+---
+
 ## Repository layout
 
 ```
@@ -225,6 +245,8 @@ templates/          Harbor task scaffolding (task.toml, instruction, test.sh, Do
 tests/              behavioral test suite (337 passing)
 task2/              Part 2 (animations) — a time-boxed prototype: filmstrip grader + scaling pipeline (see task2/README.md)
 ```
+
+---
 
 ## How the 11 final tasks were produced
 

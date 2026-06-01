@@ -35,6 +35,8 @@ basis of a trustworthy reward.
 > deliberate: it keeps Task 1 frozen, and the grader + generator approach changed
 > enough (static → animated) that sharing code would have coupled the two.
 
+---
+
 ## The decisions
 
 *Core design decisions for the animation environment. The "reference site" and
@@ -48,6 +50,8 @@ down) generates many multi-page sites instead.*
 | Animation constraint | **CSS-only, timeline-seekable** | `@keyframes` + transitions are seekable; `requestAnimationFrame` JS is out of scope for v1 (not seekable) |
 | Grade composition | **static\@final + motion + anim-judge** | richest signal, reuses Task 1 for the static third |
 | Scope | **one rich animated landing page** | 3-4 motion types (entrance, stagger, infinite loop) on one page |
+
+---
 
 ## How it works
 
@@ -77,6 +81,8 @@ reward        = mean(page_reward over pages)                     # absent page -
   *contact sheets* on `motion_presence / timing / easing_feel / motion_type`.
 
 `--no-judge` drops both VLM terms for fully-deterministic, free, offline grading.
+
+---
 
 ## Does higher reward mean better animation replication? (the proof)
 
@@ -111,6 +117,8 @@ judge ~0.76 on an oracle, and it struggles to tell a no-motion page from a settl
 one on a static contact sheet). **Design intent: `motion` is the reliable anchor,
 the judge adds feel.**
 
+---
+
 ## The `motion` term, in detail
 
 `motion` (`motion.py`) is the deterministic backbone — no model call, no randomness.
@@ -135,6 +143,8 @@ places, at the same times, by the same amount?* Construction:
 Because both filmstrips are seeked to the *same absolute times*, a candidate with the
 wrong duration/easing renders different pixels at each `t` and is penalised
 automatically — no per-element transform parsing needed.
+
+---
 
 ## The fixed 6-frame filmstrip — the main known limitation
 
@@ -166,6 +176,8 @@ harsher than a human eye. The fix directions — denser/log-spaced early samplin
 cumulative (vs consecutive-diff) signature, or sampling proportional to the observed
 animation length — are scoped but not built; this is the first thing Part 2 needs.
 
+---
+
 ## What the model struggled with (early eval observations)
 
 Evals are still running, so these are **preliminary** (one well-analysed task plus
@@ -181,6 +193,8 @@ the single-task proof), but two patterns are already clear and consistent with P
   matching the reference's faster ones — which the strict `motion` term then penalises
   (amplified by the 6-frame limitation above).
 
+---
+
 ## The reference site
 
 `reference/aurora/index.html` — *Aurora*, a sleep & focus app landing page (dark
@@ -189,6 +203,8 @@ animations**: a hero fade/slide entrance, staggered feature-card reveals, and
 infinite loops (pulsing accents, gradient shifts). See
 `reference/aurora_filmstrip/contact.png` (the motion over time) and `settled.png`
 (the at-rest design).
+
+---
 
 ## Honest limitations
 
@@ -210,6 +226,8 @@ infinite loops (pulsing accents, gradient shifts). See
 - **Agent-facing frames are host-rendered** at emit time (Task 1 later moved its
   agent screenshots in-container to kill font drift; not redone here). Grading is
   unaffected — the verifier renders ref *and* candidate in the same container.
+
+---
 
 ## How to run (single task)
 
