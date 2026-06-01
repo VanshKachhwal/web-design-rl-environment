@@ -26,9 +26,11 @@ early-2000s excess.
 
 **Why higher reward = better replication.** This task has the lowest `design_judge` (0.639) and
 the lowest `content` (0.60) of the whole set, and the widest reward spread (0.703 → 0.836) — which
-is itself informative: the grader is *discriminating* strongly here. `color` stays high (0.941)
-because the model gets the bright palette, but the spread is driven by whether an attempt actually
-*feels* y2k. The best trial (`ktrPUUd`, 0.836; [`report.md`](./report.md) §7) keeps the gradients,
+is itself informative: the grader is *discriminating* strongly here. `color` (0.941) is the
+**lowest color score in the whole set** — the saturated purple-to-magenta gradients and the neon
+pink/lime are the single hardest palette here to match exactly — yet it is *still* this task's
+strongest term by a wide margin, so even at the set's worst, color is not the limiter. The spread
+is driven by whether an attempt actually *feels* y2k. The best trial (`ktrPUUd`, 0.836; [`report.md`](./report.md) §7) keeps the gradients,
 colour-blocking and beveled buttons; lower trials sand the era off into clean modern SaaS. Reward
 tracks "how y2k did it stay".
 

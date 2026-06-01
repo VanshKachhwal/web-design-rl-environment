@@ -36,5 +36,7 @@ survive but the one-to-two-line descriptions under each item are gutted — the 
 and loses its substance. For `design_judge` ([worst-judge candidate](./images/worst_design_judge_cand.png))
 the signature neo-brutalist punch is diluted: the hard black offset shadows soften to light grey,
 the borders thin out, and the badge yellows desaturate, so the page reads more "tasteful modern"
-than "neo-brutalist". The per-trial reward still orders by overall fidelity — but it is the menu
+than "neo-brutalist". The menu page is in fact the worst page on *all three* non-color terms:
+`structure` (0.718, the third-lowest in the set) dips here too, as the dense menu/pricing table
+loses its row rhythm. The per-trial reward still orders by overall fidelity — but it is the menu
 page, not the strong home page, that decides where each attempt lands.
