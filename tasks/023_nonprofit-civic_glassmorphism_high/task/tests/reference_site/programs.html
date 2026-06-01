@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Programs</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+        <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+        <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+        <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+        <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+      </svg>
+      <span class="header__logo-text">
+        Wellspring
+        <span class="header__logo-tagline">Community Health Foundation</span>
+      </span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="mission.html" class="header__nav-link">Mission</a>
+      <a href="programs.html" class="header__nav-link">Programs</a>
+      <a href="impact.html" class="header__nav-link">Impact</a>
+      <a href="events.html" class="header__nav-link">Events</a>
+      <a href="volunteer.html" class="header__nav-link">Volunteer</a>
+      <a href="news.html" class="header__nav-link">News</a>
+      <a href="partners.html" class="header__nav-link">Partners</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+      <a href="donate.html" class="header__cta">Donate</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Our Programs</span>
+        <h1 class="hero__title">Building Healthier Communities Together</h1>
+        <p class="hero__subtitle">From preventive care to mental wellness, our programs address the full spectrum of community health needs. Discover how we're creating lasting change through evidence-based initiatives.</p>
+        <div class="hero__actions">
+          <a href="volunteer.html" class="hero__btn hero__btn--primary">Get Involved</a>
+          <a href="donate.html" class="hero__btn hero__btn--secondary">Support a Program</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FILTER BAR
+       ═══════════════════════════════════════════ -->
+  <section class="container" style="padding-top: var(--space-12);">
+    <div class="filter-bar">
+      <span class="filter-bar__label">Filter by Focus:</span>
+      <a href="#" class="filter-bar__btn filter-bar__btn--active">All Programs</a>
+      <a href="#" class="filter-bar__btn">Preventive Care</a>
+      <a href="#" class="filter-bar__btn">Mental Health</a>
+      <a href="#" class="filter-bar__btn">Nutrition</a>
+      <a href="#" class="filter-bar__btn">Youth &amp; Family</a>
+      <a href="#" class="filter-bar__btn">Senior Wellness</a>
+      <a href="#" class="filter-bar__btn">Community Outreach</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BENTO GRID — Program Highlights
+       ═══════════════════════════════════════════ -->
+  <section class="container">
+    <div class="bento-grid">
+      <!-- Featured: Community Health Screenings -->
+      <div class="bento-grid__item bento-grid__item--span-2 bento-grid__item--tall bento-grid__item--primary">
+        <div style="margin-bottom: auto; padding: var(--space-4);">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="rgba(255,255,255,0.4)" stroke-width="3" fill="none"/>
+            <path d="M32 18 L32 46 M18 32 L46 32" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <span class="badge badge--accent" style="margin-bottom: var(--space-3);">Featured Program</span>
+        <h3 class="bento-grid__item-title" style="color: var(--color-white); font-size: var(--text-2xl);">Community Health Screenings</h3>
+        <p class="bento-grid__item-text">Free monthly screenings for blood pressure, diabetes, cholesterol, and vision. Over 12,000 residents screened annually across 15 neighborhood locations.</p>
+      </div>
+
+      <!-- Mental Wellness Hub -->
+      <div class="bento-grid__item bento-grid__item--accent">
+        <svg width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: var(--space-3);">
+          <circle cx="24" cy="18" r="10" fill="var(--color-lavender)" opacity="0.6"/>
+          <path d="M12 40 C12 32 18 28 24 28 C30 28 36 32 36 40" stroke="var(--color-lavender-dark)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="24" cy="18" r="4" fill="var(--color-lavender-dark)"/>
+        </svg>
+        <h4 class="bento-grid__item-title">Mental Wellness Hub</h4>
+        <p class="bento-grid__item-text">Counseling, support groups, and crisis intervention services for individuals and families.</p>
+      </div>
+
+      <!-- Nutrition Program -->
+      <div class="bento-grid__item">
+        <svg width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: var(--space-3);">
+          <circle cx="24" cy="28" r="14" fill="var(--color-primary-light)" opacity="0.4"/>
+          <path d="M24 8 L24 20 M20 12 L24 8 L28 12" stroke="var(--color-primary-dark)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="24" cy="32" rx="10" ry="6" fill="var(--color-primary-light)" opacity="0.6"/>
+        </svg>
+        <span class="badge badge--primary" style="margin-bottom: var(--space-2);">High Impact</span>
+        <h4 class="bento-grid__item-title">Nutrition &amp; Food Access</h4>
+        <p class="bento-grid__item-text">Farm-to-table education, community gardens, and weekly food distribution for food-insecure families.</p>
+      </div>
+
+      <!-- Youth Fitness -->
+      <div class="bento-grid__item">
+        <svg width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: var(--space-3);">
+          <rect x="8" y="20" width="32" height="4" rx="2" fill="var(--color-secondary)" opacity="0.6"/>
+          <circle cx="12" cy="22" r="6" fill="var(--color-secondary-light)" stroke="var(--color-secondary-dark)" stroke-width="1.5"/>
+          <circle cx="36" cy="22" r="6" fill="var(--color-secondary-light)" stroke="var(--color-secondary-dark)" stroke-width="1.5"/>
+          <circle cx="24" cy="12" r="4" fill="var(--color-secondary-dark)" opacity="0.5"/>
+        </svg>
+        <h4 class="bento-grid__item-title">Youth Fitness Initiative</h4>
+        <p class="bento-grid__item-text">After-school sports, fitness classes, and health education for children ages 6–17.</p>
+      </div>
+
+      <!-- Senior Wellness - wide -->
+      <div class="bento-grid__item bento-grid__item--span-2">
+        <div style="display: flex; align-items: center; gap: var(--space-6);">
+          <svg width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+            <rect x="4" y="4" width="48" height="48" rx="12" fill="var(--color-sky-light)" opacity="0.5"/>
+            <path d="M20 36 L20 24 L28 18 L36 24 L36 36" stroke="var(--color-sky-dark)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="25" y="28" width="6" height="8" rx="1" fill="var(--color-sky)" opacity="0.7"/>
+          </svg>
+          <div>
+            <span class="badge badge--sky" style="margin-bottom: var(--space-2);">Expanding</span>
+            <h4 class="bento-grid__item-title">Senior Wellness &amp; Home Visits</h4>
+            <p class="bento-grid__item-text">In-home health assessments, medication management, fall prevention, and social connection programs for adults 65 and older. Now serving 8 neighborhoods.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maternal Health -->
+      <div class="bento-grid__item bento-grid__item--accent">
+        <svg width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: var(--space-3);">
+          <path d="M24 10 C18 10 14 16 14 22 C14 30 24 38 24 38 C24 38 34 30 34 22 C34 16 30 10 24 10Z" fill="var(--color-secondary-light)" stroke="var(--color-secondary-dark)" stroke-width="2"/>
+          <circle cx="24" cy="22" r="4" fill="var(--color-secondary-dark)" opacity="0.4"/>
+        </svg>
+        <span class="badge badge--secondary" style="margin-bottom: var(--space-2);">New</span>
+        <h4 class="bento-grid__item-title">Maternal &amp; Infant Health</h4>
+        <p class="bento-grid__item-text">Prenatal care, birthing classes, postpartum support, and newborn wellness checks.</p>
+      </div>
+
+      <!-- Community Outreach -->
+      <div class="bento-grid__item">
+        <svg width="48" height="48" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: var(--space-3);">
+          <circle cx="16" cy="20" r="6" fill="var(--color-warm-light)" stroke="var(--color-warm-dark)" stroke-width="1.5"/>
+          <circle cx="32" cy="20" r="6" fill="var(--color-warm-light)" stroke="var(--color-warm-dark)" stroke-width="1.5"/>
+          <circle cx="24" cy="32" r="6" fill="var(--color-warm)" stroke="var(--color-warm-dark)" stroke-width="1.5"/>
+          <line x1="20" y1="23" x2="22" y2="28" stroke="var(--color-warm-dark)" stroke-width="1.5"/>
+          <line x1="28" y1="23" x2="26" y2="28" stroke="var(--color-warm-dark)" stroke-width="1.5"/>
+        </svg>
+        <h4 class="bento-grid__item-title">Mobile Health Clinics</h4>
+        <p class="bento-grid__item-text">Bringing healthcare directly to underserved neighborhoods via our fleet of mobile clinics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CARD GRID — Detailed Program Cards
+       ═══════════════════════════════════════════ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header">
+        <h2 class="content-section__title">Explore All Programs</h2>
+        <p class="content-section__subtitle">Each program is designed with community input and backed by measurable health outcomes. Click through to learn more about eligibility, schedules, and how to participate.</p>
+      </div>
+
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card__image" style="background: var(--gradient-cool);">
+            <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="30" stroke="rgba(255,255,255,0.6)" stroke-width="3" fill="none"/>
+              <path d="M30 40 L37 47 L52 32" stroke="var(--color-white)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Preventive Care</span>
+            <h4 class="card__title">Annual Health Screenings</h4>
+            <p class="card__text">Comprehensive free screenings including blood pressure, glucose, cholesterol, BMI, and vision tests. Available at 15 community locations monthly.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--primary">Open Enrollment</span>
+            <a href="contact.html" class="card__link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card__image" style="background: var(--gradient-warm);">
+            <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="30" r="14" fill="rgba(255,255,255,0.4)"/>
+              <path d="M20 62 C20 48 28 42 40 42 C52 42 60 48 60 62" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="40" cy="30" r="6" fill="rgba(255,255,255,0.7)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Mental Health</span>
+            <h4 class="card__title">Counseling &amp; Therapy Services</h4>
+            <p class="card__text">Individual and group therapy sessions, trauma-informed care, and crisis support. Sliding-scale fees ensure access for all community members.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--lavender">Accepting Referrals</span>
+            <a href="contact.html" class="card__link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card__image" style="background: linear-gradient(135deg, var(--color-primary-light), var(--color-sky-light));">
+            <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="30" width="40" height="28" rx="4" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" fill="none"/>
+              <path d="M30 30 L30 22 C30 18 34 14 40 14 C46 14 50 18 50 22 L50 30" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <circle cx="40" cy="44" r="5" fill="rgba(255,255,255,0.6)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Nutrition</span>
+            <h4 class="card__title">Community Food Pantry</h4>
+            <p class="card__text">Weekly distribution of fresh produce, whole grains, and proteins. Nutrition counseling and cooking demonstrations included for participants.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--warm">Every Saturday</span>
+            <a href="events.html" class="card__link">Schedule →</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card__image" style="background: linear-gradient(135deg, var(--color-secondary-light), var(--color-lavender-light));">
+            <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="35" r="10" fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+              <circle cx="50" cy="35" r="10" fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+              <circle cx="40" cy="50" r="8" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Youth &amp; Family</span>
+            <h4 class="card__title">Family Wellness Workshops</h4>
+            <p class="card__text">Interactive workshops covering parenting skills, family nutrition, stress management, and healthy communication for families of all structures.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--secondary">Bi-Weekly</span>
+            <a href="events.html" class="card__link">View Dates →</a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card__image" style="background: linear-gradient(135deg, var(--color-accent-light), var(--color-warm-light));">
+            <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="25" width="50" height="35" rx="6" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" fill="none"/>
+              <line x1="15" y1="38" x2="65" y2="38" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+              <circle cx="28" cy="48" r="4" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="40" cy="48" r="4" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="52" cy="48" r="4" fill="rgba(255,255,255,0.6)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Senior Wellness</span>
+            <h4 class="card__title">Golden Years Fitness</h4>
+            <p class="card__text">Low-impact exercise classes, balance training, and social activities designed specifically for adults 60 and older. Transportation assistance available.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--accent">Mon / Wed / Fri</span>
+            <a href="contact.html" class="card__link">Join Now →</a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card__image" style="background: var(--gradient-hero);">
+            <svg width="80" height="80" viewbox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40 15 C32 15 26 22 26 30 C26 42 40 55 40 55 C40 55 54 42 54 30 C54 22 48 15 40 15Z" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+              <path d="M34 30 L40 24 L46 30 L40 36 Z" fill="rgba(255,255,255,0.8)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Community Outreach</span>
+            <h4 class="card__title">Health Ambassador Network</h4>
+            <p class="card__text">Training local residents to become certified health ambassadors who provide peer education, resource navigation, and wellness coaching in their neighborhoods.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--sky">Now Recruiting</span>
+            <a href="volunteer.html" class="card__link">Apply →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       STEP PROCESS — How to Enroll
+       ═══════════════════════════════════════════ -->
+  <section class="step-process">
+    <div class="container">
+      <div class="step-process__header">
+        <h2 class="content-section__title">How to Join a Program</h2>
+        <p class="content-section__subtitle">Getting started is simple. Follow these four steps to enroll in any of our community health programs.</p>
+      </div>
+
+      <div class="step-process__steps">
+        <div class="step-process__item">
+          <div class="step-process__number">1</div>
+          <h4 class="step-process__title">Browse Programs</h4>
+          <p class="step-process__text">Explore our full catalog above and find the programs that match your health needs and interests.</p>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number">2</div>
+          <h4 class="step-process__title">Check Eligibility</h4>
+          <p class="step-process__text">Review program requirements and schedules. Most programs are open to all community members regardless of insurance status.</p>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number">3</div>
+          <h4 class="step-process__title">Register</h4>
+          <p class="step-process__text">Contact us by phone, email, or visit our office to complete a simple enrollment form. Walk-ins are welcome for most programs.</p>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number">4</div>
+          <h4 class="step-process__title">Start Your Journey</h4>
+          <p class="step-process__text">Attend your first session and connect with our caring staff. We'll support you every step of the way toward better health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       STAT ROW — Program Impact
+       ═══════════════════════════════════════════ -->
+  <section class="container">
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__number">18</div>
+        <div class="stat__label">Active Programs</div>
+        <p class="stat__description">Covering preventive care, mental health, nutrition, and more</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">12K+</div>
+        <div class="stat__label">Annual Participants</div>
+        <p class="stat__description">Community members served across all programs each year</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">15</div>
+        <div class="stat__label">Neighborhoods</div>
+        <p class="stat__description">Locations where our programs are actively running</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">94%</div>
+        <div class="stat__label">Satisfaction Rate</div>
+        <p class="stat__description">Of participants report improved health outcomes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════════ -->
+  <section class="container" style="padding-bottom: var(--space-20);">
+    <div class="cta-banner">
+      <h2 class="cta-banner__title">Ready to Make a Difference?</h2>
+      <p class="cta-banner__text">Whether you want to participate in a program, volunteer your time, or support our work with a donation, there's a place for you at Wellspring. Together, we can build a healthier community.</p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="cta-banner__btn cta-banner__btn--primary">Enroll Today</a>
+        <a href="volunteer.html" class="cta-banner__btn cta-banner__btn--secondary">Volunteer With Us</a>
+        <a href="donate.html" class="cta-banner__btn cta-banner__btn--secondary">Donate Now</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" style="margin-bottom:var(--space-2);display:inline-flex;">
+          <svg width="36" height="36" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+            <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+            <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+            <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+            <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+          </svg>
+          <span class="header__logo-text">
+            Wellspring
+            <span class="header__logo-tagline">Community Health Foundation</span>
+          </span>
+        </a>
+        <p class="footer__brand-text">
+          Nurturing holistic wellness in underserved communities since 2008. Together, we build healthier futures through compassion, education, and accessible care.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Organization</h4>
+        <ul class="footer__links">
+          <li><a href="mission.html" class="footer__link">Our Mission</a></li>
+          <li><a href="programs.html" class="footer__link">Programs</a></li>
+          <li><a href="impact.html" class="footer__link">Impact</a></li>
+          <li><a href="partners.html" class="footer__link">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Get Involved</h4>
+        <ul class="footer__links">
+          <li><a href="donate.html" class="footer__link">Donate</a></li>
+          <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+          <li><a href="events.html" class="footer__link">Events</a></li>
+          <li><a href="news.html" class="footer__link">News</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          <li><span class="footer__link">info@wellspringchf.org</span></li>
+          <li><span class="footer__link">(555) 234-5678</span></li>
+          <li><span class="footer__link">200 Wellness Way, Suite 100</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Wellspring Community Health Foundation. All rights reserved. A 501(c)(3) nonprofit organization.</p>
+      <div class="footer__social">
+        <span class="footer__social-icon" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2.5H10.5V0H9C7.34 0 6 1.34 6 3V5H4V7.5H6V16H8.5V7.5H10.5L11 5H8.5V3C8.5 2.72 8.72 2.5 9 2.5Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="14" rx="4" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="8" cy="8" r="3.5" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="12.5" cy="3.5" r="1" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Twitter / X">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L7 8.5L2 14H3.5L7.75 9.5L11 14H14L9 7.5L14 2H12.5L8.25 6.5L5 2H2Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="3" height="9" fill="#8a7e72" rx="0.5"/><circle cx="2.5" cy="3" r="1.8" fill="#8a7e72"/><path d="M6 6H9V7.2C9.5 6.4 10.5 5.8 11.5 5.8C13.5 5.8 14.5 7 14.5 9.5V15H11.5V10C11.5 9 11 8.5 10.2 8.5C9.3 8.5 8.8 9.2 8.8 10.2V15H6V6Z" fill="#8a7e72"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

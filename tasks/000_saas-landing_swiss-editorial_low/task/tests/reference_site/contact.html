@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Contact</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="header__logo">Grid<span>line</span></a>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="features.html" class="header__nav-link">Features</a></li>
+        <li><a href="pricing.html" class="header__nav-link">Pricing</a></li>
+        <li><a href="about.html" class="header__nav-link">About</a></li>
+        <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+      </ul>
+      <a href="pricing.html" class="header__cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- CONTACT BLOCK -->
+  <section class="contact-block">
+    <div class="container">
+      <div class="contact-block__inner">
+        <div class="contact-block__info">
+          <h1 class="contact-block__title">Get In Touch</h1>
+          <p class="contact-block__text">Have a question, feedback, or want to learn more about our platform? We'd love to hear from you. Reach out using any of the methods below or fill out the form and we'll get back to you within 24 hours.</p>
+          <div class="contact-block__details">
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="4" fill="var(--color-accent-light)"/>
+                  <path d="M6 8l6 5 6-5" stroke="var(--color-accent)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="5" y="7" width="14" height="10" rx="1" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-block__detail-label">Email</p>
+                <p class="contact-block__detail-value"><a href="mailto:hello@gridline.com">hello@gridline.com</a></p>
+              </div>
+            </div>
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="4" fill="var(--color-accent-light)"/>
+                  <path d="M9 2a7 7 0 017 7c0 5-7 11-7 11S2 14 2 9a7 7 0 017-7z" transform="translate(3 2)" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
+                  <circle cx="12" cy="11" r="2" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-block__detail-label">Address</p>
+                <p class="contact-block__detail-value">742 Evergreen Terrace<br>San Francisco, CA 94102</p>
+              </div>
+            </div>
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="4" fill="var(--color-accent-light)"/>
+                  <path d="M7 4h2l2 4-1.5 1.5a11 11 0 005 5L16 13l4 2v2a2 2 0 01-2 2A16 16 0 015 6a2 2 0 012-2z" transform="translate(0 0)" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-block__detail-label">Phone</p>
+                <p class="contact-block__detail-value"><a href="tel:+14155550132">+1 (415) 555-0132</a></p>
+              </div>
+            </div>
+            <div class="contact-block__detail">
+              <div class="contact-block__detail-icon">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="4" fill="var(--color-accent-light)"/>
+                  <circle cx="12" cy="12" r="7" stroke="var(--color-accent)" stroke-width="1.5" fill="none"/>
+                  <path d="M12 8v4l3 2" stroke="var(--color-accent)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-block__detail-label">Business Hours</p>
+                <p class="contact-block__detail-value">Mon – Fri: 9:00 AM – 6:00 PM PST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div>
+          <form class="form" action="#" method="post">
+            <div class="form__row">
+              <div class="form-field">
+                <label class="form-field__label" for="first-name">First Name</label>
+                <input class="form-field__input" type="text" id="first-name" name="first-name" placeholder="Jane">
+              </div>
+              <div class="form-field">
+                <label class="form-field__label" for="last-name">Last Name</label>
+                <input class="form-field__input" type="text" id="last-name" name="last-name" placeholder="Doe">
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label" for="email">Email Address</label>
+              <input class="form-field__input" type="email" id="email" name="email" placeholder="jane@example.com">
+            </div>
+            <div class="form-field">
+              <label class="form-field__label" for="subject">Subject</label>
+              <select class="form-field__select" id="subject" name="subject">
+                <option value="" disabled selected>Select a topic</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="sales">Sales &amp; Pricing</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-field__label" for="message">Message</label>
+              <textarea class="form-field__textarea" id="message" name="message" placeholder="Tell us how we can help…"></textarea>
+              <p class="form-field__hint">We typically respond within one business day.</p>
+            </div>
+            <div class="form__submit">
+              <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP EMBED PLACEHOLDER -->
+  <section class="content-section content-section--bordered">
+    <div class="container">
+      <div class="map-embed-placeholder">
+        <div class="map-embed-placeholder__grid">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="map-grid" width="40" height="40" patternunits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--color-gray-300)" stroke-width="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#map-grid)"/>
+            <line x1="0" y1="45%" x2="100%" y2="55%" stroke="var(--color-gray-300)" stroke-width="2"/>
+            <line x1="30%" y1="0" x2="70%" y2="100%" stroke="var(--color-gray-300)" stroke-width="1.5"/>
+            <line x1="10%" y1="80%" x2="90%" y2="20%" stroke="var(--color-gray-300)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="map-embed-placeholder__pin">
+          <svg width="40" height="52" viewbox="0 0 40 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 0C9 0 0 9 0 20c0 15 20 32 20 32s20-17 20-32C40 9 31 0 20 0z" fill="var(--color-accent)"/>
+            <circle cx="20" cy="19" r="8" fill="var(--color-white)"/>
+          </svg>
+        </div>
+        <p class="map-embed-placeholder__label">Map Location</p>
+        <p class="map-embed-placeholder__address">742 Evergreen Terrace, San Francisco, CA 94102</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section class="newsletter-signup">
+    <div class="container">
+      <div class="newsletter-signup__inner">
+        <div class="newsletter-signup__content">
+          <h2 class="newsletter-signup__title">Stay in the Loop</h2>
+          <p class="newsletter-signup__text">Subscribe to our newsletter for product updates, tips, and company news — delivered straight to your inbox.</p>
+        </div>
+        <form class="newsletter-signup__form" action="#" method="post">
+          <input class="newsletter-signup__input" type="email" placeholder="Enter your email address" aria-label="Email address">
+          <button class="newsletter-signup__btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__brand-name">Grid<span>line</span></div>
+        <p class="footer__brand-desc">The project management platform built for teams that ship. Organize, track, and deliver — without the chaos.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Product</div>
+        <div class="footer__links">
+          <a href="features.html" class="footer__link">Features</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="index.html" class="footer__link">Home</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Company</div>
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">About</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Connect</div>
+        <div class="footer__links">
+          <a href="contact.html" class="footer__link">Get in Touch</a>
+          <a href="pricing.html" class="footer__link">Start Free Trial</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2024 Gridline. All rights reserved.</span>
+      <div class="footer__bottom-links">
+        <a href="about.html" class="footer__bottom-link">Privacy Policy</a>
+        <a href="about.html" class="footer__bottom-link">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

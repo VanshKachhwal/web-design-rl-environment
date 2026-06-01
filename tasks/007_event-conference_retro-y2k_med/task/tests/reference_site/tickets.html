@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Tickets</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="WellnessConX 2025 Home">
+      Wellness<span>Con</span>X
+      <svg class="starburst" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <polygon points="10,0 12,7 20,7 14,12 16,20 10,15 4,20 6,12 0,7 8,7" fill="#b5f836" opacity="0.9"/>
+      </svg>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="schedule.html" class="header__nav-link">Schedule</a></li>
+        <li><a href="speakers.html" class="header__nav-link">Speakers</a></li>
+        <li><a href="tickets.html" class="header__nav-link">Tickets</a></li>
+        <li><a href="venue.html" class="header__nav-link">Venue</a></li>
+        <li><a href="sponsors.html" class="header__nav-link">Sponsors</a></li>
+        <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        <li><a href="tickets.html" class="header__nav-link header__nav-link--cta">Get Passes ✦</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- ═══════════════════════════════════════
+       HEADER SECTION (Page Hero)
+       ═══════════════════════════════════════ -->
+  <section class="hero" style="min-height: 50vh; padding: var(--space-20) var(--space-6);">
+    <div class="hero__bg-shape hero__bg-shape--1"></div>
+    <div class="hero__bg-shape hero__bg-shape--2"></div>
+    <div class="hero__bg-shape hero__bg-shape--3"></div>
+    <span class="hero__badge">WellnessConX 2025</span>
+    <h1 class="hero__title">Get Your <em>Tickets</em></h1>
+    <p class="hero__subtitle">Secure your spot at the premier wellness conference. Choose the pass that fits your journey — from single-day access to the full VIP experience.</p>
+    <div class="hero__actions">
+      <a href="#pricing" class="hero__btn hero__btn--primary">View Pricing</a>
+      <a href="schedule.html" class="hero__btn hero__btn--secondary">See Schedule</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTENT SECTION — Why Attend
+       ═══════════════════════════════════════ -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <h2 class="content-section__title">Your Ticket Includes</h2>
+      <p class="content-section__subtitle">Every pass unlocks transformative experiences, world-class speakers, and a community that will elevate your wellness journey.</p>
+    </div>
+    <div class="stat-row" style="padding-top: var(--space-0); padding-bottom: var(--space-0);">
+      <div class="stat">
+        <span class="stat__number">50+</span>
+        <span class="stat__label">Sessions</span>
+        <span class="stat__desc">Workshops, panels &amp; keynotes</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">30+</span>
+        <span class="stat__label">Speakers</span>
+        <span class="stat__desc">Industry-leading experts</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">3</span>
+        <span class="stat__label">Days</span>
+        <span class="stat__desc">Of immersive wellness</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">1K+</span>
+        <span class="stat__label">Attendees</span>
+        <span class="stat__desc">Global wellness community</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRICING TABLE
+       ═══════════════════════════════════════ -->
+  <section class="pricing-table" id="pricing">
+    <div class="pricing-table__header">
+      <h2 class="pricing-table__title">Choose Your Pass</h2>
+      <p class="pricing-table__subtitle">All passes include access to the expo hall, networking lounges, and complimentary wellness kits.</p>
+    </div>
+    <div class="pricing-table__grid">
+
+      <!-- Day Pass -->
+      <div class="pricing-table__card">
+        <span class="pricing-table__tier">Day Pass</span>
+        <div class="pricing-table__price">
+          <span class="pricing-table__price-currency">$</span>149
+          <span class="pricing-table__price-period">per day</span>
+        </div>
+        <ul class="pricing-table__features">
+          <li class="pricing-table__feature">Single-day conference access</li>
+          <li class="pricing-table__feature">Expo hall &amp; vendor booths</li>
+          <li class="pricing-table__feature">Keynote sessions</li>
+          <li class="pricing-table__feature">Networking lounge access</li>
+          <li class="pricing-table__feature">Wellness starter kit</li>
+          <li class="pricing-table__feature--disabled">Workshop participation</li>
+          <li class="pricing-table__feature--disabled">VIP speaker meet &amp; greet</li>
+          <li class="pricing-table__feature--disabled">Post-event recordings</li>
+        </ul>
+        <a href="contact.html" class="pricing-table__btn">Get Day Pass</a>
+      </div>
+
+      <!-- Full Pass (Featured) -->
+      <div class="pricing-table__card pricing-table__card--featured">
+        <span class="pricing-table__card-badge badge badge--solid-pink">Most Popular</span>
+        <span class="pricing-table__tier">Full Pass</span>
+        <div class="pricing-table__price">
+          <span class="pricing-table__price-currency">$</span>399
+          <span class="pricing-table__price-period">all 3 days</span>
+        </div>
+        <ul class="pricing-table__features">
+          <li class="pricing-table__feature">Full 3-day conference access</li>
+          <li class="pricing-table__feature">Expo hall &amp; vendor booths</li>
+          <li class="pricing-table__feature">All keynote sessions</li>
+          <li class="pricing-table__feature">Networking lounge access</li>
+          <li class="pricing-table__feature">Premium wellness kit</li>
+          <li class="pricing-table__feature">Workshop participation</li>
+          <li class="pricing-table__feature">Post-event recordings</li>
+          <li class="pricing-table__feature--disabled">VIP speaker meet &amp; greet</li>
+        </ul>
+        <a href="contact.html" class="pricing-table__btn">Get Full Pass</a>
+      </div>
+
+      <!-- VIP Pass -->
+      <div class="pricing-table__card">
+        <span class="pricing-table__card-badge badge badge--solid-lime">Premium</span>
+        <span class="pricing-table__tier">VIP Pass</span>
+        <div class="pricing-table__price">
+          <span class="pricing-table__price-currency">$</span>799
+          <span class="pricing-table__price-period">all-inclusive</span>
+        </div>
+        <ul class="pricing-table__features">
+          <li class="pricing-table__feature">Full 3-day conference access</li>
+          <li class="pricing-table__feature">Expo hall &amp; vendor booths</li>
+          <li class="pricing-table__feature">All keynote sessions</li>
+          <li class="pricing-table__feature">Priority front-row seating</li>
+          <li class="pricing-table__feature">Deluxe wellness kit</li>
+          <li class="pricing-table__feature">All workshops included</li>
+          <li class="pricing-table__feature">VIP speaker meet &amp; greet</li>
+          <li class="pricing-table__feature">Post-event recordings</li>
+        </ul>
+        <a href="contact.html" class="pricing-table__btn">Get VIP Pass</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       COMPARISON TABLE
+       ═══════════════════════════════════════ -->
+  <section class="comparison-table">
+    <h2 class="comparison-table__title">Compare All Passes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Day Pass</th>
+          <th class="comparison-table__highlight-col">Full Pass</th>
+          <th>VIP Pass</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Conference Days</td>
+          <td>1 Day</td>
+          <td class="comparison-table__highlight-col">3 Days</td>
+          <td>3 Days</td>
+        </tr>
+        <tr>
+          <td>Keynote Sessions</td>
+          <td><span class="comparison-table__check">✓</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__check">✓</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Expo Hall Access</td>
+          <td><span class="comparison-table__check">✓</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__check">✓</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Networking Lounge</td>
+          <td><span class="comparison-table__check">✓</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__check">✓</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Workshop Access</td>
+          <td><span class="comparison-table__cross">✗</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__check">✓</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Wellness Kit</td>
+          <td>Starter</td>
+          <td class="comparison-table__highlight-col">Premium</td>
+          <td>Deluxe</td>
+        </tr>
+        <tr>
+          <td>Priority Seating</td>
+          <td><span class="comparison-table__cross">✗</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__cross">✗</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Speaker Meet &amp; Greet</td>
+          <td><span class="comparison-table__cross">✗</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__cross">✗</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Post-Event Recordings</td>
+          <td><span class="comparison-table__cross">✗</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__check">✓</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Exclusive VIP Dinner</td>
+          <td><span class="comparison-table__cross">✗</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__cross">✗</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Certificate of Attendance</td>
+          <td><span class="comparison-table__cross">✗</span></td>
+          <td class="comparison-table__highlight-col"><span class="comparison-table__check">✓</span></td>
+          <td><span class="comparison-table__check">✓</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="contact.html" class="badge badge--lavender">Select</a></td>
+          <td class="comparison-table__highlight-col"><a href="contact.html" class="badge badge--solid-pink">Select</a></td>
+          <td><a href="contact.html" class="badge badge--solid-lime">Select</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FAQ
+       ═══════════════════════════════════════ -->
+  <section class="faq">
+    <h2 class="faq__title">Frequently Asked Questions</h2>
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <div class="faq__question">Can I upgrade my pass after purchase?</div>
+        <p class="faq__answer">Yes! You can upgrade from a Day Pass to a Full Pass or VIP Pass at any time before the event. Simply reach out to our team via the <a href="contact.html">contact page</a> and we'll apply the price difference to your upgrade.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">What is the refund and cancellation policy?</div>
+        <p class="faq__answer">Full refunds are available up to 30 days before the event. Between 30 and 14 days, a 50% refund is issued. Within 14 days of the event, tickets are non-refundable but may be transferred to another attendee at no cost.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">Are group discounts available?</div>
+        <p class="faq__answer">Absolutely. Groups of 5 or more receive 15% off, and groups of 10 or more receive 25% off. Contact us through the <a href="contact.html">contact page</a> to arrange group pricing.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">Is there a student or early-career discount?</div>
+        <p class="faq__answer">We offer a 30% student discount on Full Pass and Day Pass tickets with a valid student ID. Early-career professionals within 2 years of graduation also qualify. Reach out via our <a href="contact.html">contact form</a> with proof of eligibility.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">What does the wellness kit include?</div>
+        <p class="faq__answer">The Starter kit includes a branded tote bag, journal, and essential oil sampler. The Premium kit adds a meditation cushion and herbal tea collection. The Deluxe VIP kit includes all of the above plus a premium yoga mat and personalized wellness plan consultation.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">Can I transfer my ticket to someone else?</div>
+        <p class="faq__answer">Yes, all ticket types are transferable up to 48 hours before the event. Simply <a href="contact.html">contact our team</a> with the new attendee's details and we'll update the registration.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">Where is the event held?</div>
+        <p class="faq__answer">WellnessConX 2025 takes place at the Harmony Convention Center. Visit our <a href="venue.html">venue page</a> for full details including directions, parking, and nearby accommodations.</p>
+      </div>
+
+      <div class="faq__item">
+        <div class="faq__question">Will sessions be recorded?</div>
+        <p class="faq__answer">Full Pass and VIP Pass holders receive access to post-event recordings of all keynotes and select workshops. Recordings are typically available within 2 weeks after the conference concludes.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="cta-banner__bg-circle cta-banner__bg-circle--1"></div>
+    <div class="cta-banner__bg-circle cta-banner__bg-circle--2"></div>
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to Transform Your Wellness Journey?</h2>
+      <p class="cta-banner__text">Early bird pricing ends soon. Secure your pass today and join over 1,000 wellness professionals, practitioners, and enthusiasts at WellnessConX 2025.</p>
+      <a href="contact.html" class="cta-banner__btn">Reserve Your Spot Now</a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        Wellness<span>Con</span>X
+        <svg class="footer__starburst" width="16" height="16" viewBox="0 0 20 20" aria-hidden="true">
+          <polygon points="10,0 12,7 20,7 14,12 16,20 10,15 4,20 6,12 0,7 8,7" fill="#b5f836" opacity="0.9"/>
+        </svg>
+      </div>
+      <p class="footer__tagline">Rediscover holistic living through the optimistic, cyber-futuristic lens of Y2K. June 14–16, 2025 — three days of meditation, nutrition, yoga, and keynote talks.</p>
+      <svg width="60" height="60" viewBox="0 0 60 60" aria-hidden="true">
+        <circle cx="30" cy="30" r="28" fill="none" stroke="#ff3ea5" stroke-width="2" opacity="0.3"/>
+        <circle cx="30" cy="30" r="18" fill="none" stroke="#b5f836" stroke-width="2" opacity="0.3"/>
+        <circle cx="30" cy="30" r="8" fill="#c4b5fd" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="footer__column">
+      <h3 class="footer__column-title">Navigate</h3>
+      <ul class="footer__links">
+        <li><a href="index.html" class="footer__link">Home</a></li>
+        <li><a href="schedule.html" class="footer__link">Schedule</a></li>
+        <li><a href="speakers.html" class="footer__link">Speakers</a></li>
+        <li><a href="tickets.html" class="footer__link">Tickets</a></li>
+      </ul>
+    </div>
+    <div class="footer__column">
+      <h3 class="footer__column-title">Explore</h3>
+      <ul class="footer__links">
+        <li><a href="venue.html" class="footer__link">Venue</a></li>
+        <li><a href="sponsors.html" class="footer__link">Sponsors</a></li>
+        <li><a href="contact.html" class="footer__link">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__column">
+      <h3 class="footer__column-title">Connect</h3>
+      <ul class="footer__links">
+        <li><a href="contact.html" class="footer__link">Get in Touch</a></li>
+        <li><a href="tickets.html" class="footer__link">Buy Passes</a></li>
+        <li><a href="schedule.html" class="footer__link">Full Schedule</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy; 2025 WellnessConX. All rights reserved. Built with
+      <svg class="starburst" width="12" height="12" viewBox="0 0 20 20" aria-hidden="true" style="display:inline-block;vertical-align:middle;">
+        <polygon points="10,0 12,7 20,7 14,12 16,20 10,15 4,20 6,12 0,7 8,7" fill="#ff3ea5"/>
+      </svg>
+      and retro vibes.
+    </p>
+    <p>
+      <svg width="80" height="16" viewBox="0 0 80 16" aria-hidden="true">
+        <rect x="0" y="4" width="16" height="8" rx="4" fill="#c4b5fd" opacity="0.6"/>
+        <rect x="20" y="4" width="16" height="8" rx="4" fill="#ff3ea5" opacity="0.6"/>
+        <rect x="40" y="4" width="16" height="8" rx="4" fill="#b5f836" opacity="0.6"/>
+        <rect x="60" y="4" width="16" height="8" rx="4" fill="#c0c0c0" opacity="0.6"/>
+      </svg>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

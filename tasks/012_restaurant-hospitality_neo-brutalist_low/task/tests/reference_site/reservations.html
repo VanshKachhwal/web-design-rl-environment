@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Reservations</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="index.html">The Study Hall</a>
+    </div>
+    <nav>
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="menu.html" class="header__nav-link">Menu</a></li>
+        <li><a href="about.html" class="header__nav-link">About</a></li>
+        <li><a href="reservations.html" class="header__nav-link">Reservations</a></li>
+        <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO / HEADER SECTION -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__tagline">Book Your Table</span>
+      <h1 class="hero__title">Reservations</h1>
+      <p class="hero__subtitle">Secure your spot at our table. Whether it's an intimate dinner for two or a celebration with friends, we're ready to welcome you.</p>
+      <a href="#reservation-form" class="hero__cta">Reserve Now</a>
+    </div>
+    <div class="hero__pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="res-dots" x="0" y="0" width="30" height="30" patternunits="userSpaceOnUse">
+            <circle cx="15" cy="15" r="4" fill="var(--color-black)"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#res-dots)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <section class="content-section">
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat__number">120</div>
+        <div class="stat__label">Seats Available</div>
+        <div class="stat__sublabel">Indoor &amp; patio seating</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">7</div>
+        <div class="stat__label">Days a Week</div>
+        <div class="stat__sublabel">Open every evening</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">24</div>
+        <div class="stat__label">Private Events / Year</div>
+        <div class="stat__sublabel">Exclusive dining experiences</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">98%</div>
+        <div class="stat__label">Guest Satisfaction</div>
+        <div class="stat__sublabel">Based on feedback cards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION INFO -->
+  <section class="content-section--alt">
+    <div class="content-section__inner" style="padding: var(--space-4xl) var(--space-xl);">
+      <span class="content-section__label">Before You Book</span>
+      <h2 class="content-section__title">Reservation Details</h2>
+      <p class="content-section__text">We accept reservations for parties of 1–8 guests through our online form below. For larger groups or private dining events, please reach out to us directly via our contact page. Reservations are held for 15 minutes past the booking time.</p>
+      <p class="content-section__text">Walk-ins are always welcome, subject to availability. During peak hours (Friday and Saturday evenings), we strongly recommend booking in advance to guarantee your preferred time.</p>
+    </div>
+  </section>
+
+  <!-- RESERVATION FORM -->
+  <section class="content-section" id="reservation-form">
+    <span class="content-section__label">Online Booking</span>
+    <h2 class="content-section__title">Make a Reservation</h2>
+
+    <form action="#" method="post">
+      <div class="form-field">
+        <label class="form-field__label" for="full-name">Full Name <span class="form-field__required">*</span></label>
+        <input class="form-field__input" type="text" id="full-name" name="full-name" placeholder="e.g. Jane Doe" required>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="email">Email Address <span class="form-field__required">*</span></label>
+        <input class="form-field__input" type="email" id="email" name="email" placeholder="e.g. jane@example.com" required>
+        <span class="form-field__hint">We'll send your confirmation to this address.</span>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="phone">Phone Number <span class="form-field__required">*</span></label>
+        <input class="form-field__input" type="tel" id="phone" name="phone" placeholder="e.g. (555) 123-4567" required>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="date">Preferred Date <span class="form-field__required">*</span></label>
+        <input class="form-field__input" type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="time">Preferred Time <span class="form-field__required">*</span></label>
+        <select class="form-field__select" id="time" name="time" required>
+          <option value="">Select a time slot</option>
+          <option value="17:00">5:00 PM</option>
+          <option value="17:30">5:30 PM</option>
+          <option value="18:00">6:00 PM</option>
+          <option value="18:30">6:30 PM</option>
+          <option value="19:00">7:00 PM</option>
+          <option value="19:30">7:30 PM</option>
+          <option value="20:00">8:00 PM</option>
+          <option value="20:30">8:30 PM</option>
+          <option value="21:00">9:00 PM</option>
+          <option value="21:30">9:30 PM</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="guests">Number of Guests <span class="form-field__required">*</span></label>
+        <select class="form-field__select" id="guests" name="guests" required>
+          <option value="">Select party size</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+          <option value="6">6 Guests</option>
+          <option value="7">7 Guests</option>
+          <option value="8">8 Guests</option>
+        </select>
+        <span class="form-field__hint">For parties larger than 8, please <a href="contact.html">contact us</a> directly.</span>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="seating">Seating Preference</label>
+        <select class="form-field__select" id="seating" name="seating">
+          <option value="">No preference</option>
+          <option value="indoor">Indoor</option>
+          <option value="patio">Patio</option>
+          <option value="bar">Bar Area</option>
+          <option value="private">Private Dining Room</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="occasion">Special Occasion</label>
+        <select class="form-field__select" id="occasion" name="occasion">
+          <option value="">None</option>
+          <option value="birthday">Birthday</option>
+          <option value="anniversary">Anniversary</option>
+          <option value="date-night">Date Night</option>
+          <option value="business">Business Dinner</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="dietary">Dietary Requirements or Allergies</label>
+        <textarea class="form-field__textarea" id="dietary" name="dietary" placeholder="Please let us know about any allergies or dietary needs..."></textarea>
+        <span class="form-field__hint">Our kitchen can accommodate most dietary requirements with advance notice.</span>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label" for="special-requests">Additional Requests</label>
+        <textarea class="form-field__textarea" id="special-requests" name="special-requests" placeholder="High chair, wheelchair access, specific table, etc."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Submit Reservation</button>
+    </form>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq">
+    <h2 class="faq__title">Reservation FAQ</h2>
+
+    <div class="faq__item">
+      <div class="faq__question">How far in advance can I make a reservation?</div>
+      <div class="faq__answer">We accept reservations up to 30 days in advance. For holiday periods and special events, we recommend booking as early as possible as tables fill quickly.</div>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__question">What is your cancellation policy?</div>
+      <div class="faq__answer">We kindly ask that you cancel or modify your reservation at least 24 hours in advance. This allows us to accommodate other guests who may be waiting for a table. You can cancel by calling us or sending an email.</div>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__question">Do you accommodate dietary restrictions?</div>
+      <div class="faq__answer">Absolutely. Our kitchen is experienced with gluten-free, vegan, vegetarian, and allergen-conscious preparations. Please note any requirements in the reservation form or inform your server upon arrival. View our full <a href="menu.html">menu</a> for details.</div>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__question">Is there a dress code?</div>
+      <div class="faq__answer">We maintain a smart-casual dress code. We ask that guests refrain from wearing athletic wear, flip-flops, or overly casual attire. When in doubt, a collared shirt and closed-toe shoes are always appropriate.</div>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__question">Can I book a private dining room?</div>
+      <div class="faq__answer">Yes! Our private dining room seats up to 20 guests and is perfect for celebrations, corporate dinners, and intimate gatherings. Please <a href="contact.html">contact us</a> to arrange private dining, as these bookings require a custom menu consultation.</div>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__question">What if I'm running late?</div>
+      <div class="faq__answer">We hold reservations for 15 minutes past the scheduled time. If you're running late, please give us a call so we can do our best to accommodate you. After 15 minutes, the table may be released to walk-in guests.</div>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__question">Do you accept walk-ins?</div>
+      <div class="faq__answer">Walk-ins are always welcome on a first-come, first-served basis. However, during peak hours — especially Friday and Saturday evenings — availability may be limited. We recommend reserving ahead to guarantee your spot.</div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Prefer to Talk to Us?</h2>
+      <p class="cta-banner__text">Our team is happy to help with special requests, large party bookings, or any questions about your upcoming visit. Reach out and we'll take care of everything.</p>
+      <a href="contact.html" class="cta-banner__btn">Contact Us</a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <h3 class="footer__col-title">The Study Hall</h3>
+      <p class="footer__text">A campus-adjacent restaurant &amp; caf&eacute; where good food meets good company. Fueling students, educators, and neighbors since 2018.</p>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Navigate</h3>
+      <nav class="footer__links">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="menu.html" class="footer__link">Menu</a>
+        <a href="about.html" class="footer__link">About</a>
+        <a href="reservations.html" class="footer__link">Reservations</a>
+        <a href="contact.html" class="footer__link">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Hours</h3>
+      <p class="footer__text">Mon &ndash; Fri: 7:00 AM &ndash; 10:00 PM</p>
+      <p class="footer__text">Saturday: 8:00 AM &ndash; 11:00 PM</p>
+      <p class="footer__text">Sunday: 8:00 AM &ndash; 9:00 PM</p>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Contact</h3>
+      <p class="footer__text">142 University Ave<br>College Town, ST 04820</p>
+      <p class="footer__text" style="margin-top:0.5rem;">(555) 234-5678</p>
+      <p class="footer__text">hello@thestudyhall.cafe</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy; 2024 The Study Hall. All rights reserved. No scripts. No nonsense.</p>
+  </div>
+</footer>
+</body>
+</html>

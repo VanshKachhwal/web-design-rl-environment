@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="index.html">The Study Hall</a>
+    </div>
+    <nav>
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="menu.html" class="header__nav-link">Menu</a></li>
+        <li><a href="about.html" class="header__nav-link">About</a></li>
+        <li><a href="reservations.html" class="header__nav-link">Reservations</a></li>
+        <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__tagline">Farm to Table Since 1987</span>
+      <h1 class="hero__title">Bold Flavors, Honest Food</h1>
+      <p class="hero__subtitle">We craft unforgettable dining experiences using locally sourced ingredients, time-honored techniques, and a passion for bringing people together around the table.</p>
+      <a href="reservations.html" class="hero__cta">Reserve Your Table</a>
+    </div>
+    <div class="hero__pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hero-dots" x="0" y="0" width="30" height="30" patternunits="userSpaceOnUse">
+            <circle cx="15" cy="15" r="4" fill="var(--color-black)"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-dots)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID -->
+  <section class="feature-grid">
+    <h2 class="feature-grid__title">Why Dine With Us</h2>
+    <div class="feature-grid__items">
+
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3C14 3 4 10 4 17a10 10 0 0020 0C24 10 14 3 14 3z" fill="var(--color-olive)" stroke="var(--color-black)" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Locally Sourced</h3>
+        <p class="feature-grid__item-text">Every ingredient is hand-picked from farms within fifty miles of our kitchen, ensuring peak freshness and supporting our community.</p>
+      </div>
+
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="10" width="20" height="14" rx="2" fill="var(--color-terracotta)" stroke="var(--color-black)" stroke-width="2"/>
+            <path d="M8 10V7a6 6 0 0112 0v3" stroke="var(--color-black)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Chef's Craft</h3>
+        <p class="feature-grid__item-text">Our award-winning chefs bring decades of culinary expertise, blending tradition with bold innovation in every dish they create.</p>
+      </div>
+
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="10" fill="var(--color-amber-light)" stroke="var(--color-black)" stroke-width="2"/>
+            <path d="M14 8v6l4 3" stroke="var(--color-black)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Seasonal Menus</h3>
+        <p class="feature-grid__item-text">Our menu evolves with the seasons, showcasing the finest produce each time of year has to offer. There's always something new to discover.</p>
+      </div>
+
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 4l3 6h7l-5.5 4.5 2 7L14 17l-6.5 4.5 2-7L4 10h7z" fill="var(--color-amber)" stroke="var(--color-black)" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Warm Atmosphere</h3>
+        <p class="feature-grid__item-text">Rustic charm meets modern comfort in our dining space, designed to make every guest feel right at home from the moment they walk in.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Explore Our Menu</h2>
+      <p class="cta-banner__text">From hearth-roasted mains to handcrafted desserts, our menu is a celebration of bold flavors and honest cooking. See what's on the table today.</p>
+      <a href="menu.html" class="cta-banner__btn">View Full Menu</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-row">
+
+    <div class="testimonial">
+      <span class="testimonial__quote-mark">&ldquo;</span>
+      <p class="testimonial__text">The best dining experience I've had in years. Every bite told a story, and the staff made us feel like family. We'll be back every week.</p>
+      <p class="testimonial__author">Margaret Chen</p>
+      <p class="testimonial__role">Local Food Critic</p>
+    </div>
+
+    <div class="testimonial">
+      <span class="testimonial__quote-mark">&ldquo;</span>
+      <p class="testimonial__text">Incredible atmosphere and the seasonal tasting menu blew us away. You can taste the care and passion in every single dish they serve.</p>
+      <p class="testimonial__author">David Okonkwo</p>
+      <p class="testimonial__role">Regular Guest Since 2019</p>
+    </div>
+
+    <div class="testimonial">
+      <span class="testimonial__quote-mark">&ldquo;</span>
+      <p class="testimonial__text">We hosted our anniversary dinner here and it was absolutely perfect. The private dining room, the wine pairings — everything was flawless.</p>
+      <p class="testimonial__author">Sarah &amp; James Rivera</p>
+      <p class="testimonial__role">Anniversary Celebration</p>
+    </div>
+
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section class="newsletter-signup">
+    <div class="newsletter-signup__inner">
+      <h2 class="newsletter-signup__title">Stay in the Loop</h2>
+      <p class="newsletter-signup__text">Sign up for our newsletter to get seasonal menu updates, exclusive event invitations, and special offers delivered straight to your inbox.</p>
+      <form class="newsletter-signup__form" action="#" method="post">
+        <input type="email" class="newsletter-signup__input" placeholder="Enter your email address" aria-label="Email address" required/>
+        <button type="submit" class="newsletter-signup__btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <h3 class="footer__col-title">The Study Hall</h3>
+      <p class="footer__text">A campus-adjacent restaurant &amp; caf&eacute; where good food meets good company. Fueling students, educators, and neighbors since 2018.</p>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Navigate</h3>
+      <nav class="footer__links">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="menu.html" class="footer__link">Menu</a>
+        <a href="about.html" class="footer__link">About</a>
+        <a href="reservations.html" class="footer__link">Reservations</a>
+        <a href="contact.html" class="footer__link">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Hours</h3>
+      <p class="footer__text">Mon &ndash; Fri: 7:00 AM &ndash; 10:00 PM</p>
+      <p class="footer__text">Saturday: 8:00 AM &ndash; 11:00 PM</p>
+      <p class="footer__text">Sunday: 8:00 AM &ndash; 9:00 PM</p>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Contact</h3>
+      <p class="footer__text">142 University Ave<br>College Town, ST 04820</p>
+      <p class="footer__text" style="margin-top:0.5rem;">(555) 234-5678</p>
+      <p class="footer__text">hello@thestudyhall.cafe</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy; 2024 The Study Hall. All rights reserved. No scripts. No nonsense.</p>
+  </div>
+</footer>
+</body>
+</html>

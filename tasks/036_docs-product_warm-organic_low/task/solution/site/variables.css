@@ -1,0 +1,97 @@
+:root {
+  /* Palette */
+  --color-terracotta: #C4654A;
+  --color-terracotta-dark: #A8503A;
+  --color-terracotta-light: #D4836A;
+  --color-sage: #7A9B76;
+  --color-sage-dark: #5F7E5B;
+  --color-sage-light: #A3BFA0;
+  --color-sage-pale: #D4E5D2;
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F5E6D0;
+  --color-brown: #5C4033;
+  --color-brown-light: #7A5C4F;
+  --color-brown-pale: #A68B7B;
+  --color-warm-white: #FFFCF7;
+  --color-warm-gray: #E8E0D8;
+  --color-warm-gray-dark: #C5B9AD;
+  --color-text-primary: #3B2F2F;
+  --color-text-secondary: #6B5B4F;
+  --color-text-muted: #9A8A7C;
+  --color-text-inverse: #FFFCF7;
+  --color-border: #D9CFC3;
+  --color-border-light: #EDE6DC;
+  --color-success: #6B9E67;
+  --color-warning: #D4A44A;
+  --color-error: #C4544A;
+  --color-code-bg: #2D2520;
+  --color-code-text: #F0E6D8;
+  --color-code-comment: #8A7B6B;
+  --color-code-keyword: #D4836A;
+  --color-code-string: #A3BFA0;
+  --color-code-number: #D4A44A;
+
+  /* Typography - Scale (1.25 ratio) */
+  --font-text: 'Work Sans', 'Inter', 'Source Serif 4', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-ui: 'Space Grotesk', 'Archivo', sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Spacing - 4px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Widths */
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+  --max-width-wide: 1400px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(92, 64, 51, 0.08);
+  --shadow-md: 0 4px 12px rgba(92, 64, 51, 0.1);
+  --shadow-lg: 0 8px 24px rgba(92, 64, 51, 0.12);
+  --shadow-xl: 0 16px 48px rgba(92, 64, 51, 0.15);
+
+  /* Borders */
+  --border-width: 1px;
+  --border-width-thick: 2px;
+}

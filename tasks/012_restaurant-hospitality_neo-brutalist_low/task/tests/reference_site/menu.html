@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Menu</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="index.html">The Study Hall</a>
+    </div>
+    <nav>
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="menu.html" class="header__nav-link">Menu</a></li>
+        <li><a href="about.html" class="header__nav-link">About</a></li>
+        <li><a href="reservations.html" class="header__nav-link">Reservations</a></li>
+        <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER (page hero section) -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__tagline">Crafted With Care</span>
+      <h1 class="hero__title">Our Menu</h1>
+      <p class="hero__subtitle">Seasonal dishes made from locally sourced ingredients, prepared with passion and served with bold flavor.</p>
+      <a href="reservations.html" class="hero__cta">Reserve a Table</a>
+    </div>
+    <div class="hero__pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="menu-dots" x="0" y="0" width="30" height="30" patternunits="userSpaceOnUse">
+            <circle cx="15" cy="15" r="4" fill="var(--color-black)"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#menu-dots)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION -->
+  <section class="content-section text-center">
+    <span class="content-section__label">From Our Kitchen</span>
+    <h2 class="content-section__title">What We Serve</h2>
+    <p class="content-section__text" style="margin-left:auto;margin-right:auto;">Every plate tells a story. Our menu changes with the seasons, drawing inspiration from traditional techniques and the freshest produce our local farms have to offer. Below you'll find our current favorites — from hearty starters to indulgent desserts.</p>
+  </section>
+
+  <!-- MENU CARD SECTION: Starters -->
+  <section class="content-section--alt">
+    <div class="content-section__inner" style="padding:var(--space-4xl) var(--space-xl);">
+      <span class="content-section__label">First Course</span>
+      <h2 class="content-section__title mb-lg">Starters</h2>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <span class="menu-card__category">Seasonal</span>
+          <h3 class="menu-card__name">Roasted Beet Tartare</h3>
+          <p class="menu-card__desc">Heirloom beets, pickled shallots, horseradish cream, and toasted pumpernickel crumble on a bed of microgreens.</p>
+          <span class="menu-card__price">$14</span>
+          <span class="menu-card__dietary">V · GF</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">House Favorite</span>
+          <h3 class="menu-card__name">Charred Octopus</h3>
+          <p class="menu-card__desc">Tender octopus grilled over open flame, served with smoked paprika aioli, crispy potatoes, and preserved lemon.</p>
+          <span class="menu-card__price">$18</span>
+          <span class="menu-card__dietary">GF · DF</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">Classic</span>
+          <h3 class="menu-card__name">French Onion Soup</h3>
+          <p class="menu-card__desc">Slow-caramelized onions in rich beef broth, topped with a crusty gruyère crouton and fresh thyme.</p>
+          <span class="menu-card__price">$12</span>
+          <span class="menu-card__dietary">Contains gluten · dairy</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">Light</span>
+          <h3 class="menu-card__name">Burrata &amp; Stone Fruit</h3>
+          <p class="menu-card__desc">Creamy burrata with grilled peaches, arugula, toasted pistachios, and aged balsamic reduction.</p>
+          <span class="menu-card__price">$16</span>
+          <span class="menu-card__dietary">V · GF</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">Shared</span>
+          <h3 class="menu-card__name">Charcuterie Board</h3>
+          <p class="menu-card__desc">Selection of cured meats, artisan cheeses, house pickles, honeycomb, and grilled sourdough. Serves two.</p>
+          <span class="menu-card__price">$24</span>
+          <span class="menu-card__dietary">Contains gluten · dairy · nuts</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">New</span>
+          <h3 class="menu-card__name">Corn &amp; Crab Fritters</h3>
+          <p class="menu-card__desc">Crispy fritters with sweet corn and blue crab, served with a jalapeño-lime crema and pickled radish.</p>
+          <span class="menu-card__price">$15</span>
+          <span class="menu-card__dietary">Contains shellfish · gluten</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU CARD SECTION: Mains -->
+  <section class="content-section">
+    <span class="content-section__label">Second Course</span>
+    <h2 class="content-section__title mb-lg">Main Courses</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <span class="menu-card__category">Signature</span>
+        <h3 class="menu-card__name">Braised Short Rib</h3>
+        <p class="menu-card__desc">48-hour braised beef short rib with celery root purée, roasted carrots, and a red wine demi-glace.</p>
+        <span class="menu-card__price">$34</span>
+        <span class="menu-card__dietary">GF</span>
+      </div>
+      <div class="menu-card">
+        <span class="menu-card__category">Seafood</span>
+        <h3 class="menu-card__name">Pan-Seared Halibut</h3>
+        <p class="menu-card__desc">Wild halibut with saffron risotto, blistered cherry tomatoes, and a lemon-caper brown butter sauce.</p>
+        <span class="menu-card__price">$32</span>
+        <span class="menu-card__dietary">GF</span>
+      </div>
+      <div class="menu-card">
+        <span class="menu-card__category">Plant-Based</span>
+        <h3 class="menu-card__name">Wild Mushroom Ragout</h3>
+        <p class="menu-card__desc">Seasonal mushrooms slow-cooked with herbs de Provence, served over creamy polenta with truffle oil.</p>
+        <span class="menu-card__price">$24</span>
+        <span class="menu-card__dietary">VG · GF</span>
+      </div>
+      <div class="menu-card">
+        <span class="menu-card__category">Heritage</span>
+        <h3 class="menu-card__name">Roasted Half Chicken</h3>
+        <p class="menu-card__desc">Free-range chicken roasted with lemon and rosemary, served with garlic confit mashed potatoes and haricots verts.</p>
+        <span class="menu-card__price">$28</span>
+        <span class="menu-card__dietary">GF</span>
+      </div>
+      <div class="menu-card">
+        <span class="menu-card__category">House Favorite</span>
+        <h3 class="menu-card__name">Lamb Loin Chops</h3>
+        <p class="menu-card__desc">Herb-crusted lamb chops with mint chimichurri, roasted fingerling potatoes, and grilled asparagus.</p>
+        <span class="menu-card__price">$36</span>
+        <span class="menu-card__dietary">GF · DF</span>
+      </div>
+      <div class="menu-card">
+        <span class="menu-card__category">Pasta</span>
+        <h3 class="menu-card__name">Hand-Rolled Pappardelle</h3>
+        <p class="menu-card__desc">Fresh egg pasta with slow-braised wild boar ragù, pecorino romano, and fresh basil.</p>
+        <span class="menu-card__price">$26</span>
+        <span class="menu-card__dietary">Contains gluten · dairy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU CARD SECTION: Desserts -->
+  <section class="content-section--alt">
+    <div class="content-section__inner" style="padding:var(--space-4xl) var(--space-xl);">
+      <span class="content-section__label">Sweet Endings</span>
+      <h2 class="content-section__title mb-lg">Desserts</h2>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <span class="menu-card__category">Classic</span>
+          <h3 class="menu-card__name">Crème Brûlée</h3>
+          <p class="menu-card__desc">Vanilla bean custard with a caramelized sugar crust, served with fresh berries and a shortbread cookie.</p>
+          <span class="menu-card__price">$12</span>
+          <span class="menu-card__dietary">V · GF option available</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">Indulgent</span>
+          <h3 class="menu-card__name">Dark Chocolate Torte</h3>
+          <p class="menu-card__desc">Flourless chocolate torte with espresso ganache, salted caramel drizzle, and candied hazelnuts.</p>
+          <span class="menu-card__price">$14</span>
+          <span class="menu-card__dietary">GF · Contains nuts</span>
+        </div>
+        <div class="menu-card">
+          <span class="menu-card__category">Seasonal</span>
+          <h3 class="menu-card__name">Poached Pear Tart</h3>
+          <p class="menu-card__desc">Wine-poached pear on almond frangipane in a buttery pastry shell, with crème fraîche and honey.</p>
+          <span class="menu-card__price">$13</span>
+          <span class="menu-card__dietary">V · Contains gluten · nuts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TABLE -->
+  <section class="content-section">
+    <span class="content-section__label">Beverage Program</span>
+    <h2 class="content-section__title mb-xl">Drinks &amp; Pairings</h2>
+    <div style="overflow-x:auto;">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Beverage</th>
+            <th>Description</th>
+            <th>Glass</th>
+            <th>Bottle / Carafe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>House Red — Côtes du Rhône</td>
+            <td>Medium-bodied, dark fruit, peppery finish</td>
+            <td class="pricing-table__price">$14</td>
+            <td class="pricing-table__price">$52</td>
+          </tr>
+          <tr>
+            <td>House White — Sancerre</td>
+            <td>Crisp, mineral, citrus notes</td>
+            <td class="pricing-table__price">$15</td>
+            <td class="pricing-table__price">$56</td>
+          </tr>
+          <tr class="pricing-table__highlight">
+            <td>Chef's Pairing Flight</td>
+            <td>Three wines selected to complement your meal — ask your server</td>
+            <td class="pricing-table__price">$28</td>
+            <td class="pricing-table__price">—</td>
+          </tr>
+          <tr>
+            <td>Craft Cocktails</td>
+            <td>Rotating seasonal cocktails — see board for today's specials</td>
+            <td class="pricing-table__price">$16</td>
+            <td class="pricing-table__price">—</td>
+          </tr>
+          <tr>
+            <td>Local Craft Beer</td>
+            <td>Selection of regional brews on tap</td>
+            <td class="pricing-table__price">$9</td>
+            <td class="pricing-table__price">—</td>
+          </tr>
+          <tr>
+            <td>Sparkling Water</td>
+            <td>Still or sparkling, served with citrus</td>
+            <td class="pricing-table__price">$4</td>
+            <td class="pricing-table__price">$10</td>
+          </tr>
+          <tr>
+            <td>Espresso / Cappuccino</td>
+            <td>Single-origin roast, locally roasted</td>
+            <td class="pricing-table__price">$5 / $6</td>
+            <td class="pricing-table__price">—</td>
+          </tr>
+          <tr>
+            <td>Dessert Wine — Sauternes</td>
+            <td>Honeyed, apricot, perfect with dessert</td>
+            <td class="pricing-table__price">$18</td>
+            <td class="pricing-table__price">$68</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to Dine?</h2>
+      <p class="cta-banner__text">Our tables fill up fast, especially on weekends. Reserve your spot today and let us prepare an unforgettable evening for you.</p>
+      <a href="reservations.html" class="cta-banner__btn">Make a Reservation</a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <h3 class="footer__col-title">The Study Hall</h3>
+      <p class="footer__text">A campus-adjacent restaurant &amp; caf&eacute; where good food meets good company. Fueling students, educators, and neighbors since 2018.</p>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Navigate</h3>
+      <nav class="footer__links">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="menu.html" class="footer__link">Menu</a>
+        <a href="about.html" class="footer__link">About</a>
+        <a href="reservations.html" class="footer__link">Reservations</a>
+        <a href="contact.html" class="footer__link">Contact</a>
+      </nav>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Hours</h3>
+      <p class="footer__text">Mon &ndash; Fri: 7:00 AM &ndash; 10:00 PM</p>
+      <p class="footer__text">Saturday: 8:00 AM &ndash; 11:00 PM</p>
+      <p class="footer__text">Sunday: 8:00 AM &ndash; 9:00 PM</p>
+    </div>
+    <div>
+      <h3 class="footer__col-title">Contact</h3>
+      <p class="footer__text">142 University Ave<br>College Town, ST 04820</p>
+      <p class="footer__text" style="margin-top:0.5rem;">(555) 234-5678</p>
+      <p class="footer__text">hello@thestudyhall.cafe</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy; 2024 The Study Hall. All rights reserved. No scripts. No nonsense.</p>
+  </div>
+</footer>
+</body>
+</html>

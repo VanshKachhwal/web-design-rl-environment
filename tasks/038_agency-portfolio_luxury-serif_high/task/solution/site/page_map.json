@@ -1,0 +1,42 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "work": {
+    "screenshot": "work.png",
+    "expected_file": "work.html"
+  },
+  "case-studies": {
+    "screenshot": "case-studies.png",
+    "expected_file": "case-studies.html"
+  },
+  "services": {
+    "screenshot": "services.png",
+    "expected_file": "services.html"
+  },
+  "process": {
+    "screenshot": "process.png",
+    "expected_file": "process.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "team": {
+    "screenshot": "team.png",
+    "expected_file": "team.html"
+  },
+  "journal": {
+    "screenshot": "journal.png",
+    "expected_file": "journal.html"
+  },
+  "careers": {
+    "screenshot": "careers.png",
+    "expected_file": "careers.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "mission": {
+    "screenshot": "mission.png",
+    "expected_file": "mission.html"
+  },
+  "programs": {
+    "screenshot": "programs.png",
+    "expected_file": "programs.html"
+  },
+  "donate": {
+    "screenshot": "donate.png",
+    "expected_file": "donate.html"
+  },
+  "impact": {
+    "screenshot": "impact.png",
+    "expected_file": "impact.html"
+  },
+  "volunteer": {
+    "screenshot": "volunteer.png",
+    "expected_file": "volunteer.html"
+  },
+  "events": {
+    "screenshot": "events.png",
+    "expected_file": "events.html"
+  },
+  "news": {
+    "screenshot": "news.png",
+    "expected_file": "news.html"
+  },
+  "partners": {
+    "screenshot": "partners.png",
+    "expected_file": "partners.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

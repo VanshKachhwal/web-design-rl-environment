@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Shipping</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__top-bar">
+    ★ Curated Local Goods — Free Pickup on All Orders ★
+  </div>
+  <div class="header__main">
+    <div class="header__logo">
+      <a href="index.html">LOCAL<br>GOODS</a>
+    </div>
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="index.html">Home</a></li>
+        <li class="header__nav-item"><a href="shop.html">Shop</a></li>
+        <li class="header__nav-item"><a href="collections.html">Collections</a></li>
+        <li class="header__nav-item"><a href="about.html">About</a></li>
+        <li class="header__nav-item"><a href="reviews.html">Reviews</a></li>
+        <li class="header__nav-item"><a href="shipping.html">Shipping</a></li>
+        <li class="header__nav-item"><a href="faq.html">FAQ</a></li>
+        <li class="header__nav-item"><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="cart.html" class="header__cart-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="6" width="10" height="9" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M5 6V4a3 3 0 0 1 6 0v2" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+        Cart [0]
+      </a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER SECTION -->
+  <section class="hero" style="border-bottom: var(--border-ultra);">
+    <div class="hero__inner" style="padding: var(--space-20) var(--space-8);">
+      <div>
+        <span class="hero__label">Delivery Information</span>
+        <h1 class="hero__title">Shipping</h1>
+        <p class="hero__subtitle">Carefully packed, reliably delivered. Every order ships with the same attention to detail we put into sourcing our goods.</p>
+        <div class="hero__actions">
+          <a href="shop.html" class="button button--primary">Shop Now</a>
+          <a href="faq.html" class="button button--secondary">View FAQ</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__visual-block">
+          <div class="hero__visual-cell"></div>
+          <div class="hero__visual-cell"></div>
+          <div class="hero__visual-cell"></div>
+          <div class="hero__visual-cell"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP-PROCESS -->
+  <section class="section-pad" style="background: var(--color-bg-secondary);">
+    <div class="container mb-12">
+      <span class="content-section__label">How It Works</span>
+      <h2 class="content-section__title">From Our Hands to Your Door</h2>
+      <hr class="content-section__divider">
+    </div>
+    <div class="step-process">
+      <div class="step-process__items">
+        <div class="step-process__item">
+          <div class="step-process__number">01</div>
+          <h3 class="step-process__title">Place Your Order</h3>
+          <p class="step-process__text">Browse our curated collection and add items to your cart. Checkout is simple and secure.</p>
+          <div class="step-process__connector"></div>
+        </div>
+        <div class="step-process__item">
+          <div class="step-process__number">02</div>
+          <h3 class="step-process__title">We Pack With Care</h3>
+          <p class="step-process__text">Each item is hand-wrapped using recycled materials. Fragile goods receive extra protective layers.</p>
+          <div class="step-process__connector"></div>
+        </div>
+        <div class="step-process__item">
+          <div class="step-process__number">03</div>
+          <h3 class="step-process__title">Tracking Sent</h3>
+          <p class="step-process__text">You'll receive a confirmation email with a tracking number as soon as your parcel leaves our workshop.</p>
+          <div class="step-process__connector"></div>
+        </div>
+        <div class="step-process__item">
+          <div class="step-process__number">04</div>
+          <h3 class="step-process__title">Delivered</h3>
+          <p class="step-process__text">Your order arrives at your doorstep. Inspect, enjoy, and reach out if anything isn't perfect.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION: Shipping Policies -->
+  <section class="content-section content-section--bordered">
+    <div class="content-section__header">
+      <span class="content-section__label">Shipping Policy</span>
+      <h2 class="content-section__title">Rates &amp; Delivery Times</h2>
+      <p class="content-section__subtitle">We offer multiple shipping options to fit your timeline and budget. All orders are processed within 1–2 business days.</p>
+    </div>
+    <div class="content-section__body">
+      <div class="grid-2 mb-12">
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">Domestic</span>
+            <h3 class="card__title">Standard Shipping</h3>
+            <p class="card__text">5–7 business days. Free on orders over $75. Flat rate of $5.95 for orders under $75. Delivered via ground carrier to all 50 states.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--outline">$5.95 / Free 75+</span>
+            <span class="text-mono text-muted" style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide);">5–7 Days</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">Domestic</span>
+            <h3 class="card__title">Express Shipping</h3>
+            <p class="card__text">2–3 business days. Priority handling and expedited carrier service. Available for all domestic orders regardless of size.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--default">$12.95</span>
+            <span class="text-mono text-muted" style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide);">2–3 Days</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">Domestic</span>
+            <h3 class="card__title">Overnight Shipping</h3>
+            <p class="card__text">Next business day delivery when ordered before 12 PM EST. Not available for PO boxes or certain rural areas.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--accent">$24.95</span>
+            <span class="text-mono text-muted" style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide);">1 Day</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">International</span>
+            <h3 class="card__title">Global Shipping</h3>
+            <p class="card__text">7–21 business days depending on destination. Customs duties and import taxes are the responsibility of the recipient.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--outline">From $18.95</span>
+            <span class="text-mono text-muted" style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: var(--tracking-wide);">7–21 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-4 mb-8">
+        <div class="stat">
+          <div class="stat__value">98%</div>
+          <div class="stat__label">On-Time Delivery</div>
+          <div class="stat__bar">
+            <div class="stat__bar-fill" style="width: 98%;"></div>
+          </div>
+        </div>
+        <div class="stat stat--dark">
+          <div class="stat__value">24H</div>
+          <div class="stat__label">Processing Time</div>
+          <div class="stat__bar">
+            <div class="stat__bar-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">50</div>
+          <div class="stat__label">States Covered</div>
+          <div class="stat__bar">
+            <div class="stat__bar-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+        <div class="stat stat--dark">
+          <div class="stat__value">30+</div>
+          <div class="stat__label">Countries Shipped</div>
+          <div class="stat__bar">
+            <div class="stat__bar-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON-TABLE -->
+  <section class="content-section content-section--bg-alt">
+    <div class="content-section__inner" style="padding: var(--space-20) var(--space-8);">
+      <div class="content-section__header">
+        <span class="content-section__label">Compare Options</span>
+        <h2 class="content-section__title">Shipping at a Glance</h2>
+        <p class="content-section__subtitle">Choose the option that best fits your needs. All methods include tracking and insurance on orders over $50.</p>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Standard</th>
+            <th>Express</th>
+            <th>Overnight</th>
+            <th>International</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Delivery Speed</td>
+            <td>5–7 Days</td>
+            <td>2–3 Days</td>
+            <td>1 Day</td>
+            <td>7–21 Days</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>$5.95</td>
+            <td>$12.95</td>
+            <td>$24.95</td>
+            <td>From $18.95</td>
+          </tr>
+          <tr>
+            <td>Free Threshold</td>
+            <td>$75+</td>
+            <td><span class="comparison-table__cross">✕</span></td>
+            <td><span class="comparison-table__cross">✕</span></td>
+            <td><span class="comparison-table__cross">✕</span></td>
+          </tr>
+          <tr>
+            <td>Tracking</td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Insurance ($50+)</td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Signature Required</td>
+            <td><span class="comparison-table__cross">✕</span></td>
+            <td>Optional</td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Saturday Delivery</td>
+            <td><span class="comparison-table__cross">✕</span></td>
+            <td><span class="comparison-table__cross">✕</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__cross">✕</span></td>
+          </tr>
+          <tr>
+            <td>PO Box Eligible</td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__cross">✕</span></td>
+            <td><span class="comparison-table__cross">✕</span></td>
+          </tr>
+          <tr>
+            <td>Eco Packaging</td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+            <td><span class="comparison-table__check">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section content-section--bordered">
+    <div class="content-section__header">
+      <span class="content-section__label">Common Questions</span>
+      <h2 class="content-section__title">Shipping FAQ</h2>
+      <p class="content-section__subtitle">Quick answers to the questions we hear most about orders, delivery, and returns.</p>
+    </div>
+    <div class="faq">
+      <div class="faq__item">
+        <div class="faq__question">
+          How do I track my order?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          Once your order ships, you will receive an email with a tracking number and a link to the carrier's tracking page. You can also log into your account to view order status at any time. Tracking updates typically appear within 24 hours of shipment.
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">
+          Do you ship to PO boxes?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          Yes, we ship to PO boxes via Standard and Express shipping methods. Overnight and International shipping require a physical street address for delivery. If you're unsure, please contact us before placing your order.
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">
+          What if my package arrives damaged?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          We take great care in packaging, but if something arrives damaged, please contact us within 48 hours of delivery with photos of the damage. We will arrange a replacement or full refund at no additional cost to you. All orders over $50 include shipping insurance.
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">
+          Can I change my shipping address after ordering?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          Address changes can be accommodated if the order has not yet been packed. Please contact us as soon as possible via our contact page. Once a label has been printed, we are unable to modify the destination address.
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">
+          Are customs fees included for international orders?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          No, customs duties, import taxes, and brokerage fees are not included in our shipping prices and are the responsibility of the recipient. These charges vary by country and are determined by your local customs authority. We recommend checking with your local postal service for estimates.
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">
+          What is your return shipping policy?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          We offer free return shipping on all domestic orders within 30 days of delivery. Items must be unused and in original packaging. International return shipping costs are the responsibility of the customer. A prepaid return label will be provided for domestic returns upon request.
+        </div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">
+          Do you offer local pickup?
+          <span class="faq__question-marker">+</span>
+        </div>
+        <div class="faq__answer">
+          Yes, local pickup is available at our workshop. Select "Local Pickup" at checkout and you will receive an email when your order is ready. Pickup hours are Monday through Friday, 10 AM to 5 PM. No shipping charges apply for pickup orders.
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <p class="text-mono text-muted mb-4" style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-wide);">Have more questions?</p>
+      <a href="faq.html" class="button button--outline">Full FAQ Page</a>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <div>
+        <span class="cta-banner__label">Ready to Order?</span>
+        <h2 class="cta-banner__title">Free Shipping Over $75</h2>
+        <p class="cta-banner__text">Every order is hand-packed with recycled materials, tracked from door to door, and backed by our satisfaction guarantee. Start browsing today.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="shop.html" class="button button--primary">Browse Shop</a>
+        <a href="contact.html" class="button button--secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__brand-col">
+      <div class="footer__logo">LOCAL GOODS</div>
+      <p class="footer__tagline">
+        Your neighborhood's trusted premium marketplace. Curated artisan goods, handmade products, and locally sourced items — all under one roof.
+      </p>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Shop</h4>
+      <div class="footer__links">
+        <a href="shop.html">All Products</a>
+        <a href="collections.html">Collections</a>
+        <a href="product.html">Featured Item</a>
+        <a href="cart.html">Your Cart</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Info</h4>
+      <div class="footer__links">
+        <a href="about.html">About Us</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Connect</h4>
+      <div class="footer__links">
+        <a href="contact.html">Contact Us</a>
+        <a href="about.html">Our Story</a>
+        <a href="reviews.html">Testimonials</a>
+        <a href="faq.html">Help Center</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copyright">&copy; 2024 Local Goods Co. All rights reserved.</p>
+    <div class="footer__bottom-links">
+      <a href="shipping.html">Shipping Policy</a>
+      <a href="faq.html">Terms &amp; Conditions</a>
+      <a href="contact.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

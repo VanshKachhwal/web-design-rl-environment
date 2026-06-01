@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Events</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+        <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+        <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+        <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+        <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+      </svg>
+      <span class="header__logo-text">
+        Wellspring
+        <span class="header__logo-tagline">Community Health Foundation</span>
+      </span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="mission.html" class="header__nav-link">Mission</a>
+      <a href="programs.html" class="header__nav-link">Programs</a>
+      <a href="impact.html" class="header__nav-link">Impact</a>
+      <a href="events.html" class="header__nav-link">Events</a>
+      <a href="volunteer.html" class="header__nav-link">Volunteer</a>
+      <a href="news.html" class="header__nav-link">News</a>
+      <a href="partners.html" class="header__nav-link">Partners</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+      <a href="donate.html" class="header__cta">Donate</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Upcoming Events</span>
+        <h1 class="hero__title">Gather, Learn &amp; Grow Together</h1>
+        <p class="hero__subtitle">Join our community at workshops, wellness fairs, fundraisers, and educational seminars designed to strengthen health outcomes and build lasting connections.</p>
+        <div class="hero__actions">
+          <a href="#event-listing" class="hero__btn hero__btn--primary">Browse Events</a>
+          <a href="volunteer.html" class="hero__btn hero__btn--secondary">Volunteer at an Event</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STAT ROW ═══ -->
+  <section class="container">
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__number">48</div>
+        <div class="stat__label">Events This Year</div>
+        <p class="stat__description">Workshops, fairs, and community gatherings across the region.</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">6,200+</div>
+        <div class="stat__label">Attendees Served</div>
+        <p class="stat__description">Community members engaged through our programming.</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">35</div>
+        <div class="stat__label">Partner Organizations</div>
+        <p class="stat__description">Collaborating to deliver impactful health events.</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">12</div>
+        <div class="stat__label">Cities Reached</div>
+        <p class="stat__description">Expanding our footprint to underserved communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FILTER BAR ═══ -->
+  <section id="event-listing" class="container">
+    <div class="filter-bar">
+      <span class="filter-bar__label">Filter by:</span>
+      <a href="#event-listing" class="filter-bar__btn filter-bar__btn--active">All Events</a>
+      <a href="#event-listing" class="filter-bar__btn">Workshops</a>
+      <a href="#event-listing" class="filter-bar__btn">Wellness Fairs</a>
+      <a href="#event-listing" class="filter-bar__btn">Fundraisers</a>
+      <a href="#event-listing" class="filter-bar__btn">Seminars</a>
+      <a href="#event-listing" class="filter-bar__btn">Community</a>
+    </div>
+  </section>
+
+  <!-- ═══ MASONRY GRID — Event Cards ═══ -->
+  <section class="container">
+    <div class="masonry-grid">
+
+      <!-- Event 1 — tall card -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-warm); min-height: 160px;">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="12" y="8" width="40" height="48" rx="4" fill="rgba(255,255,255,0.5)"/>
+            <rect x="12" y="8" width="40" height="14" rx="4" fill="var(--color-secondary)"/>
+            <circle cx="24" cy="34" r="3" fill="var(--color-primary-dark)"/>
+            <circle cx="32" cy="34" r="3" fill="var(--color-primary-dark)"/>
+            <circle cx="40" cy="34" r="3" fill="var(--color-primary-dark)"/>
+            <circle cx="24" cy="44" r="3" fill="var(--color-primary-dark)"/>
+            <circle cx="32" cy="44" r="3" fill="var(--color-gray-300)"/>
+            <circle cx="40" cy="44" r="3" fill="var(--color-gray-300)"/>
+          </svg>
+        </div>
+        <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap;">
+          <span class="badge badge--primary">Workshop</span>
+          <span class="badge badge--accent">Featured</span>
+        </div>
+        <h3 class="masonry-grid__item-title">Nutrition &amp; Meal Planning Workshop</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">Learn practical strategies for healthy eating on a budget. Hands-on cooking demonstrations, take-home recipe cards, and free grocery kits for all attendees.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">
+          <svg width="14" height="14" viewbox="0 0 14 14" style="display: inline-block; vertical-align: middle; margin-right: 4px;" fill="none"><circle cx="7" cy="7" r="6" stroke="var(--color-primary-dark)" stroke-width="1.5"/><path d="M7 4v3.5l2.5 1.5" stroke="var(--color-primary-dark)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          March 15, 2025 · 10:00 AM – 1:00 PM
+        </p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">
+          <svg width="14" height="14" viewbox="0 0 14 14" style="display: inline-block; vertical-align: middle; margin-right: 4px;" fill="none"><path d="M7 1C4.5 1 2.5 3 2.5 5.5C2.5 9 7 13 7 13s4.5-4 4.5-7.5C11.5 3 9.5 1 7 1z" stroke="var(--color-gray-500)" stroke-width="1.2"/><circle cx="7" cy="5.5" r="1.5" stroke="var(--color-gray-500)" stroke-width="1.2"/></svg>
+          Wellspring Community Center, Hall A
+        </p>
+        <a href="programs.html" class="badge badge--primary badge--lg" style="text-decoration: none;">Learn More →</a>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-cool); min-height: 130px;">
+          <svg width="56" height="56" viewbox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M28 8L34 20h14l-11 8 4 14-13-9-13 9 4-14-11-8h14z" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="28" cy="28" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <span class="badge badge--sky" style="margin-bottom: var(--space-3);">Wellness Fair</span>
+        <h3 class="masonry-grid__item-title">Spring Wellness Fair 2025</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">Free health screenings, mental wellness resources, fitness demos, and family-friendly activities. Over 20 local health providers in one place.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">April 5, 2025 · 9:00 AM – 4:00 PM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Riverside Park Pavilion</p>
+        <a href="programs.html" class="badge badge--sky badge--lg" style="text-decoration: none;">Details →</a>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-hero); min-height: 100px;">
+          <svg width="48" height="48" viewbox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="8" y="16" width="32" height="24" rx="3" fill="rgba(255,255,255,0.5)"/>
+            <path d="M8 19l16 10 16-10" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="badge badge--secondary" style="margin-bottom: var(--space-3);">Fundraiser</span>
+        <h3 class="masonry-grid__item-title">Annual Gala: Hearts for Health</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">An elegant evening of dinner, live music, and silent auction. All proceeds fund community health programs for underserved families.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">April 19, 2025 · 6:30 PM – 10:00 PM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Grand Ballroom, Lakeside Hotel</p>
+        <a href="donate.html" class="badge badge--secondary badge--lg" style="text-decoration: none;">Get Tickets →</a>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-accent); min-height: 140px;">
+          <svg width="56" height="56" viewbox="0 0 56 56" fill="none" aria-hidden="true">
+            <circle cx="28" cy="20" r="10" fill="rgba(255,255,255,0.5)"/>
+            <path d="M14 44c0-8 6-14 14-14s14 6 14 14" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none"/>
+            <circle cx="42" cy="18" r="6" fill="rgba(255,255,255,0.35)"/>
+            <path d="M36 38c0-5 3-9 6-9s6 4 6 9" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <span class="badge badge--lavender" style="margin-bottom: var(--space-3);">Seminar</span>
+        <h3 class="masonry-grid__item-title">Mental Health First Aid Certification</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">A two-day certification course teaching participants how to identify, understand, and respond to signs of mental health challenges.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">May 3–4, 2025 · 9:00 AM – 5:00 PM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Wellspring Training Center, Room 201</p>
+        <a href="programs.html" class="badge badge--lavender badge--lg" style="text-decoration: none;">Register →</a>
+      </div>
+
+      <!-- Event 5 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: linear-gradient(135deg, var(--color-lavender-light), var(--color-sky-light)); min-height: 120px;">
+          <svg width="48" height="48" viewbox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M12 36V18l12-8 12 8v18H12z" fill="rgba(255,255,255,0.5)"/>
+            <rect x="20" y="28" width="8" height="8" fill="var(--color-primary-light)"/>
+            <polygon points="24,6 38,18 10,18" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+        </div>
+        <span class="badge badge--warm" style="margin-bottom: var(--space-3);">Community</span>
+        <h3 class="masonry-grid__item-title">Neighborhood Health Walk</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">A guided 5K walk through scenic trails promoting physical activity and community bonding. All ages and fitness levels welcome.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">May 17, 2025 · 8:00 AM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Greenway Trail, North Entrance</p>
+        <a href="volunteer.html" class="badge badge--warm badge--lg" style="text-decoration: none;">Join Us →</a>
+      </div>
+
+      <!-- Event 6 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: linear-gradient(135deg, var(--color-secondary-light), var(--color-warm-light)); min-height: 150px;">
+          <svg width="56" height="56" viewbox="0 0 56 56" fill="none" aria-hidden="true">
+            <rect x="10" y="14" width="36" height="28" rx="4" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="22" cy="28" r="5" fill="var(--color-primary-light)"/>
+            <circle cx="34" cy="28" r="5" fill="var(--color-secondary)"/>
+            <rect x="16" y="36" width="24" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+          </svg>
+        </div>
+        <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap;">
+          <span class="badge badge--primary">Workshop</span>
+          <span class="badge badge--outline">Free</span>
+        </div>
+        <h3 class="masonry-grid__item-title">Diabetes Prevention &amp; Management</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">Evidence-based workshop covering blood sugar management, lifestyle modifications, and connecting with local care resources. Free glucose screening included.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">June 7, 2025 · 10:00 AM – 12:30 PM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Community Health Hub, Suite 110</p>
+        <a href="programs.html" class="badge badge--primary badge--lg" style="text-decoration: none;">Sign Up →</a>
+      </div>
+
+      <!-- Event 7 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-cta); min-height: 100px;">
+          <svg width="48" height="48" viewbox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M24 8c-6 0-12 5-12 12 0 10 12 20 12 20s12-10 12-20c0-7-6-12-12-12z" fill="rgba(255,255,255,0.45)"/>
+            <circle cx="24" cy="20" r="5" fill="rgba(255,255,255,0.7)"/>
+          </svg>
+        </div>
+        <span class="badge badge--accent" style="margin-bottom: var(--space-3);">Fundraiser</span>
+        <h3 class="masonry-grid__item-title">Summer Charity Run</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">10K run and 3K family fun run supporting pediatric health programs. Medals, refreshments, and live entertainment at the finish line.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">June 21, 2025 · 7:00 AM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">City Stadium &amp; Lakefront Path</p>
+        <a href="donate.html" class="badge badge--accent badge--lg" style="text-decoration: none;">Register →</a>
+      </div>
+
+      <!-- Event 8 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-warm); min-height: 110px;">
+          <svg width="48" height="48" viewbox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="6" y="12" width="36" height="26" rx="3" fill="rgba(255,255,255,0.5)"/>
+            <rect x="10" y="16" width="12" height="8" rx="2" fill="var(--color-primary-light)"/>
+            <rect x="26" y="16" width="12" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+            <rect x="26" y="22" width="8" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+            <rect x="10" y="28" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+            <rect x="10" y="34" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+          </svg>
+        </div>
+        <span class="badge badge--sky" style="margin-bottom: var(--space-3);">Seminar</span>
+        <h3 class="masonry-grid__item-title">Caregiver Support &amp; Resources Forum</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">A supportive space for family caregivers to learn about available resources, self-care strategies, and connect with peer support networks.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">July 12, 2025 · 1:00 PM – 4:00 PM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Wellspring Community Center, Room B</p>
+        <a href="contact.html" class="badge badge--sky badge--lg" style="text-decoration: none;">RSVP →</a>
+      </div>
+
+      <!-- Event 9 -->
+      <div class="masonry-grid__item">
+        <div class="masonry-grid__item-image" style="background: var(--gradient-cool); min-height: 130px;">
+          <svg width="56" height="56" viewbox="0 0 56 56" fill="none" aria-hidden="true">
+            <circle cx="28" cy="28" r="18" fill="rgba(255,255,255,0.35)"/>
+            <path d="M20 28h16M28 20v16" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="badge badge--primary" style="margin-bottom: var(--space-3);">Wellness Fair</span>
+        <h3 class="masonry-grid__item-title">Back-to-School Health Check</h3>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-3);">Free immunizations, vision and dental screenings, and school supply distribution for children ages 5–18. No appointment necessary.</p>
+        <p class="masonry-grid__item-text" style="color: var(--color-primary-dark); font-weight: var(--weight-semibold); margin-bottom: var(--space-2);">August 9, 2025 · 9:00 AM – 3:00 PM</p>
+        <p class="masonry-grid__item-text" style="margin-bottom: var(--space-4);">Lincoln Elementary School Gymnasium</p>
+        <a href="programs.html" class="badge badge--primary badge--lg" style="text-decoration: none;">Learn More →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SPEAKER CARDS ═══ -->
+  <section class="container" style="padding-top: var(--space-12);">
+    <div class="content-section__header">
+      <h2 class="content-section__title">Featured Speakers &amp; Facilitators</h2>
+      <p class="content-section__subtitle">Meet the experts leading our upcoming events — dedicated professionals passionate about community health and wellbeing.</p>
+    </div>
+
+    <div class="speaker-grid">
+      <div class="speaker-card">
+        <div class="speaker-card__avatar speaker-card__avatar--1">
+          <span>DR</span>
+        </div>
+        <div class="speaker-card__info">
+          <h4 class="speaker-card__name">Dr. Ramona Chen</h4>
+          <p class="speaker-card__title">Director of Preventive Medicine</p>
+          <p class="speaker-card__topic">Speaking at: Nutrition &amp; Meal Planning Workshop, Diabetes Prevention &amp; Management</p>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-card__avatar speaker-card__avatar--2">
+          <span>MJ</span>
+        </div>
+        <div class="speaker-card__info">
+          <h4 class="speaker-card__name">Marcus Johnson, LCSW</h4>
+          <p class="speaker-card__title">Licensed Clinical Social Worker</p>
+          <p class="speaker-card__topic">Leading: Mental Health First Aid Certification, Caregiver Support Forum</p>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-card__avatar speaker-card__avatar--3">
+          <span>AP</span>
+        </div>
+        <div class="speaker-card__info">
+          <h4 class="speaker-card__name">Aisha Patel, RN, MPH</h4>
+          <p class="speaker-card__title">Community Health Nurse Educator</p>
+          <p class="speaker-card__topic">Facilitating: Spring Wellness Fair, Back-to-School Health Check</p>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-card__avatar speaker-card__avatar--1">
+          <span>TW</span>
+        </div>
+        <div class="speaker-card__info">
+          <h4 class="speaker-card__name">Coach Terrence Williams</h4>
+          <p class="speaker-card__title">Certified Fitness &amp; Wellness Coach</p>
+          <p class="speaker-card__topic">Leading: Neighborhood Health Walk, Summer Charity Run</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MAP EMBED PLACEHOLDER ═══ -->
+  <section class="container" style="padding-top: var(--space-16); padding-bottom: var(--space-8);">
+    <div class="content-section__header">
+      <h2 class="content-section__title">Event Locations</h2>
+      <p class="content-section__subtitle">Our events take place across multiple venues throughout the community. Find the location nearest you.</p>
+    </div>
+
+    <div class="map-embed-placeholder">
+      <div class="map-embed-placeholder__icon">
+        <svg width="32" height="32" viewbox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 3C10.5 3 6 7.5 6 13c0 8 10 16 10 16s10-8 10-16c0-5.5-4.5-10-10-10z" fill="var(--color-primary-light)" stroke="var(--color-primary-dark)" stroke-width="1.5"/>
+          <circle cx="16" cy="13" r="4" fill="var(--color-primary-dark)"/>
+        </svg>
+      </div>
+      <p class="map-embed-placeholder__label">Interactive Map</p>
+      <p class="map-embed-placeholder__address">Wellspring Community Center · 1240 Harmony Lane<br>Riverside Park Pavilion · 800 River Road<br>Lincoln Elementary · 455 Oak Street<br>Grand Ballroom, Lakeside Hotel · 220 Lakeshore Drive</p>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="container" style="padding-top: var(--space-12); padding-bottom: var(--space-16);">
+    <div class="cta-banner">
+      <h2 class="cta-banner__title">Don't Miss Out — Get Involved Today</h2>
+      <p class="cta-banner__text">Whether you want to attend, volunteer, or sponsor an event, there's a place for you at Wellspring. Together we can build a healthier, more connected community.</p>
+      <div class="cta-banner__actions">
+        <a href="volunteer.html" class="cta-banner__btn cta-banner__btn--primary">Become a Volunteer</a>
+        <a href="donate.html" class="cta-banner__btn cta-banner__btn--secondary">Sponsor an Event</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" style="margin-bottom:var(--space-2);display:inline-flex;">
+          <svg width="36" height="36" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+            <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+            <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+            <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+            <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+          </svg>
+          <span class="header__logo-text">
+            Wellspring
+            <span class="header__logo-tagline">Community Health Foundation</span>
+          </span>
+        </a>
+        <p class="footer__brand-text">
+          Nurturing holistic wellness in underserved communities since 2008. Together, we build healthier futures through compassion, education, and accessible care.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Organization</h4>
+        <ul class="footer__links">
+          <li><a href="mission.html" class="footer__link">Our Mission</a></li>
+          <li><a href="programs.html" class="footer__link">Programs</a></li>
+          <li><a href="impact.html" class="footer__link">Impact</a></li>
+          <li><a href="partners.html" class="footer__link">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Get Involved</h4>
+        <ul class="footer__links">
+          <li><a href="donate.html" class="footer__link">Donate</a></li>
+          <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+          <li><a href="events.html" class="footer__link">Events</a></li>
+          <li><a href="news.html" class="footer__link">News</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          <li><span class="footer__link">info@wellspringchf.org</span></li>
+          <li><span class="footer__link">(555) 234-5678</span></li>
+          <li><span class="footer__link">200 Wellness Way, Suite 100</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Wellspring Community Health Foundation. All rights reserved. A 501(c)(3) nonprofit organization.</p>
+      <div class="footer__social">
+        <span class="footer__social-icon" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2.5H10.5V0H9C7.34 0 6 1.34 6 3V5H4V7.5H6V16H8.5V7.5H10.5L11 5H8.5V3C8.5 2.72 8.72 2.5 9 2.5Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="14" rx="4" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="8" cy="8" r="3.5" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="12.5" cy="3.5" r="1" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Twitter / X">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L7 8.5L2 14H3.5L7.75 9.5L11 14H14L9 7.5L14 2H12.5L8.25 6.5L5 2H2Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="3" height="9" fill="#8a7e72" rx="0.5"/><circle cx="2.5" cy="3" r="1.8" fill="#8a7e72"/><path d="M6 6H9V7.2C9.5 6.4 10.5 5.8 11.5 5.8C13.5 5.8 14.5 7 14.5 9.5V15H11.5V10C11.5 9 11 8.5 10.2 8.5C9.3 8.5 8.8 9.2 8.8 10.2V15H6V6Z" fill="#8a7e72"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

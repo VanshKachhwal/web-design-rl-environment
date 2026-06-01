@@ -1,0 +1,42 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "services": {
+    "screenshot": "services.png",
+    "expected_file": "services.html"
+  },
+  "pricing": {
+    "screenshot": "pricing.png",
+    "expected_file": "pricing.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  },
+  "areas": {
+    "screenshot": "areas.png",
+    "expected_file": "areas.html"
+  },
+  "gallery": {
+    "screenshot": "gallery.png",
+    "expected_file": "gallery.html"
+  },
+  "reviews": {
+    "screenshot": "reviews.png",
+    "expected_file": "reviews.html"
+  },
+  "booking": {
+    "screenshot": "booking.png",
+    "expected_file": "booking.html"
+  },
+  "faq": {
+    "screenshot": "faq.png",
+    "expected_file": "faq.html"
+  }
+}

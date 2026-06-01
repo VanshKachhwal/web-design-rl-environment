@@ -1,0 +1,785 @@
+{
+  "meta": {
+    "task_id": "036_docs-product_warm-organic_low",
+    "seed_tuple": [
+      "docs-product",
+      "warm-organic",
+      "low",
+      "students-and-educators",
+      "warm-and-welcoming"
+    ],
+    "archetype": "docs-product",
+    "aesthetic": "warm-organic",
+    "complexity": "low",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 18.081247249999997,
+    "total_input_tokens": 12638271,
+    "total_output_tokens": 355363,
+    "started_at": "2026-06-01T03:10:51.889602",
+    "finished_at": "2026-06-01T04:20:30.585333",
+    "wall_clock_sec": 4178.695731,
+    "date": "2026-06-01",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "3qPLxTL",
+      "reward": 0.7879394432604702,
+      "structure": 0.7853873617662573,
+      "color": 0.9608561713746486,
+      "content": 0.6755142399009745,
+      "design_judge": 0.73,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8143242865107315,
+          "color": 0.9660054601340803,
+          "content": 0.882703777335984,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7779623952501847,
+          "color": 0.9573941843074449,
+          "content": 0.5832656376929326,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.7242359141497957,
+          "color": 0.9563835794620791,
+          "content": 0.3638275499474238,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7980671943650374,
+          "color": 0.9605973632558111,
+          "content": 0.8744186046511628,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8123470185555376,
+          "color": 0.9639002697138277,
+          "content": 0.673355629877369,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "DDgGMbK",
+      "reward": 0.7826328480510811,
+      "structure": 0.7684608295877239,
+      "color": 0.9570560610432354,
+      "content": 0.6600145015733653,
+      "design_judge": 0.745,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7995934391954068,
+          "color": 0.9548694086397952,
+          "content": 0.875,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7616858506891896,
+          "color": 0.954469066466258,
+          "content": 0.5237668161434977,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.713623803265307,
+          "color": 0.9612342787639259,
+          "content": 0.4181256436663234,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7649284237783734,
+          "color": 0.9586242856467985,
+          "content": 0.8209876543209876,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8024726310103426,
+          "color": 0.9560832656993996,
+          "content": 0.6621923937360179,
+          "design_judge": 0.8250000000000001,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "H4YVNtK",
+      "reward": 0.7924907126148681,
+      "structure": 0.7844889909744297,
+      "color": 0.9599567138546258,
+      "content": 0.7155171456304169,
+      "design_judge": 0.71,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8152382541383626,
+          "color": 0.9674700447136145,
+          "content": 0.9500000000000001,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7939515262842619,
+          "color": 0.954460580756243,
+          "content": 0.5463414634146342,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.6998710828491836,
+          "color": 0.9528749364543565,
+          "content": 0.3240093240093241,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7920156173161097,
+          "color": 0.9571504884272538,
+          "content": 0.8226059654631084,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8213684742842308,
+          "color": 0.9678275189216613,
+          "content": 0.9346289752650176,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "bH5Duba",
+      "reward": 0.8028731858584776,
+      "structure": 0.7890563610557402,
+      "color": 0.9598961375832428,
+      "content": 0.7025402447949273,
+      "design_judge": 0.76,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8073332274978814,
+          "color": 0.9631206922394464,
+          "content": 0.9612403100775194,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7999249711879267,
+          "color": 0.9556020716939414,
+          "content": 0.543640897755611,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.7201394765440559,
+          "color": 0.9540831466171171,
+          "content": 0.4287045666356011,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.8036971176829456,
+          "color": 0.9619533349096427,
+          "content": 0.861111111111111,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8141870123658913,
+          "color": 0.9647214424560657,
+          "content": 0.7180043383947939,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "cgXF6Jt",
+      "reward": 0.7905351639048714,
+      "structure": 0.7885624475392736,
+      "color": 0.9681102643918618,
+      "content": 0.6604679436883505,
+      "design_judge": 0.745,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8169829903927408,
+          "color": 0.9726619650276127,
+          "content": 0.9353612167300379,
+          "design_judge": 0.8500000000000001,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.8150818426261598,
+          "color": 0.9633669132151274,
+          "content": 0.5323505323505323,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.7019810483901912,
+          "color": 0.9637016457723643,
+          "content": 0.34258373205741627,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7964053074283349,
+          "color": 0.9729759870626088,
+          "content": 0.8180354267310789,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8123610488589417,
+          "color": 0.9678448108815958,
+          "content": 0.6740088105726872,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "jTVW9wW",
+      "reward": 0.7690309346717091,
+      "structure": 0.7280189658473581,
+      "color": 0.964861392398951,
+      "content": 0.6532433804405271,
+      "design_judge": 0.73,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8284423744480814,
+          "color": 0.9695064612174723,
+          "content": 0.9459459459459459,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7789306583741483,
+          "color": 0.9615329036152246,
+          "content": 0.5603944124897289,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.45480180677529997,
+          "color": 0.9546549705878513,
+          "content": 0.27085852478839184,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7568322041934198,
+          "color": 0.9649131218967267,
+          "content": 0.8253012048192772,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8210877854458414,
+          "color": 0.9736995046774803,
+          "content": 0.6637168141592921,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "nbsmZVn",
+      "reward": 0.7985542466671787,
+      "structure": 0.7604774841982398,
+      "color": 0.9632751808498832,
+      "content": 0.7354643216205919,
+      "design_judge": 0.735,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8087781088430703,
+          "color": 0.966332422600048,
+          "content": 0.923076923076923,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7721993204872329,
+          "color": 0.9607859106170515,
+          "content": 0.5932621199671323,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.6675681213882031,
+          "color": 0.9611549701369283,
+          "content": 0.38190954773869346,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7664909041252337,
+          "color": 0.9641113700578351,
+          "content": 0.8562691131498471,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.7873509661474591,
+          "color": 0.9639912308375528,
+          "content": 0.9228039041703638,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "w2bxPDP",
+      "reward": 0.7747512248422918,
+      "structure": 0.7250776200251321,
+      "color": 0.9683747048747975,
+      "content": 0.6605525744692375,
+      "design_judge": 0.745,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.819069707663002,
+          "color": 0.9686077450701865,
+          "content": 0.9455252918287939,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7882758484905451,
+          "color": 0.9628140195941938,
+          "content": 0.5443137254901962,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.42191415824735184,
+          "color": 0.9784554284086922,
+          "content": 0.37924151696606784,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7928456425573844,
+          "color": 0.966473092144244,
+          "content": 0.7722473604826545,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.803282743167377,
+          "color": 0.9655232391566707,
+          "content": 0.6614349775784754,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "wBK2sUz",
+      "reward": 0.793548939468541,
+      "structure": 0.7653994551056,
+      "color": 0.9642654414179598,
+      "content": 0.704530861350604,
+      "design_judge": 0.74,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8119445987954366,
+          "color": 0.9694125592239113,
+          "content": 0.9429657794676807,
+          "design_judge": 0.8500000000000001,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.7918989293450834,
+          "color": 0.9611930877358186,
+          "content": 0.5516045099739809,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.6479368467285552,
+          "color": 0.9622258579830338,
+          "content": 0.3244613434727503,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.7629743672101527,
+          "color": 0.9641390642978721,
+          "content": 0.8012718600953896,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8122425334487725,
+          "color": 0.9643566378491629,
+          "content": 0.9023508137432189,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "yCSMM7E",
+      "reward": 0.8086029644503212,
+      "structure": 0.7849807048401171,
+      "color": 0.9596112449252316,
+      "content": 0.7298199080359362,
+      "design_judge": 0.76,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8136973163768176,
+          "color": 0.9658863817597679,
+          "content": 0.923076923076923,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "guides": {
+          "present": true,
+          "structure": 0.8044364799980259,
+          "color": 0.9547395461056427,
+          "content": 0.5661290322580645,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reference": {
+          "present": true,
+          "structure": 0.6887133293131708,
+          "color": 0.9546734648046873,
+          "content": 0.3791666666666667,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "examples": {
+          "present": true,
+          "structure": 0.8050332974799776,
+          "color": 0.9642216573739854,
+          "content": 0.8386075949367089,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "support": {
+          "present": true,
+          "structure": 0.8130231010325933,
+          "color": 0.9585351745820749,
+          "content": 0.942119323241318,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    }
+  ]
+}

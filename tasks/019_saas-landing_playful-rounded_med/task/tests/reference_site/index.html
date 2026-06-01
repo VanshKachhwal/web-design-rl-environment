@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="header__logo" aria-label="Circl Home">
+      <span class="header__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+          <circle cx="12" cy="5" r="2" fill="#FFFFFF"/>
+          <circle cx="18" cy="15" r="2" fill="#FFFFFF"/>
+          <circle cx="6" cy="15" r="2" fill="#FFFFFF"/>
+        </svg>
+      </span>
+      Circl
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="features.html" class="header__nav-link">Features</a>
+      <a href="pricing.html" class="header__nav-link">Pricing</a>
+      <a href="integrations.html" class="header__nav-link">Integrations</a>
+      <a href="customers.html" class="header__nav-link">Customers</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="contact.html" class="btn btn--secondary btn--sm">Get a Demo</a>
+      <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+    </div>
+  </div>
+</header>
+<main>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero hero--tinted">
+    <div class="hero__bg-shape hero__bg-shape--1"></div>
+    <div class="hero__bg-shape hero__bg-shape--2"></div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__badge">
+          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" style="display:inline-block;vertical-align:middle;">
+            <circle cx="8" cy="8" r="4" fill="var(--color-primary)"/>
+          </svg>
+          Now available — Version 3.0
+        </span>
+        <h1 class="hero__title">Build something <em>remarkable</em> together</h1>
+        <p class="hero__subtitle">Circl brings your team's ideas, workflows, and goals into one beautifully simple platform — so you can focus on what truly matters.</p>
+        <div class="hero__actions">
+          <a href="pricing.html" class="btn btn--primary btn--lg">Get Started Free</a>
+          <a href="features.html" class="btn btn--secondary btn--lg">Explore Features</a>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__visual-placeholder">
+            <svg width="480" height="220" viewbox="0 0 480 220" fill="none">
+              <!-- Dashboard mockup -->
+              <rect x="0" y="0" width="480" height="220" rx="12" fill="var(--color-bg-muted)"/>
+              <!-- Sidebar -->
+              <rect x="12" y="12" width="80" height="196" rx="8" fill="var(--color-bg-cool)"/>
+              <circle cx="52" cy="36" r="12" fill="var(--color-primary)" opacity="0.3"/>
+              <rect x="28" y="58" width="48" height="6" rx="3" fill="var(--color-accent-lavender)"/>
+              <rect x="28" y="74" width="48" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="28" y="90" width="48" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="28" y="106" width="48" height="6" rx="3" fill="var(--color-border)"/>
+              <!-- Main content area -->
+              <rect x="104" y="12" width="364" height="36" rx="8" fill="var(--color-bg-card)"/>
+              <rect x="116" y="24" width="80" height="12" rx="4" fill="var(--color-border)"/>
+              <!-- Cards row -->
+              <rect x="104" y="60" width="112" height="72" rx="8" fill="var(--color-bg-card)"/>
+              <rect x="116" y="72" width="48" height="8" rx="4" fill="var(--color-primary)" opacity="0.4"/>
+              <rect x="116" y="88" width="80" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="116" y="100" width="60" height="20" rx="6" fill="var(--color-accent-mint)" opacity="0.3"/>
+              <rect x="228" y="60" width="112" height="72" rx="8" fill="var(--color-bg-card)"/>
+              <rect x="240" y="72" width="48" height="8" rx="4" fill="var(--color-secondary)" opacity="0.4"/>
+              <rect x="240" y="88" width="80" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="240" y="100" width="60" height="20" rx="6" fill="var(--color-accent-yellow)" opacity="0.3"/>
+              <rect x="352" y="60" width="112" height="72" rx="8" fill="var(--color-bg-card)"/>
+              <rect x="364" y="72" width="48" height="8" rx="4" fill="var(--color-accent-sky)" opacity="0.5"/>
+              <rect x="364" y="88" width="80" height="6" rx="3" fill="var(--color-border)"/>
+              <rect x="364" y="100" width="60" height="20" rx="6" fill="var(--color-accent-lavender)" opacity="0.3"/>
+              <!-- Chart area -->
+              <rect x="104" y="144" width="240" height="64" rx="8" fill="var(--color-bg-card)"/>
+              <polyline points="120,188 150,176 180,182 210,164 240,170 270,156 300,160 328,150" stroke="var(--color-primary)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="120,192 150,186 180,190 210,180 240,184 270,174 300,178 328,168" stroke="var(--color-accent-mint)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <!-- Activity panel -->
+              <rect x="356" y="144" width="112" height="64" rx="8" fill="var(--color-bg-card)"/>
+              <circle cx="376" cy="164" r="6" fill="var(--color-accent-mint)" opacity="0.5"/>
+              <rect x="390" y="160" width="60" height="6" rx="3" fill="var(--color-border)"/>
+              <circle cx="376" cy="182" r="6" fill="var(--color-primary)" opacity="0.4"/>
+              <rect x="390" y="178" width="50" height="6" rx="3" fill="var(--color-border)"/>
+              <circle cx="376" cy="198" r="6" fill="var(--color-accent-yellow)" opacity="0.5"/>
+              <rect x="390" y="194" width="55" height="6" rx="3" fill="var(--color-border)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ LOGO CLOUD ═══════════════════════════════ -->
+  <section class="logo-cloud">
+    <div class="container">
+      <p class="logo-cloud__label">Trusted by forward-thinking teams worldwide</p>
+      <div class="logo-cloud__grid">
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-primary);"></span>
+          Acme Corp
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-secondary);"></span>
+          Beacon Labs
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-mint);"></span>
+          Nimbus AI
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-yellow);"></span>
+          Solstice
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-sky);"></span>
+          Verdant
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-peach);"></span>
+          Crestline
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FEATURE GRID ═══════════════════════════════ -->
+  <section class="feature-grid">
+    <div class="container">
+      <div class="feature-grid__header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Everything you need, nothing you don't</h2>
+        <p class="section-subtitle">Powerful tools designed to simplify collaboration, streamline workflows, and keep your entire team aligned.</p>
+      </div>
+      <div class="feature-grid__grid">
+
+        <!-- Feature 1 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--primary">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+              <rect x="14" y="3" width="7" height="7" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+              <rect x="3" y="14" width="7" height="7" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+              <rect x="14" y="14" width="7" height="7" rx="2" stroke="var(--color-primary)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Unified Dashboard</h3>
+          <p class="feature-grid__item-desc">See every project, task, and milestone in a single customizable view. No more switching between apps.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--mint">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="var(--color-accent-mint)" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Smart Workflows</h3>
+          <p class="feature-grid__item-desc">Automate repetitive tasks with intuitive rules and triggers. Spend less time on busywork and more on impact.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--peach">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="var(--color-accent-peach)" stroke-width="2"/>
+              <path d="M12 7V12L15 15" stroke="var(--color-accent-peach)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Real-Time Sync</h3>
+          <p class="feature-grid__item-desc">Changes propagate instantly across all devices and team members. Everyone stays on the same page, always.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--yellow">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M4 19.5C4 18.12 4 17.43 4.22 16.89C4.56 16.05 5.22 15.39 6.06 15.05C6.6 14.83 7.29 14.83 8.67 14.83H15.33C16.71 14.83 17.4 14.83 17.94 15.05C18.78 15.39 19.44 16.05 19.78 16.89C20 17.43 20 18.12 20 19.5" stroke="var(--color-accent-yellow)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="8" r="4" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Team Management</h3>
+          <p class="feature-grid__item-desc">Assign roles, set permissions, and manage capacity with ease. Built for teams of every size and structure.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--pink">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M3 3V21H21" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 16L11 11L15 14L21 7" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Advanced Analytics</h3>
+          <p class="feature-grid__item-desc">Track progress with rich charts and actionable insights. Make data-driven decisions with confidence.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--sky">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="3" stroke="var(--color-accent-sky)" stroke-width="2"/>
+              <path d="M4 12H20" stroke="var(--color-accent-sky)" stroke-width="2"/>
+              <path d="M12 4V20" stroke="var(--color-accent-sky)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Seamless Integrations</h3>
+          <p class="feature-grid__item-desc">Connect with the tools you already love. Over 50 integrations to keep your stack working in harmony.</p>
+        </div>
+
+      </div>
+      <div class="text-center mt-12">
+        <a href="features.html" class="btn btn--secondary">See All Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TESTIMONIAL ═══════════════════════════════ -->
+  <section class="testimonial">
+    <div class="container">
+      <div class="testimonial__header">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">Loved by teams everywhere</h2>
+        <p class="section-subtitle">Hear from the people who rely on Circl every day to do their best work.</p>
+      </div>
+      <div class="testimonial__grid">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial__card">
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+          </div>
+          <p class="testimonial__quote">"Circl transformed how our design team collaborates. We cut our review cycles in half and shipped twice as fast. It's the backbone of our creative process now."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar" style="background-color: var(--color-primary);">SL</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">Sarah Lin</span>
+              <span class="testimonial__author-role">Head of Design, Beacon Labs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial__card">
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+          </div>
+          <p class="testimonial__quote">"We evaluated a dozen tools before choosing Circl. The integrations alone saved us hundreds of hours. Our engineering velocity has never been higher."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar" style="background-color: var(--color-accent-mint);">MR</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">Marcus Rivera</span>
+              <span class="testimonial__author-role">CTO, Nimbus AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial__card">
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 18 18" fill="var(--color-accent-yellow)"><path d="M9 1l2.47 5.01L17 6.87l-4 3.9.94 5.5L9 13.77l-4.94 2.5.94-5.5-4-3.9 5.53-.86L9 1z"/></svg>
+          </div>
+          <p class="testimonial__quote">"Circl is the first tool our entire company actually enjoys using. From sales to ops, everyone is aligned. The onboarding was seamless — we were up and running in a day."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar" style="background-color: var(--color-secondary);">AK</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">Aisha Kapoor</span>
+              <span class="testimonial__author-role">COO, Solstice</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-12">
+        <a href="customers.html" class="btn btn--ghost">Read More Stories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ STAT ═══════════════════════════════ -->
+  <section class="stat stat--dark">
+    <div class="container">
+      <div class="stat__grid">
+        <div class="stat__item">
+          <span class="stat__number">12k+</span>
+          <span class="stat__label">Teams worldwide</span>
+        </div>
+        <div class="stat__item">
+          <span class="stat__number">98%</span>
+          <span class="stat__label">Customer satisfaction</span>
+        </div>
+        <div class="stat__item">
+          <span class="stat__number">4.2M</span>
+          <span class="stat__label">Tasks completed</span>
+        </div>
+        <div class="stat__item">
+          <span class="stat__number">50+</span>
+          <span class="stat__label">Integrations available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CTA BANNER ═══════════════════════════════ -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner__inner">
+        <div class="cta-banner__shape cta-banner__shape--1"></div>
+        <div class="cta-banner__shape cta-banner__shape--2"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Ready to transform how your team works?</h2>
+          <p class="cta-banner__text">Join thousands of teams already using Circl to collaborate smarter, move faster, and achieve more together.</p>
+          <div class="cta-banner__actions">
+            <a href="pricing.html" class="btn btn--primary btn--lg">Start for Free</a>
+            <a href="contact.html" class="btn btn--secondary btn--lg">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo" aria-label="Circl Home">
+          <span class="footer__logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+              <circle cx="12" cy="5" r="2" fill="#FFFFFF"/>
+              <circle cx="18" cy="15" r="2" fill="#FFFFFF"/>
+              <circle cx="6" cy="15" r="2" fill="#FFFFFF"/>
+            </svg>
+          </span>
+          Circl
+        </a>
+        <p class="footer__description">Modern community management for neighborhoods, clubs, and civic groups. Bring people together with tools that feel like home.</p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__column-title">Product</h4>
+        <ul class="footer__links">
+          <li><a href="features.html" class="footer__link">Features</a></li>
+          <li><a href="pricing.html" class="footer__link">Pricing</a></li>
+          <li><a href="integrations.html" class="footer__link">Integrations</a></li>
+          <li><a href="customers.html" class="footer__link">Customers</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__column-title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+          <li><a href="customers.html" class="footer__link">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__column-title">Get Started</h4>
+        <ul class="footer__links">
+          <li><a href="pricing.html" class="footer__link">Free Plan</a></li>
+          <li><a href="contact.html" class="footer__link">Request Demo</a></li>
+          <li><a href="features.html" class="footer__link">Platform Tour</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Circl. All rights reserved.</p>
+      <div class="footer__social">
+        <span class="footer__social-icon" aria-label="Twitter">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 4.5c-.5.2-1 .4-1.6.5.6-.3 1-.9 1.2-1.5-.5.3-1.1.5-1.8.7A3 3 0 0 0 7.5 7c-2.5-.1-4.7-1.3-6.2-3.2-.3.5-.4 1-.4 1.6 0 1 .5 2 1.3 2.5-.5 0-1-.1-1.4-.4 0 1.5 1 2.7 2.4 3-.3.1-.5.1-.8.1-.2 0-.4 0-.5-.1.4 1.2 1.5 2 2.8 2A6 6 0 0 1 1 14a8 8 0 0 0 4.4 1.3c5.3 0 8.2-4.4 8.2-8.2v-.4c.6-.4 1.1-.9 1.4-1.5z" fill="#B8B3CC"/>
+          </svg>
+        </span>
+        <span class="footer__social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6v7H1.5V6H4zm-.1-2.5a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0zM14.5 13H12V9.5c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.1-.1.4-.1.6V13H6.8s0-6.5 0-7h2.5v1c.3-.5 1-1.2 2.2-1.2 1.6 0 2.9 1 2.9 3.3V13z" fill="#B8B3CC"/>
+          </svg>
+        </span>
+        <span class="footer__social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 1.5A6.5 6.5 0 0 0 6 14c.3.1.4-.1.4-.3V12.4c-1.8.4-2.2-.9-2.2-.9-.3-.8-.7-1-.7-1-.6-.4 0-.4 0-.4.7 0 1 .7 1 .7.6 1 1.5.7 1.9.5 0-.4.2-.7.4-.9-1.4-.2-2.9-.7-2.9-3.2 0-.7.3-1.3.7-1.8-.1-.2-.3-.8.1-1.7 0 0 .6-.2 1.9.7a6.5 6.5 0 0 1 3.4 0c1.3-.9 1.9-.7 1.9-.7.4.9.2 1.5.1 1.7.4.5.7 1.1.7 1.8 0 2.5-1.5 3-3 3.2.3.2.5.7.5 1.3v2c0 .2.1.4.4.3A6.5 6.5 0 0 0 8 1.5z" fill="#B8B3CC"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

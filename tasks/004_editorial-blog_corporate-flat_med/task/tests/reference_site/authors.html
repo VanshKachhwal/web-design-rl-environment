@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Authors</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="EduPulse Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#E8753A"/>
+        <path d="M8 26V12L18 7L28 12V26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 17h10M13 21h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="12" r="2" fill="#fff"/>
+      </svg>
+      <span>EduPulse</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="articles.html" class="header__nav-link">Articles</a>
+      <a href="topics.html" class="header__nav-link">Topics</a>
+      <a href="featured.html" class="header__nav-link">Featured</a>
+      <a href="authors.html" class="header__nav-link">Authors</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER SECTION: Page Hero -->
+  <section class="hero hero--teal">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Our Authors</span>
+      <h1 class="hero__title">Meet the Minds Behind EduPulse</h1>
+      <p class="hero__text">Discover the passionate educators, researchers, and industry experts who craft insightful content to fuel your learning journey.</p>
+      <div class="hero__actions">
+        <a href="articles.html" class="btn btn--teal btn--lg">Read Their Articles</a>
+        <a href="contact.html" class="btn btn--outline btn--lg">Become an Author</a>
+      </div>
+    </div>
+    <div class="hero__decoration">
+      <svg width="400" height="400" viewbox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="180" fill="rgba(255,255,255,0.08)"/>
+        <circle cx="200" cy="200" r="130" fill="rgba(255,255,255,0.06)"/>
+        <circle cx="200" cy="200" r="80" fill="rgba(255,255,255,0.04)"/>
+        <rect x="160" y="120" width="80" height="100" rx="40" fill="rgba(255,255,255,0.12)"/>
+        <path d="M120 280 C120 240 160 220 200 220 C240 220 280 240 280 280" stroke="rgba(255,255,255,0.12)" stroke-width="6" fill="none"/>
+        <rect x="80" y="300" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="300" y="140" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="110" y="140" width="3" height="20" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION: Stats -->
+  <section class="content-section">
+    <div class="container">
+      <div class="stats-row stats-row--bordered">
+        <div class="stat">
+          <div class="stat__value">24</div>
+          <div class="stat__label">Expert Authors</div>
+          <div class="stat__sublabel">Across disciplines</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">380+</div>
+          <div class="stat__label">Articles Published</div>
+          <div class="stat__sublabel">And growing weekly</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">12</div>
+          <div class="stat__label">Topic Areas</div>
+          <div class="stat__sublabel">Comprehensive coverage</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">50K</div>
+          <div class="stat__label">Monthly Readers</div>
+          <div class="stat__sublabel">Engaged learners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION: Featured Authors with Filter Bar -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">Featured Writers</span>
+        <h2 class="content-section__title">Our Author Team</h2>
+        <p class="content-section__subtitle">Each author brings unique expertise and a passion for making complex topics accessible and engaging for every learner.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar" style="margin-bottom: var(--space-10);">
+        <span class="filter-bar__label">Filter by expertise:</span>
+        <div class="filter-bar__items">
+          <span class="filter-bar__btn filter-bar__btn--active">All Authors</span>
+          <a href="#technology" class="filter-bar__btn">Technology</a>
+          <a href="#education" class="filter-bar__btn">Education</a>
+          <a href="#design" class="filter-bar__btn">Design</a>
+          <a href="#science" class="filter-bar__btn">Science</a>
+          <a href="#business" class="filter-bar__btn">Business</a>
+        </div>
+        <div class="filter-bar__search">
+          <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="5.5" stroke="var(--color-gray-400)" stroke-width="1.5"/>
+            <line x1="11" y1="11" x2="14.5" y2="14.5" stroke="var(--color-gray-400)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="text" class="filter-bar__search-input" placeholder="Search authors…">
+        </div>
+      </div>
+
+      <!-- TEAM-CARD Grid -->
+      <div class="feature-grid__items">
+
+        <!-- Author 1 -->
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--orange">
+            <span>SM</span>
+          </div>
+          <h3 class="team-card__name">Sarah Mitchell</h3>
+          <p class="team-card__role">Lead Technology Editor</p>
+          <p class="team-card__bio">A former software engineer turned educator, Sarah demystifies emerging technologies and makes AI, cloud computing, and cybersecurity approachable for all learners.</p>
+          <div class="team-card__links">
+            <a href="articles.html" class="team-card__link" aria-label="View Sarah's articles">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <line x1="5" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:#" class="team-card__link" aria-label="Email Sarah">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="team-card__link" aria-label="Sarah's profile">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M2.5 14C2.5 11 5 9.5 8 9.5C11 9.5 13.5 11 13.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Author 2 -->
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--teal">
+            <span>JR</span>
+          </div>
+          <h3 class="team-card__name">James Rodriguez</h3>
+          <p class="team-card__role">Education Researcher</p>
+          <p class="team-card__bio">With a PhD in cognitive science, James explores evidence-based learning strategies, memory techniques, and the neuroscience of education in his deeply researched articles.</p>
+          <div class="team-card__links">
+            <a href="articles.html" class="team-card__link" aria-label="View James's articles">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <line x1="5" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:#" class="team-card__link" aria-label="Email James">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="team-card__link" aria-label="James's profile">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M2.5 14C2.5 11 5 9.5 8 9.5C11 9.5 13.5 11 13.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Author 3 -->
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--gray">
+            <span>AP</span>
+          </div>
+          <h3 class="team-card__name">Aisha Patel</h3>
+          <p class="team-card__role">UX &amp; Design Writer</p>
+          <p class="team-card__bio">Aisha combines her background in visual design and human-computer interaction to write compelling guides on UX principles, design systems, and creative workflows.</p>
+          <div class="team-card__links">
+            <a href="articles.html" class="team-card__link" aria-label="View Aisha's articles">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <line x1="5" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:#" class="team-card__link" aria-label="Email Aisha">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="team-card__link" aria-label="Aisha's profile">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M2.5 14C2.5 11 5 9.5 8 9.5C11 9.5 13.5 11 13.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Author 4 -->
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--teal">
+            <span>DK</span>
+          </div>
+          <h3 class="team-card__name">David Kim</h3>
+          <p class="team-card__role">Data Science Contributor</p>
+          <p class="team-card__bio">A data scientist at heart, David writes about machine learning, statistical analysis, and data visualization, translating complex algorithms into practical knowledge.</p>
+          <div class="team-card__links">
+            <a href="articles.html" class="team-card__link" aria-label="View David's articles">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <line x1="5" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:#" class="team-card__link" aria-label="Email David">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="team-card__link" aria-label="David's profile">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M2.5 14C2.5 11 5 9.5 8 9.5C11 9.5 13.5 11 13.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Author 5 -->
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--orange">
+            <span>LW</span>
+          </div>
+          <h3 class="team-card__name">Laura Whitfield</h3>
+          <p class="team-card__role">Business &amp; Strategy Editor</p>
+          <p class="team-card__bio">With 15 years in management consulting, Laura covers leadership, entrepreneurship, and organizational strategy with real-world case studies and actionable frameworks.</p>
+          <div class="team-card__links">
+            <a href="articles.html" class="team-card__link" aria-label="View Laura's articles">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <line x1="5" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:#" class="team-card__link" aria-label="Email Laura">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="team-card__link" aria-label="Laura's profile">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M2.5 14C2.5 11 5 9.5 8 9.5C11 9.5 13.5 11 13.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Author 6 -->
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--gray">
+            <span>MO</span>
+          </div>
+          <h3 class="team-card__name">Marcus Okonkwo</h3>
+          <p class="team-card__role">Science &amp; Innovation Writer</p>
+          <p class="team-card__bio">Marcus holds a background in biomedical engineering and covers breakthroughs in science, sustainability, and emerging research with clarity and enthusiasm.</p>
+          <div class="team-card__links">
+            <a href="articles.html" class="team-card__link" aria-label="View Marcus's articles">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <line x1="5" y1="6" x2="11" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="5" y1="9" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="mailto:#" class="team-card__link" aria-label="Email Marcus">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <rect x="1.5" y="3.5" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M1.5 5L8 9.5L14.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </a>
+            <a href="#" class="team-card__link" aria-label="Marcus's profile">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+                <circle cx="8" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M2.5 14C2.5 11 5 9.5 8 9.5C11 9.5 13.5 11 13.5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SIDEBAR-LAYOUT: Featured Author Spotlight + Sidebar -->
+  <section class="content-section">
+    <div class="sidebar-layout">
+      <div class="sidebar-layout__main">
+
+        <!-- Spotlight: Author Detail -->
+        <div class="content-section__header">
+          <span class="content-section__eyebrow">Author Spotlight</span>
+          <h2 class="content-section__title">Sarah Mitchell</h2>
+          <p class="content-section__subtitle">Lead Technology Editor — Exploring the intersection of code, culture, and learning</p>
+        </div>
+
+        <div class="content-section__body">
+          <p>Sarah Mitchell joined EduPulse in 2020 after a decade of building enterprise software systems at leading technology companies. Her transition from engineering to education was driven by a simple belief: everyone deserves to understand the technology shaping their world.</p>
+          <p>Her writing spans artificial intelligence, cloud infrastructure, web development, and digital literacy. Sarah is known for her ability to break down intimidating technical concepts into clear, step-by-step explanations that resonate with beginners and experienced practitioners alike.</p>
+          <p>Beyond her articles, Sarah mentors aspiring tech writers and leads EduPulse's editorial standards for technical accuracy. She holds a Master's degree in Computer Science from Stanford University and is a frequent speaker at education technology conferences.</p>
+        </div>
+
+        <!-- Sarah's Recent Articles -->
+        <div class="content-section__header" style="margin-top: var(--space-12);">
+          <h3 class="content-section__title" style="font-size: var(--text-2xl);">Recent Articles by Sarah</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: var(--space-6);">
+
+          <div class="blog-post-card" style="flex-direction: row;">
+            <div class="blog-post-card__image" style="width: 200px; min-width: 200px; height: auto;">
+              <svg width="200" height="140" viewbox="0 0 200 140" fill="none">
+                <rect width="200" height="140" fill="var(--color-orange-100)"/>
+                <rect x="40" y="30" width="120" height="80" rx="8" fill="var(--color-orange-400)" opacity="0.3"/>
+                <circle cx="70" cy="60" r="15" fill="var(--color-orange-500)" opacity="0.5"/>
+                <rect x="95" y="50" width="50" height="6" rx="3" fill="var(--color-orange-500)" opacity="0.4"/>
+                <rect x="95" y="62" width="35" height="6" rx="3" fill="var(--color-orange-500)" opacity="0.3"/>
+                <rect x="50" y="85" width="100" height="6" rx="3" fill="var(--color-orange-500)" opacity="0.2"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__category">Technology</span>
+                <span class="blog-post-card__date">Dec 12, 2024</span>
+              </div>
+              <h4 class="blog-post-card__title"><a href="articles.html">Understanding Large Language Models: A Beginner's Guide</a></h4>
+              <p class="blog-post-card__excerpt">An accessible introduction to how LLMs work, from tokenization to transformer architecture, written for curious minds without a CS degree.</p>
+              <div class="blog-post-card__footer">
+                <div class="blog-post-card__author">
+                  <div class="blog-post-card__avatar">SM</div>
+                  <span class="blog-post-card__author-name">Sarah Mitchell</span>
+                </div>
+                <span class="blog-post-card__read-time">8 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-post-card" style="flex-direction: row;">
+            <div class="blog-post-card__image" style="width: 200px; min-width: 200px; height: auto;">
+              <svg width="200" height="140" viewbox="0 0 200 140" fill="none">
+                <rect width="200" height="140" fill="var(--color-teal-100)"/>
+                <rect x="30" y="35" width="40" height="70" rx="4" fill="var(--color-teal-500)" opacity="0.3"/>
+                <rect x="80" y="50" width="40" height="55" rx="4" fill="var(--color-teal-500)" opacity="0.4"/>
+                <rect x="130" y="25" width="40" height="80" rx="4" fill="var(--color-teal-500)" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__category">Technology</span>
+                <span class="blog-post-card__date">Nov 28, 2024</span>
+              </div>
+              <h4 class="blog-post-card__title"><a href="articles.html">Cloud Computing in 2025: Trends Every Developer Should Know</a></h4>
+              <p class="blog-post-card__excerpt">From serverless architectures to edge computing, explore the cloud trends that will define the next generation of software development.</p>
+              <div class="blog-post-card__footer">
+                <div class="blog-post-card__author">
+                  <div class="blog-post-card__avatar">SM</div>
+                  <span class="blog-post-card__author-name">Sarah Mitchell</span>
+                </div>
+                <span class="blog-post-card__read-time">6 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-post-card" style="flex-direction: row;">
+            <div class="blog-post-card__image" style="width: 200px; min-width: 200px; height: auto;">
+              <svg width="200" height="140" viewbox="0 0 200 140" fill="none">
+                <rect width="200" height="140" fill="var(--color-gray-100)"/>
+                <rect x="50" y="40" width="100" height="60" rx="6" fill="var(--color-gray-300)" opacity="0.5"/>
+                <circle cx="80" cy="65" r="8" fill="var(--color-orange-400)" opacity="0.6"/>
+                <rect x="95" y="55" width="40" height="4" rx="2" fill="var(--color-gray-400)"/>
+                <rect x="95" y="65" width="30" height="4" rx="2" fill="var(--color-gray-400)"/>
+                <rect x="95" y="75" width="35" height="4" rx="2" fill="var(--color-gray-400)"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__category">Technology</span>
+                <span class="blog-post-card__date">Nov 10, 2024</span>
+              </div>
+              <h4 class="blog-post-card__title"><a href="articles.html">Cybersecurity Essentials for Non-Technical Professionals</a></h4>
+              <p class="blog-post-card__excerpt">Practical security habits and awareness tips that every professional should adopt, regardless of their technical background.</p>
+              <div class="blog-post-card__footer">
+                <div class="blog-post-card__author">
+                  <div class="blog-post-card__avatar">SM</div>
+                  <span class="blog-post-card__author-name">Sarah Mitchell</span>
+                </div>
+                <span class="blog-post-card__read-time">5 min read</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: var(--space-8);">
+          <a href="articles.html" class="btn btn--primary">View All Articles</a>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar-layout__sidebar">
+
+        <!-- About the Program -->
+        <div class="sidebar-widget">
+          <h4 class="sidebar-widget__title">Write for EduPulse</h4>
+          <div class="sidebar-widget__list">
+            <p class="sidebar-widget__list-item">We're always looking for passionate experts to join our author community. Share your knowledge with thousands of eager learners.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="contact.html" class="btn btn--teal btn--sm">Apply Now</a>
+          </div>
+        </div>
+
+        <!-- Topics Widget -->
+        <div class="sidebar-widget">
+          <h4 class="sidebar-widget__title">Popular Topics</h4>
+          <div class="sidebar-widget__tags">
+            <a href="topics.html" class="sidebar-widget__tag">Artificial Intelligence</a>
+            <a href="topics.html" class="sidebar-widget__tag">Web Development</a>
+            <a href="topics.html" class="sidebar-widget__tag">UX Design</a>
+            <a href="topics.html" class="sidebar-widget__tag">Data Science</a>
+            <a href="topics.html" class="sidebar-widget__tag">Leadership</a>
+            <a href="topics.html" class="sidebar-widget__tag">Neuroscience</a>
+            <a href="topics.html" class="sidebar-widget__tag">Sustainability</a>
+            <a href="topics.html" class="sidebar-widget__tag">Productivity</a>
+          </div>
+        </div>
+
+        <!-- Author Guidelines -->
+        <div class="sidebar-widget">
+          <h4 class="sidebar-widget__title">Author Guidelines</h4>
+          <ul class="sidebar-widget__list">
+            <li class="sidebar-widget__list-item"><a href="about.html">Editorial standards</a></li>
+            <li class="sidebar-widget__list-item"><a href="about.html">Style guide</a></li>
+            <li class="sidebar-widget__list-item"><a href="about.html">Submission process</a></li>
+            <li class="sidebar-widget__list-item"><a href="about.html">Review timeline</a></li>
+            <li class="sidebar-widget__list-item"><a href="contact.html">Contact editorial team</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div class="newsletter-signup">
+          <h4 class="newsletter-signup__title">Stay Updated</h4>
+          <p class="newsletter-signup__text">Get notified when our authors publish new articles. No spam, just great content.</p>
+          <form class="newsletter-signup__form">
+            <input type="email" class="newsletter-signup__input" placeholder="your@email.com">
+            <button type="submit" class="newsletter-signup__btn">Subscribe</button>
+          </form>
+          <p class="newsletter-signup__note">Unsubscribe anytime. We respect your inbox.</p>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION: Testimonials from Authors -->
+  <section class="content-section content-section--warm">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">In Their Words</span>
+        <h2 class="content-section__title">Why Authors Love EduPulse</h2>
+        <p class="content-section__subtitle">Hear directly from our contributors about their experience writing for our platform.</p>
+      </div>
+
+      <div class="masonry-grid" style="column-count: 2;">
+
+        <div class="masonry-grid__item">
+          <div class="testimonial">
+            <span class="testimonial__quote-mark">&ldquo;</span>
+            <p class="testimonial__text">Writing for EduPulse has been transformative. The editorial team pushes me to communicate complex ideas with precision and warmth. I've grown more as a writer here than anywhere else.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">JR</div>
+              <div class="testimonial__author-info">
+                <span class="testimonial__author-name">James Rodriguez</span>
+                <span class="testimonial__author-role">Education Researcher</span>
+              </div>
+            </div>
+            <div class="testimonial__rating">
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="masonry-grid__item">
+          <div class="testimonial">
+            <span class="testimonial__quote-mark">&ldquo;</span>
+            <p class="testimonial__text">The readership here is genuinely engaged. I receive thoughtful feedback on every article, and the community makes writing feel purposeful rather than performative.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">AP</div>
+              <div class="testimonial__author-info">
+                <span class="testimonial__author-name">Aisha Patel</span>
+                <span class="testimonial__author-role">UX &amp; Design Writer</span>
+              </div>
+            </div>
+            <div class="testimonial__rating">
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="masonry-grid__item">
+          <div class="testimonial">
+            <span class="testimonial__quote-mark">&ldquo;</span>
+            <p class="testimonial__text">EduPulse gave me a platform to share research that would otherwise stay locked in academic journals. The editorial process is rigorous but supportive — exactly what good writing needs.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">MO</div>
+              <div class="testimonial__author-info">
+                <span class="testimonial__author-name">Marcus Okonkwo</span>
+                <span class="testimonial__author-role">Science &amp; Innovation Writer</span>
+              </div>
+            </div>
+            <div class="testimonial__rating">
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="masonry-grid__item">
+          <div class="testimonial">
+            <span class="testimonial__quote-mark">&ldquo;</span>
+            <p class="testimonial__text">As a business writer, I appreciate how EduPulse values practical, actionable content over clickbait. The audience here genuinely wants to learn and grow.</p>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">LW</div>
+              <div class="testimonial__author-info">
+                <span class="testimonial__author-name">Laura Whitfield</span>
+                <span class="testimonial__author-role">Business &amp; Strategy Editor</span>
+              </div>
+            </div>
+            <div class="testimonial__rating">
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER: CTA Banner -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Join Our Author Community</h2>
+          <p class="cta-banner__text">Have expertise to share? We're looking for passionate writers across technology, education, design, science, and business. Apply today and reach thousands of learners.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="contact.html" class="cta-banner__btn">Apply to Write</a>
+          <a href="about.html" class="btn btn--secondary" style="border-color: var(--color-white); color: var(--color-white);">Learn More</a>
+        </div>
+        <div class="cta-banner__decoration"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand-col">
+        <a href="index.html" class="footer__logo">EduPulse</a>
+        <p class="footer__tagline">A warm, welcoming knowledge hub for students and educators. Explore curated articles, topics, and featured content to foster learning and academic engagement.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;">
+          <!-- Social placeholders as inline SVG -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M11 16h10M16 11v10" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><circle cx="16" cy="16" r="5" stroke="#9E9EB0" stroke-width="2"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M12 20l4-4 4 4M12 12h8" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Explore</h4>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="articles.html" class="footer__link">Articles</a></li>
+          <li><a href="topics.html" class="footer__link">Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Featured</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Community</h4>
+        <ul class="footer__links">
+          <li><a href="authors.html" class="footer__link">Authors</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="articles.html" class="footer__link">Latest Posts</a></li>
+          <li><a href="topics.html" class="footer__link">Browse Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Editor's Picks</a></li>
+          <li><a href="about.html" class="footer__link">Our Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 EduPulse. All rights reserved. Built for learners, by learners.</p>
+      <div class="footer__bottom-links">
+        <a href="about.html" class="footer__bottom-link">Privacy Policy</a>
+        <a href="about.html" class="footer__bottom-link">Terms of Use</a>
+        <a href="contact.html" class="footer__bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>About</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="16" stroke="#3d8b80" stroke-width="2" fill="none"/>
+        <circle cx="18" cy="18" r="6" fill="#3d8b80" opacity="0.6"/>
+        <path d="M18 6 L18 12 M18 24 L18 30 M6 18 L12 18 M24 18 L30 18" stroke="#3d8b80" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10.5 10.5 L14 14 M22 22 L25.5 25.5 M10.5 25.5 L14 22 M22 14 L25.5 10.5" stroke="#c9943e" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <span>wellnessOS</span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="experience.html" class="header__nav-link">Experience</a>
+      <a href="projects.html" class="header__nav-link">Projects</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER SECTION (page-level hero/intro area) -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">About Me</span>
+        <h1 class="hero__title">Crafting Digital <span class="hero__title-accent">Experiences</span> with Purpose</h1>
+        <p class="hero__subtitle">A passionate developer and designer with a deep commitment to building meaningful, accessible, and beautifully engineered solutions that make a difference.</p>
+        <div class="hero__actions">
+          <a href="projects.html" class="hero__btn hero__btn--primary">View My Work</a>
+          <a href="contact.html" class="hero__btn hero__btn--secondary">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__visual-shape">
+          <svg width="160" height="160" viewbox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="60" r="35" fill="var(--color-teal-dim)"/>
+            <rect x="45" y="100" width="70" height="40" rx="12" fill="var(--color-teal-ghost)" stroke="var(--color-teal)" stroke-width="2"/>
+            <circle cx="80" cy="60" r="25" fill="var(--color-bg-tertiary)"/>
+            <circle cx="80" cy="55" r="12" fill="var(--color-teal)" opacity="0.6"/>
+            <rect x="68" y="70" width="24" height="8" rx="4" fill="var(--color-teal)" opacity="0.4"/>
+            <line x1="80" y1="130" x2="80" y2="150" stroke="var(--color-border)" stroke-width="2" stroke-dasharray="4 3"/>
+            <circle cx="80" cy="155" r="3" fill="var(--color-teal-light)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT-SCREEN: My Story -->
+  <section class="split-screen">
+    <div class="split-screen__content">
+      <span class="split-screen__eyebrow">My Story</span>
+      <h2 class="split-screen__title">From Curiosity to Craft</h2>
+      <p class="split-screen__text">My journey began with a fascination for how things work beneath the surface. What started as tinkering with code in a dimly lit room evolved into a career dedicated to building robust, elegant systems that solve real-world problems. I believe great software lives at the intersection of technical excellence and human empathy.</p>
+      <ul class="split-screen__list">
+        <li class="split-screen__list-item">Full-stack development with modern frameworks</li>
+        <li class="split-screen__list-item">User-centered design and accessibility advocacy</li>
+        <li class="split-screen__list-item">Open-source contributor and community mentor</li>
+        <li class="split-screen__list-item">Continuous learner and knowledge sharer</li>
+      </ul>
+    </div>
+    <div class="split-screen__visual">
+      <svg width="280" height="240" viewbox="0 0 280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Code editor illustration -->
+        <rect x="20" y="20" width="240" height="200" rx="12" fill="var(--color-bg-primary)" stroke="var(--color-border)" stroke-width="1.5"/>
+        <rect x="20" y="20" width="240" height="32" rx="12" fill="var(--color-bg-elevated)"/>
+        <rect x="20" y="40" width="240" height="12" fill="var(--color-bg-elevated)"/>
+        <circle cx="40" cy="36" r="5" fill="var(--color-error)" opacity="0.7"/>
+        <circle cx="56" cy="36" r="5" fill="var(--color-amber)" opacity="0.7"/>
+        <circle cx="72" cy="36" r="5" fill="var(--color-success)" opacity="0.7"/>
+        <!-- Code lines -->
+        <rect x="40" y="68" width="80" height="6" rx="3" fill="var(--color-teal)" opacity="0.5"/>
+        <rect x="40" y="82" width="140" height="6" rx="3" fill="var(--color-text-muted)" opacity="0.3"/>
+        <rect x="56" y="96" width="120" height="6" rx="3" fill="var(--color-teal-light)" opacity="0.4"/>
+        <rect x="56" y="110" width="100" height="6" rx="3" fill="var(--color-amber-light)" opacity="0.35"/>
+        <rect x="56" y="124" width="160" height="6" rx="3" fill="var(--color-text-muted)" opacity="0.25"/>
+        <rect x="40" y="138" width="60" height="6" rx="3" fill="var(--color-teal)" opacity="0.5"/>
+        <rect x="40" y="152" width="180" height="6" rx="3" fill="var(--color-text-muted)" opacity="0.3"/>
+        <rect x="56" y="166" width="90" height="6" rx="3" fill="var(--color-amber)" opacity="0.4"/>
+        <rect x="56" y="180" width="130" height="6" rx="3" fill="var(--color-teal-light)" opacity="0.3"/>
+        <rect x="40" y="194" width="50" height="6" rx="3" fill="var(--color-teal)" opacity="0.5"/>
+        <!-- Cursor blink -->
+        <rect x="106" y="192" width="2" height="10" fill="var(--color-teal-light)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION: Philosophy & Values -->
+  <section class="content-section content-section--centered">
+    <div class="content-section__header">
+      <span class="content-section__eyebrow">Philosophy</span>
+      <h2 class="content-section__title">What I Believe In</h2>
+      <p class="content-section__subtitle">Every line of code is a decision. I strive to make each one intentional, maintainable, and in service of the people who will ultimately use what I build.</p>
+    </div>
+  </section>
+
+  <div class="feature-grid">
+    <div class="feature-grid__items">
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="var(--color-teal-light)" stroke-width="1.5" fill="var(--color-teal-ghost)"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Quality Over Quantity</h3>
+        <p class="feature-grid__item-desc">I believe in shipping fewer features that work beautifully rather than many that work partially. Every interaction should feel considered and polished.</p>
+      </div>
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--amber">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="var(--color-amber-light)" stroke-width="1.5" fill="var(--color-amber-ghost)"/>
+            <path d="M12 7V12L15 15" stroke="var(--color-amber-light)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Accessibility First</h3>
+        <p class="feature-grid__item-desc">The web is for everyone. I design and develop with inclusivity at the forefront, ensuring that no user is left behind regardless of ability or device.</p>
+      </div>
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="7" height="7" rx="2" stroke="var(--color-teal-light)" stroke-width="1.5" fill="var(--color-teal-ghost)"/>
+            <rect x="14" y="3" width="7" height="7" rx="2" stroke="var(--color-teal-light)" stroke-width="1.5" fill="var(--color-teal-ghost)"/>
+            <rect x="3" y="14" width="7" height="7" rx="2" stroke="var(--color-teal-light)" stroke-width="1.5" fill="var(--color-teal-ghost)"/>
+            <rect x="14" y="14" width="7" height="7" rx="2" stroke="var(--color-teal-light)" stroke-width="1.5" fill="var(--color-teal-ghost)"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Systems Thinking</h3>
+        <p class="feature-grid__item-desc">I approach problems holistically, building scalable design systems and architectures that grow gracefully with evolving requirements and team needs.</p>
+      </div>
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--amber">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 21V19C17 16.79 15.21 15 13 15H5C2.79 15 1 16.79 1 19V21" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            <circle cx="9" cy="7" r="4" stroke="var(--color-amber-light)" stroke-width="1.5" fill="var(--color-amber-ghost)"/>
+            <path d="M23 21V19C23 17.5 22.1 16.2 20.8 15.7" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="18" cy="7" r="3" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Collaborative Spirit</h3>
+        <p class="feature-grid__item-desc">The best work emerges from diverse perspectives. I thrive in cross-functional teams and value open communication, code reviews, and shared ownership.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AWARD-BADGE ROW -->
+  <div class="content-section">
+    <div class="content-section__header">
+      <span class="content-section__eyebrow">Recognition</span>
+      <h2 class="content-section__title">Awards &amp; Certifications</h2>
+      <p class="content-section__subtitle">Milestones that reflect a commitment to excellence and continuous professional growth.</p>
+    </div>
+    <div class="award-badge-row">
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15 8.5L22 9.5L17 14.5L18 21.5L12 18L6 21.5L7 14.5L2 9.5L9 8.5L12 2Z" fill="var(--color-amber)" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Developer of the Year</span>
+          <span class="award-badge__detail">Tech Community Awards · 2023</span>
+        </div>
+      </div>
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="var(--color-amber)" stroke-width="2" fill="none"/>
+            <path d="M9 12L11 14L15 10" stroke="var(--color-amber-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Certified Cloud Architect</span>
+          <span class="award-badge__detail">Professional Certification · 2022</span>
+        </div>
+      </div>
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="16" height="16" rx="3" stroke="var(--color-amber)" stroke-width="1.5" fill="var(--color-amber-ghost)"/>
+            <path d="M8 12H16M12 8V16" stroke="var(--color-amber-light)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Best Open Source Project</span>
+          <span class="award-badge__detail">Global Dev Summit · 2021</span>
+        </div>
+      </div>
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15C15.87 15 19 12.87 19 10V4L12 2L5 4V10C5 12.87 8.13 15 12 15Z" stroke="var(--color-amber)" stroke-width="1.5" fill="var(--color-amber-ghost)"/>
+            <path d="M12 15V22" stroke="var(--color-amber-dim)" stroke-width="1.5"/>
+            <path d="M8 22H16" stroke="var(--color-amber-dim)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Accessibility Champion</span>
+          <span class="award-badge__detail">Web Standards Board · 2020</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <div class="timeline__header">
+      <h2 class="timeline__title">My Journey</h2>
+    </div>
+    <div class="timeline__items">
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <span class="timeline__date">2023 — Present</span>
+        <h3 class="timeline__item-title">Senior Software Engineer</h3>
+        <span class="timeline__item-subtitle">Leading product engineering</span>
+        <p class="timeline__item-desc">Architecting scalable front-end systems, mentoring junior developers, and driving the adoption of design systems across multiple product teams. Reduced page load times by 40% through strategic performance optimizations.</p>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <span class="timeline__date">2021 — 2023</span>
+        <h3 class="timeline__item-title">Full-Stack Developer</h3>
+        <span class="timeline__item-subtitle">Building end-to-end solutions</span>
+        <p class="timeline__item-desc">Designed and implemented RESTful APIs, database architectures, and responsive interfaces for enterprise clients. Led the migration of a legacy monolith to a modern microservices architecture.</p>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__dot timeline__dot--amber"></div>
+        <span class="timeline__date">2019 — 2021</span>
+        <h3 class="timeline__item-title">Front-End Developer</h3>
+        <span class="timeline__item-subtitle">Crafting user interfaces</span>
+        <p class="timeline__item-desc">Built accessible, performant web applications with a focus on component-driven development. Contributed to open-source design system libraries used by thousands of developers worldwide.</p>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__dot timeline__dot--amber"></div>
+        <span class="timeline__date">2017 — 2019</span>
+        <h3 class="timeline__item-title">Junior Developer &amp; Intern</h3>
+        <span class="timeline__item-subtitle">Learning the foundations</span>
+        <p class="timeline__item-desc">Started my professional career building marketing sites and internal tools. Learned the importance of clean code, version control, and collaborative development practices that shaped my engineering philosophy.</p>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <span class="timeline__date">2013 — 2017</span>
+        <h3 class="timeline__item-title">Computer Science Degree</h3>
+        <span class="timeline__item-subtitle">University studies</span>
+        <p class="timeline__item-desc">Earned a Bachelor of Science in Computer Science with a minor in Human-Computer Interaction. Completed a capstone project on accessible web application frameworks that received departmental honors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT ROW: By the Numbers -->
+  <div class="content-section content-section--centered">
+    <div class="content-section__header">
+      <span class="content-section__eyebrow">By the Numbers</span>
+      <h2 class="content-section__title">Impact at a Glance</h2>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat">
+      <div class="stat__value">8+</div>
+      <div class="stat__label">Years Experience</div>
+      <div class="stat__desc">Building for the web</div>
+    </div>
+    <div class="stat stat--amber">
+      <div class="stat__value">50+</div>
+      <div class="stat__label">Projects Delivered</div>
+      <div class="stat__desc">Across diverse industries</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">12k+</div>
+      <div class="stat__label">Commits</div>
+      <div class="stat__desc">Open source contributions</div>
+    </div>
+    <div class="stat stat--amber">
+      <div class="stat__value">4</div>
+      <div class="stat__label">Awards</div>
+      <div class="stat__desc">Industry recognition</div>
+    </div>
+  </div>
+
+  <!-- SPLIT-SCREEN (reverse): Beyond Code -->
+  <section class="split-screen split-screen--reverse">
+    <div class="split-screen__content">
+      <span class="split-screen__eyebrow">Beyond Code</span>
+      <h2 class="split-screen__title">When I'm Not Building Software</h2>
+      <p class="split-screen__text">I believe that well-rounded perspectives lead to better engineering. Outside of work, I invest time in activities that fuel creativity and keep me grounded — from exploring mountain trails to experimenting with film photography and mentoring aspiring developers in my community.</p>
+      <ul class="split-screen__list">
+        <li class="split-screen__list-item">Hiking and outdoor photography</li>
+        <li class="split-screen__list-item">Community tech meetup organizer</li>
+        <li class="split-screen__list-item">Amateur woodworking and maker projects</li>
+        <li class="split-screen__list-item">Reading about design, psychology, and systems</li>
+      </ul>
+    </div>
+    <div class="split-screen__visual">
+      <svg width="280" height="240" viewbox="0 0 280 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Mountain landscape -->
+        <rect x="0" y="0" width="280" height="240" fill="var(--color-bg-primary)" rx="0"/>
+        <!-- Sky gradient approximation -->
+        <rect x="0" y="160" width="280" height="80" fill="var(--color-bg-tertiary)" opacity="0.5"/>
+        <!-- Mountains -->
+        <polygon points="0,180 60,90 120,180" fill="var(--color-teal-dim)" opacity="0.6"/>
+        <polygon points="80,180 160,60 240,180" fill="var(--color-teal)" opacity="0.4"/>
+        <polygon points="160,180 220,100 280,180" fill="var(--color-teal-dim)" opacity="0.5"/>
+        <!-- Snow caps -->
+        <polygon points="148,72 160,60 172,72" fill="var(--color-text-primary)" opacity="0.15"/>
+        <!-- Ground -->
+        <rect x="0" y="180" width="280" height="60" fill="var(--color-bg-elevated)" opacity="0.6"/>
+        <!-- Trees -->
+        <polygon points="40,180 45,155 50,180" fill="var(--color-teal-dim)" opacity="0.8"/>
+        <polygon points="55,180 62,148 69,180" fill="var(--color-teal-dim)" opacity="0.7"/>
+        <polygon points="200,180 207,150 214,180" fill="var(--color-teal-dim)" opacity="0.8"/>
+        <polygon points="230,180 235,160 240,180" fill="var(--color-teal-dim)" opacity="0.6"/>
+        <!-- Sun -->
+        <circle cx="220" cy="45" r="18" fill="var(--color-amber)" opacity="0.5"/>
+        <circle cx="220" cy="45" r="12" fill="var(--color-amber-light)" opacity="0.6"/>
+        <!-- Path -->
+        <path d="M100 220 Q140 190 180 210 Q210 225 250 200" stroke="var(--color-amber-dim)" stroke-width="2" fill="none" stroke-dasharray="6 4" opacity="0.5"/>
+        <!-- Stars -->
+        <circle cx="30" cy="25" r="1.5" fill="var(--color-text-primary)" opacity="0.3"/>
+        <circle cx="90" cy="35" r="1" fill="var(--color-text-primary)" opacity="0.25"/>
+        <circle cx="140" cy="20" r="1.5" fill="var(--color-text-primary)" opacity="0.3"/>
+        <circle cx="180" cy="30" r="1" fill="var(--color-text-primary)" opacity="0.2"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SKILLS BADGES -->
+  <div class="content-section content-section--centered">
+    <div class="content-section__header">
+      <span class="content-section__eyebrow">Toolkit</span>
+      <h2 class="content-section__title">Technologies &amp; Skills</h2>
+      <p class="content-section__subtitle">A curated set of tools and technologies I work with daily to deliver exceptional results.</p>
+    </div>
+    <div class="badge-group" style="justify-content: center;">
+      <span class="badge badge--teal"><span class="badge__dot"></span>JavaScript</span>
+      <span class="badge badge--teal"><span class="badge__dot"></span>TypeScript</span>
+      <span class="badge badge--amber"><span class="badge__dot"></span>React</span>
+      <span class="badge badge--teal"><span class="badge__dot"></span>Node.js</span>
+      <span class="badge badge--amber"><span class="badge__dot"></span>Python</span>
+      <span class="badge badge--teal"><span class="badge__dot"></span>CSS / Design Systems</span>
+      <span class="badge badge--amber"><span class="badge__dot"></span>PostgreSQL</span>
+      <span class="badge badge--teal"><span class="badge__dot"></span>GraphQL</span>
+      <span class="badge badge--success"><span class="badge__dot"></span>Accessibility (WCAG)</span>
+      <span class="badge badge--amber"><span class="badge__dot"></span>Docker</span>
+      <span class="badge badge--teal"><span class="badge__dot"></span>Git / CI-CD</span>
+      <span class="badge"><span class="badge__dot"></span>Figma</span>
+      <span class="badge badge--teal"><span class="badge__dot"></span>REST APIs</span>
+      <span class="badge"><span class="badge__dot"></span>Linux</span>
+      <span class="badge badge--amber"><span class="badge__dot"></span>Cloud Infrastructure</span>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="testimonial__quote-mark">&ldquo;</div>
+    <p class="testimonial__text">Working alongside them has been one of the most rewarding experiences of my career. Their technical depth is matched only by their genuine care for the people they build for and the teams they work with.</p>
+    <div class="testimonial__author">
+      <div class="testimonial__avatar">
+        <span class="testimonial__avatar-initial">M</span>
+      </div>
+      <span class="testimonial__name">Morgan Chen</span>
+      <span class="testimonial__role">Engineering Director · Former Colleague</span>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__decor"></div>
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Let's Build Something Together</h2>
+      <p class="cta-banner__desc">Whether you have a project in mind or just want to connect, I'd love to hear from you. Let's explore how we can create something meaningful.</p>
+      <a href="contact.html" class="cta-banner__btn cta-banner__btn--teal">Start a Conversation</a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">wellnessOS</span>
+        <p class="footer__brand-desc">Holistic health &amp; wellness practitioner blending ancient wisdom with modern approaches. Helping you find balance, one system at a time.</p>
+        <div class="badge-group">
+          <span class="badge badge--teal"><span class="badge__dot"></span>Available for Consultations</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <div class="footer__col-links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="experience.html" class="footer__link">Experience</a>
+          <a href="projects.html" class="footer__link">Projects</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Specialties</h4>
+        <div class="footer__col-links">
+          <span class="footer__link">Nutrition Coaching</span>
+          <span class="footer__link">Mindfulness Training</span>
+          <span class="footer__link">Holistic Wellness</span>
+          <span class="footer__link">Stress Management</span>
+          <span class="footer__link">Movement Therapy</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Connect</h4>
+        <div class="footer__col-links">
+          <span class="footer__link">hello@wellnessOS.example</span>
+          <span class="footer__link">+1 (555) 234-5678</span>
+          <span class="footer__link">Portland, OR</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">© 2024 wellnessOS — All rights reserved. Built with care &amp; intention.</span>
+      <div class="footer__bottom-links">
+        <span class="footer__bottom-link">Privacy</span>
+        <span class="footer__bottom-link">Terms</span>
+        <span class="footer__bottom-link">Accessibility</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

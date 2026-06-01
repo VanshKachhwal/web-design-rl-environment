@@ -1,0 +1,1045 @@
+{
+  "meta": {
+    "task_id": "007_event-conference_retro-y2k_med",
+    "seed_tuple": [
+      "event-conference",
+      "retro-y2k",
+      "med",
+      "health-and-wellness-seekers",
+      "nostalgic-and-charming"
+    ],
+    "archetype": "event-conference",
+    "aesthetic": "retro-y2k",
+    "complexity": "med",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 27.64181525,
+    "total_input_tokens": 25038160,
+    "total_output_tokens": 461760,
+    "started_at": "2026-05-31T23:30:06.101320",
+    "finished_at": "2026-05-31T23:58:04.467176",
+    "wall_clock_sec": 1678.365856,
+    "date": "2026-05-31",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "3V9n78X",
+      "reward": 0.7220506560770776,
+      "structure": 0.7533693978665177,
+      "color": 0.9398678188234698,
+      "content": 0.5699654076183231,
+      "design_judge": 0.625,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7556574049082776,
+          "color": 0.9438390629625568,
+          "content": 0.7840236686390534,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.7666047942185269,
+          "color": 0.9362706280423478,
+          "content": 0.49593495934959353,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7429580312167339,
+          "color": 0.9254721829591988,
+          "content": 0.4199706314243759,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7655431492304887,
+          "color": 0.9647396000170945,
+          "content": 0.6120930232558139,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7488116288703058,
+          "color": 0.9407576867858406,
+          "content": 0.5143540669856459,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7366873102718808,
+          "color": 0.9291613498171334,
+          "content": 0.5010438413361169,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7573234663494103,
+          "color": 0.9388342211801172,
+          "content": 0.6623376623376623,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "7QEnUbM",
+      "reward": 0.7032955809225444,
+      "structure": 0.7504296554766964,
+      "color": 0.9235064330936514,
+      "content": 0.5713890922626866,
+      "design_judge": 0.5678571428571428,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7359826959156265,
+          "color": 0.9252292175845214,
+          "content": 0.7811023622047243,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.7922552315459522,
+          "color": 0.9132603288451859,
+          "content": 0.4826568265682657,
+          "design_judge": 0.525,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.4
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7437548749976511,
+          "color": 0.9267434535389425,
+          "content": 0.39757207890743557,
+          "design_judge": 0.5,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.4,
+            "typography": 0.5,
+            "content_completeness": 0.5
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7490013994762744,
+          "color": 0.9313313836581899,
+          "content": 0.6113074204946997,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7485904988723523,
+          "color": 0.9283687322506631,
+          "content": 0.5084745762711865,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.5
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7345006488040285,
+          "color": 0.9051775307759654,
+          "content": 0.505800464037123,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7489222387249896,
+          "color": 0.9344343850020923,
+          "content": 0.7128099173553718,
+          "design_judge": 0.575,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "LJsMZ6k",
+      "reward": 0.7272312358086469,
+      "structure": 0.7682451007396649,
+      "color": 0.9366255951699316,
+      "content": 0.5826256758964196,
+      "design_judge": 0.6214285714285713,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.770266392069579,
+          "color": 0.9409681371008661,
+          "content": 0.7937500000000001,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.8163289912987721,
+          "color": 0.9246903842796694,
+          "content": 0.5451664025356577,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.5
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7668032341889346,
+          "color": 0.9431474921654447,
+          "content": 0.37460317460317455,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.4
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7713795270805904,
+          "color": 0.9562291451726987,
+          "content": 0.6226244343891402,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7499295383884178,
+          "color": 0.9389298710085027,
+          "content": 0.5517241379310344,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7371536830846763,
+          "color": 0.9134496890644171,
+          "content": 0.48148148148148145,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7658543390666842,
+          "color": 0.9389644473979223,
+          "content": 0.7090301003344482,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "LSJzH7J",
+      "reward": 0.7258704618768134,
+      "structure": 0.7828922044524101,
+      "color": 0.9401537661839466,
+      "content": 0.5875787340137538,
+      "design_judge": 0.5928571428571427,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7901043860320969,
+          "color": 0.9388776000060745,
+          "content": 0.7465857359635812,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.8106028823630603,
+          "color": 0.9244307173974418,
+          "content": 0.5561877667140824,
+          "design_judge": 0.5,
+          "sub_scores": {
+            "layout_alignment": 0.5,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.4
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7684578157740439,
+          "color": 0.939664977039641,
+          "content": 0.41130298273155413,
+          "design_judge": 0.5,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.5,
+            "content_completeness": 0.4
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7899704460938629,
+          "color": 0.9522508465594453,
+          "content": 0.6234234234234235,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.786325092768899,
+          "color": 0.9370137305626701,
+          "content": 0.5396825396825398,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.759413794709456,
+          "color": 0.9354571995424037,
+          "content": 0.53125,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7753710134254523,
+          "color": 0.95338129217995,
+          "content": 0.7046186895810956,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "YqHqutX",
+      "reward": 0.7272701629130428,
+      "structure": 0.7503665928029429,
+      "color": 0.948160847810116,
+      "content": 0.5605532110391122,
+      "design_judge": 0.65,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7457753290402694,
+          "color": 0.9569796576105175,
+          "content": 0.7642526964560862,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.7852601552840285,
+          "color": 0.9295928613009381,
+          "content": 0.5003594536304817,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7509212479551612,
+          "color": 0.9535514847462305,
+          "content": 0.3630573248407643,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7595774305741508,
+          "color": 0.9667705566190267,
+          "content": 0.599271402550091,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.735763424187881,
+          "color": 0.9299612666996983,
+          "content": 0.49217638691322907,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7204267030526801,
+          "color": 0.9461044624447444,
+          "content": 0.5321888412017167,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7548418595264296,
+          "color": 0.9541656452496563,
+          "content": 0.6725663716814159,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "ktrPUUd",
+      "reward": 0.8364926085661629,
+      "structure": 0.7594124994384411,
+      "color": 0.960168164108276,
+      "content": 0.840675485003649,
+      "design_judge": 0.7857142857142857,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7509134509271691,
+          "color": 0.9726570705406139,
+          "content": 0.846820809248555,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.8188272283021415,
+          "color": 0.9728283663820266,
+          "content": 0.8843085106382979,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7378768838021639,
+          "color": 0.9699998748964674,
+          "content": 0.7979002624671916,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7469489327846228,
+          "color": 0.9503700278594924,
+          "content": 0.9267100977198697,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7569577550883464,
+          "color": 0.9430050399157163,
+          "content": 0.7815845824411136,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7483190715712205,
+          "color": 0.9644566893437013,
+          "content": 0.7775628626692456,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7560441735934239,
+          "color": 0.9478600798199143,
+          "content": 0.8698412698412697,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "oJKb9J3",
+      "reward": 0.7217872267087176,
+      "structure": 0.759323822991362,
+      "color": 0.9481473498667448,
+      "content": 0.5582491625481922,
+      "design_judge": 0.6214285714285713,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7636238375890724,
+          "color": 0.9561547121488728,
+          "content": 0.7157894736842104,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.782547782160085,
+          "color": 0.9263283262274591,
+          "content": 0.48829431438127086,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.5,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.6
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7533731578186013,
+          "color": 0.9422991786939201,
+          "content": 0.3802163833075734,
+          "design_judge": 0.525,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.4
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7624014878768111,
+          "color": 0.9603908152075264,
+          "content": 0.5941343424787133,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7628328402296765,
+          "color": 0.9673576861634825,
+          "content": 0.4957882069795427,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7325391494310691,
+          "color": 0.9351479220467109,
+          "content": 0.5348314606741574,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7579485058342184,
+          "color": 0.9493528085792415,
+          "content": 0.6986899563318777,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "ose6NGg",
+      "reward": 0.7287833948073239,
+      "structure": 0.7779085442369453,
+      "color": 0.9481004545677948,
+      "content": 0.5569817232816986,
+      "design_judge": 0.6321428571428571,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7786691458585475,
+          "color": 0.9529216572965171,
+          "content": 0.7542503863987636,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.8204265041553765,
+          "color": 0.931307951844939,
+          "content": 0.5138686131386861,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.778858952346361,
+          "color": 0.9441044992387019,
+          "content": 0.3967479674796748,
+          "design_judge": 0.575,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7718176305528225,
+          "color": 0.9650262245583083,
+          "content": 0.5646630236794171,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7633191006069433,
+          "color": 0.9622256596321787,
+          "content": 0.5048780487804878,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7521153589450429,
+          "color": 0.927268707654433,
+          "content": 0.4977973568281938,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7801531171935235,
+          "color": 0.9538484817494849,
+          "content": 0.6666666666666667,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "tqJLuFh",
+      "reward": 0.7253246872844528,
+      "structure": 0.7443137202905209,
+      "color": 0.932937726057997,
+      "content": 0.5847615885035786,
+      "design_judge": 0.6392857142857142,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7450247275195453,
+          "color": 0.9282171640974324,
+          "content": 0.7633587786259542,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.771530281863097,
+          "color": 0.9199491633906531,
+          "content": 0.5188536953242836,
+          "design_judge": 0.5,
+          "sub_scores": {
+            "layout_alignment": 0.5,
+            "color_palette": 0.6,
+            "typography": 0.5,
+            "content_completeness": 0.4
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7412097941078681,
+          "color": 0.9271934359407736,
+          "content": 0.4437400950871632,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.749587622610498,
+          "color": 0.9560198573794462,
+          "content": 0.6149479659413434,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.7239565023760567,
+          "color": 0.9357581558597995,
+          "content": 0.5640394088669951,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7353760589801951,
+          "color": 0.9192813725002079,
+          "content": 0.4939467312348668,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7435110545763861,
+          "color": 0.9441449332376658,
+          "content": 0.6944444444444444,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "v7trsiR",
+      "reward": 0.730615241022247,
+      "structure": 0.7474647257713528,
+      "color": 0.9352394272451053,
+      "content": 0.5826139539296726,
+      "design_judge": 0.6571428571428571,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7514332056529058,
+          "color": 0.9338073931059245,
+          "content": 0.8090909090909091,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "schedule": {
+          "present": true,
+          "structure": 0.7931570278943733,
+          "color": 0.9234790675147269,
+          "content": 0.534568781183179,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "speakers": {
+          "present": true,
+          "structure": 0.7456034803032339,
+          "color": 0.9211172577520688,
+          "content": 0.3951367781155015,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "tickets": {
+          "present": true,
+          "structure": 0.7458988487478626,
+          "color": 0.9565741075431574,
+          "content": 0.5925266903914591,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "venue": {
+          "present": true,
+          "structure": 0.735386745239176,
+          "color": 0.931707643500401,
+          "content": 0.48990578734858675,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "sponsors": {
+          "present": true,
+          "structure": 0.7204241344528318,
+          "color": 0.9325148536148,
+          "content": 0.5386221294363256,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7403496381090863,
+          "color": 0.9474756676846586,
+          "content": 0.7184466019417476,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    }
+  ]
+}

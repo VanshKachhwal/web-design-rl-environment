@@ -1,0 +1,22 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "experience": {
+    "screenshot": "experience.png",
+    "expected_file": "experience.html"
+  },
+  "projects": {
+    "screenshot": "projects.png",
+    "expected_file": "projects.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

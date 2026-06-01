@@ -1,0 +1,22 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "guides": {
+    "screenshot": "guides.png",
+    "expected_file": "guides.html"
+  },
+  "reference": {
+    "screenshot": "reference.png",
+    "expected_file": "reference.html"
+  },
+  "examples": {
+    "screenshot": "examples.png",
+    "expected_file": "examples.html"
+  },
+  "support": {
+    "screenshot": "support.png",
+    "expected_file": "support.html"
+  }
+}

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Guides</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="Seedling Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+        <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+        <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+        <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+      </svg>
+      <span class="header__logo-text">Seedling</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="guides.html" class="header__nav-link">Guides</a>
+      <a href="reference.html" class="header__nav-link">Reference</a>
+      <a href="examples.html" class="header__nav-link">Examples</a>
+      <a href="support.html" class="header__nav-link">Support</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER / HERO SECTION -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__badge">Step-by-Step Learning</span>
+      <h1 class="hero__title">Guides</h1>
+      <p class="hero__subtitle">Comprehensive walkthroughs to help you master every aspect of our platform, from first setup to advanced workflows.</p>
+      <div class="hero__actions">
+        <a href="examples.html" class="btn btn--primary btn--large">View Examples</a>
+        <a href="reference.html" class="btn btn--secondary btn--large">API Reference</a>
+      </div>
+    </div>
+    <div class="hero__decoration hero__decoration--1"></div>
+    <div class="hero__decoration hero__decoration--2"></div>
+    <div class="hero__decoration hero__decoration--3"></div>
+  </section>
+
+  <!-- CONTENT SECTION: Introduction -->
+  <section class="content-section content-section--white">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <h2 class="content-section__title">Where Would You Like to Start?</h2>
+        <p class="content-section__subtitle">Whether you're brand new or looking to deepen your expertise, we have a guide tailored for your journey.</p>
+      </div>
+
+      <!-- CARD GRID: Guide Categories -->
+      <div class="grid-3">
+        <a href="#getting-started" class="card card--interactive">
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Beginner</span>
+          <h3 class="card__title">Getting Started</h3>
+          <p class="card__description">Set up your environment, install dependencies, and create your first project in under ten minutes.</p>
+          <span class="card__link">Start learning <span class="card__link-arrow">→</span></span>
+        </a>
+
+        <a href="#configuration" class="card card--interactive">
+          <div class="card__icon card__icon--terracotta">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="3" stroke="#C4654A" stroke-width="2"/>
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z" stroke="#C4654A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Intermediate</span>
+          <h3 class="card__title">Configuration</h3>
+          <p class="card__description">Deep dive into configuration options, environment variables, and customizing behavior for your use case.</p>
+          <span class="card__link">Explore configs <span class="card__link-arrow">→</span></span>
+        </a>
+
+        <a href="#advanced-patterns" class="card card--interactive">
+          <div class="card__icon card__icon--warning">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="#D4A44A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Advanced</span>
+          <h3 class="card__title">Advanced Patterns</h3>
+          <p class="card__description">Master complex workflows, performance optimization, and architectural patterns for production systems.</p>
+          <span class="card__link">Go advanced <span class="card__link-arrow">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIDEBAR LAYOUT: Main Guides Content -->
+  <section class="sidebar-layout" id="getting-started">
+    <div class="sidebar-layout__inner">
+
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar-layout__sidebar">
+        <p class="sidebar-layout__nav-title">Guide Sections</p>
+        <ul class="sidebar-layout__nav-list">
+          <li><a href="#getting-started" class="sidebar-layout__nav-link sidebar-layout__nav-link--active">Getting Started</a></li>
+          <li><a href="#installation" class="sidebar-layout__nav-link">Installation</a></li>
+          <li><a href="#configuration" class="sidebar-layout__nav-link">Configuration</a></li>
+          <li><a href="#first-project" class="sidebar-layout__nav-link">Your First Project</a></li>
+          <li><a href="#advanced-patterns" class="sidebar-layout__nav-link">Advanced Patterns</a></li>
+          <li><a href="#deployment" class="sidebar-layout__nav-link">Deployment</a></li>
+          <li><a href="#troubleshooting" class="sidebar-layout__nav-link">Troubleshooting</a></li>
+        </ul>
+
+        <p class="sidebar-layout__nav-title">Resources</p>
+        <ul class="sidebar-layout__nav-list">
+          <li><a href="reference.html" class="sidebar-layout__nav-link">API Reference</a></li>
+          <li><a href="examples.html" class="sidebar-layout__nav-link">Code Examples</a></li>
+          <li><a href="support.html" class="sidebar-layout__nav-link">Get Support</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="sidebar-layout__content">
+        <div class="content-section__header">
+          <h2 class="content-section__title">Getting Started</h2>
+          <p class="content-section__subtitle">Everything you need to go from zero to a running project. This guide walks through prerequisites, installation, and your first build.</p>
+        </div>
+
+        <div class="content-section__body">
+          <h3 class="mb-4">Prerequisites</h3>
+          <p>Before you begin, make sure your development environment meets the following requirements. You will need a modern operating system, a terminal application, and a text editor or IDE of your choice.</p>
+
+          <div class="grid-2 mb-8">
+            <div class="card">
+              <div class="card__icon card__icon--sage">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="20,6 9,17 4,12" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4 class="card__title">System Requirements</h4>
+              <p class="card__description">64-bit operating system (macOS 12+, Ubuntu 20.04+, or Windows 10+). At least 4 GB of RAM and 2 GB of free disk space.</p>
+            </div>
+            <div class="card">
+              <div class="card__icon card__icon--terracotta">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="#C4654A" stroke-width="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21" stroke="#C4654A" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="12" y1="17" x2="12" y2="21" stroke="#C4654A" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h4 class="card__title">Tooling</h4>
+              <p class="card__description">Node.js v18 or later, npm or yarn package manager, and Git for version control. A modern browser for testing.</p>
+            </div>
+          </div>
+
+          <!-- Installation Code Snippet -->
+          <h3 class="mb-4" id="installation">Installation</h3>
+          <p>Install the core package using your preferred package manager. The CLI tool will be available globally after installation.</p>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">Terminal</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__comment"># Install with npm</span>
+npm install -g @platform/cli
+
+<span class="code-snippet__comment"># Or install with yarn</span>
+yarn global add @platform/cli
+
+<span class="code-snippet__comment"># Verify the installation</span>
+platform <span class="code-snippet__string">--version</span>
+<span class="code-snippet__comment"># Output: v3.2.1</span></pre>
+            </div>
+          </div>
+
+          <p>Once installed, verify everything is working by running the version command. You should see the current version number printed to your terminal.</p>
+
+          <!-- Configuration Section -->
+          <h3 class="mb-4 mt-12" id="configuration">Configuration</h3>
+          <p>Create a configuration file in the root of your project. This file controls build behavior, output paths, plugin loading, and environment-specific overrides.</p>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">JSON</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre">{
+  <span class="code-snippet__keyword">"name"</span>: <span class="code-snippet__string">"my-project"</span>,
+  <span class="code-snippet__keyword">"version"</span>: <span class="code-snippet__string">"1.0.0"</span>,
+  <span class="code-snippet__keyword">"output"</span>: <span class="code-snippet__string">"./dist"</span>,
+  <span class="code-snippet__keyword">"plugins"</span>: [
+    <span class="code-snippet__string">"@platform/plugin-optimize"</span>,
+    <span class="code-snippet__string">"@platform/plugin-analytics"</span>
+  ],
+  <span class="code-snippet__keyword">"env"</span>: {
+    <span class="code-snippet__keyword">"production"</span>: {
+      <span class="code-snippet__keyword">"minify"</span>: <span class="code-snippet__number">true</span>,
+      <span class="code-snippet__keyword">"sourceMaps"</span>: <span class="code-snippet__number">false</span>
+    }
+  }
+}</pre>
+            </div>
+          </div>
+
+          <p>For a complete list of all configuration options, see the <a href="reference.html">API Reference</a> page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP PROCESS: Your First Project -->
+  <section class="step-process" id="first-project">
+    <div class="step-process__inner">
+      <div class="step-process__header">
+        <h2 class="step-process__title">Build Your First Project</h2>
+        <p class="step-process__subtitle">Follow these five steps to scaffold, develop, and preview a working project from scratch.</p>
+      </div>
+
+      <div class="step-process__items">
+        <div class="step-process__item">
+          <div class="step-process__number-col">
+            <span class="step-process__number">1</span>
+            <div class="step-process__connector"></div>
+          </div>
+          <div>
+            <h4 class="step-process__item-title">Initialize the Project</h4>
+            <p class="step-process__item-description">Run the init command to scaffold a new project directory with the recommended folder structure, starter templates, and a pre-configured settings file.</p>
+          </div>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number-col">
+            <span class="step-process__number">2</span>
+            <div class="step-process__connector"></div>
+          </div>
+          <div>
+            <h4 class="step-process__item-title">Define Your Data Model</h4>
+            <p class="step-process__item-description">Open the schema file and declare your entities, relationships, and validation rules. The CLI will auto-generate type definitions and migration files from your schema.</p>
+          </div>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number-col">
+            <span class="step-process__number">3</span>
+            <div class="step-process__connector"></div>
+          </div>
+          <div>
+            <h4 class="step-process__item-title">Add Your First Component</h4>
+            <p class="step-process__item-description">Create a component using the generate command. This produces a template, logic module, and test file following the conventions established by your configuration.</p>
+          </div>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number-col">
+            <span class="step-process__number">4</span>
+            <div class="step-process__connector"></div>
+          </div>
+          <div>
+            <h4 class="step-process__item-title">Start the Dev Server</h4>
+            <p class="step-process__item-description">Launch the local development server with hot-reload enabled. Changes to any source file will be reflected instantly in your browser without a full page refresh.</p>
+          </div>
+        </div>
+
+        <div class="step-process__item">
+          <div class="step-process__number-col">
+            <span class="step-process__number">5</span>
+            <div class="step-process__connector"></div>
+          </div>
+          <div>
+            <h4 class="step-process__item-title">Build and Preview</h4>
+            <p class="step-process__item-description">Run the build command to produce an optimized production bundle. Use the preview command to serve the built output locally and verify everything works before deploying.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION: Advanced Patterns with Cards -->
+  <section class="content-section content-section--cream" id="advanced-patterns">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <h2 class="content-section__title">Advanced Guides</h2>
+        <p class="content-section__subtitle">Once you have the basics down, explore these in-depth guides to unlock the full power of the platform.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" id="deployment">
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Deployment</span>
+          <h4 class="card__title">Production Deployment</h4>
+          <p class="card__description">Learn how to deploy to cloud providers, configure CI/CD pipelines, set up staging environments, and manage rollbacks safely.</p>
+          <div class="card__meta">
+            <span>12 min read</span>
+            <span>Advanced</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__icon card__icon--terracotta">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="7" height="7" stroke="#C4654A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="14" y="3" width="7" height="7" stroke="#C4654A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="3" y="14" width="7" height="7" stroke="#C4654A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="14" y="14" width="7" height="7" stroke="#C4654A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Architecture</span>
+          <h4 class="card__title">Plugin Architecture</h4>
+          <p class="card__description">Build custom plugins to extend platform functionality. Covers the plugin lifecycle, hooks API, and publishing to the registry.</p>
+          <div class="card__meta">
+            <span>18 min read</span>
+            <span>Advanced</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__icon card__icon--warning">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20V10" stroke="#D4A44A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 20V4" stroke="#D4A44A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M6 20v-4" stroke="#D4A44A" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Performance</span>
+          <h4 class="card__title">Performance Tuning</h4>
+          <p class="card__description">Optimize build times, reduce bundle sizes, implement code splitting, and leverage caching strategies for faster load times.</p>
+          <div class="card__meta">
+            <span>15 min read</span>
+            <span>Advanced</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__icon card__icon--brown">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="11" width="18" height="11" rx="2" stroke="#5C4033" stroke-width="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4" stroke="#5C4033" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="16" r="1" fill="#5C4033"/>
+            </svg>
+          </div>
+          <span class="card__tag">Security</span>
+          <h4 class="card__title">Security Best Practices</h4>
+          <p class="card__description">Harden your application with input validation, authentication patterns, CORS configuration, and dependency auditing workflows.</p>
+          <div class="card__meta">
+            <span>10 min read</span>
+            <span>Intermediate</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 18l6-6-6-6" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 6L2 12l6 6" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Testing</span>
+          <h4 class="card__title">Testing Strategies</h4>
+          <p class="card__description">Write unit tests, integration tests, and end-to-end tests using the built-in test runner. Includes mocking, fixtures, and coverage reporting.</p>
+          <div class="card__meta">
+            <span>14 min read</span>
+            <span>Intermediate</span>
+          </div>
+        </div>
+
+        <div class="card" id="troubleshooting">
+          <div class="card__icon card__icon--terracotta">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#C4654A" stroke-width="2"/>
+              <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" stroke="#C4654A" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="17" r="0.5" fill="#C4654A" stroke="#C4654A" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="card__tag">Support</span>
+          <h4 class="card__title">Troubleshooting</h4>
+          <p class="card__description">Common errors, debugging techniques, log analysis, and solutions to frequently encountered issues during development and deployment.</p>
+          <div class="card__meta">
+            <span>8 min read</span>
+            <span>All levels</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to Build Something?</h2>
+      <p class="cta-banner__description">Put these guides into practice with real-world examples, or dive into the full API reference for complete documentation.</p>
+      <div class="cta-banner__actions">
+        <a href="examples.html" class="btn btn--primary btn--large">Browse Examples</a>
+        <a href="reference.html" class="btn btn--secondary btn--large" style="border-color: var(--color-text-inverse); color: var(--color-text-inverse);">API Reference</a>
+      </div>
+    </div>
+    <div class="cta-banner__decoration cta-banner__decoration--1"></div>
+    <div class="cta-banner__decoration cta-banner__decoration--2"></div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="Seedling Home" style="margin-bottom:var(--space-2);">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+            <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+            <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+            <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+          </svg>
+          <span class="header__logo-text" style="color:var(--color-cream);">Seedling</span>
+        </a>
+        <p class="footer__brand-description">An educational coding platform built for students and educators. Learn, build, and grow — one line at a time.</p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Platform</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Guides</a>
+          <a href="reference.html" class="footer__link">Reference</a>
+          <a href="examples.html" class="footer__link">Examples</a>
+          <a href="support.html" class="footer__link">Support</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Resources</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Getting Started</a>
+          <a href="reference.html" class="footer__link">API Reference</a>
+          <a href="examples.html" class="footer__link">Code Examples</a>
+          <a href="support.html" class="footer__link">Community</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Learn</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Tutorials</a>
+          <a href="examples.html" class="footer__link">Projects</a>
+          <a href="reference.html" class="footer__link">Documentation</a>
+          <a href="support.html" class="footer__link">Help Center</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Seedling. Designed for learners everywhere.</p>
+      <div class="footer__bottom-links">
+        <a href="support.html" class="footer__bottom-link">Privacy</a>
+        <a href="support.html" class="footer__bottom-link">Terms</a>
+        <a href="support.html" class="footer__bottom-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

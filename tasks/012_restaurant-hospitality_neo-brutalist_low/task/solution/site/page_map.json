@@ -1,0 +1,22 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "menu": {
+    "screenshot": "menu.png",
+    "expected_file": "menu.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "reservations": {
+    "screenshot": "reservations.png",
+    "expected_file": "reservations.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

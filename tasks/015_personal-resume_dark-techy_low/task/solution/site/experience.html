@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Experience</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="16" stroke="#3d8b80" stroke-width="2" fill="none"/>
+        <circle cx="18" cy="18" r="6" fill="#3d8b80" opacity="0.6"/>
+        <path d="M18 6 L18 12 M18 24 L18 30 M6 18 L12 18 M24 18 L30 18" stroke="#3d8b80" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10.5 10.5 L14 14 M22 22 L25.5 25.5 M10.5 25.5 L14 22 M22 14 L25.5 10.5" stroke="#c9943e" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <span>wellnessOS</span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="experience.html" class="header__nav-link">Experience</a>
+      <a href="projects.html" class="header__nav-link">Projects</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER SECTION - Page Introduction -->
+  <section class="content-section content-section--centered">
+    <div class="content-section__header">
+      <p class="content-section__eyebrow">Professional Journey</p>
+      <h1 class="content-section__title">Experience &amp; Career</h1>
+      <p class="content-section__subtitle">A decade of building, leading, and shipping products across startups and enterprise — from hands-on engineering to strategic technical leadership.</p>
+    </div>
+  </section>
+
+  <!-- STAT ROW - Career Highlights -->
+  <div class="stat-row" style="margin-left: auto; margin-right: auto; max-width: var(--max-width);">
+    <div class="stat">
+      <div class="stat__value">10+</div>
+      <div class="stat__label">Years Experience</div>
+      <div class="stat__desc">Building production systems</div>
+    </div>
+    <div class="stat stat--amber">
+      <div class="stat__value">5</div>
+      <div class="stat__label">Companies</div>
+      <div class="stat__desc">Startup to enterprise scale</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">30+</div>
+      <div class="stat__label">Projects Shipped</div>
+      <div class="stat__desc">End-to-end delivery</div>
+    </div>
+    <div class="stat stat--amber">
+      <div class="stat__value">12</div>
+      <div class="stat__label">Engineers Mentored</div>
+      <div class="stat__desc">Across multiple teams</div>
+    </div>
+  </div>
+
+  <!-- TIMELINE - Career History -->
+  <section class="timeline">
+    <div class="timeline__header">
+      <h2 class="timeline__title">Career Timeline</h2>
+    </div>
+    <div class="timeline__items">
+
+      <!-- Position 1 - Current -->
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__date">2022 — Present</div>
+        <h3 class="timeline__item-title">Senior Engineering Lead</h3>
+        <p class="timeline__item-subtitle">Nexus Technologies</p>
+        <p class="timeline__item-desc">
+          Leading a cross-functional team of eight engineers building a real-time data platform processing over two million events per second. Architected the migration from monolith to event-driven microservices, reducing deployment cycles from weeks to hours. Established engineering standards, code review culture, and mentorship programs that improved team velocity by 40%.
+        </p>
+        <div style="margin-top: var(--space-md);">
+          <div class="badge-group">
+            <span class="badge badge--teal"><span class="badge__dot"></span>System Design</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>Team Leadership</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>Microservices</span>
+            <span class="badge badge--success"><span class="badge__dot"></span>Current Role</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Position 2 -->
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__date">2019 — 2022</div>
+        <h3 class="timeline__item-title">Staff Software Engineer</h3>
+        <p class="timeline__item-subtitle">Meridian Cloud Solutions</p>
+        <p class="timeline__item-desc">
+          Designed and implemented a multi-tenant SaaS platform serving 200+ enterprise clients. Spearheaded the adoption of infrastructure-as-code practices, reducing provisioning time by 85%. Collaborated with product and design teams to deliver a complete platform redesign that increased user retention by 25%. Led technical due diligence during the company's Series B funding round.
+        </p>
+        <div style="margin-top: var(--space-md);">
+          <div class="badge-group">
+            <span class="badge badge--teal"><span class="badge__dot"></span>Cloud Architecture</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>SaaS</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>Infrastructure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Position 3 -->
+      <div class="timeline__item">
+        <div class="timeline__dot--amber" style="position: absolute; left: calc(-1 * var(--space-2xl) + 4px); top: 4px; width: 16px; height: 16px; border-radius: var(--radius-full); background: var(--color-bg-primary); border: 3px solid var(--color-amber); box-shadow: 0 0 8px var(--color-amber-glow);"></div>
+        <div class="timeline__date">2017 — 2019</div>
+        <h3 class="timeline__item-title">Full Stack Developer</h3>
+        <p class="timeline__item-subtitle">Forge Digital Agency</p>
+        <p class="timeline__item-desc">
+          Built and maintained web applications for clients across fintech, healthcare, and e-commerce verticals. Developed a reusable component library that reduced project kickoff time by 60%. Introduced automated testing pipelines that caught 90% of regressions before production. Worked directly with clients to translate business requirements into technical specifications.
+        </p>
+        <div style="margin-top: var(--space-md);">
+          <div class="badge-group">
+            <span class="badge badge--amber"><span class="badge__dot"></span>Full Stack</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>Component Systems</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>Client-Facing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Position 4 -->
+      <div class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__date">2015 — 2017</div>
+        <h3 class="timeline__item-title">Backend Engineer</h3>
+        <p class="timeline__item-subtitle">Prism Analytics</p>
+        <p class="timeline__item-desc">
+          Contributed to a data analytics platform processing terabytes of user interaction data daily. Built RESTful APIs consumed by mobile and web clients, handling 50,000+ requests per minute at peak. Optimized database queries that reduced average response times from 800ms to under 120ms. Participated in on-call rotations and established incident response documentation.
+        </p>
+        <div style="margin-top: var(--space-md);">
+          <div class="badge-group">
+            <span class="badge badge--teal"><span class="badge__dot"></span>APIs</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>Data Pipelines</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>Performance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Position 5 -->
+      <div class="timeline__item">
+        <div class="timeline__dot--amber" style="position: absolute; left: calc(-1 * var(--space-2xl) + 4px); top: 4px; width: 16px; height: 16px; border-radius: var(--radius-full); background: var(--color-bg-primary); border: 3px solid var(--color-amber); box-shadow: 0 0 8px var(--color-amber-glow);"></div>
+        <div class="timeline__date">2014 — 2015</div>
+        <h3 class="timeline__item-title">Junior Developer</h3>
+        <p class="timeline__item-subtitle">Cobalt Startup Studio</p>
+        <p class="timeline__item-desc">
+          First professional role after university. Worked across three early-stage products in a fast-paced studio environment. Learned production engineering practices including version control workflows, continuous integration, and agile methodologies. Built internal tools that streamlined the studio's project management processes.
+        </p>
+        <div style="margin-top: var(--space-md);">
+          <div class="badge-group">
+            <span class="badge badge--amber"><span class="badge__dot"></span>Startups</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>Agile</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>Internal Tools</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION - Core Competencies -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <p class="content-section__eyebrow">Core Competencies</p>
+      <h2 class="content-section__title">Skills &amp; Expertise</h2>
+      <p class="content-section__subtitle">Technical and leadership skills refined across a range of industries, team sizes, and technology stacks.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card card--glow-teal">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none">
+              <rect x="2" y="4" width="18" height="14" rx="2" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <line x1="6" y1="9" x2="12" y2="9" stroke="var(--color-teal-light)" stroke-width="1.5"/>
+              <line x1="6" y1="13" x2="16" y2="13" stroke="var(--color-teal-light)" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">System Architecture</h3>
+        <p class="card__body">Designing scalable distributed systems, event-driven architectures, and microservice topologies. Experienced with high-throughput data pipelines and real-time processing frameworks.</p>
+        <div class="badge-group">
+          <span class="badge badge--teal">Distributed Systems</span>
+          <span class="badge badge--teal">Event Sourcing</span>
+          <span class="badge">CQRS</span>
+        </div>
+      </div>
+
+      <div class="card card--glow-amber">
+        <div class="card__header">
+          <div class="card__icon card__icon--amber">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none">
+              <circle cx="11" cy="8" r="3.5" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+              <path d="M5 18c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">Technical Leadership</h3>
+        <p class="card__body">Building and mentoring high-performing engineering teams. Establishing code review culture, engineering standards, and career development frameworks for individual contributors.</p>
+        <div class="badge-group">
+          <span class="badge badge--amber">Mentorship</span>
+          <span class="badge badge--amber">Hiring</span>
+          <span class="badge">Process Design</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none">
+              <rect x="3" y="3" width="16" height="16" rx="3" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <path d="M7 11l3 3 5-5" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">DevOps &amp; Infrastructure</h3>
+        <p class="card__body">Infrastructure-as-code, CI/CD pipeline design, container orchestration, and observability. Building reliable deployment workflows that enable teams to ship with confidence.</p>
+        <div class="badge-group">
+          <span class="badge badge--teal">CI/CD</span>
+          <span class="badge">Containers</span>
+          <span class="badge">Monitoring</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div class="card__icon card__icon--amber">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none">
+              <polygon points="11,2 14,8 21,9 16,14 17,21 11,17.5 5,21 6,14 1,9 8,8" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">Frontend Engineering</h3>
+        <p class="card__body">Building accessible, performant user interfaces and design systems. Creating component libraries that scale across products while maintaining visual and behavioral consistency.</p>
+        <div class="badge-group">
+          <span class="badge badge--amber">Design Systems</span>
+          <span class="badge">Accessibility</span>
+          <span class="badge">Performance</span>
+        </div>
+      </div>
+
+      <div class="card card--glow-teal">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="8" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <circle cx="11" cy="11" r="3" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <line x1="11" y1="3" x2="11" y2="8" stroke="var(--color-teal-light)" stroke-width="1" opacity="0.5"/>
+              <line x1="11" y1="14" x2="11" y2="19" stroke="var(--color-teal-light)" stroke-width="1" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">API Design</h3>
+        <p class="card__body">Crafting intuitive, well-documented REST and GraphQL APIs. Designing contract-first interfaces that enable seamless integration across mobile, web, and third-party consumers.</p>
+        <div class="badge-group">
+          <span class="badge badge--teal">REST</span>
+          <span class="badge badge--teal">GraphQL</span>
+          <span class="badge">Documentation</span>
+        </div>
+      </div>
+
+      <div class="card card--glow-amber">
+        <div class="card__header">
+          <div class="card__icon card__icon--amber">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none">
+              <rect x="3" y="6" width="7" height="10" rx="1.5" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+              <rect x="12" y="3" width="7" height="13" rx="1.5" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+              <line x1="5" y1="12" x2="8" y2="12" stroke="var(--color-amber-light)" stroke-width="1" opacity="0.6"/>
+              <line x1="14" y1="9" x2="17" y2="9" stroke="var(--color-amber-light)" stroke-width="1" opacity="0.6"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="card__title">Database &amp; Storage</h3>
+        <p class="card__body">Deep experience with relational and NoSQL databases, query optimization, schema design, and data modeling. Building storage solutions that balance consistency, availability, and performance.</p>
+        <div class="badge-group">
+          <span class="badge badge--amber">SQL</span>
+          <span class="badge badge--amber">NoSQL</span>
+          <span class="badge">Optimization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BADGE SECTION - Awards & Certifications -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <p class="content-section__eyebrow">Recognition</p>
+      <h2 class="content-section__title">Awards &amp; Certifications</h2>
+      <p class="content-section__subtitle">Professional certifications and recognition earned throughout my career.</p>
+    </div>
+
+    <div class="award-badge-row">
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+            <polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9" stroke="var(--color-amber-light)" stroke-width="1.5" fill="var(--color-amber-ghost)"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Cloud Solutions Architect</span>
+          <span class="award-badge__detail">Professional Certification — 2023</span>
+        </div>
+      </div>
+
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+            <circle cx="12" cy="10" r="7" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            <path d="M8 17l-2 5h12l-2-5" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            <path d="M9 10l2 2 4-4" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Engineering Excellence Award</span>
+          <span class="award-badge__detail">Meridian Cloud Solutions — 2021</span>
+        </div>
+      </div>
+
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+            <rect x="4" y="3" width="16" height="18" rx="2" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            <line x1="8" y1="8" x2="16" y2="8" stroke="var(--color-amber-light)" stroke-width="1" opacity="0.6"/>
+            <line x1="8" y1="12" x2="14" y2="12" stroke="var(--color-amber-light)" stroke-width="1" opacity="0.6"/>
+            <line x1="8" y1="16" x2="12" y2="16" stroke="var(--color-amber-light)" stroke-width="1" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Kubernetes Administrator</span>
+          <span class="award-badge__detail">Certified — 2020</span>
+        </div>
+      </div>
+
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+            <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+            <circle cx="12" cy="12" r="3" stroke="var(--color-amber-light)" stroke-width="1.5" fill="var(--color-amber-ghost)"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Hackathon Grand Prize</span>
+          <span class="award-badge__detail">TechCrunch Disrupt — 2018</span>
+        </div>
+      </div>
+
+      <div class="award-badge">
+        <div class="award-badge__icon">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+            <polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="award-badge__content">
+          <span class="award-badge__title">Mentor of the Year</span>
+          <span class="award-badge__detail">Nexus Technologies — 2023</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION - Education -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <p class="content-section__eyebrow">Education</p>
+      <h2 class="content-section__title">Academic Background</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__header">
+          <div>
+            <h3 class="card__title">B.Sc. Computer Science</h3>
+            <p class="card__subtitle">2010 — 2014</p>
+          </div>
+          <span class="badge badge--teal">Honors</span>
+        </div>
+        <p class="card__body">University of Westfield — Focused on algorithms, distributed computing, and software engineering. Senior thesis on fault-tolerant message queue systems. Dean's List all semesters.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__header">
+          <div>
+            <h3 class="card__title">Continuing Education</h3>
+            <p class="card__subtitle">Ongoing</p>
+          </div>
+          <span class="badge badge--amber">Active</span>
+        </div>
+        <p class="card__body">Regularly completing advanced courses in machine learning, platform engineering, and leadership. Committed to continuous learning through conferences, workshops, and technical reading groups.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__decor"></div>
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Interested in Working Together?</h2>
+      <p class="cta-banner__desc">I'm always open to discussing new opportunities, collaborations, and challenging engineering problems. Let's connect.</p>
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="cta-banner__btn cta-banner__btn--teal">Get in Touch →</a>
+        <a href="projects.html" class="cta-banner__btn" style="background: transparent; color: var(--color-text-amber); border: 1px solid var(--color-amber-dim);">View Projects →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">wellnessOS</span>
+        <p class="footer__brand-desc">Holistic health &amp; wellness practitioner blending ancient wisdom with modern approaches. Helping you find balance, one system at a time.</p>
+        <div class="badge-group">
+          <span class="badge badge--teal"><span class="badge__dot"></span>Available for Consultations</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <div class="footer__col-links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="experience.html" class="footer__link">Experience</a>
+          <a href="projects.html" class="footer__link">Projects</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Specialties</h4>
+        <div class="footer__col-links">
+          <span class="footer__link">Nutrition Coaching</span>
+          <span class="footer__link">Mindfulness Training</span>
+          <span class="footer__link">Holistic Wellness</span>
+          <span class="footer__link">Stress Management</span>
+          <span class="footer__link">Movement Therapy</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Connect</h4>
+        <div class="footer__col-links">
+          <span class="footer__link">hello@wellnessOS.example</span>
+          <span class="footer__link">+1 (555) 234-5678</span>
+          <span class="footer__link">Portland, OR</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">© 2024 wellnessOS — All rights reserved. Built with care &amp; intention.</span>
+      <div class="footer__bottom-links">
+        <span class="footer__bottom-link">Privacy</span>
+        <span class="footer__bottom-link">Terms</span>
+        <span class="footer__bottom-link">Accessibility</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

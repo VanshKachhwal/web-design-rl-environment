@@ -1,0 +1,1435 @@
+{
+  "meta": {
+    "task_id": "011_ecommerce-store_brutalist_high",
+    "seed_tuple": [
+      "ecommerce-store",
+      "brutalist",
+      "high",
+      "local-community",
+      "premium-and-understated"
+    ],
+    "archetype": "ecommerce-store",
+    "aesthetic": "brutalist",
+    "complexity": "high",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 36.10164025,
+    "total_input_tokens": 32236467,
+    "total_output_tokens": 601451,
+    "started_at": "2026-05-31T23:58:05.774297",
+    "finished_at": "2026-06-01T00:19:13.240650",
+    "wall_clock_sec": 1267.466353,
+    "date": "2026-06-01",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "47zEvfx",
+      "reward": 0.6595587689952984,
+      "structure": 0.458261271114108,
+      "color": 0.958734645866727,
+      "content": 0.543739159000359,
+      "design_judge": 0.6775,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4284908886930907,
+          "color": 0.959673963180246,
+          "content": 0.6675603217158177,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.42261513201697204,
+          "color": 0.9549354378282331,
+          "content": 0.5574468085106383,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.37843278098075056,
+          "color": 0.9592183227590761,
+          "content": 0.5438596491228069,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.48425005347021954,
+          "color": 0.9594317557241099,
+          "content": 0.27199999999999996,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5344947052074592,
+          "color": 0.9670276303303558,
+          "content": 0.6422976501305483,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.48420687375436755,
+          "color": 0.9552120054787079,
+          "content": 0.47466216216216217,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4114497958917298,
+          "color": 0.9386967886651939,
+          "content": 0.6130434782608696,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.4747470259547805,
+          "color": 0.96798445109123,
+          "content": 0.5183246073298429,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.5086080643657703,
+          "color": 0.9530253928372945,
+          "content": 0.5024570024570024,
+          "design_judge": 0.525,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.5,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.45531739080593975,
+          "color": 0.9721407107728219,
+          "content": 0.6457399103139014,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "6RgEQpD",
+      "reward": 0.6726242179515788,
+      "structure": 0.49848306166359846,
+      "color": 0.9667291958812687,
+      "content": 0.5427846142614479,
+      "design_judge": 0.6825,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4672915751531947,
+          "color": 0.9668021847498464,
+          "content": 0.6745098039215686,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.42690471809583597,
+          "color": 0.9550887306676841,
+          "content": 0.5034013605442177,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.5460239295000818,
+          "color": 0.9684889138257365,
+          "content": 0.5804597701149425,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.5050110582851827,
+          "color": 0.9705823912415376,
+          "content": 0.2747068676716918,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5579544498400137,
+          "color": 0.9638046946221707,
+          "content": 0.6935123042505593,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.48378321268711866,
+          "color": 0.9595308226925376,
+          "content": 0.46060606060606063,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4697984888946799,
+          "color": 0.9646702671520094,
+          "content": 0.5971143174250833,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.5306143774947849,
+          "color": 0.972354580322273,
+          "content": 0.5087719298245614,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.536628867345221,
+          "color": 0.9755219439927291,
+          "content": 0.5088468578401464,
+          "design_judge": 0.525,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.5,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.46081993933987164,
+          "color": 0.9704474295461627,
+          "content": 0.6259168704156479,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "M86CyR8",
+      "reward": 0.6489844926548545,
+      "structure": 0.4549109678747241,
+      "color": 0.9572961471882081,
+      "content": 0.4912308555564855,
+      "design_judge": 0.6925,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4703628377444433,
+          "color": 0.9551144857570643,
+          "content": 0.5931034482758621,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.39740404006110863,
+          "color": 0.9524298251735046,
+          "content": 0.4604316546762591,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.44008176258111814,
+          "color": 0.9577996495381538,
+          "content": 0.5110782865583456,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.4656311584178586,
+          "color": 0.9540656380544121,
+          "content": 0.30349013657056145,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5227746056379668,
+          "color": 0.959224978748893,
+          "content": 0.5431472081218275,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.4207542603492598,
+          "color": 0.9580455850021757,
+          "content": 0.41605839416058393,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4306384814253827,
+          "color": 0.9481501180360095,
+          "content": 0.6743383199079402,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.4902961080725527,
+          "color": 0.9609434725294759,
+          "content": 0.44742268041237115,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.482456031320151,
+          "color": 0.9634372651909537,
+          "content": 0.39109912339851655,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.4287103931373991,
+          "color": 0.9637504538514382,
+          "content": 0.5721393034825871,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "UDXH7VK",
+      "reward": 0.6450224325680285,
+      "structure": 0.47536312535246844,
+      "color": 0.9552599902226188,
+      "content": 0.48446661469702657,
+      "design_judge": 0.6649999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4918941175609629,
+          "color": 0.9524306893267649,
+          "content": 0.4506578947368421,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.41594889034287447,
+          "color": 0.9433474395090478,
+          "content": 0.36521739130434777,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.45109273434795055,
+          "color": 0.9572230705604438,
+          "content": 0.4889543446244477,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.48989176622519176,
+          "color": 0.9561812139191082,
+          "content": 0.3043478260869565,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5165990666818978,
+          "color": 0.958133213281134,
+          "content": 0.6829268292682926,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.46720160041619474,
+          "color": 0.9575581674176267,
+          "content": 0.4522968197879859,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.43053748804159403,
+          "color": 0.9469514078482979,
+          "content": 0.5312117503059977,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.5118299922003258,
+          "color": 0.9597749470745605,
+          "content": 0.44936708860759494,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.5262253816663469,
+          "color": 0.956266755872877,
+          "content": 0.5201238390092879,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.5,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.4524102160413456,
+          "color": 0.9647329974163277,
+          "content": 0.599562363238512,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "WtujNSA",
+      "reward": 0.6618353447456334,
+      "structure": 0.471836428086286,
+      "color": 0.9727474362322293,
+      "content": 0.5352575146640187,
+      "design_judge": 0.6675,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4801907541491686,
+          "color": 0.9701942169640133,
+          "content": 0.6555555555555554,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.4419723790845023,
+          "color": 0.964684669955073,
+          "content": 0.5828092243186582,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.48056568529158805,
+          "color": 0.9750556015164755,
+          "content": 0.5378378378378378,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.4815010319724422,
+          "color": 0.9755026472219224,
+          "content": 0.3378582202111614,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.536117123253481,
+          "color": 0.9739295343978855,
+          "content": 0.6118251928020565,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.42819757548248055,
+          "color": 0.9737376600855583,
+          "content": 0.4585191793041926,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4357467653172235,
+          "color": 0.9682033318540648,
+          "content": 0.6367713004484306,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.48987067058686995,
+          "color": 0.9762107837843864,
+          "content": 0.5369774919614149,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.5046751806969972,
+          "color": 0.974632254445693,
+          "content": 0.4443045940843298,
+          "design_judge": 0.425,
+          "sub_scores": {
+            "layout_alignment": 0.5,
+            "color_palette": 0.3,
+            "typography": 0.4,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.4395271150281066,
+          "color": 0.9753236620972193,
+          "content": 0.5501165501165501,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "ao9DK5V",
+      "reward": 0.6627036821307029,
+      "structure": 0.4742313887499324,
+      "color": 0.9674655636488273,
+      "content": 0.5616177761240515,
+      "design_judge": 0.6475,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4479203915606093,
+          "color": 0.9655426417739749,
+          "content": 0.7733990147783251,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.43889161832742984,
+          "color": 0.9578416756472492,
+          "content": 0.391812865497076,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.47424665055432447,
+          "color": 0.9591654474656153,
+          "content": 0.6190476190476192,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.48428099044833806,
+          "color": 0.960106375968116,
+          "content": 0.3205128205128205,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5399491117804293,
+          "color": 0.9699321480276256,
+          "content": 0.732824427480916,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.5059505774086295,
+          "color": 0.9685127047429434,
+          "content": 0.4525547445255475,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4302818109105184,
+          "color": 0.963561166133697,
+          "content": 0.6476190476190476,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.4648767948698754,
+          "color": 0.9719256780640545,
+          "content": 0.5799828913601368,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.493182932531856,
+          "color": 0.9810483560619223,
+          "content": 0.47427854454203267,
+          "design_judge": 0.525,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.4,
+            "typography": 0.5,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.4627330091073138,
+          "color": 0.9770194426030757,
+          "content": 0.6241457858769932,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "iFEU45r",
+      "reward": 0.6788654205088921,
+      "structure": 0.4874515732717636,
+      "color": 0.9626620618377049,
+      "content": 0.5728480469261001,
+      "design_judge": 0.6925,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.43938240600254747,
+          "color": 0.9626092057929352,
+          "content": 0.7389659520807061,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.46206089713963533,
+          "color": 0.9483441055984507,
+          "content": 0.63671875,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.44411948147069075,
+          "color": 0.9640630804192493,
+          "content": 0.5803571428571428,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.5022574499928644,
+          "color": 0.9595411456172656,
+          "content": 0.30622009569377995,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5289477763614968,
+          "color": 0.9698384864621336,
+          "content": 0.679245283018868,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.5281343363906749,
+          "color": 0.9614941740788471,
+          "content": 0.46168051708217905,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4656574592629814,
+          "color": 0.9552589177258992,
+          "content": 0.6753812636165577,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.5196026665513493,
+          "color": 0.9716641144821329,
+          "content": 0.5549738219895288,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.5256971810120291,
+          "color": 0.9688424788459107,
+          "content": 0.45924082140634725,
+          "design_judge": 0.525,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.4
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.45865607853336626,
+          "color": 0.9649649093542241,
+          "content": 0.6356968215158924,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "jHKbtVS",
+      "reward": 0.6564100646484629,
+      "structure": 0.4778481422697417,
+      "color": 0.9566097795791988,
+      "content": 0.5011823367449109,
+      "design_judge": 0.69,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.4850693602544757,
+          "color": 0.9570325199727558,
+          "content": 0.667578659370725,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.4383792323487114,
+          "color": 0.9487952929477322,
+          "content": 0.4787234042553191,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.4779317115935241,
+          "color": 0.9598110443950828,
+          "content": 0.4969325153374233,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.5005499007519223,
+          "color": 0.9597921039374455,
+          "content": 0.30625,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.47009497861663674,
+          "color": 0.9609106380474841,
+          "content": 0.5222222222222221,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.4813146713132013,
+          "color": 0.9592449838067127,
+          "content": 0.4389348025711662,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4717025657293407,
+          "color": 0.9467295052773406,
+          "content": 0.5723404255319148,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.49475934597756727,
+          "color": 0.9603391116168472,
+          "content": 0.4623015873015873,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.527303345332958,
+          "color": 0.9529947434869273,
+          "content": 0.4966767371601208,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.43137631077907945,
+          "color": 0.960447852303659,
+          "content": 0.5698630136986301,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "xLNpcQp",
+      "reward": 0.6566523363770009,
+      "structure": 0.464268165381133,
+      "color": 0.9632718532785172,
+      "content": 0.5190693268483537,
+      "design_judge": 0.6799999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.44933798086257487,
+          "color": 0.9578424115472115,
+          "content": 0.7318361955085865,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.42398746323123826,
+          "color": 0.951253789810015,
+          "content": 0.35014836795252224,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.4646948376188273,
+          "color": 0.9676003531404801,
+          "content": 0.477124183006536,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.4672984713973595,
+          "color": 0.9646069373381712,
+          "content": 0.29132569558101473,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5502764489999412,
+          "color": 0.9613182873627776,
+          "content": 0.5907859078590786,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.3791796317678764,
+          "color": 0.9589151460617049,
+          "content": 0.4211597151576806,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4240542212155563,
+          "color": 0.9648072607902595,
+          "content": 0.647191011235955,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.4969866400437383,
+          "color": 0.9675063903495339,
+          "content": 0.5291479820627804,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.525735801993727,
+          "color": 0.9708508169801041,
+          "content": 0.5242369838420108,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.46113015668049034,
+          "color": 0.9680171394049141,
+          "content": 0.6277372262773723,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "yxemSMH",
+      "reward": 0.6610335810799739,
+      "structure": 0.48780019495815924,
+      "color": 0.9653194998567992,
+      "content": 0.5260146295049373,
+      "design_judge": 0.6649999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.49070294094588424,
+          "color": 0.963348283148574,
+          "content": 0.7284768211920529,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "shop": {
+          "present": true,
+          "structure": 0.44840570640352145,
+          "color": 0.9509106186795717,
+          "content": 0.33827893175074186,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "product": {
+          "present": true,
+          "structure": 0.4769654101125701,
+          "color": 0.9656061198571596,
+          "content": 0.5508982035928144,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "collections": {
+          "present": true,
+          "structure": 0.43382480247688243,
+          "color": 0.960855334184291,
+          "content": 0.3290322580645161,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "cart": {
+          "present": true,
+          "structure": 0.5516666982832963,
+          "color": 0.9635611897664875,
+          "content": 0.6310432569974554,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.509321610278831,
+          "color": 0.9638614582458813,
+          "content": 0.4870912220309811,
+          "design_judge": 0.575,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.5,
+            "content_completeness": 0.7
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.4622791104638886,
+          "color": 0.9664870475746723,
+          "content": 0.6674233825198638,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "shipping": {
+          "present": true,
+          "structure": 0.5214638668748403,
+          "color": 0.9727566554882712,
+          "content": 0.4744186046511628,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.5194784190760456,
+          "color": 0.9729983213325091,
+          "content": 0.45054243777919595,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.4638933846658321,
+          "color": 0.9728099702905741,
+          "content": 0.6029411764705882,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    }
+  ]
+}

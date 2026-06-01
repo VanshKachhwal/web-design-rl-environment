@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Examples</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="Seedling Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+        <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+        <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+        <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+      </svg>
+      <span class="header__logo-text">Seedling</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="guides.html" class="header__nav-link">Guides</a>
+      <a href="reference.html" class="header__nav-link">Reference</a>
+      <a href="examples.html" class="header__nav-link">Examples</a>
+      <a href="support.html" class="header__nav-link">Support</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- Hero / Header Section -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__badge">Examples</span>
+      <h1 class="hero__title">Real-World Examples</h1>
+      <p class="hero__subtitle">Explore practical implementations, patterns, and ready-to-use code samples to accelerate your projects.</p>
+      <div class="hero__actions">
+        <a href="guides.html" class="btn btn--primary btn--large">Read the Guides</a>
+        <a href="reference.html" class="btn btn--secondary btn--large">API Reference</a>
+      </div>
+    </div>
+    <div class="hero__decoration hero__decoration--1"></div>
+    <div class="hero__decoration hero__decoration--2"></div>
+    <div class="hero__decoration hero__decoration--3"></div>
+  </section>
+
+  <!-- Content Section Intro -->
+  <section class="content-section content-section--white">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <h2 class="content-section__title">Browse by Category</h2>
+        <p class="content-section__subtitle">Filter examples by topic or search for a specific pattern. Each example includes full source code and explanations.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="filter-bar__inner">
+          <span class="filter-bar__label">Filter:</span>
+          <div class="filter-bar__options">
+            <a href="#" class="filter-bar__option filter-bar__option--active">All</a>
+            <a href="#" class="filter-bar__option">Authentication</a>
+            <a href="#" class="filter-bar__option">Data Fetching</a>
+            <a href="#" class="filter-bar__option">Forms</a>
+            <a href="#" class="filter-bar__option">Layout</a>
+            <a href="#" class="filter-bar__option">Integration</a>
+          </div>
+          <input type="search" class="filter-bar__search" placeholder="Search examples…">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid of Examples -->
+  <section class="bento-grid">
+    <div class="bento-grid__inner">
+      <div class="bento-grid__header">
+        <h2 class="bento-grid__title">Featured Examples</h2>
+        <p class="content-section__subtitle">Hand-picked examples showcasing common patterns and best practices.</p>
+      </div>
+
+      <div class="bento-grid__items">
+        <!-- Featured wide item -->
+        <div class="bento-grid__item bento-grid__item--wide bento-grid__item--featured">
+          <div>
+            <p class="bento-grid__item-title">User Authentication Flow</p>
+            <p class="bento-grid__item-description">Complete login, registration, and session management example with token refresh and role-based access control.</p>
+          </div>
+          <div class="bento-grid__item-visual">
+            <svg width="100%" height="60" viewbox="0 0 400 60" preserveaspectratio="none">
+              <rect x="0" y="0" width="120" height="20" rx="6" fill="var(--color-sage-pale)" opacity="0.4"/>
+              <rect x="0" y="28" width="200" height="12" rx="4" fill="var(--color-sage-pale)" opacity="0.25"/>
+              <rect x="0" y="46" width="160" height="12" rx="4" fill="var(--color-sage-pale)" opacity="0.25"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Tall item -->
+        <div class="bento-grid__item bento-grid__item--tall">
+          <div>
+            <p class="bento-grid__item-title">REST API Integration</p>
+            <p class="bento-grid__item-description">Connect to external APIs with error handling, retry logic, caching strategies, and response transformation patterns.</p>
+          </div>
+          <div class="bento-grid__item-visual">
+            <svg width="100%" height="120" viewbox="0 0 200 120">
+              <rect x="0" y="0" width="200" height="24" rx="6" fill="var(--color-sage-pale)"/>
+              <rect x="0" y="32" width="200" height="24" rx="6" fill="var(--color-cream-dark)"/>
+              <rect x="0" y="64" width="200" height="24" rx="6" fill="var(--color-sage-pale)"/>
+              <rect x="0" y="96" width="200" height="24" rx="6" fill="var(--color-cream-dark)"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Regular item -->
+        <div class="bento-grid__item">
+          <div>
+            <p class="bento-grid__item-title">Form Validation</p>
+            <p class="bento-grid__item-description">Client-side and server-side validation with accessible error messages.</p>
+          </div>
+        </div>
+
+        <!-- Regular item -->
+        <div class="bento-grid__item">
+          <div>
+            <p class="bento-grid__item-title">File Upload</p>
+            <p class="bento-grid__item-description">Drag-and-drop file uploads with progress tracking and type validation.</p>
+          </div>
+        </div>
+
+        <!-- Accent wide item -->
+        <div class="bento-grid__item bento-grid__item--wide bento-grid__item--accent">
+          <div>
+            <p class="bento-grid__item-title">Dashboard Layout</p>
+            <p class="bento-grid__item-description">Responsive admin dashboard with sidebar navigation, data widgets, and chart placeholders using pure CSS techniques.</p>
+          </div>
+          <div class="bento-grid__item-visual">
+            <svg width="100%" height="48" viewbox="0 0 400 48">
+              <rect x="0" y="0" width="90" height="48" rx="8" fill="var(--color-terracotta-light)" opacity="0.4"/>
+              <rect x="100" y="0" width="90" height="48" rx="8" fill="var(--color-terracotta-light)" opacity="0.3"/>
+              <rect x="200" y="0" width="90" height="48" rx="8" fill="var(--color-terracotta-light)" opacity="0.4"/>
+              <rect x="300" y="0" width="90" height="48" rx="8" fill="var(--color-terracotta-light)" opacity="0.3"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Regular item -->
+        <div class="bento-grid__item">
+          <div>
+            <p class="bento-grid__item-title">Pagination</p>
+            <p class="bento-grid__item-description">Cursor-based and offset pagination with loading states.</p>
+          </div>
+        </div>
+
+        <!-- Regular item -->
+        <div class="bento-grid__item">
+          <div>
+            <p class="bento-grid__item-title">Search &amp; Filter</p>
+            <p class="bento-grid__item-description">Debounced search with multi-faceted filtering and URL sync.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Snippet Example -->
+  <section class="content-section content-section--cream">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <h2 class="content-section__title">Quick Start Snippet</h2>
+        <p class="content-section__subtitle">Get up and running in minutes with this basic configuration example.</p>
+      </div>
+
+      <div class="code-snippet">
+        <div class="code-snippet__header">
+          <div class="code-snippet__dots">
+            <span class="code-snippet__dot code-snippet__dot--red"></span>
+            <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+            <span class="code-snippet__dot code-snippet__dot--green"></span>
+          </div>
+          <span class="code-snippet__language">javascript</span>
+        </div>
+        <div class="code-snippet__body">
+          <pre class="code-snippet__pre"><span class="code-snippet__comment">// Initialize the client with your configuration</span>
+<span class="code-snippet__keyword">import</span> { createClient } <span class="code-snippet__keyword">from</span> <span class="code-snippet__string">'@example/sdk'</span>;
+
+<span class="code-snippet__keyword">const</span> client = <span class="code-snippet__function">createClient</span>({
+  apiKey: <span class="code-snippet__string">'your-api-key'</span>,
+  region: <span class="code-snippet__string">'us-east-1'</span>,
+  retries: <span class="code-snippet__number">3</span>,
+  timeout: <span class="code-snippet__number">5000</span>,
+});
+
+<span class="code-snippet__comment">// Fetch data with built-in error handling</span>
+<span class="code-snippet__keyword">const</span> response = <span class="code-snippet__keyword">await</span> client.<span class="code-snippet__function">query</span>({
+  collection: <span class="code-snippet__string">'users'</span>,
+  filter: { active: <span class="code-snippet__keyword">true</span> },
+  limit: <span class="code-snippet__number">25</span>,
+});
+
+console.<span class="code-snippet__function">log</span>(<span class="code-snippet__string">`Found ${response.total} users`</span>);</pre>
+        </div>
+      </div>
+
+      <div class="code-snippet">
+        <div class="code-snippet__header">
+          <div class="code-snippet__dots">
+            <span class="code-snippet__dot code-snippet__dot--red"></span>
+            <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+            <span class="code-snippet__dot code-snippet__dot--green"></span>
+          </div>
+          <span class="code-snippet__language">html</span>
+        </div>
+        <div class="code-snippet__body">
+          <pre class="code-snippet__pre"><span class="code-snippet__comment">&lt;!-- Embed the widget in your page --&gt;</span>
+<span class="code-snippet__keyword">&lt;div</span> id=<span class="code-snippet__string">"app-root"</span><span class="code-snippet__keyword">&gt;&lt;/div&gt;</span>
+
+<span class="code-snippet__keyword">&lt;link</span> rel=<span class="code-snippet__string">"stylesheet"</span>
+      href=<span class="code-snippet__string">"widget.css"</span> <span class="code-snippet__keyword">/&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- Configure and mount --&gt;</span>
+<span class="code-snippet__keyword">&lt;script</span> type=<span class="code-snippet__string">"module"</span><span class="code-snippet__keyword">&gt;</span>
+  <span class="code-snippet__keyword">import</span> { <span class="code-snippet__function">mount</span> } <span class="code-snippet__keyword">from</span> <span class="code-snippet__string">'./widget.js'</span>;
+  <span class="code-snippet__function">mount</span>(<span class="code-snippet__string">'#app-root'</span>, {
+    theme: <span class="code-snippet__string">'warm'</span>,
+    locale: <span class="code-snippet__string">'en-US'</span>,
+  });
+<span class="code-snippet__keyword">&lt;/script&gt;</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Card Grid of Additional Examples -->
+  <section class="content-section content-section--white">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <h2 class="content-section__title">More Examples</h2>
+        <p class="content-section__subtitle">Dive deeper with these community-contributed examples covering advanced use cases.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="card__tag">Authentication</span>
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="3" y="11" width="18" height="10" rx="3" stroke="var(--color-sage-dark)" stroke-width="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="var(--color-sage-dark)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="16" r="1.5" fill="var(--color-sage-dark)"/>
+            </svg>
+          </div>
+          <h3 class="card__title">OAuth2 Social Login</h3>
+          <p class="card__description">Integrate Google, GitHub, and custom OAuth2 providers with secure token exchange and profile mapping.</p>
+          <div class="card__meta">
+            <span>Advanced</span>
+            <span>15 min read</span>
+          </div>
+          <a href="guides.html" class="card__link mt-4">View example <span class="card__link-arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <span class="card__tag">Data Fetching</span>
+          <div class="card__icon card__icon--terracotta">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="var(--color-terracotta)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M2 17l10 5 10-5" stroke="var(--color-terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12l10 5 10-5" stroke="var(--color-terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Real-Time Data Sync</h3>
+          <p class="card__description">WebSocket-based data synchronization with optimistic updates, conflict resolution, and offline support.</p>
+          <div class="card__meta">
+            <span>Advanced</span>
+            <span>20 min read</span>
+          </div>
+          <a href="reference.html" class="card__link mt-4">View example <span class="card__link-arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <span class="card__tag">Forms</span>
+          <div class="card__icon card__icon--warning">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="var(--color-warning)" stroke-width="2"/>
+              <path d="M8 10h8M8 14h5" stroke="var(--color-warning)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Multi-Step Wizard</h3>
+          <p class="card__description">Complex multi-step form with progress tracking, conditional fields, draft saving, and step validation.</p>
+          <div class="card__meta">
+            <span>Intermediate</span>
+            <span>12 min read</span>
+          </div>
+          <a href="guides.html" class="card__link mt-4">View example <span class="card__link-arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <span class="card__tag">Layout</span>
+          <div class="card__icon card__icon--brown">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="2" stroke="var(--color-brown)" stroke-width="2"/>
+              <rect x="14" y="3" width="7" height="7" rx="2" stroke="var(--color-brown)" stroke-width="2"/>
+              <rect x="3" y="14" width="7" height="7" rx="2" stroke="var(--color-brown)" stroke-width="2"/>
+              <rect x="14" y="14" width="7" height="7" rx="2" stroke="var(--color-brown)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Responsive Grid System</h3>
+          <p class="card__description">Flexible grid layouts that adapt from mobile to desktop with named areas and auto-placement rules.</p>
+          <div class="card__meta">
+            <span>Beginner</span>
+            <span>8 min read</span>
+          </div>
+          <a href="reference.html" class="card__link mt-4">View example <span class="card__link-arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <span class="card__tag">Integration</span>
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="var(--color-sage-dark)" stroke-width="2"/>
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="var(--color-sage-dark)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Webhook Handler</h3>
+          <p class="card__description">Secure webhook endpoint with signature verification, payload parsing, and idempotent event processing.</p>
+          <div class="card__meta">
+            <span>Intermediate</span>
+            <span>10 min read</span>
+          </div>
+          <a href="guides.html" class="card__link mt-4">View example <span class="card__link-arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <span class="card__tag">Data Fetching</span>
+          <div class="card__icon card__icon--terracotta">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M3 12h4l3-9 4 18 3-9h4" stroke="var(--color-terracotta)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="card__title">Caching Strategies</h3>
+          <p class="card__description">Implement stale-while-revalidate, time-based expiry, and cache invalidation patterns for optimal performance.</p>
+          <div class="card__meta">
+            <span>Advanced</span>
+            <span>18 min read</span>
+          </div>
+          <a href="reference.html" class="card__link mt-4">View example <span class="card__link-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to Build Something?</h2>
+      <p class="cta-banner__description">Start with our guides for step-by-step instructions, or dive into the reference for complete API documentation.</p>
+      <div class="cta-banner__actions">
+        <a href="guides.html" class="btn btn--primary btn--large">Start a Guide</a>
+        <a href="support.html" class="btn btn--secondary btn--large" style="color: var(--color-text-inverse); border-color: var(--color-text-inverse);">Get Support</a>
+      </div>
+    </div>
+    <div class="cta-banner__decoration cta-banner__decoration--1"></div>
+    <div class="cta-banner__decoration cta-banner__decoration--2"></div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="Seedling Home" style="margin-bottom:var(--space-2);">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+            <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+            <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+            <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+          </svg>
+          <span class="header__logo-text" style="color:var(--color-cream);">Seedling</span>
+        </a>
+        <p class="footer__brand-description">An educational coding platform built for students and educators. Learn, build, and grow — one line at a time.</p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Platform</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Guides</a>
+          <a href="reference.html" class="footer__link">Reference</a>
+          <a href="examples.html" class="footer__link">Examples</a>
+          <a href="support.html" class="footer__link">Support</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Resources</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Getting Started</a>
+          <a href="reference.html" class="footer__link">API Reference</a>
+          <a href="examples.html" class="footer__link">Code Examples</a>
+          <a href="support.html" class="footer__link">Community</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Learn</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Tutorials</a>
+          <a href="examples.html" class="footer__link">Projects</a>
+          <a href="reference.html" class="footer__link">Documentation</a>
+          <a href="support.html" class="footer__link">Help Center</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Seedling. Designed for learners everywhere.</p>
+      <div class="footer__bottom-links">
+        <a href="support.html" class="footer__bottom-link">Privacy</a>
+        <a href="support.html" class="footer__bottom-link">Terms</a>
+        <a href="support.html" class="footer__bottom-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

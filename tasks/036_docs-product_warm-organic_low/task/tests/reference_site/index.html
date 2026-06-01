@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="Seedling Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+        <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+        <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+        <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+      </svg>
+      <span class="header__logo-text">Seedling</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="guides.html" class="header__nav-link">Guides</a>
+      <a href="reference.html" class="header__nav-link">Reference</a>
+      <a href="examples.html" class="header__nav-link">Examples</a>
+      <a href="support.html" class="header__nav-link">Support</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__decoration hero__decoration--1"></div>
+    <div class="hero__decoration hero__decoration--2"></div>
+    <div class="hero__decoration hero__decoration--3"></div>
+    <div class="hero__inner">
+      <span class="hero__badge">Open-Source Documentation Platform</span>
+      <h1 class="hero__title">Build Beautiful Docs,<br>Effortlessly</h1>
+      <p class="hero__subtitle">A warm, thoughtful documentation system designed to help your team create guides, references, and examples that people actually enjoy reading.</p>
+      <div class="hero__actions">
+        <a href="guides.html" class="btn btn--primary btn--large">Get Started</a>
+        <a href="examples.html" class="btn btn--secondary btn--large">View Examples</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE-GRID -->
+  <section class="feature-grid">
+    <div class="feature-grid__inner">
+      <div class="feature-grid__header">
+        <h2 class="feature-grid__title">Everything You Need</h2>
+        <p class="feature-grid__subtitle">A complete toolkit for writing, organizing, and publishing documentation that scales with your project.</p>
+      </div>
+      <div class="feature-grid__items">
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--sage">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="22" height="18" rx="3" stroke="#5F7E5B" stroke-width="2" fill="none"/>
+              <line x1="8" y1="11" x2="20" y2="11" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round"/>
+              <line x1="8" y1="15" x2="16" y2="15" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round"/>
+              <line x1="8" y1="19" x2="13" y2="19" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Structured Guides</h3>
+          <p class="feature-grid__item-description">Write step-by-step tutorials and walkthroughs with a clear, logical structure that helps readers follow along from start to finish.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--terracotta">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="14" r="10" stroke="#C4654A" stroke-width="2" fill="none"/>
+              <path d="M10 14l3 3 5-6" stroke="#C4654A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">API Reference</h3>
+          <p class="feature-grid__item-description">Auto-organized reference pages with consistent formatting, parameter tables, and code samples for every endpoint and method.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--warning">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="9" height="9" rx="2" stroke="#D4A44A" stroke-width="2" fill="none"/>
+              <rect x="15" y="4" width="9" height="9" rx="2" stroke="#D4A44A" stroke-width="2" fill="none"/>
+              <rect x="4" y="15" width="9" height="9" rx="2" stroke="#D4A44A" stroke-width="2" fill="none"/>
+              <rect x="15" y="15" width="9" height="9" rx="2" stroke="#D4A44A" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Live Examples</h3>
+          <p class="feature-grid__item-description">Embed working code snippets and interactive demos directly in your documentation so readers can see concepts in action.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--sage">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 4L4 9l10 5 10-5-10-5z" stroke="#5F7E5B" stroke-width="2" stroke-linejoin="round" fill="none"/>
+              <path d="M4 14l10 5 10-5" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M4 19l10 5 10-5" stroke="#5F7E5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Design System</h3>
+          <p class="feature-grid__item-description">A cohesive visual language with tokens for color, typography, and spacing that keeps every page looking polished and consistent.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--terracotta">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 7H7a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#C4654A" stroke-width="2" fill="none"/>
+              <path d="M5 11h18" stroke="#C4654A" stroke-width="2"/>
+              <circle cx="9" cy="9" r="1" fill="#C4654A"/>
+              <circle cx="12" cy="9" r="1" fill="#C4654A"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Fully Responsive</h3>
+          <p class="feature-grid__item-description">Every component adapts gracefully from wide desktop monitors down to mobile screens, ensuring readability on any device.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--warning">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 5v7l5 3" stroke="#D4A44A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="14" r="10" stroke="#D4A44A" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Fast &amp; Static</h3>
+          <p class="feature-grid__item-description">Pure HTML and CSS with zero JavaScript dependencies. Pages load instantly and work everywhere without a build pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="testimonial__inner">
+      <div class="testimonial__quote-mark">&ldquo;</div>
+      <blockquote class="testimonial__quote">
+        This documentation system transformed how our team shares knowledge. The warm design makes even dense technical content feel approachable, and our onboarding time dropped by half.
+      </blockquote>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar">
+          <span class="testimonial__avatar-initials">JM</span>
+        </div>
+        <div class="testimonial__author-info">
+          <div class="testimonial__author-name">Jordan Mitchell</div>
+          <div class="testimonial__author-role">Lead Engineer, Canopy Labs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA-BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__decoration cta-banner__decoration--1"></div>
+    <div class="cta-banner__decoration cta-banner__decoration--2"></div>
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to Build Better Docs?</h2>
+      <p class="cta-banner__description">Explore our guides to get started in minutes, or browse real-world examples to see what&rsquo;s possible.</p>
+      <div class="cta-banner__actions">
+        <a href="guides.html" class="btn btn--primary btn--large">Read the Guides</a>
+        <a href="reference.html" class="btn btn--secondary btn--large" style="border-color: var(--color-text-inverse); color: var(--color-text-inverse);">Browse Reference</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER-SIGNUP -->
+  <section class="newsletter-signup">
+    <div class="newsletter-signup__inner">
+      <h2 class="newsletter-signup__title">Stay in the Loop</h2>
+      <p class="newsletter-signup__description">Get notified about new guides, component updates, and documentation tips delivered straight to your inbox. No spam, ever.</p>
+      <form class="newsletter-signup__form" action="#" method="post">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input type="email" id="newsletter-email" class="newsletter-signup__input" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="Seedling Home" style="margin-bottom:var(--space-2);">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+            <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+            <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+            <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+          </svg>
+          <span class="header__logo-text" style="color:var(--color-cream);">Seedling</span>
+        </a>
+        <p class="footer__brand-description">An educational coding platform built for students and educators. Learn, build, and grow — one line at a time.</p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Platform</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Guides</a>
+          <a href="reference.html" class="footer__link">Reference</a>
+          <a href="examples.html" class="footer__link">Examples</a>
+          <a href="support.html" class="footer__link">Support</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Resources</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Getting Started</a>
+          <a href="reference.html" class="footer__link">API Reference</a>
+          <a href="examples.html" class="footer__link">Code Examples</a>
+          <a href="support.html" class="footer__link">Community</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Learn</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Tutorials</a>
+          <a href="examples.html" class="footer__link">Projects</a>
+          <a href="reference.html" class="footer__link">Documentation</a>
+          <a href="support.html" class="footer__link">Help Center</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Seedling. Designed for learners everywhere.</p>
+      <div class="footer__bottom-links">
+        <a href="support.html" class="footer__bottom-link">Privacy</a>
+        <a href="support.html" class="footer__bottom-link">Terms</a>
+        <a href="support.html" class="footer__bottom-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

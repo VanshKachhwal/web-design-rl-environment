@@ -1,0 +1,22 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "features": {
+    "screenshot": "features.png",
+    "expected_file": "features.html"
+  },
+  "pricing": {
+    "screenshot": "pricing.png",
+    "expected_file": "pricing.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

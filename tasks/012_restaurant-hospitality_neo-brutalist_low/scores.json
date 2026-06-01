@@ -1,0 +1,785 @@
+{
+  "meta": {
+    "task_id": "012_restaurant-hospitality_neo-brutalist_low",
+    "seed_tuple": [
+      "restaurant-hospitality",
+      "neo-brutalist",
+      "low",
+      "students-and-educators",
+      "warm-and-welcoming"
+    ],
+    "archetype": "restaurant-hospitality",
+    "aesthetic": "neo-brutalist",
+    "complexity": "low",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 13.970128249999997,
+    "total_input_tokens": 9101242,
+    "total_output_tokens": 285289,
+    "started_at": "2026-06-01T00:06:06.762145",
+    "finished_at": "2026-06-01T00:17:11.606035",
+    "wall_clock_sec": 664.84389,
+    "date": "2026-06-01",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "GaSq58z",
+      "reward": 0.762440566740176,
+      "structure": 0.7186440326666836,
+      "color": 0.9596275651681602,
+      "content": 0.6364906691258604,
+      "design_judge": 0.735,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7525852613258893,
+          "color": 0.930339494912285,
+          "content": 0.7965367965367965,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6934502292214636,
+          "color": 0.9747445005028135,
+          "content": 0.4269377382465057,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6961063540178156,
+          "color": 0.9535919774739465,
+          "content": 0.47892720306513414,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.7086902215582465,
+          "color": 0.9676132212314055,
+          "content": 0.6590909090909091,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7423880972100029,
+          "color": 0.9718486317203501,
+          "content": 0.8209606986899564,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "KCpDEkL",
+      "reward": 0.77889388038652,
+      "structure": 0.7184365110723355,
+      "color": 0.9502187214825908,
+      "content": 0.7369202889911535,
+      "design_judge": 0.71,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7514048176739871,
+          "color": 0.9270960300202455,
+          "content": 0.9465346534653465,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6805165729801742,
+          "color": 0.959637088553893,
+          "content": 0.5842450765864333,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7221019765155977,
+          "color": 0.947936606326107,
+          "content": 0.5754098360655738,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.6949354216028619,
+          "color": 0.9549791114433634,
+          "content": 0.6546830652790917,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7432237665890565,
+          "color": 0.961444771069345,
+          "content": 0.923728813559322,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "YfRY3rU",
+      "reward": 0.7820285870019211,
+      "structure": 0.7160293007334098,
+      "color": 0.9683119862582205,
+      "content": 0.7237730610160543,
+      "design_judge": 0.72,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7463506491344652,
+          "color": 0.9339766613170033,
+          "content": 0.9496981891348089,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6839034197278748,
+          "color": 0.98001251014308,
+          "content": 0.5476190476190477,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.712806269853926,
+          "color": 0.9734325039155741,
+          "content": 0.6018440905280805,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.6974589300397703,
+          "color": 0.9784334549841653,
+          "content": 0.6260869565217391,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7396272349110121,
+          "color": 0.9757048009312792,
+          "content": 0.8936170212765957,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "ZJAFwSi",
+      "reward": 0.782029739629686,
+      "structure": 0.7306406869407395,
+      "color": 0.9688273038687513,
+      "content": 0.7136509677092533,
+      "design_judge": 0.7150000000000001,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.74440817843198,
+          "color": 0.9405988306718918,
+          "content": 0.9165048543689319,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.7310574837664872,
+          "color": 0.9783437885319842,
+          "content": 0.571127502634352,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6981959077931772,
+          "color": 0.9723996836019677,
+          "content": 0.5670926517571885,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.7288281228704241,
+          "color": 0.9788803155669029,
+          "content": 0.6418056918547597,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7507137418416291,
+          "color": 0.9739139009710096,
+          "content": 0.8717241379310345,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "dqYb4au",
+      "reward": 0.7766489554297835,
+      "structure": 0.7040660528685373,
+      "color": 0.9604668618373008,
+      "content": 0.7270629070132959,
+      "design_judge": 0.7150000000000001,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7223177743871146,
+          "color": 0.93258698474231,
+          "content": 0.9465346534653465,
+          "design_judge": 0.8500000000000001,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6609090905177452,
+          "color": 0.9733786298595399,
+          "content": 0.5861690450054885,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6961943085425911,
+          "color": 0.962060918369068,
+          "content": 0.5297297297297298,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.6953800220785628,
+          "color": 0.9693698085989613,
+          "content": 0.6599597585513077,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7455290688166727,
+          "color": 0.9649379676166251,
+          "content": 0.9129213483146067,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "eKKkQ9u",
+      "reward": 0.7517810688485944,
+      "structure": 0.7145382668784743,
+      "color": 0.9622883318247524,
+      "content": 0.6402976766911511,
+      "design_judge": 0.6900000000000001,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7424644361130986,
+          "color": 0.9424223005394039,
+          "content": 0.8842504743833016,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6884701311950129,
+          "color": 0.9654785059688388,
+          "content": 0.3995037220843672,
+          "design_judge": 0.575,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.4
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7126096057500731,
+          "color": 0.9593637427820948,
+          "content": 0.5467128027681661,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.7005044124342469,
+          "color": 0.9722218264379757,
+          "content": 0.5835748792270531,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7286427488999396,
+          "color": 0.9719552833954486,
+          "content": 0.7874465049928673,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "izQKYyG",
+      "reward": 0.77797875399528,
+      "structure": 0.7175444904981261,
+      "color": 0.961955261472504,
+      "content": 0.7174152640104902,
+      "design_judge": 0.715,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7331031766902566,
+          "color": 0.9385214646716523,
+          "content": 0.9138576779026217,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6903957605078537,
+          "color": 0.9743642264470241,
+          "content": 0.5336179295624333,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7001719016391357,
+          "color": 0.9529142356801102,
+          "content": 0.6024096385542169,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.7184695967340795,
+          "color": 0.9723530797099256,
+          "content": 0.6588693957115009,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7455820169193048,
+          "color": 0.9716233008538073,
+          "content": 0.8783216783216783,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "knXCnZZ",
+      "reward": 0.7740380832899524,
+      "structure": 0.7213266285332098,
+      "color": 0.9587481032600224,
+      "content": 0.7060776013665773,
+      "design_judge": 0.71,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7351263015237902,
+          "color": 0.9269023175972521,
+          "content": 0.9263565891472868,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6921537525842762,
+          "color": 0.9685193438877376,
+          "content": 0.4622754491017964,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7279683062253918,
+          "color": 0.9591506711827745,
+          "content": 0.608130081300813,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.7073800044650609,
+          "color": 0.9717604129410896,
+          "content": 0.6415804327375353,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.74400477786753,
+          "color": 0.9674077706912578,
+          "content": 0.8920454545454546,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "nJ2oHuK",
+      "reward": 0.7494777092235714,
+      "structure": 0.7260884008025101,
+      "color": 0.9568917927518757,
+      "content": 0.6099306433398995,
+      "design_judge": 0.705,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7617242595959062,
+          "color": 0.9328875022271178,
+          "content": 0.7657657657657658,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.7030395917769086,
+          "color": 0.9648543121465957,
+          "content": 0.4037685060565276,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7101609706617814,
+          "color": 0.9519954708979101,
+          "content": 0.5045207956600362,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.7065490393427859,
+          "color": 0.9677256961893875,
+          "content": 0.6323957322987391,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7489681426351684,
+          "color": 0.9669959822983678,
+          "content": 0.7432024169184289,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "r58s8vF",
+      "reward": 0.7538906826035211,
+      "structure": 0.7091095332060199,
+      "color": 0.9541088395768018,
+      "content": 0.6423443576312626,
+      "design_judge": 0.71,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7428434729348423,
+          "color": 0.9217616031198176,
+          "content": 0.896421845574388,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "menu": {
+          "present": true,
+          "structure": 0.6718750633462742,
+          "color": 0.9648076677445174,
+          "content": 0.40112201963534355,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6918883796043074,
+          "color": 0.955050646969698,
+          "content": 0.5618374558303887,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reservations": {
+          "present": true,
+          "structure": 0.6931413854619445,
+          "color": 0.9640110029541713,
+          "content": 0.5370370370370371,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7457993646827309,
+          "color": 0.9649132770958041,
+          "content": 0.8153034300791557,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Contact</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" fill="#C41E1E"/>
+        <polygon points="6,28 16,4 26,28" fill="#0A0A0A"/>
+        <rect x="10" y="20" width="12" height="3" fill="#C41E1E"/>
+      </svg>
+      VANDAL
+    </a>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="work.html" class="header__nav-link">Work</a></li>
+        <li><a href="case-studies.html" class="header__nav-link">Case Studies</a></li>
+        <li><a href="services.html" class="header__nav-link">Services</a></li>
+        <li><a href="process.html" class="header__nav-link">Process</a></li>
+        <li><a href="about.html" class="header__nav-link">About</a></li>
+        <li><a href="team.html" class="header__nav-link">Team</a></li>
+        <li><a href="journal.html" class="header__nav-link">Journal</a></li>
+        <li><a href="careers.html" class="header__nav-link">Careers</a></li>
+      </ul>
+      <a href="contact.html" class="header__nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg-pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hero-contact-pattern" x="0" y="0" width="60" height="60" patternunits="userSpaceOnUse">
+            <rect x="0" y="0" width="60" height="60" fill="none"/>
+            <circle cx="30" cy="30" r="1.5" fill="var(--color-pure-white)"/>
+            <line x1="0" y1="30" x2="60" y2="30" stroke="var(--color-pure-white)" stroke-width="0.3"/>
+            <line x1="30" y1="0" x2="30" y2="60" stroke="var(--color-pure-white)" stroke-width="0.3"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-contact-pattern)"/>
+      </svg>
+    </div>
+    <div class="container hero__inner">
+      <span class="hero__eyebrow">Get In Touch</span>
+      <h1 class="hero__title">Let's Start a <em>Conversation</em></h1>
+      <p class="hero__subtitle">Have a project in mind, a question about our services, or just want to say hello? We'd love to hear from you.</p>
+      <div class="hero__actions">
+        <a href="#contact-form" class="hero__btn-primary">Send a Message</a>
+        <a href="services.html" class="hero__btn-secondary">View Services</a>
+      </div>
+      <div class="hero__divider"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT BLOCK -->
+  <section class="contact-block">
+    <div class="container">
+      <div class="contact-block__layout">
+        <!-- Info Column -->
+        <div class="contact-block__info">
+          <h2 class="contact-block__title">Reach Out Directly</h2>
+          <p class="contact-block__desc">Whether you're ready to kick off a new project or simply exploring your options, our team is here to help. We typically respond within one business day.</p>
+
+          <div class="contact-block__details">
+            <div>
+              <span class="contact-block__detail-label">Email</span>
+              <a href="mailto:hello@vandalcreative.com" class="contact-block__detail-value">hello@vandalcreative.com</a>
+            </div>
+            <div>
+              <span class="contact-block__detail-label">Phone</span>
+              <a href="tel:+15551234567" class="contact-block__detail-value">+1 (555) 123-4567</a>
+            </div>
+            <div>
+              <span class="contact-block__detail-label">Office Hours</span>
+              <span class="contact-block__detail-value">Mon – Fri, 9:00 AM – 6:00 PM EST</span>
+            </div>
+            <div>
+              <span class="contact-block__detail-label">Address</span>
+              <span class="contact-block__detail-value">247 West 38th Street, Suite 1200<br>New York, NY 10018</span>
+            </div>
+            <div>
+              <span class="contact-block__detail-label">New Business</span>
+              <a href="mailto:projects@vandalcreative.com" class="contact-block__detail-value">projects@vandalcreative.com</a>
+            </div>
+            <div>
+              <span class="contact-block__detail-label">Careers</span>
+              <a href="careers.html" class="contact-block__detail-value">View Open Positions →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div id="contact-form">
+          <form action="#" method="post">
+            <div class="form-field">
+              <label class="form-field__label" for="contact-name">Full Name <span class="form-field__required">*</span></label>
+              <input class="form-field__input" type="text" id="contact-name" name="name" placeholder="Your full name" required>
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-email">Email Address <span class="form-field__required">*</span></label>
+              <input class="form-field__input" type="email" id="contact-email" name="email" placeholder="you@company.com" required>
+              <span class="form-field__hint">We'll never share your email with anyone else.</span>
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-phone">Phone Number</label>
+              <input class="form-field__input" type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000">
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-company">Company / Organization</label>
+              <input class="form-field__input" type="text" id="contact-company" name="company" placeholder="Your company name">
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-service">Service Interest</label>
+              <select class="form-field__select" id="contact-service" name="service">
+                <option value="">Select a service</option>
+                <option value="branding">Branding &amp; Identity</option>
+                <option value="web-design">Web Design &amp; Development</option>
+                <option value="digital-strategy">Digital Strategy</option>
+                <option value="content">Content &amp; Copywriting</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-budget">Estimated Budget</label>
+              <select class="form-field__select" id="contact-budget" name="budget">
+                <option value="">Select a range</option>
+                <option value="under-10k">Under $10,000</option>
+                <option value="10k-25k">$10,000 – $25,000</option>
+                <option value="25k-50k">$25,000 – $50,000</option>
+                <option value="50k-100k">$50,000 – $100,000</option>
+                <option value="100k-plus">$100,000+</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-message">Project Details <span class="form-field__required">*</span></label>
+              <textarea class="form-field__textarea" id="contact-message" name="message" placeholder="Tell us about your project, goals, and timeline…" required></textarea>
+              <span class="form-field__hint">The more detail you provide, the better we can prepare for our conversation.</span>
+            </div>
+
+            <div class="form-field">
+              <label class="form-field__label" for="contact-referral">How Did You Hear About Us?</label>
+              <select class="form-field__select" id="contact-referral" name="referral">
+                <option value="">Select an option</option>
+                <option value="search">Search Engine</option>
+                <option value="social">Social Media</option>
+                <option value="referral">Referral</option>
+                <option value="journal">Our Journal</option>
+                <option value="event">Event / Conference</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="form__submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP EMBED PLACEHOLDER -->
+  <section>
+    <div class="container">
+      <div class="map-embed-placeholder">
+        <div class="map-embed-placeholder__grid">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="map-grid-pattern" x="0" y="0" width="40" height="40" patternunits="userSpaceOnUse">
+                <rect x="0" y="0" width="40" height="40" fill="none"/>
+                <line x1="0" y1="0" x2="40" y2="0" stroke="var(--color-pure-white)" stroke-width="0.5"/>
+                <line x1="0" y1="0" x2="0" y2="40" stroke="var(--color-pure-white)" stroke-width="0.5"/>
+                <line x1="20" y1="0" x2="20" y2="40" stroke="var(--color-pure-white)" stroke-width="0.2"/>
+                <line x1="0" y1="20" x2="40" y2="20" stroke="var(--color-pure-white)" stroke-width="0.2"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#map-grid-pattern)"/>
+          </svg>
+        </div>
+        <div class="map-embed-placeholder__pin">
+          <svg width="48" height="48" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 4C16.268 4 10 10.268 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.732-6.268-14-14-14z" fill="var(--color-blood)" stroke="var(--color-blood-dark)" stroke-width="1.5"/>
+            <circle cx="24" cy="18" r="6" fill="var(--color-pure-white)"/>
+          </svg>
+        </div>
+        <span class="map-embed-placeholder__label">Our Studio</span>
+        <span class="map-embed-placeholder__address">247 West 38th Street, Suite 1200<br>New York, NY 10018</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner cta-banner--dark">
+    <div class="cta-banner__pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="cta-contact-pattern" x="0" y="0" width="80" height="80" patternunits="userSpaceOnUse">
+            <rect x="0" y="0" width="80" height="80" fill="none"/>
+            <line x1="0" y1="80" x2="80" y2="0" stroke="var(--color-blood)" stroke-width="0.5"/>
+            <line x1="0" y1="40" x2="40" y2="0" stroke="var(--color-blood)" stroke-width="0.3"/>
+            <line x1="40" y1="80" x2="80" y2="40" stroke="var(--color-blood)" stroke-width="0.3"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#cta-contact-pattern)"/>
+      </svg>
+    </div>
+    <div class="container cta-banner__inner">
+      <h2 class="cta-banner__title">Prefer to Explore First?</h2>
+      <p class="cta-banner__subtitle">Browse our latest work and case studies to see how we've helped brands like yours achieve remarkable results.</p>
+      <a href="work.html" class="cta-banner__btn">View Our Work</a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container container--wide">
+    <div class="footer__inner">
+      <div class="footer__brand-col">
+        <div class="footer__brand-name">VANDAL</div>
+        <p class="footer__brand-desc">Rebellious luxury creative agency. We defy convention and deliver impeccable craft — breaking rules with sophistication since 2016.</p>
+        <div class="award-badge__collection">
+          <div class="award-badge">
+            <div class="award-badge__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9" fill="#C41E1E"/>
+              </svg>
+            </div>
+            <div class="award-badge__text">
+              <span class="award-badge__name">Awwwards SOTD</span>
+              <span class="award-badge__year">2024</span>
+            </div>
+          </div>
+          <div class="award-badge">
+            <div class="award-badge__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#C41E1E" stroke-width="2"/>
+                <polygon points="12,6 14,10 18,10 15,13 16,17 12,14.5 8,17 9,13 6,10 10,10" fill="#C41E1E"/>
+              </svg>
+            </div>
+            <div class="award-badge__text">
+              <span class="award-badge__name">D&amp;AD Pencil</span>
+              <span class="award-badge__year">2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__link-list">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="work.html" class="footer__link">Work</a></li>
+          <li><a href="case-studies.html" class="footer__link">Case Studies</a></li>
+          <li><a href="services.html" class="footer__link">Services</a></li>
+          <li><a href="process.html" class="footer__link">Process</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul class="footer__link-list">
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="team.html" class="footer__link">Team</a></li>
+          <li><a href="journal.html" class="footer__link">Journal</a></li>
+          <li><a href="careers.html" class="footer__link">Careers</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Connect</h4>
+        <ul class="footer__link-list">
+          <li><span class="footer__link">Instagram</span></li>
+          <li><span class="footer__link">LinkedIn</span></li>
+          <li><span class="footer__link">Behance</span></li>
+          <li><span class="footer__link">Dribbble</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">&copy; 2024 VANDAL Creative. All rights reserved.</span>
+      <div class="footer__bottom-links">
+        <span class="footer__bottom-link">Privacy Policy</span>
+        <span class="footer__bottom-link">Terms of Service</span>
+        <span class="footer__bottom-link">Built with defiance</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

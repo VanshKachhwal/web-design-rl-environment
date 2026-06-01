@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Collections</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__top-bar">
+    ★ Curated Local Goods — Free Pickup on All Orders ★
+  </div>
+  <div class="header__main">
+    <div class="header__logo">
+      <a href="index.html">LOCAL<br>GOODS</a>
+    </div>
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="index.html">Home</a></li>
+        <li class="header__nav-item"><a href="shop.html">Shop</a></li>
+        <li class="header__nav-item"><a href="collections.html">Collections</a></li>
+        <li class="header__nav-item"><a href="about.html">About</a></li>
+        <li class="header__nav-item"><a href="reviews.html">Reviews</a></li>
+        <li class="header__nav-item"><a href="shipping.html">Shipping</a></li>
+        <li class="header__nav-item"><a href="faq.html">FAQ</a></li>
+        <li class="header__nav-item"><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="cart.html" class="header__cart-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="6" width="10" height="9" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M5 6V4a3 3 0 0 1 6 0v2" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+        Cart [0]
+      </a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="hero__label">Curated Selections</span>
+        <h1 class="hero__title">Our Collections</h1>
+        <p class="hero__subtitle">Thoughtfully grouped local goods — each collection tells a story of craft, region, and tradition. Browse by theme or discover something new.</p>
+        <div class="hero__actions">
+          <a href="shop.html" class="button button--primary">Shop All Goods</a>
+          <a href="about.html" class="button button--secondary">Our Story</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__visual-block">
+          <div class="hero__visual-cell"></div>
+          <div class="hero__visual-cell"></div>
+          <div class="hero__visual-cell"></div>
+          <div class="hero__visual-cell"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span class="filter-bar__label">Filter by:</span>
+    <div class="filter-bar__options">
+      <button class="filter-bar__option filter-bar__option--active">All</button>
+      <button class="filter-bar__option">Seasonal</button>
+      <button class="filter-bar__option">Pantry</button>
+      <button class="filter-bar__option">Home</button>
+      <button class="filter-bar__option">Artisan</button>
+      <button class="filter-bar__option">Gift Sets</button>
+    </div>
+    <span class="filter-bar__count">12 Collections</span>
+  </div>
+
+  <!-- MASONRY GRID — FEATURED COLLECTIONS -->
+  <section class="masonry-grid">
+    <div class="masonry-grid__header">
+      <h2 class="masonry-grid__title">Featured Collections</h2>
+    </div>
+    <div class="masonry-grid__items">
+
+      <!-- Collection 1 — Tall card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image" style="aspect-ratio: 3/4;">
+            <svg width="120" height="120" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="30" width="100" height="60" fill="var(--color-gray-200)"/>
+              <rect x="30" y="10" width="20" height="100" fill="var(--color-accent-muted)"/>
+              <rect x="70" y="10" width="20" height="100" fill="var(--color-gray-300)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Seasonal · 8 Items</span>
+            <h3 class="card__title">Autumn Harvest</h3>
+            <p class="card__text">Warm spices, preserved fruits, and hand-thrown ceramics — everything you need to welcome the cooler months.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--accent">New</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 2 — Standard card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image">
+            <svg width="100" height="100" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="40" fill="var(--color-gray-200)"/>
+              <circle cx="50" cy="50" r="20" fill="var(--color-accent-olive)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Pantry · 12 Items</span>
+            <h3 class="card__title">Preserves & Pickles</h3>
+            <p class="card__text">Small-batch jams, fermented vegetables, and chutneys from local farms.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--default">Popular</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 3 — Short card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">Gift Sets · 5 Items</span>
+            <h3 class="card__title">The Welcome Box</h3>
+            <p class="card__text">A curated introduction to local goods — perfect for housewarming or holiday gifting.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--outline">Gift</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 4 — Tall card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image" style="aspect-ratio: 3/4;">
+            <svg width="120" height="140" viewbox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="100" height="120" fill="var(--color-gray-100)"/>
+              <rect x="25" y="30" width="70" height="10" fill="var(--color-accent-warm)"/>
+              <rect x="25" y="50" width="70" height="10" fill="var(--color-accent-warm)"/>
+              <rect x="25" y="70" width="70" height="10" fill="var(--color-accent-warm)"/>
+              <rect x="25" y="90" width="70" height="10" fill="var(--color-accent-warm)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Home · 10 Items</span>
+            <h3 class="card__title">Woven Textiles</h3>
+            <p class="card__text">Hand-loomed blankets, table runners, and napkins crafted by regional weavers using heritage techniques.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--accent">Featured</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 5 — Standard card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image">
+            <svg width="100" height="100" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="15" width="70" height="70" transform="rotate(45 50 50)" fill="var(--color-gray-200)"/>
+              <rect x="30" y="30" width="40" height="40" transform="rotate(45 50 50)" fill="var(--color-accent-slate)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Artisan · 6 Items</span>
+            <h3 class="card__title">Stoneware Studio</h3>
+            <p class="card__text">Mugs, bowls, and platters — each piece wheel-thrown and glazed by hand in small studios.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--outline">Artisan</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 6 — Short text-only card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">Seasonal · 4 Items</span>
+            <h3 class="card__title">Winter Warmers</h3>
+            <p class="card__text">Hot chocolate blends, beeswax candles, and woolen accessories for the coldest days.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--success">In Season</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 7 — Standard card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image">
+            <svg width="100" height="80" viewbox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="90" height="70" fill="var(--color-gray-100)"/>
+              <rect x="10" y="10" width="35" height="60" fill="var(--color-accent-muted)"/>
+              <rect x="55" y="10" width="35" height="60" fill="var(--color-gray-300)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Pantry · 9 Items</span>
+            <h3 class="card__title">Oils & Vinegars</h3>
+            <p class="card__text">Cold-pressed olive oils, infused vinegars, and finishing drizzles sourced from small-scale producers.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--default">Bestseller</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 8 — Tall card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image" style="aspect-ratio: 3/4;">
+            <svg width="100" height="130" viewbox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="10" width="60" height="110" fill="var(--color-gray-200)"/>
+              <circle cx="50" cy="45" r="20" fill="var(--color-accent-olive)"/>
+              <circle cx="50" cy="95" r="15" fill="var(--color-gray-400)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Home · 7 Items</span>
+            <h3 class="card__title">Botanical Bath</h3>
+            <p class="card__text">Herb-infused soaps, salves, and bath salts — all plant-based and locally formulated.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--accent">New</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 9 — Standard card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image">
+            <svg width="100" height="80" viewbox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="100" height="80" fill="var(--color-gray-100)"/>
+              <rect x="10" y="20" width="80" height="5" fill="var(--color-black)"/>
+              <rect x="10" y="35" width="80" height="5" fill="var(--color-black)"/>
+              <rect x="10" y="50" width="80" height="5" fill="var(--color-black)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Artisan · 11 Items</span>
+            <h3 class="card__title">Woodwork & Carving</h3>
+            <p class="card__text">Cutting boards, utensils, and decorative pieces carved from sustainably harvested hardwoods.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--outline">Handmade</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 10 — Short card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__body">
+            <span class="card__label">Gift Sets · 3 Items</span>
+            <h3 class="card__title">Date Night In</h3>
+            <p class="card__text">Artisan pasta, local wine pairings, and hand-dipped candles for an evening at home.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--danger">Limited</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 11 — Standard card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image">
+            <svg width="100" height="80" viewbox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="50" height="80" fill="var(--color-accent-muted)"/>
+              <rect x="50" y="0" width="50" height="80" fill="var(--color-gray-200)"/>
+              <circle cx="50" cy="40" r="25" fill="var(--color-white)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Pantry · 6 Items</span>
+            <h3 class="card__title">Honey & Apiary</h3>
+            <p class="card__text">Raw honey, beeswax wraps, and propolis tinctures from local beekeepers.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--success">In Season</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 12 — Standard card -->
+      <div class="masonry-grid__item">
+        <div class="card">
+          <div class="card__image">
+            <svg width="100" height="80" viewbox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="100" height="80" fill="var(--color-gray-100)"/>
+              <rect x="20" y="15" width="25" height="50" fill="var(--color-accent-slate)"/>
+              <rect x="55" y="15" width="25" height="50" fill="var(--color-accent-olive)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__label">Home · 8 Items</span>
+            <h3 class="card__title">Linen & Dye</h3>
+            <p class="card__text">Naturally dyed linen goods — tea towels, aprons, and tote bags in earthy botanical hues.</p>
+          </div>
+          <div class="card__footer">
+            <span class="badge badge--outline">Sustainable</span>
+            <a href="shop.html" class="button button--small button--outline">Browse</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENTO GRID — COLLECTION HIGHLIGHTS -->
+  <section class="bento-grid">
+    <div class="bento-grid__header">
+      <span class="bento-grid__label">At a Glance</span>
+      <h2 class="bento-grid__title">Collection Highlights</h2>
+    </div>
+    <div class="bento-grid__items">
+      <div class="bento-grid__item bento-grid__item--span-2 bento-grid__item--dark">
+        <span class="bento-grid__item-label">Most Popular</span>
+        <span class="bento-grid__item-title">Preserves & Pickles</span>
+      </div>
+      <div class="bento-grid__item bento-grid__item--accent">
+        <span class="bento-grid__item-label">New Arrival</span>
+        <span class="bento-grid__item-title">Autumn Harvest</span>
+      </div>
+      <div class="bento-grid__item bento-grid__item--span-row-2">
+        <span class="bento-grid__item-label">12 Collections</span>
+        <span class="bento-grid__item-title">90+ Products</span>
+      </div>
+      <div class="bento-grid__item bento-grid__item--dark">
+        <span class="bento-grid__item-label">Limited Edition</span>
+        <span class="bento-grid__item-title">Date Night In</span>
+      </div>
+      <div class="bento-grid__item">
+        <span class="bento-grid__item-label">Artisan Made</span>
+        <span class="bento-grid__item-title">Stoneware Studio</span>
+      </div>
+      <div class="bento-grid__item bento-grid__item--span-2">
+        <span class="bento-grid__item-label">Seasonal Pick</span>
+        <span class="bento-grid__item-title">Winter Warmers</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <section class="content-section content-section--bordered">
+    <div class="grid-4">
+      <div class="stat">
+        <div class="stat__value">12</div>
+        <div class="stat__label">Collections</div>
+        <div class="stat__bar">
+          <div class="stat__bar-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+      <div class="stat stat--dark">
+        <div class="stat__value">90+</div>
+        <div class="stat__label">Products</div>
+        <div class="stat__bar">
+          <div class="stat__bar-fill" style="width: 85%;"></div>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat__value">34</div>
+        <div class="stat__label">Local Makers</div>
+        <div class="stat__bar">
+          <div class="stat__bar-fill" style="width: 72%;"></div>
+        </div>
+      </div>
+      <div class="stat stat--dark">
+        <div class="stat__value">4</div>
+        <div class="stat__label">Seasonal Drops</div>
+        <div class="stat__bar">
+          <div class="stat__bar-fill" style="width: 33%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCT CARDS -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <span class="content-section__label">From Our Collections</span>
+      <h2 class="content-section__title">Standout Products</h2>
+      <p class="content-section__subtitle">A hand-picked selection of favorites across all collections — the goods our customers keep coming back for.</p>
+    </div>
+    <div class="grid-4">
+      <div class="product-card">
+        <div class="product-card__badge">
+          <span class="badge badge--accent">New</span>
+        </div>
+        <div class="product-card__image">
+          <div class="product-card__image-shape product-card__image-shape--circle"></div>
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__category">Preserves</span>
+          <h3 class="product-card__name"><a href="product.html">Fig & Thyme Jam</a></h3>
+          <p class="product-card__description">Wild figs slow-cooked with garden thyme and raw cane sugar.</p>
+          <div class="product-card__footer">
+            <span class="product-card__price">$14</span>
+            <a href="product.html" class="button button--small button--dark">View</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <div class="product-card__image-shape"></div>
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__category">Stoneware</span>
+          <h3 class="product-card__name"><a href="product.html">Speckled Mug</a></h3>
+          <p class="product-card__description">Wheel-thrown stoneware with a hand-dipped ash glaze. 12oz capacity.</p>
+          <div class="product-card__footer">
+            <span class="product-card__price">$28</span>
+            <a href="product.html" class="button button--small button--dark">View</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__badge">
+          <span class="badge badge--danger">Limited</span>
+        </div>
+        <div class="product-card__image">
+          <div class="product-card__image-shape product-card__image-shape--diamond"></div>
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__category">Textiles</span>
+          <h3 class="product-card__name"><a href="product.html">Indigo Table Runner</a></h3>
+          <p class="product-card__description">Hand-loomed cotton dyed with natural indigo. 14" × 72".</p>
+          <div class="product-card__footer">
+            <span class="product-card__price">$45</span>
+            <a href="product.html" class="button button--small button--dark">View</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <div class="product-card__image-shape product-card__image-shape--circle"></div>
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__category">Honey</span>
+          <h3 class="product-card__name"><a href="product.html">Wildflower Raw Honey</a></h3>
+          <p class="product-card__description">Unfiltered, unheated honey from pasture-raised hives. 8oz jar.</p>
+          <div class="product-card__footer">
+            <span class="product-card__price">$18</span>
+            <a href="product.html" class="button button--small button--dark">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <a href="shop.html" class="button button--large button--outline">View All Products</a>
+    </div>
+  </section>
+
+  <hr class="divider--ultra"/>
+
+  <!-- TESTIMONIAL -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <span class="content-section__label">What People Say</span>
+      <h2 class="content-section__title">From Our Community</h2>
+    </div>
+    <div class="grid-2">
+      <div class="testimonial">
+        <div class="testimonial__stars">
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+        </div>
+        <div class="testimonial__quote-mark">"</div>
+        <p class="testimonial__text">The Autumn Harvest collection was the perfect housewarming gift. Every item felt intentional and beautifully made.</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar testimonial__avatar--circle"></div>
+          <div>
+            <div class="testimonial__name">Sarah M.</div>
+            <div class="testimonial__role">Repeat Customer</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial__stars">
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+          <div class="testimonial__star"></div>
+        </div>
+        <div class="testimonial__quote-mark">"</div>
+        <p class="testimonial__text">I've ordered from the Preserves collection three times now. The quality is unmatched — you can taste the care in every jar.</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar testimonial__avatar--circle"></div>
+          <div>
+            <div class="testimonial__name">James T.</div>
+            <div class="testimonial__role">Local Food Enthusiast</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="reviews.html" class="button button--small button--outline">Read All Reviews</a>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <div>
+        <span class="cta-banner__label">Don't Miss Out</span>
+        <h2 class="cta-banner__title">New Collections Drop Quarterly</h2>
+        <p class="cta-banner__text">Sign up for early access to seasonal collections, maker spotlights, and exclusive local goods before they sell out.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="shop.html" class="button button--primary">Shop Now</a>
+        <a href="contact.html" class="button button--secondary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section class="content-section content-section--bg-alt">
+    <div class="content-section__inner">
+      <div class="newsletter-signup">
+        <span class="newsletter-signup__label">Stay Connected</span>
+        <h2 class="newsletter-signup__title">Join the List</h2>
+        <p class="newsletter-signup__text">Be the first to know when new collections launch. No spam — just local goods, maker stories, and seasonal updates.</p>
+        <form class="newsletter-signup__form">
+          <input type="email" class="newsletter-signup__input" placeholder="Your email address" aria-label="Email address"/>
+          <button type="submit" class="button button--dark newsletter-signup__button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__brand-col">
+      <div class="footer__logo">LOCAL GOODS</div>
+      <p class="footer__tagline">
+        Your neighborhood's trusted premium marketplace. Curated artisan goods, handmade products, and locally sourced items — all under one roof.
+      </p>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Shop</h4>
+      <div class="footer__links">
+        <a href="shop.html">All Products</a>
+        <a href="collections.html">Collections</a>
+        <a href="product.html">Featured Item</a>
+        <a href="cart.html">Your Cart</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Info</h4>
+      <div class="footer__links">
+        <a href="about.html">About Us</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Connect</h4>
+      <div class="footer__links">
+        <a href="contact.html">Contact Us</a>
+        <a href="about.html">Our Story</a>
+        <a href="reviews.html">Testimonials</a>
+        <a href="faq.html">Help Center</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copyright">&copy; 2024 Local Goods Co. All rights reserved.</p>
+    <div class="footer__bottom-links">
+      <a href="shipping.html">Shipping Policy</a>
+      <a href="faq.html">Terms &amp; Conditions</a>
+      <a href="contact.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

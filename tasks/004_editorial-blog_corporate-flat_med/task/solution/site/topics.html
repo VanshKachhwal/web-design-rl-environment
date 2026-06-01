@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Topics</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="EduPulse Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#E8753A"/>
+        <path d="M8 26V12L18 7L28 12V26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 17h10M13 21h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="12" r="2" fill="#fff"/>
+      </svg>
+      <span>EduPulse</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="articles.html" class="header__nav-link">Articles</a>
+      <a href="topics.html" class="header__nav-link">Topics</a>
+      <a href="featured.html" class="header__nav-link">Featured</a>
+      <a href="authors.html" class="header__nav-link">Authors</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- Hero Section -->
+  <section class="hero hero--teal">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Explore Topics</span>
+      <h1 class="hero__title">Browse by Topic</h1>
+      <p class="hero__text">Discover curated collections of articles organized by subject. Dive deep into the areas that matter most to your learning journey.</p>
+      <div class="hero__actions">
+        <a href="articles.html" class="btn btn--teal btn--lg">View All Articles</a>
+        <a href="featured.html" class="btn btn--outline btn--lg">Featured Picks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="content-section">
+    <div class="container">
+      <div class="filter-bar">
+        <span class="filter-bar__label">Filter:</span>
+        <div class="filter-bar__items">
+          <button class="filter-bar__btn filter-bar__btn--active">All Topics</button>
+          <button class="filter-bar__btn">Technology</button>
+          <button class="filter-bar__btn">Design</button>
+          <button class="filter-bar__btn">Science</button>
+          <button class="filter-bar__btn">Education</button>
+          <button class="filter-bar__btn">Business</button>
+        </div>
+        <div class="filter-bar__search">
+          <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="5" stroke="var(--color-gray-400)" stroke-width="2"/>
+            <line x1="11" y1="11" x2="14" y2="14" stroke="var(--color-gray-400)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input type="text" class="filter-bar__search-input" placeholder="Search topics…">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid of Topics -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">Popular Topics</span>
+        <h2 class="content-section__title">What Will You Learn Today?</h2>
+        <p class="content-section__subtitle">Our most popular topics, handpicked by our editorial team and loved by thousands of readers worldwide.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Item 1: Technology (span 2) -->
+        <div class="bento-grid__item bento-grid__item--span-2 bento-grid__item--orange">
+          <div>
+            <h3 class="bento-grid__item-title">Technology &amp; Innovation</h3>
+            <p class="bento-grid__item-text">From artificial intelligence to blockchain, explore the technologies shaping our future. Stay ahead with in-depth analysis and practical guides.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--primary btn--sm">Explore Articles</a>
+          </div>
+        </div>
+
+        <!-- Item 2: Design -->
+        <div class="bento-grid__item bento-grid__item--teal">
+          <div>
+            <h3 class="bento-grid__item-title">Design Systems</h3>
+            <p class="bento-grid__item-text">Master UI/UX principles, typography, and visual design fundamentals.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--teal btn--sm">Browse</a>
+          </div>
+        </div>
+
+        <!-- Item 3: Data Science -->
+        <div class="bento-grid__item">
+          <div>
+            <h3 class="bento-grid__item-title">Data Science</h3>
+            <p class="bento-grid__item-text">Analytics, machine learning, and data visualization techniques.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--outline btn--sm">Browse</a>
+          </div>
+        </div>
+
+        <!-- Item 4: Education (dark, row 2) -->
+        <div class="bento-grid__item bento-grid__item--dark bento-grid__item--row-2">
+          <div>
+            <h3 class="bento-grid__item-title">Education &amp; Pedagogy</h3>
+            <p class="bento-grid__item-text">Modern teaching methods, curriculum design, and learning science. Discover how educators are transforming classrooms around the globe.</p>
+          </div>
+          <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4);">
+            <span style="font-family: var(--font-ui); font-size: var(--text-xs); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); background-color: var(--color-gray-700); color: var(--color-gray-300);">42 Articles</span>
+            <span style="font-family: var(--font-ui); font-size: var(--text-xs); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); background-color: var(--color-gray-700); color: var(--color-gray-300);">8 Authors</span>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--primary btn--sm">Explore</a>
+          </div>
+        </div>
+
+        <!-- Item 5: Business (span 2) -->
+        <div class="bento-grid__item bento-grid__item--span-2">
+          <div>
+            <h3 class="bento-grid__item-title">Business Strategy</h3>
+            <p class="bento-grid__item-text">Leadership, entrepreneurship, and management insights from industry experts. Build your business acumen with practical frameworks.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--outline btn--sm">Browse Articles</a>
+          </div>
+        </div>
+
+        <!-- Item 6: Creative Writing -->
+        <div class="bento-grid__item bento-grid__item--orange">
+          <div>
+            <h3 class="bento-grid__item-title">Creative Writing</h3>
+            <p class="bento-grid__item-text">Storytelling, poetry, and the craft of compelling narratives.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--secondary btn--sm">Browse</a>
+          </div>
+        </div>
+
+        <!-- Item 7: Science -->
+        <div class="bento-grid__item bento-grid__item--teal">
+          <div>
+            <h3 class="bento-grid__item-title">Science &amp; Research</h3>
+            <p class="bento-grid__item-text">Breakthroughs in physics, biology, and environmental science explained clearly.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--teal btn--sm">Browse</a>
+          </div>
+        </div>
+
+        <!-- Item 8: Health -->
+        <div class="bento-grid__item">
+          <div>
+            <h3 class="bento-grid__item-title">Health &amp; Wellness</h3>
+            <p class="bento-grid__item-text">Mental health, fitness, and nutrition backed by evidence-based research.</p>
+          </div>
+          <div style="margin-top: var(--space-4);">
+            <a href="articles.html" class="btn btn--outline btn--sm">Browse</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Cards Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">Trending Now</span>
+        <h2 class="content-section__title">Top Articles by Topic</h2>
+        <p class="content-section__subtitle">The most-read articles across our most popular categories this month.</p>
+      </div>
+
+      <div class="feature-grid__items">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card__image">
+            <svg width="100%" height="180" viewbox="0 0 400 180">
+              <rect width="400" height="180" fill="var(--color-orange-100)"/>
+              <circle cx="200" cy="70" r="40" fill="var(--color-orange-400)"/>
+              <rect x="140" y="120" width="120" height="8" rx="4" fill="var(--color-orange-500)"/>
+              <rect x="160" y="140" width="80" height="6" rx="3" fill="var(--color-orange-400)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">The Future of AI in Education</h3>
+            <p class="card__text">How artificial intelligence is personalizing learning experiences and transforming how students engage with course material.</p>
+          </div>
+          <div class="card__footer">
+            <a href="articles.html" class="card__link">Read More →</a>
+            <span style="font-size: var(--text-xs); color: var(--color-gray-400);">Technology</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card__image">
+            <svg width="100%" height="180" viewbox="0 0 400 180">
+              <rect width="400" height="180" fill="var(--color-teal-100)"/>
+              <rect x="120" y="40" width="60" height="80" rx="8" fill="var(--color-teal-400)"/>
+              <rect x="200" y="60" width="60" height="60" rx="8" fill="var(--color-teal-500)"/>
+              <rect x="160" y="140" width="80" height="6" rx="3" fill="var(--color-teal-400)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Building Accessible Design Systems</h3>
+            <p class="card__text">A comprehensive guide to creating inclusive component libraries that work for everyone, regardless of ability.</p>
+          </div>
+          <div class="card__footer">
+            <a href="articles.html" class="card__link">Read More →</a>
+            <span style="font-size: var(--text-xs); color: var(--color-gray-400);">Design</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card__image">
+            <svg width="100%" height="180" viewbox="0 0 400 180">
+              <rect width="400" height="180" fill="var(--color-gray-100)"/>
+              <polygon points="200,30 240,100 160,100" fill="var(--color-gray-400)"/>
+              <circle cx="200" cy="130" r="20" fill="var(--color-gray-300)"/>
+              <rect x="160" y="155" width="80" height="6" rx="3" fill="var(--color-gray-300)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Climate Science Breakthroughs</h3>
+            <p class="card__text">Recent discoveries in atmospheric research and what they mean for global climate policy and sustainability efforts.</p>
+          </div>
+          <div class="card__footer">
+            <a href="articles.html" class="card__link">Read More →</a>
+            <span style="font-size: var(--text-xs); color: var(--color-gray-400);">Science</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="content-section content-section--warm">
+    <div class="container">
+      <div class="stats-row stats-row--bordered">
+        <div class="stat">
+          <div class="stat__value">24</div>
+          <div class="stat__label">Topics</div>
+          <div class="stat__sublabel">Curated categories</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">380+</div>
+          <div class="stat__label">Articles</div>
+          <div class="stat__sublabel">And growing weekly</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">52</div>
+          <div class="stat__label">Authors</div>
+          <div class="stat__sublabel">Expert contributors</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">18K</div>
+          <div class="stat__label">Readers</div>
+          <div class="stat__sublabel">Monthly active</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Topics Grid -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header">
+        <span class="content-section__eyebrow">All Categories</span>
+        <h2 class="content-section__title">Explore Every Topic</h2>
+        <p class="content-section__subtitle">Browse our complete collection of topics. Each category is maintained by subject-matter experts.</p>
+      </div>
+
+      <div class="feature-grid__items">
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--orange">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none">
+              <rect x="4" y="4" width="20" height="20" rx="4" stroke="var(--color-orange-500)" stroke-width="2"/>
+              <line x1="9" y1="10" x2="19" y2="10" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9" y1="14" x2="19" y2="14" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9" y1="18" x2="15" y2="18" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Programming</h3>
+          <p class="feature-grid__item-text">Languages, frameworks, and software engineering best practices for developers at every level.</p>
+        </div>
+
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--teal">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="10" stroke="var(--color-teal-500)" stroke-width="2"/>
+              <path d="M14 8 L14 14 L18 16" stroke="var(--color-teal-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Productivity</h3>
+          <p class="feature-grid__item-text">Time management, workflow optimization, and tools to help you accomplish more with less effort.</p>
+        </div>
+
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--orange">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none">
+              <path d="M14 4 L17 10 L24 11 L19 16 L20 23 L14 20 L8 23 L9 16 L4 11 L11 10 Z" stroke="var(--color-orange-500)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Leadership</h3>
+          <p class="feature-grid__item-text">Management skills, team building, and organizational leadership strategies from seasoned professionals.</p>
+        </div>
+
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--teal">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none">
+              <rect x="3" y="8" width="22" height="14" rx="3" stroke="var(--color-teal-500)" stroke-width="2"/>
+              <circle cx="14" cy="15" r="4" stroke="var(--color-teal-500)" stroke-width="2"/>
+              <line x1="14" y1="5" x2="14" y2="8" stroke="var(--color-teal-500)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Photography</h3>
+          <p class="feature-grid__item-text">Composition, lighting, post-processing, and visual storytelling for aspiring and professional photographers.</p>
+        </div>
+
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--orange">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none">
+              <path d="M6 22 L6 10 L11 10 L11 22" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 22 L11 6 L17 6 L17 22" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17 22 L17 13 L22 13 L22 22" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Finance</h3>
+          <p class="feature-grid__item-text">Personal finance, investing, and economic analysis to help you make smarter financial decisions.</p>
+        </div>
+
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--teal">
+            <svg width="28" height="28" viewbox="0 0 28 28" fill="none">
+              <circle cx="14" cy="10" r="5" stroke="var(--color-teal-500)" stroke-width="2"/>
+              <path d="M6 24 C6 19 10 16 14 16 C18 16 22 19 22 24" stroke="var(--color-teal-500)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Psychology</h3>
+          <p class="feature-grid__item-text">Cognitive science, behavioral research, and practical psychology for understanding the human mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cta-banner cta-banner--teal">
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Can't Find Your Topic?</h2>
+          <p class="cta-banner__text">We're always expanding our coverage. Reach out to suggest a new topic or become a contributing author in your area of expertise.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="contact.html" class="cta-banner__btn">Get in Touch</a>
+          <a href="authors.html" class="cta-banner__btn">Meet Our Authors</a>
+        </div>
+        <div class="cta-banner__decoration"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="content-section content-section--cool">
+    <div class="container container--narrow">
+      <div class="newsletter-signup">
+        <h2 class="newsletter-signup__title">Stay Updated on New Topics</h2>
+        <p class="newsletter-signup__text">Get notified when we launch new topic categories and publish featured articles. No spam, ever.</p>
+        <form class="newsletter-signup__form">
+          <input type="email" class="newsletter-signup__input" placeholder="Enter your email address">
+          <button type="submit" class="newsletter-signup__btn">Subscribe</button>
+        </form>
+        <p class="newsletter-signup__note">Join 18,000+ readers. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand-col">
+        <a href="index.html" class="footer__logo">EduPulse</a>
+        <p class="footer__tagline">A warm, welcoming knowledge hub for students and educators. Explore curated articles, topics, and featured content to foster learning and academic engagement.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;">
+          <!-- Social placeholders as inline SVG -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M11 16h10M16 11v10" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><circle cx="16" cy="16" r="5" stroke="#9E9EB0" stroke-width="2"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M12 20l4-4 4 4M12 12h8" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Explore</h4>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="articles.html" class="footer__link">Articles</a></li>
+          <li><a href="topics.html" class="footer__link">Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Featured</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Community</h4>
+        <ul class="footer__links">
+          <li><a href="authors.html" class="footer__link">Authors</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="articles.html" class="footer__link">Latest Posts</a></li>
+          <li><a href="topics.html" class="footer__link">Browse Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Editor's Picks</a></li>
+          <li><a href="about.html" class="footer__link">Our Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 EduPulse. All rights reserved. Built for learners, by learners.</p>
+      <div class="footer__bottom-links">
+        <a href="about.html" class="footer__bottom-link">Privacy Policy</a>
+        <a href="about.html" class="footer__bottom-link">Terms of Use</a>
+        <a href="contact.html" class="footer__bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

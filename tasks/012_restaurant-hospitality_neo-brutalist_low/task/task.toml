@@ -1,0 +1,32 @@
+schema_version = "1.2"
+
+[task]
+name = "webdesign-rl/replicate-site"
+description = "Replicate a multi-page web design from reference screenshots."
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+# The agent environment: minimal, offline. The agent writes its HTML here and
+# publishes it to /logs/artifacts/ for the separate verifier.
+allow_internet = false
+cpus = 2
+memory_mb = 4096
+
+[verifier]
+timeout_sec = 1200.0
+# A separate verifier environment hides the grading code, reference screenshots,
+# and page_map from the agent. Built from tests/Dockerfile (tests/ is the build
+# context); the image provides /tests/test.sh itself.
+environment_mode = "separate"
+
+[verifier.environment]
+allow_internet = true
+cpus = 2
+memory_mb = 4096
+
+[verifier.env]
+# Used by the live design_judge term, which test.sh runs by default. (Drop
+# --no-judge back into test.sh for deterministic-only grading, which ignores it.)
+ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}"

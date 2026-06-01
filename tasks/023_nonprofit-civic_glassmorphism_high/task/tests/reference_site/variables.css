@@ -1,0 +1,147 @@
+:root {
+  /* ── Palette ── */
+  --color-primary: #7eb8a8;
+  --color-primary-light: #a8d5c8;
+  --color-primary-dark: #5a9a88;
+  --color-secondary: #e8b4b8;
+  --color-secondary-light: #f2d1d4;
+  --color-secondary-dark: #d4949a;
+  --color-accent: #f4d06f;
+  --color-accent-light: #f9e4a0;
+  --color-accent-dark: #d4b04f;
+  --color-warm: #f0c9a6;
+  --color-warm-light: #f7ddc4;
+  --color-warm-dark: #d4a87a;
+  --color-lavender: #c4b7d4;
+  --color-lavender-light: #ddd4ea;
+  --color-lavender-dark: #a494b8;
+  --color-sky: #a8cce0;
+  --color-sky-light: #cce3f0;
+  --color-sky-dark: #7aafc8;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-off-white: #faf8f5;
+  --color-cream: #f5f0ea;
+  --color-sand: #ede6dc;
+  --color-gray-100: #f0ece6;
+  --color-gray-200: #e0d8ce;
+  --color-gray-300: #c8bfb4;
+  --color-gray-400: #a89e92;
+  --color-gray-500: #8a7e72;
+  --color-gray-600: #6e6458;
+  --color-gray-700: #524a40;
+  --color-gray-800: #3a342c;
+  --color-gray-900: #252018;
+  --color-black: #1a1612;
+
+  /* Glass tokens */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.65);
+  --glass-bg-light: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-border-subtle: rgba(255, 255, 255, 0.3);
+  --glass-shadow: rgba(0, 0, 0, 0.06);
+  --glass-shadow-strong: rgba(0, 0, 0, 0.12);
+  --glass-blur: 16px;
+  --glass-blur-heavy: 24px;
+
+  /* Gradient backgrounds */
+  --gradient-page: linear-gradient(135deg, #faf8f5 0%, #f2e8dc 25%, #e8ddd4 50%, #dce8e4 75%, #f0e8f0 100%);
+  --gradient-warm: linear-gradient(135deg, #f7ddc4 0%, #f2d1d4 50%, #ddd4ea 100%);
+  --gradient-cool: linear-gradient(135deg, #cce3f0 0%, #a8d5c8 50%, #ddd4ea 100%);
+  --gradient-hero: linear-gradient(160deg, #f0c9a6 0%, #e8b4b8 30%, #c4b7d4 60%, #a8cce0 100%);
+  --gradient-cta: linear-gradient(135deg, #7eb8a8 0%, #5a9a88 100%);
+  --gradient-accent: linear-gradient(135deg, #f4d06f 0%, #f0c9a6 100%);
+
+  /* ── Type Scale (Major Third 1.25) ── */
+  --font-text: 'Work Sans', 'Inter', 'Source Serif 4', sans-serif;
+  --font-heading: 'Playfair Display', 'Source Serif 4', serif;
+  --font-display: 'Anton', 'Playfair Display', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-ui: 'Space Grotesk', 'Archivo', 'Inter', sans-serif;
+  --font-body: 'Poppins', 'Work Sans', 'Inter', sans-serif;
+
+  --text-xs: 0.64rem;
+  --text-sm: 0.8rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.563rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+  --text-5xl: 3.815rem;
+  --text-6xl: 4.768rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+
+  /* ── Spacing (4px base) ── */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --space-48: 12rem;
+  --space-64: 16rem;
+
+  /* ── Radius ── */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* ── Borders ── */
+  --border-thin: 1px;
+  --border-medium: 2px;
+  --border-thick: 3px;
+
+  /* ── Widths ── */
+  --width-xs: 20rem;
+  --width-sm: 30rem;
+  --width-md: 40rem;
+  --width-lg: 56rem;
+  --width-xl: 72rem;
+  --width-2xl: 84rem;
+  --width-full: 100%;
+
+  /* ── Z-index ── */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+
+  /* ── Misc ── */
+  --line-length: 68ch;
+}

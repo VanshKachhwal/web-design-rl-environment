@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Featured</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="EduPulse Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#E8753A"/>
+        <path d="M8 26V12L18 7L28 12V26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 17h10M13 21h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="12" r="2" fill="#fff"/>
+      </svg>
+      <span>EduPulse</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="articles.html" class="header__nav-link">Articles</a>
+      <a href="topics.html" class="header__nav-link">Topics</a>
+      <a href="featured.html" class="header__nav-link">Featured</a>
+      <a href="authors.html" class="header__nav-link">Authors</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero hero--dark">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Featured Content</span>
+      <h1 class="hero__title">Handpicked Stories &amp; Insights</h1>
+      <p class="hero__text">Explore our editors' selection of the most impactful articles, compelling perspectives, and essential reads curated just for you.</p>
+      <div class="hero__actions">
+        <a href="articles.html" class="btn btn--primary btn--lg">Browse All Articles</a>
+        <a href="topics.html" class="btn btn--secondary btn--lg">Explore Topics</a>
+      </div>
+    </div>
+    <div class="hero__decoration">
+      <svg width="400" height="400" viewbox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="180" stroke="rgba(232,117,58,0.15)" stroke-width="3" fill="none"/>
+        <circle cx="200" cy="200" r="130" stroke="rgba(232,117,58,0.1)" stroke-width="2" fill="none"/>
+        <circle cx="200" cy="200" r="80" stroke="rgba(232,117,58,0.08)" stroke-width="2" fill="none"/>
+        <polygon points="200,100 230,170 305,175 248,225 265,300 200,260 135,300 152,225 95,175 170,170" fill="rgba(232,117,58,0.12)"/>
+        <polygon points="200,130 220,175 270,178 233,210 245,265 200,240 155,265 167,210 130,178 180,175" fill="rgba(232,117,58,0.08)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- SPLIT-SCREEN — Editor's Pick -->
+  <section class="content-section">
+    <div class="container">
+      <div class="split-screen">
+        <div class="split-screen__visual">
+          <svg width="320" height="240" viewbox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="320" height="240" rx="12" fill="var(--color-orange-100)"/>
+            <rect x="30" y="30" width="260" height="150" rx="8" fill="var(--color-white)"/>
+            <rect x="50" y="50" width="120" height="10" rx="4" fill="var(--color-orange-400)"/>
+            <rect x="50" y="70" width="220" height="6" rx="3" fill="var(--color-gray-200)"/>
+            <rect x="50" y="84" width="200" height="6" rx="3" fill="var(--color-gray-200)"/>
+            <rect x="50" y="98" width="180" height="6" rx="3" fill="var(--color-gray-200)"/>
+            <rect x="50" y="120" width="80" height="28" rx="6" fill="var(--color-orange-500)"/>
+            <circle cx="250" cy="200" r="20" fill="var(--color-teal-400)" opacity="0.4"/>
+            <circle cx="60" cy="210" r="14" fill="var(--color-orange-400)" opacity="0.3"/>
+            <polygon points="200,190 215,220 185,220" fill="var(--color-teal-500)" opacity="0.25"/>
+          </svg>
+        </div>
+        <div class="split-screen__content">
+          <span class="split-screen__eyebrow">Editor's Pick</span>
+          <h2 class="split-screen__title">The Future of Adaptive Learning</h2>
+          <p class="split-screen__text">Our most-read feature this month dives deep into how adaptive learning technologies are reshaping education. From personalized curricula to AI-driven assessments, discover what lies ahead for learners and educators alike.</p>
+          <ul class="split-screen__list">
+            <li class="split-screen__list-item">
+              <span class="split-screen__check">
+                <svg width="12" height="12" viewbox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Personalized pathways for every student
+            </li>
+            <li class="split-screen__list-item">
+              <span class="split-screen__check">
+                <svg width="12" height="12" viewbox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Data-driven insights for instructors
+            </li>
+            <li class="split-screen__list-item">
+              <span class="split-screen__check">
+                <svg width="12" height="12" viewbox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Real-world case studies from leading institutions
+            </li>
+          </ul>
+          <div class="hero__actions">
+            <a href="articles.html" class="btn btn--primary">Read the Full Article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">By the Numbers</span>
+        <h2 class="content-section__title">Featured Content Impact</h2>
+        <p class="content-section__subtitle">Our featured stories consistently reach and inspire thousands of readers across the globe.</p>
+      </div>
+      <div class="stats-row stats-row--bordered">
+        <div class="stat">
+          <div class="stat__value">2.4M</div>
+          <div class="stat__label">Total Reads</div>
+          <div class="stat__sublabel">Across all featured articles</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">186</div>
+          <div class="stat__label">Featured Stories</div>
+          <div class="stat__sublabel">Curated by our editors</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">94%</div>
+          <div class="stat__label">Reader Satisfaction</div>
+          <div class="stat__sublabel">Based on post-read surveys</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">52</div>
+          <div class="stat__label">Expert Authors</div>
+          <div class="stat__sublabel">Contributing this quarter</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG POST CARDS — Featured Articles Grid -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">Must-Read</span>
+        <h2 class="content-section__title">This Month's Featured Articles</h2>
+        <p class="content-section__subtitle">Carefully selected stories that spark curiosity, challenge assumptions, and deliver lasting value.</p>
+      </div>
+      <div class="feature-grid__items">
+
+        <!-- Card 1 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="360" height="200" viewbox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="200" fill="var(--color-teal-100)"/>
+              <rect x="40" y="40" width="80" height="80" rx="12" fill="var(--color-teal-400)" opacity="0.5"/>
+              <rect x="140" y="60" width="180" height="8" rx="4" fill="var(--color-teal-500)" opacity="0.3"/>
+              <rect x="140" y="80" width="140" height="8" rx="4" fill="var(--color-teal-500)" opacity="0.2"/>
+              <circle cx="300" cy="160" r="25" fill="var(--color-teal-500)" opacity="0.15"/>
+              <rect x="40" y="140" width="100" height="30" rx="6" fill="var(--color-teal-500)" opacity="0.25"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Technology</span>
+              <span class="blog-post-card__date">Dec 10, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="articles.html">How Microlearning Is Transforming Corporate Training</a>
+            </h3>
+            <p class="blog-post-card__excerpt">Bite-sized learning modules are proving more effective than traditional hour-long sessions. We explore the science behind microlearning and its growing adoption.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">SR</div>
+                <span class="blog-post-card__author-name">Sarah Rivera</span>
+              </div>
+              <span class="blog-post-card__read-time">7 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="360" height="200" viewbox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="200" fill="var(--color-orange-100)"/>
+              <circle cx="180" cy="90" r="50" fill="var(--color-orange-400)" opacity="0.35"/>
+              <circle cx="180" cy="90" r="30" fill="var(--color-orange-500)" opacity="0.25"/>
+              <rect x="60" y="150" width="240" height="8" rx="4" fill="var(--color-orange-400)" opacity="0.2"/>
+              <rect x="80" y="166" width="200" height="6" rx="3" fill="var(--color-orange-400)" opacity="0.15"/>
+              <polygon points="80,60 100,30 120,60" fill="var(--color-orange-500)" opacity="0.2"/>
+              <polygon points="260,50 280,20 300,50" fill="var(--color-orange-500)" opacity="0.15"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Pedagogy</span>
+              <span class="blog-post-card__date">Dec 5, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="articles.html">Rethinking Assessment: Beyond Standardized Testing</a>
+            </h3>
+            <p class="blog-post-card__excerpt">Educators worldwide are adopting portfolio-based and competency-driven assessments. This feature examines the movement and its implications for student outcomes.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">MK</div>
+                <span class="blog-post-card__author-name">Marcus Kim</span>
+              </div>
+              <span class="blog-post-card__read-time">10 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="360" height="200" viewbox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="200" fill="var(--color-gray-100)"/>
+              <rect x="30" y="30" width="300" height="140" rx="10" fill="var(--color-white)"/>
+              <rect x="50" y="50" width="60" height="60" rx="8" fill="var(--color-teal-100)"/>
+              <circle cx="80" cy="80" r="15" fill="var(--color-teal-500)" opacity="0.4"/>
+              <rect x="130" y="55" width="180" height="8" rx="4" fill="var(--color-gray-300)"/>
+              <rect x="130" y="73" width="150" height="6" rx="3" fill="var(--color-gray-200)"/>
+              <rect x="130" y="89" width="120" height="6" rx="3" fill="var(--color-gray-200)"/>
+              <rect x="50" y="130" width="90" height="24" rx="5" fill="var(--color-teal-500)" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Research</span>
+              <span class="blog-post-card__date">Nov 28, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="articles.html">The Neuroscience of Effective Study Habits</a>
+            </h3>
+            <p class="blog-post-card__excerpt">Recent breakthroughs in cognitive science reveal why spaced repetition and active recall outperform passive review. Learn the strategies backed by research.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">JP</div>
+                <span class="blog-post-card__author-name">Dr. Julia Park</span>
+              </div>
+              <span class="blog-post-card__read-time">12 min read</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT-SCREEN — Featured Author Spotlight (Reversed) -->
+  <section class="content-section content-section--warm">
+    <div class="container">
+      <div class="split-screen split-screen--reverse">
+        <div class="split-screen__visual">
+          <svg width="300" height="280" viewbox="0 0 300 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="280" rx="16" fill="var(--color-orange-100)"/>
+            <circle cx="150" cy="100" r="50" fill="var(--color-orange-400)" opacity="0.4"/>
+            <circle cx="150" cy="100" r="35" fill="var(--color-orange-500)" opacity="0.3"/>
+            <rect x="100" y="165" width="100" height="10" rx="5" fill="var(--color-orange-500)" opacity="0.35"/>
+            <rect x="80" y="185" width="140" height="6" rx="3" fill="var(--color-gray-300)"/>
+            <rect x="90" y="200" width="120" height="6" rx="3" fill="var(--color-gray-300)"/>
+            <rect x="60" y="230" width="80" height="26" rx="6" fill="var(--color-orange-500)" opacity="0.25"/>
+            <rect x="160" y="230" width="80" height="26" rx="6" fill="var(--color-teal-500)" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="split-screen__content">
+          <span class="split-screen__eyebrow">Author Spotlight</span>
+          <h2 class="split-screen__title">Meet Dr. Julia Park</h2>
+          <p class="split-screen__text">A cognitive neuroscientist and award-winning writer, Dr. Park bridges the gap between laboratory research and practical learning strategies. Her work has been featured in over 30 publications and has helped shape modern study methodologies.</p>
+          <ul class="split-screen__list">
+            <li class="split-screen__list-item">
+              <span class="split-screen__check">
+                <svg width="12" height="12" viewbox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              15 years in educational neuroscience research
+            </li>
+            <li class="split-screen__list-item">
+              <span class="split-screen__check">
+                <svg width="12" height="12" viewbox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Author of &ldquo;Learning Rewired&rdquo; — a bestselling guide
+            </li>
+            <li class="split-screen__list-item">
+              <span class="split-screen__check">
+                <svg width="12" height="12" viewbox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--color-teal-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              Keynote speaker at EduSummit 2024
+            </li>
+          </ul>
+          <div class="hero__actions">
+            <a href="authors.html" class="btn btn--teal">View All Authors</a>
+            <a href="articles.html" class="btn btn--outline">Her Latest Articles</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE FEATURED BLOG POST CARDS -->
+  <section class="content-section content-section--cool">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">Deep Dives</span>
+        <h2 class="content-section__title">Explore More Featured Reads</h2>
+        <p class="content-section__subtitle">Long-form features and investigative pieces that go beyond the surface.</p>
+      </div>
+      <div class="feature-grid__items">
+
+        <!-- Card 4 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="360" height="200" viewbox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="200" fill="var(--color-teal-50)"/>
+              <rect x="20" y="20" width="320" height="160" rx="8" fill="var(--color-white)"/>
+              <rect x="40" y="40" width="140" height="6" rx="3" fill="var(--color-teal-400)" opacity="0.5"/>
+              <rect x="40" y="56" width="280" height="4" rx="2" fill="var(--color-gray-200)"/>
+              <rect x="40" y="68" width="260" height="4" rx="2" fill="var(--color-gray-200)"/>
+              <rect x="40" y="80" width="240" height="4" rx="2" fill="var(--color-gray-200)"/>
+              <rect x="40" y="100" width="100" height="60" rx="6" fill="var(--color-teal-100)"/>
+              <rect x="160" y="100" width="160" height="4" rx="2" fill="var(--color-gray-200)"/>
+              <rect x="160" y="112" width="140" height="4" rx="2" fill="var(--color-gray-200)"/>
+              <rect x="160" y="124" width="120" height="4" rx="2" fill="var(--color-gray-200)"/>
+              <rect x="160" y="140" width="80" height="20" rx="4" fill="var(--color-teal-500)" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Equity</span>
+              <span class="blog-post-card__date">Nov 20, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="articles.html">Bridging the Digital Divide in Rural Education</a>
+            </h3>
+            <p class="blog-post-card__excerpt">Access to technology remains uneven. This investigative feature uncovers innovative solutions from communities working to close the gap for underserved students.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">AL</div>
+                <span class="blog-post-card__author-name">Amara Lopez</span>
+              </div>
+              <span class="blog-post-card__read-time">14 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="360" height="200" viewbox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="200" fill="var(--color-orange-50)"/>
+              <rect x="60" y="30" width="240" height="140" rx="10" fill="var(--color-white)"/>
+              <circle cx="120" cy="80" r="25" fill="var(--color-orange-100)"/>
+              <circle cx="180" cy="80" r="25" fill="var(--color-teal-100)"/>
+              <circle cx="240" cy="80" r="25" fill="var(--color-orange-100)"/>
+              <rect x="90" y="125" width="180" height="6" rx="3" fill="var(--color-gray-200)"/>
+              <rect x="110" y="140" width="140" height="6" rx="3" fill="var(--color-gray-200)"/>
+              <path d="M150 75 L165 65 L180 85 L195 55 L210 75" stroke="var(--color-orange-500)" stroke-width="2" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Wellness</span>
+              <span class="blog-post-card__date">Nov 15, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="articles.html">Mental Health in Higher Education: A Growing Crisis</a>
+            </h3>
+            <p class="blog-post-card__excerpt">Universities are grappling with unprecedented demand for counseling services. We examine the root causes and the institutional responses making a difference.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">DW</div>
+                <span class="blog-post-card__author-name">David Whitmore</span>
+              </div>
+              <span class="blog-post-card__read-time">11 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="360" height="200" viewbox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="360" height="200" fill="var(--color-gray-100)"/>
+              <rect x="40" y="40" width="120" height="120" rx="60" fill="var(--color-teal-100)"/>
+              <rect x="190" y="50" width="130" height="8" rx="4" fill="var(--color-gray-300)"/>
+              <rect x="190" y="68" width="110" height="6" rx="3" fill="var(--color-gray-200)"/>
+              <rect x="190" y="84" width="90" height="6" rx="3" fill="var(--color-gray-200)"/>
+              <rect x="190" y="110" width="70" height="24" rx="5" fill="var(--color-teal-500)" opacity="0.25"/>
+              <path d="M70 80 L85 65 L100 75 L115 55 L130 70" stroke="var(--color-teal-600)" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Innovation</span>
+              <span class="blog-post-card__date">Nov 8, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title">
+              <a href="articles.html">Open-Source Curriculum: Democratizing Knowledge</a>
+            </h3>
+            <p class="blog-post-card__excerpt">A growing movement of educators is creating freely available, peer-reviewed curricula. Discover how open-source principles are reshaping content creation.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">TN</div>
+                <span class="blog-post-card__author-name">Tanya Nguyen</span>
+              </div>
+              <span class="blog-post-card__read-time">9 min read</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS — Reader Engagement -->
+  <section class="content-section">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat__value">4.8</div>
+          <div class="stat__label">Avg. Rating</div>
+          <div class="stat__sublabel">Out of 5 stars</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">12K</div>
+          <div class="stat__label">Shares</div>
+          <div class="stat__sublabel">Across social platforms</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">38</div>
+          <div class="stat__label">Countries</div>
+          <div class="stat__sublabel">Readers worldwide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__decoration"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Have a Story Worth Featuring?</h2>
+          <p class="cta-banner__text">We're always looking for fresh perspectives and groundbreaking research. Submit your article or reach out to our editorial team to be considered for our featured collection.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="contact.html" class="cta-banner__btn">Get in Touch</a>
+          <a href="about.html" class="cta-banner__btn">Learn About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand-col">
+        <a href="index.html" class="footer__logo">EduPulse</a>
+        <p class="footer__tagline">A warm, welcoming knowledge hub for students and educators. Explore curated articles, topics, and featured content to foster learning and academic engagement.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;">
+          <!-- Social placeholders as inline SVG -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M11 16h10M16 11v10" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><circle cx="16" cy="16" r="5" stroke="#9E9EB0" stroke-width="2"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M12 20l4-4 4 4M12 12h8" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Explore</h4>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="articles.html" class="footer__link">Articles</a></li>
+          <li><a href="topics.html" class="footer__link">Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Featured</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Community</h4>
+        <ul class="footer__links">
+          <li><a href="authors.html" class="footer__link">Authors</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="articles.html" class="footer__link">Latest Posts</a></li>
+          <li><a href="topics.html" class="footer__link">Browse Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Editor's Picks</a></li>
+          <li><a href="about.html" class="footer__link">Our Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 EduPulse. All rights reserved. Built for learners, by learners.</p>
+      <div class="footer__bottom-links">
+        <a href="about.html" class="footer__bottom-link">Privacy Policy</a>
+        <a href="about.html" class="footer__bottom-link">Terms of Use</a>
+        <a href="contact.html" class="footer__bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

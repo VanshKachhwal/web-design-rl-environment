@@ -1,0 +1,1435 @@
+{
+  "meta": {
+    "task_id": "023_nonprofit-civic_glassmorphism_high",
+    "seed_tuple": [
+      "nonprofit-civic",
+      "glassmorphism",
+      "high",
+      "health-and-wellness-seekers",
+      "nostalgic-and-charming"
+    ],
+    "archetype": "nonprofit-civic",
+    "aesthetic": "glassmorphism",
+    "complexity": "high",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 32.755025499999995,
+    "total_input_tokens": 26800928,
+    "total_output_tokens": 579852,
+    "started_at": "2026-06-01T01:49:52.937472",
+    "finished_at": "2026-06-01T02:11:08.797965",
+    "wall_clock_sec": 1275.860493,
+    "date": "2026-06-01",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "FtyeZRs",
+      "reward": 0.784776271723704,
+      "structure": 0.8067244100875423,
+      "color": 0.9771322903531369,
+      "content": 0.6702483864541369,
+      "design_judge": 0.6849999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8051216430204491,
+          "color": 0.9849524401606905,
+          "content": 0.8962962962962964,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8082959511820887,
+          "color": 0.9757755155341932,
+          "content": 0.5322777101096225,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.7882255782899347,
+          "color": 0.9653563347306411,
+          "content": 0.6047393364928909,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.7980233648318853,
+          "color": 0.9806735285632039,
+          "content": 0.6697490092470277,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8244584795560731,
+          "color": 0.9758877335711418,
+          "content": 0.5931417979610751,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8069353256501782,
+          "color": 0.9804734841281854,
+          "content": 0.5343303874915023,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.7912332820090471,
+          "color": 0.9774387404446461,
+          "content": 0.5522514868309262,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.7980111308263697,
+          "color": 0.9719774884932323,
+          "content": 0.6139630390143737,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8294611963956229,
+          "color": 0.9794773322964073,
+          "content": 0.8483221476510067,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8174781491137734,
+          "color": 0.9793103056090264,
+          "content": 0.8574126534466477,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "JjLBhMf",
+      "reward": 0.7755561723546129,
+      "structure": 0.8243788518856501,
+      "color": 0.9665824658175992,
+      "content": 0.6437633717152025,
+      "design_judge": 0.6675,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.826999183967504,
+          "color": 0.9670002790484254,
+          "content": 0.8333333333333333,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8193744465257878,
+          "color": 0.9645563167931698,
+          "content": 0.5658362989323844,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.8160624386667628,
+          "color": 0.962272869822636,
+          "content": 0.5909510618651894,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.8167878280863029,
+          "color": 0.9671704210315156,
+          "content": 0.6240549828178695,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.843350970082674,
+          "color": 0.9671330151144857,
+          "content": 0.5775301764159703,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8222294073083816,
+          "color": 0.9674661860717434,
+          "content": 0.514323784143904,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8056476353616573,
+          "color": 0.9679786505347312,
+          "content": 0.5141811527904849,
+          "design_judge": 0.575,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.4
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.8080790305201936,
+          "color": 0.9626463235714832,
+          "content": 0.5675977653631286,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.853754186578464,
+          "color": 0.9692940483908189,
+          "content": 0.7763713080168776,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8315033917587739,
+          "color": 0.9703065477969832,
+          "content": 0.873453853472883,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "RS8tMwx",
+      "reward": 0.776174261914574,
+      "structure": 0.8100580962285845,
+      "color": 0.964353858092059,
+      "content": 0.6627850933376523,
+      "design_judge": 0.6675,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8037189374017829,
+          "color": 0.9652818744830836,
+          "content": 0.8864734299516909,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8084099238079624,
+          "color": 0.9609934681160313,
+          "content": 0.5344352617079889,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.7957118818562924,
+          "color": 0.9572915417803655,
+          "content": 0.5773755656108597,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.803530946940778,
+          "color": 0.9634760048810167,
+          "content": 0.6033444816053511,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8283208219567382,
+          "color": 0.9625178004604125,
+          "content": 0.5617342130065975,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.807134229389688,
+          "color": 0.9651836162232363,
+          "content": 0.5555555555555555,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.796066661787854,
+          "color": 0.9651457816627645,
+          "content": 0.5521367521367522,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.7989509631366403,
+          "color": 0.9643413013383686,
+          "content": 0.5790513833992095,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8337670609529038,
+          "color": 0.964150216813916,
+          "content": 0.8862433862433864,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8249695350552045,
+          "color": 0.9751569751613948,
+          "content": 0.891500904159132,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "TA4HQkQ",
+      "reward": 0.7843400941929232,
+      "structure": 0.8106058061300381,
+      "color": 0.9779337001087842,
+      "content": 0.6713208705328704,
+      "design_judge": 0.6775,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8216781219813432,
+          "color": 0.9831691760584266,
+          "content": 0.8857142857142858,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8116265341688851,
+          "color": 0.9789396288457278,
+          "content": 0.5644520159000568,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.7993161068468385,
+          "color": 0.973645439431025,
+          "content": 0.5925925925925924,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.790809522242427,
+          "color": 0.9834140891128911,
+          "content": 0.6498338870431893,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8242417035320995,
+          "color": 0.9811292089660846,
+          "content": 0.5609532538955087,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8093983363541797,
+          "color": 0.9813508573469097,
+          "content": 0.5146036161335188,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8043665036889178,
+          "color": 0.974874630796583,
+          "content": 0.5799319727891156,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.7934859633343659,
+          "color": 0.9668466629300158,
+          "content": 0.6006256517205422,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8271946388259416,
+          "color": 0.9804569397531335,
+          "content": 0.8770595690747783,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8239406303253819,
+          "color": 0.9755103678470459,
+          "content": 0.8874418604651162,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "bQQGc2V",
+      "reward": 0.7763386863116144,
+      "structure": 0.8155761226276799,
+      "color": 0.978927838311409,
+      "content": 0.6383507843073688,
+      "design_judge": 0.6725,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.816742774325988,
+          "color": 0.9857093752216812,
+          "content": 0.8804071246819337,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8047839999160299,
+          "color": 0.9862575005309897,
+          "content": 0.5421903052064632,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.793201758240964,
+          "color": 0.9686685187865886,
+          "content": 0.5744680851063829,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.8076088178376535,
+          "color": 0.9840620953553062,
+          "content": 0.5451916124367316,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.834539343704444,
+          "color": 0.987629721063043,
+          "content": 0.5962264150943396,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8237988298946914,
+          "color": 0.9840319475045836,
+          "content": 0.4566929133858268,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8033133861463516,
+          "color": 0.9660442974964368,
+          "content": 0.5251601097895701,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.8062368329777623,
+          "color": 0.9616232209594611,
+          "content": 0.5777310924369747,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8404263224226464,
+          "color": 0.9828735863591086,
+          "content": 0.8027586206896552,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8251091608102677,
+          "color": 0.9823781198368903,
+          "content": 0.8826815642458101,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "gtTWf2y",
+      "reward": 0.7820943798528043,
+      "structure": 0.8185133121362089,
+      "color": 0.9805038623327957,
+      "content": 0.6568603449422123,
+      "design_judge": 0.6725,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8198423652116328,
+          "color": 0.9843914179633159,
+          "content": 0.8589743589743589,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8170895494030902,
+          "color": 0.9856466632584832,
+          "content": 0.5450264861683343,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.8056473077360768,
+          "color": 0.9849498841457449,
+          "content": 0.6163873370577281,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.8035878240958287,
+          "color": 0.9823282052444364,
+          "content": 0.6245006657789615,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8309200035844653,
+          "color": 0.9821379619850517,
+          "content": 0.5775301764159703,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8174065688387108,
+          "color": 0.9770568625264912,
+          "content": 0.5394190871369295,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8121511164209286,
+          "color": 0.9777757529772246,
+          "content": 0.5660051768766177,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.8111710746264356,
+          "color": 0.9701897916473068,
+          "content": 0.5580865603644647,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8408993211596538,
+          "color": 0.9817712164171919,
+          "content": 0.8180610889774237,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8264179902852662,
+          "color": 0.9787908671627106,
+          "content": 0.8646125116713352,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "nMQ4UGo",
+      "reward": 0.7819592369428203,
+      "structure": 0.8174161429729647,
+      "color": 0.9740050932313201,
+      "content": 0.6564157115669966,
+      "design_judge": 0.6799999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8130428710152406,
+          "color": 0.9834598585328469,
+          "content": 0.8373879641485276,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.813685710736962,
+          "color": 0.9733513558867382,
+          "content": 0.565342544617156,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.8122098855541847,
+          "color": 0.9624281291190131,
+          "content": 0.5766497461928934,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.8043338859614334,
+          "color": 0.9755673646173613,
+          "content": 0.6567567567567567,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8349903541215502,
+          "color": 0.9788864977497139,
+          "content": 0.5733082706766918,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8149214050333207,
+          "color": 0.9765625459220089,
+          "content": 0.5237757274662882,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8123833716553627,
+          "color": 0.9710124293301283,
+          "content": 0.561531449407475,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.8082703435906465,
+          "color": 0.9686790319993309,
+          "content": 0.5961945031712473,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8361750044558044,
+          "color": 0.9784483691680527,
+          "content": 0.8326848249027237,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8241485976051424,
+          "color": 0.9716553499880067,
+          "content": 0.8405253283302064,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "p9ULnYQ",
+      "reward": 0.7791769254997096,
+      "structure": 0.8212402074460314,
+      "color": 0.9838001185581744,
+      "content": 0.6491673759946329,
+      "design_judge": 0.6624999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8157246779416927,
+          "color": 0.9862094570581736,
+          "content": 0.8663366336633663,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.821073431670783,
+          "color": 0.9882000790881357,
+          "content": 0.5581395348837209,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.8114588705399304,
+          "color": 0.9759512540418915,
+          "content": 0.4564705882352942,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.8048225168403602,
+          "color": 0.9879263366901223,
+          "content": 0.6210526315789474,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8384412075867125,
+          "color": 0.987905071929384,
+          "content": 0.5849731663685152,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8257885237610587,
+          "color": 0.9780676905577416,
+          "content": 0.5064442759666414,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8018759638657805,
+          "color": 0.9864850035942401,
+          "content": 0.5340406719717066,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.8124922964264807,
+          "color": 0.9773470256777108,
+          "content": 0.6245847176079734,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8469681211983368,
+          "color": 0.9848845639949279,
+          "content": 0.8419654714475432,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8337564646291783,
+          "color": 0.9850247029494157,
+          "content": 0.8976660682226212,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "vAaxFXA",
+      "reward": 0.7766201114678228,
+      "structure": 0.8141962213012635,
+      "color": 0.9785924925951758,
+      "content": 0.6361917319748522,
+      "design_judge": 0.6775,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8115249278564924,
+          "color": 0.9841775567272536,
+          "content": 0.8593350383631714,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8058693784700883,
+          "color": 0.9813994751251891,
+          "content": 0.5509181969949918,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.8014851116121947,
+          "color": 0.9776541198890678,
+          "content": 0.552734375,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.8001062821445211,
+          "color": 0.979181914052806,
+          "content": 0.5832167832167833,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8260825950382191,
+          "color": 0.9880590059255557,
+          "content": 0.542910447761194,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8258104683370397,
+          "color": 0.9769004971922716,
+          "content": 0.5185704274702173,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.8000782454370611,
+          "color": 0.9658037488874487,
+          "content": 0.45120671563483733,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.8074393380230008,
+          "color": 0.9767455346861578,
+          "content": 0.6232876712328766,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8404471201467107,
+          "color": 0.9822346288800138,
+          "content": 0.8188105117565699,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8231187459473059,
+          "color": 0.9737684445859941,
+          "content": 0.8609271523178806,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "vBxhtE7",
+      "reward": 0.7875818909436291,
+      "structure": 0.8175553271867155,
+      "color": 0.975812020114233,
+      "content": 0.666960216473568,
+      "design_judge": 0.69,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.8159812820754991,
+          "color": 0.9825615935068537,
+          "content": 0.8886043533930857,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "mission": {
+          "present": true,
+          "structure": 0.8175540978136402,
+          "color": 0.9726039866168718,
+          "content": 0.5298850574712644,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "programs": {
+          "present": true,
+          "structure": 0.808645826885643,
+          "color": 0.9802851045800313,
+          "content": 0.5929368029739777,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "donate": {
+          "present": true,
+          "structure": 0.7960766489406282,
+          "color": 0.989973303946404,
+          "content": 0.6263297872340425,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "impact": {
+          "present": true,
+          "structure": 0.8380401288964192,
+          "color": 0.970988660249364,
+          "content": 0.5735707591377694,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "volunteer": {
+          "present": true,
+          "structure": 0.8228677403553186,
+          "color": 0.9727590253493026,
+          "content": 0.5060070671378092,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "events": {
+          "present": true,
+          "structure": 0.7988762311247457,
+          "color": 0.9766499199512274,
+          "content": 0.5567703952901597,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "news": {
+          "present": true,
+          "structure": 0.7998680844865436,
+          "color": 0.9595518764255717,
+          "content": 0.621900826446281,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "partners": {
+          "present": true,
+          "structure": 0.8520218067765329,
+          "color": 0.979316799548796,
+          "content": 0.8620689655172414,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8256214245121849,
+          "color": 0.9734299309679061,
+          "content": 0.9115281501340483,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    }
+  ]
+}

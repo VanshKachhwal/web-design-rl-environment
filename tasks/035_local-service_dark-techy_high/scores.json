@@ -1,0 +1,1435 @@
+{
+  "meta": {
+    "task_id": "opus47-035",
+    "seed_tuple": [
+      "local-service",
+      "dark-techy",
+      "high",
+      "local-community",
+      "premium-and-understated"
+    ],
+    "archetype": "local-service",
+    "aesthetic": "dark-techy",
+    "complexity": "high",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 31.967117000000002,
+    "total_input_tokens": 26997400,
+    "total_output_tokens": 551996,
+    "started_at": "2026-05-31T22:06:43.044935",
+    "finished_at": "2026-05-31T22:28:13.332377",
+    "wall_clock_sec": 1290.287442,
+    "date": "2026-05-31",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "3M4CAXn",
+      "reward": 0.7471422117559887,
+      "structure": 0.7739698999872744,
+      "color": 0.9744604981741253,
+      "content": 0.5451384488625555,
+      "design_judge": 0.695,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7856228817386486,
+          "color": 0.9722338811660118,
+          "content": 0.6781750924784217,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7717554299842363,
+          "color": 0.9754160969455722,
+          "content": 0.44987363100252736,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7743581955412843,
+          "color": 0.9664159723071104,
+          "content": 0.5850796311818943,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7713877729169137,
+          "color": 0.9736035309450494,
+          "content": 0.40174039158810737,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7819537631173242,
+          "color": 0.9784703288486882,
+          "content": 0.8191881918819188,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.7758198035260997,
+          "color": 0.9769521921349581,
+          "content": 0.4690117252931323,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.7903828087003044,
+          "color": 0.9714415996953536,
+          "content": 0.4549653579676674,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.4
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.7369581055443872,
+          "color": 0.9736444420744709,
+          "content": 0.4888569374550683,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7734687966931544,
+          "color": 0.9796980970997371,
+          "content": 0.5452609158679446,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7779914421103914,
+          "color": 0.9767288405243008,
+          "content": 0.5592326139088728,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "BraKtNp",
+      "reward": 0.7381324266870595,
+      "structure": 0.7657703672122179,
+      "color": 0.976726803766695,
+      "content": 0.5225325357693252,
+      "design_judge": 0.6875,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7825772148399842,
+          "color": 0.9786357708542905,
+          "content": 0.675577156743621,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7552582225243174,
+          "color": 0.9819237550239143,
+          "content": 0.47460595446584936,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7697884807466238,
+          "color": 0.979109236561949,
+          "content": 0.6037069726390115,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7893870956532703,
+          "color": 0.9762575769791657,
+          "content": 0.3691148775894539,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7855759503395345,
+          "color": 0.9785914411301128,
+          "content": 0.8200734394124847,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.752903950892134,
+          "color": 0.9805712327433378,
+          "content": 0.4804003336113428,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.76540980899513,
+          "color": 0.9542143819191551,
+          "content": 0.4965197215777262,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.7234985897233591,
+          "color": 0.9798655037287632,
+          "content": 0.4751131221719457,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7933516149321148,
+          "color": 0.9787030198505395,
+          "content": 0.5043859649122807,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7399527434757105,
+          "color": 0.979396118875722,
+          "content": 0.32582781456953647,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "KbwY6JH",
+      "reward": 0.7517773699355361,
+      "structure": 0.7816389851469732,
+      "color": 0.9777770536987562,
+      "content": 0.562693440896415,
+      "design_judge": 0.6849999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7647680374230259,
+          "color": 0.9738082894443416,
+          "content": 0.6723926380368098,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7712498092499016,
+          "color": 0.9773013521113084,
+          "content": 0.4990723562152134,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7708753899979436,
+          "color": 0.9797218158794985,
+          "content": 0.5897435897435898,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7946694377956374,
+          "color": 0.9778123167936553,
+          "content": 0.38693035253654345,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7976802202394982,
+          "color": 0.9787028472887318,
+          "content": 0.8192771084337349,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.7779286142240187,
+          "color": 0.9784638222654556,
+          "content": 0.47435897435897434,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.7891282367165031,
+          "color": 0.9769423493957131,
+          "content": 0.5731414868105515,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.7515012289673154,
+          "color": 0.9751057280039997,
+          "content": 0.5295587010824314,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.8117278333745169,
+          "color": 0.9807558698469274,
+          "content": 0.5679012345679012,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7868610434813708,
+          "color": 0.9791561459579303,
+          "content": 0.5145579671784012,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "NCSn9vP",
+      "reward": 0.7434154297881912,
+      "structure": 0.7243237934197796,
+      "color": 0.9819734225266549,
+      "content": 0.5548645032063303,
+      "design_judge": 0.7125,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7248364828444946,
+          "color": 0.9815131227654217,
+          "content": 0.7351077313054499,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7285162220239321,
+          "color": 0.9830183225759866,
+          "content": 0.5036900369003691,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7431178805438651,
+          "color": 0.9817205447036308,
+          "content": 0.601237842617153,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7332001907696093,
+          "color": 0.9815783192967357,
+          "content": 0.41490262489415747,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7311927144513901,
+          "color": 0.9815457889781202,
+          "content": 0.8339575530586766,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.698829902668356,
+          "color": 0.9824827142489495,
+          "content": 0.524390243902439,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.7150885616230787,
+          "color": 0.9796474136554701,
+          "content": 0.4110970996216898,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.6715799016597277,
+          "color": 0.9834453984574594,
+          "content": 0.4933645589383295,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7530478944380415,
+          "color": 0.9812181189837743,
+          "content": 0.5383759733036707,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7438281831753014,
+          "color": 0.9835644816010013,
+          "content": 0.49252136752136755,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "S2ywVEC",
+      "reward": 0.7160626751314421,
+      "structure": 0.6673998296664608,
+      "color": 0.9713460695814419,
+      "content": 0.5505048012778653,
+      "design_judge": 0.675,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.687353182646724,
+          "color": 0.9685505114669187,
+          "content": 0.7386503067484662,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.6431568832003908,
+          "color": 0.9687461250848507,
+          "content": 0.4390243902439025,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.676680179799619,
+          "color": 0.9746199262317918,
+          "content": 0.5955334987593053,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6677933381265098,
+          "color": 0.9739452028566405,
+          "content": 0.388366124893071,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7106445082249997,
+          "color": 0.9694938373702451,
+          "content": 0.8246674727932286,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.6453507886301041,
+          "color": 0.9704961016290117,
+          "content": 0.4661654135338345,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.6823084057211238,
+          "color": 0.9674947201601255,
+          "content": 0.4821852731591449,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.6226476965294583,
+          "color": 0.9747955275789058,
+          "content": 0.5311812179016875,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.6797133240092922,
+          "color": 0.9688298162185508,
+          "content": 0.5354497354497354,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.6583499897763871,
+          "color": 0.9764889272173785,
+          "content": 0.5038245792962774,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "WXnEkTs",
+      "reward": 0.7187321378695481,
+      "structure": 0.6984556702609416,
+      "color": 0.9660631696699266,
+      "content": 0.5629097115473247,
+      "design_judge": 0.6475,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7029507378748225,
+          "color": 0.9606315769273802,
+          "content": 0.6714801444043321,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.6813962552400133,
+          "color": 0.9642644954240586,
+          "content": 0.43313201035375326,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.721909187652884,
+          "color": 0.9659567856743246,
+          "content": 0.603642671292281,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.706251194283473,
+          "color": 0.9624032640584906,
+          "content": 0.4238856181665264,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7113644122171975,
+          "color": 0.9691180103899267,
+          "content": 0.8383838383838385,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.6846924443643875,
+          "color": 0.965577336774846,
+          "content": 0.5113438045375218,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.7244697657592597,
+          "color": 0.9717755830246899,
+          "content": 0.49029126213592233,
+          "design_judge": 0.575,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.4
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.6317980108042639,
+          "color": 0.9627835861050029,
+          "content": 0.5113016367887764,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7229520976648132,
+          "color": 0.970420297158042,
+          "content": 0.5460385438972163,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.6967725967483005,
+          "color": 0.9677007611625033,
+          "content": 0.5995975855130784,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "h9QcJ6D",
+      "reward": 0.7378951154717559,
+      "structure": 0.7267251631021743,
+      "color": 0.9768189620378894,
+      "content": 0.5505363367469596,
+      "design_judge": 0.6975,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7403415630849529,
+          "color": 0.9781592055755466,
+          "content": 0.6707021791767555,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7159225309021545,
+          "color": 0.9793518393419836,
+          "content": 0.4670231729055259,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7503168812542682,
+          "color": 0.9770307082418345,
+          "content": 0.6563838903170522,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7279536858518116,
+          "color": 0.977012034200498,
+          "content": 0.387459807073955,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7514904424706093,
+          "color": 0.9784879663302467,
+          "content": 0.8207070707070707,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.7050233044528126,
+          "color": 0.9777048682897341,
+          "content": 0.5123674911660777,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.7213105360285983,
+          "color": 0.9698172886357609,
+          "content": 0.42129629629629634,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.6695046048906975,
+          "color": 0.9744015650176957,
+          "content": 0.479023646071701,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7576714080809673,
+          "color": 0.9800032570375976,
+          "content": 0.5016357688113413,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7277166740048701,
+          "color": 0.9762208877079978,
+          "content": 0.5887640449438203,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "isoBE3J",
+      "reward": 0.7199624375396594,
+      "structure": 0.70561630807124,
+      "color": 0.9752673927808939,
+      "content": 0.5214660493065036,
+      "design_judge": 0.6775,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7089474767177624,
+          "color": 0.9912722644769613,
+          "content": 0.6745562130177515,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.6834918781743778,
+          "color": 0.9758544382178893,
+          "content": 0.4637421665174575,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7212080138274851,
+          "color": 0.9731610079749514,
+          "content": 0.5479962721342032,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7005055689092929,
+          "color": 0.9729921470612043,
+          "content": 0.37268002969561986,
+          "design_judge": 0.6,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.747220516689234,
+          "color": 0.9729320385381202,
+          "content": 0.7588152327221439,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.6930661957086223,
+          "color": 0.9734389785624714,
+          "content": 0.47288135593220343,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.737670543840741,
+          "color": 0.9750325940800539,
+          "content": 0.45777233782129745,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.642513580833864,
+          "color": 0.9735093751216832,
+          "content": 0.48746081504702193,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7283054465233485,
+          "color": 0.971710563939433,
+          "content": 0.5586592178770949,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.6932338594876724,
+          "color": 0.9727705198361701,
+          "content": 0.42009685230024213,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "sjat758",
+      "reward": 0.7461127610650514,
+      "structure": 0.7629065351412305,
+      "color": 0.9905147280242321,
+      "content": 0.5285297810947432,
+      "design_judge": 0.7025,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7593885183376656,
+          "color": 0.989510372756026,
+          "content": 0.7021791767554478,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.759801660915081,
+          "color": 0.9921783266097138,
+          "content": 0.4258943781942078,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7677225643096188,
+          "color": 0.9898133669745169,
+          "content": 0.5543369890329013,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7788455400285473,
+          "color": 0.9909505387395797,
+          "content": 0.4039247751430908,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7762281343179734,
+          "color": 0.9921128014376304,
+          "content": 0.7628571428571429,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.7585738297178732,
+          "color": 0.9898895331164608,
+          "content": 0.5063063063063064,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.739827932560468,
+          "color": 0.9889499124638813,
+          "content": 0.48025613660619,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.7191993352929913,
+          "color": 0.9895753191303348,
+          "content": 0.504868913857678,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.7909938383200713,
+          "color": 0.9909849672463059,
+          "content": 0.516629711751663,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7784839976120149,
+          "color": 0.9911821417678722,
+          "content": 0.42804428044280446,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "v8hWxPH",
+      "reward": 0.7389476340544837,
+      "structure": 0.7712116249711581,
+      "color": 0.9758215569531983,
+      "content": 0.5387573542935785,
+      "design_judge": 0.67,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7703530349947951,
+          "color": 0.9725486634548358,
+          "content": 0.6973848069738481,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7516458185231987,
+          "color": 0.9777683048007197,
+          "content": 0.41417910447761197,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7587296297686978,
+          "color": 0.9781256078840442,
+          "content": 0.6043668122270743,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7835490084298463,
+          "color": 0.9756293883128138,
+          "content": 0.398018166804294,
+          "design_judge": 0.55,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.5,
+            "content_completeness": 0.4
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7636815228274987,
+          "color": 0.9851040184879958,
+          "content": 0.8185140073081608,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "areas": {
+          "present": true,
+          "structure": 0.7737631059522783,
+          "color": 0.9738481669734395,
+          "content": 0.455788514129444,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "gallery": {
+          "present": true,
+          "structure": 0.7659256678859394,
+          "color": 0.9718027381799315,
+          "content": 0.4849215922798553,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        },
+        "reviews": {
+          "present": true,
+          "structure": 0.7586252468282336,
+          "color": 0.9718825065411348,
+          "content": 0.4796875,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "booking": {
+          "present": true,
+          "structure": 0.8111000752600069,
+          "color": 0.9760150020132502,
+          "content": 0.514346439957492,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "faq": {
+          "present": true,
+          "structure": 0.7747431392410865,
+          "color": 0.9754911728838177,
+          "content": 0.5203665987780041,
+          "design_judge": 0.65,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.5
+          }
+        }
+      }
+    }
+  ]
+}

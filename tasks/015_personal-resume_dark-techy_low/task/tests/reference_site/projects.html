@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Projects</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="16" stroke="#3d8b80" stroke-width="2" fill="none"/>
+        <circle cx="18" cy="18" r="6" fill="#3d8b80" opacity="0.6"/>
+        <path d="M18 6 L18 12 M18 24 L18 30 M6 18 L12 18 M24 18 L30 18" stroke="#3d8b80" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10.5 10.5 L14 14 M22 22 L25.5 25.5 M10.5 25.5 L14 22 M22 14 L25.5 10.5" stroke="#c9943e" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <span>wellnessOS</span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="experience.html" class="header__nav-link">Experience</a>
+      <a href="projects.html" class="header__nav-link">Projects</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- CONTENT SECTION: Page Intro -->
+  <section class="content-section content-section--centered">
+    <div class="content-section__header">
+      <p class="content-section__eyebrow">Portfolio</p>
+      <h1 class="content-section__title">Selected Projects</h1>
+      <p class="content-section__subtitle">A curated collection of work spanning web applications, design systems, open-source tools, and creative experiments — each built with intention and craft.</p>
+    </div>
+  </section>
+
+  <!-- BENTO GRID: Featured Projects -->
+  <section class="bento-grid">
+    <div class="bento-grid__header">
+      <h2 class="bento-grid__title">Featured Work</h2>
+      <p class="bento-grid__subtitle">Highlights from recent and ongoing projects</p>
+    </div>
+    <div class="bento-grid__items">
+
+      <!-- Item 1: span-2, highlight -->
+      <div class="bento-grid__item bento-grid__item--span-2 bento-grid__item--highlight">
+        <div>
+          <div class="badge-group" style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--teal"><span class="badge__dot"></span>React</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>TypeScript</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>Design System</span>
+          </div>
+          <h3 class="bento-grid__item-title">Meridian Design System</h3>
+          <p class="bento-grid__item-desc">A comprehensive component library and design token architecture powering consistent UI across twelve product teams. Includes accessible primitives, theme support, and automated documentation.</p>
+        </div>
+        <div class="bento-grid__item-visual">
+          <svg width="100%" height="80" viewbox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="10" width="60" height="60" rx="8" fill="var(--color-teal-ghost)" stroke="var(--color-border-glow)" stroke-width="1"/>
+            <rect x="70" y="10" width="60" height="60" rx="8" fill="var(--color-teal-ghost)" stroke="var(--color-border-glow)" stroke-width="1"/>
+            <rect x="140" y="10" width="60" height="60" rx="8" fill="var(--color-teal-ghost)" stroke="var(--color-border-glow)" stroke-width="1"/>
+            <rect x="210" y="10" width="60" height="60" rx="8" fill="var(--color-amber-ghost)" stroke="rgba(201,148,62,0.3)" stroke-width="1"/>
+            <rect x="280" y="10" width="60" height="60" rx="8" fill="var(--color-amber-ghost)" stroke="rgba(201,148,62,0.3)" stroke-width="1"/>
+            <rect x="350" y="10" width="48" height="60" rx="8" fill="var(--color-bg-tertiary)" stroke="var(--color-border)" stroke-width="1"/>
+            <rect x="12" y="25" width="36" height="6" rx="3" fill="var(--color-teal-dim)"/>
+            <rect x="12" y="38" width="28" height="4" rx="2" fill="var(--color-border)"/>
+            <rect x="82" y="25" width="36" height="6" rx="3" fill="var(--color-teal-dim)"/>
+            <rect x="82" y="38" width="28" height="4" rx="2" fill="var(--color-border)"/>
+            <rect x="152" y="25" width="36" height="6" rx="3" fill="var(--color-teal-dim)"/>
+            <rect x="152" y="38" width="28" height="4" rx="2" fill="var(--color-border)"/>
+            <rect x="222" y="25" width="36" height="6" rx="3" fill="var(--color-amber-dim)"/>
+            <rect x="222" y="38" width="28" height="4" rx="2" fill="var(--color-border)"/>
+            <rect x="292" y="25" width="36" height="6" rx="3" fill="var(--color-amber-dim)"/>
+            <rect x="292" y="38" width="28" height="4" rx="2" fill="var(--color-border)"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 2: tall -->
+      <div class="bento-grid__item bento-grid__item--tall">
+        <div>
+          <div class="badge-group" style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--amber"><span class="badge__dot"></span>Python</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>ML</span>
+          </div>
+          <h3 class="bento-grid__item-title">Sentinel Analytics</h3>
+          <p class="bento-grid__item-desc">Real-time anomaly detection platform processing streaming data from IoT sensors. Features adaptive thresholds, predictive alerting, and a dashboard for operational teams.</p>
+        </div>
+        <div class="bento-grid__item-visual">
+          <svg width="100%" height="140" viewbox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="130" x2="180" y2="130" stroke="var(--color-border)" stroke-width="1"/>
+            <line x1="0" y1="100" x2="180" y2="100" stroke="var(--color-border-subtle)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="0" y1="70" x2="180" y2="70" stroke="var(--color-border-subtle)" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="0" y1="40" x2="180" y2="40" stroke="var(--color-border-subtle)" stroke-width="1" stroke-dasharray="4 4"/>
+            <polyline points="0,110 20,95 40,100 60,70 80,75 100,45 120,50 140,30 160,35 180,20" stroke="var(--color-teal)" stroke-width="2" fill="none"/>
+            <circle cx="100" cy="45" r="4" fill="var(--color-amber)" stroke="var(--color-amber-light)" stroke-width="1"/>
+            <circle cx="140" cy="30" r="4" fill="var(--color-amber)" stroke="var(--color-amber-light)" stroke-width="1"/>
+            <polygon points="0,110 20,95 40,100 60,70 80,75 100,45 120,50 140,30 160,35 180,20 180,130 0,130" fill="var(--color-teal-ghost)" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 3: single -->
+      <div class="bento-grid__item bento-grid__item--amber-highlight">
+        <div>
+          <div class="badge-group" style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--amber"><span class="badge__dot"></span>Rust</span>
+          </div>
+          <h3 class="bento-grid__item-title">Forge CLI</h3>
+          <p class="bento-grid__item-desc">A blazing-fast scaffolding tool for modern web projects. Generates opinionated project structures with built-in linting, testing, and CI configuration.</p>
+        </div>
+        <div class="bento-grid__item-visual">
+          <svg width="100%" height="48" viewbox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="200" height="48" rx="6" fill="var(--color-bg-primary)" stroke="var(--color-border)" stroke-width="1"/>
+            <text x="10" y="18" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--color-text-muted)">$ forge init my-app</text>
+            <text x="10" y="34" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--color-success)">✓ Project created in 0.8s</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Item 4: single -->
+      <div class="bento-grid__item">
+        <div>
+          <div class="badge-group" style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--teal"><span class="badge__dot"></span>Node.js</span>
+            <span class="badge badge--teal"><span class="badge__dot"></span>GraphQL</span>
+          </div>
+          <h3 class="bento-grid__item-title">Nexus API Gateway</h3>
+          <p class="bento-grid__item-desc">Unified API gateway consolidating microservices behind a single GraphQL endpoint with caching, rate limiting, and schema stitching.</p>
+        </div>
+      </div>
+
+      <!-- Item 5: span-2 -->
+      <div class="bento-grid__item bento-grid__item--span-2">
+        <div>
+          <div class="badge-group" style="margin-bottom: var(--space-sm);">
+            <span class="badge badge--teal"><span class="badge__dot"></span>Vue.js</span>
+            <span class="badge badge--amber"><span class="badge__dot"></span>D3.js</span>
+            <span class="badge badge--success"><span class="badge__dot"></span>Open Source</span>
+          </div>
+          <h3 class="bento-grid__item-title">Cartograph — Interactive Data Visualization</h3>
+          <p class="bento-grid__item-desc">An open-source toolkit for building rich, interactive data visualizations. Supports geospatial mapping, network graphs, and time-series exploration with declarative configuration and accessible defaults.</p>
+        </div>
+        <div class="bento-grid__item-visual">
+          <svg width="100%" height="60" viewbox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="30" r="20" fill="var(--color-teal-ghost)" stroke="var(--color-teal-dim)" stroke-width="1"/>
+            <circle cx="60" cy="30" r="8" fill="var(--color-teal)"/>
+            <circle cx="160" cy="25" r="14" fill="var(--color-amber-ghost)" stroke="var(--color-amber-dim)" stroke-width="1"/>
+            <circle cx="160" cy="25" r="5" fill="var(--color-amber)"/>
+            <circle cx="240" cy="35" r="18" fill="var(--color-teal-ghost)" stroke="var(--color-teal-dim)" stroke-width="1"/>
+            <circle cx="240" cy="35" r="7" fill="var(--color-teal)"/>
+            <circle cx="330" cy="28" r="12" fill="var(--color-amber-ghost)" stroke="var(--color-amber-dim)" stroke-width="1"/>
+            <circle cx="330" cy="28" r="4" fill="var(--color-amber)"/>
+            <line x1="68" y1="30" x2="146" y2="25" stroke="var(--color-border)" stroke-width="1"/>
+            <line x1="174" y1="25" x2="222" y2="35" stroke="var(--color-border)" stroke-width="1"/>
+            <line x1="258" y1="35" x2="318" y2="28" stroke="var(--color-border)" stroke-width="1"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CARD GRID: More Projects -->
+  <section class="content-section">
+    <div class="content-section__header">
+      <p class="content-section__eyebrow">More Work</p>
+      <h2 class="content-section__title">Additional Projects</h2>
+      <p class="content-section__subtitle">Smaller explorations, client work, and side projects that showcase breadth across domains and technologies.</p>
+    </div>
+
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <div class="card card--elevated">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="18" height="14" rx="2" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <line x1="2" y1="9" x2="20" y2="9" stroke="var(--color-teal-light)" stroke-width="1.5"/>
+              <circle cx="6" cy="6.5" r="1" fill="var(--color-teal-light)"/>
+              <circle cx="9" cy="6.5" r="1" fill="var(--color-teal-light)"/>
+            </svg>
+          </div>
+          <span class="badge badge--teal"><span class="badge__dot"></span>Web App</span>
+        </div>
+        <h3 class="card__title">Helix Dashboard</h3>
+        <p class="card__subtitle">Client Project · 2024</p>
+        <p class="card__body">Admin dashboard for a SaaS platform featuring real-time metrics, user management, and role-based access controls. Built with responsive layouts and dark-mode-first design.</p>
+        <div class="badge-group">
+          <span class="badge">React</span>
+          <span class="badge">Tailwind</span>
+          <span class="badge">Supabase</span>
+        </div>
+        <div class="card__footer">
+          <a href="#" class="card__link">View details</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card card--elevated">
+        <div class="card__header">
+          <div class="card__icon card__icon--amber">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 2L13.5 8H19L14.5 12L16 18L11 14.5L6 18L7.5 12L3 8H8.5L11 2Z" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="badge badge--amber"><span class="badge__dot"></span>Branding</span>
+        </div>
+        <h3 class="card__title">Luminary Brand Identity</h3>
+        <p class="card__subtitle">Freelance · 2023</p>
+        <p class="card__body">Complete brand identity system for a sustainable fashion startup. Delivered logo suite, color system, typography guidelines, and a 40-page brand book with usage examples.</p>
+        <div class="badge-group">
+          <span class="badge">Figma</span>
+          <span class="badge">Illustration</span>
+        </div>
+        <div class="card__footer">
+          <a href="#" class="card__link">View details</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card card--elevated">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="16" height="16" rx="3" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <path d="M7 11L10 14L15 8" stroke="var(--color-teal-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="badge badge--success"><span class="badge__dot"></span>Open Source</span>
+        </div>
+        <h3 class="card__title">Checkmate Testing Framework</h3>
+        <p class="card__subtitle">Personal · 2024</p>
+        <p class="card__body">Lightweight end-to-end testing framework with an expressive API, parallel execution, and built-in visual regression capabilities. 1.2k GitHub stars and growing.</p>
+        <div class="badge-group">
+          <span class="badge">TypeScript</span>
+          <span class="badge">Playwright</span>
+        </div>
+        <div class="card__footer">
+          <a href="#" class="card__link">View details</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card card--glow-teal">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="11" r="8" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none"/>
+              <path d="M11 3C11 3 7 8 7 11C7 14 9 17 11 19" stroke="var(--color-teal-light)" stroke-width="1" fill="none"/>
+              <path d="M11 3C11 3 15 8 15 11C15 14 13 17 11 19" stroke="var(--color-teal-light)" stroke-width="1" fill="none"/>
+              <line x1="3" y1="11" x2="19" y2="11" stroke="var(--color-teal-light)" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="badge badge--teal"><span class="badge__dot"></span>Full Stack</span>
+        </div>
+        <h3 class="card__title">Wayfinder Travel Platform</h3>
+        <p class="card__subtitle">Client Project · 2023</p>
+        <p class="card__body">Trip planning platform with collaborative itinerary building, budget tracking, and location-based recommendations. Supports offline access and multi-currency conversion.</p>
+        <div class="badge-group">
+          <span class="badge">Next.js</span>
+          <span class="badge">PostgreSQL</span>
+          <span class="badge">Mapbox</span>
+        </div>
+        <div class="card__footer">
+          <a href="#" class="card__link">View details</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card card--elevated">
+        <div class="card__header">
+          <div class="card__icon card__icon--amber">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="2" width="14" height="18" rx="2" stroke="var(--color-amber-light)" stroke-width="1.5" fill="none"/>
+              <line x1="7" y1="7" x2="15" y2="7" stroke="var(--color-amber-light)" stroke-width="1"/>
+              <line x1="7" y1="10" x2="13" y2="10" stroke="var(--color-amber-light)" stroke-width="1"/>
+              <line x1="7" y1="13" x2="14" y2="13" stroke="var(--color-amber-light)" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="badge badge--amber"><span class="badge__dot"></span>Content</span>
+        </div>
+        <h3 class="card__title">Inkwell Publishing CMS</h3>
+        <p class="card__subtitle">Freelance · 2023</p>
+        <p class="card__body">Headless CMS tailored for independent publishers. Features a block-based editor, scheduled publishing, multi-author workflows, and SEO optimization tools.</p>
+        <div class="badge-group">
+          <span class="badge">Svelte</span>
+          <span class="badge">Sanity</span>
+          <span class="badge">Vercel</span>
+        </div>
+        <div class="card__footer">
+          <a href="#" class="card__link">View details</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card card--elevated">
+        <div class="card__header">
+          <div class="card__icon">
+            <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 7L11 3L19 7V15L11 19L3 15V7Z" stroke="var(--color-teal-light)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <line x1="11" y1="3" x2="11" y2="19" stroke="var(--color-teal-light)" stroke-width="1"/>
+              <line x1="3" y1="7" x2="19" y2="7" stroke="var(--color-teal-light)" stroke-width="1"/>
+            </svg>
+          </div>
+          <span class="badge badge--teal"><span class="badge__dot"></span>3D / WebGL</span>
+        </div>
+        <h3 class="card__title">Prism Configurator</h3>
+        <p class="card__subtitle">Personal · 2024</p>
+        <p class="card__body">Interactive 3D product configurator allowing customers to customize materials, colors, and dimensions in real-time. Exports production-ready specifications.</p>
+        <div class="badge-group">
+          <span class="badge">Three.js</span>
+          <span class="badge">React</span>
+          <span class="badge">GLTF</span>
+        </div>
+        <div class="card__footer">
+          <a href="#" class="card__link">View details</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STAT ROW: Project Stats -->
+  <section class="content-section">
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__value">24+</div>
+        <div class="stat__label">Projects Delivered</div>
+        <p class="stat__desc">Across web, mobile, and design</p>
+      </div>
+      <div class="stat stat--amber">
+        <div class="stat__value">12</div>
+        <div class="stat__label">Happy Clients</div>
+        <p class="stat__desc">From startups to enterprise</p>
+      </div>
+      <div class="stat">
+        <div class="stat__value">3.8k</div>
+        <div class="stat__label">GitHub Stars</div>
+        <p class="stat__desc">Across open-source projects</p>
+      </div>
+      <div class="stat stat--amber">
+        <div class="stat__value">6</div>
+        <div class="stat__label">Industries</div>
+        <p class="stat__desc">Finance, health, travel, and more</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__decor"></div>
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Have a project in mind?</h2>
+      <p class="cta-banner__desc">I'm always open to discussing new opportunities, creative ideas, or partnerships. Let's build something remarkable together.</p>
+      <a href="contact.html" class="cta-banner__btn cta-banner__btn--teal">Get in touch →</a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="footer__brand-name">wellnessOS</span>
+        <p class="footer__brand-desc">Holistic health &amp; wellness practitioner blending ancient wisdom with modern approaches. Helping you find balance, one system at a time.</p>
+        <div class="badge-group">
+          <span class="badge badge--teal"><span class="badge__dot"></span>Available for Consultations</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <div class="footer__col-links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="about.html" class="footer__link">About</a>
+          <a href="experience.html" class="footer__link">Experience</a>
+          <a href="projects.html" class="footer__link">Projects</a>
+          <a href="contact.html" class="footer__link">Contact</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Specialties</h4>
+        <div class="footer__col-links">
+          <span class="footer__link">Nutrition Coaching</span>
+          <span class="footer__link">Mindfulness Training</span>
+          <span class="footer__link">Holistic Wellness</span>
+          <span class="footer__link">Stress Management</span>
+          <span class="footer__link">Movement Therapy</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Connect</h4>
+        <div class="footer__col-links">
+          <span class="footer__link">hello@wellnessOS.example</span>
+          <span class="footer__link">+1 (555) 234-5678</span>
+          <span class="footer__link">Portland, OR</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">© 2024 wellnessOS — All rights reserved. Built with care &amp; intention.</span>
+      <div class="footer__bottom-links">
+        <span class="footer__bottom-link">Privacy</span>
+        <span class="footer__bottom-link">Terms</span>
+        <span class="footer__bottom-link">Accessibility</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

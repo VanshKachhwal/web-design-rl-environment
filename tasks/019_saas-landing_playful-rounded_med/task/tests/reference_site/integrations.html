@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Integrations</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="header__logo" aria-label="Circl Home">
+      <span class="header__logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+          <circle cx="12" cy="5" r="2" fill="#FFFFFF"/>
+          <circle cx="18" cy="15" r="2" fill="#FFFFFF"/>
+          <circle cx="6" cy="15" r="2" fill="#FFFFFF"/>
+        </svg>
+      </span>
+      Circl
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="features.html" class="header__nav-link">Features</a>
+      <a href="pricing.html" class="header__nav-link">Pricing</a>
+      <a href="integrations.html" class="header__nav-link">Integrations</a>
+      <a href="customers.html" class="header__nav-link">Customers</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+    <div class="header__actions">
+      <a href="contact.html" class="btn btn--secondary btn--sm">Get a Demo</a>
+      <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+    </div>
+  </div>
+</header>
+<main>
+
+  <!-- HERO / HEADER SECTION -->
+  <section class="hero hero--tinted">
+    <div class="hero__bg-shape hero__bg-shape--1"></div>
+    <div class="hero__bg-shape hero__bg-shape--2"></div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__badge">
+          <svg width="16" height="16" viewbox="0 0 16 16" fill="none">
+            <path d="M8 1v4M8 11v4M1 8h4M11 8h4M3.5 3.5l2.5 2.5M10 10l2.5 2.5M12.5 3.5L10 6M6 10l-2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          200+ Integrations Available
+        </span>
+        <h1 class="hero__title">Connect with the tools you <em>already love</em></h1>
+        <p class="hero__subtitle">Circl integrates seamlessly with your favorite apps and services. Automate workflows, sync data, and build a connected ecosystem without writing a single line of code.</p>
+        <div class="hero__actions">
+          <a href="pricing.html" class="btn btn--primary btn--lg">Get Started Free</a>
+          <a href="features.html" class="btn btn--secondary btn--lg">Explore Features</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO CLOUD -->
+  <section class="logo-cloud">
+    <div class="container">
+      <p class="logo-cloud__label">Trusted integrations with industry-leading platforms</p>
+      <div class="logo-cloud__grid">
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-primary);"></span>
+          Slack
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-mint);"></span>
+          Shopify
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-secondary);"></span>
+          Stripe
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-yellow);"></span>
+          Google Workspace
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-sky);"></span>
+          Salesforce
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-peach);"></span>
+          HubSpot
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-lavender);"></span>
+          Zapier
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-mint);"></span>
+          Notion
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION - Overview -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__inner">
+        <div class="content-section__header">
+          <span class="section-label">Why Integrate</span>
+          <h2 class="section-title">One platform, endless possibilities</h2>
+        </div>
+        <div class="content-section__body">
+          <p>Circl was built from the ground up to be the connective tissue between your tools. Whether you rely on CRMs, payment processors, communication platforms, or project management apps, our integrations ensure your data flows freely and your team stays in sync.</p>
+          <p>Every integration is designed with security and reliability in mind. Your data is encrypted in transit and at rest, and our integration engine handles retries, error logging, and monitoring automatically — so you can focus on what matters most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID - Integration Categories -->
+  <section class="feature-grid" style="background-color: var(--color-bg-warm);">
+    <div class="container">
+      <div class="feature-grid__header">
+        <span class="section-label">Integration Categories</span>
+        <h2 class="section-title">Connect every part of your workflow</h2>
+        <p class="section-subtitle">From communication to commerce, Circl connects with the platforms that power your business.</p>
+      </div>
+      <div class="feature-grid__grid">
+        <!-- Communication -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--primary">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Communication</h3>
+          <p class="feature-grid__item-desc">Connect with Slack, Microsoft Teams, Discord, and email platforms to keep your team informed in real time.</p>
+        </div>
+        <!-- CRM & Sales -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--mint">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="var(--color-accent-mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">CRM &amp; Sales</h3>
+          <p class="feature-grid__item-desc">Sync contacts, deals, and pipelines with Salesforce, HubSpot, Pipedrive, and other leading CRMs.</p>
+        </div>
+        <!-- Payments -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--peach">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="1" y="4" width="22" height="16" rx="2" stroke="var(--color-accent-peach)" stroke-width="2"/>
+              <line x1="1" y1="10" x2="23" y2="10" stroke="var(--color-accent-peach)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Payments</h3>
+          <p class="feature-grid__item-desc">Process transactions seamlessly with Stripe, PayPal, Square, and other payment gateways.</p>
+        </div>
+        <!-- E-Commerce -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--yellow">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <circle cx="9" cy="21" r="1" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+              <circle cx="20" cy="21" r="1" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+              <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke="var(--color-accent-yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">E-Commerce</h3>
+          <p class="feature-grid__item-desc">Integrate with Shopify, WooCommerce, BigCommerce, and Magento to unify your online store data.</p>
+        </div>
+        <!-- Analytics -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--pink">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M18 20V10M12 20V4M6 20v-6" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Analytics</h3>
+          <p class="feature-grid__item-desc">Pull insights from Google Analytics, Mixpanel, Amplitude, and Segment into a unified dashboard.</p>
+        </div>
+        <!-- Automation -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--sky">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--color-accent-sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Automation</h3>
+          <p class="feature-grid__item-desc">Build powerful workflows with Zapier, Make, n8n, and our native automation engine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD SECTION - Featured Integrations -->
+  <section class="content-section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <span class="section-label">Featured Integrations</span>
+        <h2 class="section-title">Most popular connections</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">These are the integrations our customers use most. Each one is built and maintained by the Circl team for maximum reliability.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8);">
+        <!-- Slack Card -->
+        <div class="card">
+          <div class="card__image" style="background-color: var(--color-bg-cool);">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <rect x="8" y="20" width="8" height="20" rx="4" fill="var(--color-primary)"/>
+              <rect x="20" y="8" width="8" height="20" rx="4" fill="var(--color-accent-mint)"/>
+              <rect x="32" y="16" width="8" height="24" rx="4" fill="var(--color-accent-yellow)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Communication</span>
+            <h3 class="card__title">Slack</h3>
+            <p class="card__desc">Get real-time notifications, create tasks from messages, and keep your team aligned without switching tabs.</p>
+          </div>
+          <div class="card__footer">
+            <a href="features.html" class="btn btn--sm btn--secondary">Learn More</a>
+          </div>
+        </div>
+        <!-- Stripe Card -->
+        <div class="card">
+          <div class="card__image" style="background-color: var(--color-bg-warm);">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <rect x="6" y="14" width="36" height="20" rx="4" stroke="var(--color-accent-peach)" stroke-width="3" fill="none"/>
+              <line x1="6" y1="22" x2="42" y2="22" stroke="var(--color-accent-peach)" stroke-width="3"/>
+              <rect x="12" y="28" width="10" height="3" rx="1.5" fill="var(--color-accent-peach)"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Payments</span>
+            <h3 class="card__title">Stripe</h3>
+            <p class="card__desc">Automatically sync invoices, subscriptions, and payment data. Trigger workflows on successful charges.</p>
+          </div>
+          <div class="card__footer">
+            <a href="features.html" class="btn btn--sm btn--secondary">Learn More</a>
+          </div>
+        </div>
+        <!-- Salesforce Card -->
+        <div class="card">
+          <div class="card__image" style="background-color: var(--color-bg-muted);">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <circle cx="24" cy="18" r="8" stroke="var(--color-accent-sky)" stroke-width="3" fill="none"/>
+              <path d="M10 40c0-7.73 6.27-14 14-14s14 6.27 14 14" stroke="var(--color-accent-sky)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">CRM</span>
+            <h3 class="card__title">Salesforce</h3>
+            <p class="card__desc">Bi-directional sync of contacts, leads, and opportunities. Keep your sales pipeline always up to date.</p>
+          </div>
+          <div class="card__footer">
+            <a href="features.html" class="btn btn--sm btn--secondary">Learn More</a>
+          </div>
+        </div>
+        <!-- Shopify Card -->
+        <div class="card">
+          <div class="card__image" style="background-color: var(--color-bg-cool);">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <path d="M14 10h20l4 8H10l4-8z" stroke="var(--color-accent-mint)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+              <rect x="10" y="18" width="28" height="20" rx="2" stroke="var(--color-accent-mint)" stroke-width="3" fill="none"/>
+              <path d="M20 38v-10h8v10" stroke="var(--color-accent-mint)" stroke-width="3" fill="none"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">E-Commerce</span>
+            <h3 class="card__title">Shopify</h3>
+            <p class="card__desc">Sync orders, products, and customer data. Automate fulfillment notifications and inventory updates.</p>
+          </div>
+          <div class="card__footer">
+            <a href="features.html" class="btn btn--sm btn--secondary">Learn More</a>
+          </div>
+        </div>
+        <!-- HubSpot Card -->
+        <div class="card">
+          <div class="card__image" style="background-color: var(--color-bg-warm);">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="10" stroke="var(--color-secondary)" stroke-width="3" fill="none"/>
+              <circle cx="24" cy="24" r="4" fill="var(--color-secondary)"/>
+              <line x1="24" y1="8" x2="24" y2="14" stroke="var(--color-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="24" y1="34" x2="24" y2="40" stroke="var(--color-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="8" y1="24" x2="14" y2="24" stroke="var(--color-secondary)" stroke-width="3" stroke-linecap="round"/>
+              <line x1="34" y1="24" x2="40" y2="24" stroke="var(--color-secondary)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">CRM</span>
+            <h3 class="card__title">HubSpot</h3>
+            <p class="card__desc">Unify marketing, sales, and service data. Automatically enrich contacts and trigger campaign workflows.</p>
+          </div>
+          <div class="card__footer">
+            <a href="features.html" class="btn btn--sm btn--secondary">Learn More</a>
+          </div>
+        </div>
+        <!-- Zapier Card -->
+        <div class="card">
+          <div class="card__image" style="background-color: var(--color-bg-muted);">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <path d="M24 8v32M8 24h32M13 13l22 22M35 13L13 35" stroke="var(--color-accent-lavender)" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Automation</span>
+            <h3 class="card__title">Zapier</h3>
+            <p class="card__desc">Connect Circl to 5,000+ apps through Zapier. Build multi-step automations without any code.</p>
+          </div>
+          <div class="card__footer">
+            <a href="features.html" class="btn btn--sm btn--secondary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO CLOUD - Additional Partners -->
+  <section class="logo-cloud">
+    <div class="container">
+      <p class="logo-cloud__label">And many more integrations including</p>
+      <div class="logo-cloud__grid">
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-sky);"></span>
+          Jira
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-mint);"></span>
+          Airtable
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-secondary);"></span>
+          Mailchimp
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-yellow);"></span>
+          Intercom
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-primary);"></span>
+          Zendesk
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-peach);"></span>
+          Twilio
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-lavender);"></span>
+          GitHub
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-mint);"></span>
+          Figma
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-accent-sky);"></span>
+          Asana
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-dot" style="background-color: var(--color-secondary);"></span>
+          Monday.com
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE GRID - Why Circl Integrations -->
+  <section class="feature-grid" style="background-color: var(--color-bg-cool);">
+    <div class="container">
+      <div class="feature-grid__header">
+        <span class="section-label">Built for Reliability</span>
+        <h2 class="section-title">Why teams choose Circl integrations</h2>
+        <p class="section-subtitle">Every integration is built, tested, and maintained by our engineering team to ensure enterprise-grade reliability.</p>
+      </div>
+      <div class="feature-grid__grid">
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--primary">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 12l2 2 4-4" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Enterprise Security</h3>
+          <p class="feature-grid__item-desc">End-to-end encryption, OAuth 2.0 authentication, and SOC 2 compliance across every integration.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--mint">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="var(--color-accent-mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Real-Time Sync</h3>
+          <p class="feature-grid__item-desc">Data syncs in milliseconds via webhooks and streaming APIs. No more stale data or manual refreshes.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--yellow">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="1" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+              <rect x="14" y="3" width="7" height="7" rx="1" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+              <rect x="3" y="14" width="7" height="7" rx="1" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+              <rect x="14" y="14" width="7" height="7" rx="1" stroke="var(--color-accent-yellow)" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">No-Code Setup</h3>
+          <p class="feature-grid__item-desc">Connect any integration in minutes with our visual configuration wizard. No developer required.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--pink">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94L14.7 6.3z" stroke="var(--color-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Custom Mappings</h3>
+          <p class="feature-grid__item-desc">Map fields between platforms exactly how you need. Transform, filter, and route data with precision.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--sky">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="var(--color-accent-sky)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Health Monitoring</h3>
+          <p class="feature-grid__item-desc">Real-time dashboards show sync status, error rates, and throughput for every active integration.</p>
+        </div>
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon feature-grid__icon--peach">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="var(--color-accent-peach)" stroke-width="2"/>
+              <path d="M12 8v4l3 3" stroke="var(--color-accent-peach)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-grid__item-title">Automatic Retries</h3>
+          <p class="feature-grid__item-desc">Failed syncs are automatically retried with exponential backoff. Never lose data due to transient errors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner__inner">
+        <div class="cta-banner__shape cta-banner__shape--1"></div>
+        <div class="cta-banner__shape cta-banner__shape--2"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Ready to connect your tools?</h2>
+          <p class="cta-banner__text">Start integrating in minutes. No credit card required. Join thousands of teams who have unified their workflows with Circl.</p>
+          <div class="cta-banner__actions">
+            <a href="pricing.html" class="btn btn--primary btn--lg">Start Free Trial</a>
+            <a href="contact.html" class="btn btn--secondary btn--lg">Talk to Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo" aria-label="Circl Home">
+          <span class="footer__logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="8" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
+              <circle cx="12" cy="5" r="2" fill="#FFFFFF"/>
+              <circle cx="18" cy="15" r="2" fill="#FFFFFF"/>
+              <circle cx="6" cy="15" r="2" fill="#FFFFFF"/>
+            </svg>
+          </span>
+          Circl
+        </a>
+        <p class="footer__description">Modern community management for neighborhoods, clubs, and civic groups. Bring people together with tools that feel like home.</p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__column-title">Product</h4>
+        <ul class="footer__links">
+          <li><a href="features.html" class="footer__link">Features</a></li>
+          <li><a href="pricing.html" class="footer__link">Pricing</a></li>
+          <li><a href="integrations.html" class="footer__link">Integrations</a></li>
+          <li><a href="customers.html" class="footer__link">Customers</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__column-title">Company</h4>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+          <li><a href="customers.html" class="footer__link">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__column-title">Get Started</h4>
+        <ul class="footer__links">
+          <li><a href="pricing.html" class="footer__link">Free Plan</a></li>
+          <li><a href="contact.html" class="footer__link">Request Demo</a></li>
+          <li><a href="features.html" class="footer__link">Platform Tour</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Circl. All rights reserved.</p>
+      <div class="footer__social">
+        <span class="footer__social-icon" aria-label="Twitter">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 4.5c-.5.2-1 .4-1.6.5.6-.3 1-.9 1.2-1.5-.5.3-1.1.5-1.8.7A3 3 0 0 0 7.5 7c-2.5-.1-4.7-1.3-6.2-3.2-.3.5-.4 1-.4 1.6 0 1 .5 2 1.3 2.5-.5 0-1-.1-1.4-.4 0 1.5 1 2.7 2.4 3-.3.1-.5.1-.8.1-.2 0-.4 0-.5-.1.4 1.2 1.5 2 2.8 2A6 6 0 0 1 1 14a8 8 0 0 0 4.4 1.3c5.3 0 8.2-4.4 8.2-8.2v-.4c.6-.4 1.1-.9 1.4-1.5z" fill="#B8B3CC"/>
+          </svg>
+        </span>
+        <span class="footer__social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6v7H1.5V6H4zm-.1-2.5a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0zM14.5 13H12V9.5c0-1-.4-1.7-1.3-1.7-.7 0-1.1.5-1.3 1-.1.1-.1.4-.1.6V13H6.8s0-6.5 0-7h2.5v1c.3-.5 1-1.2 2.2-1.2 1.6 0 2.9 1 2.9 3.3V13z" fill="#B8B3CC"/>
+          </svg>
+        </span>
+        <span class="footer__social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 1.5A6.5 6.5 0 0 0 6 14c.3.1.4-.1.4-.3V12.4c-1.8.4-2.2-.9-2.2-.9-.3-.8-.7-1-.7-1-.6-.4 0-.4 0-.4.7 0 1 .7 1 .7.6 1 1.5.7 1.9.5 0-.4.2-.7.4-.9-1.4-.2-2.9-.7-2.9-3.2 0-.7.3-1.3.7-1.8-.1-.2-.3-.8.1-1.7 0 0 .6-.2 1.9.7a6.5 6.5 0 0 1 3.4 0c1.3-.9 1.9-.7 1.9-.7.4.9.2 1.5.1 1.7.4.5.7 1.1.7 1.8 0 2.5-1.5 3-3 3.2.3.2.5.7.5 1.3v2c0 .2.1.4.4.3A6.5 6.5 0 0 0 8 1.5z" fill="#B8B3CC"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

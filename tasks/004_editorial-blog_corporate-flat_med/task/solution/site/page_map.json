@@ -1,0 +1,30 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "articles": {
+    "screenshot": "articles.png",
+    "expected_file": "articles.html"
+  },
+  "topics": {
+    "screenshot": "topics.png",
+    "expected_file": "topics.html"
+  },
+  "featured": {
+    "screenshot": "featured.png",
+    "expected_file": "featured.html"
+  },
+  "authors": {
+    "screenshot": "authors.png",
+    "expected_file": "authors.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

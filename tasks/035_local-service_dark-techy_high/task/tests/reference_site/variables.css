@@ -1,0 +1,138 @@
+:root {
+  /* ── Palette ── */
+  --color-bg-primary: #0a0e17;
+  --color-bg-secondary: #111827;
+  --color-bg-tertiary: #1a2235;
+  --color-bg-card: #141c2e;
+  --color-bg-card-hover: #1c2740;
+  --color-bg-input: #0d1220;
+  --color-bg-header: rgba(10, 14, 23, 0.95);
+  --color-bg-footer: #070b12;
+  --color-bg-badge: rgba(0, 224, 255, 0.1);
+  --color-bg-overlay: rgba(10, 14, 23, 0.85);
+
+  --color-neon-cyan: #00e0ff;
+  --color-neon-blue: #3b82f6;
+  --color-neon-purple: #a855f7;
+  --color-neon-green: #22d3ee;
+  --color-neon-magenta: #ec4899;
+  --color-neon-orange: #f97316;
+
+  --color-accent-primary: var(--color-neon-cyan);
+  --color-accent-secondary: var(--color-neon-blue);
+  --color-accent-tertiary: var(--color-neon-purple);
+
+  --color-text-primary: #f0f4f8;
+  --color-text-secondary: #94a3b8;
+  --color-text-tertiary: #64748b;
+  --color-text-muted: #475569;
+  --color-text-inverse: #0a0e17;
+  --color-text-accent: var(--color-neon-cyan);
+
+  --color-border-primary: #1e293b;
+  --color-border-secondary: #2d3a50;
+  --color-border-accent: rgba(0, 224, 255, 0.3);
+  --color-border-input: #2d3a50;
+  --color-border-input-focus: var(--color-neon-cyan);
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --color-glow-cyan: 0 0 20px rgba(0, 224, 255, 0.15);
+  --color-glow-blue: 0 0 20px rgba(59, 130, 246, 0.15);
+  --color-glow-purple: 0 0 20px rgba(168, 85, 247, 0.15);
+
+  /* ── Typography ── */
+  --font-display: 'Anton', sans-serif;
+  --font-heading: 'Space Grotesk', 'Work Sans', sans-serif;
+  --font-body: 'Inter', 'Archivo', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: 'Source Serif 4', serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --leading-loose: 2;
+
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* ── Spacing ── */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --space-48: 12rem;
+  --space-64: 16rem;
+
+  /* ── Border Radius ── */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.45);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.5);
+  --shadow-neon: 0 0 30px rgba(0, 224, 255, 0.1), 0 0 60px rgba(0, 224, 255, 0.05);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--color-border-primary);
+
+  /* ── Layout ── */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  --header-height: 4.5rem;
+
+  /* ── Transitions (structure only, no animation) ── */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-header: 500;
+  --z-overlay: 900;
+  --z-modal: 1000;
+}

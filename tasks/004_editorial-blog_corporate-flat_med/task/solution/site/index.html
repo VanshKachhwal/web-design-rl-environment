@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="EduPulse Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#E8753A"/>
+        <path d="M8 26V12L18 7L28 12V26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 17h10M13 21h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="12" r="2" fill="#fff"/>
+      </svg>
+      <span>EduPulse</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="articles.html" class="header__nav-link">Articles</a>
+      <a href="topics.html" class="header__nav-link">Topics</a>
+      <a href="featured.html" class="header__nav-link">Featured</a>
+      <a href="authors.html" class="header__nav-link">Authors</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__eyebrow">Welcome to EduPulse</span>
+      <h1 class="hero__title">Ignite Your Curiosity, One Pulse at a Time</h1>
+      <p class="hero__text">Discover thought-provoking articles, expert insights, and curated topics that fuel lifelong learning. Join a community of passionate minds shaping the future of education.</p>
+      <div class="hero__actions">
+        <a href="articles.html" class="btn btn--primary btn--lg">Explore Articles</a>
+        <a href="about.html" class="btn btn--secondary btn--lg">Learn More</a>
+      </div>
+    </div>
+    <div class="hero__decoration">
+      <svg width="100%" height="100%" viewbox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="200" cy="200" r="180" fill="var(--color-orange-100)" opacity="0.5"/>
+        <circle cx="200" cy="200" r="120" fill="var(--color-orange-400)" opacity="0.15"/>
+        <circle cx="200" cy="200" r="60" fill="var(--color-orange-500)" opacity="0.12"/>
+        <rect x="50" y="180" width="300" height="4" rx="2" fill="var(--color-orange-400)" opacity="0.2"/>
+        <rect x="100" y="220" width="200" height="4" rx="2" fill="var(--color-orange-400)" opacity="0.15"/>
+        <rect x="140" y="260" width="120" height="4" rx="2" fill="var(--color-orange-400)" opacity="0.1"/>
+        <polygon points="200,80 220,130 180,130" fill="var(--color-orange-500)" opacity="0.18"/>
+        <circle cx="300" cy="100" r="20" fill="var(--color-teal-400)" opacity="0.2"/>
+        <circle cx="100" cy="300" r="15" fill="var(--color-teal-500)" opacity="0.15"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FEATURE-GRID -->
+  <section class="feature-grid">
+    <div class="feature-grid__header">
+      <h2 class="feature-grid__title">Why EduPulse?</h2>
+      <p class="feature-grid__subtitle">We bring together the best in educational content, community-driven insights, and expert analysis to help you grow.</p>
+    </div>
+    <div class="feature-grid__items">
+      <!-- Feature 1 -->
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--orange">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="6" width="22" height="16" rx="2" stroke="var(--color-orange-500)" stroke-width="2" fill="none"/>
+            <line x1="3" y1="11" x2="25" y2="11" stroke="var(--color-orange-500)" stroke-width="2"/>
+            <rect x="7" y="14" width="6" height="2" rx="1" fill="var(--color-orange-500)"/>
+            <rect x="7" y="18" width="10" height="2" rx="1" fill="var(--color-orange-400)"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Curated Articles</h3>
+        <p class="feature-grid__item-text">Every piece is handpicked and reviewed by experts to ensure quality, relevance, and depth across a wide range of educational topics.</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--teal">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="14" cy="10" r="5" stroke="var(--color-teal-500)" stroke-width="2" fill="none"/>
+            <path d="M6 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="var(--color-teal-500)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="22" cy="8" r="3" stroke="var(--color-teal-400)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Expert Authors</h3>
+        <p class="feature-grid__item-text">Learn from educators, researchers, and industry leaders who bring real-world experience and passion to every article they write.</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--orange">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 14l4-4 4 4 6-8 6 8" stroke="var(--color-orange-500)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="4" y="22" width="20" height="2" rx="1" fill="var(--color-orange-400)"/>
+            <circle cx="8" cy="10" r="2" fill="var(--color-orange-500)" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Trending Topics</h3>
+        <p class="feature-grid__item-text">Stay ahead of the curve with our dynamically organized topics that reflect the latest trends and conversations in education.</p>
+      </div>
+      <!-- Feature 4 -->
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--teal">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="9" height="9" rx="2" stroke="var(--color-teal-500)" stroke-width="2" fill="none"/>
+            <rect x="15" y="4" width="9" height="9" rx="2" stroke="var(--color-teal-500)" stroke-width="2" fill="none"/>
+            <rect x="4" y="15" width="9" height="9" rx="2" stroke="var(--color-teal-500)" stroke-width="2" fill="none"/>
+            <rect x="15" y="15" width="9" height="9" rx="2" stroke="var(--color-teal-400)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Organized Categories</h3>
+        <p class="feature-grid__item-text">Browse content effortlessly with our intuitive category system designed to help you find exactly what you need, when you need it.</p>
+      </div>
+      <!-- Feature 5 -->
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--orange">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="var(--color-orange-500)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">Featured Picks</h3>
+        <p class="feature-grid__item-text">Discover our editor-selected highlights — the most impactful, insightful, and inspiring content from across the platform.</p>
+      </div>
+      <!-- Feature 6 -->
+      <div class="feature-grid__item">
+        <div class="feature-grid__icon feature-grid__icon--teal">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="5" y="3" width="18" height="22" rx="2" stroke="var(--color-teal-500)" stroke-width="2" fill="none"/>
+            <line x1="9" y1="9" x2="19" y2="9" stroke="var(--color-teal-400)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9" y1="13" x2="19" y2="13" stroke="var(--color-teal-400)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9" y1="17" x2="15" y2="17" stroke="var(--color-teal-400)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-grid__item-title">In-Depth Guides</h3>
+        <p class="feature-grid__item-text">Go beyond the surface with comprehensive, long-form guides that break down complex subjects into accessible, actionable knowledge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG-POST-CARD section -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">Latest from the Blog</span>
+        <h2 class="content-section__title">Recent Articles</h2>
+        <p class="content-section__subtitle">Catch up on the newest insights, research summaries, and thought pieces from our community of writers.</p>
+      </div>
+      <div class="feature-grid__items" style="padding:0;">
+        <!-- Blog Card 1 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="200" fill="var(--color-orange-100)"/>
+              <circle cx="200" cy="80" r="40" fill="var(--color-orange-400)" opacity="0.4"/>
+              <rect x="60" y="130" width="280" height="8" rx="4" fill="var(--color-orange-500)" opacity="0.15"/>
+              <rect x="100" y="150" width="200" height="6" rx="3" fill="var(--color-orange-500)" opacity="0.1"/>
+              <polygon points="180,50 200,30 220,50" fill="var(--color-orange-500)" opacity="0.25"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Pedagogy</span>
+              <span class="blog-post-card__date">Dec 12, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title"><a href="articles.html">The Future of Blended Learning in Higher Education</a></h3>
+            <p class="blog-post-card__excerpt">Exploring how universities are merging online and in-person instruction to create more flexible, inclusive, and effective learning environments for diverse student populations.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">AL</div>
+                <span class="blog-post-card__author-name">Dr. Anna Liu</span>
+              </div>
+              <span class="blog-post-card__read-time">7 min read</span>
+            </div>
+          </div>
+        </article>
+        <!-- Blog Card 2 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="200" fill="var(--color-teal-100)"/>
+              <rect x="80" y="40" width="100" height="120" rx="8" fill="var(--color-teal-400)" opacity="0.25"/>
+              <rect x="220" y="60" width="100" height="100" rx="8" fill="var(--color-teal-500)" opacity="0.2"/>
+              <circle cx="330" cy="50" r="18" fill="var(--color-teal-500)" opacity="0.15"/>
+              <line x1="80" y1="170" x2="320" y2="170" stroke="var(--color-teal-500)" stroke-width="2" opacity="0.2"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Technology</span>
+              <span class="blog-post-card__date">Dec 8, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title"><a href="articles.html">How AI Tutors Are Reshaping Personalized Learning</a></h3>
+            <p class="blog-post-card__excerpt">An in-depth look at artificial intelligence tools that adapt to individual student needs, pacing, and learning styles to deliver truly personalized educational experiences.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">MR</div>
+                <span class="blog-post-card__author-name">Marcus Reed</span>
+              </div>
+              <span class="blog-post-card__read-time">5 min read</span>
+            </div>
+          </div>
+        </article>
+        <!-- Blog Card 3 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" viewbox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="400" height="200" fill="var(--color-gray-100)"/>
+              <circle cx="140" cy="100" r="50" fill="var(--color-orange-100)"/>
+              <circle cx="260" cy="100" r="50" fill="var(--color-teal-100)"/>
+              <circle cx="200" cy="100" r="30" fill="var(--color-gray-200)"/>
+              <rect x="90" y="160" width="220" height="6" rx="3" fill="var(--color-gray-300)" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__category">Research</span>
+              <span class="blog-post-card__date">Dec 3, 2024</span>
+            </div>
+            <h3 class="blog-post-card__title"><a href="articles.html">Bridging the Gap: Equity in STEM Education</a></h3>
+            <p class="blog-post-card__excerpt">New research reveals strategies that schools and communities can adopt to ensure underrepresented students gain equal access to quality STEM programs and mentorship.</p>
+            <div class="blog-post-card__footer">
+              <div class="blog-post-card__author">
+                <div class="blog-post-card__avatar">SP</div>
+                <span class="blog-post-card__author-name">Sofia Patel</span>
+              </div>
+              <span class="blog-post-card__read-time">9 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:var(--space-10);">
+        <a href="articles.html" class="btn btn--outline btn--lg">View All Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA-BANNER -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__decoration"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Ready to Dive Deeper?</h2>
+          <p class="cta-banner__text">Explore our featured collection of editor-picked articles, hand-selected for their impact, originality, and educational value.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="featured.html" class="cta-banner__btn">View Featured</a>
+          <a href="topics.html" class="cta-banner__btn" style="background-color:transparent; color:var(--color-white); border-color:var(--color-white);">Browse Topics</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL section -->
+  <section class="content-section content-section--cool">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__eyebrow">What Readers Say</span>
+        <h2 class="content-section__title">Trusted by Educators Worldwide</h2>
+        <p class="content-section__subtitle">Hear from the teachers, students, and lifelong learners who rely on EduPulse for inspiration and knowledge.</p>
+      </div>
+      <div class="feature-grid__items" style="padding:0;">
+        <!-- Testimonial 1 -->
+        <div class="testimonial">
+          <span class="testimonial__quote-mark">&ldquo;</span>
+          <p class="testimonial__text">EduPulse has become my go-to resource for staying current with educational research. The articles are well-written, thoroughly researched, and genuinely useful in my classroom.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">JK</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">James Kowalski</span>
+              <span class="testimonial__author-role">High School Science Teacher</span>
+              <div class="testimonial__rating">
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial">
+          <span class="testimonial__quote-mark">&ldquo;</span>
+          <p class="testimonial__text">As a graduate student, I find the depth and variety of topics on EduPulse incredibly valuable. It bridges the gap between academic journals and accessible, everyday reading.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">RN</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">Reina Nakamura</span>
+              <span class="testimonial__author-role">M.Ed. Candidate, Curriculum Studies</span>
+              <div class="testimonial__rating">
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial">
+          <span class="testimonial__quote-mark">&ldquo;</span>
+          <p class="testimonial__text">The featured section alone is worth visiting every week. EduPulse consistently highlights voices and perspectives that I wouldn't encounter anywhere else. Truly outstanding curation.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">DO</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">David Okonkwo</span>
+              <span class="testimonial__author-role">Education Policy Analyst</span>
+              <div class="testimonial__rating">
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+                <svg class="testimonial__star" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="8,1 10,6 15,6.5 11,10 12.5,15 8,12 3.5,15 5,10 1,6.5 6,6"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <section class="content-section">
+    <div class="container">
+      <div class="stats-row stats-row--bordered">
+        <div class="stat">
+          <div class="stat__value">2,400+</div>
+          <div class="stat__label">Articles Published</div>
+          <div class="stat__sublabel">And growing every week</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">180</div>
+          <div class="stat__label">Expert Authors</div>
+          <div class="stat__sublabel">Educators &amp; researchers</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">50+</div>
+          <div class="stat__label">Topics Covered</div>
+          <div class="stat__sublabel">From K-12 to higher ed</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">95K</div>
+          <div class="stat__label">Monthly Readers</div>
+          <div class="stat__sublabel">Across 120 countries</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER-SIGNUP -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <div class="newsletter-signup">
+        <h2 class="newsletter-signup__title">Stay in the Loop</h2>
+        <p class="newsletter-signup__text">Get the best of EduPulse delivered to your inbox every week — curated articles, trending topics, and exclusive insights.</p>
+        <form class="newsletter-signup__form" action="#" method="post">
+          <input type="email" class="newsletter-signup__input" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit" class="newsletter-signup__btn">Subscribe</button>
+        </form>
+        <p class="newsletter-signup__note">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand-col">
+        <a href="index.html" class="footer__logo">EduPulse</a>
+        <p class="footer__tagline">A warm, welcoming knowledge hub for students and educators. Explore curated articles, topics, and featured content to foster learning and academic engagement.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;">
+          <!-- Social placeholders as inline SVG -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M11 16h10M16 11v10" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><circle cx="16" cy="16" r="5" stroke="#9E9EB0" stroke-width="2"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M12 20l4-4 4 4M12 12h8" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Explore</h4>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="articles.html" class="footer__link">Articles</a></li>
+          <li><a href="topics.html" class="footer__link">Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Featured</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Community</h4>
+        <ul class="footer__links">
+          <li><a href="authors.html" class="footer__link">Authors</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="articles.html" class="footer__link">Latest Posts</a></li>
+          <li><a href="topics.html" class="footer__link">Browse Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Editor's Picks</a></li>
+          <li><a href="about.html" class="footer__link">Our Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 EduPulse. All rights reserved. Built for learners, by learners.</p>
+      <div class="footer__bottom-links">
+        <a href="about.html" class="footer__bottom-link">Privacy Policy</a>
+        <a href="about.html" class="footer__bottom-link">Terms of Use</a>
+        <a href="contact.html" class="footer__bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

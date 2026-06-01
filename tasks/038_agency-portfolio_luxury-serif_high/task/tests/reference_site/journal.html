@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Journal</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="32" height="32" fill="#C41E1E"/>
+        <polygon points="6,28 16,4 26,28" fill="#0A0A0A"/>
+        <rect x="10" y="20" width="12" height="3" fill="#C41E1E"/>
+      </svg>
+      VANDAL
+    </a>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="index.html" class="header__nav-link">Home</a></li>
+        <li><a href="work.html" class="header__nav-link">Work</a></li>
+        <li><a href="case-studies.html" class="header__nav-link">Case Studies</a></li>
+        <li><a href="services.html" class="header__nav-link">Services</a></li>
+        <li><a href="process.html" class="header__nav-link">Process</a></li>
+        <li><a href="about.html" class="header__nav-link">About</a></li>
+        <li><a href="team.html" class="header__nav-link">Team</a></li>
+        <li><a href="journal.html" class="header__nav-link">Journal</a></li>
+        <li><a href="careers.html" class="header__nav-link">Careers</a></li>
+      </ul>
+      <a href="contact.html" class="header__nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg-pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="journal-hero-pattern" x="0" y="0" width="60" height="60" patternunits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="60" y2="60" stroke="var(--color-pure-white)" stroke-width="1"/>
+            <line x1="60" y1="0" x2="0" y2="60" stroke="var(--color-pure-white)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#journal-hero-pattern)"/>
+      </svg>
+    </div>
+    <div class="container hero__inner">
+      <span class="hero__eyebrow">// Insights &amp; Ideas</span>
+      <h1 class="hero__title">The <em>Journal</em></h1>
+      <p class="hero__subtitle">Perspectives on design, branding, creative strategy, and the forces shaping visual culture — straight from the Vandal studio.</p>
+      <div class="hero__actions">
+        <a href="#posts" class="hero__btn-primary">Browse Articles</a>
+        <a href="contact.html" class="hero__btn-secondary">Submit a Topic</a>
+      </div>
+      <div class="hero__divider"></div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-bar">
+    <div class="container">
+      <div class="filter-bar__inner">
+        <span class="filter-bar__label">Filter</span>
+        <button class="filter-bar__btn filter-bar__btn--active">All</button>
+        <button class="filter-bar__btn">Branding</button>
+        <button class="filter-bar__btn">Design</button>
+        <button class="filter-bar__btn">Strategy</button>
+        <button class="filter-bar__btn">Culture</button>
+        <button class="filter-bar__btn">Process</button>
+        <button class="filter-bar__btn">Case Studies</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG POST CARDS -->
+  <section id="posts" class="content-section">
+    <div class="container">
+
+      <!-- Featured Post — Split Screen -->
+      <div class="split-screen" style="margin-bottom: var(--space-16);">
+        <div class="split-screen__media">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+            <defs>
+              <pattern id="featured-pattern" x="0" y="0" width="40" height="40" patternunits="userSpaceOnUse">
+                <rect x="0" y="0" width="20" height="20" fill="var(--color-graphite)"/>
+                <rect x="20" y="20" width="20" height="20" fill="var(--color-graphite)"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#featured-pattern)" opacity="0.3"/>
+            <text x="50%" y="45%" text-anchor="middle" fill="var(--color-mid-gray)" font-size="14" font-family="JetBrains Mono, monospace" letter-spacing="3">FEATURED</text>
+            <text x="50%" y="55%" text-anchor="middle" fill="var(--color-slate)" font-size="11" font-family="JetBrains Mono, monospace" letter-spacing="2">ARTICLE</text>
+          </svg>
+        </div>
+        <div class="split-screen__content">
+          <span class="split-screen__eyebrow">Featured · Branding</span>
+          <h2 class="split-screen__title">The Death of Safe Design</h2>
+          <p class="split-screen__text">Why the brands that refuse to take risks are the ones most at risk. We explore how visual conformity is eroding brand equity and what bold creative leadership looks like in practice.</p>
+          <a href="case-studies.html" class="split-screen__link">Read Full Article →</a>
+        </div>
+      </div>
+
+      <!-- Post Grid -->
+      <div class="blog-post-card__grid">
+
+        <!-- Card 1 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card1-pat" x="0" y="0" width="30" height="30" patternunits="userSpaceOnUse">
+                  <circle cx="15" cy="15" r="8" fill="none" stroke="var(--color-graphite)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card1-pat)" opacity="0.4"/>
+            </svg>
+            <span class="blog-post-card__category">Strategy</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Dec 14, 2024 · 8 min read</span>
+            <h3 class="blog-post-card__title">Building Brand Systems That Scale</h3>
+            <p class="blog-post-card__excerpt">A modular approach to identity design ensures consistency across every touchpoint — from pitch deck to product packaging — without stifling creative expression.</p>
+            <a href="services.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card2-pat" x="0" y="0" width="20" height="20" patternunits="userSpaceOnUse">
+                  <rect x="0" y="0" width="10" height="10" fill="var(--color-graphite)" opacity="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card2-pat)"/>
+            </svg>
+            <span class="blog-post-card__category">Design</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Nov 28, 2024 · 6 min read</span>
+            <h3 class="blog-post-card__title">Typography as Brand Voice</h3>
+            <p class="blog-post-card__excerpt">Type choices communicate before a single word is read. We break down how typeface selection, weight hierarchies, and spacing shape perception.</p>
+            <a href="work.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card3-pat" x="0" y="0" width="50" height="50" patternunits="userSpaceOnUse">
+                  <line x1="0" y1="50" x2="50" y2="0" stroke="var(--color-graphite)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card3-pat)" opacity="0.4"/>
+            </svg>
+            <span class="blog-post-card__category">Culture</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Nov 12, 2024 · 10 min read</span>
+            <h3 class="blog-post-card__title">Why Every Studio Needs a Point of View</h3>
+            <p class="blog-post-card__excerpt">Neutrality is a liability. The studios producing the most resonant work are the ones willing to stand for something — even if it alienates some clients.</p>
+            <a href="about.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card4-pat" x="0" y="0" width="24" height="24" patternunits="userSpaceOnUse">
+                  <rect x="4" y="4" width="16" height="16" fill="none" stroke="var(--color-graphite)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card4-pat)" opacity="0.35"/>
+            </svg>
+            <span class="blog-post-card__category">Process</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Oct 30, 2024 · 7 min read</span>
+            <h3 class="blog-post-card__title">From Brief to Brand: Our Discovery Framework</h3>
+            <p class="blog-post-card__excerpt">How we deconstruct client briefs, uncover hidden opportunities, and build strategic foundations before a single pixel is placed.</p>
+            <a href="process.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card5-pat" x="0" y="0" width="36" height="36" patternunits="userSpaceOnUse">
+                  <polygon points="18,2 34,18 18,34 2,18" fill="none" stroke="var(--color-graphite)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card5-pat)" opacity="0.3"/>
+            </svg>
+            <span class="blog-post-card__category">Branding</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Oct 15, 2024 · 5 min read</span>
+            <h3 class="blog-post-card__title">Colour Psychology Is Overrated</h3>
+            <p class="blog-post-card__excerpt">Context matters more than colour wheels. We challenge the conventional wisdom around palette selection and argue for a more nuanced approach.</p>
+            <a href="case-studies.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card6-pat" x="0" y="0" width="16" height="16" patternunits="userSpaceOnUse">
+                  <circle cx="2" cy="2" r="1.5" fill="var(--color-graphite)"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card6-pat)" opacity="0.5"/>
+            </svg>
+            <span class="blog-post-card__category">Case Studies</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Sep 22, 2024 · 12 min read</span>
+            <h3 class="blog-post-card__title">Rebranding Meridian: A Post-Mortem</h3>
+            <p class="blog-post-card__excerpt">An honest look at what went right, what went sideways, and the hard lessons learned during our most ambitious identity overhaul to date.</p>
+            <a href="case-studies.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card7-pat" x="0" y="0" width="40" height="40" patternunits="userSpaceOnUse">
+                  <line x1="0" y1="0" x2="40" y2="0" stroke="var(--color-graphite)" stroke-width="1"/>
+                  <line x1="0" y1="20" x2="40" y2="20" stroke="var(--color-graphite)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card7-pat)" opacity="0.35"/>
+            </svg>
+            <span class="blog-post-card__category">Strategy</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Sep 05, 2024 · 9 min read</span>
+            <h3 class="blog-post-card__title">The Competitive Audit Nobody Does Right</h3>
+            <p class="blog-post-card__excerpt">Most competitive analyses are surface-level screenshot collections. Here's how to conduct one that actually informs creative direction and strategic positioning.</p>
+            <a href="services.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card8-pat" x="0" y="0" width="28" height="28" patternunits="userSpaceOnUse">
+                  <rect x="6" y="6" width="16" height="16" rx="8" fill="none" stroke="var(--color-graphite)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card8-pat)" opacity="0.3"/>
+            </svg>
+            <span class="blog-post-card__category">Design</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Aug 18, 2024 · 6 min read</span>
+            <h3 class="blog-post-card__title">Grid Systems for the Rebellious Designer</h3>
+            <p class="blog-post-card__excerpt">Rules exist to be understood — then broken with intention. How structured grid systems can paradoxically unlock the most unexpected creative outcomes.</p>
+            <a href="work.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="blog-post-card">
+          <div class="blog-post-card__image">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="var(--color-charcoal)"/>
+              <defs>
+                <pattern id="card9-pat" x="0" y="0" width="32" height="32" patternunits="userSpaceOnUse">
+                  <line x1="0" y1="32" x2="32" y2="0" stroke="var(--color-graphite)" stroke-width="1"/>
+                  <line x1="0" y1="0" x2="32" y2="32" stroke="var(--color-graphite)" stroke-width="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#card9-pat)" opacity="0.3"/>
+            </svg>
+            <span class="blog-post-card__category">Culture</span>
+          </div>
+          <div class="blog-post-card__body">
+            <span class="blog-post-card__meta">Aug 02, 2024 · 4 min read</span>
+            <h3 class="blog-post-card__title">Hiring Creatives Who Challenge You</h3>
+            <p class="blog-post-card__excerpt">The best teams aren't built from agreement. We share our philosophy on assembling creative talent that pushes work further through productive tension.</p>
+            <a href="careers.html" class="blog-post-card__read-more">Read More →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP -->
+  <section class="newsletter-signup">
+    <div class="container">
+      <div class="newsletter-signup__inner">
+        <div class="newsletter-signup__text">
+          <h3 class="newsletter-signup__title">Stay Sharp</h3>
+          <p class="newsletter-signup__desc">Get new articles, case study breakdowns, and studio updates delivered to your inbox. No fluff — just substance, once a month.</p>
+        </div>
+        <form class="newsletter-signup__form" action="#" method="post">
+          <input class="newsletter-signup__input" type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button class="newsletter-signup__btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container container--wide">
+    <div class="footer__inner">
+      <div class="footer__brand-col">
+        <div class="footer__brand-name">VANDAL</div>
+        <p class="footer__brand-desc">Rebellious luxury creative agency. We defy convention and deliver impeccable craft — breaking rules with sophistication since 2016.</p>
+        <div class="award-badge__collection">
+          <div class="award-badge">
+            <div class="award-badge__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9" fill="#C41E1E"/>
+              </svg>
+            </div>
+            <div class="award-badge__text">
+              <span class="award-badge__name">Awwwards SOTD</span>
+              <span class="award-badge__year">2024</span>
+            </div>
+          </div>
+          <div class="award-badge">
+            <div class="award-badge__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#C41E1E" stroke-width="2"/>
+                <polygon points="12,6 14,10 18,10 15,13 16,17 12,14.5 8,17 9,13 6,10 10,10" fill="#C41E1E"/>
+              </svg>
+            </div>
+            <div class="award-badge__text">
+              <span class="award-badge__name">D&amp;AD Pencil</span>
+              <span class="award-badge__year">2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigate</h4>
+        <ul class="footer__link-list">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="work.html" class="footer__link">Work</a></li>
+          <li><a href="case-studies.html" class="footer__link">Case Studies</a></li>
+          <li><a href="services.html" class="footer__link">Services</a></li>
+          <li><a href="process.html" class="footer__link">Process</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul class="footer__link-list">
+          <li><a href="about.html" class="footer__link">About</a></li>
+          <li><a href="team.html" class="footer__link">Team</a></li>
+          <li><a href="journal.html" class="footer__link">Journal</a></li>
+          <li><a href="careers.html" class="footer__link">Careers</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Connect</h4>
+        <ul class="footer__link-list">
+          <li><span class="footer__link">Instagram</span></li>
+          <li><span class="footer__link">LinkedIn</span></li>
+          <li><span class="footer__link">Behance</span></li>
+          <li><span class="footer__link">Dribbble</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copyright">&copy; 2024 VANDAL Creative. All rights reserved.</span>
+      <div class="footer__bottom-links">
+        <span class="footer__bottom-link">Privacy Policy</span>
+        <span class="footer__bottom-link">Terms of Service</span>
+        <span class="footer__bottom-link">Built with defiance</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Areas</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="header__logo" aria-label="NexCore IT Solutions Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M10 26V10l8 10 8-10v16" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="18" cy="18" r="3" fill="#00e0ff" opacity="0.3"/>
+      </svg>
+      <span>Nex<span class="header__logo-accent">Core</span></span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="services.html" class="header__nav-link">Services</a>
+      <a href="pricing.html" class="header__nav-link">Pricing</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="areas.html" class="header__nav-link">Areas</a>
+      <a href="gallery.html" class="header__nav-link">Gallery</a>
+      <a href="reviews.html" class="header__nav-link">Reviews</a>
+      <a href="faq.html" class="header__nav-link">FAQ</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+    <a href="booking.html" class="header__cta">Book Now</a>
+    <button class="header__mobile-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<main>
+
+  <!-- ── HERO / PAGE HEADER ── -->
+  <section class="hero hero--centered">
+    <div class="hero__glow hero__glow--cyan"></div>
+    <div class="hero__glow hero__glow--purple"></div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__badge">
+          <span class="badge__dot"></span>
+          Service Areas
+        </span>
+        <h1 class="hero__title">Areas <span class="hero__title-accent">We Serve</span></h1>
+        <p class="hero__subtitle">From city centers to surrounding communities, our expert team delivers premium service across every neighborhood. Find your area below.</p>
+        <div class="hero__actions">
+          <a href="booking.html" class="btn btn--primary btn--lg">Book Your Service</a>
+          <a href="contact.html" class="btn btn--secondary btn--lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── STATS ROW ── -->
+  <section class="container">
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat__value">50+</span>
+        <span class="stat__label">Areas Covered</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">15K+</span>
+        <span class="stat__label">Clients Served</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">30</span>
+        <span class="stat__label">Mile Radius</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">24/7</span>
+        <span class="stat__label">Availability</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MAP EMBED PLACEHOLDER ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Coverage Map</span>
+        <h2 class="content-section__title">Our Service Territory</h2>
+        <p class="content-section__description">We proudly serve the greater metropolitan area and surrounding regions. Explore the map below to confirm coverage in your location.</p>
+      </div>
+      <div class="map-embed-placeholder" style="min-height: 420px;">
+        <div class="map-embed-placeholder__grid">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="mapGrid" width="40" height="40" patternunits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+              </pattern>
+              <radialgradient id="coverageGlow" cx="50%" cy="50%" r="40%">
+                <stop offset="0%" stop-color="#00e0ff" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#00e0ff" stop-opacity="0"/>
+              </radialgradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#mapGrid)"/>
+            <circle cx="50%" cy="50%" r="30%" fill="url(#coverageGlow)"/>
+            <!-- Stylized road lines -->
+            <line x1="10%" y1="50%" x2="90%" y2="50%" stroke="#1e293b" stroke-width="2"/>
+            <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="#1e293b" stroke-width="2"/>
+            <line x1="20%" y1="20%" x2="80%" y2="80%" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,4"/>
+            <line x1="80%" y1="20%" x2="20%" y2="80%" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,4"/>
+            <!-- Location markers -->
+            <circle cx="50%" cy="50%" r="8" fill="#00e0ff" opacity="0.9"/>
+            <circle cx="50%" cy="50%" r="16" fill="none" stroke="#00e0ff" stroke-width="2" opacity="0.4"/>
+            <circle cx="35%" cy="35%" r="5" fill="#3b82f6" opacity="0.7"/>
+            <circle cx="65%" cy="38%" r="5" fill="#3b82f6" opacity="0.7"/>
+            <circle cx="40%" cy="65%" r="5" fill="#3b82f6" opacity="0.7"/>
+            <circle cx="68%" cy="62%" r="5" fill="#3b82f6" opacity="0.7"/>
+            <circle cx="28%" cy="52%" r="4" fill="#a855f7" opacity="0.6"/>
+            <circle cx="72%" cy="48%" r="4" fill="#a855f7" opacity="0.6"/>
+            <circle cx="55%" cy="28%" r="4" fill="#a855f7" opacity="0.6"/>
+            <circle cx="45%" cy="72%" r="4" fill="#a855f7" opacity="0.6"/>
+          </svg>
+        </div>
+        <svg class="map-embed-placeholder__icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span class="map-embed-placeholder__label">Interactive Coverage Map</span>
+        <span class="map-embed-placeholder__address">Serving a 30-mile radius from our central location</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── PRIMARY SERVICE AREAS — CARDS GRID ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Primary Zones</span>
+        <h2 class="content-section__title">Core Service Areas</h2>
+        <div class="neon-line neon-line--center"></div>
+        <p class="content-section__description">These are our primary service zones where we maintain the fastest response times and full availability for all service packages.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="area1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00e0ff" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.08"/>
+                </lineargradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#area1)"/>
+              <rect x="15%" y="30%" width="20%" height="40%" rx="4" fill="#1e293b"/>
+              <rect x="40%" y="20%" width="15%" height="55%" rx="4" fill="#2d3a50"/>
+              <rect x="60%" y="35%" width="22%" height="35%" rx="4" fill="#1e293b"/>
+              <rect x="20%" y="75%" width="60%" height="3" rx="1" fill="#00e0ff" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="card__tag">Downtown</span>
+          <h3 class="card__title">City Center District</h3>
+          <p class="card__text">Full coverage across the downtown core including the business district, waterfront, and historic quarter. Same-day service available seven days a week.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>Full Coverage</span>
+            <a href="booking.html" class="card__link">Book Now →</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="area2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a855f7" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#ec4899" stop-opacity="0.08"/>
+                </lineargradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#area2)"/>
+              <circle cx="30%" cy="50%" r="15%" fill="#1e293b"/>
+              <circle cx="55%" cy="40%" r="12%" fill="#2d3a50"/>
+              <circle cx="70%" cy="60%" r="18%" fill="#1e293b"/>
+              <path d="M10,80 Q30,60 50,75 T90,70" fill="none" stroke="#a855f7" stroke-width="2" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="card__tag">Northside</span>
+          <h3 class="card__title">North Metro Region</h3>
+          <p class="card__text">Covering all northern suburbs including residential neighborhoods, commercial parks, and new developments. Priority scheduling for recurring clients.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>Full Coverage</span>
+            <a href="booking.html" class="card__link">Book Now →</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="area3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#00e0ff" stop-opacity="0.08"/>
+                </lineargradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#area3)"/>
+              <polygon points="50,15 85,75 15,75" fill="#1e293b"/>
+              <polygon points="50,30 72,68 28,68" fill="#2d3a50"/>
+              <line x1="10%" y1="80%" x2="90%" y2="80%" stroke="#22d3ee" stroke-width="2" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="card__tag">Southside</span>
+          <h3 class="card__title">South County Area</h3>
+          <p class="card__text">Extensive coverage throughout the southern corridor, including lakeside communities, industrial zones, and suburban neighborhoods.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>Full Coverage</span>
+            <a href="booking.html" class="card__link">Book Now →</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="area4" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#a855f7" stop-opacity="0.08"/>
+                </lineargradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#area4)"/>
+              <rect x="10%" y="25%" width="35%" height="50%" rx="6" fill="#1e293b"/>
+              <rect x="55%" y="20%" width="35%" height="55%" rx="6" fill="#2d3a50"/>
+              <line x1="47%" y1="25%" x2="47%" y2="75%" stroke="#3b82f6" stroke-width="2" opacity="0.4" stroke-dasharray="4,3"/>
+            </svg>
+          </div>
+          <span class="card__tag">East End</span>
+          <h3 class="card__title">East Side Communities</h3>
+          <p class="card__text">Serving the eastern townships, riverside areas, and growing suburban developments. Flexible scheduling with next-day availability.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>Full Coverage</span>
+            <a href="booking.html" class="card__link">Book Now →</a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="area5" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="#ec4899" stop-opacity="0.06"/>
+                </lineargradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#area5)"/>
+              <rect x="15%" y="40%" width="70%" height="8%" rx="3" fill="#1e293b"/>
+              <rect x="25%" y="20%" width="12%" height="60%" rx="3" fill="#2d3a50"/>
+              <rect x="63%" y="25%" width="12%" height="50%" rx="3" fill="#2d3a50"/>
+              <circle cx="50%" cy="50%" r="8%" fill="none" stroke="#f97316" stroke-width="2" opacity="0.35"/>
+            </svg>
+          </div>
+          <span class="card__tag">West Side</span>
+          <h3 class="card__title">Western Suburbs</h3>
+          <p class="card__text">Complete coverage of the western suburban belt including gated communities, shopping districts, and office parks. Weekend appointments available.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>Full Coverage</span>
+            <a href="booking.html" class="card__link">Book Now →</a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="area6" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00e0ff" stop-opacity="0.1"/>
+                  <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.06"/>
+                </lineargradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#area6)"/>
+              <path d="M0,65 Q25,40 50,55 T100,45" fill="none" stroke="#1e293b" stroke-width="20" opacity="0.5"/>
+              <circle cx="25%" cy="40%" r="6%" fill="#2d3a50"/>
+              <circle cx="50%" cy="55%" r="6%" fill="#2d3a50"/>
+              <circle cx="75%" cy="45%" r="6%" fill="#2d3a50"/>
+              <path d="M0,65 Q25,40 50,55 T100,45" fill="none" stroke="#00e0ff" stroke-width="1.5" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="card__tag">Midtown</span>
+          <h3 class="card__title">Central Corridor</h3>
+          <p class="card__text">The heart of our operations — covering midtown neighborhoods, university district, medical centers, and mixed-use developments throughout the central area.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>Full Coverage</span>
+            <a href="booking.html" class="card__link">Book Now →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── EXTENDED AREAS — BADGES + CONTENT ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Extended Reach</span>
+        <h2 class="content-section__title">Additional Service Zones</h2>
+        <p class="content-section__description">We also serve these surrounding communities with scheduled appointments. Contact us to confirm availability and pricing for your specific location.</p>
+      </div>
+
+      <div class="feature-grid__items">
+        <!-- Zone 1 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4 class="feature-grid__item-title">Riverside Heights</h4>
+          <p class="feature-grid__item-description">Scenic riverside community with full residential and commercial service coverage. Appointments available Tuesday through Saturday.</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <span class="badge badge--default">Residential</span>
+            <span class="badge badge--blue">Commercial</span>
+          </div>
+        </div>
+
+        <!-- Zone 2 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4 class="feature-grid__item-title">Oak Valley</h4>
+          <p class="feature-grid__item-description">Growing suburban area with new housing developments. We offer weekly and bi-weekly service plans for the entire Oak Valley community.</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <span class="badge badge--default">Residential</span>
+            <span class="badge badge--purple">New Builds</span>
+          </div>
+        </div>
+
+        <!-- Zone 3 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4 class="feature-grid__item-title">Pinecrest Township</h4>
+          <p class="feature-grid__item-description">Rural-suburban township with spacious properties. Specialized service packages designed for larger lots and estate-style homes.</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <span class="badge badge--default">Residential</span>
+            <span class="badge badge--warning">Estate</span>
+          </div>
+        </div>
+
+        <!-- Zone 4 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4 class="feature-grid__item-title">Harbor Point</h4>
+          <p class="feature-grid__item-description">Coastal community with marina access. We serve both residential properties and commercial waterfront businesses throughout the harbor area.</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <span class="badge badge--blue">Commercial</span>
+            <span class="badge badge--default">Marina</span>
+          </div>
+        </div>
+
+        <!-- Zone 5 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4 class="feature-grid__item-title">Summit Ridge</h4>
+          <p class="feature-grid__item-description">Elevated hillside community with premium properties. Our team is equipped to handle the unique requirements of hillside and terraced locations.</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <span class="badge badge--default">Residential</span>
+            <span class="badge badge--purple">Premium</span>
+          </div>
+        </div>
+
+        <!-- Zone 6 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h4 class="feature-grid__item-title">Greenfield Commons</h4>
+          <p class="feature-grid__item-description">Family-friendly planned community with parks and recreation areas. Bundled neighborhood service plans available at discounted group rates.</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <span class="badge badge--success">Group Rates</span>
+            <span class="badge badge--default">Residential</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── SPLIT SCREEN: WHY LOCATION MATTERS ── -->
+  <section class="container">
+    <div class="split-screen">
+      <div class="split-screen__content">
+        <span class="split-screen__label">Local Expertise</span>
+        <h2 class="split-screen__title">Why Local Coverage Matters</h2>
+        <p class="split-screen__text">Our deep knowledge of each area means faster response times, familiarity with local regulations, and service tailored to your community's specific needs.</p>
+        <ul class="split-screen__list">
+          <li class="split-screen__list-item">
+            <svg class="split-screen__list-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Rapid response within your neighborhood
+          </li>
+          <li class="split-screen__list-item">
+            <svg class="split-screen__list-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Familiarity with local codes and requirements
+          </li>
+          <li class="split-screen__list-item">
+            <svg class="split-screen__list-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated teams assigned to each zone
+          </li>
+          <li class="split-screen__list-item">
+            <svg class="split-screen__list-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Trusted by thousands of local residents
+          </li>
+          <li class="split-screen__list-item">
+            <svg class="split-screen__list-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            No travel surcharges within primary zones
+          </li>
+        </ul>
+        <div style="margin-top: var(--space-4);">
+          <a href="about.html" class="btn btn--secondary">Learn About Our Team</a>
+        </div>
+      </div>
+      <div class="split-screen__visual">
+        <svg width="100%" height="100%" viewbox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
+          <!-- Concentric coverage rings -->
+          <circle cx="200" cy="180" r="140" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="4,4"/>
+          <circle cx="200" cy="180" r="105" fill="none" stroke="#2d3a50" stroke-width="1" stroke-dasharray="4,4"/>
+          <circle cx="200" cy="180" r="70" fill="none" stroke="#00e0ff" stroke-width="1.5" opacity="0.3"/>
+          <circle cx="200" cy="180" r="35" fill="rgba(0,224,255,0.06)"/>
+          <!-- Center point -->
+          <circle cx="200" cy="180" r="6" fill="#00e0ff"/>
+          <circle cx="200" cy="180" r="12" fill="none" stroke="#00e0ff" stroke-width="1.5" opacity="0.5"/>
+          <!-- Satellite points -->
+          <circle cx="145" cy="120" r="4" fill="#3b82f6" opacity="0.8"/>
+          <circle cx="260" cy="130" r="4" fill="#3b82f6" opacity="0.8"/>
+          <circle cx="130" cy="210" r="4" fill="#a855f7" opacity="0.7"/>
+          <circle cx="275" cy="220" r="4" fill="#a855f7" opacity="0.7"/>
+          <circle cx="180" cy="270" r="4" fill="#3b82f6" opacity="0.8"/>
+          <circle cx="230" cy="100" r="3" fill="#22d3ee" opacity="0.6"/>
+          <circle cx="310" cy="170" r="3" fill="#22d3ee" opacity="0.6"/>
+          <circle cx="100" cy="160" r="3" fill="#22d3ee" opacity="0.6"/>
+          <circle cx="240" cy="260" r="3" fill="#22d3ee" opacity="0.6"/>
+          <!-- Connecting lines -->
+          <line x1="200" y1="180" x2="145" y2="120" stroke="#00e0ff" stroke-width="0.75" opacity="0.2"/>
+          <line x1="200" y1="180" x2="260" y2="130" stroke="#00e0ff" stroke-width="0.75" opacity="0.2"/>
+          <line x1="200" y1="180" x2="130" y2="210" stroke="#00e0ff" stroke-width="0.75" opacity="0.2"/>
+          <line x1="200" y1="180" x2="275" y2="220" stroke="#00e0ff" stroke-width="0.75" opacity="0.2"/>
+          <line x1="200" y1="180" x2="180" y2="270" stroke="#00e0ff" stroke-width="0.75" opacity="0.2"/>
+          <!-- Labels -->
+          <text x="200" y="320" text-anchor="middle" fill="#64748b" font-size="11" font-family="Inter, Archivo, sans-serif">Coverage Radius Visualization</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── CONTENT SECTION: NOT IN OUR AREA? ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Don't See Your Area?</span>
+        <h2 class="content-section__title">We're Always Expanding</h2>
+        <p class="content-section__description">If your neighborhood isn't listed above, don't worry — we're constantly growing our coverage. Reach out and we'll let you know if we can serve your location or when we plan to expand there.</p>
+      </div>
+      <div class="contact-blocks-grid">
+        <div class="contact-block">
+          <div class="contact-block__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h4 class="contact-block__title">Call Us</h4>
+          <p class="contact-block__text">Speak directly with our dispatch team to check coverage for your specific address.</p>
+          <a href="tel:+15551234567" class="contact-block__link">+1 (555) 123-4567</a>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-block__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h4 class="contact-block__title">Email Us</h4>
+          <p class="contact-block__text">Send us your address and we'll respond within 24 hours with coverage confirmation.</p>
+          <a href="mailto:areas@nexcore.com" class="contact-block__link">areas@nexcore.com</a>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-block__icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h4 class="contact-block__title">Contact Form</h4>
+          <p class="contact-block__text">Fill out our online form with your details and preferred services for a custom quote.</p>
+          <a href="contact.html" class="contact-block__link">Go to Contact Page →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── CTA BANNER ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__glow cta-banner__glow--left"></div>
+        <div class="cta-banner__glow cta-banner__glow--right"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Ready to Get Started <span style="color: var(--color-accent-primary);">in Your Area?</span></h2>
+          <p class="cta-banner__text">Check our availability, explore our service packages, and book your first appointment today. Serving your community with excellence.</p>
+          <div class="cta-banner__actions">
+            <a href="booking.html" class="btn btn--primary btn--lg">Book a Service</a>
+            <a href="services.html" class="btn btn--secondary btn--lg">View Services</a>
+            <a href="pricing.html" class="btn btn--ghost btn--lg">See Pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="NexCore IT Solutions Home">
+          <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M10 26V10l8 10 8-10v16" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="18" r="3" fill="#00e0ff" opacity="0.3"/>
+          </svg>
+          <span>Nex<span class="header__logo-accent">Core</span></span>
+        </a>
+        <p class="footer__brand-description">
+          Premium IT support and managed services for businesses and residents in the greater metropolitan area. Network setup, cybersecurity, cloud migration, and hardware repair — all under one roof.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Services</h4>
+        <nav class="footer__links" aria-label="Footer services links">
+          <a href="services.html" class="footer__link">All Services</a>
+          <a href="pricing.html" class="footer__link">Pricing Plans</a>
+          <a href="booking.html" class="footer__link">Book a Service</a>
+          <a href="areas.html" class="footer__link">Service Areas</a>
+        </nav>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Company</h4>
+        <nav class="footer__links" aria-label="Footer company links">
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="reviews.html" class="footer__link">Reviews</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="faq.html" class="footer__link">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Contact</h4>
+        <nav class="footer__links" aria-label="Footer contact links">
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="booking.html" class="footer__link">Schedule a Call</a>
+          <span class="footer__link">info@nexcore-it.com</span>
+          <span class="footer__link">(555) 987-6543</span>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 NexCore IT Solutions. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="faq.html" class="footer__bottom-link">FAQ</a>
+        <a href="contact.html" class="footer__bottom-link">Support</a>
+        <a href="about.html" class="footer__bottom-link">About</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

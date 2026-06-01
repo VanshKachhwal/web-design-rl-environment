@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Reference</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="Seedling Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+        <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+        <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+        <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+      </svg>
+      <span class="header__logo-text">Seedling</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="guides.html" class="header__nav-link">Guides</a>
+      <a href="reference.html" class="header__nav-link">Reference</a>
+      <a href="examples.html" class="header__nav-link">Examples</a>
+      <a href="support.html" class="header__nav-link">Support</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER SECTION -->
+  <section class="content-section content-section--cream">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <span class="hero__badge">API Reference</span>
+        <h1 class="content-section__title">Reference Documentation</h1>
+        <p class="content-section__subtitle">Complete technical reference for every component, token, and utility class available in the design system. Browse by category or search for specific entries.</p>
+      </div>
+      <div class="hero__actions">
+        <a href="guides.html" class="btn btn--primary btn--large">Read the Guides</a>
+        <a href="examples.html" class="btn btn--secondary btn--large">View Examples</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIDEBAR LAYOUT -->
+  <section class="sidebar-layout">
+    <div class="sidebar-layout__inner">
+
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar-layout__sidebar">
+        <p class="sidebar-layout__nav-title">Categories</p>
+        <ul class="sidebar-layout__nav-list">
+          <li><a href="#color-tokens" class="sidebar-layout__nav-link sidebar-layout__nav-link--active">Color Tokens</a></li>
+          <li><a href="#typography" class="sidebar-layout__nav-link">Typography</a></li>
+          <li><a href="#spacing" class="sidebar-layout__nav-link">Spacing &amp; Layout</a></li>
+          <li><a href="#buttons" class="sidebar-layout__nav-link">Buttons</a></li>
+          <li><a href="#cards" class="sidebar-layout__nav-link">Cards</a></li>
+          <li><a href="#forms" class="sidebar-layout__nav-link">Form Fields</a></li>
+          <li><a href="#code-blocks" class="sidebar-layout__nav-link">Code Snippets</a></li>
+          <li><a href="#tables" class="sidebar-layout__nav-link">Tables</a></li>
+        </ul>
+
+        <p class="sidebar-layout__nav-title">Resources</p>
+        <ul class="sidebar-layout__nav-list">
+          <li><a href="guides.html" class="sidebar-layout__nav-link">Getting Started Guide</a></li>
+          <li><a href="examples.html" class="sidebar-layout__nav-link">Live Examples</a></li>
+          <li><a href="support.html" class="sidebar-layout__nav-link">Get Support</a></li>
+        </ul>
+
+        <div class="card" style="margin-top: var(--space-4);">
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="var(--color-sage-dark)" stroke-width="2"/>
+              <path d="M12 8v4l3 3" stroke="var(--color-sage-dark)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="card__title">Quick Tip</p>
+          <p class="card__description">Use your browser's search (Ctrl+F) to quickly find any token or class name on this page.</p>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="sidebar-layout__content">
+
+        <!-- Color Tokens Section -->
+        <div id="color-tokens" class="mb-12">
+          <h2 class="content-section__title">Color Tokens</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">All color values are defined as CSS custom properties on <code style="font-family: var(--font-mono); font-size: var(--text-sm); background-color: var(--color-cream-dark); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);">:root</code>. Reference them using the <code style="font-family: var(--font-mono); font-size: var(--text-sm); background-color: var(--color-cream-dark); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);">var(--token-name)</code> syntax.</p>
+
+          <!-- Color Palette Visual -->
+          <div class="grid-4 mb-8">
+            <div class="card">
+              <div style="width: 100%; height: 48px; border-radius: var(--radius-md); background-color: var(--color-terracotta); margin-bottom: var(--space-4);"></div>
+              <p class="card__title" style="font-size: var(--text-sm);">Terracotta</p>
+              <p class="card__meta">--color-terracotta</p>
+              <p class="card__meta">#C4654A</p>
+            </div>
+            <div class="card">
+              <div style="width: 100%; height: 48px; border-radius: var(--radius-md); background-color: var(--color-sage); margin-bottom: var(--space-4);"></div>
+              <p class="card__title" style="font-size: var(--text-sm);">Sage</p>
+              <p class="card__meta">--color-sage</p>
+              <p class="card__meta">#7A9B76</p>
+            </div>
+            <div class="card">
+              <div style="width: 100%; height: 48px; border-radius: var(--radius-md); background-color: var(--color-brown); margin-bottom: var(--space-4);"></div>
+              <p class="card__title" style="font-size: var(--text-sm);">Brown</p>
+              <p class="card__meta">--color-brown</p>
+              <p class="card__meta">#5C4033</p>
+            </div>
+            <div class="card">
+              <div style="width: 100%; height: 48px; border-radius: var(--radius-md); background-color: var(--color-cream); border: var(--border-width) solid var(--color-border); margin-bottom: var(--space-4);"></div>
+              <p class="card__title" style="font-size: var(--text-sm);">Cream</p>
+              <p class="card__meta">--color-cream</p>
+              <p class="card__meta">#FDF6EC</p>
+            </div>
+          </div>
+
+          <!-- Code Snippet for Colors -->
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">CSS</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__comment">/* Primary palette tokens */</span>
+<span class="code-snippet__keyword">--color-terracotta</span>: <span class="code-snippet__string">#C4654A</span>;
+<span class="code-snippet__keyword">--color-terracotta-dark</span>: <span class="code-snippet__string">#A8503A</span>;
+<span class="code-snippet__keyword">--color-terracotta-light</span>: <span class="code-snippet__string">#D4836A</span>;
+
+<span class="code-snippet__comment">/* Sage family */</span>
+<span class="code-snippet__keyword">--color-sage</span>: <span class="code-snippet__string">#7A9B76</span>;
+<span class="code-snippet__keyword">--color-sage-dark</span>: <span class="code-snippet__string">#5F7E5B</span>;
+<span class="code-snippet__keyword">--color-sage-light</span>: <span class="code-snippet__string">#A3BFA0</span>;
+<span class="code-snippet__keyword">--color-sage-pale</span>: <span class="code-snippet__string">#D4E5D2</span>;
+
+<span class="code-snippet__comment">/* Neutral backgrounds */</span>
+<span class="code-snippet__keyword">--color-cream</span>: <span class="code-snippet__string">#FDF6EC</span>;
+<span class="code-snippet__keyword">--color-warm-white</span>: <span class="code-snippet__string">#FFFCF7</span>;
+
+<span class="code-snippet__comment">/* Text colors */</span>
+<span class="code-snippet__keyword">--color-text-primary</span>: <span class="code-snippet__string">#3B2F2F</span>;
+<span class="code-snippet__keyword">--color-text-secondary</span>: <span class="code-snippet__string">#6B5B4F</span>;
+<span class="code-snippet__keyword">--color-text-muted</span>: <span class="code-snippet__string">#9A8A7C</span>;</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography Section -->
+        <div id="typography" class="mb-12">
+          <h2 class="content-section__title">Typography</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Four font families serve distinct roles. The type scale follows a 1.25 ratio from a 1rem base.</p>
+
+          <div class="grid-2 mb-8">
+            <div class="card">
+              <p class="card__tag">Display</p>
+              <p class="card__title" style="font-family: var(--font-display); font-size: var(--text-2xl);">Playfair Display</p>
+              <p class="card__description">Used for headings (h1–h6), hero titles, and testimonial quotes. Provides editorial warmth.</p>
+              <p class="card__meta">--font-display</p>
+            </div>
+            <div class="card">
+              <p class="card__tag">Body Text</p>
+              <p class="card__title" style="font-family: var(--font-text); font-size: var(--text-2xl);">Work Sans</p>
+              <p class="card__description">Primary body font for paragraphs, descriptions, and general reading content.</p>
+              <p class="card__meta">--font-text</p>
+            </div>
+            <div class="card">
+              <p class="card__tag">UI Elements</p>
+              <p class="card__title" style="font-family: var(--font-ui); font-size: var(--text-2xl);">Space Grotesk</p>
+              <p class="card__description">Used for buttons, navigation links, labels, tags, and interactive UI components.</p>
+              <p class="card__meta">--font-ui</p>
+            </div>
+            <div class="card">
+              <p class="card__tag">Monospace</p>
+              <p class="card__title" style="font-family: var(--font-mono); font-size: var(--text-2xl);">JetBrains Mono</p>
+              <p class="card__description">Code snippets, inline code references, and technical identifiers.</p>
+              <p class="card__meta">--font-mono</p>
+            </div>
+          </div>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">CSS</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__comment">/* Type scale (1.25 ratio) */</span>
+<span class="code-snippet__keyword">--text-xs</span>:   <span class="code-snippet__number">0.75rem</span>;   <span class="code-snippet__comment">/* 12px */</span>
+<span class="code-snippet__keyword">--text-sm</span>:   <span class="code-snippet__number">0.875rem</span>;  <span class="code-snippet__comment">/* 14px */</span>
+<span class="code-snippet__keyword">--text-base</span>: <span class="code-snippet__number">1rem</span>;      <span class="code-snippet__comment">/* 16px */</span>
+<span class="code-snippet__keyword">--text-md</span>:   <span class="code-snippet__number">1.125rem</span>;  <span class="code-snippet__comment">/* 18px */</span>
+<span class="code-snippet__keyword">--text-lg</span>:   <span class="code-snippet__number">1.25rem</span>;   <span class="code-snippet__comment">/* 20px */</span>
+<span class="code-snippet__keyword">--text-xl</span>:   <span class="code-snippet__number">1.5rem</span>;    <span class="code-snippet__comment">/* 24px */</span>
+<span class="code-snippet__keyword">--text-2xl</span>:  <span class="code-snippet__number">1.875rem</span>;  <span class="code-snippet__comment">/* 30px */</span>
+<span class="code-snippet__keyword">--text-3xl</span>:  <span class="code-snippet__number">2.25rem</span>;   <span class="code-snippet__comment">/* 36px */</span>
+<span class="code-snippet__keyword">--text-4xl</span>:  <span class="code-snippet__number">3rem</span>;      <span class="code-snippet__comment">/* 48px */</span>
+<span class="code-snippet__keyword">--text-5xl</span>:  <span class="code-snippet__number">3.75rem</span>;   <span class="code-snippet__comment">/* 60px */</span>
+
+<span class="code-snippet__comment">/* Font weights */</span>
+<span class="code-snippet__keyword">--weight-normal</span>:   <span class="code-snippet__number">400</span>;
+<span class="code-snippet__keyword">--weight-medium</span>:   <span class="code-snippet__number">500</span>;
+<span class="code-snippet__keyword">--weight-semibold</span>: <span class="code-snippet__number">600</span>;
+<span class="code-snippet__keyword">--weight-bold</span>:     <span class="code-snippet__number">700</span>;</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spacing Section -->
+        <div id="spacing" class="mb-12">
+          <h2 class="content-section__title">Spacing &amp; Layout</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Spacing tokens are based on a 4px grid. Use these consistently for padding, margins, and gaps.</p>
+
+          <!-- Spacing Visual -->
+          <div class="card mb-8">
+            <p class="card__title">Spacing Scale</p>
+            <div style="display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4);">
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); min-width: 100px;">--space-1</span>
+                <div style="width: var(--space-1); height: 16px; background-color: var(--color-terracotta); border-radius: var(--radius-sm);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">0.25rem</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); min-width: 100px;">--space-2</span>
+                <div style="width: var(--space-2); height: 16px; background-color: var(--color-terracotta); border-radius: var(--radius-sm);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">0.5rem</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); min-width: 100px;">--space-4</span>
+                <div style="width: var(--space-4); height: 16px; background-color: var(--color-terracotta); border-radius: var(--radius-sm);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">1rem</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); min-width: 100px;">--space-8</span>
+                <div style="width: var(--space-8); height: 16px; background-color: var(--color-terracotta); border-radius: var(--radius-sm);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">2rem</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); min-width: 100px;">--space-16</span>
+                <div style="width: var(--space-16); height: 16px; background-color: var(--color-terracotta); border-radius: var(--radius-sm);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">4rem</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted); min-width: 100px;">--space-32</span>
+                <div style="width: var(--space-32); height: 16px; background-color: var(--color-terracotta); border-radius: var(--radius-sm);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">8rem</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">CSS</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__comment">/* Layout widths */</span>
+<span class="code-snippet__keyword">--max-width</span>:        <span class="code-snippet__number">1200px</span>;
+<span class="code-snippet__keyword">--max-width-narrow</span>: <span class="code-snippet__number">800px</span>;
+<span class="code-snippet__keyword">--max-width-wide</span>:   <span class="code-snippet__number">1400px</span>;
+
+<span class="code-snippet__comment">/* Border radius */</span>
+<span class="code-snippet__keyword">--radius-sm</span>:   <span class="code-snippet__number">6px</span>;
+<span class="code-snippet__keyword">--radius-md</span>:   <span class="code-snippet__number">10px</span>;
+<span class="code-snippet__keyword">--radius-lg</span>:   <span class="code-snippet__number">16px</span>;
+<span class="code-snippet__keyword">--radius-xl</span>:   <span class="code-snippet__number">24px</span>;
+<span class="code-snippet__keyword">--radius-2xl</span>:  <span class="code-snippet__number">32px</span>;
+<span class="code-snippet__keyword">--radius-full</span>: <span class="code-snippet__number">9999px</span>;
+
+<span class="code-snippet__comment">/* Shadow elevation */</span>
+<span class="code-snippet__keyword">--shadow-sm</span>: <span class="code-snippet__string">0 1px 3px rgba(92,64,51,0.08)</span>;
+<span class="code-snippet__keyword">--shadow-md</span>: <span class="code-snippet__string">0 4px 12px rgba(92,64,51,0.1)</span>;
+<span class="code-snippet__keyword">--shadow-lg</span>: <span class="code-snippet__string">0 8px 24px rgba(92,64,51,0.12)</span>;
+<span class="code-snippet__keyword">--shadow-xl</span>: <span class="code-snippet__string">0 16px 48px rgba(92,64,51,0.15)</span>;</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons Section -->
+        <div id="buttons" class="mb-12">
+          <h2 class="content-section__title">Buttons</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Three button variants with two size modifiers. Combine the base <code style="font-family: var(--font-mono); font-size: var(--text-sm); background-color: var(--color-cream-dark); padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);">.btn</code> class with a variant and optional size class.</p>
+
+          <div class="card mb-8">
+            <p class="card__title">Button Variants</p>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); align-items: center;">
+              <span class="btn btn--primary">Primary</span>
+              <span class="btn btn--secondary">Secondary</span>
+              <span class="btn btn--sage">Sage</span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); align-items: center;">
+              <span class="btn btn--primary btn--large">Large Primary</span>
+              <span class="btn btn--secondary btn--small">Small Secondary</span>
+            </div>
+          </div>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">HTML</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__comment">&lt;!-- Primary button --&gt;</span>
+<span class="code-snippet__keyword">&lt;a</span> <span class="code-snippet__string">class="btn btn--primary"</span> <span class="code-snippet__string">href="#"</span><span class="code-snippet__keyword">&gt;</span>Get Started<span class="code-snippet__keyword">&lt;/a&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- Secondary outline button --&gt;</span>
+<span class="code-snippet__keyword">&lt;a</span> <span class="code-snippet__string">class="btn btn--secondary"</span> <span class="code-snippet__string">href="#"</span><span class="code-snippet__keyword">&gt;</span>Learn More<span class="code-snippet__keyword">&lt;/a&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- Large sage button --&gt;</span>
+<span class="code-snippet__keyword">&lt;a</span> <span class="code-snippet__string">class="btn btn--sage btn--large"</span> <span class="code-snippet__string">href="#"</span><span class="code-snippet__keyword">&gt;</span>Explore<span class="code-snippet__keyword">&lt;/a&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- Small button --&gt;</span>
+<span class="code-snippet__keyword">&lt;button</span> <span class="code-snippet__string">class="btn btn--primary btn--small"</span><span class="code-snippet__keyword">&gt;</span>Copy<span class="code-snippet__keyword">&lt;/button&gt;</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards Section -->
+        <div id="cards" class="mb-12">
+          <h2 class="content-section__title">Cards</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Flexible card component with optional icon, tag, title, description, meta, and link slots.</p>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">HTML</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="card"</span><span class="code-snippet__keyword">&gt;</span>
+  <span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="card__icon card__icon--sage"</span><span class="code-snippet__keyword">&gt;</span>
+    <span class="code-snippet__comment">&lt;!-- SVG icon here --&gt;</span>
+  <span class="code-snippet__keyword">&lt;/div&gt;</span>
+  <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="card__tag"</span><span class="code-snippet__keyword">&gt;</span>Category<span class="code-snippet__keyword">&lt;/span&gt;</span>
+  <span class="code-snippet__keyword">&lt;h3</span> <span class="code-snippet__string">class="card__title"</span><span class="code-snippet__keyword">&gt;</span>Card Title<span class="code-snippet__keyword">&lt;/h3&gt;</span>
+  <span class="code-snippet__keyword">&lt;p</span> <span class="code-snippet__string">class="card__description"</span><span class="code-snippet__keyword">&gt;</span>Description text.<span class="code-snippet__keyword">&lt;/p&gt;</span>
+  <span class="code-snippet__keyword">&lt;a</span> <span class="code-snippet__string">class="card__link"</span> <span class="code-snippet__string">href="#"</span><span class="code-snippet__keyword">&gt;</span>
+    Read more <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="card__link-arrow"</span><span class="code-snippet__keyword">&gt;</span>&amp;rarr;<span class="code-snippet__keyword">&lt;/span&gt;</span>
+  <span class="code-snippet__keyword">&lt;/a&gt;</span>
+<span class="code-snippet__keyword">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
+
+          <h4 class="mt-8 mb-4">Icon Variants</h4>
+          <div class="grid-4 mb-8">
+            <div class="card">
+              <div class="card__icon card__icon--sage">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="var(--color-sage-dark)" stroke-width="2"/></svg>
+              </div>
+              <p class="card__title" style="font-size: var(--text-sm);">--sage</p>
+            </div>
+            <div class="card">
+              <div class="card__icon card__icon--terracotta">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="var(--color-terracotta)" stroke-width="2"/></svg>
+              </div>
+              <p class="card__title" style="font-size: var(--text-sm);">--terracotta</p>
+            </div>
+            <div class="card">
+              <div class="card__icon card__icon--warning">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><polygon points="12,4 20,20 4,20" stroke="var(--color-warning)" stroke-width="2" fill="none"/></svg>
+              </div>
+              <p class="card__title" style="font-size: var(--text-sm);">--warning</p>
+            </div>
+            <div class="card">
+              <div class="card__icon card__icon--brown">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="var(--color-brown)" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <p class="card__title" style="font-size: var(--text-sm);">--brown</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms Section -->
+        <div id="forms" class="mb-12">
+          <h2 class="content-section__title">Form Fields</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Input, textarea, and select components with labels, hints, and error states.</p>
+
+          <div class="card mb-8">
+            <p class="card__title">Live Preview</p>
+            <div style="margin-top: var(--space-6); max-width: 400px;">
+              <div class="form-field">
+                <label class="form-field__label">Email Address <span class="form-field__required">*</span></label>
+                <input type="email" class="form-field__input" placeholder="you@example.com">
+                <p class="form-field__hint">We'll never share your email.</p>
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Category</label>
+                <select class="form-field__select">
+                  <option>Select a category</option>
+                  <option>Components</option>
+                  <option>Tokens</option>
+                  <option>Utilities</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-field__label">Message</label>
+                <textarea class="form-field__textarea" placeholder="Your message here..."></textarea>
+                <p class="form-field__error">This field is required.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">HTML</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="form-field"</span><span class="code-snippet__keyword">&gt;</span>
+  <span class="code-snippet__keyword">&lt;label</span> <span class="code-snippet__string">class="form-field__label"</span><span class="code-snippet__keyword">&gt;</span>
+    Email <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="form-field__required"</span><span class="code-snippet__keyword">&gt;</span>*<span class="code-snippet__keyword">&lt;/span&gt;</span>
+  <span class="code-snippet__keyword">&lt;/label&gt;</span>
+  <span class="code-snippet__keyword">&lt;input</span> <span class="code-snippet__string">class="form-field__input"</span>
+    <span class="code-snippet__string">placeholder="you@example.com"</span> <span class="code-snippet__keyword">/&gt;</span>
+  <span class="code-snippet__keyword">&lt;p</span> <span class="code-snippet__string">class="form-field__hint"</span><span class="code-snippet__keyword">&gt;</span>Helper text<span class="code-snippet__keyword">&lt;/p&gt;</span>
+  <span class="code-snippet__keyword">&lt;p</span> <span class="code-snippet__string">class="form-field__error"</span><span class="code-snippet__keyword">&gt;</span>Error message<span class="code-snippet__keyword">&lt;/p&gt;</span>
+<span class="code-snippet__keyword">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Blocks Section -->
+        <div id="code-blocks" class="mb-12">
+          <h2 class="content-section__title">Code Snippets</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Dark-themed code blocks with a macOS-style header, language label, and syntax highlighting via span classes.</p>
+
+          <div class="code-snippet">
+            <div class="code-snippet__header">
+              <div class="code-snippet__dots">
+                <span class="code-snippet__dot code-snippet__dot--red"></span>
+                <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+                <span class="code-snippet__dot code-snippet__dot--green"></span>
+              </div>
+              <span class="code-snippet__language">HTML</span>
+            </div>
+            <div class="code-snippet__body">
+              <pre class="code-snippet__pre"><span class="code-snippet__comment">&lt;!-- Code snippet structure --&gt;</span>
+<span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="code-snippet"</span><span class="code-snippet__keyword">&gt;</span>
+  <span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="code-snippet__header"</span><span class="code-snippet__keyword">&gt;</span>
+    <span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="code-snippet__dots"</span><span class="code-snippet__keyword">&gt;</span>
+      <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="code-snippet__dot code-snippet__dot--red"</span><span class="code-snippet__keyword">&gt;&lt;/span&gt;</span>
+      <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="code-snippet__dot code-snippet__dot--yellow"</span><span class="code-snippet__keyword">&gt;&lt;/span&gt;</span>
+      <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="code-snippet__dot code-snippet__dot--green"</span><span class="code-snippet__keyword">&gt;&lt;/span&gt;</span>
+    <span class="code-snippet__keyword">&lt;/div&gt;</span>
+    <span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="code-snippet__language"</span><span class="code-snippet__keyword">&gt;</span>CSS<span class="code-snippet__keyword">&lt;/span&gt;</span>
+  <span class="code-snippet__keyword">&lt;/div&gt;</span>
+  <span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="code-snippet__body"</span><span class="code-snippet__keyword">&gt;</span>
+    <span class="code-snippet__keyword">&lt;pre</span> <span class="code-snippet__string">class="code-snippet__pre"</span><span class="code-snippet__keyword">&gt;</span>...<span class="code-snippet__keyword">&lt;/pre&gt;</span>
+  <span class="code-snippet__keyword">&lt;/div&gt;</span>
+<span class="code-snippet__keyword">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
+
+          <h4 class="mt-8 mb-4">Syntax Highlight Classes</h4>
+          <div class="card">
+            <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <div style="width: 16px; height: 16px; border-radius: var(--radius-full); background-color: var(--color-code-keyword);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary); min-width: 200px;">.code-snippet__keyword</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Properties, tags</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <div style="width: 16px; height: 16px; border-radius: var(--radius-full); background-color: var(--color-code-string);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary); min-width: 200px;">.code-snippet__string</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">String values, attributes</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <div style="width: 16px; height: 16px; border-radius: var(--radius-full); background-color: var(--color-code-number);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary); min-width: 200px;">.code-snippet__number</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Numeric values</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <div style="width: 16px; height: 16px; border-radius: var(--radius-full); background-color: var(--color-code-comment);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary); min-width: 200px;">.code-snippet__comment</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Comments</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <div style="width: 16px; height: 16px; border-radius: var(--radius-full); background-color: var(--color-terracotta-light);"></div>
+                <span style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary); min-width: 200px;">.code-snippet__function</span>
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-muted);">Function names</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tables Section -->
+        <div id="tables" class="mb-12">
+          <h2 class="content-section__title">Tables</h2>
+          <p class="content-section__subtitle" style="margin-bottom: var(--space-8);">Use the comparison table component for structured data with optional check/cross indicators and row highlighting.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="comparison-table">
+    <div class="comparison-table__inner">
+      <div class="comparison-table__header">
+        <h2 class="comparison-table__title">Component Class Reference</h2>
+        <p class="content-section__subtitle">Complete list of all component classes, their element types, and available modifiers.</p>
+      </div>
+      <div class="comparison-table__wrapper">
+        <table class="comparison-table__table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Base Class</th>
+              <th>Modifiers</th>
+              <th>Has Icon Slot</th>
+              <th>Interactive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="comparison-table__highlight">
+              <td>Button</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.btn</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">--primary, --secondary, --sage, --large, --small</code></td>
+              <td><span class="comparison-table__check">✓</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Card</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.card</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">--interactive</code></td>
+              <td><span class="comparison-table__check">✓</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>Code Snippet</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.code-snippet</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Header</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.header</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__check">✓</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>Hero</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.hero</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Feature Grid</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.feature-grid</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__check">✓</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>Content Section</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.content-section</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">--cream, --white</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Sidebar Layout</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.sidebar-layout</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>Filter Bar</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.filter-bar</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Bento Grid</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.bento-grid</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">--wide, --tall, --featured, --accent</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>FAQ</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.faq</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__check">✓</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr>
+              <td>Testimonial</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.testimonial</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>CTA Banner</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.cta-banner</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Form Field</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.form-field</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+            <tr class="comparison-table__highlight">
+              <td>Footer</td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">.footer</code></td>
+              <td><code style="font-family: var(--font-mono); font-size: var(--text-xs);">—</code></td>
+              <td><span class="comparison-table__cross">✗</span></td>
+              <td><span class="comparison-table__check">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTION - Utility Classes -->
+  <section class="content-section content-section--cream">
+    <div class="content-section__inner">
+      <div class="content-section__header content-section__header--center">
+        <h2 class="content-section__title">Utility Classes</h2>
+        <p class="content-section__subtitle">Layout helpers, grid utilities, and spacing shortcuts for rapid composition.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card__icon card__icon--sage">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" rx="2" stroke="var(--color-sage-dark)" stroke-width="2"/>
+              <rect x="14" y="3" width="7" height="7" rx="2" stroke="var(--color-sage-dark)" stroke-width="2"/>
+              <rect x="3" y="14" width="7" height="7" rx="2" stroke="var(--color-sage-dark)" stroke-width="2"/>
+              <rect x="14" y="14" width="7" height="7" rx="2" stroke="var(--color-sage-dark)" stroke-width="2"/>
+            </svg>
+          </div>
+          <p class="card__title">Grid Utilities</p>
+          <p class="card__description">Pre-built grid layouts with 2, 3, or 4 columns. Responsive breakpoints collapse to single column on mobile.</p>
+          <p class="card__meta">.grid-2 · .grid-3 · .grid-4</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--terracotta">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="3" stroke="var(--color-terracotta)" stroke-width="2"/>
+              <path d="M4 12h16" stroke="var(--color-terracotta)" stroke-width="2"/>
+            </svg>
+          </div>
+          <p class="card__title">Container</p>
+          <p class="card__description">Centered max-width wrapper with horizontal padding. Narrow variant available for content-focused layouts.</p>
+          <p class="card__meta">.container · .container--narrow</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--warning">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <path d="M12 4v8M12 16v4" stroke="var(--color-warning)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4 12h4M16 12h4" stroke="var(--color-warning)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <p class="card__title">Spacing Helpers</p>
+          <p class="card__description">Margin-top and margin-bottom utility classes at common spacing intervals for quick vertical rhythm adjustments.</p>
+          <p class="card__meta">.mt-4 · .mt-8 · .mb-4 · .mb-12 …</p>
+        </div>
+      </div>
+
+      <div class="code-snippet mt-8">
+        <div class="code-snippet__header">
+          <div class="code-snippet__dots">
+            <span class="code-snippet__dot code-snippet__dot--red"></span>
+            <span class="code-snippet__dot code-snippet__dot--yellow"></span>
+            <span class="code-snippet__dot code-snippet__dot--green"></span>
+          </div>
+          <span class="code-snippet__language">HTML</span>
+        </div>
+        <div class="code-snippet__body">
+          <pre class="code-snippet__pre"><span class="code-snippet__comment">&lt;!-- Centered container --&gt;</span>
+<span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="container"</span><span class="code-snippet__keyword">&gt;</span>...<span class="code-snippet__keyword">&lt;/div&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- Narrow container --&gt;</span>
+<span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="container container--narrow"</span><span class="code-snippet__keyword">&gt;</span>...<span class="code-snippet__keyword">&lt;/div&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- 3-column grid with top margin --&gt;</span>
+<span class="code-snippet__keyword">&lt;div</span> <span class="code-snippet__string">class="grid-3 mt-8"</span><span class="code-snippet__keyword">&gt;</span>
+  <span class="code-snippet__keyword">&lt;div</span><span class="code-snippet__keyword">&gt;</span>Column 1<span class="code-snippet__keyword">&lt;/div&gt;</span>
+  <span class="code-snippet__keyword">&lt;div</span><span class="code-snippet__keyword">&gt;</span>Column 2<span class="code-snippet__keyword">&lt;/div&gt;</span>
+  <span class="code-snippet__keyword">&lt;div</span><span class="code-snippet__keyword">&gt;</span>Column 3<span class="code-snippet__keyword">&lt;/div&gt;</span>
+<span class="code-snippet__keyword">&lt;/div&gt;</span>
+
+<span class="code-snippet__comment">&lt;!-- Text alignment &amp; accessibility --&gt;</span>
+<span class="code-snippet__keyword">&lt;p</span> <span class="code-snippet__string">class="text-center"</span><span class="code-snippet__keyword">&gt;</span>Centered text<span class="code-snippet__keyword">&lt;/p&gt;</span>
+<span class="code-snippet__keyword">&lt;span</span> <span class="code-snippet__string">class="sr-only"</span><span class="code-snippet__keyword">&gt;</span>Screen reader only<span class="code-snippet__keyword">&lt;/span&gt;</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <h2 class="cta-banner__title">Ready to Build?</h2>
+      <p class="cta-banner__description">Explore working examples or reach out if you need help implementing any component from this reference.</p>
+      <div class="cta-banner__actions">
+        <a href="examples.html" class="btn btn--primary btn--large">View Examples</a>
+        <a href="support.html" class="btn btn--secondary btn--large" style="border-color: var(--color-text-inverse); color: var(--color-text-inverse);">Get Support</a>
+      </div>
+    </div>
+    <div class="cta-banner__decoration cta-banner__decoration--1"></div>
+    <div class="cta-banner__decoration cta-banner__decoration--2"></div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="Seedling Home" style="margin-bottom:var(--space-2);">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="18" fill="#7A9B76"/>
+            <path d="M18 28 C18 28 18 18 18 14 C18 10 14 8 10 9 C14 10 16 13 16 16 C16 18 16 28 16 28" fill="#5F7E5B"/>
+            <path d="M18 28 C18 28 18 20 18 16 C18 12 22 8 27 9 C22 10 20 14 20 17 C20 19 20 28 20 28" fill="#A3BFA0"/>
+            <ellipse cx="18" cy="10" rx="3" ry="4" fill="#D4E5D2"/>
+          </svg>
+          <span class="header__logo-text" style="color:var(--color-cream);">Seedling</span>
+        </a>
+        <p class="footer__brand-description">An educational coding platform built for students and educators. Learn, build, and grow — one line at a time.</p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Platform</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Guides</a>
+          <a href="reference.html" class="footer__link">Reference</a>
+          <a href="examples.html" class="footer__link">Examples</a>
+          <a href="support.html" class="footer__link">Support</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Resources</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Getting Started</a>
+          <a href="reference.html" class="footer__link">API Reference</a>
+          <a href="examples.html" class="footer__link">Code Examples</a>
+          <a href="support.html" class="footer__link">Community</a>
+        </div>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Learn</h4>
+        <div class="footer__links">
+          <a href="guides.html" class="footer__link">Tutorials</a>
+          <a href="examples.html" class="footer__link">Projects</a>
+          <a href="reference.html" class="footer__link">Documentation</a>
+          <a href="support.html" class="footer__link">Help Center</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Seedling. Designed for learners everywhere.</p>
+      <div class="footer__bottom-links">
+        <a href="support.html" class="footer__bottom-link">Privacy</a>
+        <a href="support.html" class="footer__bottom-link">Terms</a>
+        <a href="support.html" class="footer__bottom-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

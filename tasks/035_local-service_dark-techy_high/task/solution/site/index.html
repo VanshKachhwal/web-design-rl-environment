@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Home</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="header__logo" aria-label="NexCore IT Solutions Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M10 26V10l8 10 8-10v16" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="18" cy="18" r="3" fill="#00e0ff" opacity="0.3"/>
+      </svg>
+      <span>Nex<span class="header__logo-accent">Core</span></span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="services.html" class="header__nav-link">Services</a>
+      <a href="pricing.html" class="header__nav-link">Pricing</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="areas.html" class="header__nav-link">Areas</a>
+      <a href="gallery.html" class="header__nav-link">Gallery</a>
+      <a href="reviews.html" class="header__nav-link">Reviews</a>
+      <a href="faq.html" class="header__nav-link">FAQ</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+    <a href="booking.html" class="header__cta">Book Now</a>
+    <button class="header__mobile-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<main>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero hero--centered">
+    <div class="hero__glow hero__glow--cyan"></div>
+    <div class="hero__glow hero__glow--purple"></div>
+    <div class="geo-pattern">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="heroGrid" x="0" y="0" width="60" height="60" patternunits="userSpaceOnUse">
+            <path d="M60 0L0 0 0 60" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.15"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#heroGrid)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero__content">
+        <span class="hero__badge">
+          <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Now Accepting Bookings
+        </span>
+        <h1 class="hero__title">Premium <span class="hero__title-accent">Cleaning</span> Services You Can Trust</h1>
+        <p class="hero__subtitle">Experience spotless results with our professional cleaning team. Residential, commercial, and specialty services — tailored to your needs, delivered with precision.</p>
+        <div class="hero__actions">
+          <a href="booking.html" class="btn btn--primary btn--lg">Book Now</a>
+          <a href="services.html" class="btn btn--secondary btn--lg">Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LOGO CLOUD ══ -->
+  <section class="logo-cloud">
+    <div class="container">
+      <p class="logo-cloud__label">Trusted by businesses and homeowners across the region</p>
+      <div class="logo-cloud__grid">
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-text">Oakridge</span>
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-text">Meridian</span>
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-text">Crestview</span>
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-text">Pinnacle</span>
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-text">Summit Co</span>
+        </div>
+        <div class="logo-cloud__item">
+          <span class="logo-cloud__item-text">Evergreen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ══ FEATURE GRID ══ -->
+  <section class="feature-grid">
+    <div class="container">
+      <div class="feature-grid__header">
+        <div class="neon-line neon-line--center"></div>
+        <h2 class="feature-grid__title">Why Choose NexCore</h2>
+        <p class="feature-grid__subtitle">We combine cutting-edge techniques with meticulous attention to detail for results that speak for themselves.</p>
+      </div>
+      <div class="feature-grid__items">
+        <!-- Feature 1 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-grid__item-title">Insured &amp; Bonded</h3>
+          <p class="feature-grid__item-description">Every team member is fully insured and background-checked, giving you complete peace of mind with every visit.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-grid__item-title">Flexible Scheduling</h3>
+          <p class="feature-grid__item-description">Book weekly, bi-weekly, or one-time deep cleans. We work around your calendar — including evenings and weekends.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="feature-grid__item-title">Satisfaction Guaranteed</h3>
+          <p class="feature-grid__item-description">Not happy with the results? We'll re-clean at no extra cost. Your satisfaction is our top priority, every single time.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 class="feature-grid__item-title">Transparent Pricing</h3>
+          <p class="feature-grid__item-description">No hidden fees or surprise charges. Get a clear quote upfront so you know exactly what to expect before we start.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="feature-grid__item-title">Eco-Friendly Products</h3>
+          <p class="feature-grid__item-description">We use non-toxic, environmentally responsible cleaning products that are safe for your family, pets, and the planet.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="feature-grid__item">
+          <div class="feature-grid__icon">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="feature-grid__item-title">Trained Professionals</h3>
+          <p class="feature-grid__item-description">Our cleaners undergo rigorous training and certification to deliver consistent, high-quality results on every job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STAT ══ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat__value">2,500+</span>
+          <span class="stat__label">Homes Cleaned</span>
+          <span class="stat__description">Across all service areas</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">99%</span>
+          <span class="stat__label">Satisfaction Rate</span>
+          <span class="stat__description">Based on client surveys</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">12+</span>
+          <span class="stat__label">Years Experience</span>
+          <span class="stat__description">Industry-leading expertise</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value">48</span>
+          <span class="stat__label">Team Members</span>
+          <span class="stat__description">Fully trained &amp; certified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ══ TESTIMONIAL ══ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Testimonials</span>
+        <h2 class="content-section__title">What Our Clients Say</h2>
+        <p class="content-section__description">Real feedback from homeowners and businesses who trust NexCore for their cleaning needs.</p>
+      </div>
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial">
+          <span class="testimonial__quote-mark">&ldquo;</span>
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial__text">NexCore transformed our office space. The team was punctual, thorough, and incredibly professional. We've been on a weekly plan for six months and the quality has never dropped.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">SR</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">Sarah Reynolds</span>
+              <span class="testimonial__author-role">Office Manager, Meridian Corp</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial">
+          <span class="testimonial__quote-mark">&ldquo;</span>
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial__text">I was skeptical at first, but after one deep clean I was completely sold. My kitchen and bathrooms have never looked this good. Highly recommend to any homeowner.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">JM</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">James Mitchell</span>
+              <span class="testimonial__author-role">Homeowner, Oakridge District</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial">
+          <span class="testimonial__quote-mark">&ldquo;</span>
+          <div class="testimonial__stars">
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="testimonial__star" viewbox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial__text">We manage 30+ rental properties and NexCore handles all our turnover cleans. Reliable, fast, and the tenants always comment on how spotless everything is on move-in day.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">LP</div>
+            <div class="testimonial__author-info">
+              <span class="testimonial__author-name">Lisa Patel</span>
+              <span class="testimonial__author-role">Property Manager, Crestview Rentals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: var(--space-10);">
+        <a href="reviews.html" class="btn btn--ghost">Read All Reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BANNER ══ -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__glow cta-banner__glow--left"></div>
+        <div class="cta-banner__glow cta-banner__glow--right"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Ready for a <span style="color: var(--color-accent-primary);">Spotless</span> Space?</h2>
+          <p class="cta-banner__text">Get a free, no-obligation quote in minutes. Choose from our flexible plans or customize a package that fits your exact needs.</p>
+          <div class="cta-banner__actions">
+            <a href="booking.html" class="btn btn--primary btn--lg">Schedule a Cleaning</a>
+            <a href="pricing.html" class="btn btn--secondary btn--lg">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ══ NEWSLETTER SIGNUP ══ -->
+  <section class="section-padding">
+    <div class="container container--narrow">
+      <div class="newsletter-signup">
+        <h2 class="newsletter-signup__title">Stay in the Loop</h2>
+        <p class="newsletter-signup__text">Subscribe for cleaning tips, seasonal promotions, and exclusive offers delivered straight to your inbox.</p>
+        <form class="newsletter-signup__form" action="#" method="post">
+          <input type="email" class="newsletter-signup__input" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+        <p class="newsletter-signup__disclaimer">No spam, ever. Unsubscribe anytime. We respect your privacy.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="NexCore IT Solutions Home">
+          <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M10 26V10l8 10 8-10v16" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="18" r="3" fill="#00e0ff" opacity="0.3"/>
+          </svg>
+          <span>Nex<span class="header__logo-accent">Core</span></span>
+        </a>
+        <p class="footer__brand-description">
+          Premium IT support and managed services for businesses and residents in the greater metropolitan area. Network setup, cybersecurity, cloud migration, and hardware repair — all under one roof.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Services</h4>
+        <nav class="footer__links" aria-label="Footer services links">
+          <a href="services.html" class="footer__link">All Services</a>
+          <a href="pricing.html" class="footer__link">Pricing Plans</a>
+          <a href="booking.html" class="footer__link">Book a Service</a>
+          <a href="areas.html" class="footer__link">Service Areas</a>
+        </nav>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Company</h4>
+        <nav class="footer__links" aria-label="Footer company links">
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="reviews.html" class="footer__link">Reviews</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="faq.html" class="footer__link">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Contact</h4>
+        <nav class="footer__links" aria-label="Footer contact links">
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="booking.html" class="footer__link">Schedule a Call</a>
+          <span class="footer__link">info@nexcore-it.com</span>
+          <span class="footer__link">(555) 987-6543</span>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 NexCore IT Solutions. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="faq.html" class="footer__bottom-link">FAQ</a>
+        <a href="contact.html" class="footer__bottom-link">Support</a>
+        <a href="about.html" class="footer__bottom-link">About</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

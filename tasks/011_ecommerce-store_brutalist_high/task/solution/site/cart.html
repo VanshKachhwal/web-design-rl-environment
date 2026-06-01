@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Cart</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__top-bar">
+    ★ Curated Local Goods — Free Pickup on All Orders ★
+  </div>
+  <div class="header__main">
+    <div class="header__logo">
+      <a href="index.html">LOCAL<br>GOODS</a>
+    </div>
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="index.html">Home</a></li>
+        <li class="header__nav-item"><a href="shop.html">Shop</a></li>
+        <li class="header__nav-item"><a href="collections.html">Collections</a></li>
+        <li class="header__nav-item"><a href="about.html">About</a></li>
+        <li class="header__nav-item"><a href="reviews.html">Reviews</a></li>
+        <li class="header__nav-item"><a href="shipping.html">Shipping</a></li>
+        <li class="header__nav-item"><a href="faq.html">FAQ</a></li>
+        <li class="header__nav-item"><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="cart.html" class="header__cart-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="6" width="10" height="9" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M5 6V4a3 3 0 0 1 6 0v2" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+        Cart [0]
+      </a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- HEADER SECTION - Cart Page Title -->
+  <section class="content-section content-section--bordered">
+    <div class="content-section__header">
+      <span class="content-section__label">Your Shopping Cart</span>
+      <h1 class="content-section__title">Cart</h1>
+      <p class="content-section__subtitle">Review your selected items below. Adjust quantities or remove products before proceeding to checkout.</p>
+      <hr class="content-section__divider">
+    </div>
+  </section>
+
+  <!-- PRICING-TABLE - Cart Items Summary -->
+  <section class="content-section">
+    <div class="pricing-table" style="max-width: var(--max-width-xl); margin: 0 auto;">
+      <!-- Item 1 -->
+      <div class="pricing-table__plan">
+        <span class="pricing-table__plan-name">Ceramics</span>
+        <div style="aspect-ratio:1; background: var(--color-bg-secondary); border: var(--border-thick); margin-bottom: var(--space-6); display:flex; align-items:center; justify-content:center;">
+          <div style="width:50%; height:50%; background: var(--color-gray-200); border-radius:50%;"></div>
+        </div>
+        <span class="pricing-table__plan-price">$48</span>
+        <span class="pricing-table__plan-period">Qty: 1</span>
+        <div class="pricing-table__features">
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>Handthrown Stoneware Mug</span>
+          </div>
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>Ash Glaze Finish</span>
+          </div>
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>12oz Capacity</span>
+          </div>
+        </div>
+        <a href="product.html" class="button button--outline button--small button--full">View Product</a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="pricing-table__plan pricing-table__plan--featured">
+        <span class="pricing-table__plan-name">Textiles</span>
+        <div style="aspect-ratio:1; background: var(--color-gray-800); border: 3px solid var(--color-gray-600); margin-bottom: var(--space-6); display:flex; align-items:center; justify-content:center;">
+          <div style="width:60%; height:40%; background: var(--color-accent-muted);"></div>
+        </div>
+        <span class="pricing-table__plan-price">$125</span>
+        <span class="pricing-table__plan-period">Qty: 2</span>
+        <div class="pricing-table__features">
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>Hand-Woven Linen Towel</span>
+          </div>
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>Natural Indigo Dye</span>
+          </div>
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>28" × 48" Each</span>
+          </div>
+        </div>
+        <a href="product.html" class="button button--primary button--small button--full">View Product</a>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="pricing-table__plan">
+        <span class="pricing-table__plan-name">Woodwork</span>
+        <div style="aspect-ratio:1; background: var(--color-bg-secondary); border: var(--border-thick); margin-bottom: var(--space-6); display:flex; align-items:center; justify-content:center;">
+          <div style="width:45%; height:45%; background: var(--color-accent-warm); transform: rotate(45deg);"></div>
+        </div>
+        <span class="pricing-table__plan-price">$72</span>
+        <span class="pricing-table__plan-period">Qty: 1</span>
+        <div class="pricing-table__features">
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>Carved Walnut Cutting Board</span>
+          </div>
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>Food-Safe Oil Finish</span>
+          </div>
+          <div class="pricing-table__feature">
+            <span class="pricing-table__feature-marker"></span>
+            <span>12" × 8" × 1"</span>
+          </div>
+        </div>
+        <a href="product.html" class="button button--outline button--small button--full">View Product</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION - Order Summary -->
+  <section class="content-section content-section--bg-alt content-section--bordered">
+    <div class="content-section__inner" style="padding: var(--space-20) var(--space-8);">
+      <div class="content-section__header">
+        <span class="content-section__label">Order Summary</span>
+        <h2 class="content-section__title">Total Breakdown</h2>
+      </div>
+
+      <div class="content-section__body">
+        <table class="comparison-table" style="max-width: var(--max-width-md);">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Handthrown Stoneware Mug</td>
+              <td>1</td>
+              <td>$48.00</td>
+            </tr>
+            <tr>
+              <td>Hand-Woven Linen Towel</td>
+              <td>2</td>
+              <td>$250.00</td>
+            </tr>
+            <tr>
+              <td>Carved Walnut Cutting Board</td>
+              <td>1</td>
+              <td>$72.00</td>
+            </tr>
+            <tr>
+              <td><strong>Subtotal</strong></td>
+              <td><strong>4</strong></td>
+              <td><strong>$370.00</strong></td>
+            </tr>
+            <tr>
+              <td>Shipping</td>
+              <td>—</td>
+              <td>$12.00</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td></td>
+              <td><strong>$382.00</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8">
+        <span class="badge badge--success">Free shipping on orders over $400</span>
+      </div>
+
+      <!-- BUTTON - Checkout & Continue Shopping -->
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; margin-top: var(--space-12);">
+        <a href="shop.html" class="button button--dark button--large">Proceed to Checkout</a>
+        <a href="shop.html" class="button button--outline button--large">Continue Shopping</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT-SECTION - Shipping & Returns Info -->
+  <section class="content-section content-section--bordered">
+    <div class="content-section__header">
+      <span class="content-section__label">Before You Checkout</span>
+      <h2 class="content-section__title">Shipping &amp; Returns</h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card__body">
+          <span class="card__label">Delivery</span>
+          <h3 class="card__title">Free Over $400</h3>
+          <p class="card__text">Standard shipping on all domestic orders. Handmade items ship within 3–5 business days. Each piece is carefully wrapped by the artisan.</p>
+        </div>
+        <div class="card__footer">
+          <a href="shipping.html" class="button button--outline button--small">Shipping Info</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__body">
+          <span class="card__label">Returns</span>
+          <h3 class="card__title">30-Day Policy</h3>
+          <p class="card__text">Not satisfied? Return unused items in original packaging within 30 days for a full refund. Handmade items may have natural variations.</p>
+        </div>
+        <div class="card__footer">
+          <a href="faq.html" class="button button--outline button--small">Read FAQ</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__body">
+          <span class="card__label">Support</span>
+          <h3 class="card__title">Questions?</h3>
+          <p class="card__text">Our team is here to help with sizing, materials, care instructions, or any other questions about your order and our artisan goods.</p>
+        </div>
+        <div class="card__footer">
+          <a href="contact.html" class="button button--outline button--small">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA-BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner__inner">
+      <div>
+        <span class="cta-banner__label">Discover More</span>
+        <h2 class="cta-banner__title">Explore Our Collections</h2>
+        <p class="cta-banner__text">Each collection is curated around a theme — seasonal materials, regional craft traditions, and collaborations with local makers.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="collections.html" class="button button--primary button--large">View Collections</a>
+        <a href="about.html" class="button button--secondary button--large">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__brand-col">
+      <div class="footer__logo">LOCAL GOODS</div>
+      <p class="footer__tagline">
+        Your neighborhood's trusted premium marketplace. Curated artisan goods, handmade products, and locally sourced items — all under one roof.
+      </p>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Shop</h4>
+      <div class="footer__links">
+        <a href="shop.html">All Products</a>
+        <a href="collections.html">Collections</a>
+        <a href="product.html">Featured Item</a>
+        <a href="cart.html">Your Cart</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Info</h4>
+      <div class="footer__links">
+        <a href="about.html">About Us</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="shipping.html">Shipping</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4 class="footer__col-title">Connect</h4>
+      <div class="footer__links">
+        <a href="contact.html">Contact Us</a>
+        <a href="about.html">Our Story</a>
+        <a href="reviews.html">Testimonials</a>
+        <a href="faq.html">Help Center</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copyright">&copy; 2024 Local Goods Co. All rights reserved.</p>
+    <div class="footer__bottom-links">
+      <a href="shipping.html">Shipping Policy</a>
+      <a href="faq.html">Terms &amp; Conditions</a>
+      <a href="contact.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

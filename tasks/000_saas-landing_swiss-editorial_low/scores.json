@@ -1,0 +1,785 @@
+{
+  "meta": {
+    "task_id": "000_saas-landing_swiss-editorial_low",
+    "seed_tuple": [
+      "saas-landing",
+      "swiss-editorial",
+      "low",
+      "north-american-consumers",
+      "confident-and-bold"
+    ],
+    "archetype": "saas-landing",
+    "aesthetic": "swiss-editorial",
+    "complexity": "low",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 15.757510000000002,
+    "total_input_tokens": 10129424,
+    "total_output_tokens": 323419,
+    "started_at": "2026-05-31T22:53:51.074326",
+    "finished_at": "2026-05-31T23:04:47.880655",
+    "wall_clock_sec": 656.806329,
+    "date": "2026-05-31",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "7WApF2c",
+      "reward": 0.8276270471775626,
+      "structure": 0.782446032530028,
+      "color": 0.9953467761545431,
+      "content": 0.7627153800256796,
+      "design_judge": 0.77,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7910910551971478,
+          "color": 0.9972221254133065,
+          "content": 0.639080459770115,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7443113766299331,
+          "color": 0.9976515407906248,
+          "content": 0.6104023552502453,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7777398944537861,
+          "color": 0.9939952069573909,
+          "content": 0.9414847161572052,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.796080499890344,
+          "color": 0.9958241796193723,
+          "content": 0.905149051490515,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8030073364789292,
+          "color": 0.9920408279920211,
+          "content": 0.7174603174603175,
+          "design_judge": 0.875,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "8vKLBzM",
+      "reward": 0.836928393476898,
+      "structure": 0.7684658733870611,
+      "color": 0.9834292509454586,
+      "content": 0.8158184495750724,
+      "design_judge": 0.78,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7576539196855108,
+          "color": 0.9810933166094775,
+          "content": 0.8185654008438819,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7337435234463513,
+          "color": 0.9878198613346485,
+          "content": 0.5844504021447722,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7681020416353747,
+          "color": 0.9872490822945198,
+          "content": 0.924006908462867,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7910809990251526,
+          "color": 0.9830737663340362,
+          "content": 0.9375000000000001,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7917488831429161,
+          "color": 0.9779102281546111,
+          "content": 0.8145695364238411,
+          "design_judge": 0.875,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "FP6zarg",
+      "reward": 0.8147780775158642,
+      "structure": 0.7751959679887268,
+      "color": 0.9944375012140713,
+      "content": 0.7594788408606585,
+      "design_judge": 0.73,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7805223745991543,
+          "color": 0.9961214639347157,
+          "content": 0.6824644549763033,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7356772539894539,
+          "color": 0.9943806426940239,
+          "content": 0.5821596244131454,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7739286440889488,
+          "color": 0.9932480919723269,
+          "content": 0.9336823734729494,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7932489063605755,
+          "color": 0.9936301421728935,
+          "content": 0.9159891598915989,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7926026609055016,
+          "color": 0.994807165296396,
+          "content": 0.6830985915492958,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "H3Ak6j3",
+      "reward": 0.8293486558578571,
+      "structure": 0.7809582009477353,
+      "color": 0.9860855927618293,
+      "content": 0.8003508297218641,
+      "design_judge": 0.75,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7851028659429213,
+          "color": 0.9835134554807687,
+          "content": 0.7505422993492408,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7446889982429373,
+          "color": 0.9880114459619699,
+          "content": 0.594348222424795,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7781698853490657,
+          "color": 0.9896579835584463,
+          "content": 0.9460869565217391,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7837451168060747,
+          "color": 0.9868178757426042,
+          "content": 0.9405501330967169,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8130841383976775,
+          "color": 0.982427203065357,
+          "content": 0.7702265372168284,
+          "design_judge": 0.875,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "Uh77tei",
+      "reward": 0.8267246531054431,
+      "structure": 0.7889398968441703,
+      "color": 0.9862345805472377,
+      "content": 0.7317241350303643,
+      "design_judge": 0.8,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7842554956608796,
+          "color": 0.9873125143668272,
+          "content": 0.41721854304635764,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7703283901038985,
+          "color": 0.9896083399363406,
+          "content": 0.6283595922150138,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7803280376927476,
+          "color": 0.9865816264211799,
+          "content": 0.9427083333333334,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7825364744204337,
+          "color": 0.9875753133911364,
+          "content": 0.9194570135746607,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8272510863428926,
+          "color": 0.9800951086207039,
+          "content": 0.7508771929824561,
+          "design_judge": 0.875,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "WRknU4K",
+      "reward": 0.8312000633368453,
+      "structure": 0.7678707939665642,
+      "color": 0.9863145115104816,
+      "content": 0.8156149478703346,
+      "design_judge": 0.755,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.76145372190916,
+          "color": 0.9850366460514687,
+          "content": 0.8227571115973742,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.9
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7351155102197606,
+          "color": 0.9884583164286166,
+          "content": 0.6280193236714976,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7810560687586197,
+          "color": 0.9856921619448129,
+          "content": 0.9237435008665511,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7626541049083243,
+          "color": 0.9884103467994906,
+          "content": 0.9388489208633094,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7990745640369564,
+          "color": 0.9839750863280193,
+          "content": 0.7647058823529412,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "gfEyC5b",
+      "reward": 0.8393797254188465,
+      "structure": 0.7946760748155868,
+      "color": 0.9957480919552042,
+      "content": 0.7970947349045948,
+      "design_judge": 0.77,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7905936103623191,
+          "color": 0.9966189201504916,
+          "content": 0.7200000000000001,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7436394087102087,
+          "color": 0.9974142032364086,
+          "content": 0.616412213740458,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.8045915490333777,
+          "color": 0.9938414870095083,
+          "content": 0.9488291413703384,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7975170987405359,
+          "color": 0.9950947746135677,
+          "content": 0.9291479820627804,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8370387072314922,
+          "color": 0.995771074766045,
+          "content": 0.7710843373493976,
+          "design_judge": 0.875,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "jsi8XjM",
+      "reward": 0.821928044621233,
+      "structure": 0.7875999996212324,
+      "color": 0.9822547851931734,
+      "content": 0.7578573936705262,
+      "design_judge": 0.76,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7898235791020636,
+          "color": 0.9816762739847567,
+          "content": 0.5790884718498659,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7550699541775671,
+          "color": 0.9840717998588512,
+          "content": 0.6059443911792906,
+          "design_judge": 0.6749999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7854383695326672,
+          "color": 0.985059445952454,
+          "content": 0.9473684210526314,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.8056447394471137,
+          "color": 0.9819582404577016,
+          "content": 0.8798586572438163,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8020233558467508,
+          "color": 0.9785081657121033,
+          "content": 0.777027027027027,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "ompWS7g",
+      "reward": 0.8239477306079923,
+      "structure": 0.7862789926514755,
+      "color": 0.9946982462888837,
+      "content": 0.7348136834916101,
+      "design_judge": 0.78,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7799832369731853,
+          "color": 0.9960108069526279,
+          "content": 0.547486033519553,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7453513987803164,
+          "color": 0.9969755007773635,
+          "content": 0.5991902834008097,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.7940070707160368,
+          "color": 0.9932450864742308,
+          "content": 0.9212121212121213,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7867381285099461,
+          "color": 0.992005632634872,
+          "content": 0.905149051490515,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8253151282778929,
+          "color": 0.9952542046053247,
+          "content": 0.7010309278350515,
+          "design_judge": 0.875,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 1.0
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "rEwYoKQ",
+      "reward": 0.8252409885092831,
+      "structure": 0.7755189819199727,
+      "color": 0.9960048021469273,
+      "content": 0.7744401699702321,
+      "design_judge": 0.755,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7464565930644528,
+          "color": 0.9962766247928951,
+          "content": 0.6620689655172414,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "features": {
+          "present": true,
+          "structure": 0.7465090546045848,
+          "color": 0.9968833263148696,
+          "content": 0.6283524904214559,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.6,
+            "content_completeness": 0.6
+          }
+        },
+        "pricing": {
+          "present": true,
+          "structure": 0.781092279936996,
+          "color": 0.9959817211637328,
+          "content": 0.9430324276950044,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.8023526425744099,
+          "color": 0.9956788595129901,
+          "content": 0.940760389036251,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.8011843394194201,
+          "color": 0.9952034789501486,
+          "content": 0.697986577181208,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    }
+  ]
+}

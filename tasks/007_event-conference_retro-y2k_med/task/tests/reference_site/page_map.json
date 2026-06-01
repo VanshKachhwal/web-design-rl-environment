@@ -1,0 +1,30 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "schedule": {
+    "screenshot": "schedule.png",
+    "expected_file": "schedule.html"
+  },
+  "speakers": {
+    "screenshot": "speakers.png",
+    "expected_file": "speakers.html"
+  },
+  "tickets": {
+    "screenshot": "tickets.png",
+    "expected_file": "tickets.html"
+  },
+  "venue": {
+    "screenshot": "venue.png",
+    "expected_file": "venue.html"
+  },
+  "sponsors": {
+    "screenshot": "sponsors.png",
+    "expected_file": "sponsors.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

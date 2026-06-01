@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>News</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+        <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+        <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+        <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+        <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+      </svg>
+      <span class="header__logo-text">
+        Wellspring
+        <span class="header__logo-tagline">Community Health Foundation</span>
+      </span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="mission.html" class="header__nav-link">Mission</a>
+      <a href="programs.html" class="header__nav-link">Programs</a>
+      <a href="impact.html" class="header__nav-link">Impact</a>
+      <a href="events.html" class="header__nav-link">Events</a>
+      <a href="volunteer.html" class="header__nav-link">Volunteer</a>
+      <a href="news.html" class="header__nav-link">News</a>
+      <a href="partners.html" class="header__nav-link">Partners</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+      <a href="donate.html" class="header__cta">Donate</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">News &amp; Updates</span>
+        <h1 class="hero__title">Stories of Health, Hope &amp; Community</h1>
+        <p class="hero__subtitle">Stay informed with the latest announcements, research highlights, program updates, and community stories from Wellspring Community Health Foundation.</p>
+        <div class="hero__actions">
+          <a href="#latest-posts" class="hero__btn hero__btn--primary">Read Latest Posts</a>
+          <a href="#subscribe" class="hero__btn hero__btn--secondary">Subscribe to Updates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SIDEBAR LAYOUT with BLOG POST CARDS ═══ -->
+  <section class="container" id="latest-posts">
+    <div class="sidebar-layout">
+
+      <!-- ── Main Column ── -->
+      <div class="sidebar-layout__main">
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <span class="filter-bar__label">Filter:</span>
+          <a href="#latest-posts" class="filter-bar__btn filter-bar__btn--active">All</a>
+          <a href="#latest-posts" class="filter-bar__btn">Programs</a>
+          <a href="#latest-posts" class="filter-bar__btn">Community</a>
+          <a href="#latest-posts" class="filter-bar__btn">Research</a>
+          <a href="#latest-posts" class="filter-bar__btn">Events</a>
+          <a href="#latest-posts" class="filter-bar__btn">Partnerships</a>
+        </div>
+
+        <!-- Featured Post (large) -->
+        <div class="blog-post-card" style="margin-bottom: var(--space-8);">
+          <div class="blog-post-card__image blog-post-card__image--3">
+            <svg width="120" height="80" viewbox="0 0 120 80" fill="none" aria-hidden="true">
+              <rect x="10" y="15" width="100" height="50" rx="8" fill="rgba(255,255,255,0.3)"/>
+              <rect x="20" y="25" width="40" height="6" rx="3" fill="rgba(255,255,255,0.5)"/>
+              <rect x="20" y="35" width="60" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+              <rect x="20" y="43" width="50" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+              <circle cx="90" cy="40" r="12" fill="rgba(255,255,255,0.25)"/>
+              <path d="M86 40l3 3 5-6" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="blog-post-card__body">
+            <div class="blog-post-card__meta">
+              <span class="blog-post-card__date">2024-12-15</span>
+              <span class="badge badge--primary">Featured</span>
+              <span class="blog-post-card__category">Community</span>
+            </div>
+            <h2 class="blog-post-card__title">Wellspring Expands Free Health Screenings to Three New Neighborhoods</h2>
+            <p class="blog-post-card__excerpt">Starting January 2025, our mobile health screening program will reach three additional underserved neighborhoods, bringing preventive care directly to families who need it most. This expansion was made possible through generous donor support and a new partnership with regional health systems. Over 2,000 residents are expected to benefit in the first quarter alone.</p>
+            <a href="news.html" class="blog-post-card__link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Blog Post Grid -->
+        <div class="blog-grid">
+
+          <!-- Post 1 -->
+          <article class="blog-post-card">
+            <div class="blog-post-card__image blog-post-card__image--1">
+              <svg width="80" height="60" viewbox="0 0 80 60" fill="none" aria-hidden="true">
+                <rect x="10" y="10" width="60" height="40" rx="6" fill="rgba(255,255,255,0.3)"/>
+                <circle cx="30" cy="25" r="8" fill="rgba(255,255,255,0.4)"/>
+                <rect x="42" y="20" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+                <rect x="42" y="27" width="16" height="3" rx="1.5" fill="rgba(255,255,255,0.3)"/>
+                <rect x="15" y="38" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__date">2024-12-10</span>
+                <span class="blog-post-card__category">Programs</span>
+              </div>
+              <h3 class="blog-post-card__title">Youth Mental Health Workshop Series Launches in Spring</h3>
+              <p class="blog-post-card__excerpt">Our new six-week workshop series will equip teens and young adults with practical tools for managing stress, building resilience, and seeking support when they need it.</p>
+              <a href="programs.html" class="blog-post-card__link">Learn More →</a>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="blog-post-card">
+            <div class="blog-post-card__image blog-post-card__image--2">
+              <svg width="80" height="60" viewbox="0 0 80 60" fill="none" aria-hidden="true">
+                <rect x="15" y="35" width="8" height="15" rx="2" fill="rgba(255,255,255,0.4)"/>
+                <rect x="27" y="25" width="8" height="25" rx="2" fill="rgba(255,255,255,0.5)"/>
+                <rect x="39" y="18" width="8" height="32" rx="2" fill="rgba(255,255,255,0.4)"/>
+                <rect x="51" y="12" width="8" height="38" rx="2" fill="rgba(255,255,255,0.5)"/>
+                <line x1="12" y1="52" x2="65" y2="52" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__date">2024-12-05</span>
+                <span class="blog-post-card__category">Research</span>
+              </div>
+              <h3 class="blog-post-card__title">New Study Confirms Impact of Community Health Workers</h3>
+              <p class="blog-post-card__excerpt">Independent research validates that our community health worker program has reduced emergency room visits by 34% among enrolled participants over the past two years.</p>
+              <a href="impact.html" class="blog-post-card__link">See Our Impact →</a>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="blog-post-card">
+            <div class="blog-post-card__image blog-post-card__image--1">
+              <svg width="80" height="60" viewbox="0 0 80 60" fill="none" aria-hidden="true">
+                <circle cx="40" cy="28" r="16" fill="rgba(255,255,255,0.3)"/>
+                <path d="M34 28h12M40 22v12" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+                <rect x="15" y="48" width="50" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__date">2024-11-28</span>
+                <span class="blog-post-card__category">Programs</span>
+              </div>
+              <h3 class="blog-post-card__title">Maternal Health Initiative Reaches 500 Families Milestone</h3>
+              <p class="blog-post-card__excerpt">Our prenatal and postnatal support program has now served over 500 families, providing nutrition counseling, wellness check-ups, and new parent education.</p>
+              <a href="programs.html" class="blog-post-card__link">Explore Programs →</a>
+            </div>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="blog-post-card">
+            <div class="blog-post-card__image blog-post-card__image--3">
+              <svg width="80" height="60" viewbox="0 0 80 60" fill="none" aria-hidden="true">
+                <rect x="12" y="12" width="56" height="36" rx="6" fill="rgba(255,255,255,0.25)"/>
+                <circle cx="28" cy="30" r="6" fill="rgba(255,255,255,0.35)"/>
+                <circle cx="40" cy="30" r="6" fill="rgba(255,255,255,0.35)"/>
+                <circle cx="52" cy="30" r="6" fill="rgba(255,255,255,0.35)"/>
+                <line x1="28" y1="30" x2="52" y2="30" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__date">2024-11-20</span>
+                <span class="blog-post-card__category">Events</span>
+              </div>
+              <h3 class="blog-post-card__title">Annual Gala Raises Record $1.2M for Community Programs</h3>
+              <p class="blog-post-card__excerpt">This year's Wellspring Gala brought together over 400 supporters and community leaders, raising a record-breaking amount to fund health programs throughout 2025.</p>
+              <a href="events.html" class="blog-post-card__link">View Events →</a>
+            </div>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="blog-post-card">
+            <div class="blog-post-card__image blog-post-card__image--2">
+              <svg width="80" height="60" viewbox="0 0 80 60" fill="none" aria-hidden="true">
+                <path d="M20 40 Q30 15, 40 25 Q50 35, 60 18" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <circle cx="60" cy="18" r="4" fill="rgba(255,255,255,0.5)"/>
+                <rect x="15" y="48" width="50" height="2" rx="1" fill="rgba(255,255,255,0.2)"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__date">2024-11-12</span>
+                <span class="blog-post-card__category">Community</span>
+              </div>
+              <h3 class="blog-post-card__title">Volunteer Spotlight: Meet the People Behind Our Mission</h3>
+              <p class="blog-post-card__excerpt">From retired nurses to college students, our volunteers are the heart of Wellspring. This month we highlight three extraordinary individuals making a difference every day.</p>
+              <a href="volunteer.html" class="blog-post-card__link">Get Involved →</a>
+            </div>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="blog-post-card">
+            <div class="blog-post-card__image blog-post-card__image--1">
+              <svg width="80" height="60" viewbox="0 0 80 60" fill="none" aria-hidden="true">
+                <rect x="18" y="14" width="44" height="32" rx="4" fill="rgba(255,255,255,0.25)"/>
+                <path d="M26 26l8 6 14-12" stroke="rgba(255,255,255,0.55)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="22" y="38" width="36" height="3" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+              </svg>
+            </div>
+            <div class="blog-post-card__body">
+              <div class="blog-post-card__meta">
+                <span class="blog-post-card__date">2024-11-05</span>
+                <span class="blog-post-card__category">Partnerships</span>
+              </div>
+              <h3 class="blog-post-card__title">New Partnership with Regional Hospital Network Announced</h3>
+              <p class="blog-post-card__excerpt">Wellspring has partnered with three regional hospitals to create seamless referral pathways, ensuring community members receive timely specialty care when needed.</p>
+              <a href="partners.html" class="blog-post-card__link">Our Partners →</a>
+            </div>
+          </article>
+
+        </div>
+        <!-- end blog-grid -->
+
+      </div>
+      <!-- end main column -->
+
+      <!-- ── Sidebar ── -->
+      <aside class="sidebar-layout__sidebar">
+
+        <!-- Categories Widget -->
+        <div class="sidebar-layout__widget">
+          <h4 class="sidebar-layout__widget-title">Categories</h4>
+          <ul class="sidebar-layout__widget-list">
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                Community
+                <span class="badge badge--warm" style="margin-left: var(--space-2);">12</span>
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                Programs
+                <span class="badge badge--primary" style="margin-left: var(--space-2);">9</span>
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                Research
+                <span class="badge badge--sky" style="margin-left: var(--space-2);">6</span>
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                Events
+                <span class="badge badge--lavender" style="margin-left: var(--space-2);">8</span>
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                Partnerships
+                <span class="badge badge--accent" style="margin-left: var(--space-2);">4</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Trending Tags Widget -->
+        <div class="sidebar-layout__widget">
+          <h4 class="sidebar-layout__widget-title">Trending Topics</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+            <span class="badge badge--primary">Preventive Care</span>
+            <span class="badge badge--secondary">Mental Health</span>
+            <span class="badge badge--accent">Nutrition</span>
+            <span class="badge badge--lavender">Youth Programs</span>
+            <span class="badge badge--sky">Telehealth</span>
+            <span class="badge badge--warm">Maternal Health</span>
+            <span class="badge badge--outline">Equity</span>
+            <span class="badge badge--primary">Wellness</span>
+            <span class="badge badge--secondary">Outreach</span>
+          </div>
+        </div>
+
+        <!-- Recent Posts Widget -->
+        <div class="sidebar-layout__widget">
+          <h4 class="sidebar-layout__widget-title">Recent Posts</h4>
+          <ul class="sidebar-layout__widget-list">
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-gray-400); display: block;">2024-12-15</span>
+                Free Health Screenings Expansion
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-gray-400); display: block;">2024-12-10</span>
+                Youth Mental Health Workshops
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-gray-400); display: block;">2024-12-05</span>
+                Community Health Worker Study
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-gray-400); display: block;">2024-11-28</span>
+                Maternal Health Milestone
+              </a>
+            </li>
+            <li>
+              <a href="news.html" class="sidebar-layout__widget-link">
+                <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-gray-400); display: block;">2024-11-20</span>
+                Annual Gala Recap
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links Widget -->
+        <div class="sidebar-layout__widget">
+          <h4 class="sidebar-layout__widget-title">Quick Links</h4>
+          <ul class="sidebar-layout__widget-list">
+            <li><a href="programs.html" class="sidebar-layout__widget-link">Our Programs</a></li>
+            <li><a href="events.html" class="sidebar-layout__widget-link">Upcoming Events</a></li>
+            <li><a href="volunteer.html" class="sidebar-layout__widget-link">Become a Volunteer</a></li>
+            <li><a href="donate.html" class="sidebar-layout__widget-link">Make a Donation</a></li>
+            <li><a href="contact.html" class="sidebar-layout__widget-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Impact Badge Widget -->
+        <div class="sidebar-layout__widget" style="text-align: center;">
+          <div class="award-badge" style="margin-inline: auto;">
+            <div class="award-badge__icon">
+              <svg width="32" height="32" viewbox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M16 4l3.5 7 7.5 1.1-5.4 5.3 1.3 7.6L16 21.5l-6.9 3.5 1.3-7.6L5 12.1l7.5-1.1z" fill="rgba(255,255,255,0.9)" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
+              </svg>
+            </div>
+            <span class="award-badge__title">Trusted Source</span>
+            <span class="award-badge__year">Since 2012</span>
+          </div>
+          <p style="font-family: var(--font-text); font-size: var(--text-xs); color: var(--color-gray-500); margin-top: var(--space-2);">Recognized for transparent and impactful community health reporting.</p>
+        </div>
+
+      </aside>
+
+    </div>
+    <!-- end sidebar-layout -->
+  </section>
+
+  <!-- ═══ NEWSLETTER SIGNUP ═══ -->
+  <section class="container" id="subscribe" style="padding-bottom: var(--space-20);">
+    <div class="newsletter-signup">
+      <h2 class="newsletter-signup__title">Never Miss an Update</h2>
+      <p class="newsletter-signup__text">Subscribe to the Wellspring newsletter and receive the latest news, program announcements, and community health insights delivered to your inbox every month.</p>
+      <form class="newsletter-signup__form" action="#" method="post">
+        <input type="email" class="newsletter-signup__input" placeholder="Enter your email address" aria-label="Email address" required>
+        <button type="submit" class="newsletter-signup__btn">Subscribe</button>
+      </form>
+      <p style="font-family: var(--font-text); font-size: var(--text-xs); color: var(--color-gray-400); margin-top: var(--space-3);">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="container" style="padding-bottom: var(--space-24);">
+    <div class="cta-banner">
+      <h2 class="cta-banner__title">Have a Story to Share?</h2>
+      <p class="cta-banner__text">We love hearing from our community. Whether you've benefited from a Wellspring program, volunteered at an event, or have a health topic you'd like us to cover — we want to hear from you.</p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="cta-banner__btn cta-banner__btn--primary">Get in Touch</a>
+        <a href="volunteer.html" class="cta-banner__btn cta-banner__btn--secondary">Join Our Team</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" style="margin-bottom:var(--space-2);display:inline-flex;">
+          <svg width="36" height="36" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+            <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+            <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+            <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+            <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+          </svg>
+          <span class="header__logo-text">
+            Wellspring
+            <span class="header__logo-tagline">Community Health Foundation</span>
+          </span>
+        </a>
+        <p class="footer__brand-text">
+          Nurturing holistic wellness in underserved communities since 2008. Together, we build healthier futures through compassion, education, and accessible care.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Organization</h4>
+        <ul class="footer__links">
+          <li><a href="mission.html" class="footer__link">Our Mission</a></li>
+          <li><a href="programs.html" class="footer__link">Programs</a></li>
+          <li><a href="impact.html" class="footer__link">Impact</a></li>
+          <li><a href="partners.html" class="footer__link">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Get Involved</h4>
+        <ul class="footer__links">
+          <li><a href="donate.html" class="footer__link">Donate</a></li>
+          <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+          <li><a href="events.html" class="footer__link">Events</a></li>
+          <li><a href="news.html" class="footer__link">News</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          <li><span class="footer__link">info@wellspringchf.org</span></li>
+          <li><span class="footer__link">(555) 234-5678</span></li>
+          <li><span class="footer__link">200 Wellness Way, Suite 100</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Wellspring Community Health Foundation. All rights reserved. A 501(c)(3) nonprofit organization.</p>
+      <div class="footer__social">
+        <span class="footer__social-icon" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2.5H10.5V0H9C7.34 0 6 1.34 6 3V5H4V7.5H6V16H8.5V7.5H10.5L11 5H8.5V3C8.5 2.72 8.72 2.5 9 2.5Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="14" rx="4" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="8" cy="8" r="3.5" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="12.5" cy="3.5" r="1" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Twitter / X">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L7 8.5L2 14H3.5L7.75 9.5L11 14H14L9 7.5L14 2H12.5L8.25 6.5L5 2H2Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="3" height="9" fill="#8a7e72" rx="0.5"/><circle cx="2.5" cy="3" r="1.8" fill="#8a7e72"/><path d="M6 6H9V7.2C9.5 6.4 10.5 5.8 11.5 5.8C13.5 5.8 14.5 7 14.5 9.5V15H11.5V10C11.5 9 11 8.5 10.2 8.5C9.3 8.5 8.8 9.2 8.8 10.2V15H6V6Z" fill="#8a7e72"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

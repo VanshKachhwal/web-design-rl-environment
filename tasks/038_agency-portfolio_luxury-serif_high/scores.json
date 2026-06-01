@@ -1,0 +1,1435 @@
+{
+  "meta": {
+    "task_id": "038_agency-portfolio_luxury-serif_high",
+    "seed_tuple": [
+      "agency-portfolio",
+      "luxury-serif",
+      "high",
+      "creative-professionals",
+      "rebellious-and-edgy"
+    ],
+    "archetype": "agency-portfolio",
+    "aesthetic": "luxury-serif",
+    "complexity": "high",
+    "model": "claude-opus-4-7",
+    "agent": "claude-code",
+    "executor": "modal",
+    "n_trials": 10,
+    "total_cost_usd": 32.260293499999996,
+    "total_input_tokens": 30239111,
+    "total_output_tokens": 513648,
+    "started_at": "2026-06-01T04:15:55.084197",
+    "finished_at": "2026-06-01T04:36:24.032372",
+    "wall_clock_sec": 1228.948175,
+    "date": "2026-06-01",
+    "commit": "fd7c5311b6ae7fbe07c534662a9b313d1a6931f7"
+  },
+  "terms": [
+    "structure",
+    "color",
+    "content",
+    "design_judge"
+  ],
+  "trials": [
+    {
+      "trial_id": "2JsBHaS",
+      "reward": 0.7514445970840494,
+      "structure": 0.735840084658052,
+      "color": 0.985643422321073,
+      "content": 0.534294881357073,
+      "design_judge": 0.75,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7536046031771693,
+          "color": 0.9869972304520629,
+          "content": 0.5814814814814815,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7320970982053548,
+          "color": 0.978309386690035,
+          "content": 0.6200873362445416,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.7277824501209467,
+          "color": 0.9811161241011382,
+          "content": 0.47696476964769646,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7284032728386324,
+          "color": 0.9870311119648776,
+          "content": 0.4556752278376139,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.7406273734859737,
+          "color": 0.9863703753825613,
+          "content": 0.5090016366612112,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.7093418519761717,
+          "color": 0.9880238368173183,
+          "content": 0.4850818094321463,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7341159945394885,
+          "color": 0.9814172713953168,
+          "content": 0.42800944138473646,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.7286228079502366,
+          "color": 0.98517536148715,
+          "content": 0.4865671641791045,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7237473788621638,
+          "color": 0.9845465935469057,
+          "content": 0.5379746835443038,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7800580154243818,
+          "color": 0.9974469313733634,
+          "content": 0.7621052631578948,
+          "design_judge": 0.8500000000000001,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "3wH5V5x",
+      "reward": 0.7337329912211807,
+      "structure": 0.7075668964642041,
+      "color": 0.9728678777461474,
+      "content": 0.5394971906743715,
+      "design_judge": 0.7150000000000001,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.6841826925092145,
+          "color": 0.9732437237974664,
+          "content": 0.5580589254766032,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.6872492706261834,
+          "color": 0.9634024944228176,
+          "content": 0.5816733067729083,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.7111487658120907,
+          "color": 0.9725481535481975,
+          "content": 0.5058977719528178,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.685560029940204,
+          "color": 0.9752736310971358,
+          "content": 0.48617886178861786,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.7361656454167154,
+          "color": 0.9725914876489901,
+          "content": 0.5094806265457543,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6678206179309882,
+          "color": 0.9745160744002199,
+          "content": 0.5101663585951941,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7077255011610208,
+          "color": 0.9756855133835626,
+          "content": 0.3762711864406779,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.725288319920542,
+          "color": 0.9714148984024117,
+          "content": 0.5642857142857143,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.730735741475453,
+          "color": 0.9762142525456229,
+          "content": 0.5594808940158615,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7397923798496295,
+          "color": 0.9737885482150498,
+          "content": 0.7434782608695651,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "9hYxY8a",
+      "reward": 0.7467914326589649,
+      "structure": 0.7204257021153302,
+      "color": 0.9850049042097474,
+      "content": 0.559235124310782,
+      "design_judge": 0.7224999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7017825351404628,
+          "color": 0.9817191427201928,
+          "content": 0.5477477477477477,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7302100473348736,
+          "color": 0.978525972073111,
+          "content": 0.7164179104477612,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.6980751279151843,
+          "color": 0.9871411749286358,
+          "content": 0.4686192468619247,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7325807616595423,
+          "color": 0.9873228111858222,
+          "content": 0.505804311774461,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.7524635674847568,
+          "color": 0.9833870206055415,
+          "content": 0.5057675244010648,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6742171409981874,
+          "color": 0.9851959611218833,
+          "content": 0.537878787878788,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7145007337353758,
+          "color": 0.9848986699899049,
+          "content": 0.3604757548032937,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.5
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.7120861101914747,
+          "color": 0.9811943135469697,
+          "content": 0.5871794871794872,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7134701286170251,
+          "color": 0.9860435732774462,
+          "content": 0.5418326693227091,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7748708680764196,
+          "color": 0.9946204026479658,
+          "content": 0.8206278026905829,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "D3R9oFB",
+      "reward": 0.7422797065218598,
+      "structure": 0.6994832720444204,
+      "color": 0.9826059826533641,
+      "content": 0.5370295713896545,
+      "design_judge": 0.75,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.6935836134650104,
+          "color": 0.9799954447562628,
+          "content": 0.5306122448979592,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7341047513680639,
+          "color": 0.9791370148257463,
+          "content": 0.6846846846846847,
+          "design_judge": 0.8500000000000001,
+          "sub_scores": {
+            "layout_alignment": 0.8,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.676009434027189,
+          "color": 0.9729313150919474,
+          "content": 0.436046511627907,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7121648740338108,
+          "color": 0.9862256813129364,
+          "content": 0.48512173128945,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.6678632821339375,
+          "color": 0.9891655818380474,
+          "content": 0.49310344827586206,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.657602208068378,
+          "color": 0.9841607029744329,
+          "content": 0.4661190965092402,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.6760499093182136,
+          "color": 0.9814424775833259,
+          "content": 0.38235294117647056,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.7100279170410155,
+          "color": 0.9747758857919607,
+          "content": 0.5817245817245816,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.6938416513356895,
+          "color": 0.9840128767859335,
+          "content": 0.48535564853556484,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7735850796528956,
+          "color": 0.9942128455730477,
+          "content": 0.8251748251748252,
+          "design_judge": 0.825,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "HufxrKX",
+      "reward": 0.7401162605536069,
+      "structure": 0.7144323980892636,
+      "color": 0.9795938299005824,
+      "content": 0.5289388142245813,
+      "design_judge": 0.7375,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7012784044930842,
+          "color": 0.9806015918237438,
+          "content": 0.5325443786982249,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7211662581493812,
+          "color": 0.9681555546144327,
+          "content": 0.7461139896373057,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.7107593909582299,
+          "color": 0.9798895883334436,
+          "content": 0.4848484848484848,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7213257489841924,
+          "color": 0.982134742124264,
+          "content": 0.47224669603524233,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.6966796900475022,
+          "color": 0.9761332214392916,
+          "content": 0.49702127659574463,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6672601864142037,
+          "color": 0.9798215791357743,
+          "content": 0.4422110552763819,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7331294509724947,
+          "color": 0.9800582507211648,
+          "content": 0.3330249768732655,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.7272895061708311,
+          "color": 0.9757893857077997,
+          "content": 0.4610169491525423,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7007686996262388,
+          "color": 0.9827037995073382,
+          "content": 0.5381589299763965,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7646666450764782,
+          "color": 0.9906505855985721,
+          "content": 0.7822014051522248,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "KACxe2y",
+      "reward": 0.7442372002497463,
+      "structure": 0.7318196436110188,
+      "color": 0.9827063333134907,
+      "content": 0.5374228240744756,
+      "design_judge": 0.725,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7344687052316069,
+          "color": 0.9806883210291722,
+          "content": 0.5704697986577181,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7363397370935164,
+          "color": 0.975399580255785,
+          "content": 0.5737051792828686,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 0.9
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.7325548902470072,
+          "color": 0.9829596546013653,
+          "content": 0.4617380025940337,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7290540498384644,
+          "color": 0.9851178141915958,
+          "content": 0.500805152979066,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.7533426669100036,
+          "color": 0.9834231902181519,
+          "content": 0.47297297297297297,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6841935962812772,
+          "color": 0.9790988819053571,
+          "content": 0.5118483412322274,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7309570696047868,
+          "color": 0.9855977663413841,
+          "content": 0.4044409199048374,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.704655903542019,
+          "color": 0.9752160723965607,
+          "content": 0.6029776674937966,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7163742129674744,
+          "color": 0.9846530948461935,
+          "content": 0.49415432579890883,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7962556043940325,
+          "color": 0.9949089573493415,
+          "content": 0.7811158798283262,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "NDo6buR",
+      "reward": 0.749044255093988,
+      "structure": 0.714174581136123,
+      "color": 0.9824333557347307,
+      "content": 0.5570690835050984,
+      "design_judge": 0.7424999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.6880049317915143,
+          "color": 0.9791774978978003,
+          "content": 0.6000000000000001,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.6782416356828435,
+          "color": 0.9743877349159991,
+          "content": 0.704225352112676,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.6847293100466068,
+          "color": 0.9828410346618914,
+          "content": 0.4385692068429237,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7216512306963614,
+          "color": 0.9876311069222551,
+          "content": 0.4929225645295587,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.757149842012362,
+          "color": 0.9793042475425123,
+          "content": 0.46273830155979206,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6821954201717031,
+          "color": 0.9839224803415697,
+          "content": 0.5077220077220077,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7433445784230371,
+          "color": 0.9829154322268404,
+          "content": 0.4407039020657995,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.6843715092065145,
+          "color": 0.9727338044774098,
+          "content": 0.5883777239709443,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7076994164340202,
+          "color": 0.9864609420429519,
+          "content": 0.5121759622937941,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7943579368962669,
+          "color": 0.9949592763180778,
+          "content": 0.8232558139534883,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "QLcPvzE",
+      "reward": 0.7439702730418337,
+      "structure": 0.7262547319123311,
+      "color": 0.9824748491889022,
+      "content": 0.5421515110661016,
+      "design_judge": 0.725,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7528597690315525,
+          "color": 0.9843072830459373,
+          "content": 0.5445205479452055,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7501801950769386,
+          "color": 0.9717009233299072,
+          "content": 0.7717391304347826,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.6938487434623555,
+          "color": 0.9810420137011568,
+          "content": 0.45429362880886426,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7220757302700594,
+          "color": 0.985235904634209,
+          "content": 0.4533333333333333,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.7417440251413139,
+          "color": 0.9839249720644717,
+          "content": 0.5161290322580645,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.6,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6766686297954263,
+          "color": 0.9847417701547655,
+          "content": 0.5013979496738118,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.740368159982657,
+          "color": 0.9882174164195063,
+          "content": 0.4160866202629544,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.7344704045284466,
+          "color": 0.9776611542085254,
+          "content": 0.507269789983845,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7145709497594729,
+          "color": 0.9844057217392845,
+          "content": 0.5362210604929052,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7357607120750888,
+          "color": 0.983511332591258,
+          "content": 0.7205240174672489,
+          "design_judge": 0.625,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.5,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "cwRa77U",
+      "reward": 0.7368396288718738,
+      "structure": 0.7066187778589412,
+      "color": 0.976074469314485,
+      "content": 0.5171652683140688,
+      "design_judge": 0.7474999999999999,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.7087480277953035,
+          "color": 0.9762458774499725,
+          "content": 0.5598526703499079,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.7342959123211785,
+          "color": 0.9715738372572268,
+          "content": 0.6026200873362445,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.6832958444376569,
+          "color": 0.9745200684141699,
+          "content": 0.4806629834254143,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.7204487234780953,
+          "color": 0.9784253431191373,
+          "content": 0.4529558701082431,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.6997635921198397,
+          "color": 0.9783925728298885,
+          "content": 0.4716666666666667,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6767886676249991,
+          "color": 0.9762423757081802,
+          "content": 0.5168949771689497,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.6749494750710461,
+          "color": 0.9761087303253968,
+          "content": 0.37249782419495214,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.7258768222241898,
+          "color": 0.9764218078660349,
+          "content": 0.46533127889060094,
+          "design_judge": 0.8,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.709075275805307,
+          "color": 0.9777704106688544,
+          "content": 0.47665847665847666,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7329454377117969,
+          "color": 0.9750436695059899,
+          "content": 0.7725118483412322,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.6,
+            "typography": 0.7,
+            "content_completeness": 0.9
+          }
+        }
+      }
+    },
+    {
+      "trial_id": "gGvA7Tt",
+      "reward": 0.725481721315181,
+      "structure": 0.6896843172561044,
+      "color": 0.9815013072519541,
+      "content": 0.5182412607526656,
+      "design_judge": 0.7125,
+      "pages": {
+        "index": {
+          "present": true,
+          "structure": 0.739138643621909,
+          "color": 0.9820412290274558,
+          "content": 0.5346869712351946,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "work": {
+          "present": true,
+          "structure": 0.6463430300521813,
+          "color": 0.9603331859717413,
+          "content": 0.5328185328185329,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.7,
+            "typography": 0.8,
+            "content_completeness": 0.8
+          }
+        },
+        "case-studies": {
+          "present": true,
+          "structure": 0.6946411349196342,
+          "color": 0.9751576740781853,
+          "content": 0.45521292217327464,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "services": {
+          "present": true,
+          "structure": 0.6487205578673009,
+          "color": 0.9884766362297285,
+          "content": 0.44041450777202074,
+          "design_judge": 0.725,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "process": {
+          "present": true,
+          "structure": 0.6502557577532776,
+          "color": 0.9810376709220281,
+          "content": 0.47168216398985624,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.7
+          }
+        },
+        "about": {
+          "present": true,
+          "structure": 0.6488554595631144,
+          "color": 0.9847338147695368,
+          "content": 0.4960629921259842,
+          "design_judge": 0.675,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "team": {
+          "present": true,
+          "structure": 0.7018735521356018,
+          "color": 0.9847152412428719,
+          "content": 0.3890784982935154,
+          "design_judge": 0.6499999999999999,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.6
+          }
+        },
+        "journal": {
+          "present": true,
+          "structure": 0.6812371492727101,
+          "color": 0.9768391502371863,
+          "content": 0.5491606714628297,
+          "design_judge": 0.7,
+          "sub_scores": {
+            "layout_alignment": 0.6,
+            "color_palette": 0.7,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        },
+        "careers": {
+          "present": true,
+          "structure": 0.7255700296410063,
+          "color": 0.9876193116412598,
+          "content": 0.5461720599842147,
+          "design_judge": 0.775,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.9,
+            "typography": 0.8,
+            "content_completeness": 0.7
+          }
+        },
+        "contact": {
+          "present": true,
+          "structure": 0.7602078577343077,
+          "color": 0.9940591583995476,
+          "content": 0.7671232876712328,
+          "design_judge": 0.75,
+          "sub_scores": {
+            "layout_alignment": 0.7,
+            "color_palette": 0.8,
+            "typography": 0.7,
+            "content_completeness": 0.8
+          }
+        }
+      }
+    }
+  ]
+}

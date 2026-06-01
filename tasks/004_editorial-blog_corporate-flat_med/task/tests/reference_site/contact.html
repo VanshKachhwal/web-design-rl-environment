@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Contact</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="EduPulse Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#E8753A"/>
+        <path d="M8 26V12L18 7L28 12V26" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 17h10M13 21h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="12" r="2" fill="#fff"/>
+      </svg>
+      <span>EduPulse</span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="articles.html" class="header__nav-link">Articles</a>
+      <a href="topics.html" class="header__nav-link">Topics</a>
+      <a href="featured.html" class="header__nav-link">Featured</a>
+      <a href="authors.html" class="header__nav-link">Authors</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- ============================================================
+       HEADER SECTION (Page Hero)
+       ============================================================ -->
+  <section class="hero--teal hero" style="padding: var(--space-16) 0;">
+    <div class="hero__inner" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <span class="hero__eyebrow" style="background-color: var(--color-teal-100); color: var(--color-teal-600);">Get In Touch</span>
+      <h1 class="hero__title" style="text-align: center; margin-left: auto; margin-right: auto;">Contact Us</h1>
+      <p class="hero__text" style="text-align: center; margin-left: auto; margin-right: auto;">Have a question, suggestion, or just want to say hello? We'd love to hear from you. Reach out using any of the methods below and we'll get back to you as soon as possible.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT-BLOCK + FORM SECTION (Split Layout)
+       ============================================================ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="split-screen" style="padding-top: 0; padding-bottom: 0;">
+
+        <!-- Left: Contact Information Block -->
+        <div class="split-screen__content" style="gap: var(--space-6);">
+          <div class="contact-block">
+            <h2 class="contact-block__title">Contact Information</h2>
+            <div class="contact-block__items">
+
+              <!-- Email -->
+              <div class="contact-block__item">
+                <div class="contact-block__icon">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="4" width="16" height="12" rx="2" stroke="var(--color-orange-500)" stroke-width="1.5" fill="none"/>
+                    <path d="M2 6l8 5 8-5" stroke="var(--color-orange-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-block__item-label">Email</div>
+                  <div class="contact-block__item-value">
+                    <a href="mailto:hello@edupulse.com" style="color: var(--color-gray-800); text-decoration: none;">hello@edupulse.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-block__item">
+                <div class="contact-block__icon contact-block__icon--teal">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 3h3l2 4-2.5 1.5A9 9 0 0011.5 12.5L13 10l4 2v3a2 2 0 01-2 2A14 14 0 013 5a2 2 0 012-2z" stroke="var(--color-teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-block__item-label">Phone</div>
+                  <div class="contact-block__item-value">
+                    <a href="tel:+15551234567" style="color: var(--color-gray-800); text-decoration: none;">+1 (555) 123-4567</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="contact-block__item">
+                <div class="contact-block__icon">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2C6.69 2 4 4.69 4 8c0 4.5 6 10 6 10s6-5.5 6-10c0-3.31-2.69-6-6-6z" stroke="var(--color-orange-500)" stroke-width="1.5" fill="none"/>
+                    <circle cx="10" cy="8" r="2" stroke="var(--color-orange-500)" stroke-width="1.5" fill="none"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-block__item-label">Address</div>
+                  <div class="contact-block__item-value">742 Innovation Drive, Suite 200<br>San Francisco, CA 94107</div>
+                </div>
+              </div>
+
+              <!-- Office Hours -->
+              <div class="contact-block__item">
+                <div class="contact-block__icon contact-block__icon--teal">
+                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10" cy="10" r="7.5" stroke="var(--color-teal-500)" stroke-width="1.5" fill="none"/>
+                    <path d="M10 6v4l3 2" stroke="var(--color-teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-block__item-label">Office Hours</div>
+                  <div class="contact-block__item-value">Monday – Friday: 9:00 AM – 6:00 PM (PST)<br>Saturday – Sunday: Closed</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="about.html" class="btn btn--outline">About Us</a>
+            <a href="articles.html" class="btn btn--outline">Browse Articles</a>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div>
+          <div style="background-color: var(--surface-primary); border-radius: var(--radius-xl); border: var(--border-thin); padding: var(--space-8); box-shadow: var(--shadow-md);">
+            <h3 style="font-family: var(--font-alt); font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--color-gray-900); margin-bottom: var(--space-2);">Send Us a Message</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-gray-500); margin-bottom: var(--space-6); line-height: var(--leading-relaxed);">Fill out the form below and we'll respond within 24 hours.</p>
+
+            <form action="#" method="post">
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-field__label" for="first-name">First Name <span class="form-field__required">*</span></label>
+                  <input class="form-field__input" type="text" id="first-name" name="first-name" placeholder="Jane" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="last-name">Last Name <span class="form-field__required">*</span></label>
+                  <input class="form-field__input" type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-field__label" for="email">Email Address <span class="form-field__required">*</span></label>
+                <input class="form-field__input" type="email" id="email" name="email" placeholder="jane@example.com" required>
+              </div>
+
+              <div class="form-field">
+                <label class="form-field__label" for="subject">Subject</label>
+                <select class="form-field__select" id="subject" name="subject">
+                  <option value="">Select a topic…</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="content">Content Submission</option>
+                  <option value="technical">Technical Issue</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-field__hint">Choose the topic that best fits your inquiry.</span>
+              </div>
+
+              <div class="form-field">
+                <label class="form-field__label" for="message">Message <span class="form-field__required">*</span></label>
+                <textarea class="form-field__textarea" id="message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+                <span class="form-field__hint">Minimum 20 characters.</span>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+                <button type="reset" class="btn btn--outline">Clear Form</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MAP-EMBED-PLACEHOLDER SECTION
+       ============================================================ -->
+  <section class="content-section content-section--alt">
+    <div class="container">
+      <div class="content-section__header content-section__header--center" style="margin-bottom: var(--space-8);">
+        <span class="content-section__eyebrow">Our Location</span>
+        <h2 class="content-section__title">Find Us on the Map</h2>
+        <p class="content-section__subtitle" style="margin-left: auto; margin-right: auto;">We're located in the heart of San Francisco's innovation district.</p>
+      </div>
+
+      <div class="map-embed-placeholder">
+        <div class="map-embed-placeholder__icon">
+          <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3C9.03 3 5 7.03 5 12c0 6.3 9 14 9 14s9-7.7 9-14c0-4.97-4.03-9-9-9z" stroke="var(--color-gray-500)" stroke-width="2" fill="none"/>
+            <circle cx="14" cy="12" r="3" stroke="var(--color-gray-500)" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="map-embed-placeholder__label">Interactive Map Placeholder</div>
+        <div class="map-embed-placeholder__address">742 Innovation Drive, Suite 200<br>San Francisco, CA 94107</div>
+        <div class="map-embed-placeholder__grid">
+          <svg class="map-embed-placeholder__pin" width="24" height="32" viewbox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C6.48 0 2 4.48 2 10c0 7.5 10 22 10 22s10-14.5 10-22C22 4.48 17.52 0 12 0z" fill="var(--color-orange-500)"/>
+            <circle cx="12" cy="10" r="4" fill="var(--color-white)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ SECTION
+       ============================================================ -->
+  <section class="content-section">
+    <div class="container">
+      <div class="faq" style="padding-top: 0;">
+        <div class="faq__header">
+          <h2 class="faq__title">Frequently Asked Questions</h2>
+          <p class="faq__subtitle">Quick answers to common questions about reaching us and working with EduPulse.</p>
+        </div>
+
+        <div class="faq__list">
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <span class="faq__q-icon">Q</span>
+              <span>How quickly will I receive a response?</span>
+            </div>
+            <p class="faq__answer">We aim to respond to all inquiries within 24 business hours. For urgent matters, please call us directly during office hours and we'll do our best to assist you immediately.</p>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <span class="faq__q-icon">Q</span>
+              <span>Can I submit an article or guest post?</span>
+            </div>
+            <p class="faq__answer">Absolutely! We welcome content submissions from educators, researchers, and thought leaders. Select "Content Submission" in the subject dropdown of our contact form, and include a brief outline of your proposed topic. You can also browse our existing <a href="articles.html">articles</a> for inspiration.</p>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <span class="faq__q-icon">Q</span>
+              <span>Are you open to partnerships and collaborations?</span>
+            </div>
+            <p class="faq__answer">Yes, we're always looking for meaningful partnerships with educational institutions, content creators, and organizations aligned with our mission. Choose "Partnership Opportunity" in the contact form to get the conversation started.</p>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <span class="faq__q-icon">Q</span>
+              <span>I'm experiencing a technical issue with the site. What should I do?</span>
+            </div>
+            <p class="faq__answer">We're sorry for the inconvenience. Please use the contact form above and select "Technical Issue" as the subject. Include details about the problem, your browser, and any error messages you're seeing, and our team will investigate promptly.</p>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <span class="faq__q-icon">Q</span>
+              <span>Where can I learn more about the EduPulse team?</span>
+            </div>
+            <p class="faq__answer">Visit our <a href="about.html">About page</a> to learn about our mission, values, and the people behind EduPulse. You can also explore our <a href="authors.html">Authors page</a> to see the contributors who make our content possible.</p>
+          </div>
+
+          <div class="faq__item">
+            <div class="faq__question">
+              <span class="faq__q-icon">Q</span>
+              <span>How can I stay updated with new content?</span>
+            </div>
+            <p class="faq__answer">Check our <a href="featured.html">Featured page</a> for hand-picked highlights, or browse by <a href="topics.html">Topics</a> to find content areas that interest you most. We regularly publish new articles across a wide range of educational subjects.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BANNER (Bottom)
+       ============================================================ -->
+  <section class="content-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="cta-banner cta-banner--teal">
+        <div class="cta-banner__decoration"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Explore Our Content</h2>
+          <p class="cta-banner__text">While you wait for our reply, dive into our latest articles, discover trending topics, and meet the authors shaping modern education.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="articles.html" class="cta-banner__btn" style="color: var(--color-teal-600);">Read Articles</a>
+          <a href="topics.html" class="cta-banner__btn" style="background-color: transparent; color: var(--color-white); border-color: var(--color-white);">Browse Topics</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand-col">
+        <a href="index.html" class="footer__logo">EduPulse</a>
+        <p class="footer__tagline">A warm, welcoming knowledge hub for students and educators. Explore curated articles, topics, and featured content to foster learning and academic engagement.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:0.5rem;">
+          <!-- Social placeholders as inline SVG -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M11 16h10M16 11v10" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><circle cx="16" cy="16" r="5" stroke="#9E9EB0" stroke-width="2"/></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="16" fill="#2D2D44"/><path d="M12 20l4-4 4 4M12 12h8" stroke="#9E9EB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Explore</h4>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="articles.html" class="footer__link">Articles</a></li>
+          <li><a href="topics.html" class="footer__link">Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Featured</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Community</h4>
+        <ul class="footer__links">
+          <li><a href="authors.html" class="footer__link">Authors</a></li>
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-title">Resources</h4>
+        <ul class="footer__links">
+          <li><a href="articles.html" class="footer__link">Latest Posts</a></li>
+          <li><a href="topics.html" class="footer__link">Browse Topics</a></li>
+          <li><a href="featured.html" class="footer__link">Editor's Picks</a></li>
+          <li><a href="about.html" class="footer__link">Our Mission</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 EduPulse. All rights reserved. Built for learners, by learners.</p>
+      <div class="footer__bottom-links">
+        <a href="about.html" class="footer__bottom-link">Privacy Policy</a>
+        <a href="about.html" class="footer__bottom-link">Terms of Use</a>
+        <a href="contact.html" class="footer__bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

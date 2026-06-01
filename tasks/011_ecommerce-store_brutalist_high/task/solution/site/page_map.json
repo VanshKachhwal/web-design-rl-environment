@@ -1,0 +1,42 @@
+{
+  "index": {
+    "screenshot": "index.png",
+    "expected_file": "index.html"
+  },
+  "shop": {
+    "screenshot": "shop.png",
+    "expected_file": "shop.html"
+  },
+  "product": {
+    "screenshot": "product.png",
+    "expected_file": "product.html"
+  },
+  "collections": {
+    "screenshot": "collections.png",
+    "expected_file": "collections.html"
+  },
+  "cart": {
+    "screenshot": "cart.png",
+    "expected_file": "cart.html"
+  },
+  "about": {
+    "screenshot": "about.png",
+    "expected_file": "about.html"
+  },
+  "reviews": {
+    "screenshot": "reviews.png",
+    "expected_file": "reviews.html"
+  },
+  "shipping": {
+    "screenshot": "shipping.png",
+    "expected_file": "shipping.html"
+  },
+  "faq": {
+    "screenshot": "faq.png",
+    "expected_file": "faq.html"
+  },
+  "contact": {
+    "screenshot": "contact.png",
+    "expected_file": "contact.html"
+  }
+}

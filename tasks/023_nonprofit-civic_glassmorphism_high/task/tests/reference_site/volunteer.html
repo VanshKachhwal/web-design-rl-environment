@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Volunteer</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo">
+      <svg class="header__logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+        <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+        <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+        <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+        <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+      </svg>
+      <span class="header__logo-text">
+        Wellspring
+        <span class="header__logo-tagline">Community Health Foundation</span>
+      </span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="mission.html" class="header__nav-link">Mission</a>
+      <a href="programs.html" class="header__nav-link">Programs</a>
+      <a href="impact.html" class="header__nav-link">Impact</a>
+      <a href="events.html" class="header__nav-link">Events</a>
+      <a href="volunteer.html" class="header__nav-link">Volunteer</a>
+      <a href="news.html" class="header__nav-link">News</a>
+      <a href="partners.html" class="header__nav-link">Partners</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+      <a href="donate.html" class="header__cta">Donate</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Make a Difference</span>
+        <h1 class="hero__title">Volunteer With Wellspring</h1>
+        <p class="hero__subtitle">Join hundreds of compassionate community members who give their time, skills, and energy to build healthier neighborhoods. Every hour you give creates lasting change.</p>
+        <div class="hero__actions">
+          <a href="#apply-form" class="hero__btn hero__btn--primary">Apply to Volunteer</a>
+          <a href="programs.html" class="hero__btn hero__btn--secondary">Explore Programs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ROW ── -->
+  <section class="container">
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat__number">1,200+</div>
+        <div class="stat__label">Active Volunteers</div>
+        <p class="stat__description">Dedicated individuals serving across all programs</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">48K</div>
+        <div class="stat__label">Hours Given</div>
+        <p class="stat__description">Volunteer hours contributed in the past year</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">35</div>
+        <div class="stat__label">Communities</div>
+        <p class="stat__description">Neighborhoods reached through volunteer efforts</p>
+      </div>
+      <div class="stat">
+        <div class="stat__number">96%</div>
+        <div class="stat__label">Return Rate</div>
+        <p class="stat__description">Volunteers who continue year after year</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPLIT-SCREEN: Why Volunteer ── -->
+  <section class="container">
+    <div class="split-screen">
+      <div class="split-screen__content">
+        <span class="split-screen__eyebrow">Why Volunteer</span>
+        <h2 class="split-screen__title">Your Time Transforms Lives</h2>
+        <p class="split-screen__text">Volunteering with Wellspring Community Health Foundation is more than service — it's a chance to connect deeply with your community, develop new skills, and witness firsthand the impact of collective action. Whether you have a few hours a month or want to commit weekly, there's a meaningful role waiting for you.</p>
+        <p class="split-screen__text">Our volunteers report greater personal fulfillment, stronger social connections, and a renewed sense of purpose. You'll work alongside dedicated staff and fellow volunteers who share your passion for community health.</p>
+        <a href="impact.html" class="split-screen__link">See our community impact →</a>
+      </div>
+      <div class="split-screen__visual">
+        <svg width="200" height="200" viewbox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="80" r="30" fill="#7eb8a8" opacity="0.8"/>
+          <circle cx="65" cy="130" r="25" fill="#e8b4b8" opacity="0.7"/>
+          <circle cx="135" cy="130" r="25" fill="#f4d06f" opacity="0.7"/>
+          <path d="M100 60 L100 40 M85 70 L70 55 M115 70 L130 55" stroke="#5a9a88" stroke-width="2" stroke-linecap="round"/>
+          <path d="M80 110 C80 95 100 85 100 85 C100 85 120 95 120 110" stroke="#5a9a88" stroke-width="2" fill="none"/>
+          <rect x="88" y="150" width="24" height="8" rx="4" fill="#c4b7d4" opacity="0.6"/>
+          <circle cx="100" cy="80" r="8" fill="#ffffff" opacity="0.4"/>
+          <circle cx="65" cy="130" r="6" fill="#ffffff" opacity="0.4"/>
+          <circle cx="135" cy="130" r="6" fill="#ffffff" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VOLUNTEER OPPORTUNITY CARDS ── -->
+  <section class="container">
+    <div class="content-section__header">
+      <h2 class="content-section__title">Volunteer Opportunities</h2>
+      <p class="content-section__subtitle">Find the role that matches your interests, skills, and availability. Every position makes a real difference in community health outcomes.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__image" style="background: var(--gradient-cool);">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="20" width="32" height="28" rx="4" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <path d="M16 28 L32 38 L48 28" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <circle cx="32" cy="14" r="6" stroke="#ffffff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Health &amp; Wellness</span>
+          <h3 class="card__title">Community Health Navigator</h3>
+          <p class="card__text">Guide families through healthcare resources, assist with appointment scheduling, and provide health literacy support at our community centers. Training provided.</p>
+        </div>
+        <div class="card__footer">
+          <span class="badge badge--primary">4-8 hrs/week</span>
+          <a href="#apply-form" class="card__link">Apply →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image" style="background: var(--gradient-warm);">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="16" width="40" height="32" rx="3" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <line x1="12" y1="24" x2="52" y2="24" stroke="#ffffff" stroke-width="2"/>
+            <rect x="18" y="30" width="12" height="8" rx="2" fill="#ffffff" opacity="0.5"/>
+            <line x1="36" y1="32" x2="46" y2="32" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+            <line x1="36" y1="38" x2="46" y2="38" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Education</span>
+          <h3 class="card__title">Wellness Workshop Facilitator</h3>
+          <p class="card__text">Lead engaging workshops on nutrition, mental health, and preventive care. Share your expertise or learn to facilitate using our proven curriculum materials.</p>
+        </div>
+        <div class="card__footer">
+          <span class="badge badge--accent">2-4 hrs/week</span>
+          <a href="#apply-form" class="card__link">Apply →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image" style="background: var(--gradient-hero);">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="8" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="24" r="8" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <path d="M16 44 C16 36 24 32 24 32" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <path d="M48 44 C48 36 40 32 40 32" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <circle cx="32" cy="40" r="8" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <path d="M24 52 C24 46 32 42 32 42 C32 42 40 46 40 52" stroke="#ffffff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Outreach</span>
+          <h3 class="card__title">Community Outreach Ambassador</h3>
+          <p class="card__text">Connect with underserved populations, distribute health resources, and build relationships at local events, shelters, and community gathering places.</p>
+        </div>
+        <div class="card__footer">
+          <span class="badge badge--secondary">Flexible</span>
+          <a href="#apply-form" class="card__link">Apply →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image" style="background: linear-gradient(135deg, var(--color-lavender-light), var(--color-sky-light));">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="12" width="24" height="40" rx="3" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <line x1="26" y1="20" x2="38" y2="20" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+            <line x1="26" y1="26" x2="38" y2="26" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+            <line x1="26" y1="32" x2="34" y2="32" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+            <circle cx="32" cy="44" r="4" stroke="#ffffff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Administrative</span>
+          <h3 class="card__title">Data &amp; Research Support</h3>
+          <p class="card__text">Help us measure our impact by assisting with data entry, survey administration, and research analysis. Perfect for detail-oriented individuals.</p>
+        </div>
+        <div class="card__footer">
+          <span class="badge badge--lavender">Remote OK</span>
+          <a href="#apply-form" class="card__link">Apply →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image" style="background: var(--gradient-accent);">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 16 L36 24 L44 25 L38 31 L39 40 L32 36 L25 40 L26 31 L20 25 L28 24 Z" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <rect x="16" y="44" width="32" height="6" rx="3" fill="#ffffff" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Events</span>
+          <h3 class="card__title">Event Coordinator Assistant</h3>
+          <p class="card__text">Support the planning and execution of health fairs, fundraising galas, and community celebrations. Great for organized, people-oriented volunteers.</p>
+        </div>
+        <div class="card__footer">
+          <span class="badge badge--warm">Seasonal</span>
+          <a href="events.html" class="card__link">View Events →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image" style="background: linear-gradient(135deg, var(--color-secondary-light), var(--color-warm-light));">
+          <svg width="64" height="64" viewbox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 20 C28 14 20 14 20 22 C20 30 32 40 32 40 C32 40 44 30 44 22 C44 14 36 14 32 20Z" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <line x1="32" y1="44" x2="32" y2="52" stroke="#ffffff" stroke-width="2"/>
+            <line x1="26" y1="48" x2="38" y2="48" stroke="#ffffff" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="card__body">
+          <span class="card__tag">Mentorship</span>
+          <h3 class="card__title">Youth Wellness Mentor</h3>
+          <p class="card__text">Be a positive role model for young people in our programs. Provide guidance on healthy habits, goal setting, and navigating life challenges with resilience.</p>
+        </div>
+        <div class="card__footer">
+          <span class="badge badge--sky">6-month commitment</span>
+          <a href="#apply-form" class="card__link">Apply →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STEP-PROCESS: How to Get Started ── -->
+  <section class="container">
+    <div class="step-process">
+      <div class="step-process__header">
+        <h2 class="content-section__title">How to Get Started</h2>
+        <p class="content-section__subtitle">Becoming a Wellspring volunteer is simple. Follow these four steps and you'll be making a difference in no time.</p>
+      </div>
+      <div class="step-process__steps">
+        <div class="step-process__item">
+          <div class="step-process__number">1</div>
+          <h3 class="step-process__title">Submit Application</h3>
+          <p class="step-process__text">Fill out our volunteer application form below with your interests, availability, and any relevant experience. We welcome all skill levels.</p>
+        </div>
+        <div class="step-process__item">
+          <div class="step-process__number">2</div>
+          <h3 class="step-process__title">Attend Orientation</h3>
+          <p class="step-process__text">Join a welcome session where you'll learn about our mission, meet staff, and discover the programs that align with your passions.</p>
+        </div>
+        <div class="step-process__item">
+          <div class="step-process__number">3</div>
+          <h3 class="step-process__title">Complete Training</h3>
+          <p class="step-process__text">Receive role-specific training to prepare you for success. Our comprehensive onboarding ensures you feel confident and supported.</p>
+        </div>
+        <div class="step-process__item">
+          <div class="step-process__number">4</div>
+          <h3 class="step-process__title">Start Serving</h3>
+          <p class="step-process__text">Begin your volunteer journey with a team that values your contribution. Ongoing mentorship and community keep you connected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPLIT-SCREEN (Reversed): Volunteer Stories ── -->
+  <section class="container">
+    <div class="split-screen split-screen--reverse">
+      <div class="split-screen__content">
+        <span class="split-screen__eyebrow">Volunteer Stories</span>
+        <h2 class="split-screen__title">Hear From Our Volunteers</h2>
+        <p class="split-screen__text">Our volunteers come from all walks of life — students, retirees, professionals, and parents — united by a shared commitment to community health. Many say volunteering with Wellspring has been one of the most rewarding experiences of their lives.</p>
+        <p class="split-screen__text">"I started as a weekend volunteer and now I lead a team of health navigators. Wellspring gave me purpose and a second family." — Maria T., 3-year volunteer</p>
+        <a href="news.html" class="split-screen__link">Read more stories →</a>
+      </div>
+      <div class="split-screen__visual" style="background: var(--gradient-cool);">
+        <svg width="220" height="180" viewbox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="30" width="160" height="100" rx="12" fill="#ffffff" opacity="0.3"/>
+          <circle cx="70" cy="70" r="18" fill="#7eb8a8" opacity="0.7"/>
+          <circle cx="70" cy="70" r="7" fill="#ffffff" opacity="0.5"/>
+          <rect x="100" y="58" width="70" height="6" rx="3" fill="#5a9a88" opacity="0.5"/>
+          <rect x="100" y="70" width="50" height="6" rx="3" fill="#a8d5c8" opacity="0.5"/>
+          <rect x="100" y="82" width="60" height="6" rx="3" fill="#c4b7d4" opacity="0.4"/>
+          <circle cx="110" cy="120" r="12" fill="#e8b4b8" opacity="0.6"/>
+          <circle cx="140" cy="120" r="12" fill="#f4d06f" opacity="0.6"/>
+          <circle cx="170" cy="120" r="12" fill="#a8cce0" opacity="0.6"/>
+          <path d="M40 150 Q110 135 180 150" stroke="#5a9a88" stroke-width="2" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TEAM CARDS: Volunteer Coordinators ── -->
+  <section class="container">
+    <div class="content-section">
+      <div class="content-section__header">
+        <h2 class="content-section__title">Meet Your Volunteer Coordinators</h2>
+        <p class="content-section__subtitle">Our dedicated coordinators are here to support you every step of the way — from onboarding to ongoing engagement.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--1">SR</div>
+          <h3 class="team-card__name">Sarah Rodriguez</h3>
+          <p class="team-card__role">Director of Volunteer Services</p>
+          <p class="team-card__bio">With 12 years of community organizing experience, Sarah builds volunteer programs that are impactful, inclusive, and deeply fulfilling for everyone involved.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--2">JM</div>
+          <h3 class="team-card__name">James Mitchell</h3>
+          <p class="team-card__role">Outreach Coordinator</p>
+          <p class="team-card__bio">James connects volunteers with the communities that need them most. His warmth and organizational skills make every new volunteer feel at home.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--3">AP</div>
+          <h3 class="team-card__name">Aisha Patel</h3>
+          <p class="team-card__role">Training &amp; Development Lead</p>
+          <p class="team-card__bio">Aisha designs our volunteer training programs, ensuring every participant gains practical skills and confidence to serve effectively in their role.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-card__avatar team-card__avatar--4">DK</div>
+          <h3 class="team-card__name">David Kim</h3>
+          <p class="team-card__role">Youth Programs Coordinator</p>
+          <p class="team-card__bio">David specializes in engaging young volunteers and mentors, creating pathways for the next generation of community health advocates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VOLUNTEER APPLICATION FORM ── -->
+  <section class="container" id="apply-form" style="padding-bottom: var(--space-20);">
+    <div class="form" style="margin-inline: auto;">
+      <h2 class="form__title">Volunteer Application</h2>
+      <p class="form__subtitle">Tell us about yourself and how you'd like to contribute. We'll match you with the perfect opportunity.</p>
+
+      <div class="form__row">
+        <div class="form-field">
+          <label class="form-field__label">First Name</label>
+          <input type="text" class="form-field__input" placeholder="Your first name">
+        </div>
+        <div class="form-field">
+          <label class="form-field__label">Last Name</label>
+          <input type="text" class="form-field__input" placeholder="Your last name">
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="form-field">
+          <label class="form-field__label">Email Address</label>
+          <input type="email" class="form-field__input" placeholder="you@example.com">
+        </div>
+        <div class="form-field">
+          <label class="form-field__label">Phone Number</label>
+          <input type="tel" class="form-field__input" placeholder="(555) 123-4567">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label">Area of Interest</label>
+        <select class="form-field__select">
+          <option value="">Select a volunteer role…</option>
+          <option value="health-navigator">Community Health Navigator</option>
+          <option value="workshop-facilitator">Wellness Workshop Facilitator</option>
+          <option value="outreach-ambassador">Community Outreach Ambassador</option>
+          <option value="data-research">Data &amp; Research Support</option>
+          <option value="event-coordinator">Event Coordinator Assistant</option>
+          <option value="youth-mentor">Youth Wellness Mentor</option>
+          <option value="other">Other / Open to Suggestions</option>
+        </select>
+        <span class="form-field__hint">Choose the role that interests you most. You can explore others later.</span>
+      </div>
+
+      <div class="form__row">
+        <div class="form-field">
+          <label class="form-field__label">Availability</label>
+          <select class="form-field__select">
+            <option value="">Select availability…</option>
+            <option value="weekday-morning">Weekday Mornings</option>
+            <option value="weekday-afternoon">Weekday Afternoons</option>
+            <option value="weekday-evening">Weekday Evenings</option>
+            <option value="weekend">Weekends</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label">Hours Per Week</label>
+          <select class="form-field__select">
+            <option value="">Select hours…</option>
+            <option value="1-2">1–2 hours</option>
+            <option value="2-4">2–4 hours</option>
+            <option value="4-8">4–8 hours</option>
+            <option value="8+">8+ hours</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label">Tell Us About Yourself</label>
+        <textarea class="form-field__textarea" placeholder="Share any relevant experience, skills, or why you'd like to volunteer with Wellspring…"></textarea>
+        <span class="form-field__hint">Optional but helps us find the best fit for you.</span>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field__label">How Did You Hear About Us?</label>
+        <select class="form-field__select">
+          <option value="">Select an option…</option>
+          <option value="friend">Friend or Family</option>
+          <option value="social-media">Social Media</option>
+          <option value="event">Community Event</option>
+          <option value="partner">Partner Organization</option>
+          <option value="website">Website Search</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit" class="form__submit">Submit Application</button>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <section class="container" style="padding-bottom: var(--space-20);">
+    <div class="cta-banner">
+      <h2 class="cta-banner__title">Not Ready to Commit? Stay Connected.</h2>
+      <p class="cta-banner__text">There are many ways to support Wellspring beyond volunteering. Donate, attend an event, or simply spread the word. Every action counts toward healthier communities.</p>
+      <div class="cta-banner__actions">
+        <a href="donate.html" class="cta-banner__btn cta-banner__btn--primary">Make a Donation</a>
+        <a href="events.html" class="cta-banner__btn cta-banner__btn--secondary">Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" style="margin-bottom:var(--space-2);display:inline-flex;">
+          <svg width="36" height="36" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#7eb8a8" stroke-width="2.5"/>
+            <circle cx="20" cy="20" r="12" fill="none" stroke="#a8d5c8" stroke-width="1.5"/>
+            <path d="M20 8 C20 8, 12 16, 12 21 C12 25.4 15.6 29 20 29 C24.4 29 28 25.4 28 21 C28 16 20 8 20 8Z" fill="#7eb8a8" opacity="0.7"/>
+            <path d="M20 14 C20 14, 16 19, 16 22 C16 24.2 17.8 26 20 26 C22.2 26 24 24.2 24 22 C24 19 20 14 20 14Z" fill="#a8d5c8"/>
+            <circle cx="20" cy="20" r="2" fill="#ffffff"/>
+          </svg>
+          <span class="header__logo-text">
+            Wellspring
+            <span class="header__logo-tagline">Community Health Foundation</span>
+          </span>
+        </a>
+        <p class="footer__brand-text">
+          Nurturing holistic wellness in underserved communities since 2008. Together, we build healthier futures through compassion, education, and accessible care.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Organization</h4>
+        <ul class="footer__links">
+          <li><a href="mission.html" class="footer__link">Our Mission</a></li>
+          <li><a href="programs.html" class="footer__link">Programs</a></li>
+          <li><a href="impact.html" class="footer__link">Impact</a></li>
+          <li><a href="partners.html" class="footer__link">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Get Involved</h4>
+        <ul class="footer__links">
+          <li><a href="donate.html" class="footer__link">Donate</a></li>
+          <li><a href="volunteer.html" class="footer__link">Volunteer</a></li>
+          <li><a href="events.html" class="footer__link">Events</a></li>
+          <li><a href="news.html" class="footer__link">News</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Connect</h4>
+        <ul class="footer__links">
+          <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+          <li><span class="footer__link">info@wellspringchf.org</span></li>
+          <li><span class="footer__link">(555) 234-5678</span></li>
+          <li><span class="footer__link">200 Wellness Way, Suite 100</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 Wellspring Community Health Foundation. All rights reserved. A 501(c)(3) nonprofit organization.</p>
+      <div class="footer__social">
+        <span class="footer__social-icon" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2.5H10.5V0H9C7.34 0 6 1.34 6 3V5H4V7.5H6V16H8.5V7.5H10.5L11 5H8.5V3C8.5 2.72 8.72 2.5 9 2.5Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="14" rx="4" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="8" cy="8" r="3.5" stroke="#8a7e72" stroke-width="1.5" fill="none"/><circle cx="12.5" cy="3.5" r="1" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="Twitter / X">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L7 8.5L2 14H3.5L7.75 9.5L11 14H14L9 7.5L14 2H12.5L8.25 6.5L5 2H2Z" fill="#8a7e72"/></svg>
+        </span>
+        <span class="footer__social-icon" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="3" height="9" fill="#8a7e72" rx="0.5"/><circle cx="2.5" cy="3" r="1.8" fill="#8a7e72"/><path d="M6 6H9V7.2C9.5 6.4 10.5 5.8 11.5 5.8C13.5 5.8 14.5 7 14.5 9.5V15H11.5V10C11.5 9 11 8.5 10.2 8.5C9.3 8.5 8.8 9.2 8.8 10.2V15H6V6Z" fill="#8a7e72"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

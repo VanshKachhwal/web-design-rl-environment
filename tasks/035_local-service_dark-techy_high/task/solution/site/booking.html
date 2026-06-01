@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>Booking</title>
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="header__logo" aria-label="NexCore IT Solutions Home">
+      <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" fill="none"/>
+        <path d="M10 26V10l8 10 8-10v16" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="18" cy="18" r="3" fill="#00e0ff" opacity="0.3"/>
+      </svg>
+      <span>Nex<span class="header__logo-accent">Core</span></span>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a href="index.html" class="header__nav-link">Home</a>
+      <a href="services.html" class="header__nav-link">Services</a>
+      <a href="pricing.html" class="header__nav-link">Pricing</a>
+      <a href="about.html" class="header__nav-link">About</a>
+      <a href="areas.html" class="header__nav-link">Areas</a>
+      <a href="gallery.html" class="header__nav-link">Gallery</a>
+      <a href="reviews.html" class="header__nav-link">Reviews</a>
+      <a href="faq.html" class="header__nav-link">FAQ</a>
+      <a href="contact.html" class="header__nav-link">Contact</a>
+    </nav>
+    <a href="booking.html" class="header__cta">Book Now</a>
+    <button class="header__mobile-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+<main>
+
+  <!-- ── CONTENT SECTION: Page Intro ── -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Book Your Service</span>
+        <h1 class="content-section__title">Schedule Your <span style="color: var(--color-accent-primary);">Appointment</span></h1>
+        <div class="neon-line neon-line--center"></div>
+        <p class="content-section__description">Complete the steps below to book your cleaning service. We'll confirm your appointment within 24 hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── STEP PROCESS ── -->
+  <section class="step-process">
+    <div class="container">
+      <div class="step-process__header">
+        <h2 class="step-process__title">How Booking Works</h2>
+        <p class="step-process__subtitle">Four simple steps from scheduling to a spotless space</p>
+      </div>
+      <div class="step-process__steps">
+        <div class="step-process__step">
+          <div class="step-process__number">1</div>
+          <h3 class="step-process__step-title">Choose Service</h3>
+          <p class="step-process__step-text">Select the type of cleaning service that fits your needs from our comprehensive options.</p>
+        </div>
+        <div class="step-process__step">
+          <div class="step-process__number">2</div>
+          <h3 class="step-process__step-title">Pick Date &amp; Time</h3>
+          <p class="step-process__step-text">Choose a convenient date and time slot that works best for your schedule.</p>
+        </div>
+        <div class="step-process__step">
+          <div class="step-process__number">3</div>
+          <h3 class="step-process__step-title">Your Details</h3>
+          <p class="step-process__step-text">Provide your contact information and property details so we can prepare accordingly.</p>
+        </div>
+        <div class="step-process__step">
+          <div class="step-process__number">4</div>
+          <h3 class="step-process__step-title">Confirmation</h3>
+          <p class="step-process__step-text">Review your booking summary and submit. We'll send a confirmation to your email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── BOOKING FORM ── -->
+  <section class="content-section">
+    <div class="container container--narrow">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Step 1</span>
+        <h2 class="content-section__title">Select Your Service</h2>
+        <p class="content-section__description">Choose from our available cleaning packages below.</p>
+      </div>
+
+      <!-- Service Selection Cards -->
+      <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: var(--space-16);">
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <rect x="8" y="12" width="32" height="28" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M8 20h32" stroke="currentColor" stroke-width="2"/>
+              <rect x="14" y="26" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+              <rect x="26" y="26" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+              <path d="M16 12V8M32 12V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Residential</span>
+          <h3 class="card__title">Standard Clean</h3>
+          <p class="card__text">Complete home cleaning including dusting, vacuuming, mopping, kitchen and bathroom sanitization. Perfect for regular maintenance.</p>
+          <div class="card__footer">
+            <span class="badge badge--default"><span class="badge__dot"></span>From £80</span>
+            <a href="services.html" class="card__link">View Details →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M24 14v10l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="2" fill="currentColor"/>
+              <path d="M24 8v2M24 38v2M8 24h2M38 24h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Residential</span>
+          <h3 class="card__title">Deep Clean</h3>
+          <p class="card__text">Intensive top-to-bottom cleaning reaching every corner. Includes appliance cleaning, grout scrubbing, and detailed attention to neglected areas.</p>
+          <div class="card__footer">
+            <span class="badge badge--default"><span class="badge__dot"></span>From £150</span>
+            <a href="services.html" class="card__link">View Details →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <rect x="6" y="14" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M6 22h36" stroke="currentColor" stroke-width="2"/>
+              <rect x="10" y="18" width="4" height="2" rx="0.5" fill="currentColor" opacity="0.5"/>
+              <rect x="16" y="18" width="4" height="2" rx="0.5" fill="currentColor" opacity="0.5"/>
+              <path d="M14 14V10h20v4" stroke="currentColor" stroke-width="2"/>
+              <rect x="12" y="28" width="10" height="4" rx="1" fill="currentColor" opacity="0.3"/>
+            </svg>
+          </div>
+          <span class="card__tag">Commercial</span>
+          <h3 class="card__title">Office Clean</h3>
+          <p class="card__text">Professional workspace cleaning for offices of all sizes. Desks, common areas, restrooms, and reception areas kept pristine.</p>
+          <div class="card__footer">
+            <span class="badge badge--blue"><span class="badge__dot"></span>From £120</span>
+            <a href="services.html" class="card__link">View Details →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <path d="M12 38V18l12-10 12 10v20H12z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="20" y="26" width="8" height="12" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M18 22h4M26 22h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 20l16-13 16 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <span class="card__tag">Specialty</span>
+          <h3 class="card__title">End of Tenancy</h3>
+          <p class="card__text">Comprehensive move-out cleaning to ensure full deposit return. Every surface cleaned to landlord and letting agent standards.</p>
+          <div class="card__footer">
+            <span class="badge badge--purple"><span class="badge__dot"></span>From £200</span>
+            <a href="services.html" class="card__link">View Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Date & Time -->
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Step 2</span>
+        <h2 class="content-section__title">Choose Date &amp; Time</h2>
+        <p class="content-section__description">Select your preferred appointment slot.</p>
+      </div>
+
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-primary); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-16);">
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-field__label">Preferred Date <span class="form-field__required">*</span></label>
+            <input type="date" class="form-field__input" required>
+            <span class="form-field__hint">We operate Monday–Saturday, 7am–7pm</span>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Preferred Time <span class="form-field__required">*</span></label>
+            <select class="form-field__select" required>
+              <option value="">Select a time slot</option>
+              <option value="07:00">07:00 – 09:00 (Early Morning)</option>
+              <option value="09:00">09:00 – 11:00 (Morning)</option>
+              <option value="11:00">11:00 – 13:00 (Late Morning)</option>
+              <option value="13:00">13:00 – 15:00 (Afternoon)</option>
+              <option value="15:00">15:00 – 17:00 (Late Afternoon)</option>
+              <option value="17:00">17:00 – 19:00 (Evening)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label">Service Type <span class="form-field__required">*</span></label>
+          <select class="form-field__select" required>
+            <option value="">Select a service</option>
+            <option value="standard">Standard Clean – from £80</option>
+            <option value="deep">Deep Clean – from £150</option>
+            <option value="office">Office Clean – from £120</option>
+            <option value="tenancy">End of Tenancy – from £200</option>
+            <option value="carpet">Carpet Cleaning – from £60</option>
+            <option value="window">Window Cleaning – from £50</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label">Frequency</label>
+          <select class="form-field__select">
+            <option value="one-time">One-Time Service</option>
+            <option value="weekly">Weekly</option>
+            <option value="fortnightly">Fortnightly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+          <span class="form-field__hint">Recurring bookings receive up to 15% discount. See our <a href="pricing.html">pricing page</a> for details.</span>
+        </div>
+      </div>
+
+      <!-- Step 3: Contact & Property Details -->
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Step 3</span>
+        <h2 class="content-section__title">Your Details</h2>
+        <p class="content-section__description">Tell us about yourself and your property so we can tailor the service.</p>
+      </div>
+
+      <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-primary); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-16);">
+        <h3 style="font-size: var(--text-lg); font-weight: var(--weight-semibold); margin-bottom: var(--space-6); color: var(--color-text-primary);">Contact Information</h3>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-field__label">First Name <span class="form-field__required">*</span></label>
+            <input type="text" class="form-field__input" placeholder="Jane" required>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Last Name <span class="form-field__required">*</span></label>
+            <input type="text" class="form-field__input" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-field__label">Email Address <span class="form-field__required">*</span></label>
+            <input type="email" class="form-field__input" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Phone Number <span class="form-field__required">*</span></label>
+            <input type="tel" class="form-field__input" placeholder="+44 7700 900000" required>
+          </div>
+        </div>
+
+        <hr class="section-divider" style="margin-top: var(--space-6); margin-bottom: var(--space-6);">
+
+        <h3 style="font-size: var(--text-lg); font-weight: var(--weight-semibold); margin-bottom: var(--space-6); color: var(--color-text-primary);">Property Details</h3>
+        <div class="form-field">
+          <label class="form-field__label">Property Address <span class="form-field__required">*</span></label>
+          <input type="text" class="form-field__input" placeholder="123 High Street, London" required>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-field__label">Postcode <span class="form-field__required">*</span></label>
+            <input type="text" class="form-field__input" placeholder="SW1A 1AA" required>
+            <span class="form-field__hint">Check our <a href="areas.html">service areas</a> for coverage</span>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Property Type</label>
+            <select class="form-field__select">
+              <option value="">Select property type</option>
+              <option value="flat-studio">Studio Flat</option>
+              <option value="flat-1bed">1-Bed Flat</option>
+              <option value="flat-2bed">2-Bed Flat</option>
+              <option value="flat-3bed">3-Bed Flat</option>
+              <option value="house-2bed">2-Bed House</option>
+              <option value="house-3bed">3-Bed House</option>
+              <option value="house-4bed">4-Bed House</option>
+              <option value="house-5bed">5+ Bed House</option>
+              <option value="office-small">Small Office</option>
+              <option value="office-large">Large Office</option>
+              <option value="commercial">Commercial Space</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-field__label">Number of Bedrooms</label>
+            <select class="form-field__select">
+              <option value="">Select</option>
+              <option value="0">Studio / N/A</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Number of Bathrooms</label>
+            <select class="form-field__select">
+              <option value="">Select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label">Special Instructions or Requests</label>
+          <textarea class="form-field__textarea" placeholder="Any access instructions, pets, areas of focus, allergies to cleaning products, etc."></textarea>
+          <span class="form-field__hint">Let us know anything that will help our team prepare for your appointment.</span>
+        </div>
+      </div>
+
+      <!-- Step 4: Review & Submit -->
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Step 4</span>
+        <h2 class="content-section__title">Review &amp; Submit</h2>
+        <p class="content-section__description">Double-check your details and submit your booking request.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: var(--space-8);">
+        <span class="card__tag">Booking Summary</span>
+        <h3 class="card__title">Your Appointment Overview</h3>
+        <p class="card__text">After submitting, you'll receive a confirmation email within 24 hours with your finalised appointment details and pricing. No payment is taken until the service is confirmed.</p>
+        <div class="card__footer" style="flex-direction: column; align-items: stretch; gap: var(--space-4);">
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0; color: var(--color-success);">
+              <path d="M16.7 5.3l-9 9L4.3 10.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Free cancellation up to 24 hours before your appointment</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0; color: var(--color-success);">
+              <path d="M16.7 5.3l-9 9L4.3 10.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">Fully insured and vetted cleaning professionals</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" style="flex-shrink: 0; color: var(--color-success);">
+              <path d="M16.7 5.3l-9 9L4.3 10.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-size: var(--text-sm); color: var(--color-text-secondary);">100% satisfaction guarantee — we'll re-clean if you're not happy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions" style="justify-content: center; flex-direction: column; align-items: center; gap: var(--space-4);">
+        <a href="#" class="btn btn--primary btn--lg">Submit Booking Request</a>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted); text-align: center; max-width: 480px;">By submitting this form you agree to our terms of service. Have questions? Visit our <a href="faq.html">FAQ page</a> or <a href="contact.html">contact us</a> directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── CARD SECTION: Why Book With Us ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-section__header content-section__header--center">
+        <span class="content-section__label">Why Choose Us</span>
+        <h2 class="content-section__title">Book With Confidence</h2>
+        <div class="neon-line neon-line--center"></div>
+        <p class="content-section__description">Every booking is backed by our commitment to quality, reliability, and complete customer satisfaction.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <path d="M24 4l6 12 13 2-9.5 9 2.5 13L24 34l-12 6 2.5-13L5 18l13-2z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Quality</span>
+          <h3 class="card__title">5-Star Rated Service</h3>
+          <p class="card__text">Hundreds of verified reviews from satisfied customers. See what others say on our reviews page.</p>
+          <div class="card__footer">
+            <span class="badge badge--success"><span class="badge__dot"></span>4.9 Average</span>
+            <a href="reviews.html" class="card__link">Read Reviews →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <rect x="10" y="8" width="28" height="32" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M18 20l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 30h16M16 35h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="card__tag">Trust</span>
+          <h3 class="card__title">Fully Insured</h3>
+          <p class="card__text">All our cleaners are background-checked, trained, and fully insured for your complete peace of mind.</p>
+          <div class="card__footer">
+            <span class="badge badge--default"><span class="badge__dot"></span>Verified</span>
+            <a href="about.html" class="card__link">Learn More →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder">
+            <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M24 16v8l5.5 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 24H6M42 24h-4M24 6v4M24 38v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <span class="card__tag">Flexibility</span>
+          <h3 class="card__title">Easy Rescheduling</h3>
+          <p class="card__text">Plans change — we get it. Reschedule or cancel free of charge up to 24 hours before your appointment.</p>
+          <div class="card__footer">
+            <span class="badge badge--default"><span class="badge__dot"></span>Flexible</span>
+            <a href="faq.html" class="card__link">View FAQ →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ── CTA BANNER ── -->
+  <section class="content-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__glow cta-banner__glow--left"></div>
+        <div class="cta-banner__glow cta-banner__glow--right"></div>
+        <div class="cta-banner__content">
+          <h2 class="cta-banner__title">Prefer to Talk to <span style="color: var(--color-accent-primary);">Someone?</span></h2>
+          <p class="cta-banner__text">Our friendly team is ready to help you choose the right service and schedule your appointment over the phone or email.</p>
+          <div class="cta-banner__actions">
+            <a href="contact.html" class="btn btn--primary btn--lg">Contact Us</a>
+            <a href="tel:+440000000000" class="btn btn--secondary btn--lg">
+              <svg width="18" height="18" viewbox="0 0 18 18" fill="none" style="flex-shrink: 0;">
+                <path d="M16.5 12.69v2.5a1.67 1.67 0 01-1.82 1.67A16.5 16.5 0 011.14 3.32 1.67 1.67 0 012.81 1.5h2.5a1.67 1.67 0 011.67 1.43 10.7 10.7 0 00.58 2.35 1.67 1.67 0 01-.37 1.76L5.93 8.3a13.33 13.33 0 005.77 5.77l1.26-1.26a1.67 1.67 0 011.76-.37 10.7 10.7 0 002.35.58 1.67 1.67 0 011.43 1.67z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="header__logo" aria-label="NexCore IT Solutions Home">
+          <svg class="header__logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M10 26V10l8 10 8-10v16" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="18" r="3" fill="#00e0ff" opacity="0.3"/>
+          </svg>
+          <span>Nex<span class="header__logo-accent">Core</span></span>
+        </a>
+        <p class="footer__brand-description">
+          Premium IT support and managed services for businesses and residents in the greater metropolitan area. Network setup, cybersecurity, cloud migration, and hardware repair — all under one roof.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Services</h4>
+        <nav class="footer__links" aria-label="Footer services links">
+          <a href="services.html" class="footer__link">All Services</a>
+          <a href="pricing.html" class="footer__link">Pricing Plans</a>
+          <a href="booking.html" class="footer__link">Book a Service</a>
+          <a href="areas.html" class="footer__link">Service Areas</a>
+        </nav>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Company</h4>
+        <nav class="footer__links" aria-label="Footer company links">
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="reviews.html" class="footer__link">Reviews</a>
+          <a href="gallery.html" class="footer__link">Gallery</a>
+          <a href="faq.html" class="footer__link">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__heading">Contact</h4>
+        <nav class="footer__links" aria-label="Footer contact links">
+          <a href="contact.html" class="footer__link">Contact Us</a>
+          <a href="booking.html" class="footer__link">Schedule a Call</a>
+          <span class="footer__link">info@nexcore-it.com</span>
+          <span class="footer__link">(555) 987-6543</span>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2024 NexCore IT Solutions. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="faq.html" class="footer__bottom-link">FAQ</a>
+        <a href="contact.html" class="footer__bottom-link">Support</a>
+        <a href="about.html" class="footer__bottom-link">About</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
