@@ -113,7 +113,9 @@ Each bundle has a runnable Harbor `task/`, the 10× Opus-4.7 eval as a GitHub-re
 per-task README. See [`tasks/README.md`](tasks/README.md) for the coverage table.
 
 > **These 11 are Part 1 (static) only.** Part 2 (animations) was attempted but is a
-> rushed prototype, so it is deliberately kept out of the final tasks — see below.
+> rushed prototype, so it is deliberately kept out of this final set — the 10
+> preliminary animation tasks live separately under [`task2/tasks/`](task2/tasks/),
+> with the full Part-2 writeup in [`task2/`](task2/README.md) (section below).
 
 ---
 
