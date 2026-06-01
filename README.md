@@ -76,6 +76,13 @@ The grader produces a real spread (**0.66 → 0.83**), and the *same shape every
   *observe* this rather than score it as a separate term; it is part of the structure/look
   gap, not a distinct metric.
 
+**The headline learning:** `content` is the bottleneck, and its fidelity is **inversely
+proportional to prose density** — the model paraphrases body copy (generation is its
+native mode, not transcription) while nailing layout and color. Cross-confirmed by the
+OCR term *and* the VLM judge. This is exactly the "what the model struggles with"
+finding the brief asks for; the design-taste tension (is verbatim text the right thing
+to reward in a *design* task?) is surfaced, not hidden.
+
 ---
 
 ## What the brief asked, and where it lives
@@ -203,13 +210,6 @@ runs inside the Harbor verifier). Operational detail in the runbooks:
   temperature + parallelism control. → [`generator_design.md`](documentation/design/generator_design.md)
 - **Eval** — Claude Code + Opus 4.7 run **10×** via Harbor on Modal, graded, harvested
   into a per-task visual report. → [`eval_pipeline.md`](documentation/design/eval_pipeline.md)
-
-**The headline learning:** `content` is the bottleneck, and its fidelity is **inversely
-proportional to prose density** — the model paraphrases body copy (generation is its
-native mode, not transcription) while nailing layout and color. Cross-confirmed by the
-OCR term *and* the VLM judge. This is exactly the "what the model struggles with"
-finding the brief asks for; the design-taste tension (is verbatim text the right thing
-to reward in a *design* task?) is surfaced, not hidden.
 
 ---
 
